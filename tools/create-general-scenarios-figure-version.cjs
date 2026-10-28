@@ -3,7 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..');
-const sourcePath=path.join(root,'一般道路情境-demo.html');
+const sourcePath=path.join(root,'index.html');
 const bytes=fs.readFileSync(sourcePath);
 const hash=value=>crypto.createHash('sha256').update(value).digest('hex');
 const sourceHash=hash(bytes);
@@ -15,7 +15,7 @@ const unique=(folder,stem,extension)=>{
 const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(part=>[part.type,part.value]));
 const timestamp=parts.year+parts.month+parts.day+'-'+parts.hour+parts.minute+parts.second;
 const backupFolder=path.join(root,'backups');fs.mkdirSync(backupFolder,{recursive:true});
-const backupPath=unique(backupFolder,'一般道路情境-demo-改版前備份-'+timestamp,'.html');
+const backupPath=unique(backupFolder,'index-改版前備份-'+timestamp,'.html');
 fs.writeFileSync(backupPath,bytes,{flag:'wx'});
 if(hash(fs.readFileSync(backupPath))!==sourceHash)throw new Error('Backup verification failed');
 let html=bytes.toString('utf8');
@@ -36,9 +36,12 @@ for(const article of data.articles) {
 }
 state.updatedAt=Date.now();
 html=html.replace(stateMatch[0],()=>'<script id="editor-saved-data" type="application/json">'+JSON.stringify(state).replace(/</g,'\\u003c')+'</script>');
-html=html.replace(/<body\b([^>]*)>/,(_match,attributes)=>'<body'+attributes+' data-presentation-variant="figure-focused">');
-const css=fs.readFileSync(path.join(root,'src','general-scenarios','figure-focused.css'),'utf8');
-html=html.replace('</head>','<meta name="presentation-variant" content="figure-focused"><style id="figure-focused-styles">'+css+'</style></head>');
+html=html.replace(/<body\b([^>]*)>/,(_match,attributes)=>'<body'+attributes.replace(/\sdata-presentation-variant=(["'])[^"']*\1/,'')+' data-presentation-variant="figure-focused">');
+if(!html.includes('id="figure-focused-styles"')) {
+  const css=fs.readFileSync(path.join(root,'src','general-scenarios','figure-focused.css'),'utf8');
+  html=html.replace('</head>','<style id="figure-focused-styles">'+css+'</style></head>');
+}
+if(!html.includes('name="presentation-variant"'))html=html.replace('</head>','<meta name="presentation-variant" content="figure-focused"></head>');
 html=html.replace(/<title>[\s\S]*?<\/title>/,'<title>一般道路情境｜圖面放大版</title>')
   .replaceAll('｜一般道路情境簡報`','｜一般道路情境簡報（圖面放大版）`')
   .replaceAll('一般道路情境-可編輯.html','一般道路情境-圖面放大版-可編輯.html')

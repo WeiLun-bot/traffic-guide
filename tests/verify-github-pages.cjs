@@ -8,7 +8,6 @@ const site=path.join(root,'_site');
 const files=new Map([
   ['index.html','index.html'],
   ['一般道路情境-圖面放大版.html','index.html'],
-  ['一般道路情境-demo.html','一般道路情境-demo.html'],
   ['路口管制.html','路口管制.html'],
   ['.nojekyll','.nojekyll']
 ]);
@@ -92,13 +91,17 @@ assert(indexJson.get('editor-saved-data'),'Editor saved data is missing');
 assert(/<style\b[^>]*>[\s\S]+?<\/style>/.test(indexHtml),'Embedded presentation CSS is missing');
 assert(indexHtml.includes('id="general-editor"')&&indexHtml.includes('id="general-current-conditions"'),'Embedded editor or comparison script is missing');
 assert(/@keyframes\s+appear\b/.test(indexHtml)&&indexHtml.includes('requestAnimationFrame')&&/\btransition\s*:/.test(indexHtml),'Existing presentation animation is missing');
-const workflow=fs.readFileSync(path.join(root,'.github/workflows/pages.yml'),'utf8');
-const upload=workflow.match(/uses:\s*actions\/upload-pages-artifact@[^\r\n]+([\s\S]*?)(?=\r?\n\s*-\s+(?:name:|uses:)|$)/);
-assert(upload,'Pages upload step is missing');
-const uploadedPath=upload[1].match(/\bpath:\s*([^\r\n#]+)/);assert(uploadedPath,'Pages upload folder is missing');
-const normalized=uploadedPath[1].trim().replace(/^['"]|['"]$/g,'').replace(/\\/g,'/').replace(/^\.\//,'').replace(/\/$/,'');
-assert.equal(normalized,'_site','Workflow must publish only the prepared _site folder');
-assert(/node\s+tools\/prepare-github-pages\.cjs/.test(workflow),'Workflow skips release preparation');
-assert(/node\s+tests\/verify-github-pages\.cjs/.test(workflow),'Workflow skips release checks');
-assert(/uses:\s*actions\/deploy-pages@/.test(workflow)&&/pages:\s*write/.test(workflow)&&/id-token:\s*write/.test(workflow),'Pages deployment or permissions missing');
-console.log('PASS: 5 allowlisted files; byte-identical sources and saved edits; 5 chapters, 4 scenarios, 26 explanations; 28 embedded images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; workflow uploads only _site.');
+// Local artifact checks can run without a deployment workflow in the checkout.
+const artifactsOnly=process.argv.includes('--artifacts-only');
+if(!artifactsOnly) {
+  const workflow=fs.readFileSync(path.join(root,'.github/workflows/pages.yml'),'utf8');
+  const upload=workflow.match(/uses:\s*actions\/upload-pages-artifact@[^\r\n]+([\s\S]*?)(?=\r?\n\s*-\s+(?:name:|uses:)|$)/);
+  assert(upload,'Pages upload step is missing');
+  const uploadedPath=upload[1].match(/\bpath:\s*([^\r\n#]+)/);assert(uploadedPath,'Pages upload folder is missing');
+  const normalized=uploadedPath[1].trim().replace(/^['"]|['"]$/g,'').replace(/\\/g,'/').replace(/^\.\//,'').replace(/\/$/,'');
+  assert.equal(normalized,'_site','Workflow must publish only the prepared _site folder');
+  assert(/node\s+tools\/prepare-github-pages\.cjs/.test(workflow),'Workflow skips release preparation');
+  assert(/node\s+tests\/verify-github-pages\.cjs/.test(workflow),'Workflow skips release checks');
+  assert(/uses:\s*actions\/deploy-pages@/.test(workflow)&&/pages:\s*write/.test(workflow)&&/id-token:\s*write/.test(workflow),'Pages deployment or permissions missing');
+}
+console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and saved edits; 5 chapters, 4 scenarios, 26 explanations; 28 embedded images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));

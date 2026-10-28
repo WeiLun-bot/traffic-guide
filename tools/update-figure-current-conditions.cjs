@@ -1,9 +1,9 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),vm=require('node:vm');
 const root=path.resolve(__dirname,'..'),source=path.join(root,'src','general-scenarios');
-const target=path.join(root,'一般道路情境-圖面放大版.html'),original=path.join(root,'一般道路情境-demo.html');
+const target=path.join(root,'一般道路情境-圖面放大版.html');
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
-const originalHash=sha(fs.readFileSync(original)),bytes=fs.readFileSync(target);
+const bytes=fs.readFileSync(target);
 const pagesEntry=path.join(root,'index.html');
 const syncPagesEntry=fs.existsSync(pagesEntry)&&fs.readFileSync(pagesEntry).equals(bytes);
 let html=bytes.toString('utf8');
@@ -65,11 +65,10 @@ html=stylePattern.test(html)?html.replace(stylePattern,()=>styleTag):html.replac
 html=html.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="一般道路情境互動簡報：兩個情境、現況問題照片、可拖曳現況與改善對照，以及條文放大解說。">');
 fs.writeFileSync(target,html,'utf8');
 if(syncPagesEntry)fs.writeFileSync(pagesEntry,html,'utf8');
-if(sha(fs.readFileSync(original))!==originalHash)throw new Error('Original presentation changed');
 const manifestPath=target.replace(/\.html$/,'.manifest.json'),manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
 manifest.outputSha256=sha(Buffer.from(html));
 delete manifest.buildingAlignment;
 manifest.comparisonEditing={default:'Previous placement restored; no automatic building registration',controls:['position','width','height','rotation','direct drag','continuous wheel scale'],savedIn:'editor-saved-data.comparisonTransforms'};
 manifest.currentConditions={updatedAt:new Date().toISOString(),pptx:config.source,pptxSha256:inventory.source_sha256,pages:2,newImages:4,excludedSlides:config.excludedSlides,backup:backupPath?path.relative(root,backupPath).split(path.sep).join('/'):manifest.currentConditions?.backup,backupSha256:backupPath?sha(bytes):manifest.currentConditions?.backupSha256};
 fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n','utf8');
-console.log(JSON.stringify({file:path.basename(target),bytes:Buffer.byteLength(html),newPages:2,totalImages:Object.keys(data.embeddedAssets).length,excludedSlide:4,originalUnchanged:true,backup:manifest.currentConditions.backup},null,2));
+console.log(JSON.stringify({file:path.basename(target),bytes:Buffer.byteLength(html),newPages:2,totalImages:Object.keys(data.embeddedAssets).length,excludedSlide:4,pagesEntrySynced:syncPagesEntry,backup:manifest.currentConditions.backup},null,2));

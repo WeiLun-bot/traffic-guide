@@ -4,7 +4,6 @@ const root=path.resolve(__dirname,'..'),output=path.join(root,'_site');
 const files=[
   ['index.html','index.html'],
   ['index.html','一般道路情境-圖面放大版.html'],
-  ['一般道路情境-demo.html','一般道路情境-demo.html'],
   ['路口管制.html','路口管制.html'],
   ['.nojekyll','.nojekyll']
 ];
