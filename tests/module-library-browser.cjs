@@ -11,7 +11,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
         await view(stage.pageId);assert.equal(await evaluate('window.generalRoadPresentation.page.moduleId'),content.id);
         assert.equal(await evaluate('document.querySelector("main>.slide").dataset.moduleStage'),stage.id);
         assert.equal(await evaluate('document.querySelectorAll(".module-subnav").length'),content.submoduleFlows.length>1?1:0);
-        if(stage.id==='issues')assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-related-nav .article-chip")].map(node=>node.textContent)'),content.pages.find(page=>page.id===stage.pageId).references.map(reg=>'§'+reg+content.referenceNames[reg]));
+        if(stage.id==='issues')assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-related-nav .article-chip")].map(node=>node.textContent)'),content.pages.find(page=>page.id===stage.pageId).references.map(reg=>'§ '+reg+content.referenceNames[reg]));
         else assert.equal(await evaluate('document.querySelectorAll(".module-related-nav,.module-reference-row").length'),0);
         if(stage.id==='diagram')for(const topic of stage.topics){
           await click('[data-module-topic="'+topic.id+'"]');

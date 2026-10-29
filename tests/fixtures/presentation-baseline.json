@@ -1,6 +1,6 @@
 {
   "styles": {
-    "anonymous": "040ce8cd319849a953d46354100c08e980966e86fca15b3d681ec39ced88d661",
+    "anonymous": "87cd8b14b765b1c2cf62989d3b9c42cb4731ef0fe233cbf3989860f089af92f9",
     "general-editor-styles": "b23bbca94ad091a0e1737ef64407eb90e333317eaa58f42372db1032f799a0eb",
     "general-viewport-styles": "e56d897f5c923b259b06fa69cbb1d882076adc014781672b5aa3d62e4b88fd2a",
     "general-formatting-styles": "5a198d0ebec80404e1233f28beb9bb45c9787e68e9b934f3d6b8df42cbc284e3",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "general-page-templates": "e0453b77ce53d4eb3d4452980c3f533498ad4d23f77fbe72b3c9779e9f942e81",
-    "general-image-viewport": "9610d0ed81f7fc1c98e770d91c39db3e3a97b019fc69f130545f4890848af03e",
+    "general-image-viewport": "2d0b28a6de09952d8abb7f531b4add8819c17042cc9e73358ac6dde5ddc025f2",
     "general-explanation-blocks": "6ae7a4e2b1246ded2532fd56cbcf148679e7677c27ca20994678c2fb3fa3b5f8",
     "general-formatting": "1045de2e99cf2acf186ce2a93d99fe7d4599bf7308750688440be46f2d865b35",
     "general-editor": "19507ead80cf03cb0c94cdef756d4074f532cbe20f6d48661f28a50c25291fb3",

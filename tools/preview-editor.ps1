@@ -6,6 +6,8 @@ try {
   if ($nodeCommand) { $runtime = $nodeCommand.Source }
   else {
     $runtime = Join-Path $env:LOCALAPPDATA 'Programs/Microsoft VS Code/Code.exe'
+    if (!(Test-Path -LiteralPath $runtime)) { $runtime = Join-Path $env:ProgramFiles 'Microsoft VS Code/Code.exe' }
+    if (!(Test-Path -LiteralPath $runtime) -and $env:ProgramW6432) { $runtime = Join-Path $env:ProgramW6432 'Microsoft VS Code/Code.exe' }
     if (!(Test-Path -LiteralPath $runtime)) { throw 'Node.js or VS Code is required to start the local preview.' }
     $env:ELECTRON_RUN_AS_NODE = '1'
   }

@@ -8,7 +8,7 @@ const {spawn} = require('node:child_process');
 const assert = require('node:assert/strict');
 const {createServer} = require('../tools/serve-github-pages.cjs');
 const Core = require('../assets/visual-editor-core.js');
-const root = path.resolve(__dirname, '..'), artifacts = path.join(__dirname, 'artifacts/visual-editor');
+const root = path.resolve(__dirname, '..'), artifacts = process.env.VISUAL_EDITOR_ARTIFACTS || path.join(__dirname, 'artifacts/visual-editor');
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const configPath = path.join(root, 'layout/presentation-layout.json');
 const baselinePath = path.join(artifacts, 'baseline.html');
@@ -115,6 +115,8 @@ async function main() {
     const fullscreenCheck=async()=>require('./fullscreen-module-topics-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});
     const startupCheck=async()=>require('./presentation-startup-browser.cjs')({evaluate,click,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});
     if(process.argv.includes('--startup-only')){await startupCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' startup browser regression groups; no uncaught JavaScript exceptions.');return;}
+    const viewportCheck=async()=>require('./viewport-behavior-browser.cjs')({evaluate,view,navigate,click,cdp,base,pass});
+    if(process.argv.includes('--viewport-only')){await viewportCheck();assert.deepEqual(exceptions,[]);console.log('PASS: viewport and reference browser regressions; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--fullscreen-only')){await fullscreenCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' fullscreen browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--directories-only')){await directoryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' directory browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--picker-only')){await pickerCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' picker browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -263,7 +265,7 @@ async function main() {
     await click('.strategy-links-actions button[type="submit"]');
     assert.deepEqual(await evaluate('window.PresentationContent.current.model.items[0].articleIds'),['crosswalk','pedestrian']);
     assert.equal(await evaluate('window.PresentationContent.current.model.items[0].targetId'),'pedestrian');
-    assert.match(await evaluate('document.querySelector('+JSON.stringify(strategySelector+' .strategy-refs')+').textContent'),/§185 \/ §41/);
+    assert.match(await evaluate('document.querySelector('+JSON.stringify(strategySelector+' .strategy-refs')+').textContent'),/§ 185 \/ § 41/);
     await evaluate('window.generalRoadFormatting.setActive(true);window.generalRoadFormatting.select(document.querySelector('+JSON.stringify(strategySelector+' .strategy-title')+').dataset.editKey)');
     await evaluate('(()=>{const input=document.querySelector("[data-format-property=fontSize]");input.value="17";input.dispatchEvent(new Event("input",{bubbles:true}))})()');
     await evaluate('window.generalRoadFormatting.setActive(false)');await checkStrategyCamera();
@@ -362,8 +364,10 @@ async function main() {
       await view(scene.overview);
       assert.equal(await evaluate('document.getElementById("slide-title").textContent'), '整體佈設策略');
       assert.equal(await evaluate('document.querySelector(".compare-stage").dataset.comparisonKey'), scene.conditions);
+      assert.equal(await evaluate('document.querySelector(".compare-range").value'), '0');
       assert(await evaluate('Boolean(document.querySelector("#explanation .overview-list"))'));
       assert.equal(await evaluate('document.querySelectorAll(".condition-photo").length'), 0);
+      await click('[data-compare-position="50"]');
       const handle=await evaluate('(()=>{const r=document.querySelector(".compare-handle").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()');
       await dragFrom(handle.x,handle.y,-80,0);
       assert(await evaluate('Number(document.querySelector(".compare-range").value)<49'));

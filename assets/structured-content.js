@@ -6,7 +6,7 @@
   const element=(tag,className,text)=>{const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;};
   const editor=()=>window.visualLayoutEditor;
   const editing=()=>window.generalRoadEditor?.editing&&!editor()?.editing;
-  const articleLabel=article=>article.regLabel||'§'+article.reg;
+  const articleLabel=article=>article.regLabel||'§ '+article.reg;
   const articles=context=>context.api.data.articles.filter(article=>article.scenario===context.api.page.scenario);
   let linksDialog,linksForm,linksContext;
   function textNode(node,key,text,context,path) {
