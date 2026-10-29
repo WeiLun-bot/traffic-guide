@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "output_1027.pdf",
+    "printedPages": [
+      3,
+      4,
+      5
+    ],
+    "pdfPages": [
+      25,
+      26,
+      27
+    ]
+  },
+  "themes": [
+    {
+      "id": "M1",
+      "name": "車道配置與動線導引",
+      "question": "空間如何分配，路徑如何辨識？",
+      "description": "由車道、行進路徑到路側停放，建立道路通行的基本架構。"
+    },
+    {
+      "id": "M2",
+      "name": "路口管制",
+      "question": "誰先走，哪些方向可以通行？",
+      "description": "以路權安排、號誌與行向規則，建立路口通行的優先關係。"
+    },
+    {
+      "id": "M3",
+      "name": "行人、自行車、機車、公車",
+      "question": "不同用路人的需求如何滿足？",
+      "description": "依通行、穿越、轉向與停靠需求，組合對應的交通設施。"
+    },
+    {
+      "id": "M4",
+      "name": "危險警示與通行管制",
+      "question": "有哪些風險、限制或區域規則？",
+      "description": "補充跨情境的危險預告、通行限制、路段行為與區域管理。"
+    }
+  ],
+  "modules": [
+    {
+      "id": "M1-01",
+      "name": "路口動線導引",
+      "theme": "M1",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M1-01.1",
+          "name": "路口與路段車道配置"
+        },
+        {
+          "id": "M1-01.2",
+          "name": "附加車道"
+        }
+      ]
+    },
+    {
+      "id": "M1-02",
+      "name": "行車指示",
+      "theme": "M1",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M1-02.1",
+          "name": "路徑與地點指示"
+        }
+      ]
+    },
+    {
+      "id": "M1-03",
+      "name": "路側停車",
+      "theme": "M1",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M1-03.1",
+          "name": "路側停放與裝卸車位配置"
+        }
+      ]
+    },
+    {
+      "id": "M2-01",
+      "name": "停、讓管制",
+      "theme": "M2",
+      "ready": true,
+      "submodules": [
+        {
+          "id": "M2-01.1",
+          "name": "停管制"
+        },
+        {
+          "id": "M2-01.2",
+          "name": "讓管制"
+        }
+      ]
+    },
+    {
+      "id": "M2-02",
+      "name": "圓環管制",
+      "theme": "M2",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M2-02.1",
+          "name": "無號誌圓環"
+        }
+      ]
+    },
+    {
+      "id": "M2-03",
+      "name": "號誌化管制",
+      "theme": "M2",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M2-03.1",
+          "name": "號誌化路口"
+        }
+      ]
+    },
+    {
+      "id": "M2-04",
+      "name": "路口行向管制",
+      "theme": "M2",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M2-04.1",
+          "name": "行駛動線遵行與限制"
+        },
+        {
+          "id": "M2-04.2",
+          "name": "交通島通行導引"
+        },
+        {
+          "id": "M2-04.3",
+          "name": "單行道"
+        }
+      ]
+    },
+    {
+      "id": "M3-01",
+      "name": "行人",
+      "theme": "M3",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M3-01.1",
+          "name": "人行道標線"
+        },
+        {
+          "id": "M3-01.2",
+          "name": "路口穿越"
+        },
+        {
+          "id": "M3-01.3",
+          "name": "路段穿越"
+        }
+      ]
+    },
+    {
+      "id": "M3-02",
+      "name": "自行車",
+      "theme": "M3",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M3-02.1",
+          "name": "自行車道"
+        },
+        {
+          "id": "M3-02.2",
+          "name": "自行車穿越道"
+        }
+      ]
+    },
+    {
+      "id": "M3-03",
+      "name": "機車",
+      "theme": "M3",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M3-03.1",
+          "name": "機車道"
+        },
+        {
+          "id": "M3-03.2",
+          "name": "機車左轉（含直接左轉與兩段式左轉）"
+        }
+      ]
+    },
+    {
+      "id": "M3-04",
+      "name": "公車",
+      "theme": "M3",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M3-04.1",
+          "name": "公車專用道"
+        },
+        {
+          "id": "M3-04.2",
+          "name": "公車路側停靠站"
+        }
+      ]
+    },
+    {
+      "id": "M4-01",
+      "name": "危險警示",
+      "theme": "M4",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M4-01.1",
+          "name": "局部危險警示"
+        },
+        {
+          "id": "M4-01.2",
+          "name": "路段危險警示"
+        }
+      ]
+    },
+    {
+      "id": "M4-02",
+      "name": "通行限制",
+      "theme": "M4",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M4-02.1",
+          "name": "車種與通行條件限制"
+        }
+      ]
+    },
+    {
+      "id": "M4-03",
+      "name": "路段行為管制",
+      "theme": "M4",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M4-03.1",
+          "name": "速率管理"
+        },
+        {
+          "id": "M4-03.2",
+          "name": "超車、會車控制"
+        }
+      ]
+    },
+    {
+      "id": "M4-04",
+      "name": "區域管制",
+      "theme": "M4",
+      "ready": false,
+      "submodules": [
+        {
+          "id": "M4-04.1",
+          "name": "行人優先區"
+        },
+        {
+          "id": "M4-04.2",
+          "name": "通學區"
+        }
+      ]
+    }
+  ]
+}

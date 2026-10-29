@@ -9,12 +9,27 @@ const files=new Map([
   ['index.html','index.html'],
   ['一般道路情境-圖面放大版.html','index.html'],
   ['路口管制.html','路口管制.html'],
-  ['.nojekyll','.nojekyll']
+  ['assets/visual-editor-core.js','assets/visual-editor-core.js'],
+  ['assets/visual-editor-io.js','assets/visual-editor-io.js'],
+  ['assets/visual-editor.js','assets/visual-editor.js'],
+  ['assets/initial-image-view.js','assets/initial-image-view.js'],
+  ['assets/structured-content.js','assets/structured-content.js'],
+  ['assets/visual-editor.css','assets/visual-editor.css'],
+  ['layout/presentation-layout.json','layout/presentation-layout.json'],
+  ['.nojekyll','.nojekyll'],
+  ...require('../tools/module-release-files.cjs').map(name=>[name,name])
 ]);
 assert(fs.existsSync(site),'Run node tools/prepare-github-pages.cjs before this check');
 const siteInfo=fs.lstatSync(site);
 assert(siteInfo.isDirectory()&&!siteInfo.isSymbolicLink(),'_site must be a regular directory');
-assert.deepEqual(fs.readdirSync(site).sort(),[...files.keys()].sort(),'Published files differ from the release allowlist');
+function inventory(folder,prefix='') {
+  return fs.readdirSync(folder).flatMap(name=>{
+    const entry=path.join(folder,name),relative=prefix+name,info=fs.lstatSync(entry);
+    assert(!info.isSymbolicLink(),'Release entry cannot be a symbolic link: '+relative);
+    return info.isDirectory()?inventory(entry,relative+'/'):[relative];
+  });
+}
+assert.deepEqual(inventory(site).sort(),[...files.keys()].sort(),'Published files differ from the release allowlist');
 let scripts=0,resources=0,svgImages=0;
 const namespace='http://www.w3.org/2000/svg';
 function resource(value,label){
@@ -38,11 +53,11 @@ function validateResources(html,label){
 function attributes(text){
   const result={};for(const match of text.matchAll(/([\w:-]+)\s*=\s*(["'])([\s\S]*?)\2/g))result[match[1].toLowerCase()]=match[3];return result;
 }
-function parseScripts(html,label){
+function parseScripts(html,label,folder=site){
   const json=new Map();
   for(const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)){
     const attrs=attributes(match[1]);
-    if(attrs.type==='application/json')json.set(attrs.id||String(json.size),JSON.parse(match[2]));
+    if(attrs.type==='application/json')json.set(attrs.id||String(json.size),attrs['data-source']?JSON.parse(fs.readFileSync(path.join(folder,attrs['data-source']),'utf8')).legacyState:JSON.parse(match[2]));
     else {new vm.Script(match[2],{filename:label+':'+(attrs.id||scripts)});scripts++;}
   }
   assert(!/\/\*\s*(?:STYLES|DATA|SCRIPT|[A-Z_]+_(?:SCRIPT|STYLES))\s*\*\//.test(html),label+' contains an unresolved build placeholder');
@@ -55,12 +70,21 @@ for(const [name,source]of files){
   assert(info.isFile()&&!info.isSymbolicLink(),'Release entry must be a regular file: '+name);
   const bytes=fs.readFileSync(output);
   assert(bytes.equals(fs.readFileSync(path.join(root,source))),'Release changed source bytes: '+name);
+  if(name.endsWith('.js')){new vm.Script(bytes.toString('utf8'),{filename:name});scripts++;}
+  if(name==='layout/presentation-layout.json')require('../assets/visual-editor-core.js').parse(bytes.toString('utf8'));
+  if(name.endsWith('.svg'))validateResources(bytes.toString('utf8'),name);
   if(!name.endsWith('.html'))continue;
   const html=bytes.toString('utf8');validateResources(html,name);
   const json=parseScripts(html,name);
   if(name==='index.html'){indexHtml=html;indexJson=json;}
 }
 const data=indexJson.get('presentation-data');
+require('../assets/presentation-structure.js').validate(JSON.parse(fs.readFileSync(path.join(site,'data/presentations.json'),'utf8')));
+require('../assets/presentation-scenarios.js').validate(JSON.parse(fs.readFileSync(path.join(site,'data/scenarios/catalog.json'),'utf8')));
+const Modules=require('../assets/presentation-modules.js');
+const catalog=Modules.validateCatalog(JSON.parse(fs.readFileSync(path.join(site,'data/modules/catalog.json'),'utf8')));
+const moduleData=Modules.validateModule(JSON.parse(fs.readFileSync(path.join(site,'data/modules/M2-01.json'),'utf8')),catalog);
+for(const asset of Object.values(moduleData.assets))resource(asset.file,'Module '+moduleData.id);
 assert(data,'Published index is not the general-road presentation');
 assert.equal(data.chapters.length,5,'Chapter count changed');
 assert.deepEqual(data.scenarios.map(scene=>scene.id),['g1-01','g1-02','g1-03','g1-04'],'Scenario missing');
@@ -85,7 +109,7 @@ assert.equal(data.currentConditionsSource.file,'G1.pptx');
 assert.deepEqual(data.currentConditionsSource.includedSlides,[3,4,8,9,13,14,15,16],'Missing current-condition slides');
 assert.deepEqual(data.currentConditionsSource.excludedSlides,[5,6,10,11],'Other scenarios were included');
 const sourceIndex=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const sourceJson=parseScripts(sourceIndex,'source index');
+const sourceJson=parseScripts(sourceIndex,'source index',root);
 assert.deepEqual(indexJson.get('editor-saved-data'),sourceJson.get('editor-saved-data'),'Saved editor settings changed during publishing');
 assert(indexJson.get('editor-saved-data'),'Editor saved data is missing');
 assert(/<style\b[^>]*>[\s\S]+?<\/style>/.test(indexHtml),'Embedded presentation CSS is missing');
@@ -104,4 +128,4 @@ if(!artifactsOnly) {
   assert(/node\s+tests\/verify-github-pages\.cjs/.test(workflow),'Workflow skips release checks');
   assert(/uses:\s*actions\/deploy-pages@/.test(workflow)&&/pages:\s*write/.test(workflow)&&/id-token:\s*write/.test(workflow),'Pages deployment or permissions missing');
 }
-console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and saved edits; 5 chapters, 4 scenarios, 26 explanations; 28 embedded images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));
+console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and external JSON settings; 5 chapters, 4 scenarios, 26 explanations; 28 embedded images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));

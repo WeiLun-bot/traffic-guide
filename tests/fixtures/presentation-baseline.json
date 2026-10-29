@@ -1,0 +1,318 @@
+{
+  "styles": {
+    "anonymous": "040ce8cd319849a953d46354100c08e980966e86fca15b3d681ec39ced88d661",
+    "general-editor-styles": "b23bbca94ad091a0e1737ef64407eb90e333317eaa58f42372db1032f799a0eb",
+    "general-viewport-styles": "e56d897f5c923b259b06fa69cbb1d882076adc014781672b5aa3d62e4b88fd2a",
+    "general-formatting-styles": "5a198d0ebec80404e1233f28beb9bb45c9787e68e9b934f3d6b8df42cbc284e3",
+    "general-block-styles": "a8e7a2a1cf434b0a9d200ad68739c3751191a81c9763985ade469708f070102a",
+    "general-scenario-styles": "8b6f0635a084d39d714bc1348ebd8cf2da76031f3fc245873614f2bf029b173f",
+    "figure-focused-styles": "7cf65447133f63979991f4a922121664941b2a988f1896e13696c0847c292383",
+    "current-conditions-styles": "974db265f5e33f5e1c8f72d07f9b4abf1391c232162b549b4f7d83216210473b",
+    "overview-width-styles": "4f11af4c249d56a27b64bf7635546f21c07d4eb75c98d1658aa34707bac1a818",
+    "overview-heading-styles": "20445a22524f78c554d64825c095f6fce8ebd63338f637bd398fca377d57267e",
+    "article-explanation-type-styles": "8eecc69220d7b9a6605b66776cc2eef89ca2c6179a1b5c7f9dafb7251f29c12e"
+  },
+  "scripts": {
+    "general-page-templates": "e0453b77ce53d4eb3d4452980c3f533498ad4d23f77fbe72b3c9779e9f942e81",
+    "general-image-viewport": "9610d0ed81f7fc1c98e770d91c39db3e3a97b019fc69f130545f4890848af03e",
+    "general-explanation-blocks": "6ae7a4e2b1246ded2532fd56cbcf148679e7677c27ca20994678c2fb3fa3b5f8",
+    "general-formatting": "1045de2e99cf2acf186ce2a93d99fe7d4599bf7308750688440be46f2d865b35",
+    "general-editor": "19507ead80cf03cb0c94cdef756d4074f532cbe20f6d48661f28a50c25291fb3",
+    "general-current-conditions": "84a89eacac9302c6757407635f4f93076a18cb1c0cce153014a9f4fabb4efa3e",
+    "general-scenario-structure": "3ac481cbf4c0c147d31cfc52dee0022ba49602e0d214f7717d05b10e7780cd79",
+    "anonymous": "22aa53e148498ae4bb7566e9e5a822a741e3fc613db8a60e3b1be3cde6ca6c5b"
+  },
+  "data": "82ca9a9ab9d81036745b44f0a22b6cb68d8952d85cf33db3546d97422d39dc18",
+  "legacyState": {
+    "version": 1,
+    "updatedAt": 1793161345250,
+    "texts": {
+      "g101-conditions|0|text-4": "次要道路僅設「停」標字。",
+      "g101-conditions|0|text-5": "前方設有行穿線，建議加設「當心行人」。",
+      "g101-conditions|0|text-8": "周邊學校為國中，「當心兒童」的適用情形應重新檢視。",
+      "g101-conditions|0|text-9": "次要道路未設「最高速限」標誌。"
+    },
+    "images": {},
+    "highlights": {
+      "article:speed": {
+        "crop": [
+          334.2,
+          669.8,
+          264.2,
+          732.2
+        ]
+      }
+    },
+    "disabledHighlights": {},
+    "styles": {},
+    "frames": {
+      "edge|frame|0": {
+        "width": 100
+      },
+      "crosswalk|frame|0": {
+        "width": 100
+      },
+      "arrows|frame|0": {
+        "width": 100
+      },
+      "guidance|frame|0": {
+        "width": 100
+      },
+      "taper|frame|0": {
+        "width": 100
+      },
+      "parking|frame|0": {
+        "width": 100
+      },
+      "pedestrian|frame|0": {
+        "width": 100
+      },
+      "speed|frame|0": {
+        "width": 100
+      },
+      "school|frame|0": {
+        "width": 100
+      },
+      "rural-stopline|frame|0": {
+        "width": 100
+      },
+      "rural-stopword|frame|0": {
+        "width": 100
+      },
+      "rural-crosswalk|frame|0": {
+        "width": 100
+      },
+      "rural-stop-sign|frame|0": {
+        "width": 100
+      },
+      "rural-warning|frame|0": {
+        "width": 100
+      }
+    },
+    "layouts": {
+      "edge": {
+        "split": 72,
+        "gap": 18
+      },
+      "crosswalk": {
+        "split": 72,
+        "gap": 18
+      },
+      "arrows": {
+        "split": 72,
+        "gap": 18
+      },
+      "guidance": {
+        "split": 72,
+        "gap": 18
+      },
+      "taper": {
+        "split": 72,
+        "gap": 18
+      },
+      "parking": {
+        "split": 72,
+        "gap": 18
+      },
+      "pedestrian": {
+        "split": 72,
+        "gap": 18
+      },
+      "speed": {
+        "split": 72,
+        "gap": 18
+      },
+      "school": {
+        "split": 72,
+        "gap": 18
+      },
+      "rural-stopline": {
+        "split": 72,
+        "gap": 18
+      },
+      "rural-stopword": {
+        "split": 72,
+        "gap": 18
+      },
+      "rural-crosswalk": {
+        "split": 72,
+        "gap": 18
+      },
+      "rural-stop-sign": {
+        "split": 72,
+        "gap": 18
+      },
+      "rural-warning": {
+        "split": 72,
+        "gap": 18
+      }
+    },
+    "blocks": {
+      "edge|1": {
+        "added": [],
+        "removed": [
+          "metric"
+        ],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "crosswalk|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "arrows|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "guidance|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "taper|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "parking|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "pedestrian|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "speed|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "school|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "rural-stopline|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "rural-stopword|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "rural-crosswalk|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "rural-stop-sign|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      },
+      "rural-warning|1": {
+        "added": [],
+        "removed": [],
+        "decor": {
+          "metric": {
+            "border": false,
+            "background": false
+          }
+        }
+      }
+    },
+    "comparisonTransforms": {
+      "g101-conditions": {
+        "before": {
+          "x": -9.417788097461004,
+          "y": 5.1224007370745674,
+          "scaleX": 1.2000000000000002,
+          "scaleY": 1.2,
+          "angle": -0.7
+        },
+        "after": {
+          "x": -6.917077586427007,
+          "y": 0,
+          "scaleX": 1.0000000000000002,
+          "scaleY": 1,
+          "angle": -0.3
+        }
+      }
+    },
+    "pages": [],
+    "pageOrder": [],
+    "templateMigrations": {
+      "edgeTypography": 1
+    }
+  }
+}

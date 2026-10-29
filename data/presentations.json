@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "title": "道路交通標誌標線號誌設置參考指引",
+  "presentations": [
+    {
+      "id": "results", "code": "01", "title": "三年成果與模組化整體架構", "entry": "results-intro", "footer": "RESEARCH RESULTS & FRAMEWORK",
+      "chapters": [{"id": "results-intro", "code": "00", "name": "緒論", "entry": "results-intro", "empty": true}]
+    },
+    {
+      "id": "modules", "code": "02", "title": "交通管制設施模組設計", "entry": "modules-structure", "footer": "TRAFFIC CONTROL FACILITY MODULES",
+      "source": {"file": "output_1027.pdf", "section": "第 3 章 交通管制設施功能模組，3.1–3.4"},
+      "chapters": [
+        {"id": "modules-intro", "code": "00", "name": "緒論", "entry": "modules-structure"},
+        {"id": "modules-M1", "code": "01", "name": "車道配置與動線導引", "entry": "modules-M1", "theme": "M1"},
+        {"id": "modules-M2", "code": "02", "name": "路口管制", "entry": "modules-M2", "theme": "M2"},
+        {"id": "modules-M3", "code": "03", "name": "行人、自行車、機車、公車", "entry": "modules-M3", "theme": "M3"},
+        {"id": "modules-M4", "code": "04", "name": "危險警示與通行管制", "entry": "modules-M4", "theme": "M4"}
+      ]
+    },
+    {
+      "id": "general", "code": "03", "title": "一般道路情境", "entry": "cover", "footer": "GENERAL ROAD SCENARIOS",
+      "chapters": [
+        {"id": "intro", "code": "00", "name": "緒論", "entry": "cover"},
+        {"id": "g1", "code": "01", "name": "無號誌三岔", "entry": "g1-scenarios"},
+        {"id": "g2", "code": "02", "name": "號誌化三岔", "entry": "g2"},
+        {"id": "g3", "code": "03", "name": "無號誌四岔", "entry": "g3"},
+        {"id": "g4", "code": "04", "name": "號誌化四岔", "entry": "g4"}
+      ]
+    },
+    {
+      "id": "complex", "code": "04", "title": "複雜道路情境", "entry": "complex-intro", "footer": "COMPLEX ROAD SCENARIOS",
+      "source": {"file": "output_1027.pdf", "section": "第 5 章，5.1–5.4"},
+      "chapters": [
+        {"id": "complex-intro", "code": "00", "name": "緒論", "entry": "complex-intro", "directory": true},
+        {"id": "complex-c1", "code": "01", "name": "平面交叉", "entry": "complex-c1", "empty": true},
+        {"id": "complex-c2", "code": "02", "name": "交流道銜接部分", "entry": "complex-c2", "empty": true},
+        {"id": "complex-c3", "code": "03", "name": "公路與軌道系統交叉", "entry": "complex-c3", "empty": true},
+        {"id": "complex-c4", "code": "04", "name": "路段", "entry": "complex-c4", "empty": true}
+      ]
+    }
+  ]
+}

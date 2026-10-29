@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "id": "M2-01",
+  "title": "停、讓管制",
+  "source": {
+    "file": "output_1027.pdf",
+    "printedPages": [
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "pdfPages": [
+      68,
+      69,
+      70,
+      71,
+      72,
+      73
+    ]
+  },
+  "assets": {
+    "stop-basic": {
+      "file": "materials/03-modules/M2-01/stop-basic.png",
+      "width": 963,
+      "height": 450,
+      "label": "停管制代表型",
+      "caption": "圖 3.19 停管制路口範例",
+      "credit": "依提供之 M2-01 原圖"
+    },
+    "stop-crosswalk": {
+      "file": "materials/03-modules/M2-01/stop-crosswalk.png",
+      "width": 978,
+      "height": 471,
+      "label": "停管制搭配行穿線",
+      "caption": "圖 3.20 停管制路口──搭配行穿線",
+      "credit": "依提供之 M2-01 原圖"
+    },
+    "stop-refuge": {
+      "file": "materials/03-modules/M2-01/stop-refuge.svg",
+      "width": 355,
+      "height": 190,
+      "label": "停管制搭配庇護島",
+      "caption": "庇護空間補充圖例",
+      "credit": "提供之 M2-01 SVG；作為原稿庇護空間段落的補充圖例"
+    },
+    "stop-curb": {
+      "file": "materials/03-modules/M2-01/stop-curb.svg",
+      "width": 311,
+      "height": 165,
+      "label": "停管制路緣修飾",
+      "caption": "圖 3.21 停管制路口路緣修飾圖",
+      "credit": "依提供之 M2-01 原圖"
+    },
+    "yield-basic": {
+      "file": "materials/03-modules/M2-01/yield-basic.png",
+      "width": 975,
+      "height": 444,
+      "label": "讓管制代表型",
+      "caption": "圖 3.22 讓管制路口範例",
+      "credit": "依提供之 M2-01 原圖"
+    },
+    "yield-crosswalk": {
+      "file": "materials/03-modules/M2-01/yield-crosswalk.png",
+      "width": 981,
+      "height": 507,
+      "label": "讓管制搭配行穿線",
+      "caption": "圖 3.23 讓管制路口──搭配行穿線",
+      "credit": "本圖呈現倒三角形設於行穿線上游的型式"
+    },
+    "yield-buffer": {
+      "file": "materials/03-modules/M2-01/yield-buffer.png",
+      "width": 239,
+      "height": 519,
+      "label": "鄉區道路讓路線退縮示意",
+      "caption": "圖 3.24 鄉區道路讓路線退縮示意圖",
+      "credit": "原稿引自 Manual of Traffic Signs and Markings [13]"
+    },
+    "yield-photo": {
+      "file": "materials/03-modules/M2-01/yield-photo.png",
+      "width": 814,
+      "height": 458,
+      "label": "鄉區道路讓路線退縮實景",
+      "caption": "圖 3.24 鄉區道路讓路線退縮實景圖",
+      "credit": "原稿標示來源：Google Street View [11]"
+    }
+  },
+  "pages": [
+    {
+      "id": "m201-overview",
+      "section": "overview",
+      "title": "M2-01 停、讓管制",
+      "intro": "以標誌宣告通行優先關係，再由標線明確化停讓位置與路口配置。",
+      "assets": [
+        "stop-basic",
+        "yield-basic"
+      ],
+      "points": [
+        {
+          "id": "purpose",
+          "title": "先建立主次道路關係",
+          "text": "停、讓管制均以幹道車輛優先通行為核心；標誌、標線及視距條件需一起檢視。"
+        },
+        {
+          "id": "stop",
+          "title": "M2-01.1 停管制",
+          "text": "以停車再開標誌、停止線與停標字等設施，示範停讓幹道車輛的位置及配置。"
+        },
+        {
+          "id": "yield",
+          "title": "M2-01.2 讓管制",
+          "text": "以讓路標誌、讓路線與相關標線，提醒減速並讓幹道車輛先行。"
+        },
+        {
+          "id": "read",
+          "title": "閱讀方式",
+          "text": "先看現況與議題，再逐項檢視基本配置，最後對照行穿線、庇護空間、槽化與高速環境等延伸應用。"
+        }
+      ],
+      "sourcePages": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "mode": "pair",
+      "references": [
+        "16",
+        "58",
+        "59",
+        "149",
+        "170",
+        "172",
+        "177",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-stop-issues",
+      "submoduleId": "M2-01.1",
+      "section": "stop",
+      "title": "停管制：先檢視停車位置與視距",
+      "intro": "停止線的位置，應與實際觀察主要道路來車的需求一起檢視。",
+      "assets": [
+        "stop-basic"
+      ],
+      "points": [
+        {
+          "id": "sight",
+          "title": "停在停止線，是否看得見來車？",
+          "text": "原稿指出，停管制路口的停止線若過於退縮，且視距三角受限，駕駛人即使依線停車，仍可能無法充分觀察主要道路來車。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              380,
+              65,
+              295,
+              95
+            ]
+          }
+        },
+        {
+          "id": "notice",
+          "title": "標誌與停標字的提醒時機不同",
+          "text": "停車再開標誌設於路側，可在較遠處提醒前方為停管制路口；路面上的「停」標字，則主要於接近路口時提醒。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              710,
+              155,
+              190,
+              180
+            ]
+          }
+        },
+        {
+          "id": "composition",
+          "title": "把設施放在一起理解",
+          "text": "基本配置包括停車再開標誌、停止線、停標字及路口行車導引線；各設施的提示目的與相對位置需一併說明。"
+        },
+        {
+          "id": "standards",
+          "title": "視距判別的原稿依據",
+          "text": "原稿另指向《交工規範》解說 C6.3；市區道路參照《市區道路及附屬工程設計規範》，省道公路參照《公路路線設計規範》第 3.3 節。"
+        }
+      ],
+      "sourcePages": [
+        46
+      ],
+      "references": [
+        "58",
+        "170",
+        "177",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-stop-layout",
+      "submoduleId": "M2-01.1",
+      "section": "stop",
+      "title": "停管制：基本配置逐點看",
+      "intro": "點選下方項目，對照各設施在代表圖中的角色。",
+      "assets": [
+        "stop-basic"
+      ],
+      "points": [
+        {
+          "id": "sign",
+          "title": "停車再開標誌",
+          "text": "在臨近路口駕駛人可見的條件下，盡可能接近幹道，強化停讓對象為幹道車輛的概念。原則設於右側，視需要增設於交通島或左側；以標誌優先宣告管制，減少前車、停車、濕潤、磨耗與視角壓縮等因素的影響。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              710,
+              155,
+              190,
+              180
+            ]
+          }
+        },
+        {
+          "id": "line",
+          "title": "停止線與視野參考線",
+          "text": "原稿以駕駛能觀察主要道路來車的位置為原則，一般可與幹道路面邊線延伸線切齊；並說明此概念與其所引《維也納道路標誌與號誌公約》相符。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              463,
+              79,
+              205,
+              32
+            ]
+          }
+        },
+        {
+          "id": "buffer",
+          "title": "鄉區高速環境的緩衝",
+          "text": "在視距允許時，可將支道停止線設於距幹道路面邊線延伸線 1.5 m 處，形成主次道路交會的緩衝空間；須連同原稿的環境與視距條件判讀。"
+        },
+        {
+          "id": "word",
+          "title": "停標字與停止線的距離",
+          "text": "停標字佈設於停止線上游，原稿列出的間距為 2 m 至 15 m。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              493,
+              158,
+              64,
+              96
+            ]
+          }
+        },
+        {
+          "id": "guide",
+          "title": "路口行車導引線",
+          "text": "以導引線標示幹道路面邊線的延伸，協助次要道路車輛掌握觀察來車的位置；有行人或自行車穿越道線時，亦作為視距參考線。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              230,
+              79,
+              228,
+              29
+            ]
+          }
+        },
+        {
+          "id": "walk",
+          "title": "行人穿越位置",
+          "text": "代表圖於緣石開口處以淺色鋪面示意行人可穿越的參考範圍，用於說明行人動線與停管制設施配置的關係。"
+        }
+      ],
+      "sourcePages": [
+        47
+      ],
+      "references": [
+        "16",
+        "58",
+        "170",
+        "177",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-stop-crosswalk",
+      "submoduleId": "M2-01.1",
+      "section": "stop",
+      "title": "停管制搭配行穿線",
+      "intro": "先停讓行人，再到能觀察幹道來車的位置判斷通行。",
+      "assets": [
+        "stop-crosswalk"
+      ],
+      "points": [
+        {
+          "id": "pedestrian",
+          "title": "停止線的主要功能有所區分",
+          "text": "有行人穿越道線時，停止線用來指示停讓行人的位置；此處未必是觀察左右來車的最佳位置，駕駛可能需再前移至適當位置觀察。",
+          "focus": {
+            "asset": "stop-crosswalk",
+            "rect": [
+              375,
+              130,
+              234,
+              180
+            ]
+          }
+        },
+        {
+          "id": "second",
+          "title": "保留二次觀察的位置",
+          "text": "原稿說明，設有行人或自行車穿越道線時，應增設路面邊線延伸線作為視距參考線，供車輛二次停止觀察左右來車。",
+          "focus": {
+            "asset": "stop-crosswalk",
+            "rect": [
+              258,
+              54,
+              425,
+              33
+            ]
+          }
+        },
+        {
+          "id": "sign",
+          "title": "標誌設於行穿線下游",
+          "text": "原稿以維持停讓幹道車輛的意義為目的，將停車再開標誌設於行穿線下游，提醒停讓行人後起駛的駕駛再次停讓幹道車輛。",
+          "focus": {
+            "asset": "stop-crosswalk",
+            "rect": [
+              713,
+              171,
+              188,
+              176
+            ]
+          }
+        },
+        {
+          "id": "gap",
+          "title": "停止線與枕木紋行穿線的淨距",
+          "text": "原稿以 2 m 至 3 m 為原則，受現地條件限制可調整，但不得少於 1 m；尺寸與適用條件一併保留。",
+          "focus": {
+            "asset": "stop-crosswalk",
+            "rect": [
+              484,
+              221,
+              116,
+              90
+            ]
+          }
+        }
+      ],
+      "sourcePages": [
+        47,
+        48
+      ],
+      "references": [
+        "58",
+        "170",
+        "185",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-stop-extensions",
+      "submoduleId": "M2-01.1",
+      "section": "stop",
+      "title": "庇護空間與路緣槽化",
+      "intro": "以原圖切換檢視行人分段穿越與轉角車流軌跡。",
+      "assets": [
+        "stop-refuge",
+        "stop-curb"
+      ],
+      "points": [
+        {
+          "id": "refuge",
+          "title": "幾何空間充足時增設庇護空間",
+          "text": "原稿建議在路口幾何空間充足時增設行人庇護島，提升行人分段通行的安全，並以實體設施提醒駕駛注意行人穿越需求。",
+          "focus": {
+            "asset": "stop-refuge"
+          }
+        },
+        {
+          "id": "curb",
+          "title": "未設人行道時的路緣修飾",
+          "text": "路緣轉角未設實體或標線型人行道時，原稿建議以槽化線避免轉彎軌跡偏離既定車道，並確保視距。",
+          "focus": {
+            "asset": "stop-curb"
+          }
+        },
+        {
+          "id": "vehicle",
+          "title": "曲率配合設計車種",
+          "text": "槽化線線形曲率應配合設計車種的車流軌跡進行幾何劃設。庇護島 SVG 為本次提供的補充圖例；路緣修飾圖對應原稿圖 3.21。",
+          "focus": {
+            "asset": "stop-curb"
+          }
+        }
+      ],
+      "sourcePages": [
+        48
+      ],
+      "references": [
+        "170",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-stop-warning",
+      "submoduleId": "M2-01.1",
+      "section": "stop",
+      "title": "停管制上游：提早做停車準備",
+      "intro": "當視距或速度條件使駕駛可能無法及時、安全停止時，檢視上游預告需求。",
+      "assets": [
+        "stop-basic"
+      ],
+      "points": [
+        {
+          "id": "condition",
+          "title": "視距不足或車速較高",
+          "text": "原稿針對停管制臨近路口上游的視距不足或車速較高等情況，說明可能產生無法及時或安全停止的問題。"
+        },
+        {
+          "id": "advance",
+          "title": "上游預告的目的",
+          "text": "可在臨近路口上游設置預告性標誌，提示用路人預做停車準備。",
+          "focus": {
+            "asset": "stop-basic",
+            "rect": [
+              710,
+              155,
+              190,
+              180
+            ]
+          }
+        },
+        {
+          "id": "review",
+          "title": "回到完整配置檢核",
+          "text": "上游預告與路口處的停車再開標誌、停止線、停標字及視距條件應一起檢視，延伸應用仍保留其適用條件。"
+        }
+      ],
+      "sourcePages": [
+        48
+      ],
+      "references": [
+        "58"
+      ]
+    },
+    {
+      "id": "m201-yield-issues",
+      "submoduleId": "M2-01.2",
+      "section": "yield",
+      "title": "讓管制：先把讓行對象說清楚",
+      "intro": "讓路標誌與讓路線共同提示減速，並讓幹道車輛優先通行。",
+      "assets": [
+        "yield-basic"
+      ],
+      "points": [
+        {
+          "id": "recognition",
+          "title": "讓路線的認知與提醒效果",
+          "text": "原稿指出，白色倒三角形用於提醒接近讓管制路口的駕駛減速並讓幹道先行；若對標線認知不足，其提示容易被忽略。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              502,
+              173,
+              58,
+              105
+            ]
+          }
+        },
+        {
+          "id": "consistency",
+          "title": "雙白虛線與行穿線的判讀一致性",
+          "text": "原稿討論第 172 條對未設行人穿越道線時得加繪兩條平行白虛線的規定，並指出現地在搭配行穿線時可能有配置及功能判讀不一致的議題。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              478,
+              80,
+              188,
+              45
+            ]
+          }
+        },
+        {
+          "id": "notice",
+          "title": "標誌與路面標線的提醒時機",
+          "text": "讓路標誌設於路側，可在較遠處宣告讓管制；讓路線主要在接近路口時提示應讓幹道車輛先行。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              715,
+              167,
+              232,
+              201
+            ]
+          }
+        },
+        {
+          "id": "composition",
+          "title": "一起檢視組成設施",
+          "text": "本子模組以讓路標誌、讓路線、雙白虛線及路口行車導引線等設施，說明讓管制的配置關係。"
+        }
+      ],
+      "sourcePages": [
+        49
+      ],
+      "references": [
+        "59",
+        "149",
+        "172",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-yield-layout",
+      "submoduleId": "M2-01.2",
+      "section": "yield",
+      "title": "讓管制：基本配置逐點看",
+      "intro": "標誌宣告管制，倒三角形與白虛線協助辨識路口配置。",
+      "assets": [
+        "yield-basic"
+      ],
+      "points": [
+        {
+          "id": "sign",
+          "title": "讓路標誌",
+          "text": "在駕駛人可見的條件下，盡可能接近幹道，以清楚表達讓行幹道車輛。原則設於右側，視需要增設交通島或左側；原稿以標誌優先宣告管制，降低前車、停車、濕潤與磨耗等因素的影響。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              715,
+              167,
+              232,
+              201
+            ]
+          }
+        },
+        {
+          "id": "triangle",
+          "title": "白色倒三角形與平行白虛線",
+          "text": "原稿列出的兩者距離為 2 m 至 2.5 m；平行白虛線連接路面邊線的延伸劃設。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              477,
+              79,
+              190,
+              207
+            ]
+          }
+        },
+        {
+          "id": "pedestrian",
+          "title": "未設行穿線時的穿越位置",
+          "text": "原稿以兩條平行白虛線引導行人穿越，通行位置以連結路緣斜坡為準，對照圖 3.22 判讀。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              478,
+              80,
+              188,
+              45
+            ]
+          }
+        },
+        {
+          "id": "guide",
+          "title": "路口行車導引線",
+          "text": "原稿建議以導引線呈現主要道路路面邊線的延伸，協助次要道路車輛在進入路口前觀察來車，並提醒減速慢行。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              235,
+              79,
+              244,
+              32
+            ]
+          }
+        }
+      ],
+      "sourcePages": [
+        49,
+        50
+      ],
+      "references": [
+        "16",
+        "59",
+        "149",
+        "172",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-yield-crosswalk",
+      "submoduleId": "M2-01.2",
+      "section": "yield",
+      "title": "讓管制搭配行穿線",
+      "intro": "停止線、讓路線與讓路標誌，分別對應行人及幹道車輛的停讓需求。",
+      "assets": [
+        "yield-crosswalk"
+      ],
+      "points": [
+        {
+          "id": "stop",
+          "title": "行穿線上游的停止線",
+          "text": "原稿說明，搭配枕木紋行穿線時，於其上游 2 m 至 3 m 處劃設停止線。",
+          "focus": {
+            "asset": "yield-crosswalk",
+            "rect": [
+              479,
+              308,
+              94,
+              35
+            ]
+          }
+        },
+        {
+          "id": "room",
+          "title": "下游空間充足時",
+          "text": "若行穿線下游足以配置白色倒三角形與平行白虛線，原稿以設於行穿線下游為原則。本次原圖未另呈現此型式，先保留文字說明。"
+        },
+        {
+          "id": "limited",
+          "title": "下游空間不足時",
+          "text": "下游受限時，原稿將白色倒三角形改設於行穿線或停止線上游。本頁提供的圖 3.23 呈現此種上游配置型式。",
+          "focus": {
+            "asset": "yield-crosswalk",
+            "rect": [
+              503,
+              359,
+              55,
+              118
+            ]
+          }
+        },
+        {
+          "id": "sign",
+          "title": "讓路標誌維持於行穿線下游",
+          "text": "維持讓行幹道車輛的意義，提醒停讓行人後重新起駛的駕駛，再次讓行幹道車輛。",
+          "focus": {
+            "asset": "yield-crosswalk",
+            "rect": [
+              722,
+              179,
+              229,
+              204
+            ]
+          }
+        }
+      ],
+      "sourcePages": [
+        50,
+        51
+      ],
+      "notice": "原圖示範：下游空間不足型",
+      "references": [
+        "59",
+        "170",
+        "172",
+        "185"
+      ]
+    },
+    {
+      "id": "m201-yield-extensions",
+      "submoduleId": "M2-01.2",
+      "section": "yield",
+      "title": "讓管制的庇護與槽化應用",
+      "intro": "沿用共通設計概念，管制標誌與標線仍依讓管制條件配置。",
+      "assets": [
+        "stop-refuge",
+        "stop-curb"
+      ],
+      "points": [
+        {
+          "id": "refuge",
+          "title": "庇護空間",
+          "text": "幾何空間充足時，原稿建議增設行人庇護島，提升分段通行安全，並提醒駕駛注意行人穿越需求。",
+          "focus": {
+            "asset": "stop-refuge"
+          }
+        },
+        {
+          "id": "curb",
+          "title": "路緣轉角的槽化修飾",
+          "text": "未設實體或標線型人行道時，以槽化線協助約束轉彎軌跡並確保視距；線形曲率仍配合設計車種。原稿在讓管制段落亦參照停管制的圖 3.21。",
+          "focus": {
+            "asset": "stop-curb"
+          }
+        },
+        {
+          "id": "reference",
+          "title": "圖例的使用範圍",
+          "text": "附圖使用停管制圖例，供庇護與槽化概念參照；圖中的停車再開標誌不作為讓管制的牌面示例。",
+          "focus": {
+            "asset": "stop-curb"
+          }
+        }
+      ],
+      "sourcePages": [
+        50,
+        51
+      ],
+      "notice": "共通概念參照：附圖為停管制圖例",
+      "references": [
+        "172",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-yield-buffer",
+      "submoduleId": "M2-01.2",
+      "section": "yield",
+      "title": "鄉區高速環境：讓路線退縮",
+      "intro": "在視距允許的條件下，以退縮建立主次道路交會的緩衝空間。",
+      "assets": [
+        "yield-buffer",
+        "yield-photo"
+      ],
+      "points": [
+        {
+          "id": "condition",
+          "title": "先確認環境與視距條件",
+          "text": "原稿針對鄉區幹道車速較高的情況，並以視距允許為條件，說明讓路線與路面邊線延伸線之間的緩衝配置。"
+        },
+        {
+          "id": "distance",
+          "title": "1.5 m 的緩衝配置",
+          "text": "原稿將支道讓路線後退設於距幹道路面邊線延伸線 1.5 m 處，以在主次道路交會處建立緩衝空間。",
+          "focus": {
+            "asset": "yield-buffer",
+            "rect": [
+              26,
+              145,
+              190,
+              80
+            ]
+          }
+        },
+        {
+          "id": "photo",
+          "title": "由示意對照實景",
+          "text": "示意圖與實景照片依原稿圖 3.24 並列；尺寸及適用條件以原稿說明判讀，實景照片用於觀察配置關係。原稿標示示意圖來源為 Manual of Traffic Signs and Markings [13]，照片來源為 Google Street View [11]。",
+          "focus": {
+            "asset": "yield-photo"
+          }
+        }
+      ],
+      "sourcePages": [
+        51
+      ],
+      "mode": "pair",
+      "references": [
+        "172",
+        "189"
+      ]
+    },
+    {
+      "id": "m201-applications",
+      "section": "applications",
+      "title": "從功能模組，回到完整路口",
+      "intro": "同一項停讓管制功能，可依道路條件與行人需求形成不同的情境配置。",
+      "assets": [],
+      "points": [
+        {
+          "id": "stop",
+          "title": "停管制的適用情境",
+          "text": "原稿列有 G1-01～G1-06 及 G3-01～G3-04；其中 G1-01～G1-04 已有本簡報的情境內容，可直接查看整體佈設策略。"
+        },
+        {
+          "id": "yield",
+          "title": "讓管制的適用情境",
+          "text": "原稿列有 G1-04、C2-01、C3-01、C4-04。已完成的 G1-04 可直接查看；其他情境保留名稱與代碼作為後續擴充索引。"
+        },
+        {
+          "id": "return",
+          "title": "保留閱讀脈絡",
+          "text": "從情境的模組標籤可進入對應模組；由模組的情境應用查看情境時，可使用「返回 M2-01」回到模組。"
+        }
+      ],
+      "sourcePages": [
+        46,
+        49
+      ],
+      "references": [
+        "16",
+        "58",
+        "59",
+        "149",
+        "170",
+        "172",
+        "177",
+        "189"
+      ]
+    }
+  ],
+  "referenceNames": {
+    "58": "停車再開標誌",
+    "59": "讓路標誌",
+    "149": "雙白虛線",
+    "170": "停止線",
+    "172": "讓路線",
+    "177": "停標字",
+    "189": "路口行車導引線"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M2-01.1",
+      "stages": [
+        {"id":"issues","pageId":"m201-stop-issues","title":"現況議題與相關條文"},
+        {"id":"diagram","pageId":"m201-stop-layout","title":"圖例說明","topics":[
+          {"id":"sign","label":"停車再開標誌","sourcePageId":"m201-stop-layout","pointIds":["sign"]},
+          {"id":"line","label":"停止線佈設位置","sourcePageId":"m201-stop-layout","pointIds":["line","buffer","word"]},
+          {"id":"guide","label":"路口行車導引線","sourcePageId":"m201-stop-layout","pointIds":["guide"]},
+          {"id":"walk","label":"行人穿越處","sourcePageId":"m201-stop-layout","pointIds":["walk"]}
+        ]},
+        {"id":"extensions","pageId":"m201-stop-extensions","title":"延伸應用","topics":[
+          {"id":"crosswalk","label":"行人穿越道線","sourcePageId":"m201-stop-crosswalk"},
+          {"id":"refuge","label":"庇護空間","sourcePageId":"m201-stop-extensions","pointIds":["refuge"],"assets":["stop-refuge"]},
+          {"id":"curb","label":"路緣轉角槽化","sourcePageId":"m201-stop-extensions","pointIds":["curb","vehicle"],"assets":["stop-curb"]},
+          {"id":"warning","label":"路口預告標誌","sourcePageId":"m201-stop-warning","assets":[]}
+        ]}
+      ]
+    },
+    {
+      "submoduleId": "M2-01.2",
+      "stages": [
+        {"id":"issues","pageId":"m201-yield-issues","title":"現況議題與相關條文"},
+        {"id":"diagram","pageId":"m201-yield-layout","title":"圖例說明","topics":[
+          {"id":"sign","label":"讓路標誌","sourcePageId":"m201-yield-layout","pointIds":["sign"]},
+          {"id":"line","label":"讓路線佈設原則","sourcePageId":"m201-yield-layout","pointIds":["triangle","pedestrian"]},
+          {"id":"guide","label":"路口行車導引線","sourcePageId":"m201-yield-layout","pointIds":["guide"]}
+        ]},
+        {"id":"extensions","pageId":"m201-yield-extensions","title":"延伸應用","topics":[
+          {"id":"refuge","label":"庇護空間","sourcePageId":"m201-yield-extensions","pointIds":["refuge"],"assets":["stop-refuge"]},
+          {"id":"crosswalk","label":"行穿線搭配配置","sourcePageId":"m201-yield-crosswalk"},
+          {"id":"curb","label":"路緣轉角槽化","sourcePageId":"m201-yield-extensions","pointIds":["curb","reference"],"assets":["stop-curb"]},
+          {"id":"buffer","label":"高速環境緩衝空間","sourcePageId":"m201-yield-buffer"}
+        ]}
+      ]
+    }
+  ],
+  "applications": {
+    "stop": [
+      "G1-01",
+      "G1-02",
+      "G1-03",
+      "G1-04",
+      "G1-05",
+      "G1-06",
+      "G3-01",
+      "G3-02",
+      "G3-03",
+      "G3-04"
+    ],
+    "yield": [
+      "G1-04",
+      "C2-01",
+      "C3-01",
+      "C4-04"
+    ]
+  }
+}

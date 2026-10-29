@@ -22,6 +22,7 @@ html=html.replace('/* STYLES */',()=>fs.readFileSync(path.join(source,'presentat
   .replace('/* DATA */',()=>JSON.stringify(deck).replace(/</g,'\u003c'))
   .replace('/* SCRIPT */',()=>fs.readFileSync(path.join(source,'presentation.js'),'utf8'));
 if(/\/\* (STYLES|DATA|SCRIPT|EDITOR_STYLES|TEMPLATES|EDITOR_SCRIPT|VIEWPORT_STYLES|VIEWPORT_SCRIPT|FORMATTING_STYLES|FORMATTING_SCRIPT|BLOCK_STYLES|BLOCK_SCRIPT|SCENARIO_STYLES|SCENARIO_SCRIPT) \*\//.test(html)) throw new Error('Unresolved build token');
+html=require('./install-visual-editor.cjs').integrate(html.replace(/\r\n/g,'\n'));
 const output=path.join(root,'index.html');
 fs.writeFileSync(output,html,'utf8');
 fs.writeFileSync(path.join(content,'source-manifest.json'),JSON.stringify(manifest,null,2)+'\n','utf8');
