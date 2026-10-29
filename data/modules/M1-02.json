@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "id": "M1-02",
+  "title": "行車指示",
+  "source": {
+    "file": "02-route-guidance.typ",
+    "section": "M1-02「行車指示」",
+    "notes": [
+      "設置位置依《道路指示標誌設置參考手冊（100年版）》；市區道路以距路口 150 m 以內為原則。"
+    ]
+  },
+  "assets": {
+    "m102-offset": {
+      "file": "materials/03-modules/M1-02/M1-02_路徑與地點指示代表型1_錯位T字.svg",
+      "width": 2755,
+      "height": 1702,
+      "label": "錯位 T 字路口指示配置",
+      "caption": "圖 3.12 路徑與地點指示範例 1──錯位 T 字",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-roundabout": {
+      "file": "materials/03-modules/M1-02/M1-02_路徑與地點指示代表型2_渦輪圓環.svg",
+      "width": 2276,
+      "height": 1924,
+      "label": "渦輪圓環指示配置",
+      "caption": "圖 3.13 路徑與地點指示範例 2──渦輪圓環",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-start-1": {
+      "file": "materials/03-modules/M1-02/M1-02_地名方向指示標誌_箭頭起始端示例_01.svg",
+      "width": 238,
+      "height": 200,
+      "label": "箭頭起始端示例一",
+      "caption": "圖 3.14 箭頭起始端示例（一）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-start-2": {
+      "file": "materials/03-modules/M1-02/M1-02_地名方向指示標誌_箭頭起始端示例_02.svg",
+      "width": 205,
+      "height": 198,
+      "label": "箭頭起始端示例二",
+      "caption": "圖 3.14 箭頭起始端示例（二）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-count-1": {
+      "file": "materials/03-modules/M1-02/M1-02_箭頭起始端數量與臨近路口車道數對應_01.svg",
+      "width": 240,
+      "height": 200,
+      "label": "車道數對應示例一",
+      "caption": "圖 3.14 箭頭起始端與車道數對應（一）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-count-2": {
+      "file": "materials/03-modules/M1-02/M1-02_箭頭起始端數量與臨近路口車道數對應_02.svg",
+      "width": 240,
+      "height": 200,
+      "label": "車道數對應示例二",
+      "caption": "圖 3.14 箭頭起始端與車道數對應（二）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-single": {
+      "file": "materials/03-modules/M1-02/M1-02_單一箭頭起始端.svg",
+      "width": 205,
+      "height": 198,
+      "label": "單一箭頭起始端",
+      "caption": "圖 3.15 單一箭頭起始端",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-simple": {
+      "file": "materials/03-modules/M1-02/M1-02_動線提示簡化.svg",
+      "width": 240,
+      "height": 200,
+      "label": "動線提示簡化",
+      "caption": "圖 3.16 動線提示簡化",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m102-continuity": {
+      "file": "materials/03-modules/M1-02/M1-02_箭頭分岔處保留上游處延伸箭身.svg",
+      "width": 240,
+      "height": 200,
+      "label": "保留上游延伸箭身",
+      "caption": "圖 3.17 箭頭分岔處保留上游延伸箭身",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m102-route-issues",
+      "section": "module",
+      "submoduleId": "M1-02.1",
+      "title": "路徑與地點指示｜現況議題與相關條文",
+      "intro": "先讓駕駛看懂路型，再決定要走哪一條車道。",
+      "assets": [
+        "m102-offset",
+        "m102-roundabout"
+      ],
+      "points": [
+        {
+          "id": "choice",
+          "title": "複雜路型容易選錯車道",
+          "text": "錯位 T 字路口、渦輪圓環若缺乏預告，駕駛容易在路口前或路口內猶豫。"
+        },
+        {
+          "id": "match",
+          "title": "標誌要能對照實際動線",
+          "text": "以圖型化、車道化的地名方向指示標誌，說明車道與出口的關係。"
+        },
+        {
+          "id": "advance",
+          "title": "在需要選道前提供資訊",
+          "text": "讓駕駛提早選擇車道，並沿所選路徑順利駛出路口。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "96"
+      ],
+      "applications": [
+        "G4-02",
+        "C1-01",
+        "C1-02",
+        "C1-08",
+        "C1-09",
+        "C2-01",
+        "C4-04"
+      ]
+    },
+    {
+      "id": "m102-route-diagram",
+      "section": "module",
+      "submoduleId": "M1-02.1",
+      "title": "路徑與地點指示｜圖例說明",
+      "intro": "依車道數、實際路型與選道需求，設計清楚的箭頭。",
+      "assets": [
+        "m102-offset",
+        "m102-roundabout",
+        "m102-start-1",
+        "m102-start-2",
+        "m102-count-1",
+        "m102-count-2",
+        "m102-single",
+        "m102-simple",
+        "m102-continuity"
+      ],
+      "points": [
+        {
+          "id": "lanes",
+          "title": "箭頭起始端對應車道數",
+          "text": "原則上依臨近路口的車道數配置，讓駕駛能將牌面箭頭對應到所在車道。"
+        },
+        {
+          "id": "single",
+          "title": "路型單純可用單一起始端",
+          "text": "不致混淆車道選擇時，可簡化為單一箭頭起始端。"
+        },
+        {
+          "id": "angle",
+          "title": "方向角反映實際路型",
+          "text": "以向上為直行基準，各分支原則採 45° 的整數倍；特殊路型必要時依實際角度調整。"
+        },
+        {
+          "id": "simple",
+          "title": "簡化不必要的選道負擔",
+          "text": "不影響正確導向、且非以加強疏解右轉車流為目標時，可只保留外側車道的右轉動線。"
+        },
+        {
+          "id": "continuity",
+          "title": "保留連續車道的箭身",
+          "text": "分岔若延續自上游車道，可保留延伸箭身，幫助駕駛對照實際路型。"
+        },
+        {
+          "id": "location",
+          "title": "在選道與漸變之前設置",
+          "text": "市區道路以距路口 150 m 以內為原則，可設於車道漸變起點或最上游一組指向線處。"
+        },
+        {
+          "id": "duplication",
+          "title": "避免重複提供相同資訊",
+          "text": "已設圖型化、車道化地名方向指示標誌時，不再另設車道預告標誌，以減少資訊負擔。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m102-route-extensions",
+      "section": "module",
+      "submoduleId": "M1-02.1",
+      "title": "錯位 T 字路口的行車指示",
+      "intro": "依各側的複雜程度，調整箭頭表達方式。",
+      "assets": [
+        "m102-offset"
+      ],
+      "points": [
+        {
+          "id": "complex",
+          "title": "南北側對應車道數",
+          "text": "以多個箭頭起始端說明車道與各方向出口，讓駕駛提早選道。"
+        },
+        {
+          "id": "simple",
+          "title": "東西側可適度簡化",
+          "text": "路型單純且不致混淆時，可採單一箭頭起始端。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m102-route-roundabout",
+      "section": "module",
+      "submoduleId": "M1-02.1",
+      "title": "渦輪圓環的行車指示",
+      "intro": "把車道選擇與環內動線一起預告。",
+      "assets": [
+        "m102-roundabout"
+      ],
+      "points": [
+        {
+          "id": "lanes",
+          "title": "各入口對應臨近車道數",
+          "text": "讓駕駛在進入圓環前，就能辨識所在車道可前往的出口。"
+        },
+        {
+          "id": "right-turn",
+          "title": "右轉提示可保留外側動線",
+          "text": "在不影響導向且非以加強疏解右轉車流為目標時，簡化內側右轉提示，降低選道負擔。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    }
+  ],
+  "referenceNames": {
+    "96": "地名方向指示標誌"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M1-02.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m102-route-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m102-route-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "lanes",
+              "label": "箭頭與車道數",
+              "sourcePageId": "m102-route-diagram",
+              "pointIds": [
+                "lanes"
+              ],
+              "assets": [
+                "m102-start-1",
+                "m102-start-2",
+                "m102-count-1",
+                "m102-count-2"
+              ]
+            },
+            {
+              "id": "single",
+              "label": "單一箭頭",
+              "sourcePageId": "m102-route-diagram",
+              "pointIds": [
+                "single"
+              ],
+              "assets": [
+                "m102-single"
+              ]
+            },
+            {
+              "id": "angle",
+              "label": "方向角",
+              "sourcePageId": "m102-route-diagram",
+              "pointIds": [
+                "angle"
+              ],
+              "assets": [
+                "m102-offset"
+              ]
+            },
+            {
+              "id": "simple",
+              "label": "動線提示簡化",
+              "sourcePageId": "m102-route-diagram",
+              "pointIds": [
+                "simple"
+              ],
+              "assets": [
+                "m102-simple"
+              ]
+            },
+            {
+              "id": "continuity",
+              "label": "延伸箭身",
+              "sourcePageId": "m102-route-diagram",
+              "pointIds": [
+                "continuity"
+              ],
+              "assets": [
+                "m102-continuity"
+              ]
+            },
+            {
+              "id": "location",
+              "label": "設置位置",
+              "sourcePageId": "m102-route-diagram",
+              "pointIds": [
+                "location",
+                "duplication"
+              ],
+              "assets": [
+                "m102-offset"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m102-route-extensions",
+          "title": "延伸應用",
+          "intro": "對照錯位 T 字路口與渦輪圓環，選擇適合的行車指示。",
+          "topics": [
+            {
+              "id": "offset",
+              "label": "錯位 T 字路口",
+              "sourcePageId": "m102-route-extensions"
+            },
+            {
+              "id": "roundabout",
+              "label": "渦輪圓環",
+              "sourcePageId": "m102-route-roundabout"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

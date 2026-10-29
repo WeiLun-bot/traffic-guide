@@ -20,7 +20,7 @@ return http.createServer((request,response)=>{
   if(within==='..'||within.startsWith('..'+path.sep)||path.isAbsolute(within)||filename.includes('\\')||filename.split('/').some(part=>part.startsWith('.'))){response.writeHead(404);response.end();return;}
   if(filename==='layout/presentation-layout.json'&&configFile)file=configFile;
   if(!fs.existsSync(file)||!fs.lstatSync(file).isFile()){response.writeHead(404);response.end();return;}
-  const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
+  const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml'};
   response.writeHead(200,{'Content-Type':(mime[path.extname(filename)]||'application/octet-stream')+'; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});
   if(request.method==='HEAD')response.end();else fs.createReadStream(file).pipe(response);
 });

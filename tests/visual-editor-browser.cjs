@@ -48,11 +48,15 @@ async function main() {
   const downloads = path.join(artifacts, 'downloads-' + Date.now()); fs.mkdirSync(downloads);
   const executable = process.env.VISUAL_EDITOR_BROWSER || ['C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', 'C:/Program Files/Google/Chrome/Application/chrome.exe'].find(file => fs.existsSync(file));
   assert(executable, 'Set VISUAL_EDITOR_BROWSER to a Chrome/Edge executable');
-  let override = null, failConfig = false,failModules=false;
+  let override = null, failConfig = false,failModules=false,failStartupScript=false,startupHold=null;
+  const heldStartupRequests=[];
+  const setStartupHold=value=>{startupHold=value;if(!value)for(const release of heldStartupRequests.splice(0))release();};
   const published = createServer(undefined,{configFile:previewConfigPath});
   const server = http.createServer((request, response) => {
     const pathname = new URL(request.url, 'http://localhost').pathname;
     if (pathname === '/baseline.html' && fs.existsSync(baselinePath)) {response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});fs.createReadStream(baselinePath).pipe(response);return;}
+    if(startupHold&&pathname.endsWith(startupHold)){heldStartupRequests.push(()=>published.emit('request',request,response));return;}
+    if(failStartupScript&&pathname.endsWith('/assets/presentation-structure.js')){response.writeHead(404);response.end();return;}
     if (pathname.endsWith('/layout/presentation-layout.json') && failConfig) {response.writeHead(404);response.end();return;}
     if(failModules&&pathname.endsWith('/data/modules/M2-01.json')){response.writeHead(404);response.end();return;}
     if (pathname.endsWith('/layout/presentation-layout.json') && override) {response.writeHead(200, {'Content-Type': 'application/json'});response.end(override);return;}
@@ -103,10 +107,14 @@ async function main() {
       await mouse('mouseReleased', x + dx, y + dy, {button: 'left', buttons: 0, clickCount: 1});await delay(60);
     }
     const moduleCheck=async()=>require('./presentation-modules-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure:value=>{failModules=value;}});
+    const libraryCheck=async()=>require('./module-library-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText});
+    if(process.argv.includes('--library-only')){await navigate(base+'/presentation-demo/#cover');await libraryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module library browser regression groups; no uncaught JavaScript exceptions.');return;}
     const structureCheck=async()=>require('./presentation-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
     const pickerCheck=async()=>require('./presentation-picker-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});
     const directoryCheck=async()=>require('./presentation-directories-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
     const fullscreenCheck=async()=>require('./fullscreen-module-topics-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});
+    const startupCheck=async()=>require('./presentation-startup-browser.cjs')({evaluate,click,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});
+    if(process.argv.includes('--startup-only')){await startupCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' startup browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--fullscreen-only')){await fullscreenCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' fullscreen browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--directories-only')){await directoryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' directory browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--picker-only')){await pickerCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' picker browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -521,11 +529,15 @@ async function main() {
     const editorShot = await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,'editor-desktop.png'),Buffer.from(editorShot.data,'base64'));
     pass('desktop editor and tablet preview render with floating controls and unchanged slide dimensions');
     override=null;await evaluate('window.visualLayoutEditor.files.disconnect()');
-    await structureCheck();await pickerCheck();await directoryCheck();await moduleCheck();await fullscreenCheck();
+    await structureCheck();await pickerCheck();await directoryCheck();await moduleCheck();await libraryCheck();await fullscreenCheck();await startupCheck();
     // Failed automatic JSON loading must expose recovery instead of silently resetting the layout.
     failConfig = true;override = null;await cdp.send('Page.navigate',{url:base+'/presentation-demo/?missing-config=1#cover'});
     await wait('Boolean(document.querySelector(".vl-recovery:not([hidden])"))');assert.equal(await evaluate('Boolean(window.generalRoadPresentation)'),false);
+    assert.equal(await evaluate('document.documentElement.dataset.presentationState'),'recovery');
+    assert(await evaluate('document.getElementById("presentation-startup-import").checkVisibility()'));
+    assert.equal(await evaluate('getComputedStyle(document.querySelector(".header")).visibility'),'hidden');
     await importFile(validImport);await wait('Boolean(window.generalRoadPresentation && document.querySelector("main>.slide"))');
+    assert.equal(await evaluate('document.documentElement.dataset.presentationState'),'ready');
     failConfig = false;
     pass('missing/blocked JSON shows recovery and importing the project JSON starts the presentation');
     if (process.argv.includes('--catalog')) {
@@ -546,6 +558,7 @@ async function main() {
     if(cdp){try{const shot=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,'failure.png'),Buffer.from(shot.data,'base64'));const info=await cdp.evaluate('({status:document.querySelector(".vl-status")?.textContent,editing:window.visualLayoutEditor?.editing,page:window.generalRoadPresentation?.state,selected:document.querySelector("[data-vl-selected]")?.textContent})');console.error(JSON.stringify({info,exceptions}));}catch{}}
     throw error;
   } finally {
+    setStartupHold(null);
     if(cdp){try{await cdp.send('Browser.close');}catch{}cdp.close();}
     if(browser.exitCode===null){await Promise.race([browserExit,delay(2000)]);if(browser.exitCode===null)browser.kill();}
     await new Promise(resolve=>server.close(resolve));

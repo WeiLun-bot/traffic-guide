@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "id": "M2-02",
+  "title": "圓環管制",
+  "source": {
+    "file": "05-roundabout-control.typ",
+    "section": "M2-02「圓環管制」",
+    "notes": [
+      "圓環遵行方向標誌的側向位置依《設置規則》第 16 條原則；讓路標誌可一併參照 M2-01.2。"
+    ]
+  },
+  "assets": {
+    "m202-roundabout": {
+      "file": "materials/03-modules/M2-02/M2-02_圓環管制路口模組代表型.svg",
+      "width": 684,
+      "height": 773,
+      "label": "圓環管制配置",
+      "caption": "圖 3.30 圓環管制路口模組範例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m202-roundabout-issues",
+      "section": "module",
+      "submoduleId": "M2-02.1",
+      "title": "無號誌圓環｜現況議題與相關條文",
+      "intro": "建立環內優先，讓入口、環內與出口的動線連續。",
+      "assets": [
+        "m202-roundabout"
+      ],
+      "points": [
+        {
+          "id": "priority",
+          "title": "環內優先不夠明確",
+          "text": "入口缺少讓路標誌、讓路線，或方向標誌位置不一致，容易發生環內外車輛爭道。"
+        },
+        {
+          "id": "entry",
+          "title": "入口偏移與分隔島不易辨識",
+          "text": "缺少明確導引時，駕駛難以提早掌握車道偏移與島頭位置。"
+        },
+        {
+          "id": "exit",
+          "title": "環內導引與出口銜接不足",
+          "text": "動線不連續可能造成臨時換道、切入出口或不必要減速。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "34",
+        "59",
+        "66",
+        "171",
+        "172",
+        "189"
+      ],
+      "applications": [
+        "C1-07",
+        "C1-08"
+      ]
+    },
+    {
+      "id": "m202-roundabout-diagram",
+      "section": "module",
+      "submoduleId": "M2-02.1",
+      "title": "無號誌圓環｜圖例說明",
+      "intro": "各入口以一致方式，搭配讓路、方向標誌與標線導引。",
+      "assets": [
+        "m202-roundabout"
+      ],
+      "points": [
+        {
+          "id": "yield-line",
+          "title": "讓路線建立環內優先",
+          "text": "入口讓路線搭配讓路標誌；雙白虛線與行車導引線對齊，提醒駕駛注意環內車流。"
+        },
+        {
+          "id": "channel",
+          "title": "槽化線配合分隔島與車道偏移",
+          "text": "提早呈現入口島頭與車道偏移，讓車輛沿清楚的軌跡進入圓環。"
+        },
+        {
+          "id": "guide",
+          "title": "導引線連續提示環內邊界與出口",
+          "text": "以路口行車導引線延伸主要道路邊線，協助駕駛辨識環內路徑及出口位置。"
+        },
+        {
+          "id": "direction",
+          "title": "方向標誌設於一致位置",
+          "text": "原則設於圓環外緣、臨近入口右側；必要時可增設於交通島或入口左側。"
+        },
+        {
+          "id": "yield-sign",
+          "title": "讓路標誌設於方向標誌上方",
+          "text": "再次提醒進入圓環的車輛，讓環內車輛優先通行。"
+        },
+        {
+          "id": "advance",
+          "title": "視距不足或車速較高時提前預告",
+          "text": "可在入口上游設置圓環標誌，讓駕駛及早辨識圓環並準備減速。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [],
+      "notice": "本圖僅示意一處入口，其餘入口比照配置。"
+    },
+    {
+      "id": "m202-roundabout-extensions",
+      "section": "module",
+      "submoduleId": "M2-02.1",
+      "title": "無號誌圓環｜延伸應用",
+      "intro": "多車道與行人穿越需求，一併納入圓環配置。",
+      "assets": [],
+      "points": [
+        {
+          "id": "arrows",
+          "title": "多車道入口加設指向線",
+          "text": "進入多車道圓環前佈設一組指向線，說明各車道的行駛方向。"
+        },
+        {
+          "id": "crosswalk",
+          "title": "行穿線銜接禁臨停線",
+          "text": "枕木紋行穿線與禁止臨時停車線同時設置時，由行穿線截斷禁臨停線。"
+        },
+        {
+          "id": "refuge",
+          "title": "提供行人庇護空間",
+          "text": "可增設行人庇護島，提供分段穿越空間，並提醒駕駛注意行人。"
+        },
+        {
+          "id": "distance",
+          "title": "停止線與行穿線保留淨距",
+          "text": "設有枕木紋行穿線時，停止線與其淨距為 1–3 m。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    }
+  ],
+  "referenceNames": {
+    "34": "圓環標誌",
+    "59": "讓路標誌",
+    "66": "圓環遵行方向標誌",
+    "171": "槽化線",
+    "172": "讓路線",
+    "189": "路口行車導引線"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M2-02.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m202-roundabout-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m202-roundabout-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "yield-line",
+              "label": "讓路線",
+              "sourcePageId": "m202-roundabout-diagram",
+              "pointIds": [
+                "yield-line"
+              ]
+            },
+            {
+              "id": "channel",
+              "label": "槽化線",
+              "sourcePageId": "m202-roundabout-diagram",
+              "pointIds": [
+                "channel"
+              ]
+            },
+            {
+              "id": "guide",
+              "label": "路口行車導引線",
+              "sourcePageId": "m202-roundabout-diagram",
+              "pointIds": [
+                "guide"
+              ]
+            },
+            {
+              "id": "direction",
+              "label": "圓環遵行方向標誌",
+              "sourcePageId": "m202-roundabout-diagram",
+              "pointIds": [
+                "direction"
+              ]
+            },
+            {
+              "id": "yield-sign",
+              "label": "讓路標誌",
+              "sourcePageId": "m202-roundabout-diagram",
+              "pointIds": [
+                "yield-sign"
+              ]
+            },
+            {
+              "id": "advance",
+              "label": "圓環預告標誌",
+              "sourcePageId": "m202-roundabout-diagram",
+              "pointIds": [
+                "advance"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m202-roundabout-extensions",
+          "title": "延伸應用",
+          "intro": "把多車道選道與行人穿越需求，納入圓環入口設計。",
+          "topics": [
+            {
+              "id": "arrows",
+              "label": "多車道入口指向線",
+              "sourcePageId": "m202-roundabout-extensions",
+              "pointIds": [
+                "arrows"
+              ]
+            },
+            {
+              "id": "pedestrians",
+              "label": "行人穿越與庇護空間",
+              "sourcePageId": "m202-roundabout-extensions",
+              "pointIds": [
+                "crosswalk",
+                "refuge",
+                "distance"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

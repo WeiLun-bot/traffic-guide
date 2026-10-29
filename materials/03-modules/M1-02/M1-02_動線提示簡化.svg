@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:affinity="https://www.affinity.studio/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g>
+        <path id="標準尺寸-1:25" affinity:id="標準尺寸 1:25" d="M237.533,-0.206C238.637,-0.206 239.533,0.691 239.533,1.794L239.533,197.794C239.533,198.898 238.637,199.794 237.533,199.794L1.533,199.794C0.429,199.794 -0.467,198.898 -0.467,197.794L-0.467,1.794C-0.467,0.691 0.429,-0.206 1.533,-0.206L237.533,-0.206Z" style="fill:rgb(0,127,0);"/>
+        <path id="標準尺寸-1:251" affinity:id="標準尺寸 1:25" d="M235.573,1.794C236.655,1.794 237.533,2.673 237.533,3.754L237.533,195.834C237.533,196.916 236.655,197.794 235.573,197.794L3.493,197.794C2.411,197.794 1.533,196.916 1.533,195.834L1.533,3.754C1.533,2.673 2.411,1.794 3.493,1.794L235.573,1.794Z" style="fill:none;stroke:white;stroke-width:1.41px;"/>
+        <g>
+            <rect x="89.533" y="9.413" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="127.133" y="9.413" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="89.533" y="36.506" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <g>
+            <rect x="159.651" y="88.382" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="197.251" y="88.382" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="159.651" y="115.476" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <g>
+            <rect x="19.414" y="88.382" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="57.014" y="88.382" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="19.414" y="115.476" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <path d="M112.496,68.236L119.751,53.864L126.896,68.291C123.31,64.678 116.11,64.65 112.496,68.236Z" style="fill:white;"/>
+        <path d="M119.471,126.844C119.471,126.844 119.628,85.948 119.707,65.384" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M175.533,134.044L189.933,141.244L175.533,148.444C179.133,144.844 179.133,137.644 175.533,134.044Z" style="fill:white;"/>
+        <path d="M150.654,141.244L178.413,141.244" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M117.133,155.644L121.933,155.644L121.933,192.444L117.133,192.444L117.133,155.644Z" style="fill:white;"/>
+        <path d="M63.533,148.444L49.133,141.244L63.533,134.044C59.933,137.644 59.933,144.844 63.533,148.444Z" style="fill:white;"/>
+        <path d="M105.133,141.244C105.133,141.244 77.044,141.244 60.653,141.244" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M101.948,149.444C100.784,146.953 100.133,144.174 100.133,141.244C100.133,130.537 108.826,121.844 119.533,121.844C130.24,121.844 138.933,130.537 138.933,141.244C138.933,151.951 130.24,160.644 119.533,160.644C118.72,160.644 117.919,160.594 117.133,160.497L117.133,155.445C117.913,155.576 118.715,155.644 119.533,155.644C127.48,155.644 133.933,149.192 133.933,141.244C133.933,133.297 127.48,126.844 119.533,126.844C111.585,126.844 105.133,133.297 105.133,141.244C105.133,143.419 105.616,145.482 106.48,147.331L101.948,149.444Z" style="fill:white;"/>
+        <path d="M154.657,138.922C154.707,139.69 154.733,140.464 154.733,141.244C154.733,160.672 138.96,176.444 119.533,176.444L119.533,171.644C136.311,171.644 149.933,158.023 149.933,141.244C149.933,140.463 149.903,139.689 149.845,138.922L154.657,138.922Z" style="fill:white;"/>
+        <path d="M162.435,143.644L144.765,143.644" style="fill:none;"/>
+    </g>
+    <g id="自行車除外附牌">
+    </g>
+</svg>

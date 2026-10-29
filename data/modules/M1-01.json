@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "id": "M1-01",
+  "title": "路口動線導引",
+  "source": {
+    "file": "01-intersection-flow-guidance.typ",
+    "section": "M1-01「路口動線導引」",
+    "notes": [
+      "附加車道漸變長度依《市區道路及附屬工程設計規範》第 4.2.6 節。",
+      "慢車道轉向配合《道路交通安全規則》；最外側車道寬度依《市區道路及附屬工程設計規範》。"
+    ]
+  },
+  "assets": {
+    "m101-lanes": {
+      "file": "materials/03-modules/M1-01/M1-01_路口與路段車道配置代表型.svg",
+      "width": 1560,
+      "height": 822,
+      "label": "路口與路段車道配置",
+      "caption": "圖 3.1 路口與路段車道配置範例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m101-slow-wide": {
+      "file": "materials/03-modules/M1-01/M1-01_慢車道寬度與一般車道同寬之路口配置示意圖.svg",
+      "width": 1868,
+      "height": 626,
+      "label": "一般寬度慢車道配置",
+      "caption": "圖 3.2 慢車道寬度與一般車道同寬之路口配置",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m101-slow-narrow": {
+      "file": "materials/03-modules/M1-01/M1-01_慢車道寬度2.8m（含以下）之路口配置示意圖.svg",
+      "width": 1469,
+      "height": 625,
+      "label": "窄慢車道銜接路口",
+      "caption": "圖 3.3 慢車道寬度 2.8 m（含以下）之路口配置",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m101-additional": {
+      "file": "materials/03-modules/M1-01/M1-01_附加車道代表型.svg",
+      "width": 1055,
+      "height": 292,
+      "label": "附加車道配置",
+      "caption": "圖 3.9 附加車道範例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m101-taper": {
+      "file": "materials/03-modules/M1-01/M1-01_右或左錯位T字路附加車道漸變左轉指向線示例.svg",
+      "width": 743,
+      "height": 224,
+      "label": "錯位 T 字路口漸變段指向線",
+      "caption": "圖 3.10 錯位 T 字路附加車道漸變左轉指向線",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m101-refuge": {
+      "file": "materials/03-modules/M1-01/M1-01_附加車道_搭配庇護島.svg",
+      "width": 1055,
+      "height": 290,
+      "label": "附加車道搭配庇護島",
+      "caption": "圖 3.11 附加車道──搭配庇護島",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m101-overview",
+      "section": "module",
+      "title": "M1-01 路口動線導引",
+      "intro": "讓路段車道、路口轉向與下游車道連成清楚的行車路徑。",
+      "assets": [
+        "m101-lanes",
+        "m101-additional"
+      ],
+      "points": [
+        {
+          "id": "continuity",
+          "title": "先確認車道連續性",
+          "text": "對照上游車道、路口動線與下游出口，確認各方向都能順暢銜接。"
+        },
+        {
+          "id": "layout",
+          "title": "M1-01.1 路口與路段車道配置",
+          "text": "搭配穿越虛線、指向線與行車導引線，說明車道用途及行進路徑。"
+        },
+        {
+          "id": "additional",
+          "title": "M1-01.2 附加車道",
+          "text": "檢視漸變長度、儲車空間與預告導引，讓轉向車流提早分流。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [],
+      "mode": "pair"
+    },
+    {
+      "id": "m101-lanes-issues",
+      "section": "module",
+      "submoduleId": "M1-01.1",
+      "title": "路口與路段車道配置｜現況議題與相關條文",
+      "intro": "從車道連續性與轉向軌跡，檢查路段如何銜接路口。",
+      "assets": [
+        "m101-lanes"
+      ],
+      "points": [
+        {
+          "id": "continuity",
+          "title": "車道用途前後不連續",
+          "text": "路段車道若未配合轉向需求，駕駛到路口前才會發現需要換道。"
+        },
+        {
+          "id": "path",
+          "title": "導引線未配合實際軌跡",
+          "text": "轉彎路徑若未檢核，車輛可能無法沿線行駛，甚至偏向交通島。"
+        },
+        {
+          "id": "review",
+          "title": "一併檢視路段與路口",
+          "text": "從車道配置、轉向軌跡到下游出口，一起確認動線是否連續。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "133-1",
+        "171",
+        "183-1",
+        "184",
+        "188",
+        "189",
+        "189-1"
+      ],
+      "applicationNote": "通用模組，適用於各類道路情境。"
+    },
+    {
+      "id": "m101-lanes-diagram",
+      "section": "module",
+      "submoduleId": "M1-01.1",
+      "title": "路口與路段車道配置｜圖例說明",
+      "intro": "以標線與預告標誌，逐步說清楚各方向的車道與行進路徑。",
+      "assets": [
+        "m101-lanes"
+      ],
+      "points": [
+        {
+          "id": "dotted-width",
+          "title": "穿越虛線區分直行與轉向",
+          "text": "匯入主線建議採 15 cm 寬；匯出主線建議採 30 cm 寬，加強交織提示。"
+        },
+        {
+          "id": "dotted-length",
+          "title": "從漸變區引導至專用車道",
+          "text": "穿越虛線由漸變區起點延伸至專用車道起點；左右轉專用道進入路口前 20 m 搭配禁止變換車道線。"
+        },
+        {
+          "id": "arrows",
+          "title": "指向線分組預告",
+          "text": "第一組設於停止線或機慢車停等區外邊界上游 2–5 m；第二組再往上游 20 m，其後各組間隔 20–60 m。"
+        },
+        {
+          "id": "advance",
+          "title": "車道漸變前先預告",
+          "text": "在漸變區上游設置車道預告標誌，讓駕駛提早選擇車道。"
+        },
+        {
+          "id": "guide-width",
+          "title": "轉彎後車道寬度改變",
+          "text": "下游過寬或過窄時，以導引線標示轉彎軌跡，銜接正確車道。"
+        },
+        {
+          "id": "guide-offset",
+          "title": "直行偏移與主線方向不清",
+          "text": "直行車道偏移、偏斜或多岔路口，可用導引線提示連續的主要路徑。"
+        },
+        {
+          "id": "guide-overlap",
+          "title": "導引線重疊時適度簡化",
+          "text": "優先保留容易誤判的關鍵流向；其他導引線可截斷或省略，避免過於複雜。"
+        },
+        {
+          "id": "channel",
+          "title": "槽化多餘空間",
+          "text": "以槽化線界定禁止通行區域，區隔車流並順化轉彎軌跡。"
+        },
+        {
+          "id": "waiting",
+          "title": "左彎待轉區避開其他動線",
+          "text": "依轉彎軌跡安排線形與停等位置，避免影響對向左轉及直行車流。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m101-lanes-extensions",
+      "section": "module",
+      "submoduleId": "M1-01.1",
+      "title": "慢車道與一般車道同寬",
+      "intro": "在路口銜接處，讓車種分隔配合轉向需求。",
+      "assets": [
+        "m101-slow-wide"
+      ],
+      "points": [
+        {
+          "id": "right-turn",
+          "title": "讓右轉車提早就位",
+          "text": "慢車道較寬時，可延續快慢車道分隔線；右轉車依規定提前進入慢車道。"
+        },
+        {
+          "id": "lane-line",
+          "title": "必要時改以車道線提示",
+          "text": "近路口處可將快慢車道分隔線改為車道線，提示右轉車先進入最外側車道。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m101-lanes-narrow",
+      "section": "module",
+      "submoduleId": "M1-01.1",
+      "title": "窄慢車道銜接路口",
+      "intro": "由車種分隔轉為方向分隔，減少路口前的交織。",
+      "assets": [
+        "m101-slow-narrow"
+      ],
+      "points": [
+        {
+          "id": "transition",
+          "title": "2.8 m（含）以下先調整配置",
+          "text": "在路口前 30–60 m 中斷慢車道配置，配合分流式指向線引導各方向車流。"
+        },
+        {
+          "id": "width",
+          "title": "過寬空間以槽化調整",
+          "text": "非實體分隔的最外側車道不宜大於 4.5 m；原車道與慢車道合計過寬時，可用槽化縮減。"
+        },
+        {
+          "id": "warning",
+          "title": "車道縮減要提前提示",
+          "text": "必要時加設車道、路寬縮減標誌，提醒慢車道車流向左銜接下游外側車道。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m101-additional-issues",
+      "section": "module",
+      "submoduleId": "M1-01.2",
+      "title": "附加車道｜現況議題與相關條文",
+      "intro": "附加車道除了要放得下，也要讓駕駛看得懂、來得及進入。",
+      "assets": [
+        "m101-additional"
+      ],
+      "points": [
+        {
+          "id": "recognition",
+          "title": "車道變化不易提早辨識",
+          "text": "標線與預告不完整，駕駛可能到路口前才察覺轉向車道。"
+        },
+        {
+          "id": "storage",
+          "title": "漸變或儲車空間不足",
+          "text": "轉向車流無法順暢進入，排隊可能外溢並影響主線直行車流。"
+        },
+        {
+          "id": "consistency",
+          "title": "幾何與導引一起檢視",
+          "text": "同時確認漸變長度、儲車空間、車道連續性與標誌標線的一致性。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "133-1",
+        "167",
+        "171",
+        "188",
+        "189-1"
+      ],
+      "applications": [
+        "G1-01",
+        "G1-06",
+        "G2-01",
+        "G4-01",
+        "G2-03",
+        "G4-03",
+        "G2-04",
+        "G4-04",
+        "C1-01",
+        "C1-02",
+        "C1-03",
+        "C1-04",
+        "C1-05",
+        "C2-01",
+        "C4-01",
+        "C4-02",
+        "C4-03",
+        "C4-04"
+      ]
+    },
+    {
+      "id": "m101-additional-diagram",
+      "section": "module",
+      "submoduleId": "M1-01.2",
+      "title": "附加車道｜圖例說明",
+      "intro": "從漸變區開始，連續提示轉向車道的位置與用途。",
+      "assets": [
+        "m101-additional",
+        "m101-taper"
+      ],
+      "points": [
+        {
+          "id": "taper",
+          "title": "依設計速率安排漸變長度",
+          "text": "市區道路依設計規範第 4.2.6 節檢核。設計速率 20、30、40、50 km/h 的長寬比分別為 3:1、4:1、6:1、8:1；60、70、80、90 km/h 則為 10:1、12:1、14:1、15:1。"
+        },
+        {
+          "id": "arrows",
+          "title": "漸變起點就提示轉向",
+          "text": "左轉或右轉附加車道在漸變起點劃設相應指向線；空間足夠時，各車道的指向線位置宜統一。"
+        },
+        {
+          "id": "offset",
+          "title": "錯位 T 字路口配合實際動線",
+          "text": "左轉車道開始附加時劃設左轉指向線；同一斷面的直行車道若上下游順接、無選道疑慮，可不另設直行指向線。"
+        },
+        {
+          "id": "dotted",
+          "title": "穿越虛線銜接專用車道",
+          "text": "自漸變區起點延伸至專用車道起點，提示轉向車流依序分流；路口前 20 m 搭配禁止變換車道線。"
+        },
+        {
+          "id": "advance",
+          "title": "車道變化前先預告",
+          "text": "在漸變區上游設置車道預告標誌，讓駕駛提早準備選道。"
+        },
+        {
+          "id": "channel",
+          "title": "槽化不使用的空間",
+          "text": "界定禁止通行區域，區隔車流並順化行車軌跡。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m101-additional-extensions",
+      "section": "module",
+      "submoduleId": "M1-01.2",
+      "title": "附加車道搭配庇護島",
+      "intro": "讓分流車道與行人穿越空間一起安排。",
+      "assets": [
+        "m101-refuge"
+      ],
+      "points": [
+        {
+          "id": "pedestrians",
+          "title": "提供行人停等與避護空間",
+          "text": "近路口處可設行人庇護島，讓行人穿越時有安全的停等位置。"
+        },
+        {
+          "id": "guidance",
+          "title": "以實體島頭引導車流",
+          "text": "配合島頭及邊界，明確導引附加車道與主線的行進路徑。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    }
+  ],
+  "referenceNames": {
+    "167": "禁止變換車道線",
+    "171": "槽化線",
+    "184": "左彎待轉區線",
+    "188": "指向線",
+    "189": "路口行車導引線",
+    "133-1": "車道預告標誌",
+    "183-1": "快慢車道分隔線",
+    "189-1": "穿越虛線"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M1-01.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m101-lanes-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m101-lanes-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "dotted",
+              "label": "穿越虛線",
+              "sourcePageId": "m101-lanes-diagram",
+              "pointIds": [
+                "dotted-width",
+                "dotted-length"
+              ]
+            },
+            {
+              "id": "arrows",
+              "label": "指向線",
+              "sourcePageId": "m101-lanes-diagram",
+              "pointIds": [
+                "arrows"
+              ]
+            },
+            {
+              "id": "advance",
+              "label": "車道預告標誌",
+              "sourcePageId": "m101-lanes-diagram",
+              "pointIds": [
+                "advance"
+              ]
+            },
+            {
+              "id": "guide",
+              "label": "路口行車導引線",
+              "sourcePageId": "m101-lanes-diagram",
+              "pointIds": [
+                "guide-width",
+                "guide-offset",
+                "guide-overlap"
+              ]
+            },
+            {
+              "id": "channel",
+              "label": "槽化線",
+              "sourcePageId": "m101-lanes-diagram",
+              "pointIds": [
+                "channel"
+              ]
+            },
+            {
+              "id": "waiting",
+              "label": "左彎待轉區線",
+              "sourcePageId": "m101-lanes-diagram",
+              "pointIds": [
+                "waiting"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m101-lanes-extensions",
+          "title": "延伸應用",
+          "intro": "依慢車道寬度，調整路口前的車道分隔與轉向導引。",
+          "topics": [
+            {
+              "id": "wide",
+              "label": "一般寬度慢車道",
+              "sourcePageId": "m101-lanes-extensions"
+            },
+            {
+              "id": "narrow",
+              "label": "窄慢車道銜接路口",
+              "sourcePageId": "m101-lanes-narrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "submoduleId": "M1-01.2",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m101-additional-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m101-additional-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "taper",
+              "label": "漸變長度",
+              "sourcePageId": "m101-additional-diagram",
+              "pointIds": [
+                "taper"
+              ],
+              "assets": [
+                "m101-additional"
+              ]
+            },
+            {
+              "id": "arrows",
+              "label": "指向線",
+              "sourcePageId": "m101-additional-diagram",
+              "pointIds": [
+                "arrows",
+                "offset"
+              ],
+              "assets": [
+                "m101-taper"
+              ]
+            },
+            {
+              "id": "dotted",
+              "label": "穿越虛線",
+              "sourcePageId": "m101-additional-diagram",
+              "pointIds": [
+                "dotted"
+              ],
+              "assets": [
+                "m101-additional"
+              ]
+            },
+            {
+              "id": "advance",
+              "label": "車道預告標誌",
+              "sourcePageId": "m101-additional-diagram",
+              "pointIds": [
+                "advance"
+              ],
+              "assets": [
+                "m101-additional"
+              ]
+            },
+            {
+              "id": "channel",
+              "label": "槽化線",
+              "sourcePageId": "m101-additional-diagram",
+              "pointIds": [
+                "channel"
+              ],
+              "assets": [
+                "m101-additional"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m101-additional-extensions",
+          "title": "延伸應用",
+          "intro": "把行人庇護空間納入附加車道的整體配置。",
+          "topics": [
+            {
+              "id": "refuge",
+              "label": "附加車道搭配庇護島",
+              "sourcePageId": "m101-additional-extensions"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

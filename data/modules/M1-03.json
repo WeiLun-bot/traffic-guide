@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "id": "M1-03",
+  "title": "路側停車",
+  "source": {
+    "file": "03-roadside-parking.typ",
+    "section": "M1-03「路側停車」",
+    "notes": []
+  },
+  "assets": {
+    "m103-layout": {
+      "file": "materials/03-modules/M1-03/M1-03_路側停放與裝卸車位配置代表型.svg",
+      "width": 679,
+      "height": 268,
+      "label": "路側停放與裝卸車位配置",
+      "caption": "圖 3.18 路側停放與裝卸車位配置範例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m103-germany": {
+      "file": "materials/03-modules/M1-03/M1-03_停車處標誌配合起終點箭頭、停放車種及時段之示例_德國.jpeg",
+      "width": 1703,
+      "height": 1207,
+      "label": "德國停車標誌實例",
+      "caption": "圖 3.19 德國停車標誌、車種與時段實例",
+      "credit": "Google Street View"
+    },
+    "m103-japan-1": {
+      "file": "materials/03-modules/M1-03/M1-03_停車帶起終點設置停車處標誌示例_日本_01.png",
+      "width": 1838,
+      "height": 1187,
+      "label": "日本停車帶起點實例",
+      "caption": "圖 3.20 日本停車帶起終點標誌（一）",
+      "credit": "Google Street View"
+    },
+    "m103-japan-2": {
+      "file": "materials/03-modules/M1-03/M1-03_停車帶起終點設置停車處標誌示例_日本_02.png",
+      "width": 1342,
+      "height": 1223,
+      "label": "日本停車帶終點實例",
+      "caption": "圖 3.20 日本停車帶起終點標誌（二）",
+      "credit": "Google Street View"
+    },
+    "m103-multiple-photo": {
+      "file": "materials/03-modules/M1-03/M1-03_停車帶起終點設置多元停車管制方式之停車處牌面示例.png",
+      "width": 4032,
+      "height": 3024,
+      "label": "多元停車管制牌面實例",
+      "caption": "圖 3.21 停車帶起終點多元管制牌面實例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m103-plate-1": {
+      "file": "materials/03-modules/M1-03/M1-03_停車處標誌及附牌布設建議_01.svg",
+      "width": 70,
+      "height": 151,
+      "label": "停車標誌附牌配置一",
+      "caption": "圖 3.22 停車處標誌及附牌布設（一）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m103-plate-2": {
+      "file": "materials/03-modules/M1-03/M1-03_停車處標誌及附牌布設建議_02.svg",
+      "width": 70,
+      "height": 151,
+      "label": "停車標誌附牌配置二",
+      "caption": "圖 3.22 停車處標誌及附牌布設（二）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m103-plate-3": {
+      "file": "materials/03-modules/M1-03/M1-03_停車處標誌及附牌布設建議_03.svg",
+      "width": 70,
+      "height": 151,
+      "label": "停車標誌附牌配置三",
+      "caption": "圖 3.22 停車處標誌及附牌布設（三）",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m103-multiple": {
+      "file": "materials/03-modules/M1-03/M1-03_多元停車管制方式之停車處牌面示例.svg",
+      "width": 82,
+      "height": 114,
+      "label": "多元停車管制牌面",
+      "caption": "圖 3.23 多元停車管制方式牌面示例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m103-parking-issues",
+      "section": "module",
+      "submoduleId": "M1-03.1",
+      "title": "路側停放與裝卸車位配置｜現況議題與相關條文",
+      "intro": "讓停車範圍、適用車種與使用規則一眼可辨。",
+      "assets": [
+        "m103-layout"
+      ],
+      "points": [
+        {
+          "id": "boundary",
+          "title": "停車與禁停範圍不清",
+          "text": "停車帶、禁止停車與禁止臨時停車區間若界線不清，容易讓駕駛誤判。"
+        },
+        {
+          "id": "consistency",
+          "title": "標誌與停車帶位置不一致",
+          "text": "標誌若未對應停車範圍，用路人不易搜尋、判讀與遵循。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "118",
+        "169",
+        "190"
+      ],
+      "applications": [
+        "G1-01",
+        "G1-05",
+        "G3-01",
+        "G3-03",
+        "G1-03",
+        "G2-01",
+        "G4-01",
+        "G4-03",
+        "C1-01",
+        "C1-06",
+        "C4-03",
+        "C4-05"
+      ]
+    },
+    {
+      "id": "m103-parking-diagram",
+      "section": "module",
+      "submoduleId": "M1-03.1",
+      "title": "路側停放與裝卸車位配置｜圖例說明",
+      "intro": "從格位配置到標誌附牌，使用一致方式說明停車規則。",
+      "assets": [
+        "m103-layout",
+        "m103-plate-1",
+        "m103-plate-2",
+        "m103-plate-3"
+      ],
+      "points": [
+        {
+          "id": "clearance",
+          "title": "進出端保留必要淨空",
+          "text": "以禁止臨時停車線保留轉角、漸變段及出入口所需空間。"
+        },
+        {
+          "id": "angle",
+          "title": "停放角度配合場地條件",
+          "text": "90° 格位通常較多，但操作與通道空間需求較大；45° 進出較順暢，格位數較少。"
+        },
+        {
+          "id": "dedicated",
+          "title": "專用車位清楚標示用途",
+          "text": "由主管機關依需求訂定尺寸與車種；地面標示白色專用車輛標字或圖案，必要時搭配標誌。"
+        },
+        {
+          "id": "ends",
+          "title": "標誌對應停車帶起終點",
+          "text": "起終點設置停車處標誌，較長時可在中段加設；短停車帶不致誤判時，可於起點適當處設一面。"
+        },
+        {
+          "id": "orientation",
+          "title": "箭頭與朝向要一致",
+          "text": "標誌整合起點、終點或中段箭頭，避免與停車處方向指示混淆；起終點標誌原則面向車行方向 45°，並依路型調整。"
+        },
+        {
+          "id": "order",
+          "title": "附牌由上而下統一順序",
+          "text": "依「車種 → 時間 → 收費方式」排列，讓駕駛以一致順序閱讀。"
+        },
+        {
+          "id": "icons",
+          "title": "車種優先使用圖示",
+          "text": "管制單純時以標誌搭配模組化附牌為主，減少文字判讀負擔。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m103-parking-extensions",
+      "section": "module",
+      "submoduleId": "M1-03.1",
+      "title": "德國停車標誌實例",
+      "intro": "把停車範圍與適用條件放在一起閱讀。",
+      "assets": [
+        "m103-germany"
+      ],
+      "points": [
+        {
+          "id": "range",
+          "title": "以箭頭表達停車帶範圍",
+          "text": "停車處標誌搭配起終點箭頭，對應實際停車帶位置。"
+        },
+        {
+          "id": "conditions",
+          "title": "同時說明車種與時段",
+          "text": "透過附牌補充停放條件，方便用路人快速判讀。"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m103-parking-japan",
+      "section": "module",
+      "submoduleId": "M1-03.1",
+      "title": "日本停車帶起終點實例",
+      "intro": "對照道路兩端的標誌位置與箭頭。",
+      "assets": [
+        "m103-japan-1",
+        "m103-japan-2"
+      ],
+      "points": [
+        {
+          "id": "ends",
+          "title": "在起終點標示停車範圍",
+          "text": "利用設於停車帶起終點的停車處標誌，幫助用路人確認可停放區間。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [],
+      "mode": "pair"
+    },
+    {
+      "id": "m103-parking-multiple",
+      "section": "module",
+      "submoduleId": "M1-03.1",
+      "title": "多元停車管制牌面",
+      "intro": "規則較多時，集中呈現並維持清楚的資訊順序。",
+      "assets": [
+        "m103-multiple",
+        "m103-multiple-photo"
+      ],
+      "points": [
+        {
+          "id": "multiple",
+          "title": "多種管制可整合為專用牌面",
+          "text": "停放車種、時段與收費方式較多時，可另行設計牌面，集中說明各項條件。"
+        },
+        {
+          "id": "order",
+          "title": "維持一致的閱讀順序",
+          "text": "資訊仍以車種、時間、收費方式為主，並配合停車帶起終點標示範圍。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [],
+      "mode": "pair"
+    }
+  ],
+  "referenceNames": {
+    "118": "停車處標誌",
+    "169": "禁止臨時停車線",
+    "190": "車輛停放線"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M1-03.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m103-parking-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m103-parking-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "clearance",
+              "label": "進出端淨空",
+              "sourcePageId": "m103-parking-diagram",
+              "pointIds": [
+                "clearance"
+              ],
+              "assets": [
+                "m103-layout"
+              ]
+            },
+            {
+              "id": "angle",
+              "label": "停放角度",
+              "sourcePageId": "m103-parking-diagram",
+              "pointIds": [
+                "angle"
+              ],
+              "assets": [
+                "m103-layout"
+              ]
+            },
+            {
+              "id": "dedicated",
+              "label": "專用車位",
+              "sourcePageId": "m103-parking-diagram",
+              "pointIds": [
+                "dedicated"
+              ],
+              "assets": [
+                "m103-layout"
+              ]
+            },
+            {
+              "id": "signs",
+              "label": "停車處標誌",
+              "sourcePageId": "m103-parking-diagram",
+              "pointIds": [
+                "ends",
+                "orientation"
+              ],
+              "assets": [
+                "m103-layout"
+              ]
+            },
+            {
+              "id": "plates",
+              "label": "標誌與附牌",
+              "sourcePageId": "m103-parking-diagram",
+              "pointIds": [
+                "order",
+                "icons"
+              ],
+              "assets": [
+                "m103-plate-1",
+                "m103-plate-2",
+                "m103-plate-3"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m103-parking-extensions",
+          "title": "延伸應用",
+          "intro": "對照標誌實例，整理停車範圍與多元管制資訊。",
+          "topics": [
+            {
+              "id": "germany",
+              "label": "德國停車標誌實例",
+              "sourcePageId": "m103-parking-extensions"
+            },
+            {
+              "id": "japan",
+              "label": "日本停車帶起終點",
+              "sourcePageId": "m103-parking-japan"
+            },
+            {
+              "id": "multiple",
+              "label": "多元停車管制牌面",
+              "sourcePageId": "m103-parking-multiple"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

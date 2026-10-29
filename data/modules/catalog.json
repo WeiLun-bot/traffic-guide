@@ -44,7 +44,7 @@
       "id": "M1-01",
       "name": "路口動線導引",
       "theme": "M1",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M1-01.1",
@@ -60,7 +60,7 @@
       "id": "M1-02",
       "name": "行車指示",
       "theme": "M1",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M1-02.1",
@@ -72,7 +72,7 @@
       "id": "M1-03",
       "name": "路側停車",
       "theme": "M1",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M1-03.1",
@@ -100,7 +100,7 @@
       "id": "M2-02",
       "name": "圓環管制",
       "theme": "M2",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M2-02.1",

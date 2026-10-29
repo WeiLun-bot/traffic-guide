@@ -398,6 +398,6 @@
   window.addEventListener('resize', updateButtons);
   (async () => {
     try { install(await files.restore() || await loadDefault()); }
-    catch (error) { report('設定未載入。請用 localhost 開啟，或匯入 layout/presentation-layout.json。' + error.message, true); ui.querySelector('.vl-toolbar').hidden = false; ui.querySelector('.vl-recovery').hidden = false; }
+    catch (error) { report('設定未載入。請用 localhost 開啟，或匯入 layout/presentation-layout.json。' + error.message, true); ui.querySelector('.vl-toolbar').hidden = false; ui.querySelector('.vl-recovery').hidden = false; window.presentationStartup?.recover(()=>run('import')); }
   })();
 })();

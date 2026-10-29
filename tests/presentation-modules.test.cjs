@@ -5,7 +5,7 @@ const root=path.resolve(__dirname,'..'),read=file=>JSON.parse(fs.readFileSync(pa
 const catalog=read('data/modules/catalog.json'),data=read('data/modules/M2-01.json');
 test('module architecture has four themes, fifteen modules and twenty-seven submodules',()=>{
   Modules.validateCatalog(catalog);assert.equal(catalog.themes.length,4);assert.equal(catalog.modules.length,15);
-  assert.equal(catalog.modules.flatMap(item=>item.submodules).length,27);assert.deepEqual(catalog.modules.filter(item=>item.ready).map(item=>item.id),['M2-01']);
+  assert.equal(catalog.modules.flatMap(item=>item.submodules).length,27);assert.deepEqual(catalog.modules.filter(item=>item.ready).map(item=>item.id),['M1-01','M1-02','M1-03','M2-01','M2-02']);
 });
 test('complete M2-01 has twelve unique content pages and eight local original figures',()=>{
   Modules.validateModule(data,catalog);assert.equal(data.pages.length,12);assert.equal(Object.keys(data.assets).length,8);
@@ -24,7 +24,7 @@ test('module point identities, headings, fonts, images and initial views survive
   const invalid=store.snapshot();invalid.content.modules['m201-stop-layout'].points[0].titleKey='';assert.throws(()=>store.commit(invalid));
 });
 test('submodule flows expose three stages, preserve legacy routes, and reject foreign references',async()=>{
-  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>structuredClone(String(url).endsWith('catalog.json')?catalog:data)})};
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();assert.equal(api.error,'');
   const pages=Array.from(api.pages()),ids=new Set(pages.map(page=>page.id));assert.equal(ids.size,pages.length);assert(pages.every(page=>/^[\w-]+$/.test(page.id)));
   assert.equal(pages.filter(page=>page.submoduleId==='M2-01.1').length,3);assert.equal(pages.filter(page=>page.submoduleId==='M2-01.2').length,3);
@@ -34,7 +34,7 @@ test('submodule flows expose three stages, preserve legacy routes, and reject fo
   api.resolvePage('m201-stop-layout','topic-line');assert.equal(api.displayContext('m201-stop-layout').topic.id,'line');
   assert.equal(api.resolvePage('edge'),'edge');
   assert.equal(data.pages.filter(page=>page.submoduleId==='M2-01.1').length,5);assert.equal(data.pages.filter(page=>page.submoduleId==='M2-01.2').length,5);
-  assert.equal(pages.find(page=>page.id==='module-M2-02').submoduleId,'M2-02.1');assert(ids.has('submodule-M2-04-3'));
+  assert.equal(pages.find(page=>page.id==='m202-roundabout-issues').submoduleId,'M2-02.1');assert(ids.has('submodule-M2-04-3'));
   const invalid=structuredClone(data);invalid.pages[0].submoduleId='M2-02.1';assert.throws(()=>Modules.validateModule(invalid,catalog));
   const badCatalog=structuredClone(catalog);badCatalog.modules[0].submodules[0].id='M1-01.bad/path';assert.throws(()=>Modules.validateCatalog(badCatalog));
   for(const change of [next=>next.submoduleFlows[0].stages.reverse(),next=>next.submoduleFlows[0].stages[1].topics[0].sourcePageId='m201-yield-layout',next=>next.submoduleFlows[0].stages[1].topics[0].pointIds=['unknown'],next=>next.submoduleFlows[0].stages[2].topics[0].assets=['yield-basic']]){const invalid=structuredClone(data);change(invalid);assert.throws(()=>Modules.validateModule(invalid,catalog));}
@@ -43,4 +43,23 @@ test('submodule flows expose three stages, preserve legacy routes, and reject fo
     const expected=[...new Set(stage.topics.map(topic=>topic.sourcePageId))].flatMap(id=>data.pages.find(page=>page.id===id).points.map(point=>id+':'+point.id));assert.deepEqual([...assigned].sort(),expected.sort());
   }
   const store=new Core.Store(read('layout/presentation-layout.json')),next=store.snapshot();next.content.modules['m201-stop-layout']={points:[{id:'note',title:'新增說明',titleKey:'module|note|title',text:'只屬於停止線',textKey:'module|note|text',topicId:'line'}]};store.commit(next);assert.equal(Core.parse(store.serialize()).content.modules['m201-stop-layout'].points[0].topicId,'line');next.content.modules['m201-stop-layout'].points[0].topicId='../bad';assert.throws(()=>store.commit(next));
+});
+
+test('new modules retain complete topic coverage, globally unique assets, old entry aliases and isolated load failures',async()=>{
+  const assets=new Set(),pageIds=new Set();
+  for(const entry of catalog.modules.filter(entry=>entry.ready)){
+    const content=read('data/modules/'+entry.id+'.json');Modules.validateModule(content,catalog);
+    for(const [id,asset]of Object.entries(content.assets)){assert(!assets.has(id));assets.add(id);assert(fs.existsSync(path.join(root,asset.file)));}
+    for(const page of content.pages){assert(!pageIds.has(page.id));pageIds.add(page.id);}
+    for(const flow of content.submoduleFlows)for(const stage of flow.stages.filter(stage=>stage.topics)){
+      const assigned=stage.topics.flatMap(topic=>(topic.pointIds||content.pages.find(page=>page.id===topic.sourcePageId).points.map(point=>point.id)).map(id=>topic.sourcePageId+':'+id));
+      const expected=[...new Set(stage.topics.map(topic=>topic.sourcePageId))].flatMap(id=>content.pages.find(page=>page.id===id).points.map(point=>id+':'+point.id));assert.deepEqual([...assigned].sort(),expected.sort(),entry.id+' / '+stage.id);
+    }
+  }
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:!String(url).endsWith('M1-03.json'),status:404,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  assert.equal(api.moduleErrors['M1-03'],'HTTP 404');assert(api.pages().some(page=>page.id==='m201-stop-layout'));assert(api.pages().some(page=>page.id==='m202-roundabout-issues'));
+  assert.equal(api.resolvePage('m103-parking-diagram'),'module-M1-03');
+  assert.equal(api.resolvePage('module-M1-01'),'m101-overview');assert.equal(api.resolvePage('submodule-M1-01-2'),'m101-additional-issues');assert.equal(api.resolvePage('module-M1-02'),'m102-route-issues');
+  api.resolvePage('m102-route-diagram','topic-single');api.resolvePage('m201-stop-layout','topic-line');assert.equal(api.displayContext('m102-route-diagram').topic.id,'single');assert.equal(api.displayContext('m201-stop-layout').topic.id,'line');
 });

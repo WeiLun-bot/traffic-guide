@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:affinity="https://www.affinity.studio/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g>
+        <path id="標準尺寸-1:25" affinity:id="標準尺寸 1:25" d="M235.533,0.51C236.637,0.51 237.533,1.406 237.533,2.51L237.533,198.51C237.533,199.614 236.637,200.51 235.533,200.51L-0.467,200.51C-1.571,200.51 -2.467,199.614 -2.467,198.51L-2.467,2.51C-2.467,1.406 -1.571,0.51 -0.467,0.51L235.533,0.51Z" style="fill:rgb(0,127,0);"/>
+        <path id="標準尺寸-1:251" affinity:id="標準尺寸 1:25" d="M233.573,2.51C234.655,2.51 235.533,3.388 235.533,4.47L235.533,196.55C235.533,197.632 234.655,198.51 233.573,198.51L1.493,198.51C0.411,198.51 -0.467,197.632 -0.467,196.55L-0.467,4.47C-0.467,3.388 0.411,2.51 1.493,2.51L233.573,2.51Z" style="fill:none;stroke:white;stroke-width:1.41px;"/>
+        <g>
+            <rect x="87.533" y="10.129" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="125.133" y="10.129" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="87.533" y="37.222" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <g>
+            <rect x="157.651" y="89.098" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="195.251" y="89.098" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="157.651" y="116.191" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <g>
+            <rect x="17.414" y="89.098" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="55.014" y="89.098" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="17.414" y="116.191" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <path d="M110.271,68.979L117.471,54.579L124.671,68.979C121.071,65.379 113.871,65.379 110.271,68.979Z" style="fill:white;"/>
+        <path d="M117.471,127.56L117.471,66.099" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M173.533,134.76L187.933,141.96L173.533,149.16C177.133,145.56 177.133,138.36 173.533,134.76Z" style="fill:white;"/>
+        <path d="M148.654,141.96L176.413,141.96" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M115.172,156.334L119.971,156.36L119.771,193.159L114.972,193.133L115.172,156.334Z" style="fill:white;"/>
+        <path d="M61.533,149.16L47.133,141.96L61.533,134.76C57.933,138.36 57.933,145.56 61.533,149.16Z" style="fill:white;"/>
+        <path d="M103.133,141.96C103.133,141.96 75.044,141.96 58.653,141.96" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M99.948,150.16C98.784,147.668 98.133,144.89 98.133,141.96C98.133,131.253 106.826,122.56 117.533,122.56C128.24,122.56 136.933,131.253 136.933,141.96C136.933,152.667 128.24,161.36 117.533,161.36C116.72,161.36 115.919,161.31 115.133,161.213L115.133,156.161C115.913,156.292 116.715,156.36 117.533,156.36C125.48,156.36 131.933,149.908 131.933,141.96C131.933,134.012 125.48,127.56 117.533,127.56C109.585,127.56 103.133,134.012 103.133,141.96C103.133,144.135 103.616,146.197 104.48,148.046L99.948,150.16Z" style="fill:white;"/>
+        <path d="M117.533,177.16C112.217,177.16 107.175,175.979 102.655,173.866L104.684,169.515C108.588,171.34 112.942,172.36 117.533,172.36L117.533,177.16Z" style="fill:white;"/>
+        <path d="M152.657,139.638C152.707,140.405 152.733,141.18 152.733,141.96C152.733,161.387 136.96,177.16 117.533,177.16L117.533,172.36C134.311,172.36 147.933,158.738 147.933,141.96C147.933,141.179 147.903,140.404 147.845,139.638L152.657,139.638Z" style="fill:white;"/>
+        <path d="M160.435,144.36L142.765,144.36" style="fill:none;"/>
+    </g>
+    <g id="自行車除外附牌">
+    </g>
+</svg>

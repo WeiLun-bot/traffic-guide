@@ -1,10 +1,20 @@
 <!doctype html>
-<html lang="zh-Hant"><head>
+<html lang="zh-Hant" data-presentation-state="loading"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f4f7f1">
 <meta name="description" content="道路交通標誌標線號誌設置參考指引互動簡報：三年成果與模組化整體架構、交通管制設施模組設計、一般道路情境、複雜道路情境。">
 <title>道路交通標誌標線號誌設置參考指引｜四場簡報</title>
+<style id="presentation-startup-styles">
+/* Keep layout measurable while configuration and navigation are initialized. */
+html:not([data-presentation-state="ready"]) :is(.header,#presentation,.playbar,.reading-progress){visibility:hidden!important;pointer-events:none!important}
+#presentation-startup{position:fixed;inset:0;display:grid;place-content:center;justify-items:center;gap:16px;padding:24px;text-align:center;color:#426c58;background:#f4f7f1;z-index:80;font:16px/1.8 'Microsoft JhengHei',sans-serif}
+#presentation-startup p{margin:0;max-width:34em}
+#presentation-startup button{padding:9px 16px;border:1px solid #bfd0b5;border-radius:6px;color:#254b3b;background:#fff;cursor:pointer;font:inherit}
+#presentation-startup [hidden],html[data-presentation-state="ready"] #presentation-startup{display:none}
+html:not([data-presentation-state="ready"]) #visual-layout-editor{visibility:hidden}
+html:is([data-presentation-state="loading"],[data-presentation-state="error"]) #visual-layout-status{visibility:hidden}
+</style>
 <style>:root{--bg:#f4f7f1;--paper:#fff;--ink:#233e36;--muted:#6c7e72;--green:#426c58;--dark:#254b3b;--soft:#e7eee2;--line:#dce4d7;--accent:#cb8b45;--header:78px;--footer:78px;font-family:'Lato','Noto Sans TC','Microsoft JhengHei',sans-serif;color:var(--ink);background:var(--bg);font-synthesis:none}
 *{box-sizing:border-box}body{margin:0}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:disabled{cursor:default;opacity:.35}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}button{color:inherit}svg{display:block}button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .reading-progress{position:fixed;inset:0 0 auto;height:3px;z-index:10;background:var(--line)}.reading-progress span{display:block;height:100%;background:var(--green);transition:width .35s}.header{height:var(--header);display:flex;align-items:center;justify-content:space-between;gap:26px;padding:0 3.4vw;border-bottom:1px solid var(--line)}.brand{display:flex;gap:12px;align-items:center;flex-shrink:0;font-size:12px;letter-spacing:.17em;font-weight:800}.brand small{display:block;letter-spacing:.1em;font-size:10px;color:var(--muted);font-weight:400;margin-top:5px}.brand-mark{display:flex;align-items:center;gap:4px;transform:skewY(-15deg);height:29px}.brand-mark i{display:block;width:4px;height:24px;background:var(--green)}.brand-mark i:nth-child(2){height:32px;background:#8ca27c}.brand-mark i:nth-child(3){height:17px;background:#b7c7a8}.chapters{display:flex;align-items:stretch;align-self:stretch;gap:5px}.chapters button{border:0;border-bottom:2px solid transparent;background:none;padding:0 16px;white-space:nowrap;font-size:12px;color:#82907e;transition:color .2s,background .2s}.chapters button span{font-size:10px;margin-right:7px;opacity:.7}.chapters button.active{border-bottom-color:var(--green);color:var(--dark);font-weight:700;background:#eaf0e567}.chapters button:hover{color:var(--dark);background:var(--soft)}.icon-button{background:none;border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;flex-shrink:0}.icon-button:hover{background:var(--soft)}
@@ -153,13 +163,51 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
 <link rel="stylesheet" href="assets/presentation-scenarios.css">
 </head>
 <body data-presentation-variant="figure-focused" class="" style="">
+<div id="presentation-startup" role="status" aria-live="polite">
+  <p id="presentation-startup-message">正在載入簡報…</p>
+  <button id="presentation-startup-import" type="button" hidden>匯入設定檔</button>
+  <button id="presentation-startup-reload" type="button" hidden>重新載入網頁</button>
+  <noscript>請啟用 JavaScript 後重新載入簡報。</noscript>
+</div>
+<script id="presentation-startup-script">
+(() => {
+  'use strict';
+  const root=document.documentElement,message=document.getElementById('presentation-startup-message');
+  const reload=document.getElementById('presentation-startup-reload'),importButton=document.getElementById('presentation-startup-import');
+  let failed=false;
+  reload.addEventListener('click',()=>location.reload());
+  function fail(){
+    if(root.dataset.presentationState==='ready')return;
+    failed=true;root.dataset.presentationState='error';
+    message.textContent='簡報未能完成載入，請重新載入網頁。';reload.hidden=false;importButton.hidden=true;
+  }
+  function onError(event){if(event.target instanceof HTMLScriptElement||event instanceof ErrorEvent)fail();}
+  window.addEventListener('error',onError,true);
+  window.addEventListener('unhandledrejection',fail);
+  window.presentationStartup={
+    complete(){
+      if(failed)return;
+      document.getElementById('presentation').setAttribute('aria-busy','false');
+      root.dataset.presentationState='ready';
+      window.removeEventListener('error',onError,true);window.removeEventListener('unhandledrejection',fail);
+    },
+    recover(importConfig){
+      if(failed)return;
+      root.dataset.presentationState='recovery';
+      message.textContent='未能載入版面設定。請匯入專案中的 layout/presentation-layout.json，或重新載入網頁。';
+      reload.hidden=false;importButton.hidden=false;importButton.onclick=importConfig;
+    },
+    fail
+  };
+})();
+</script>
 <div class="reading-progress" aria-hidden="true"><span id="progress" style="width: 9.52381%;"></span></div>
 <header class="header">
   <a href="#cover" class="brand" aria-label="回簡報封面"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>ROAD DESIGN<small>道路交通設施設置參考指引</small></span></a>
-  <nav id="chapters" class="chapters" aria-label="五個章節"><button type="button" data-chapter="intro" class=""><span>00</span>緒論</button><button type="button" data-chapter="g1" class="active" aria-current="step"><span>01</span>無號誌三岔</button><button type="button" data-chapter="g2"><span>02</span>號誌化三岔</button><button type="button" data-chapter="g3"><span>03</span>無號誌四岔</button><button type="button" data-chapter="g4"><span>04</span>號誌化四岔</button></nav>
+  <nav id="chapters" class="chapters" aria-label="四場簡報"></nav>
   <button id="toc-button" class="icon-button" title="章節目錄（M）" aria-label="開啟章節目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
 </header>
-<main id="presentation" tabindex="-1"></main>
+<main id="presentation" tabindex="-1" aria-busy="true"></main>
 <footer class="playbar">
   <div class="utilities"><button id="help-button" class="quiet-button" title="操作說明（H）">? <span>操作</span></button><button id="fullscreen-button" class="quiet-button" title="全螢幕（F）">⛶ <span>全螢幕</span></button><span class="footer-label">GENERAL ROAD SCENARIOS</span></div>
   <div class="page-progress"><span id="page-number">05</span><span class="progress-track"><i id="page-track" style="width: 17.2414%;"></i></span><span id="page-total">29</span><small id="phase-label"></small></div>
@@ -1904,7 +1952,8 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
   window.PresentationModules?.connect(window.generalRoadPresentation);
   window.PresentationStructure?.connect(window.generalRoadPresentation,scenarioUI);
   fromHash();
-})();
+  window.presentationStartup.complete();
+})().catch(error=>{console.error('簡報初始化失敗',error);window.presentationStartup.fail();});
 </script>
 
 

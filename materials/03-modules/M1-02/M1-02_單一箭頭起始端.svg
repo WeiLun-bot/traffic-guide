@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 205 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:affinity="https://www.affinity.studio/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g>
+        <path id="標準尺寸-1:25" affinity:id="標準尺寸 1:25" d="M203.228,-1.023C204.332,-1.023 205.228,-0.127 205.228,0.977L205.228,196.977C205.228,198.081 204.332,198.977 203.228,198.977L1.033,198.977C-0.071,198.977 -0.967,198.081 -0.967,196.977L-0.967,0.977C-0.967,-0.127 -0.071,-1.023 1.033,-1.023L203.228,-1.023Z" style="fill:rgb(0,127,0);"/>
+        <path id="標準尺寸-1:251" affinity:id="標準尺寸 1:25" d="M201.549,0.977C202.631,0.977 203.509,1.855 203.509,2.937L203.509,195.017C203.509,196.099 202.631,196.977 201.549,196.977L2.712,196.977C1.63,196.977 0.752,196.099 0.752,195.017L0.752,2.937C0.752,1.855 1.63,0.977 2.712,0.977L201.549,0.977Z" style="fill:none;stroke:white;stroke-width:1.41px;"/>
+        <g>
+            <rect x="72.113" y="11.537" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="109.713" y="11.537" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="72.113" y="38.63" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <g>
+            <rect x="121.376" y="101.738" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="158.976" y="101.738" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="121.376" y="128.831" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <g>
+            <rect x="18.043" y="77.926" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="55.643" y="77.926" width="22.4" height="22.4" style="fill:white;"/>
+            <rect x="18.043" y="105.019" width="60" height="11.2" style="fill:white;"/>
+        </g>
+        <path d="M125.776,151.641L140.176,158.841L125.776,166.041C129.376,162.441 129.376,155.241 125.776,151.641Z" style="fill:white;"/>
+        <path d="M102.576,158.841L128.656,158.841" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <path d="M79.376,143.641L64.976,136.441L79.376,129.241C75.776,132.841 75.776,140.041 79.376,143.641Z" style="fill:white;"/>
+        <path d="M102.576,136.441L76.496,136.441" style="fill:none;stroke:white;stroke-width:4.8px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+        <g>
+            <path d="M99.731,74.638C97.895,75.016 96.192,75.835 94.931,77.096L102.131,62.696L109.331,77.096C108.069,75.835 106.366,75.016 104.531,74.638C102.963,74.316 101.298,74.316 99.731,74.638Z" style="fill:white;"/>
+            <path d="M104.531,73.965L104.531,183.641L99.731,183.641L99.731,73.965L104.531,73.965Z" style="fill:white;"/>
+        </g>
+    </g>
+    <g id="自行車除外附牌">
+    </g>
+</svg>

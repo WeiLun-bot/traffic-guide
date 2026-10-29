@@ -4,10 +4,10 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   const shot=async name=>{await evaluate('(async()=>{await document.fonts.ready;await Promise.all(document.getAnimations().filter(a=>a.effect.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{})))})()');const image=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(image.data,'base64'));};
   await evaluate('window.generalRoadEditor.setEditing(false)');await view('overview');await click('[data-module-entry]');
   assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'modules-structure');
-  assert.equal(await evaluate('document.querySelectorAll(".module-theme").length'),4);await shot('modules-structure');
+  assert.equal(await evaluate('document.querySelectorAll(".module-theme").length'),4);assert.equal(await evaluate('document.querySelectorAll(".module-feature").length'),0);assert(await evaluate('(()=>{const grid=document.querySelector(".module-structure-grid");return grid.children.length===1&&Math.abs(grid.firstElementChild.getBoundingClientRect().width-grid.getBoundingClientRect().width)<1})()'));await shot('modules-structure');
   await click('[data-module-category="M2"]');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card").length'),4);
   assert.equal(await evaluate('document.querySelectorAll(".module-filters").length'),0);await click('.catalog-back[data-page="modules-index"]');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card").length'),15);await shot('modules-index');
-  await click('[data-page="module-M1-01"]');assert(await evaluate('Boolean(document.querySelector(".presentation-empty-space"))'));await view('modules-index');
+  await click('[data-page="m101-overview"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m101-overview');await view('modules-index');
   await click('.module-catalog-card[data-page="m201-overview"]');assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),2);
   assert.equal(await evaluate('document.querySelectorAll("[data-module-origin],.module-switcher>span").length'),0);await view('overview');
   await click('[data-open-module="M2-01"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m201-overview');
@@ -78,6 +78,6 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   pass('module image replacement and undo preserve source assets; architecture, figures and application lists fit a 390px viewport');
   fs.writeFileSync(previewConfigPath,previewConfigText);await navigate(base+'/presentation-demo/#cover');
-  setModuleFailure(true);await navigate(base+'/presentation-demo/#modules-structure');assert.match(await evaluate('document.getElementById("slide-title").textContent'),/尚未載入/);await view('overview');assert(await evaluate('Boolean(document.querySelector(".compare-stage"))'));setModuleFailure(false);await navigate(base+'/presentation-demo/#cover');
+  setModuleFailure(true);await navigate(base+'/presentation-demo/#module-M2-01');assert.match(await evaluate('document.getElementById("slide-title").textContent'),/尚未載入/);await view('m102-route-issues');assert.equal(await evaluate('document.querySelector("main>.slide").dataset.moduleId'),'M1-02');await view('overview');assert(await evaluate('Boolean(document.querySelector(".compare-stage"))'));setModuleFailure(false);await navigate(base+'/presentation-demo/#cover');
   pass('missing module data shows a recovery message while original scenario navigation remains usable');
 };

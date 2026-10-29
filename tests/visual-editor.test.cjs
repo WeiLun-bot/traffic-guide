@@ -23,6 +23,8 @@ test('original data and unaffected presentation blocks remain unchanged', () => 
   for (const match of html.matchAll(/<(script|style)\b([^>]*)>([\s\S]*?)<\/\1>/g)) {
     if (/type="application\/json"|\bsrc=/.test(match[2])) continue;
     const id = match[2].match(/id="([^"]+)"/)?.[1] || 'anonymous';
+    // Startup visibility is new and exercised with delayed loads in the browser.
+    if (['presentation-startup-styles','presentation-startup-script'].includes(id)) continue;
     // These blocks intentionally change comparison placement, article headings,
     // and the shared content/visual editing controls.
     if (match[1] === 'script' && ['general-editor', 'general-formatting', 'general-current-conditions', 'general-scenario-structure', 'anonymous'].includes(id)) continue;
