@@ -10,14 +10,14 @@
     const beside = rect.right + 12;
     record.panel.style.width = width + 'px';
     record.panel.style.left = Math.max(12, beside + width <= innerWidth - 12 ? beside : Math.min(rect.right - width, innerWidth - width - 12)) + 'px';
-    const top = Math.min(Math.max(90, rect.top + 42), Math.max(90, innerHeight - 390));
+    const top = Math.min(Math.max(90, rect.top + 42), Math.max(90, innerHeight - 460));
     record.panel.style.top = top + 'px'; record.panel.style.maxHeight = Math.max(140, innerHeight - top - 85) + 'px';
   }
   function setting(record) { return record.context.getConfig().imageViews[record.id] || Core.imageView(record.pageId, record.assetKey); }
   function fields(record) {
     const value = setting(record);
     for (const input of record.panel.querySelectorAll('[data-iv-field]')) {
-      if (input !== document.activeElement) input.value = number(input.dataset.ivField === 'zoom' ? value.zoom * 100 : value[input.dataset.ivField]);
+      if (input !== document.activeElement) input.value = number(input.dataset.ivField === 'zoom' ? value.zoom * 100 : value[input.dataset.ivField] ?? 0);
       input.disabled = record.context.isBusy();
     }
     for (const button of record.panel.querySelectorAll('button')) button.disabled = record.context.isBusy();
@@ -26,6 +26,17 @@
     const value = setting(record), signature = JSON.stringify(value);
     if (force || record.signature !== signature) {
       const view = Core.viewBoxFor(record.home, value);
+      if (value.rotation || record.rotationLayer) {
+        if (!record.rotationLayer) {
+          const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          layer.dataset.initialViewRotation = '';
+          // Keep definitions/metadata at the root and rotate artwork and highlights together.
+          for (const child of [...record.svg.children]) if (!['defs', 'title', 'desc', 'style', 'metadata'].includes(child.localName)) layer.append(child);
+          record.svg.append(layer); record.rotationLayer = layer;
+        }
+        const [x, y, width, height] = record.home;
+        record.rotationLayer.setAttribute('transform', `rotate(${value.rotation ?? 0} ${x + width / 2} ${y + height / 2})`);
+      }
       record.controller.configure({home: view}); record.controller.write(view, false);
       record.signature = signature;
     }
@@ -61,9 +72,10 @@
     panel.className = 'iv-panel'; panel.dataset.editorUi = 'initial-image-view'; panel.dataset.imageViewId = id;
     panel.setAttribute('aria-label', '圖面初始畫面設定'); panel.hidden = !opened.has(id);
     panel.innerHTML = `<div class="iv-heading"><strong>設定初始畫面</strong><button type="button" data-iv-action="close" aria-label="關閉初始畫面設定">×</button></div>
-      <p>可在圖上縮放、拖曳後套用目前畫面，也可直接調整下方數值。</p>
+      <p>可調整旋轉角度，再在圖上縮放、拖曳並套用目前畫面，也可直接調整下方數值。</p>
       <div class="iv-fields"><label>初始縮放（%）<input type="number" data-iv-field="zoom" min="2" max="20000" step="1"></label><label>左右位置（%）<input type="number" data-iv-field="x" min="-1000" max="1000" step="0.1"></label><label>上下位置（%）<input type="number" data-iv-field="y" min="-1000" max="1000" step="0.1"></label></div>
-      <small>左右正值向右、上下正值向下；各頁與各圖分別保存。</small>
+      <div class="iv-fields iv-rotation"><label>旋轉角度（°）<input type="number" data-iv-field="rotation" min="-360" max="360" step="1"></label><button type="button" data-iv-action="rotate-left">左轉 90°</button><button type="button" data-iv-action="rotate-right">右轉 90°</button></div>
+      <small>左右正值向右、上下正值向下；角度正值順時針。各頁與各圖分別保存。</small>
       <div class="iv-actions"><button type="button" data-iv-action="capture">套用目前畫面</button><button type="button" data-iv-action="reset">回到原始畫面</button><button type="button" data-iv-action="save">儲存設定</button></div>
       <p class="iv-note">儲存後，切頁、重新開啟及重設視圖會使用這個初始畫面。</p>`;
     toolbar.append(button); document.body.append(panel);
@@ -84,8 +96,12 @@
       if (record.context.isBusy()) return;
       if (action === 'save') {record.context.save();return;}
       if (action === 'reset') {commit(record, Core.imageView(pageId, assetKey));return;}
+      if (action === 'rotate-left' || action === 'rotate-right') {
+        const angle = (setting(record).rotation ?? 0) + (action === 'rotate-left' ? -90 : 90);
+        commit(record, {rotation: ((angle + 180) % 360 + 360) % 360 - 180});return;
+      }
       if (action === 'capture') {
-        try {commit(record, Core.settingsForView(record.home, record.controller.read()));}
+        try {commit(record, Core.settingsForView(record.home, record.controller.read(), setting(record).rotation ?? 0));}
         catch (error) {record.context.report(error.message, true);}
       }
     });

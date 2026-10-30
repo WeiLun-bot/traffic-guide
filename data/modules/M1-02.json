@@ -10,6 +10,14 @@
     ]
   },
   "assets": {
+    "m102-route-issue-photo": {
+      "file": "materials/03-modules/M1-02/M1-02.1_現況議題_路徑與地點指示.png",
+      "width": 1414,
+      "height": 710,
+      "label": "路徑與地點指示現況照片",
+      "caption": "M1-02.1 路徑與地點指示現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m102-offset": {
       "file": "materials/03-modules/M1-02/M1-02_路徑與地點指示代表型1_錯位T字.svg",
       "width": 2755,
@@ -91,8 +99,7 @@
       "title": "路徑與地點指示｜現況議題與相關條文",
       "intro": "先讓駕駛看懂路型，再決定要走哪一條車道。",
       "assets": [
-        "m102-offset",
-        "m102-roundabout"
+        "m102-route-issue-photo"
       ],
       "points": [
         {

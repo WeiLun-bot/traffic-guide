@@ -8,6 +8,22 @@
     "notes": []
   },
   "assets": {
+    "m103-issue-street-parking": {
+      "file": "materials/03-modules/M1-03/M1-03.1_現況議題_路側停車.png",
+      "width": 993,
+      "height": 462,
+      "label": "現況照片 1：路側停車",
+      "caption": "M1-03.1 路側停車現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m103-issue-parking-bays": {
+      "file": "materials/03-modules/M1-03/M1-03.1_現況議題_停車格位.png",
+      "width": 1098,
+      "height": 627,
+      "label": "現況照片 2：停車格位",
+      "caption": "M1-03.1 停車格位現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m103-layout": {
       "file": "materials/03-modules/M1-03/M1-03_路側停放與裝卸車位配置代表型.svg",
       "width": 679,
@@ -88,8 +104,10 @@
       "submoduleId": "M1-03.1",
       "title": "路側停放與裝卸車位配置｜現況議題與相關條文",
       "intro": "讓停車範圍、適用車種與使用規則一眼可辨。",
+      "defaultView": "pair",
       "assets": [
-        "m103-layout"
+        "m103-issue-street-parking",
+        "m103-issue-parking-bays"
       ],
       "points": [
         {

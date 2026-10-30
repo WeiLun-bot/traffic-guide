@@ -225,8 +225,9 @@
   function restoreLegacy(preserveComparison=false) {
     const editor = window.generalRoadEditor;
     if (!editor || !api) return;
+    const previousState=api.state;
     const captured=preserveComparison?captureComparison():null;
-    if (JSON.stringify(editor.state) === JSON.stringify(store.config.legacyState)) { api.refresh();restoreComparison(captured);return; }
+    if (JSON.stringify(editor.state) === JSON.stringify(store.config.legacyState)) { window.PresentationOrder?window.PresentationOrder.refresh(api):api.refresh();restoreComparison(captured);return; }
     restoreStyles();
     for (const key of Object.keys(editor.state)) delete editor.state[key];
     Object.assign(editor.state, Core.clone(store.config.legacyState));
@@ -234,7 +235,7 @@
     for (const key of Object.keys(api.data)) delete api.data[key]; Object.assign(api.data, fresh);
     window.generalRoadConditions?.prepare(api.data); window.PresentationModules?.prepare(api.data); editor.prepare(api.data);
     api.pages.splice(0, api.pages.length, ...legacyPages.map(page => ({...page, ...(page.article ? {article: api.data.articles.find(article => article.id === page.article.id)} : {})})));
-    editor.restorePages(api.pages); api.refreshStructure(api.state.page, api.state.phase);restoreComparison(captured);
+    editor.restorePages(api.pages); api.refreshStructure(previousState.page, previousState.phase);restoreComparison(captured);
   }
   function change(patch) {
     if (!current()) return;

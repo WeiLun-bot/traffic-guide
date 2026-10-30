@@ -50,6 +50,8 @@ body.is-visual-dragging{user-select:none}
 .iv-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
 .iv-fields label{display:flex;flex-direction:column;gap:5px;font-size:10px;min-width:0}
 .iv-fields input{box-sizing:border-box;width:100%;min-width:0;border:1px solid #c5d4bb;border-radius:4px;background:#fff;padding:6px}
+.iv-rotation{align-items:end}
+.iv-rotation button{white-space:nowrap}
 .iv-panel small{display:block;font-size:10px;color:#697e62}
 .iv-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
 .iv-actions [data-iv-action="save"]{background:#254b3b;color:#fff;border-color:#254b3b}

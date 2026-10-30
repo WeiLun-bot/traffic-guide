@@ -136,6 +136,31 @@ test('capturing and restoring an initial camera preserves zoom, offsets and aspe
   assert.throws(()=>Core.settingsForView(home,[0,0,0,1]));
 });
 
+test('initial rotation preserves older JSON, participates in history and rejects invalid angles',()=>{
+  const config=original(),view=Core.imageView('context','g101-before');config.imageViews={};
+  delete view.rotation;config.imageViews[view.id]=view;
+  const store=new Core.Store(config);assert.equal(store.config.imageViews[view.id].rotation,0);assert.equal(store.dirty,false);
+  const next=store.snapshot();next.imageViews[view.id].rotation=-90;
+  assert(store.commit(next));assert(store.dirty);assert.equal(Core.parse(store.serialize()).imageViews[view.id].rotation,-90);
+  assert(store.undo());assert.equal(store.config.imageViews[view.id].rotation,0);assert.equal(store.dirty,false);
+  assert(store.redo());assert.equal(store.config.imageViews[view.id].rotation,-90);
+  const saved=store.serialize();
+  for(const rotation of [361,-361,NaN,Infinity,null,'90']){const invalid=store.snapshot();invalid.imageViews[view.id].rotation=rotation;assert.throws(()=>store.commit(invalid));assert.equal(store.serialize(),saved);}
+});
+
+test('rotated cameras fit the original bounds and capture the same zoom/position at any angle',()=>{
+  const home=[10,20,200,100];
+  assert.deepEqual(Core.viewBoxFor(home,{zoom:1,x:0,y:0,rotation:90}),[60,-30,100,200]);
+  assert.deepEqual(Core.viewBoxFor(home,{zoom:1,x:0,y:0,rotation:-90}),[60,-30,100,200]);
+  for(const rotation of [0,30,-37.5,90,180,-270,360]){
+    const settings={zoom:1.6,x:12,y:-7,rotation},view=Core.viewBoxFor(home,settings),captured=Core.settingsForView(home,view,rotation);
+    for(const key of ['zoom','x','y','rotation'])assert(Math.abs(captured[key]-settings[key])<1e-9,key+' at '+rotation);
+    const fit=Core.viewBoxFor(home,{zoom:1,x:0,y:0,rotation});
+    assert(Math.abs(fit[0]+fit[2]/2-110)<1e-9);assert(Math.abs(fit[1]+fit[3]/2-70)<1e-9);
+  }
+  assert.throws(()=>Core.viewBoxFor(home,{zoom:1,x:0,y:0,rotation:Infinity}));
+});
+
 test('structured content is backward compatible and preserves identities through ordering, deletion, history and JSON',()=>{
   const legacy=original();delete legacy.content;
   const store=new Core.Store(legacy);assert.deepEqual(store.config.content,{conditions:{},articles:{},overviews:{},modules:{}});

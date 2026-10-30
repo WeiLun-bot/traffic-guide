@@ -8,6 +8,7 @@ const contentFiles=catalog.modules.filter(entry=>entry.ready).flatMap(entry=>{
   return [file,...Object.values(content.assets).map(asset=>asset.file)];
 });
 module.exports=[
+  'assets/presentation-order.js','assets/presentation-order.css',
   'assets/presentation-scenarios.js','assets/presentation-scenarios.css','data/scenarios/catalog.json',
   'assets/presentation-structure.js','assets/presentation-structure.css','data/presentations.json',
   'assets/presentation-modules.js','assets/presentation-modules.css',

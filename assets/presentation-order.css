@@ -1,0 +1,11 @@
+.navigation-order-item.can-reorder{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;position:relative}
+.navigation-order-item.can-reorder::before{content:'⠿';opacity:.6;margin-right:5px;font-size:12px}
+.navigation-order-label::after{content:' · 拖曳排序';font-size:.9em}
+.navigation-order-item.is-order-dragging{opacity:.4;cursor:grabbing}
+.navigation-order-item[data-drop-side]{outline:2px solid #bc8a40;outline-offset:2px}
+.navigation-order-item[data-drop-side]::after{content:'';position:absolute;top:-4px;bottom:-4px;width:3px;background:#bc8a40;border-radius:2px}
+.navigation-order-item[data-drop-side="before"]::after{left:-5px}
+.navigation-order-item[data-drop-side="after"]::after{right:-5px}
+.navigation-order-ghost{position:fixed;z-index:3000;pointer-events:none;padding:9px 13px;max-width:min(350px,80vw);border:1px solid #76955e;border-radius:5px;background:#f9fcf6;color:#254b3b;box-shadow:0 4px 18px #233e3633;font:12px/1.5 "Microsoft JhengHei",sans-serif}
+.is-navigation-order-dragging,.is-navigation-order-dragging *{cursor:grabbing!important;user-select:none!important}
+@media print{.navigation-order-item.can-reorder::before,.navigation-order-label::after,.navigation-order-ghost{display:none!important}}

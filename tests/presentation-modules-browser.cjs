@@ -16,7 +16,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   for(const page of pages){
     await view(page.id);assert.equal(await evaluate('document.getElementById("slide-title").textContent'),page.title);
     assert.equal(await evaluate('document.querySelectorAll(".module-explanation [data-module-focus],.module-focus-button").length'),0);
-    const shown=await evaluate('(()=>{const {source,topic,stage}=window.PresentationModules.displayContext();if(stage?.id==="extensions")return 0;const assets=topic?.assets||source.assets;return assets.length?(source.mode==="pair"?assets.length:1):0})()');assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),shown);
+    const shown=await evaluate('(()=>{const {source,topic,stage}=window.PresentationModules.displayContext();if(stage?.id==="extensions")return 0;const groups=window.PresentationModules.overviewGroups(source);if(groups.length)return groups.filter(group=>group.assets.length).length;const assets=topic?.assets||source.assets;return assets.length?1:0})()');assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),shown);
     const bounds=await evaluate('[...document.querySelectorAll(".module-diagram")].map(svg=>{const b=svg.getBoundingClientRect();return [b.width,b.height]})');
     assert(bounds.every(b=>b[0]>100&&b[1]>160),'Collapsed module image: '+page.id);
     assert(await evaluate('(()=>{const aside=document.querySelector(".module-explanation"),first=aside?.querySelector(".module-reference-row");return !first||first.getBoundingClientRect().top>=aside.getBoundingClientRect().top-1})()'),'Clipped first module explanation: '+page.id);

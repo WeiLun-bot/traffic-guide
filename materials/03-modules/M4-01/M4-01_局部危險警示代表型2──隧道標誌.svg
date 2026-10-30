@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 298 1221" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:affinity="https://www.affinity.studio/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1;">
+    <rect id="車種與通行條件限制" x="-1466.01" y="-82.883" width="2214.477" height="1635.874" style="fill:none;"/>
+    <path d="M85.282,271.77L102.45,310.718L102.45,916.359L87.54,963.34" style="fill:none;stroke:rgb(147,149,152);stroke-width:5.83px;"/>
+    <path d="M185.047,271.77L169.45,310.718L169.45,916.359L182.789,963.34" style="fill:none;stroke:rgb(147,149,152);stroke-width:5.83px;"/>
+    <rect x="104.45" y="311.835" width="63" height="606.269" style="fill:rgb(83,90,101);fill-opacity:0.48;"/>
+    <path d="M106.45,-7.182L166.45,-7.182L154.654,481.761L154.654,689.622L166.45,1203.903L106.45,1203.903L117.509,690.359L117.509,482.498L106.45,-7.182Z" style="fill:rgb(185,183,185);"/>
+    <g id="車道邊線">
+        <path d="M110.45,1203.903L121.975,689.269L122.062,481.761L110.45,-7.182" style="fill:none;stroke:white;stroke-width:1.5px;stroke-linecap:butt;stroke-miterlimit:10;"/>
+    </g>
+    <g id="車道邊線1" affinity:id="車道邊線">
+        <path d="M161.45,1203.903L149.925,691.718L150.812,481.761L161.45,-7.182" style="fill:none;stroke:white;stroke-width:1.5px;stroke-linecap:butt;stroke-miterlimit:10;"/>
+    </g>
+    <g>
+        <g id="立桿">
+            <path d="M172.248,1195.977L192.248,1195.977" style="fill:none;stroke:rgb(64,64,64);stroke-width:2.08px;stroke-linejoin:round;stroke-miterlimit:1.5;"/>
+            <circle cx="182.248" cy="1192.227" r="3.75" style="fill:rgb(64,64,64);"/>
+        </g>
+        <path d="M182.248,1192.227L243.41,1192.227L243.41,1156.041" style="fill:none;stroke:rgb(51,51,51);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;"/>
+        <path id="形狀-1" affinity:id="形狀 1" d="M272.554,1171.077L214.386,1171.149L243.41,1120.733L272.554,1171.077Z" style="fill:white;"/>
+        <path id="_-Compound-Path-" affinity:id="&lt;Compound Path&gt;" d="M207.818,1171.765L240.842,1114.557C241.098,1114.101 241.474,1113.725 241.93,1113.469C243.346,1112.653 245.17,1113.141 245.986,1114.557L279.01,1171.765C279.274,1172.213 279.41,1172.725 279.41,1173.253C279.41,1174.893 278.082,1176.213 276.442,1176.213L210.386,1176.213C209.866,1176.213 209.354,1176.085 208.906,1175.821C207.482,1175.005 206.994,1173.189 207.818,1171.765ZM215.53,1170.277L271.298,1170.277L243.41,1121.981L215.53,1170.277Z" style="fill:rgb(235,28,35);"/>
+        <g id="HATCH-1-" affinity:id="HATCH 1 ">
+            <path id="_-Path-" affinity:id="&lt;Path&gt;" d="M245.154,1145.293L250.05,1140.405L253.074,1143.437L249.442,1147.069L249.442,1160.781L253.074,1164.413L250.05,1167.445L245.154,1162.557L245.154,1145.293Z" style="fill-rule:nonzero;"/>
+            <path id="path9" d="M241.73,1145.293L236.842,1140.405L233.81,1143.437L237.442,1147.069L237.442,1160.781L233.81,1164.413L236.842,1167.445L241.73,1162.557L241.73,1145.293Z" style="fill-rule:nonzero;"/>
+        </g>
+    </g>
+    <g id="自行車除外附牌">
+    </g>
+</svg>

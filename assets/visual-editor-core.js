@@ -35,6 +35,16 @@
     assert(value.imageViews === undefined || record(value.imageViews), '初始圖面設定無效');
     const result = clone(value);
     result.content = validateContent(result.content);
+    if (result.navigationOrders === undefined) result.navigationOrders = {};
+    assert(record(result.navigationOrders) && Object.keys(result.navigationOrders).length <= 2000, '導覽排序設定無效');
+    for (const [key, ids] of Object.entries(result.navigationOrders)) {
+      assert(/^(module|scenario):[\w-]{1,160}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id => typeof id === 'string' && /^[\w-]{1,240}$/.test(id)) && new Set(ids).size === ids.length, '導覽排序清單無效');
+    }
+    if (result.extensionLayouts === undefined) result.extensionLayouts = {};
+    assert(record(result.extensionLayouts) && Object.keys(result.extensionLayouts).length <= 2000, '延伸應用版型設定無效');
+    for (const [key, layout] of Object.entries(result.extensionLayouts)) assert(/^[\w-]{1,160}\/[\w-]{1,160}$/.test(key) && ['horizontal','vertical'].includes(layout), '延伸應用圖文排列無效');
+    if (result.removedModuleExtensions === undefined) result.removedModuleExtensions = [];
+    assert(Array.isArray(result.removedModuleExtensions) && result.removedModuleExtensions.length <= 500 && result.removedModuleExtensions.every(id=>typeof id==='string'&&/^[\w-]{1,160}$/.test(id)) && new Set(result.removedModuleExtensions).size===result.removedModuleExtensions.length, '已移除的延伸應用頁設定無效');
     result.imageViews = result.imageViews || {};
     assert(Object.keys(result.imageViews).length <= 2000, '初始圖面設定過多');
     for (const [id, view] of Object.entries(result.imageViews)) {
@@ -43,6 +53,8 @@
       assert(view.id === id && imageView(view.pageId, view.assetKey).id === id && view.units === 'percent', '初始圖面識別資料無效');
       assert(Number.isFinite(view.zoom) && view.zoom >= .02 && view.zoom <= 200, '初始縮放須介於 2% 與 20000%');
       for (const axis of ['x', 'y']) assert(Number.isFinite(view[axis]) && Math.abs(view[axis]) <= 1000, '初始圖面位置須介於 -1000% 與 1000%');
+      if (view.rotation === undefined) view.rotation = 0;
+      assert(Number.isFinite(view.rotation) && Math.abs(view.rotation) <= 360, '旋轉角度須介於 -360° 與 360°');
     }
     for (const [id, item] of Object.entries(result.elements)) {
       assert(record(item) && item.id === id && id.length <= 3000, '元素 ID 無效');
@@ -121,24 +133,34 @@
     return item.x !== 0 || item.y !== 0 || Object.keys(limits).some(key => !['x', 'y'].includes(key) && item[key] !== null) || item.fontFamily !== null;
   }
   function imageView(pageId, assetKey) {
-    return {id: [pageId, assetKey].map(encodeURIComponent).join('/'), pageId, assetKey, units: 'percent', zoom: 1, x: 0, y: 0};
+    return {id: [pageId, assetKey].map(encodeURIComponent).join('/'), pageId, assetKey, units: 'percent', zoom: 1, x: 0, y: 0, rotation: 0};
   }
   function viewBounds(value) {
     assert(Array.isArray(value) && value.length === 4 && value.every(Number.isFinite) && value[2] > 0 && value[3] > 0, '圖面視角無效');
   }
   function viewBoxFor(home, settings) {
-    viewBounds(home);
+    home = rotatedHome(home, settings.rotation ?? 0);
     assert(Number.isFinite(settings.zoom) && settings.zoom > 0 && Number.isFinite(settings.x) && Number.isFinite(settings.y), '圖面視角設定無效');
     const width = home[2] / settings.zoom, height = home[3] / settings.zoom;
     return [home[0] + (home[2] - width) / 2 - width * settings.x / 100, home[1] + (home[3] - height) / 2 - height * settings.y / 100, width, height];
   }
-  function settingsForView(home, view) {
-    viewBounds(home); viewBounds(view);
-    return {zoom: home[2] / view[2], x: (home[0] + (home[2] - view[2]) / 2 - view[0]) / view[2] * 100, y: (home[1] + (home[3] - view[3]) / 2 - view[1]) / view[3] * 100};
+  function rotatedHome(home, rotation) {
+    viewBounds(home);
+    assert(Number.isFinite(rotation) && Math.abs(rotation) <= 360, '旋轉角度須介於 -360° 與 360°');
+    const radians = rotation * Math.PI / 180;
+    // Snap right angles to avoid drift when repeatedly capturing/resetting views.
+    const cos = Math.abs(Math.cos(radians)), sin = Math.abs(Math.sin(radians));
+    const c = cos < 1e-12 ? 0 : cos, s = sin < 1e-12 ? 0 : sin;
+    const width = home[2] * c + home[3] * s, height = home[2] * s + home[3] * c;
+    return [home[0] + (home[2] - width) / 2, home[1] + (home[3] - height) / 2, width, height];
+  }
+  function settingsForView(home, view, rotation = 0) {
+    home = rotatedHome(home, rotation); viewBounds(view);
+    return {zoom: home[2] / view[2], x: (home[0] + (home[2] - view[2]) / 2 - view[0]) / view[2] * 100, y: (home[1] + (home[3] - view[3]) / 2 - view[1]) / view[3] * 100, rotation};
   }
   function signature(config) {
     const views = config.imageViews || {};
-    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
   }
   class Store {
     constructor(config) {

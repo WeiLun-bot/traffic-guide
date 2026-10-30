@@ -112,7 +112,7 @@
       "id": "M2-03",
       "name": "號誌化管制",
       "theme": "M2",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M2-03.1",
@@ -124,7 +124,7 @@
       "id": "M2-04",
       "name": "路口行向管制",
       "theme": "M2",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M2-04.1",
@@ -144,7 +144,7 @@
       "id": "M3-01",
       "name": "行人",
       "theme": "M3",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M3-01.1",
@@ -164,7 +164,7 @@
       "id": "M3-02",
       "name": "自行車",
       "theme": "M3",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M3-02.1",
@@ -180,7 +180,7 @@
       "id": "M3-03",
       "name": "機車",
       "theme": "M3",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M3-03.1",
@@ -196,7 +196,7 @@
       "id": "M3-04",
       "name": "公車",
       "theme": "M3",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M3-04.1",
@@ -212,7 +212,7 @@
       "id": "M4-01",
       "name": "危險警示",
       "theme": "M4",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M4-01.1",
@@ -228,7 +228,7 @@
       "id": "M4-02",
       "name": "通行限制",
       "theme": "M4",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M4-02.1",
@@ -240,7 +240,7 @@
       "id": "M4-03",
       "name": "路段行為管制",
       "theme": "M4",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M4-03.1",
@@ -256,7 +256,7 @@
       "id": "M4-04",
       "name": "區域管制",
       "theme": "M4",
-      "ready": false,
+      "ready": true,
       "submodules": [
         {
           "id": "M4-04.1",

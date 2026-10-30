@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "id": "M2-03",
+  "title": "號誌化管制",
+  "source": {
+    "file": "06-signalized-control.typ",
+    "section": "M2-03「號誌化管制」",
+    "sha256": "e170dfcfdd5d56c5fe37f777fc1d66d39b373292a0fb324094fee9d9d57ab6a6",
+    "imageFiles": [
+      "materials/03-modules/M2-03/M2-03_號誌化路口基本配置代表型.svg",
+      "materials/03-modules/M2-03/M2-03_號誌化路口基本配置.png",
+      "materials/03-modules/M2-03/M2-03_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png",
+      "materials/03-modules/M2-03/M2-03_遠端號誌燈桿立於車行道右方之向左錯距示意圖.png",
+      "materials/03-modules/M2-03/M2-03_遠端號誌燈為門架式之向左錯距示意圖.png",
+      "materials/03-modules/M2-03/M2-03_近遠端號誌布設示意圖.png",
+      "materials/03-modules/M2-03/M2-03_交通工程規範之號誌設置示意圖.jpeg",
+      "materials/03-modules/M2-03/M2-03_帽式罩簷及筒式罩簷之起步可視模板_01.png",
+      "materials/03-modules/M2-03/M2-03_帽式罩簷及筒式罩簷之起步可視模板_02.png",
+      "materials/03-modules/M2-03/M2-03_帽式罩簷及筒式罩簷之樣態.png",
+      "materials/03-modules/M2-03/M2-03_號誌布設參數圖例.png",
+      "materials/03-modules/M2-03/M2-03_以懸臂設置之橫排及縱排號誌.png",
+      "materials/03-modules/M2-03/M2-03_以門架設置之橫排及縱排號誌.png",
+      "materials/03-modules/M2-03/M2-03_左彎待轉區與對角號誌.png",
+      "materials/03-modules/M2-03/M2-03_左彎待轉區駕駛視覺示意.png",
+      "materials/03-modules/M2-03/M2-03_左轉專用車道燈面說明標誌樣式_01.svg",
+      "materials/03-modules/M2-03/M2-03_左轉專用車道燈面說明標誌樣式_02.svg",
+      "materials/03-modules/M2-03/M2-03_我國特長筒式罩簷示例.png",
+      "materials/03-modules/M2-03/M2-03_日本側式罩簷及垂直百葉窗示例_1.png"
+    ],
+    "notes": [
+      "號誌可視模板與立桿錯距檢核分別參照指引附錄 C、附錄 B。",
+      "號誌橫向位置以燈面判斷，不能僅以立桿位於左側或右側判定。"
+    ]
+  },
+  "assets": {
+    "m203-2f27e58a6a": {
+      "file": "materials/03-modules/M2-03/M2-03_號誌化路口基本配置代表型.svg",
+      "width": 661,
+      "height": 829,
+      "label": "號誌化路口基本配置代表型",
+      "caption": "號誌化路口基本配置代表型",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-cd5bcd9029": {
+      "file": "materials/03-modules/M2-03/M2-03_號誌化路口基本配置.png",
+      "width": 4878,
+      "height": 3922,
+      "label": "號誌化路口基本配置",
+      "caption": "號誌化路口基本配置",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-22b38300ee": {
+      "file": "materials/03-modules/M2-03/M2-03_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png",
+      "width": 347,
+      "height": 368,
+      "label": "遠端立桿在左",
+      "caption": "遠端立桿在左",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-a3b46fb4f0": {
+      "file": "materials/03-modules/M2-03/M2-03_遠端號誌燈桿立於車行道右方之向左錯距示意圖.png",
+      "width": 346,
+      "height": 370,
+      "label": "遠端立桿在右",
+      "caption": "遠端立桿在右",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-3955393bcf": {
+      "file": "materials/03-modules/M2-03/M2-03_遠端號誌燈為門架式之向左錯距示意圖.png",
+      "width": 346,
+      "height": 371,
+      "label": "遠端採門架式",
+      "caption": "遠端採門架式",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-f01d41842a": {
+      "file": "materials/03-modules/M2-03/M2-03_近遠端號誌布設示意圖.png",
+      "width": 1816,
+      "height": 2038,
+      "label": "近遠端號誌布設示意圖",
+      "caption": "近遠端號誌布設示意圖",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-1d1f6b14f8": {
+      "file": "materials/03-modules/M2-03/M2-03_交通工程規範之號誌設置示意圖.jpeg",
+      "width": 678,
+      "height": 374,
+      "label": "號誌設置示意圖",
+      "caption": "號誌設置示意圖",
+      "credit": "《交通工程規範》"
+    },
+    "m203-1f4a9ba99d": {
+      "file": "materials/03-modules/M2-03/M2-03_帽式罩簷及筒式罩簷之起步可視模板_01.png",
+      "width": 520,
+      "height": 558,
+      "label": "帽式起步可視模板",
+      "caption": "帽式起步可視模板",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-205bbd9cba": {
+      "file": "materials/03-modules/M2-03/M2-03_帽式罩簷及筒式罩簷之起步可視模板_02.png",
+      "width": 481,
+      "height": 422,
+      "label": "筒式起步可視模板",
+      "caption": "筒式起步可視模板",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-9060c4516f": {
+      "file": "materials/03-modules/M2-03/M2-03_帽式罩簷及筒式罩簷之樣態.png",
+      "width": 735,
+      "height": 574,
+      "label": "帽式與筒式罩簷",
+      "caption": "帽式與筒式罩簷",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-d6e2d6ea4c": {
+      "file": "materials/03-modules/M2-03/M2-03_號誌布設參數圖例.png",
+      "width": 1295,
+      "height": 652,
+      "label": "號誌布設參數圖例",
+      "caption": "號誌布設參數圖例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-53e08c0e5d": {
+      "file": "materials/03-modules/M2-03/M2-03_以懸臂設置之橫排及縱排號誌.png",
+      "width": 1550,
+      "height": 797,
+      "label": "以懸臂設置之橫排及縱排號誌",
+      "caption": "以懸臂設置之橫排及縱排號誌",
+      "credit": "Google Street View"
+    },
+    "m203-2c79d79484": {
+      "file": "materials/03-modules/M2-03/M2-03_以門架設置之橫排及縱排號誌.png",
+      "width": 647,
+      "height": 543,
+      "label": "以門架設置之橫排及縱排號誌",
+      "caption": "以門架設置之橫排及縱排號誌",
+      "credit": "Google Street View"
+    },
+    "m203-a317c01f6c": {
+      "file": "materials/03-modules/M2-03/M2-03_左彎待轉區與對角號誌.png",
+      "width": 575,
+      "height": 409,
+      "label": "左彎待轉區與對角號誌",
+      "caption": "左彎待轉區與對角號誌",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-6a551f7dc7": {
+      "file": "materials/03-modules/M2-03/M2-03_左彎待轉區駕駛視覺示意.png",
+      "width": 3020,
+      "height": 1860,
+      "label": "左彎待轉區駕駛視覺示意",
+      "caption": "左彎待轉區駕駛視覺示意",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-ae61912c1e": {
+      "file": "materials/03-modules/M2-03/M2-03_左轉專用車道燈面說明標誌樣式_01.svg",
+      "width": 298,
+      "height": 841,
+      "label": "左轉專用車道燈面說明標誌樣式_01",
+      "caption": "左轉專用車道燈面說明標誌樣式_01",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-35a54335c3": {
+      "file": "materials/03-modules/M2-03/M2-03_左轉專用車道燈面說明標誌樣式_02.svg",
+      "width": 673,
+      "height": 257,
+      "label": "左轉專用車道燈面說明標誌樣式_02",
+      "caption": "左轉專用車道燈面說明標誌樣式_02",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-e9c1bf866d": {
+      "file": "materials/03-modules/M2-03/M2-03_我國特長筒式罩簷示例.png",
+      "width": 2420,
+      "height": 737,
+      "label": "我國特長筒式罩簷示例",
+      "caption": "我國特長筒式罩簷示例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m203-1e337c7e0f": {
+      "file": "materials/03-modules/M2-03/M2-03_日本側式罩簷及垂直百葉窗示例_1.png",
+      "width": 354,
+      "height": 163,
+      "label": "日本側式罩簷及垂直百葉窗示例_1",
+      "caption": "日本側式罩簷及垂直百葉窗示例_1",
+      "credit": "Google Street View"
+    }
+  },
+  "pages": [
+    {
+      "id": "m203-signals-issues",
+      "section": "module",
+      "submoduleId": "M2-03.1",
+      "title": "號誌化路口｜現況議題與相關條文",
+      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "assets": [
+        "m203-2f27e58a6a"
+      ],
+      "points": [
+        {
+          "id": "visibility",
+          "title": "燈面不容易及時辨識",
+          "text": "遠端過遠、偏離視軸或受樹木、招牌與逆光干擾，都可能造成燈號誤判。"
+        },
+        {
+          "id": "position",
+          "title": "近端、遠端位置需要互相配合",
+          "text": "同時檢視左右位置、與停止線的距離，以及用路人的視野。"
+        },
+        {
+          "id": "clearance",
+          "title": "淨空也要納入整體檢核",
+          "text": "從辨認距離、起步可視範圍到部件淨寬與淨高，逐項檢查配置。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "201",
+        "220",
+        "221"
+      ],
+      "applications": [
+        "G2-01",
+        "G2-02",
+        "G2-03",
+        "G2-04",
+        "G4-01",
+        "G4-02",
+        "G4-03",
+        "G4-04",
+        "C1-01",
+        "C1-02",
+        "C1-03",
+        "C1-04",
+        "C1-05",
+        "C1-09",
+        "C2-01",
+        "C4-01",
+        "C4-03"
+      ]
+    },
+    {
+      "id": "m203-signals-diagram",
+      "section": "module",
+      "submoduleId": "M2-03.1",
+      "title": "號誌化路口｜圖例說明",
+      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "assets": [
+        "m203-2f27e58a6a",
+        "m203-cd5bcd9029",
+        "m203-22b38300ee",
+        "m203-a3b46fb4f0",
+        "m203-3955393bcf",
+        "m203-f01d41842a",
+        "m203-1d1f6b14f8",
+        "m203-1f4a9ba99d",
+        "m203-205bbd9cba",
+        "m203-9060c4516f",
+        "m203-d6e2d6ea4c"
+      ],
+      "points": [
+        {
+          "id": "two",
+          "title": "上游應能辨認兩個同燈號燈面",
+          "text": "依行車速限與辨認距離，檢查上游駕駛能否同時辨認兩個以上相同燈號的燈面。"
+        },
+        {
+          "id": "far",
+          "title": "至少一個遠端燈面位於左側",
+          "text": "與近端停止線相距至少 10 m；柱立式於遠端左右側各設燈面。"
+        },
+        {
+          "id": "near",
+          "title": "近端燈面提示停止線",
+          "text": "本指引建議近端至少一組燈面，協助辨識停止位置與起步。"
+        },
+        {
+          "id": "distance",
+          "title": "依速限選擇辨認距離",
+          "text": "30／40／50／60 km/h：30／50／80／110 m；70／80／90／100 km/h：140／170／200／220 m。"
+        },
+        {
+          "id": "template",
+          "title": "用可視模板檢查上游視野",
+          "text": "以駕駛行進時的視域投影檢核兩組燈面，操作方式參照指引附錄 C。"
+        },
+        {
+          "id": "background",
+          "title": "排除眩光與背景干擾",
+          "text": "一併檢查招牌、植栽與光源；斜交路口角度在 60° 以內時，也需檢查防窺處理。"
+        },
+        {
+          "id": "lamp",
+          "title": "以燈面位置判斷左右關係",
+          "text": "向左錯距由近端綠燈鏡面邊緣，沿停止線法線投射至遠端鏡面邊緣量測。"
+        },
+        {
+          "id": "left-pole",
+          "title": "立桿在左側或採門架式",
+          "text": "至少一個遠端燈面齊平或位於近端左側，不得偏至右方。"
+        },
+        {
+          "id": "right-pole",
+          "title": "立桿在右側需明顯錯開",
+          "text": "本指引建議遠端與近端燈面向左錯距大於 90 cm，呈現清楚的左右對應。"
+        },
+        {
+          "id": "column",
+          "title": "柱立式兩側配置",
+          "text": "遠端左右各設一燈面，檢核細節參照指引附錄 B。"
+        },
+        {
+          "id": "near-distance",
+          "title": "近端靠近停止線",
+          "text": "本指引建議理想距離 2 m，範圍以 0–3 m 為參考，協助辨識停止位置及起步。"
+        },
+        {
+          "id": "far-distance",
+          "title": "遠端兼顧起步與接收車道",
+          "text": "距近端停止線至少 10 m，並以起步可視模板確認停等車輛能看見燈號。"
+        },
+        {
+          "id": "fast",
+          "title": "高速環境加強停止線提示",
+          "text": "配合規範檢查近端是否需要兩個燈面，讓駕駛提早辨識停止位置。"
+        },
+        {
+          "id": "spacing",
+          "title": "同向燈面不宜相距過遠",
+          "text": "同向燈面法線的垂直距離以不超過 12 m 為度；超過時考慮增設一組燈面。"
+        },
+        {
+          "id": "eye",
+          "title": "以實際停等位置檢查",
+          "text": "有待轉區時由待轉車輛視點檢核；其餘以停止線前第一輛車的視點檢核。"
+        },
+        {
+          "id": "hat",
+          "title": "帽式罩簷採三角形模板",
+          "text": "依圖示的 30° 起步可視角度，檢查至下游 54 m 的燈面。"
+        },
+        {
+          "id": "tube",
+          "title": "筒式罩簷採梯形模板",
+          "text": "左右各展開 20°，檢查停止線下游 15–54 m；遠端建議採筒式罩簷並通過起步可視檢核。"
+        },
+        {
+          "id": "width",
+          "title": "以最靠近車流的部件檢查淨寬",
+          "text": "燈箱、桿柱及附屬部件都納入；本指引建議至少 0.30 m，理想值 1.00 m。"
+        },
+        {
+          "id": "height",
+          "title": "分別檢查車行與人行空間",
+          "text": "車行道上方號誌燈箱高出路面 4.6–5.6 m；柱立式燈箱高出人行道 2.4–4.6 m。"
+        },
+        {
+          "id": "parts",
+          "title": "附屬設施也需保留淨高",
+          "text": "懸臂部件至少高出路面 4.6 m；人行空間上方部件至少 2.4 m，避免突出形成障礙。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "201",
+        "220",
+        "221"
+      ]
+    },
+    {
+      "id": "m203-signals-extensions",
+      "section": "module",
+      "submoduleId": "M2-03.1",
+      "title": "橫排與縱排號誌",
+      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "assets": [
+        "m203-53e08c0e5d",
+        "m203-2c79d79484"
+      ],
+      "points": [
+        {
+          "id": "types",
+          "title": "排列方式配合設置型式",
+          "text": "柱立與懸掛式通常採縱排；懸臂與門架式可採橫排或縱排。"
+        },
+        {
+          "id": "situations",
+          "title": "受限環境與低視角需求",
+          "text": "空間受限、低角度日照干擾，或高速環境不易辨認兩燈面時，可檢討縱排或增設燈面。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "201",
+        "220",
+        "221"
+      ]
+    },
+    {
+      "id": "m203-signals-extension-turning",
+      "section": "module",
+      "submoduleId": "M2-03.1",
+      "title": "左彎待轉區對角號誌",
+      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "assets": [
+        "m203-a317c01f6c",
+        "m203-6a551f7dc7"
+      ],
+      "points": [
+        {
+          "id": "view",
+          "title": "待轉後重新檢查駕駛視野",
+          "text": "車輛進入左彎待轉區後，朝向可能偏離原遠端燈面；必要時在主要視野內增設燈面。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "201",
+        "220",
+        "221"
+      ]
+    },
+    {
+      "id": "m203-signals-extension-explanation",
+      "section": "module",
+      "submoduleId": "M2-03.1",
+      "title": "燈面說明標誌",
+      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "assets": [
+        "m203-ae61912c1e",
+        "m203-35a54335c3"
+      ],
+      "points": [
+        {
+          "id": "target",
+          "title": "清楚標明燈面的遵循對象",
+          "text": "圓形紅、黃燈不表示方向，可加設燈面說明標誌，降低其他流向誤認的可能。"
+        },
+        {
+          "id": "placement",
+          "title": "配合燈面型式安排位置",
+          "text": "直立式標誌可設於直立燈面側方；橫式標誌可設於號誌上方。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "201",
+        "220",
+        "221"
+      ]
+    },
+    {
+      "id": "m203-signals-extension-shield",
+      "section": "module",
+      "submoduleId": "M2-03.1",
+      "title": "避免對角號誌誤視",
+      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "assets": [
+        "m203-e9c1bf866d",
+        "m203-1e337c7e0f"
+      ],
+      "points": [
+        {
+          "id": "shield",
+          "title": "限制非目標方向看見燈號",
+          "text": "可採筒式罩簷或百葉窗，使燈號主要朝向待轉區，遮蔽其他車流的視線。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "201",
+        "220",
+        "221"
+      ]
+    }
+  ],
+  "referenceNames": {
+    "201": "號誌燈面數與設置方式",
+    "220": "號誌設置高度",
+    "221": "行車管制號誌布設"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M2-03.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m203-signals-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m203-signals-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "basic",
+              "label": "基本布設",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "two",
+                "far",
+                "near"
+              ],
+              "assets": [
+                "m203-cd5bcd9029"
+              ]
+            },
+            {
+              "id": "visibility",
+              "label": "可視模板",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "distance",
+                "template",
+                "background"
+              ],
+              "assets": [
+                "m203-2f27e58a6a"
+              ]
+            },
+            {
+              "id": "left",
+              "label": "遠端燈面在左",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "lamp",
+                "left-pole",
+                "right-pole",
+                "column"
+              ],
+              "assets": [
+                "m203-22b38300ee",
+                "m203-a3b46fb4f0",
+                "m203-3955393bcf"
+              ]
+            },
+            {
+              "id": "near-far",
+              "label": "近端與遠端",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "near-distance",
+                "far-distance",
+                "fast"
+              ],
+              "assets": [
+                "m203-f01d41842a"
+              ]
+            },
+            {
+              "id": "gap",
+              "label": "12 m 視覺漏洞",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "spacing"
+              ],
+              "assets": [
+                "m203-1d1f6b14f8"
+              ]
+            },
+            {
+              "id": "start",
+              "label": "起步可視範圍",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "eye",
+                "hat",
+                "tube"
+              ],
+              "assets": [
+                "m203-1f4a9ba99d",
+                "m203-205bbd9cba",
+                "m203-9060c4516f"
+              ]
+            },
+            {
+              "id": "clearance",
+              "label": "淨寬與淨高",
+              "sourcePageId": "m203-signals-diagram",
+              "pointIds": [
+                "width",
+                "height",
+                "parts"
+              ],
+              "assets": [
+                "m203-d6e2d6ea4c"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m203-signals-extensions",
+          "title": "延伸應用",
+          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "topics": [
+            {
+              "id": "arrangement",
+              "label": "橫排與縱排號誌",
+              "sourcePageId": "m203-signals-extensions"
+            },
+            {
+              "id": "turning",
+              "label": "左彎待轉區對角號誌",
+              "sourcePageId": "m203-signals-extension-turning"
+            },
+            {
+              "id": "explanation",
+              "label": "燈面說明標誌",
+              "sourcePageId": "m203-signals-extension-explanation"
+            },
+            {
+              "id": "shield",
+              "label": "避免對角號誌誤視",
+              "sourcePageId": "m203-signals-extension-shield"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

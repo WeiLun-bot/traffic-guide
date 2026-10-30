@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "id": "M3-03",
+  "title": "機車",
+  "source": {
+    "file": "10-motorcycle.typ",
+    "section": "M3-03「機車」",
+    "sha256": "6115ecee360d0dab408fbf2ff326ad854403c2f31a025afd112a69074bad95f1",
+    "imageFiles": [
+      "materials/03-modules/M3-03/M3-03_機車直接左轉代表型.svg",
+      "materials/03-modules/M3-03/M3-03_機車兩段式左轉代表型1.svg",
+      "materials/03-modules/M3-03/M3-03_機車兩段式左轉代表型2.svg",
+      "materials/03-modules/M3-03/機車直接左轉.svg"
+    ],
+    "notes": []
+  },
+  "assets": {
+    "m303-eb74f285de": {
+      "file": "materials/03-modules/M3-03/M3-03_機車直接左轉代表型.svg",
+      "width": 528,
+      "height": 1318,
+      "label": "機車直接左轉代表型",
+      "caption": "機車直接左轉代表型",
+      "credit": "道路交通標誌標線號誌設置參考指引",
+      "rotation": 90
+    },
+    "m303-6861b608fc": {
+      "file": "materials/03-modules/M3-03/M3-03_機車兩段式左轉代表型1.svg",
+      "width": 444,
+      "height": 670,
+      "label": "機車兩段式左轉代表型1",
+      "caption": "機車兩段式左轉代表型1",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m303-a5220c3ae3": {
+      "file": "materials/03-modules/M3-03/M3-03_機車兩段式左轉代表型2.svg",
+      "width": 458,
+      "height": 832,
+      "label": "機車兩段式左轉代表型2",
+      "caption": "機車兩段式左轉代表型2",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m303-87b5f62998": {
+      "file": "materials/03-modules/M3-03/機車直接左轉.svg",
+      "width": 251,
+      "height": 169,
+      "label": "機車直接左轉",
+      "caption": "機車直接左轉",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m303-overview",
+      "section": "overview",
+      "title": "M3-03 機車",
+      "intro": "整合機車路口導引與左轉停等空間。",
+      "assets": [
+        "m303-eb74f285de",
+        "m303-6861b608fc"
+      ],
+      "overviewGroups": {
+        "M3-03.1": {
+          "sourceModuleId": "M1-01",
+          "assets": [
+            "m101-slow-wide",
+            "m101-slow-narrow"
+          ]
+        }
+      },
+      "points": [
+        {
+          "id": "lane",
+          "title": "M3-03.1 機車道",
+          "text": "機車道配置可參照路口與路段車道配置中的慢車道示例。",
+          "submoduleId": "M3-03.1"
+        },
+        {
+          "id": "turning",
+          "title": "M3-03.2 機車左轉",
+          "text": "對照直接左轉與兩段式左轉，安排標誌、標線與停等空間。",
+          "submoduleId": "M3-03.2"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m303-lane-reference",
+      "section": "module",
+      "submoduleId": "M3-03.1",
+      "title": "機車道",
+      "intro": "機車道配置可參照「路口與路段車道配置」中的慢車道示例。",
+      "assets": [],
+      "points": [
+        {
+          "id": "reference",
+          "title": "相關配置說明",
+          "text": "機車道配置可參照「路口與路段車道配置」中的慢車道示例。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [],
+      "links": [
+        {
+          "pageId": "m101-lanes-extensions",
+          "label": "查看慢車道銜接路口的示例"
+        },
+        {
+          "pageId": "m101-lanes-diagram",
+          "label": "查看路口與路段車道配置"
+        }
+      ]
+    },
+    {
+      "id": "m303-turning-issues",
+      "section": "module",
+      "submoduleId": "M3-03.2",
+      "title": "機車左轉｜現況議題與相關條文",
+      "intro": "讓騎士提早確認左轉方式，並找到適用的停等空間。",
+      "assets": [
+        "m303-eb74f285de",
+        "m303-6861b608fc",
+        "m303-a5220c3ae3"
+      ],
+      "points": [
+        {
+          "id": "recognition",
+          "title": "左轉方式需要提早辨識",
+          "text": "直接左轉與兩段式左轉的資訊，應由上游標誌、標線及路口導引一致傳達。"
+        },
+        {
+          "id": "waiting",
+          "title": "待轉與停等空間不足",
+          "text": "需要配合機車可行駛車道、穿越道及其他車流軌跡安排位置。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "65",
+        "137",
+        "174-2",
+        "191"
+      ],
+      "applications": [
+        "G2-01",
+        "G2-03",
+        "G4-01",
+        "G4-02",
+        "G4-03",
+        "G4-04",
+        "C1-02",
+        "C1-04",
+        "C2-01",
+        "C4-01",
+        "C4-03"
+      ]
+    },
+    {
+      "id": "m303-turning-diagram",
+      "section": "module",
+      "submoduleId": "M3-03.2",
+      "title": "機車左轉｜圖例說明",
+      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "assets": [
+        "m303-eb74f285de",
+        "m303-6861b608fc",
+        "m303-a5220c3ae3",
+        "m303-87b5f62998"
+      ],
+      "points": [
+        {
+          "id": "speed",
+          "title": "停等區設於適用的號誌化路口",
+          "text": "機慢車停等區用於行車速限 60 km/h 以下、機車可行駛車道的停止線後方；非號誌化路口不得設置。"
+        },
+        {
+          "id": "directions",
+          "title": "不同轉向配合縮小型指向線",
+          "text": "明確說明停等位置與方向，必要時與鄰近實線共用，避免重複劃線。"
+        },
+        {
+          "id": "left",
+          "title": "左轉附加車道可安排機車停等區",
+          "text": "供左轉機車停等；直接左轉路口也可增設待轉區，供無法直接左轉的機車或自行車使用。"
+        },
+        {
+          "id": "location",
+          "title": "位置配合停止線及行穿線",
+          "text": "待轉區設於停止線前端；與枕木紋行穿線至少間隔 50 cm，且不侵入交叉口實際範圍。"
+        },
+        {
+          "id": "conditions",
+          "title": "依號誌與車道條件安排",
+          "text": "配合號誌管制及兩車道以上道路，提供兩段式左轉車輛明確的停等空間。"
+        },
+        {
+          "id": "channel",
+          "title": "以槽化線界定車流與待轉空間",
+          "text": "避免直行車與進入待轉區的機車互相衝突。"
+        },
+        {
+          "id": "bay",
+          "title": "必要時採待轉停等彎",
+          "text": "搭配路面邊線延伸線，明確引導車流與待轉車輛。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "65",
+        "137",
+        "174-2",
+        "191"
+      ]
+    },
+    {
+      "id": "m303-turning-extensions",
+      "section": "module",
+      "submoduleId": "M3-03.2",
+      "title": "直接左轉的標誌提示",
+      "intro": "讓騎士提早確認左轉方式，並找到適用的停等空間。",
+      "assets": [
+        "m303-eb74f285de"
+      ],
+      "points": [
+        {
+          "id": "information",
+          "title": "可搭配直接左轉告示",
+          "text": "以行車指示性質告示牌說明機車可以直接左轉。"
+        },
+        {
+          "id": "advance",
+          "title": "車道預告可加入車種圖案",
+          "text": "左轉方向可搭配車輛圖案，但應控制資訊量，讓駕駛能快速判讀。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "65",
+        "137",
+        "174-2",
+        "191"
+      ]
+    },
+    {
+      "id": "m303-turning-extension-two-stage-sign",
+      "section": "module",
+      "submoduleId": "M3-03.2",
+      "title": "兩段式左轉的提前預告",
+      "intro": "讓騎士提早確認左轉方式，並找到適用的停等空間。",
+      "assets": [],
+      "points": [
+        {
+          "id": "mandatory",
+          "title": "強制待轉路口在近端明確告知",
+          "text": "配置機慢車兩段左轉標誌，與待轉區位置及行進路徑一致。"
+        },
+        {
+          "id": "upstream",
+          "title": "上游可再加預告",
+          "text": "需要提前提醒時，可增設預告性標誌並加「前方路口」附牌。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "65",
+        "137",
+        "174-2",
+        "191"
+      ]
+    }
+  ],
+  "referenceNames": {
+    "65": "機慢車兩段左（右）轉標誌、",
+    "137": "行車指示性質告示牌",
+    "191": "機慢車左（右）轉待轉區線",
+    "174-2": "機慢車停等區線"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M3-03.2",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m303-turning-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m303-turning-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "direct",
+              "label": "直接左轉停等區",
+              "sourcePageId": "m303-turning-diagram",
+              "pointIds": [
+                "speed",
+                "directions",
+                "left"
+              ],
+              "assets": [
+                "m303-87b5f62998"
+              ]
+            },
+            {
+              "id": "two-stage",
+              "label": "兩段式左轉待轉區",
+              "sourcePageId": "m303-turning-diagram",
+              "pointIds": [
+                "location",
+                "conditions"
+              ],
+              "assets": [
+                "m303-6861b608fc"
+              ]
+            },
+            {
+              "id": "t-junction",
+              "label": "T 字路口的待轉動線",
+              "sourcePageId": "m303-turning-diagram",
+              "pointIds": [
+                "channel",
+                "bay"
+              ],
+              "assets": [
+                "m303-6861b608fc",
+                "m303-a5220c3ae3"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m303-turning-extensions",
+          "title": "延伸應用",
+          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "topics": [
+            {
+              "id": "direct-sign",
+              "label": "直接左轉的標誌提示",
+              "sourcePageId": "m303-turning-extensions"
+            },
+            {
+              "id": "two-stage-sign",
+              "label": "兩段式左轉的提前預告",
+              "sourcePageId": "m303-turning-extension-two-stage-sign"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

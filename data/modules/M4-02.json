@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "id": "M4-02",
+  "title": "通行限制",
+  "source": {
+    "file": "13-access-restriction.typ",
+    "section": "M4-02「通行限制」",
+    "sha256": "9b7409d45d448d67cb7f7f0ed88c484f5b4fb5b9974e90557135d618437b2355",
+    "imageFiles": [
+      "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型1──禁止進入與限高.svg",
+      "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型2──限重與限寬.svg"
+    ],
+    "notes": []
+  },
+  "assets": {
+    "m402-b18c7d1f2f": {
+      "file": "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型1──禁止進入與限高.svg",
+      "width": 519,
+      "height": 1027,
+      "label": "車種與通行條件限制代表型1──禁止進入與限高",
+      "caption": "車種與通行條件限制代表型1──禁止進入與限高",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m402-ae32e39564": {
+      "file": "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型2──限重與限寬.svg",
+      "width": 451,
+      "height": 1225,
+      "label": "車種與通行條件限制代表型2──限重與限寬",
+      "caption": "車種與通行條件限制代表型2──限重與限寬",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m402-restriction-issues",
+      "section": "module",
+      "submoduleId": "M4-02.1",
+      "title": "車種與通行條件限制｜現況議題與相關條文",
+      "intro": "把限制條件、改道準備與實際管制起點一起說清楚。",
+      "assets": [
+        "m402-b18c7d1f2f",
+        "m402-ae32e39564"
+      ],
+      "points": [
+        {
+          "id": "exit",
+          "title": "到達瓶頸才知道受限，可能無法退出",
+          "text": "橋涵或隧道前若缺少安全改道、迴轉空間，容易形成倒車、停滯或碰撞風險。"
+        },
+        {
+          "id": "scope",
+          "title": "上游預告與實際管制起點不清",
+          "text": "限制範圍及受限對象需明確，並兼顧沿線目的地的通達需求。"
+        },
+        {
+          "id": "values",
+          "title": "標示值需對應實際可通行空間",
+          "text": "依結構尺寸與安全餘裕檢核，避免牌面數值與現況不符。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "61",
+        "73",
+        "74",
+        "81",
+        "82",
+        "83"
+      ],
+      "applications": [
+        "G1-06",
+        "C1-01",
+        "C2-02"
+      ]
+    },
+    {
+      "id": "m402-restriction-diagram",
+      "section": "module",
+      "submoduleId": "M4-02.1",
+      "title": "車種與通行條件限制｜圖例說明",
+      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "assets": [
+        "m402-b18c7d1f2f",
+        "m402-ae32e39564"
+      ],
+      "points": [
+        {
+          "id": "start",
+          "title": "原則設於限制開始適用處",
+          "text": "需要提前告知時，以距離附牌或告示牌區分預告與實際限制起點；警告性限高門架亦同。"
+        },
+        {
+          "id": "avoid",
+          "title": "不因單一瓶頸一律限制整段道路",
+          "text": "先確認受限車輛是否仍需到達沿線目的地。"
+        },
+        {
+          "id": "exceptions",
+          "title": "退出困難時選擇適當上游位置",
+          "text": "瓶頸前無法迴轉、駛入後無法退出，或中間沒有受限車輛需到達的目的地時，再檢討提前管制。"
+        },
+        {
+          "id": "vehicle",
+          "title": "各接近方向提前表達限制",
+          "text": "離開路口即限制某車種進入時，相關遵行方向標誌可加入車輛圖案，讓駕駛提早選擇正確方向。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "61",
+        "73",
+        "74",
+        "81",
+        "82",
+        "83"
+      ]
+    },
+    {
+      "id": "m402-restriction-extensions",
+      "section": "module",
+      "submoduleId": "M4-02.1",
+      "title": "限高數值與安全淨高",
+      "intro": "把限制條件、改道準備與實際管制起點一起說清楚。",
+      "assets": [
+        "m402-b18c7d1f2f"
+      ],
+      "points": [
+        {
+          "id": "height",
+          "title": "以可行駛寬度對應的高度計算",
+          "text": "限高值由實際可通行高度扣除安全淨高；圖例以 0.20–0.50 m 安全餘裕作為檢討示例。"
+        },
+        {
+          "id": "units",
+          "title": "牌面單位保持一致",
+          "text": "單位代號可參照法定度量衡單位使用指南。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "61",
+        "73",
+        "74",
+        "81",
+        "82",
+        "83"
+      ]
+    },
+    {
+      "id": "m402-restriction-extension-width",
+      "section": "module",
+      "submoduleId": "M4-02.1",
+      "title": "限寬數值與安全淨寬",
+      "intro": "把限制條件、改道準備與實際管制起點一起說清楚。",
+      "assets": [
+        "m402-ae32e39564"
+      ],
+      "points": [
+        {
+          "id": "width",
+          "title": "結構寬度扣除兩側安全餘裕",
+          "text": "圖例以兩側各保留 0.25 m 作為示例；實際數值依現地可通行空間檢核。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "61",
+        "73",
+        "74",
+        "81",
+        "82",
+        "83"
+      ]
+    }
+  ],
+  "referenceNames": {
+    "61": "道路遵行方向標誌",
+    "73": "指定某種車輛禁止進入標誌",
+    "74": "禁行方向標誌",
+    "81": "車輛總重限制標誌",
+    "82": "車輛寬度限制標誌",
+    "83": "車輛高度限制標誌"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M4-02.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m402-restriction-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m402-restriction-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "start",
+              "label": "管制起點與預告",
+              "sourcePageId": "m402-restriction-diagram",
+              "pointIds": [
+                "start"
+              ],
+              "assets": [
+                "m402-b18c7d1f2f",
+                "m402-ae32e39564"
+              ]
+            },
+            {
+              "id": "upstream",
+              "label": "何時提前限制起點",
+              "sourcePageId": "m402-restriction-diagram",
+              "pointIds": [
+                "avoid",
+                "exceptions"
+              ],
+              "assets": [
+                "m402-b18c7d1f2f",
+                "m402-ae32e39564"
+              ]
+            },
+            {
+              "id": "directions",
+              "label": "路口方向標誌配合車種限制",
+              "sourcePageId": "m402-restriction-diagram",
+              "pointIds": [
+                "vehicle"
+              ],
+              "assets": [
+                "m402-b18c7d1f2f"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m402-restriction-extensions",
+          "title": "延伸應用",
+          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "topics": [
+            {
+              "id": "height",
+              "label": "限高數值與安全淨高",
+              "sourcePageId": "m402-restriction-extensions"
+            },
+            {
+              "id": "width",
+              "label": "限寬數值與安全淨寬",
+              "sourcePageId": "m402-restriction-extension-width"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

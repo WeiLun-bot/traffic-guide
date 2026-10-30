@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "id": "M3-02",
+  "title": "自行車",
+  "source": {
+    "file": "09-bicycle.typ",
+    "section": "M3-02「自行車」",
+    "sha256": "711a4fbc8132b9b6ccd5ba5fd129483991d523ff8c32817e72e29c77d1f78c8a",
+    "imageFiles": [
+      "materials/03-modules/M3-02/M3-02_自行車道代表型.svg",
+      "materials/03-modules/M3-02/自行車放大.svg"
+    ],
+    "notes": []
+  },
+  "assets": {
+    "m302-b172c5ac34": {
+      "file": "materials/03-modules/M3-02/M3-02_自行車道代表型.svg",
+      "width": 2121,
+      "height": 754,
+      "label": "自行車道代表型",
+      "caption": "自行車道代表型",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m302-3167eda215": {
+      "file": "materials/03-modules/M3-02/自行車放大.svg",
+      "width": 645,
+      "height": 625,
+      "label": "自行車放大",
+      "caption": "自行車放大",
+      "credit": "道路交通標誌標線號誌設置參考指引"
+    }
+  },
+  "pages": [
+    {
+      "id": "m302-overview",
+      "section": "overview",
+      "title": "M3-02 自行車",
+      "intro": "從路段到路口，維持自行車空間與導引的連續性。",
+      "assets": [
+        "m302-b172c5ac34"
+      ],
+      "overviewGroups": {
+        "M3-02.1": {
+          "label": "M3-02.1 自行車道、M3-02.2 自行車穿越道"
+        },
+        "M3-02.2": {
+          "hidden": true
+        }
+      },
+      "points": [
+        {
+          "id": "lane",
+          "title": "M3-02.1 自行車道",
+          "text": "整理人行道上自行車空間、穿越道及匯入匯出的設計。",
+          "submoduleId": "M3-02.1"
+        },
+        {
+          "id": "crossing",
+          "title": "M3-02.2 自行車穿越道",
+          "text": "入口、出口標線與穿越動線，併於自行車道圖例中說明。",
+          "submoduleId": "M3-02.2"
+        }
+      ],
+      "sourcePages": [],
+      "references": []
+    },
+    {
+      "id": "m302-lane-issues",
+      "section": "module",
+      "submoduleId": "M3-02.1",
+      "title": "自行車道｜現況議題與相關條文",
+      "intro": "把自行車路段、穿越與匯入車行道的動線連續安排。",
+      "assets": [
+        "m302-b172c5ac34"
+      ],
+      "points": [
+        {
+          "id": "network",
+          "title": "自行車動線容易在路口或站位中斷",
+          "text": "不同設施型態之間的路權、位置與導引不清，可能迫使騎士臨時改變行駛空間。"
+        },
+        {
+          "id": "crossing",
+          "title": "穿越與轉入空間不足",
+          "text": "入口、出口、寬度與轉彎軌跡需要連續安排，並明確銜接一般車行道。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "46",
+        "67",
+        "174-4",
+        "186-1"
+      ],
+      "applications": [
+        "G2-03",
+        "C1-02",
+        "C4-03"
+      ]
+    },
+    {
+      "id": "m302-lane-diagram",
+      "section": "module",
+      "submoduleId": "M3-02.1",
+      "title": "自行車道｜圖例說明",
+      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "assets": [
+        "m302-b172c5ac34",
+        "m302-3167eda215"
+      ],
+      "points": [
+        {
+          "id": "priority",
+          "title": "人行道上仍以行人穿越優先",
+          "text": "設於騎樓以外人行道的自行車優先車道，供腳踏及電動輔助自行車通行；遇行人穿越時先讓行人。"
+        },
+        {
+          "id": "side",
+          "title": "原則靠近車行道側布設",
+          "text": "必要時依道路空間及現地配置調整，維持動線清楚。"
+        },
+        {
+          "id": "symbols",
+          "title": "入口、出口分別標示自行車圖案",
+          "text": "需要說明方向時，可加設指向線，讓騎士辨識穿越路徑。"
+        },
+        {
+          "id": "merge",
+          "title": "匯入車行道以穿越虛線提示",
+          "text": "提醒騎士注意車行道來車；必要時在上游加設當心自行車標誌。"
+        },
+        {
+          "id": "exit",
+          "title": "未開放騎乘的人行道清楚告知",
+          "text": "匯出端若接續未開放自行車的人行道，可加設行人專用標誌，提示不得繼續騎乘。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "46",
+        "67",
+        "174-4",
+        "186-1"
+      ]
+    },
+    {
+      "id": "m302-lane-extensions",
+      "section": "module",
+      "submoduleId": "M3-02.1",
+      "title": "自行車遵循號誌的檢討",
+      "intro": "把自行車路段、穿越與匯入車行道的動線連續安排。",
+      "assets": [],
+      "points": [
+        {
+          "id": "proposal",
+          "title": "清楚區分修訂建議與現行配置",
+          "text": "本模組提出檢討方向：釐清人行道或同平面自行車道穿越時，應遵循的號誌對象。"
+        },
+        {
+          "id": "shared",
+          "title": "共用燈面需有明確適用依據",
+          "text": "可研議自行車或人車共用鏡面；若後續規定允許，建議共用燈面設於自行車與行人穿越道之間。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [
+        "46",
+        "67",
+        "174-4",
+        "186-1"
+      ]
+    },
+    {
+      "id": "m302-crossing-reference",
+      "section": "module",
+      "submoduleId": "M3-02.2",
+      "title": "自行車穿越道",
+      "intro": "自行車穿越道的設置說明併入「自行車道」模組，可直接查看對應圖例。",
+      "assets": [],
+      "points": [
+        {
+          "id": "reference",
+          "title": "相關配置說明",
+          "text": "自行車穿越道的設置說明併入「自行車道」模組，可直接查看對應圖例。"
+        }
+      ],
+      "sourcePages": [],
+      "references": [],
+      "links": [
+        {
+          "pageId": "m302-lane-diagram",
+          "topicId": "crossing",
+          "label": "查看自行車穿越道線"
+        },
+        {
+          "pageId": "m302-lane-issues",
+          "label": "查看自行車道的現況議題與相關條文"
+        }
+      ]
+    }
+  ],
+  "referenceNames": {
+    "46": "當心自行車標誌",
+    "67": "行人專用標誌",
+    "174-4": "自行車優先車道標線",
+    "186-1": "自行車穿越道線"
+  },
+  "submoduleFlows": [
+    {
+      "submoduleId": "M3-02.1",
+      "stages": [
+        {
+          "id": "issues",
+          "pageId": "m302-lane-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m302-lane-diagram",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "priority",
+              "label": "自行車優先車道",
+              "sourcePageId": "m302-lane-diagram",
+              "pointIds": [
+                "priority",
+                "side"
+              ],
+              "assets": [
+                "m302-3167eda215"
+              ]
+            },
+            {
+              "id": "crossing",
+              "label": "自行車穿越道線",
+              "sourcePageId": "m302-lane-diagram",
+              "pointIds": [
+                "symbols"
+              ],
+              "assets": [
+                "m302-3167eda215"
+              ]
+            },
+            {
+              "id": "merge",
+              "label": "匯入與匯出",
+              "sourcePageId": "m302-lane-diagram",
+              "pointIds": [
+                "merge",
+                "exit"
+              ],
+              "assets": [
+                "m302-b172c5ac34",
+                "m302-3167eda215"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m302-lane-extensions",
+          "title": "延伸應用",
+          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "topics": [
+            {
+              "id": "signal",
+              "label": "自行車遵循號誌的檢討",
+              "sourcePageId": "m302-lane-extensions"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

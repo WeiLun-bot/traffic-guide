@@ -35,7 +35,7 @@
       "credit": "道路交通標誌標線號誌設置參考指引"
     },
     "stop-crosswalk": {
-      "file": "materials/03-modules/M2-01/stop-crosswalk.png",
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口_搭配行穿線.png",
       "width": 978,
       "height": 471,
       "label": "停管制搭配行穿線",
@@ -103,24 +103,16 @@
       ],
       "points": [
         {
-          "id": "purpose",
-          "title": "建立主次路權",
-          "text": "以幹道車輛優先為原則，一起檢視標誌、標線與視距。"
-        },
-        {
           "id": "stop",
           "title": "M2-01.1 停管制",
-          "text": "以停車再開標誌、停止線與停標字，明確標示停讓位置。"
+          "text": "以停車再開標誌、停止線與停標字，明確標示停讓位置。",
+          "submoduleId": "M2-01.1"
         },
         {
           "id": "yield",
           "title": "M2-01.2 讓管制",
-          "text": "以讓路標誌與讓路線，提醒減速並讓幹道車輛先行。"
-        },
-        {
-          "id": "read",
-          "title": "配置重點",
-          "text": "先確認主次路權，再依行人動線、視距與車速調整配置。"
+          "text": "以讓路標誌與讓路線，提醒減速並讓幹道車輛先行。",
+          "submoduleId": "M2-01.2"
         }
       ],
       "sourcePages": [
@@ -141,6 +133,10 @@
         "172",
         "177",
         "189"
+      ],
+      "excludedOverviewPointIds": [
+        "purpose",
+        "read"
       ]
     },
     {
@@ -817,36 +813,175 @@
     {
       "submoduleId": "M2-01.1",
       "stages": [
-        {"id":"issues","pageId":"m201-stop-issues","title":"現況議題與相關條文"},
-        {"id":"diagram","pageId":"m201-stop-layout","title":"圖例說明","topics":[
-          {"id":"sign","label":"停車再開標誌","sourcePageId":"m201-stop-layout","pointIds":["sign"]},
-          {"id":"line","label":"停止線佈設位置","sourcePageId":"m201-stop-layout","pointIds":["line","buffer","word"]},
-          {"id":"guide","label":"路口行車導引線","sourcePageId":"m201-stop-layout","pointIds":["guide"]},
-          {"id":"walk","label":"行人穿越處","sourcePageId":"m201-stop-layout","pointIds":["walk"]}
-        ]},
-        {"id":"extensions","pageId":"m201-stop-extensions","title":"延伸應用","topics":[
-          {"id":"crosswalk","label":"行人穿越道線","sourcePageId":"m201-stop-crosswalk"},
-          {"id":"refuge","label":"庇護空間","sourcePageId":"m201-stop-extensions","pointIds":["refuge"],"assets":["stop-refuge"]},
-          {"id":"curb","label":"路緣轉角槽化","sourcePageId":"m201-stop-extensions","pointIds":["curb","vehicle"],"assets":["stop-curb"]},
-          {"id":"warning","label":"路口預告標誌","sourcePageId":"m201-stop-warning","assets":[]}
-        ]}
+        {
+          "id": "issues",
+          "pageId": "m201-stop-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m201-stop-layout",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "sign",
+              "label": "停車再開標誌",
+              "sourcePageId": "m201-stop-layout",
+              "pointIds": [
+                "sign"
+              ]
+            },
+            {
+              "id": "line",
+              "label": "停止線佈設位置",
+              "sourcePageId": "m201-stop-layout",
+              "pointIds": [
+                "line",
+                "buffer",
+                "word"
+              ]
+            },
+            {
+              "id": "guide",
+              "label": "路口行車導引線",
+              "sourcePageId": "m201-stop-layout",
+              "pointIds": [
+                "guide"
+              ]
+            },
+            {
+              "id": "walk",
+              "label": "行人穿越處",
+              "sourcePageId": "m201-stop-layout",
+              "pointIds": [
+                "walk"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m201-stop-extensions",
+          "title": "延伸應用",
+          "topics": [
+            {
+              "id": "crosswalk",
+              "label": "行人穿越道線",
+              "sourcePageId": "m201-stop-crosswalk"
+            },
+            {
+              "id": "refuge",
+              "label": "庇護空間",
+              "sourcePageId": "m201-stop-extensions",
+              "pointIds": [
+                "refuge"
+              ],
+              "assets": [
+                "stop-refuge"
+              ]
+            },
+            {
+              "id": "curb",
+              "label": "路緣轉角槽化",
+              "sourcePageId": "m201-stop-extensions",
+              "pointIds": [
+                "curb",
+                "vehicle"
+              ],
+              "assets": [
+                "stop-curb"
+              ]
+            },
+            {
+              "id": "warning",
+              "label": "路口預告標誌",
+              "sourcePageId": "m201-stop-warning",
+              "assets": []
+            }
+          ]
+        }
       ]
     },
     {
       "submoduleId": "M2-01.2",
       "stages": [
-        {"id":"issues","pageId":"m201-yield-issues","title":"現況議題與相關條文"},
-        {"id":"diagram","pageId":"m201-yield-layout","title":"圖例說明","topics":[
-          {"id":"sign","label":"讓路標誌","sourcePageId":"m201-yield-layout","pointIds":["sign"]},
-          {"id":"line","label":"讓路線佈設原則","sourcePageId":"m201-yield-layout","pointIds":["triangle","pedestrian"]},
-          {"id":"guide","label":"路口行車導引線","sourcePageId":"m201-yield-layout","pointIds":["guide"]}
-        ]},
-        {"id":"extensions","pageId":"m201-yield-extensions","title":"延伸應用","topics":[
-          {"id":"refuge","label":"庇護空間","sourcePageId":"m201-yield-extensions","pointIds":["refuge"],"assets":["stop-refuge"]},
-          {"id":"crosswalk","label":"行穿線搭配配置","sourcePageId":"m201-yield-crosswalk"},
-          {"id":"curb","label":"路緣轉角槽化","sourcePageId":"m201-yield-extensions","pointIds":["curb","reference"],"assets":["stop-curb"]},
-          {"id":"buffer","label":"高速環境緩衝空間","sourcePageId":"m201-yield-buffer"}
-        ]}
+        {
+          "id": "issues",
+          "pageId": "m201-yield-issues",
+          "title": "現況議題與相關條文"
+        },
+        {
+          "id": "diagram",
+          "pageId": "m201-yield-layout",
+          "title": "圖例說明",
+          "topics": [
+            {
+              "id": "sign",
+              "label": "讓路標誌",
+              "sourcePageId": "m201-yield-layout",
+              "pointIds": [
+                "sign"
+              ]
+            },
+            {
+              "id": "line",
+              "label": "讓路線佈設原則",
+              "sourcePageId": "m201-yield-layout",
+              "pointIds": [
+                "triangle",
+                "pedestrian"
+              ]
+            },
+            {
+              "id": "guide",
+              "label": "路口行車導引線",
+              "sourcePageId": "m201-yield-layout",
+              "pointIds": [
+                "guide"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "extensions",
+          "pageId": "m201-yield-extensions",
+          "title": "延伸應用",
+          "topics": [
+            {
+              "id": "refuge",
+              "label": "庇護空間",
+              "sourcePageId": "m201-yield-extensions",
+              "pointIds": [
+                "refuge"
+              ],
+              "assets": [
+                "stop-refuge"
+              ]
+            },
+            {
+              "id": "crosswalk",
+              "label": "行穿線搭配配置",
+              "sourcePageId": "m201-yield-crosswalk"
+            },
+            {
+              "id": "curb",
+              "label": "路緣轉角槽化",
+              "sourcePageId": "m201-yield-extensions",
+              "pointIds": [
+                "curb",
+                "reference"
+              ],
+              "assets": [
+                "stop-curb"
+              ]
+            },
+            {
+              "id": "buffer",
+              "label": "高速環境緩衝空間",
+              "sourcePageId": "m201-yield-buffer"
+            }
+          ]
+        }
       ]
     }
   ],

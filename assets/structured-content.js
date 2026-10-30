@@ -86,6 +86,10 @@
     current.context=context;
     const configured=editor()?.store?.config.content[current.type][current.pageId];
     current.model=clone(configured||current.model);
+    if(current.type==='modules'){
+      const source=window.PresentationModules?.displayContext(current.pageId).source;
+      if(source)current.model.points=window.PresentationModules.overviewPoints(source,current.model.points);
+    }
     const {model,host,type,pageId}=current;
     if(type==='conditions') {
       const original=[...host.querySelectorAll('.condition-issue')];

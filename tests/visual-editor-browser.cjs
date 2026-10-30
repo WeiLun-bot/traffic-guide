@@ -17,6 +17,7 @@ const initialConfig = Core.parse(initialConfigText);
 // Keep visual interaction tests independent of the user's saved camera choices.
 // The fixture is served through the same live-source route as the real project.
 for(const [id,view] of Object.entries(initialConfig.imageViews))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
+initialConfig.removedModuleExtensions=[];
 const previewConfigPath=path.join(artifacts,'preview-layout.json');
 const previewConfigText=JSON.stringify(initialConfig);
 class CDP {
@@ -108,6 +109,8 @@ async function main() {
     }
     const moduleCheck=async()=>require('./presentation-modules-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure:value=>{failModules=value;}});
     const libraryCheck=async()=>require('./module-library-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText});
+    const completionCheck=async()=>require('./module-completion-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText});
+    if(process.argv.includes('--completion-only')){await navigate(base+'/presentation-demo/#cover');await completionCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' completed-module browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--library-only')){await navigate(base+'/presentation-demo/#cover');await libraryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module library browser regression groups; no uncaught JavaScript exceptions.');return;}
     const structureCheck=async()=>require('./presentation-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
     const pickerCheck=async()=>require('./presentation-picker-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});
@@ -116,6 +119,14 @@ async function main() {
     const startupCheck=async()=>require('./presentation-startup-browser.cjs')({evaluate,click,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});
     if(process.argv.includes('--startup-only')){await startupCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' startup browser regression groups; no uncaught JavaScript exceptions.');return;}
     const viewportCheck=async()=>require('./viewport-behavior-browser.cjs')({evaluate,view,navigate,click,cdp,base,pass});
+    if(process.argv.includes('--extension-removal-only')){await require('./module-extension-removal-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' extension removal browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--extension-layout-only')){await require('./extension-layout-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' extension layout browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--navigation-order-only')){await require('./navigation-order-browser.cjs')({evaluate,view,navigate,click,mouse,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' navigation ordering browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--module-highlights-only')){await require('./module-highlights-browser.cjs')({evaluate,view,navigate,click,wait,mouse,dragFrom,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module highlight browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--module-overviews-only')){await require('./module-overviews-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' grouped overview browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--module-navigation-only')){await navigate(base+'/presentation-demo/#cover');await require('./module-switcher-browser.cjs')({evaluate,view,click,cdp,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module navigation browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--module-layout-only')){await require('./module-layout-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module layout browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--rotation-only')){await require('./initial-image-rotation-browser.cjs')({evaluate,view,navigate,click,wait,mouse,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' initial rotation browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--viewport-only')){await viewportCheck();assert.deepEqual(exceptions,[]);console.log('PASS: viewport and reference browser regressions; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--fullscreen-only')){await fullscreenCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' fullscreen browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--directories-only')){await directoryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' directory browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -533,7 +544,7 @@ async function main() {
     const editorShot = await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,'editor-desktop.png'),Buffer.from(editorShot.data,'base64'));
     pass('desktop editor and tablet preview render with floating controls and unchanged slide dimensions');
     override=null;await evaluate('window.visualLayoutEditor.files.disconnect()');
-    await structureCheck();await pickerCheck();await directoryCheck();await moduleCheck();await libraryCheck();await fullscreenCheck();await startupCheck();
+    await structureCheck();await pickerCheck();await directoryCheck();await moduleCheck();await libraryCheck();await completionCheck();await fullscreenCheck();await startupCheck();
     // Failed automatic JSON loading must expose recovery instead of silently resetting the layout.
     failConfig = true;override = null;await cdp.send('Page.navigate',{url:base+'/presentation-demo/?missing-config=1#cover'});
     await wait('Boolean(document.querySelector(".vl-recovery:not([hidden])"))');assert.equal(await evaluate('Boolean(window.generalRoadPresentation)'),false);
