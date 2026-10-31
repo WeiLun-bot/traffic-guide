@@ -14,9 +14,20 @@
       "materials/03-modules/M4-01/M4-01_直線段轉折處布設合併式「輔2」示例.png",
       "materials/03-modules/M4-01/連續彎路標誌.png"
     ],
-    "notes": []
+    "notes": [],
+    "userImageFiles": [
+      "materials/03-modules/M4-01/M4-01.1_現況議題_01.png"
+    ]
   },
   "assets": {
+    "m401-local-issue-photo-1": {
+      "file": "materials/03-modules/M4-01/M4-01.1_現況議題_01.png",
+      "width": 1211,
+      "height": 870,
+      "label": "局部危險警示現況照片",
+      "caption": "M4-01.1 局部危險警示現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m401-a614a49c08": {
       "file": "materials/03-modules/M4-01/M4-01_局部危險警示代表型1──隧道標誌.svg",
       "width": 415,
@@ -70,6 +81,14 @@
     {
       "id": "m401-overview",
       "section": "overview",
+      "overviewGroups": {
+        "M4-01.1": {
+          "assets": [
+            "m401-a614a49c08",
+            "m401-cbdb2c7c69"
+          ]
+        }
+      },
       "title": "M4-01 危險警示",
       "intro": "依危險處所的型態，整合預告距離、方向導引與管制資訊。",
       "assets": [
@@ -100,8 +119,7 @@
       "title": "局部危險警示｜現況議題與相關條文",
       "intro": "在到達局部危險處所前，提供看得見、來得及反應的警告。",
       "assets": [
-        "m401-a614a49c08",
-        "m401-cbdb2c7c69"
+        "m401-local-issue-photo-1"
       ],
       "points": [
         {

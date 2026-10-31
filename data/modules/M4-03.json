@@ -14,9 +14,20 @@
       "materials/03-modules/M4-03/狹橋標誌放大.svg",
       "materials/03-modules/M4-03/禁止會車放大.svg"
     ],
-    "notes": []
+    "notes": [],
+    "userImageFiles": [
+      "materials/03-modules/M4-03/M4-03.1_現況議題_01.png"
+    ]
   },
   "assets": {
+    "m403-speed-issue-photo-1": {
+      "file": "materials/03-modules/M4-03/M4-03.1_現況議題_01.png",
+      "width": 1237,
+      "height": 743,
+      "label": "速率管理現況照片",
+      "caption": "M4-03.1 速率管理現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m403-e43da210bb": {
       "file": "materials/03-modules/M4-03/M4-03_速率管理代表型.svg",
       "width": 487,
@@ -72,6 +83,13 @@
     {
       "id": "m403-overview",
       "section": "overview",
+      "overviewGroups": {
+        "M4-03.1": {
+          "assets": [
+            "m403-e43da210bb"
+          ]
+        }
+      },
       "title": "M4-03 路段行為管制",
       "intro": "讓速限、超車與會車管制配合道路條件，維持連續的駕駛判讀。",
       "assets": [
@@ -102,7 +120,7 @@
       "title": "速率管理｜現況議題與相關條文",
       "intro": "在進入路段及速限改變時，提供一致且容易辨識的速度資訊。",
       "assets": [
-        "m403-e43da210bb"
+        "m403-speed-issue-photo-1"
       ],
       "points": [
         {

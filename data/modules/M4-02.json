@@ -10,9 +10,20 @@
       "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型1──禁止進入與限高.svg",
       "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型2──限重與限寬.svg"
     ],
-    "notes": []
+    "notes": [],
+    "userImageFiles": [
+      "materials/03-modules/M4-02/M4-02.1_現況議題_01.png"
+    ]
   },
   "assets": {
+    "m402-restriction-issue-photo-1": {
+      "file": "materials/03-modules/M4-02/M4-02.1_現況議題_01.png",
+      "width": 1824,
+      "height": 1368,
+      "label": "車種與通行條件限制現況照片",
+      "caption": "M4-02.1 車種與通行條件限制現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m402-b18c7d1f2f": {
       "file": "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型1──禁止進入與限高.svg",
       "width": 519,
@@ -38,8 +49,7 @@
       "title": "車種與通行條件限制｜現況議題與相關條文",
       "intro": "把限制條件、改道準備與實際管制起點一起說清楚。",
       "assets": [
-        "m402-b18c7d1f2f",
-        "m402-ae32e39564"
+        "m402-restriction-issue-photo-1"
       ],
       "points": [
         {

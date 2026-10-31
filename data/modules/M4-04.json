@@ -12,9 +12,20 @@
       "materials/03-modules/M4-04/M4-04_通學區代表型_放大.svg",
       "materials/03-modules/M4-04/M4-04_通學區標線設置範例.png"
     ],
-    "notes": []
+    "notes": [],
+    "userImageFiles": [
+      "materials/03-modules/M4-04/M4-04.1_現況議題_01.png"
+    ]
   },
   "assets": {
+    "m404-pedestrian-issue-photo-1": {
+      "file": "materials/03-modules/M4-04/M4-04.1_現況議題_01.png",
+      "width": 1500,
+      "height": 1125,
+      "label": "行人優先區現況照片",
+      "caption": "M4-04.1 行人優先區現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m404-3762916f50": {
       "file": "materials/03-modules/M4-04/M4-04_行人優先區代表型.svg",
       "width": 1161,
@@ -52,6 +63,13 @@
     {
       "id": "m404-overview",
       "section": "overview",
+      "overviewGroups": {
+        "M4-04.1": {
+          "assets": [
+            "m404-3762916f50"
+          ]
+        }
+      },
       "title": "M4-04 區域管制",
       "intro": "以完整邊界與一致資訊，說明區域內的通行要求。",
       "assets": [
@@ -82,7 +100,7 @@
       "title": "行人優先區｜現況議題與相關條文",
       "intro": "從區域邊界、速限到道路環境，持續表達行人優先。",
       "assets": [
-        "m404-3762916f50"
+        "m404-pedestrian-issue-photo-1"
       ],
       "points": [
         {
