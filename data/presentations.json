@@ -4,7 +4,16 @@
   "presentations": [
     {
       "id": "results", "code": "01", "title": "三年成果與模組化整體架構", "entry": "results-intro", "footer": "RESEARCH RESULTS & FRAMEWORK",
-      "chapters": [{"id": "results-intro", "code": "00", "name": "緒論", "entry": "results-intro", "empty": true}]
+      "chapters": [
+        {"id":"results-intro","code":"00","name":"緒論","entry":"results-intro"},
+        {"id":"results-principles","code":"01","name":"佈設原則","entry":"results-principles"},
+        {"id":"results-modular","code":"02","name":"模組化架構","entry":"results-modular"},
+        {"id":"results-modules","code":"03","name":"模組成果","entry":"results-modules"},
+        {"id":"results-review","code":"04","name":"情境整體檢討","entry":"results-review"},
+        {"id":"results-general","code":"05","name":"一般道路情境","entry":"results-general"},
+        {"id":"results-complex","code":"06","name":"複雜道路情境","entry":"results-complex"},
+        {"id":"results-wrap","code":"07","name":"成果與運用","entry":"results-wrap"}
+      ]
     },
     {
       "id": "modules", "code": "02", "title": "交通管制設施模組設計", "entry": "modules-structure", "footer": "TRAFFIC CONTROL FACILITY MODULES",

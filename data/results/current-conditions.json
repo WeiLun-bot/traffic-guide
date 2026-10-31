@@ -1,0 +1,4286 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "assets": {
+    "g101-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-01/G1-01_現況圖_01.png",
+      "width": 1967,
+      "height": 2454,
+      "label": "G1-01 現況圖",
+      "scenario": "G1-01",
+      "role": "diagram",
+      "rotation": 90,
+      "sourceSlide": 38,
+      "sourcePart": "ppt/media/image21.png",
+      "sha256": "ae72a6bf68b473fbf0c6d5d930605972a9702d4d6d9d2d26fc6249d2ca1007db"
+    },
+    "results:g1-01-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-01/G1-01_現況照片_01.png",
+      "width": 2583,
+      "height": 1048,
+      "label": "G1-01 現況照片",
+      "scenario": "G1-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 39,
+      "sourcePart": "ppt/media/image24.png",
+      "sha256": "72cd4d1940cf63fdfbbb9557e6855617d7f626f1eacefcd69c694e6922eb0c75"
+    },
+    "results:g1-01-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-01/G1-01_現況照片_02.png",
+      "width": 2571,
+      "height": 1062,
+      "label": "G1-01 現況照片 2",
+      "scenario": "G1-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 39,
+      "sourcePart": "ppt/media/image23.png",
+      "sha256": "2b3e31550dedf7a334fcf3e590b5f7ed6f1e470667a9ec9d16dbda0beab7eed9"
+    },
+    "results:g1-01-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-01/G1-01_現況照片_03.png",
+      "width": 1102,
+      "height": 1026,
+      "label": "G1-01 現況照片 3",
+      "scenario": "G1-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 39,
+      "sourcePart": "ppt/media/image25.png",
+      "sha256": "0d68812d3539d176ae5b6e23283e2e08a0e075c5d43a320633c6a04dd72e62ff"
+    },
+    "results:g1-01-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-01/G1-01_現況照片_04.png",
+      "width": 2567,
+      "height": 1054,
+      "label": "G1-01 現況照片 4",
+      "scenario": "G1-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 39,
+      "sourcePart": "ppt/media/image22.png",
+      "sha256": "6ef45fa079fa02f781641eefaebaefdcf3333d23e36eba17ac7e44df412ca012"
+    },
+    "results:g1-01-photo-5": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-01/G1-01_現況照片_05.png",
+      "width": 2736,
+      "height": 1824,
+      "label": "G1-01 現況照片 5",
+      "scenario": "G1-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 39,
+      "sourcePart": "ppt/media/image26.png",
+      "sha256": "a56fc77afd15bedd0c3736b752dfab919b64c318c10986cb28cae335d22289fc"
+    },
+    "results:g1-02-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-02/G1-02_現況圖_01.png",
+      "width": 1872,
+      "height": 1281,
+      "label": "G1-02 現況圖",
+      "scenario": "G1-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 41,
+      "sourcePart": "ppt/media/image28.png",
+      "sha256": "bb4974b6e1f16e3867ef3ddb4ce18099a9116dc9421e878fe992af3c2fe55132"
+    },
+    "results:g1-02-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-02/G1-02_現況照片_01.png",
+      "width": 2615,
+      "height": 1388,
+      "label": "G1-02 現況照片",
+      "scenario": "G1-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 42,
+      "sourcePart": "ppt/media/image30.png",
+      "sha256": "e806ec69729b5cb552cb284bfb1a37abb99e56ede4b5e93ebff18fc640868b89"
+    },
+    "results:g1-02-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-02/G1-02_現況照片_02.png",
+      "width": 2578,
+      "height": 1433,
+      "label": "G1-02 現況照片 2",
+      "scenario": "G1-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 42,
+      "sourcePart": "ppt/media/image29.png",
+      "sha256": "c7374de1c65771c70b5b66c584de64c542d7a3c7f2162ae7df811b4114f40ac5"
+    },
+    "results:g1-03-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況圖_01.png",
+      "width": 3463,
+      "height": 2225,
+      "label": "G1-03 現況圖",
+      "scenario": "G1-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 44,
+      "sourcePart": "ppt/media/image32.png",
+      "sha256": "5462184bdc4e2381fc271d481c9e2f1cc1121a19d27b35f60abbb4965db73f2d"
+    },
+    "results:g1-03-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況照片_01.png",
+      "width": 2581,
+      "height": 1417,
+      "label": "G1-03 現況照片",
+      "scenario": "G1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 45,
+      "sourcePart": "ppt/media/image34.png",
+      "sha256": "71ad7d93002fa0924598e216fb0ed0ed74f77b0b617359f2c1dc175ce6e31385"
+    },
+    "results:g1-03-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況照片_02.png",
+      "width": 1904,
+      "height": 1158,
+      "label": "G1-03 現況照片 2",
+      "scenario": "G1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 45,
+      "sourcePart": "ppt/media/image35.png",
+      "sha256": "82975350e876eee37b6fd58ca11259d82e14d4e36781e6cad6102052197a225b"
+    },
+    "results:g1-03-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況照片_03.png",
+      "width": 2568,
+      "height": 1406,
+      "label": "G1-03 現況照片 3",
+      "scenario": "G1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 45,
+      "sourcePart": "ppt/media/image33.png",
+      "sha256": "6cdbd6fe67c37902a7723dd1b3c0a1895197db34e4dafea9d7ac34e8ef0659d9"
+    },
+    "results:g1-04-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-04/G1-04_現況圖_01.png",
+      "width": 2712,
+      "height": 2181,
+      "label": "G1-04 現況圖",
+      "scenario": "G1-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 47,
+      "sourcePart": "ppt/media/image37.png",
+      "sha256": "d543c1617fd9fc96d02358a7f1eee6e468abc5211ff2d684d1d061d4401cbf4d"
+    },
+    "results:g1-04-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-04/G1-04_現況照片_01.png",
+      "width": 2477,
+      "height": 1393,
+      "label": "G1-04 現況照片",
+      "scenario": "G1-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 48,
+      "sourcePart": "ppt/media/image38.png",
+      "sha256": "16d01eec630dd572f4312297966c259a1641d1dd39163d5f5b02c6b52a1b6644"
+    },
+    "results:g1-04-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-04/G1-04_現況照片_02.png",
+      "width": 1667,
+      "height": 1018,
+      "label": "G1-04 現況照片 2",
+      "scenario": "G1-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 48,
+      "sourcePart": "ppt/media/image39.png",
+      "sha256": "567278114fc7bf45e71125b1d34f5fffaf20d18d7c65e19a17ade58ed4073de0"
+    },
+    "results:g2-01-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況圖_01.png",
+      "width": 3354,
+      "height": 2474,
+      "label": "G2-01 現況圖",
+      "scenario": "G2-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 50,
+      "sourcePart": "ppt/media/image41.png",
+      "sha256": "6b84faf6ef590df33811b5210d036f1c783c9270f87d2692d8b7c788ea7a4ac2"
+    },
+    "results:g2-01-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_01.png",
+      "width": 2580,
+      "height": 1434,
+      "label": "G2-01 現況照片",
+      "scenario": "G2-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 51,
+      "sourcePart": "ppt/media/image42.png",
+      "sha256": "d5874adcb258bbc286bb83f5be450bfd3d4ebe918380833a91162d24712eca25"
+    },
+    "results:g2-01-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_02.png",
+      "width": 2608,
+      "height": 1417,
+      "label": "G2-01 現況照片 2",
+      "scenario": "G2-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 51,
+      "sourcePart": "ppt/media/image44.png",
+      "sha256": "9e20532e66eaaf7ef52752db2edba29c93e3dccca52238822d7b87a990a3a0f8"
+    },
+    "results:g2-01-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_03.png",
+      "width": 2583,
+      "height": 1456,
+      "label": "G2-01 現況照片 3",
+      "scenario": "G2-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 51,
+      "sourcePart": "ppt/media/image43.png",
+      "sha256": "e5d083b19f16599245ec67809d1668433e31dbd0e266f525edd36003431f7d08"
+    },
+    "results:g2-01-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_04.png",
+      "width": 2436,
+      "height": 1321,
+      "label": "G2-01 現況照片 4",
+      "scenario": "G2-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 51,
+      "sourcePart": "ppt/media/image45.png",
+      "sha256": "cf980b7da5d29b7bffd548106ad4f836d3577a7a54a9ef2816d7a694222965a5"
+    },
+    "results:g2-02-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-02/G2-02_現況圖_01.png",
+      "width": 3350,
+      "height": 1883,
+      "label": "G2-02 現況圖",
+      "scenario": "G2-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 53,
+      "sourcePart": "ppt/media/image47.png",
+      "sha256": "31abc7fdcd69d6d80ddd20dd6ecc2666d3cd3ee81e09e93c48dc37ab91529fa0"
+    },
+    "results:g2-02-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-02/G2-02_現況照片_01.png",
+      "width": 2563,
+      "height": 1048,
+      "label": "G2-02 現況照片",
+      "scenario": "G2-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 54,
+      "sourcePart": "ppt/media/image48.png",
+      "sha256": "43057690c7e7613e5d99024644e1767b364f6d70bdde1b3253a3c4c8e2810cd1"
+    },
+    "results:g2-02-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-02/G2-02_現況照片_02.png",
+      "width": 2580,
+      "height": 1075,
+      "label": "G2-02 現況照片 2",
+      "scenario": "G2-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 54,
+      "sourcePart": "ppt/media/image49.png",
+      "sha256": "572874f026d14222d5abafb07f57e2c8dce81fa5ebf91d957c2d7dd7f1d0a211"
+    },
+    "results:g2-02-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-02/G2-02_現況照片_03.png",
+      "width": 2598,
+      "height": 1054,
+      "label": "G2-02 現況照片 3",
+      "scenario": "G2-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 54,
+      "sourcePart": "ppt/media/image50.png",
+      "sha256": "a02209f77619a09d675e3c80168c82d5ec5937dc9e9db9c4bc6a893d15848c48"
+    },
+    "results:g3-01-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況圖_01.png",
+      "width": 3479,
+      "height": 2300,
+      "label": "G3-01 現況圖",
+      "scenario": "G3-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 56,
+      "sourcePart": "ppt/media/image52.png",
+      "sha256": "bd9a78c7f084656db56c7069f6703df825735e3b9deecbe773d7aac6e5aca1ae"
+    },
+    "results:g3-01-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_01.png",
+      "width": 2526,
+      "height": 1386,
+      "label": "G3-01 現況照片",
+      "scenario": "G3-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 57,
+      "sourcePart": "ppt/media/image54.png",
+      "sha256": "469129ec275d0510b2034a090f857726769afbd1a790374a4e0ad7647d0086e5"
+    },
+    "results:g3-01-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_02.png",
+      "width": 2570,
+      "height": 1402,
+      "label": "G3-01 現況照片 2",
+      "scenario": "G3-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 57,
+      "sourcePart": "ppt/media/image55.png",
+      "sha256": "2f104b7b26b3bed6ddbef1680a71080a88c14e7ba15ea10fc16f619dcf42a516"
+    },
+    "results:g3-01-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_03.png",
+      "width": 2607,
+      "height": 1387,
+      "label": "G3-01 現況照片 3",
+      "scenario": "G3-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 57,
+      "sourcePart": "ppt/media/image56.png",
+      "sha256": "25b51b27193ff8238cfe24a4ebc2a29127c4442a7b88650059160b5caa452a90"
+    },
+    "results:g3-01-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_04.png",
+      "width": 2594,
+      "height": 1425,
+      "label": "G3-01 現況照片 4",
+      "scenario": "G3-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 57,
+      "sourcePart": "ppt/media/image53.png",
+      "sha256": "e338b3022c889e97a42221d9938bc0edd9d18f0ea395989a93fc12f1f0a83f5d"
+    },
+    "results:g3-02-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況圖_01.png",
+      "width": 3446,
+      "height": 2321,
+      "label": "G3-02 現況圖",
+      "scenario": "G3-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 59,
+      "sourcePart": "ppt/media/image58.png",
+      "sha256": "7e61cade63e38f1f57af6d0ec5743fe67669a410a3960282dd6f0f1f2cc67671"
+    },
+    "results:g3-02-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_01.png",
+      "width": 1841,
+      "height": 943,
+      "label": "G3-02 現況照片",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image60.png",
+      "sha256": "7a020de4f7dcc65de4b09f1b868b8a59a3a3afb32e9504708376318112d34538"
+    },
+    "results:g3-02-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_02.png",
+      "width": 2500,
+      "height": 1412,
+      "label": "G3-02 現況照片 2",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image59.png",
+      "sha256": "8ddfd8dacd86ef90614057d519d91a3c35e0040a34030808eacc39e8ab57db7e"
+    },
+    "results:g3-02-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_03.png",
+      "width": 2465,
+      "height": 1362,
+      "label": "G3-02 現況照片 3",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image62.png",
+      "sha256": "e4f3554bb208d572b79d7c263c6b58ebadea20bca1022806ba3250a005dd9109"
+    },
+    "results:g3-02-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_04.png",
+      "width": 2490,
+      "height": 1386,
+      "label": "G3-02 現況照片 4",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image61.png",
+      "sha256": "4ac58a4a40d83b2e02a10e482db0fcbd9eae06118d8d36b58800e996ddb3f25a"
+    },
+    "results:g4-01-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況圖_01.png",
+      "width": 3022,
+      "height": 1933,
+      "label": "G4-01 現況圖",
+      "scenario": "G4-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 62,
+      "sourcePart": "ppt/media/image64.png",
+      "sha256": "e31101f81a134b3e51b84eae3326506b4197da9df350e92498e65ffad0531d85"
+    },
+    "results:g4-01-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_01.png",
+      "width": 2596,
+      "height": 1467,
+      "label": "G4-01 現況照片",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image67.png",
+      "sha256": "762d83e022333ed5057463307c8f8dff7c2bfa0f0412744520165dedb9126151"
+    },
+    "results:g4-01-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_02.png",
+      "width": 2588,
+      "height": 1389,
+      "label": "G4-01 現況照片 2",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image66.png",
+      "sha256": "0ab8b1c54dbffe6e7eacd934e4dec3d9303c29244d455e2b64b8e32c132c8f08"
+    },
+    "results:g4-01-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_03.png",
+      "width": 2593,
+      "height": 1407,
+      "label": "G4-01 現況照片 3",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image65.png",
+      "sha256": "a6a6d7d2e145f24710dac2093a1da8103944a901266bbbe393914998a437d57b"
+    },
+    "results:g4-01-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_04.png",
+      "width": 2605,
+      "height": 1401,
+      "label": "G4-01 現況照片 4",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image68.png",
+      "sha256": "3bc1684ce95e07a76a29a82dd712448c0cdd627a866c49e30c05130f23a202a7"
+    },
+    "results:g4-02-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況圖_01.png",
+      "width": 3058,
+      "height": 2000,
+      "label": "G4-02 現況圖",
+      "scenario": "G4-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 65,
+      "sourcePart": "ppt/media/image70.png",
+      "sha256": "43b306328639e4b8c1f3bc28a54621f77284d921d44a9a44a0d67530f33087a1"
+    },
+    "results:g4-02-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況照片_01.png",
+      "width": 2485,
+      "height": 1380,
+      "label": "G4-02 現況照片",
+      "scenario": "G4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 66,
+      "sourcePart": "ppt/media/image75.png",
+      "sha256": "61197a07c28926ae055579b1568fbd7222680116af4457c16fa2f8769bb4e35f"
+    },
+    "results:g4-02-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況照片_02.png",
+      "width": 2508,
+      "height": 1411,
+      "label": "G4-02 現況照片 2",
+      "scenario": "G4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 66,
+      "sourcePart": "ppt/media/image72.png",
+      "sha256": "724edff14cd58595c6c881fedf9ab8b23cc17afd5d6d677b04238b333d4154e1"
+    },
+    "results:g4-02-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況照片_03.png",
+      "width": 2498,
+      "height": 1362,
+      "label": "G4-02 現況照片 3",
+      "scenario": "G4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 66,
+      "sourcePart": "ppt/media/image71.png",
+      "sha256": "29ad74a9e6690a161131c743f425560bb8a7572e5edeb51587fc187732f4b376"
+    },
+    "results:g4-02-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況照片_04.jpg",
+      "width": 1008,
+      "height": 1007,
+      "label": "G4-02 現況照片 4",
+      "scenario": "G4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 66,
+      "sourcePart": "ppt/media/image73.JPG",
+      "sha256": "3ad117ab8063316ac879c672cecf3d4073dabbd05f28535d06ac786422f2e167"
+    },
+    "results:g4-02-photo-5": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況照片_05.jpeg",
+      "width": 3302,
+      "height": 2476,
+      "label": "G4-02 現況照片 5",
+      "scenario": "G4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 66,
+      "sourcePart": "ppt/media/image74.jpeg",
+      "sha256": "a7232dd3fe0c68bb4ed4da91b596c1a58edf987711d2bcfabdcda740fcaf4862"
+    },
+    "results:g1-05-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況圖_01.png",
+      "width": 3000,
+      "height": 2225,
+      "label": "G1-05 現況圖",
+      "scenario": "G1-05",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 68,
+      "sourcePart": "ppt/media/image77.png",
+      "sha256": "6caec6e8bfde382eed3bfd96fc65ec96d5e54b3d521e4adc59737b35dd1bbe62"
+    },
+    "results:g1-05-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況照片_01.png",
+      "width": 2572,
+      "height": 1412,
+      "label": "G1-05 現況照片",
+      "scenario": "G1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 69,
+      "sourcePart": "ppt/media/image79.png",
+      "sha256": "3d5d1605796a8d6772d472367aea1f402b3d2bc7463b9ad4dc531c0709270b57"
+    },
+    "results:g1-05-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況照片_02.png",
+      "width": 2583,
+      "height": 1477,
+      "label": "G1-05 現況照片 2",
+      "scenario": "G1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 69,
+      "sourcePart": "ppt/media/image80.png",
+      "sha256": "b378bf744b4bf5bd6ce9b33ef22e9e018208e4eafaae1481ce4284d44118f3c8"
+    },
+    "results:g1-05-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況照片_03.png",
+      "width": 2587,
+      "height": 1402,
+      "label": "G1-05 現況照片 3",
+      "scenario": "G1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 69,
+      "sourcePart": "ppt/media/image78.png",
+      "sha256": "4890c9cc426d2d9cafdbd2d69fcd07190712e2c10eb5a5bfa9a14022765d830a"
+    },
+    "results:g1-06-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況圖_01.png",
+      "width": 2414,
+      "height": 2637,
+      "label": "G1-06 現況圖",
+      "scenario": "G1-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 71,
+      "sourcePart": "ppt/media/image82.png",
+      "sha256": "61c6156aa7895f17ea3a2773e3e8168353e09e757cdd3ecc29eb8c941d96c63d"
+    },
+    "results:g1-06-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_01.png",
+      "width": 2498,
+      "height": 1389,
+      "label": "G1-06 現況照片",
+      "scenario": "G1-06",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 72,
+      "sourcePart": "ppt/media/image85.png",
+      "sha256": "f3b6d3e107b648624efa26c57167b89f8dc96c2c54f3d35f858f2b4feca95565"
+    },
+    "results:g1-06-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_02.png",
+      "width": 2509,
+      "height": 1414,
+      "label": "G1-06 現況照片 2",
+      "scenario": "G1-06",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 72,
+      "sourcePart": "ppt/media/image83.png",
+      "sha256": "4c6542fcf9e2489c141d14f7cf8e1c7e51d78498e094b7ae29b1d9791e83853a"
+    },
+    "results:g1-06-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_03.png",
+      "width": 2491,
+      "height": 1385,
+      "label": "G1-06 現況照片 3",
+      "scenario": "G1-06",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 72,
+      "sourcePart": "ppt/media/image86.png",
+      "sha256": "22f6253bb437ba62ac44ac78ff7b1cf878fee98e3abad3d99ef1c82830d176a7"
+    },
+    "results:g1-06-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_04.png",
+      "width": 2525,
+      "height": 1407,
+      "label": "G1-06 現況照片 4",
+      "scenario": "G1-06",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 72,
+      "sourcePart": "ppt/media/image84.png",
+      "sha256": "b9eb48e40d8ee12a1d8bdedc3dab1704afe949155f54f3a8803f553b77af311f"
+    },
+    "results:g2-03-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況圖_01.png",
+      "width": 3527,
+      "height": 2245,
+      "label": "G2-03 現況圖",
+      "scenario": "G2-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 74,
+      "sourcePart": "ppt/media/image88.png",
+      "sha256": "4409126d3d2cde25efc455390e1e5bb69d8ebd1b755e6a5693650e0d63f4f20c"
+    },
+    "results:g2-03-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況照片_01.png",
+      "width": 2567,
+      "height": 1056,
+      "label": "G2-03 現況照片",
+      "scenario": "G2-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 75,
+      "sourcePart": "ppt/media/image90.png",
+      "sha256": "f4dfbd57ec4970415695945633dcd086924fa153726d04152db946572a9de7c4"
+    },
+    "results:g2-03-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況照片_02.png",
+      "width": 2581,
+      "height": 1399,
+      "label": "G2-03 現況照片 2",
+      "scenario": "G2-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 75,
+      "sourcePart": "ppt/media/image89.png",
+      "sha256": "5eb9bc2c71495d16f49e61fc68dfac8e171bff814df4f328e9ec8999b80a787a"
+    },
+    "results:g2-03-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況照片_03.png",
+      "width": 2574,
+      "height": 1073,
+      "label": "G2-03 現況照片 3",
+      "scenario": "G2-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 75,
+      "sourcePart": "ppt/media/image91.png",
+      "sha256": "6e5130bea2686356718e6a75b27ad781dfadb05d28536e048e6a2242c344eec7"
+    },
+    "results:g2-04-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況圖_01.png",
+      "width": 4116,
+      "height": 3208,
+      "label": "G2-04 現況圖",
+      "scenario": "G2-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 77,
+      "sourcePart": "ppt/media/image93.png",
+      "sha256": "a5857c071a95f5c4ebd2df97ee9f8e813ef7c9365c8d9a250a8100f1f611bb83"
+    },
+    "results:g2-04-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_01.png",
+      "width": 2505,
+      "height": 1409,
+      "label": "G2-04 現況照片",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image96.png",
+      "sha256": "07eeb7f74f97437283d8eebd4811149f3eee6c4e4b5284ffa5b4cbc4b8ed312f"
+    },
+    "results:g2-04-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_02.png",
+      "width": 2518,
+      "height": 1411,
+      "label": "G2-04 現況照片 2",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image94.png",
+      "sha256": "238e64449217833798cae0d4a93b1d289764382ff52edc7db6d30844417913b3"
+    },
+    "results:g2-04-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_03.png",
+      "width": 1650,
+      "height": 1344,
+      "label": "G2-04 現況照片 3",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image97.png",
+      "sha256": "0c479b1aae45415c777a1cde8da2d2a36ff43b162857515c2e43bc647bddbe2a"
+    },
+    "results:g2-04-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_04.png",
+      "width": 2490,
+      "height": 1334,
+      "label": "G2-04 現況照片 4",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image95.png",
+      "sha256": "09069cf835aaafedd9673fb89ad6725a7e3361672e515bb6f7e1beabdd9da3d1"
+    },
+    "results:g3-03-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況圖_01.png",
+      "width": 4086,
+      "height": 2610,
+      "label": "G3-03 現況圖",
+      "scenario": "G3-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 80,
+      "sourcePart": "ppt/media/image99.png",
+      "sha256": "bb443757382c92c4560a48d5feaec0c6e3741e6b44b6bbe3d5468f8dbfa27537"
+    },
+    "results:g3-03-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_01.png",
+      "width": 2506,
+      "height": 1438,
+      "label": "G3-03 現況照片",
+      "scenario": "G3-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 81,
+      "sourcePart": "ppt/media/image101.png",
+      "sha256": "810df5e3047702671a65dbab6a354506f1cf79941bb0f1f850af598633e02019"
+    },
+    "results:g3-03-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_02.png",
+      "width": 2517,
+      "height": 1396,
+      "label": "G3-03 現況照片 2",
+      "scenario": "G3-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 81,
+      "sourcePart": "ppt/media/image100.png",
+      "sha256": "65ba3bae85491cb9c2ae608c177c99a079385cb38a3d5e5332eb49373ea370bd"
+    },
+    "results:g3-03-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_03.png",
+      "width": 2485,
+      "height": 1371,
+      "label": "G3-03 現況照片 3",
+      "scenario": "G3-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 81,
+      "sourcePart": "ppt/media/image102.png",
+      "sha256": "0d30183e4d2ab1fbad2cfb45ea62f8efc362ed2d9ad81ac6454f34698c6c3241"
+    },
+    "results:g3-03-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_04.png",
+      "width": 2514,
+      "height": 1445,
+      "label": "G3-03 現況照片 4",
+      "scenario": "G3-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 81,
+      "sourcePart": "ppt/media/image103.png",
+      "sha256": "82ed1ca1b481f60afaccf9a7e8790f45262d0602c8dcf2a9b04cb0b183847fa9"
+    },
+    "results:g3-04-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況圖_01.png",
+      "width": 3040,
+      "height": 2424,
+      "label": "G3-04 現況圖",
+      "scenario": "G3-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 83,
+      "sourcePart": "ppt/media/image106.png",
+      "sha256": "f8238559dc4b079d4bff51ede3797e6804ca6eb17a9ef2ce91fcf77f797a4399"
+    },
+    "results:g3-04-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_01.png",
+      "width": 2502,
+      "height": 1387,
+      "label": "G3-04 現況照片",
+      "scenario": "G3-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 84,
+      "sourcePart": "ppt/media/image109.png",
+      "sha256": "160f1b291666e4d0e05bddd5a61f3e48cce825687167eb66f16370931df11bf3"
+    },
+    "results:g3-04-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_02.png",
+      "width": 2490,
+      "height": 1422,
+      "label": "G3-04 現況照片 2",
+      "scenario": "G3-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 84,
+      "sourcePart": "ppt/media/image107.png",
+      "sha256": "4a97e1bc600b1ed1c7c126cbd3bae510db97a3326894ada2103979c6c7e1aedc"
+    },
+    "results:g3-04-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_03.png",
+      "width": 2509,
+      "height": 1368,
+      "label": "G3-04 現況照片 3",
+      "scenario": "G3-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 84,
+      "sourcePart": "ppt/media/image108.png",
+      "sha256": "bd061a71a6cbec636d82c5557cbc0caa18a3eb88d0f1dadfc3fd7c3672e70641"
+    },
+    "results:g3-04-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_04.png",
+      "width": 2541,
+      "height": 1403,
+      "label": "G3-04 現況照片 4",
+      "scenario": "G3-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 84,
+      "sourcePart": "ppt/media/image110.png",
+      "sha256": "f543eaa2b4ded20e96a1285aceb41dc68d37b507010b9048f3615e3b118bec89"
+    },
+    "results:g4-03-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-03/G4-03_現況圖_01.png",
+      "width": 4138,
+      "height": 2667,
+      "label": "G4-03 現況圖",
+      "scenario": "G4-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 86,
+      "sourcePart": "ppt/media/image112.png",
+      "sha256": "90ca3eec4ce34b5398fd306f877187168894c3abdb3a48d8e8b9a7025be2b5e1"
+    },
+    "results:g4-03-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-03/G4-03_現況照片_01.png",
+      "width": 2514,
+      "height": 1390,
+      "label": "G4-03 現況照片",
+      "scenario": "G4-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 87,
+      "sourcePart": "ppt/media/image115.png",
+      "sha256": "3655273e629cca96604a5349aa8946cf4d9e0b7e201d66d95bcfe581573aa3cf"
+    },
+    "results:g4-03-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-03/G4-03_現況照片_02.png",
+      "width": 2519,
+      "height": 1403,
+      "label": "G4-03 現況照片 2",
+      "scenario": "G4-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 87,
+      "sourcePart": "ppt/media/image113.png",
+      "sha256": "d22fc0a7e71d51768a23802895b16eb5c3c70e98ef6c84e68ebde7a22e06bec8"
+    },
+    "results:g4-03-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-03/G4-03_現況照片_03.png",
+      "width": 2497,
+      "height": 1421,
+      "label": "G4-03 現況照片 3",
+      "scenario": "G4-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 87,
+      "sourcePart": "ppt/media/image114.png",
+      "sha256": "44e70c01e0e5524e3eebada4b092a9bf812f12ffcdfb8b13beeeb64b524651d3"
+    },
+    "results:g4-03-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-03/G4-03_現況照片_04.png",
+      "width": 2530,
+      "height": 1400,
+      "label": "G4-03 現況照片 4",
+      "scenario": "G4-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 87,
+      "sourcePart": "ppt/media/image116.png",
+      "sha256": "ec5c6cdf59853a7c2a074e4e2390c712ab05bb37f84fdb62fd28684ce1809964"
+    },
+    "results:g4-04-diagram-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-04/G4-04_現況圖_01.png",
+      "width": 2403,
+      "height": 2290,
+      "label": "G4-04 現況圖",
+      "scenario": "G4-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 89,
+      "sourcePart": "ppt/media/image118.png",
+      "sha256": "b28275358445ad6f27fee6d44e9c34f622b5e534538b8c75f717067b7e1b5067"
+    },
+    "results:g4-04-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-04/G4-04_現況照片_01.png",
+      "width": 2516,
+      "height": 1415,
+      "label": "G4-04 現況照片",
+      "scenario": "G4-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 90,
+      "sourcePart": "ppt/media/image122.png",
+      "sha256": "cc4b21b64dd7b05bfa83e3e128329188d3ca8a3eacd3bf93e873024c6a8ae33e"
+    },
+    "results:g4-04-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-04/G4-04_現況照片_02.png",
+      "width": 2537,
+      "height": 1406,
+      "label": "G4-04 現況照片 2",
+      "scenario": "G4-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 90,
+      "sourcePart": "ppt/media/image119.png",
+      "sha256": "5d8b9d7fd5ee583f8c56cc46e9cc13d3f8aedf5805a35483f805988b1f14eab0"
+    },
+    "results:g4-04-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-04/G4-04_現況照片_03.png",
+      "width": 2502,
+      "height": 1407,
+      "label": "G4-04 現況照片 3",
+      "scenario": "G4-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 90,
+      "sourcePart": "ppt/media/image121.png",
+      "sha256": "e89a5ca273bb36943a27ff0caf16ba113f86f4aaf3b9929f2989b5b185db6f1e"
+    },
+    "results:g4-04-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G4-04/G4-04_現況照片_04.png",
+      "width": 2491,
+      "height": 1372,
+      "label": "G4-04 現況照片 4",
+      "scenario": "G4-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 90,
+      "sourcePart": "ppt/media/image120.png",
+      "sha256": "d7fddf00720a5a663fc6388afbecae4c0be8980d07badd08e07296e679da53ca"
+    },
+    "results:c1-01-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-01/C1-01_現況圖_01.png",
+      "width": 2124,
+      "height": 1362,
+      "label": "C1-01 現況圖",
+      "scenario": "C1-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 93,
+      "sourcePart": "ppt/media/image124.png",
+      "sha256": "43eced456b9358eae2d023bdb0bad02dd99c99f5e6d1fbcf9d8c5967c791a519"
+    },
+    "results:c1-02-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-02/C1-02_現況圖_01.png",
+      "width": 2209,
+      "height": 1417,
+      "label": "C1-02 現況圖",
+      "scenario": "C1-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 96,
+      "sourcePart": "ppt/media/image125.png",
+      "sha256": "c0ee474d551bd14de314136a8bac2c0f012d6084d1bce0964f93d91f4f7f6743"
+    },
+    "results:c1-03-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-03/C1-03_現況圖_01.png",
+      "width": 1988,
+      "height": 1376,
+      "label": "C1-03 現況圖",
+      "scenario": "C1-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 99,
+      "sourcePart": "ppt/media/image128.png",
+      "sha256": "1d23cb4af4fad90220c6d15159a803301c00be00e526003ae4c6b9b389342c31"
+    },
+    "results:c1-04-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-04/C1-04_現況圖_01.png",
+      "width": 4136,
+      "height": 2657,
+      "label": "C1-04 現況圖",
+      "scenario": "C1-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 102,
+      "sourcePart": "ppt/media/image130.png",
+      "sha256": "4868c52cd7c22b0e9cd9c05889a632088cf0aeaba6a3ee51b491994f9dfeca52"
+    },
+    "results:c1-05-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-05/C1-05_現況圖_01.png",
+      "width": 2358,
+      "height": 1213,
+      "label": "C1-05 現況圖",
+      "scenario": "C1-05",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 106,
+      "sourcePart": "ppt/media/image132.png",
+      "sha256": "71ad3059d643d7b93bba5512e823d07d69af2aacf46b3486c44e357553c44670"
+    },
+    "results:c1-06-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況圖_01.png",
+      "width": 4138,
+      "height": 2668,
+      "label": "C1-06 現況圖",
+      "scenario": "C1-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 110,
+      "sourcePart": "ppt/media/image134.png",
+      "sha256": "28d1467d8c7bc18bc7b55898d7bd13e651266c19a0aa17247eeb1b78a2bee87c"
+    },
+    "results:c1-06-diagram-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況圖_02.png",
+      "width": 2199,
+      "height": 1418,
+      "label": "C1-06 現況圖 2",
+      "scenario": "C1-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 111,
+      "sourcePart": "ppt/media/image135.png",
+      "sha256": "a54cd64c4a072bbfe81d2620b832209ce7ab58797af36a3f7d70c0610c082ef4"
+    },
+    "results:c1-07-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況圖_01.png",
+      "width": 4136,
+      "height": 2654,
+      "label": "C1-07 現況圖",
+      "scenario": "C1-07",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 113,
+      "sourcePart": "ppt/media/image137.png",
+      "sha256": "cad3f7df811b6cd6125cf5f164ef545d15b9d60b18a9c054289b0cab689dd8fc"
+    },
+    "results:c1-07-diagram-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況圖_02.png",
+      "width": 1341,
+      "height": 974,
+      "label": "C1-07 現況圖 2",
+      "scenario": "C1-07",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 114,
+      "sourcePart": "ppt/media/image138.png",
+      "sha256": "499d055952ae9ce737c5a1057310a82495d0dc4997e2afbcf04ec9084355ba36"
+    },
+    "results:c1-08-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況圖_01.png",
+      "width": 4138,
+      "height": 2600,
+      "label": "C1-08 現況圖",
+      "scenario": "C1-08",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 116,
+      "sourcePart": "ppt/media/image140.png",
+      "sha256": "286fd21b8d19af514996262c8f2b7d15bd175a3b15d2d2280828b1a0badc769e"
+    },
+    "results:c1-08-diagram-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況圖_02.png",
+      "width": 2248,
+      "height": 1412,
+      "label": "C1-08 現況圖 2",
+      "scenario": "C1-08",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 117,
+      "sourcePart": "ppt/media/image141.png",
+      "sha256": "aa55c1a664cda033f0fb96cd8d4219db2cbb8f43ffb3b294fbef646c289a1bc9"
+    },
+    "results:c1-09-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-09/C1-09_現況圖_01.png",
+      "width": 4168,
+      "height": 2733,
+      "label": "C1-09 現況圖",
+      "scenario": "C1-09",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 119,
+      "sourcePart": "ppt/media/image143.png",
+      "sha256": "5139927c12e7a96b9c4a559ad273e55be629c810efc61f0ad2cbdbde612c3470"
+    },
+    "results:c1-09-diagram-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-09/C1-09_現況圖_02.png",
+      "width": 2242,
+      "height": 1466,
+      "label": "C1-09 現況圖 2",
+      "scenario": "C1-09",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 120,
+      "sourcePart": "ppt/media/image144.png",
+      "sha256": "8e79d6dda1cb76931eafccca9e5a8ed95a09f4126e4033c1860fdc9d95806680"
+    },
+    "results:c2-01-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C2-01/C2-01_現況圖_01.png",
+      "width": 2920,
+      "height": 1998,
+      "label": "C2-01 現況圖",
+      "scenario": "C2-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 122,
+      "sourcePart": "ppt/media/image146.png",
+      "sha256": "dfa5e8f8a90ac9c443114aa920089eb1317c1d42bba468cb132ca443d96d0025"
+    },
+    "results:c3-01-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C3-01/C3-01_現況圖_01.png",
+      "width": 4138,
+      "height": 2832,
+      "label": "C3-01 現況圖",
+      "scenario": "C3-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 125,
+      "sourcePart": "ppt/media/image148.png",
+      "sha256": "a8e2ace5e759e2011fe9b05a3a6989a6c66624700f7362543208f891880a412c"
+    },
+    "results:c4-01-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-01/C4-01_現況圖_01.png",
+      "width": 1941,
+      "height": 2920,
+      "label": "C4-01 現況圖",
+      "scenario": "C4-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 128,
+      "sourcePart": "ppt/media/image150.png",
+      "sha256": "575cd3f1dfd230bbbd94938b11d91a7e17b0b6fd9415c2905eb660a868f5e201"
+    },
+    "results:legacy-living-side-road-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/legacy-living-side-road/legacy-living-side-road_現況圖_01.png",
+      "width": 3168,
+      "height": 2001,
+      "label": "legacy-living-side-road 現況圖",
+      "scenario": "legacy-living-side-road",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 131,
+      "sourcePart": "ppt/media/image152.png",
+      "sha256": "6cc648fb1f815970ce0ae7325210b90ffdb1ce35e431ae8d6810ea116ee9e851"
+    },
+    "results:c4-02-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-02/C4-02_現況圖_01.png",
+      "width": 1740,
+      "height": 2164,
+      "label": "C4-02 現況圖",
+      "scenario": "C4-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 134,
+      "sourcePart": "ppt/media/image154.png",
+      "sha256": "2ed7346c8ca6f35530925e0971ceea5b69c857f3ea03138f5d40ca07c21968ff"
+    },
+    "results:c4-03-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-03/C4-03_現況圖_01.png",
+      "width": 4137,
+      "height": 2987,
+      "label": "C4-03 現況圖",
+      "scenario": "C4-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 137,
+      "sourcePart": "ppt/media/image157.png",
+      "sha256": "99dce3d454f2ffc36c9804a918f0b2b01461d9ffa2d7a037a7a42c510dcb8e2c"
+    },
+    "results:c4-04-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況圖_01.png",
+      "width": 4138,
+      "height": 2833,
+      "label": "C4-04 現況圖",
+      "scenario": "C4-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 140,
+      "sourcePart": "ppt/media/image159.png",
+      "sha256": "c0e7cd544a4c096b3d7e0f48fbae79c74c6d309e1a3228ac3ad2a0e28be9ebbb"
+    },
+    "results:c4-05-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-05/C4-05_現況圖_01.png",
+      "width": 5065,
+      "height": 3498,
+      "label": "C4-05 現況圖",
+      "scenario": "C4-05",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 143,
+      "sourcePart": "ppt/media/image161.png",
+      "sha256": "71c9dc677745888e426a34858e3254d82dc2b81ea326551e63e478e08020e241"
+    },
+    "results:c4-06-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-06/C4-06_現況圖_01.png",
+      "width": 4138,
+      "height": 2832,
+      "label": "C4-06 現況圖",
+      "scenario": "C4-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 146,
+      "sourcePart": "ppt/media/image164.png",
+      "sha256": "7773241e706700bd1f7aa79fe382bd381f0b7391c2465aa263a28721a654af35"
+    },
+    "results:c1-01-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-01/C1-01_現況照片_01.png",
+      "width": 2542,
+      "height": 871,
+      "label": "C1-01 現況照片",
+      "scenario": "C1-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 18,
+      "sourcePart": "ppt/media/image13.png",
+      "sha256": "526c1cef658692787136f741cf9170904fbc4b505a4c23d677a10cf45f9280bc",
+      "source": {
+        "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+        "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+        "slideCount": 71
+      }
+    },
+    "results:c1-02-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-02/C1-02_現況照片_01.png",
+      "width": 538,
+      "height": 583,
+      "label": "C1-02 現況照片",
+      "scenario": "C1-02",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "b1f61190c5abf4b557f45d8ee154f99e51fc70b49aaccde4a41343b5194cf228",
+      "source": {
+        "file": "C1-02_user-photos.json",
+        "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-02-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-02/C1-02_現況照片_02.png",
+      "width": 911,
+      "height": 464,
+      "label": "C1-02 現況照片 2",
+      "scenario": "C1-02",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "6cbf235a2ad16d057c88d3889d10ed0dfff8fd7bcc2b2135b8cf889f329948d4",
+      "source": {
+        "file": "C1-02_user-photos.json",
+        "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-03-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-03/C1-03_現況照片_01.png",
+      "width": 1967,
+      "height": 1008,
+      "label": "C1-03 現況照片",
+      "scenario": "C1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "c4294512c8c1872287400ce232c4371c6700d92ea78748655b4a29f485a317e9",
+      "source": {
+        "file": "C1-03_user-photos.json",
+        "sha256": "34fe927e731bd9e992832c2a6cbe58523eef4e35a943c8936d9c9970425864d7",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-04-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-04/C1-04_現況照片_01.png",
+      "width": 2048,
+      "height": 890,
+      "label": "C1-04 現況照片",
+      "scenario": "C1-04",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "dd59a40e6e14feee412e13e8eb5cc92b9f0ace607b721d239e0e9930a82e71b6",
+      "source": {
+        "file": "C1-04_user-photos.json",
+        "sha256": "59dbb7e7444c06e90fbe0489631b63fe68274116cb8d7d54f0424df8941125d3",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-05-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-05/C1-05_現況照片_01.png",
+      "width": 2031,
+      "height": 1127,
+      "label": "C1-05 現況照片",
+      "scenario": "C1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "23b2985896cd79c2305446c391abb839e5b09ec84d9e222fc2acb629af0245f7",
+      "source": {
+        "file": "C1-05_user-photos.json",
+        "sha256": "bbb9b24f49f8416252d8271390bb5aee48ff550e07a4aa20c19ef1234ebe8a11",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-05-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-05/C1-05_現況照片_02.png",
+      "width": 2000,
+      "height": 1116,
+      "label": "C1-05 現況照片 2",
+      "scenario": "C1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "603fbd5a2c9a127f9e3fd183d71580d20ee851f617f272e957b6dafdf6845342",
+      "source": {
+        "file": "C1-05_user-photos.json",
+        "sha256": "bbb9b24f49f8416252d8271390bb5aee48ff550e07a4aa20c19ef1234ebe8a11",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-07-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況照片_01.png",
+      "width": 933,
+      "height": 467,
+      "label": "C1-07 現況照片",
+      "scenario": "C1-07",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "5cf0b94587cc07cd92cd94a274da01dd8da082b85c001b4c2620a4173d075830",
+      "source": {
+        "file": "C1-07_user-photos.json",
+        "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-07-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況照片_02.png",
+      "width": 933,
+      "height": 467,
+      "label": "C1-07 現況照片 2",
+      "scenario": "C1-07",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "07613cc6ad55596cd4e7f0ad7f2684bf89a1ffddd459ee3897456048b98ae10f",
+      "source": {
+        "file": "C1-07_user-photos.json",
+        "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-06-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況照片_01.png",
+      "width": 1806,
+      "height": 1116,
+      "label": "C1-06 現況照片",
+      "scenario": "C1-06",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "14312e5511dac766b7c745535809319affdb16c5165d14a9649e58350de14d8a",
+      "source": {
+        "file": "C1-06_user-photos.json",
+        "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-06-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況照片_02.png",
+      "width": 1851,
+      "height": 1191,
+      "label": "C1-06 現況照片 2",
+      "scenario": "C1-06",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "d74041d55b0b65e91aa74fdf10b4c638282a8a42edaf4e8d1ccb64c55117d870",
+      "source": {
+        "file": "C1-06_user-photos.json",
+        "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-09-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-09/C1-09_現況照片_01.png",
+      "width": 1858,
+      "height": 950,
+      "label": "C1-09 現況照片",
+      "scenario": "C1-09",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "3f007f0d9c3c75cf604d0a0924243c33c004b2851c3afd29475f2c74b7a0ae75",
+      "source": {
+        "file": "C1-09_user-photos.json",
+        "sha256": "a086e875de4a7e59d25bbb3fd47501ee279b01559e2b8cd9a4f27bfccf727808",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-09-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-09/C1-09_現況照片_02.png",
+      "width": 1814,
+      "height": 1137,
+      "label": "C1-09 現況照片 2",
+      "scenario": "C1-09",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "aeaa782be690fbc5b85e26e5111e0f89444eeb3c7ea2f3cb20cdb4c8f592b4c5",
+      "source": {
+        "file": "C1-09_user-photos.json",
+        "sha256": "a086e875de4a7e59d25bbb3fd47501ee279b01559e2b8cd9a4f27bfccf727808",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c1-08-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況照片_01.png",
+      "width": 1774,
+      "height": 1058,
+      "label": "C1-08 現況照片",
+      "scenario": "C1-08",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "4094509f3c6a3d98d51426e00a8bc54f55a4f58f988d73ede262fae1c835d2ec",
+      "source": {
+        "file": "C1-08_user-photos.json",
+        "sha256": "fc9562897d3c3f2188e787fe79c3d46f366383a2143be09e850b0c35f6131b4e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-03-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-03/C4-03_現況照片_01.png",
+      "width": 1856,
+      "height": 1116,
+      "label": "C4-03 現況照片",
+      "scenario": "C4-03",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "0649de6e4abdb3c7c5fd88409fc64f3ec1aa2131e6288554c0ddd34c735f1b8d",
+      "source": {
+        "file": "C4-03_user-photos.json",
+        "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-03-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-03/C4-03_現況照片_02.png",
+      "width": 1940,
+      "height": 976,
+      "label": "C4-03 現況照片 2",
+      "scenario": "C4-03",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "78fad1874068632b7a103e131bd9852d9ade7e497b1fb7562b4c558f3a185f60",
+      "source": {
+        "file": "C4-03_user-photos.json",
+        "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c2-01-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C2-01/C2-01_現況照片_01.png",
+      "width": 2028,
+      "height": 915,
+      "label": "C2-01 現況照片",
+      "scenario": "C2-01",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "241a39417c4bbbb75e5bfb8be7e7ccd9d5bfe92402fabd67bafad77e0e02a406",
+      "source": {
+        "file": "C2-01_user-photos.json",
+        "sha256": "7a3142b8daa3147ea4aa955fe003edbcb5f01d14d3966ffa60da2e202ee97001",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-04-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況照片_01.png",
+      "width": 1821,
+      "height": 887,
+      "label": "C4-04 現況照片",
+      "scenario": "C4-04",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "99da3c351ffa54a591da2db2a7c0a2c53006427c2a4e027638fc2cfb9add9b6d",
+      "source": {
+        "file": "C4-04_user-photos.json",
+        "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-05-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-05/C4-05_現況照片_01.png",
+      "width": 1734,
+      "height": 1048,
+      "label": "C4-05 現況照片",
+      "scenario": "C4-05",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "4f07e70fcb18c441a91eeecf5e49c1a184f34eed5b00d14b7532153320f15acc",
+      "source": {
+        "file": "C4-05_user-photos.json",
+        "sha256": "5bacc9e49a58b8530908d2322d645aae89ee7db127ec927300cf46ce9ced8a66",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-06-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-06/C4-06_現況照片_01.png",
+      "width": 1699,
+      "height": 1032,
+      "label": "C4-06 現況照片",
+      "scenario": "C4-06",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "fa3a504dd49a74068d7a693c01f1010bd3ea4ea0fb51d48f2f94b86ab459e986",
+      "source": {
+        "file": "C4-06_user-photos.json",
+        "sha256": "4c8bc6515c7ed59ce6ffd9de1e5e4610be82852c8e7d00a0ec8604bf4b0c954e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-02-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-02/C4-02_現況照片_01.png",
+      "width": 1543,
+      "height": 1139,
+      "label": "C4-02 現況照片",
+      "scenario": "C4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "6945a7659365a5f6549e2e02d46f9a400241cb4f56840ac8d5ab0fd30f8fc642",
+      "source": {
+        "file": "C4-02_user-photos.json",
+        "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-02-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-02/C4-02_現況照片_02.png",
+      "width": 1401,
+      "height": 822,
+      "label": "C4-02 現況照片 2",
+      "scenario": "C4-02",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "964ea5f8e8babb000eb59c6a5a3aa0b613e2236cb1ca850cc50b54efa674b4d1",
+      "source": {
+        "file": "C4-02_user-photos.json",
+        "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-01-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-01/C4-01_現況照片_01.png",
+      "width": 1708,
+      "height": 1030,
+      "label": "C4-01 現況照片",
+      "scenario": "C4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "34e84f6b5d6f6f22d20c32f1b9c375eadda904b1439d361ef72ce3bf0b682b3b",
+      "source": {
+        "file": "C4-01_user-photos.json",
+        "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c4-01-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C4-01/C4-01_現況照片_02.png",
+      "width": 1545,
+      "height": 974,
+      "label": "C4-01 現況照片 2",
+      "scenario": "C4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "fb1a80c3c2514b2057accc53ca9b0d5c1b644d5a74ef010c0aa06bc45b3e1c06",
+      "source": {
+        "file": "C4-01_user-photos.json",
+        "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c3-01-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C3-01/C3-01_現況照片_01.png",
+      "width": 1725,
+      "height": 1118,
+      "label": "C3-01 現況照片",
+      "scenario": "C3-01",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "b8d496c63c31802d2236d14e741e05a6602182adee88b8cbff1530835c9f0b81",
+      "source": {
+        "file": "C3-01_user-photos.json",
+        "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c3-01-photo-2": {
+      "file": "materials/05-複雜道路情境/current-conditions/C3-01/C3-01_現況照片_02.png",
+      "width": 1699,
+      "height": 1076,
+      "label": "C3-01 現況照片 2",
+      "scenario": "C3-01",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "1de0d312c7f9ceb66546fd22610fa49c3a1659793b63eb7532b03f041362d8dc",
+      "source": {
+        "file": "C3-01_user-photos.json",
+        "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c2-02-diagram-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C2-02/C2-02_現況圖_01.png",
+      "width": 4138,
+      "height": 2833,
+      "label": "C2-02 現況圖",
+      "scenario": "C2-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 140,
+      "sourcePart": "ppt/media/image159.png",
+      "sha256": "c0e7cd544a4c096b3d7e0f48fbae79c74c6d309e1a3228ac3ad2a0e28be9ebbb",
+      "reusedFrom": {
+        "scenario": "C4-04",
+        "key": "results:c4-04-diagram-1",
+        "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況圖_01.png",
+        "source": {
+          "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+          "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+        }
+      },
+      "source": {
+        "file": "C2-02_reused-content.json",
+        "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+        "type": "scenario-reuse",
+        "receivedDate": "2026-10-31"
+      }
+    },
+    "results:c2-02-photo-1": {
+      "file": "materials/05-複雜道路情境/current-conditions/C2-02/C2-02_現況照片_01.png",
+      "width": 1821,
+      "height": 887,
+      "label": "C2-02 現況照片",
+      "scenario": "C2-02",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "99da3c351ffa54a591da2db2a7c0a2c53006427c2a4e027638fc2cfb9add9b6d",
+      "reusedFrom": {
+        "scenario": "C4-04",
+        "key": "results:c4-04-photo-1",
+        "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況照片_01.png",
+        "source": {
+          "file": "C4-04_user-photos.json",
+          "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        }
+      },
+      "source": {
+        "file": "C2-02_reused-content.json",
+        "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+        "type": "scenario-reuse",
+        "receivedDate": "2026-10-31"
+      }
+    }
+  },
+  "scenarios": {
+    "G1-01": {
+      "name": "無號誌市區正交三岔路口",
+      "sourceSlides": [
+        38,
+        39
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G1-01",
+      "issue": {
+        "title": "先看現況：人車空間與提示是否清楚？",
+        "intro": "主要道路約 28 m、次要道路約 14 m，周邊為住宅與商業區。",
+        "images": [
+          {
+            "key": "g101-before",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 90
+          },
+          {
+            "key": "results:g1-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-01-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-01-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-01-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-01-photo-5",
+            "label": "現況照片 5",
+            "role": "photo",
+            "rotation": 0,
+            "crop": [
+              36.115,
+              301.544,
+              2167.705,
+              1455.315
+            ]
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "路權與速限提示不足",
+            "text": "缺少清楚的主次道路管制，兩條道路的速限提示也不完整。"
+          },
+          {
+            "id": "space",
+            "title": "路側空間混用",
+            "text": "慢車道同時承擔停車與公車停靠，行車邊界需要整理。"
+          },
+          {
+            "id": "turn",
+            "title": "左轉影響直行續進",
+            "text": "直行與左轉共用車道，需檢視轉向等待空間。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G1-02": {
+      "name": "無號誌鄉區正交三岔路口",
+      "sourceSlides": [
+        41,
+        42
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G1-02",
+      "issue": {
+        "title": "主次道路相接，停讓關係是否清楚？",
+        "intro": "主要道路約 6 m、次要道路約 4.5 m，路側無人行設施。",
+        "images": [
+          {
+            "key": "results:g1-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-02-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "缺少停讓管制",
+            "text": "主次道路未設清楚的管制設施，駕駛容易忽略停讓。"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "兩條道路皆缺少速限標字與標誌，行駛速度不易掌握。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G1-03": {
+      "name": "無號誌市區匯入型巷道路口",
+      "sourceSlides": [
+        44,
+        45
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G1-03",
+      "issue": {
+        "title": "巷道匯入幹道，來車與轉向是否容易辨識？",
+        "intro": "主要道路約 24 m、次要道路約 8 m，路側含停車與步行空間。",
+        "images": [
+          {
+            "key": "results:g1-03-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-03-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-03-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-03-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "warning",
+            "title": "主次道路提示不足",
+            "text": "主要道路缺少提醒駕駛留意巷道來車的警示。"
+          },
+          {
+            "id": "speed",
+            "title": "速限資訊不完整",
+            "text": "主要道路缺少速限提示；次要道路只有標字，未搭配標誌。"
+          },
+          {
+            "id": "turn",
+            "title": "缺少右轉空間",
+            "text": "路口未清楚安排右轉車輛的行進與等待空間。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G1-04": {
+      "name": "無號誌鄉區匯入型巷道路口",
+      "sourceSlides": [
+        47,
+        48
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G1-04",
+      "issue": {
+        "title": "鄉區巷道匯入，右轉與停讓如何辨識？",
+        "intro": "主要道路約 20 m、次要道路約 4 m，兩側無人行設施。",
+        "images": [
+          {
+            "key": "results:g1-04-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-04-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-04-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "warning",
+            "title": "幹道缺少來車警示",
+            "text": "主要道路未清楚提醒駕駛留意次要道路來車。"
+          },
+          {
+            "id": "turn",
+            "title": "右轉跨越機慢車道",
+            "text": "主要道路右轉進入巷道時，須跨越機慢車道，容易產生交織。"
+          },
+          {
+            "id": "direction",
+            "title": "巷道出口方向提示不足",
+            "text": "次要道路僅能右轉，但出口缺少清楚的行向提示。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G2-01": {
+      "name": "號誌化市區正交三岔路口",
+      "sourceSlides": [
+        50,
+        51
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G2-01",
+      "issue": {
+        "title": "號誌化路口，轉向與行人資訊是否到位？",
+        "intro": "主要道路約 20 m、次要道路約 14 m，次要道路缺少人行設施。",
+        "images": [
+          {
+            "key": "results:g2-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              117.792,
+              0,
+              3002.467,
+              2474
+            ]
+          },
+          {
+            "key": "results:g2-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-01-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-01-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-01-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "turn",
+            "title": "左右轉空間不足",
+            "text": "主要道路接近路口處，缺少清楚的左右轉空間配置。"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "兩條道路皆缺少速限標字與標誌。"
+          },
+          {
+            "id": "signal",
+            "title": "行人號誌不易直視",
+            "text": "行穿線與行人號誌位置不易相互對照，行人判讀較困難。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G2-02": {
+      "name": "號誌化鄉區正交三岔路口",
+      "sourceSlides": [
+        53,
+        54
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G2-02",
+      "issue": {
+        "title": "鄉區路口，號誌與行人需求是否看得見？",
+        "intro": "主要道路約 14 m、次要道路約 10 m，兩側無人行設施。",
+        "images": [
+          {
+            "key": "results:g2-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-02-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-02-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "兩條道路皆缺少清楚的速限標字與標誌。"
+          },
+          {
+            "id": "signal",
+            "title": "號誌容易被背景干擾",
+            "text": "路側樹林影響辨識，既有標誌標線也需隨現況檢視更新。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越需求被忽略",
+            "text": "鄉區路口仍有步行與穿越需求，需一併檢視人行配置。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G3-01": {
+      "name": "無號誌市區正交四岔路口",
+      "sourceSlides": [
+        56,
+        57
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G3-01",
+      "issue": {
+        "title": "無號誌四岔路口，路權與行車邊界是否清楚？",
+        "intro": "主要道路約 15 m、次要道路約 8 m，部分路段兼供路側停車。",
+        "images": [
+          {
+            "key": "results:g3-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-01-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-01-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-01-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "缺少主次道路提示",
+            "text": "主要道路缺少提醒駕駛留意次要道路來車的警示。"
+          },
+          {
+            "id": "space",
+            "title": "外側行車與停車混用",
+            "text": "外側空間同時供車輛行駛與停車，邊界不明確。"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "兩條道路皆缺少清楚的速限標字與標誌。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G3-02": {
+      "name": "無號誌鄉區正交四岔路口",
+      "sourceSlides": [
+        59,
+        60
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G3-02",
+      "issue": {
+        "title": "鄉區四岔路口，穿越來車是否容易察覺？",
+        "intro": "主要道路約 10 m、次要道路約 5 m，兩側無人行設施。",
+        "images": [
+          {
+            "key": "results:g3-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              0,
+              0,
+              3074.521,
+              2321
+            ]
+          },
+          {
+            "key": "results:g3-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-02-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-02-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-02-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "缺少交叉來車警示",
+            "text": "主次道路均缺少警示設施，駕駛不易預期橫向穿越車流。"
+          },
+          {
+            "id": "lanes",
+            "title": "東西向車道配置不同",
+            "text": "次要道路東西兩側的車道及自行車空間配置不同，銜接需檢視。"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "兩條道路皆缺少速限標字與標誌。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G4-01": {
+      "name": "號誌化市區正交四岔路口",
+      "sourceSlides": [
+        62,
+        63
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G4-01",
+      "issue": {
+        "title": "寬廣號誌路口，左轉與穿越空間如何銜接？",
+        "intro": "主要道路約 40 m、次要道路約 24 m，路口車道與穿越空間較寬。",
+        "images": [
+          {
+            "key": "results:g4-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              0,
+              0,
+              2840.801,
+              1933
+            ]
+          },
+          {
+            "key": "results:g4-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-01-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-01-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-01-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "turn",
+            "title": "左轉車道銜接不佳",
+            "text": "左轉空間占用直行車道的延續位置，且左右轉向配置需再檢視。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "長距離穿越缺少庇護",
+            "text": "行人穿越距離長，路口未提供庇護島。"
+          },
+          {
+            "id": "guidance",
+            "title": "車道與上游導引不足",
+            "text": "進出車道數不同，預告標誌又太近路口，駕駛不易提早選道。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G4-02": {
+      "name": "號誌化鄉區正交四岔路口",
+      "sourceSlides": [
+        65,
+        66
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G4-02",
+      "issue": {
+        "title": "鄉區寬路口，行人與車道銜接是否完整？",
+        "intro": "主要道路約 35 m、次要道路約 14 m，快慢車道速限不同。",
+        "images": [
+          {
+            "key": "results:g4-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-02-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-02-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-02-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-02-photo-5",
+            "label": "現況照片 5",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "pedestrian",
+            "title": "行人缺少中途庇護",
+            "text": "主要道路穿越距離長，但路口未設行人庇護島。"
+          },
+          {
+            "id": "lanes",
+            "title": "進出車道數不同",
+            "text": "車道數在路口兩側不一致，需要清楚的銜接與導引。"
+          },
+          {
+            "id": "speed",
+            "title": "次要道路速限提示不足",
+            "text": "次要道路往西方向缺少速限標字與標誌。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G1-05": {
+      "name": "無號誌市區斜交三岔路口",
+      "sourceSlides": [
+        68,
+        69
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G1-05",
+      "issue": {
+        "title": "斜交市區路口，路權與空間是否清楚？",
+        "intro": "主要道路約 15 m、次要道路約 6.5 m，外側空間兼供停車。",
+        "images": [
+          {
+            "key": "results:g1-05-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-05-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-05-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-05-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "橫向來車提示不足",
+            "text": "主要道路缺少提醒駕駛留意橫向道路來車的警示。"
+          },
+          {
+            "id": "space",
+            "title": "停車與行車空間混用",
+            "text": "外側車道兼供路邊停車，行車範圍不夠清楚。"
+          },
+          {
+            "id": "speed",
+            "title": "速限資訊不完整",
+            "text": "街廓較短，速限提示多依賴路面標字，需檢視提示的連續性。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G1-06": {
+      "name": "無號誌鄉區斜交三岔路口",
+      "sourceSlides": [
+        71,
+        72
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G1-06",
+      "issue": {
+        "title": "斜交角度小，轉向與視距是否足夠？",
+        "intro": "主要道路約 20 m、次要道路約 6 m，主要道路另有機慢車道。",
+        "images": [
+          {
+            "key": "results:g1-06-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-06-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-06-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-06-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g1-06-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "主次道路提示不足",
+            "text": "主要道路缺少提醒駕駛留意路口來車的警示。"
+          },
+          {
+            "id": "turn",
+            "title": "轉向與機慢車交織",
+            "text": "路口前缺少左右轉空間，右轉汽車與機慢車容易交織。"
+          },
+          {
+            "id": "visibility",
+            "title": "斜交影響觀察視距",
+            "text": "次要道路斜交角度小，駕駛觀察主要道路來車較困難。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G2-03": {
+      "name": "號誌化市區斜交三岔路口",
+      "sourceSlides": [
+        74,
+        75
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G2-03",
+      "issue": {
+        "title": "斜交號誌路口，車道與穿越空間是否連續？",
+        "intro": "主要道路約 24 m、次要道路約 22 m，兩條道路皆有實體分隔。",
+        "images": [
+          {
+            "key": "results:g2-03-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-03-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-03-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-03-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "pedestrian",
+            "title": "穿越距離長，缺少庇護",
+            "text": "行人須一次穿越較寬道路，路口未提供庇護島。"
+          },
+          {
+            "id": "lanes",
+            "title": "進出車道數不一致",
+            "text": "進入與離開路口的車道數不同，銜接與導引不夠清楚。"
+          },
+          {
+            "id": "speed",
+            "title": "速限範圍不明確",
+            "text": "路面標字與速限標誌位置不同，限制範圍不易判讀。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G2-04": {
+      "name": "號誌化鄉區斜交三岔路口",
+      "sourceSlides": [
+        77,
+        78
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G2-04",
+      "issue": {
+        "title": "鄉區斜交路口，號誌與停等空間是否清楚？",
+        "intro": "主要道路與次要道路皆約 10 m，路側緊鄰民房。",
+        "images": [
+          {
+            "key": "results:g2-04-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-04-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-04-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-04-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g2-04-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "speed",
+            "title": "速限只靠標字提示",
+            "text": "路面雖有速限標字，卻缺少速限標誌。"
+          },
+          {
+            "id": "signal",
+            "title": "號誌位置不易辨識",
+            "text": "路側建物與設置位置影響號誌的可視性。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "缺少行人停等空間",
+            "text": "路口有行人穿越需求，卻未清楚安排停等位置。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G3-03": {
+      "name": "無號誌市區斜交四岔路口",
+      "sourceSlides": [
+        80,
+        81
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G3-03",
+      "issue": {
+        "title": "市區斜交四岔，停讓與外側空間如何辨識？",
+        "intro": "主要道路約 15 m、次要道路約 8 m，主要道路兩側有停車格。",
+        "images": [
+          {
+            "key": "results:g3-03-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              0,
+              0,
+              3817.141,
+              2610
+            ]
+          },
+          {
+            "key": "results:g3-03-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-03-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-03-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-03-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "路權主要依賴標字",
+            "text": "現況僅以路面標字區分主次道路，管制提示不夠完整。"
+          },
+          {
+            "id": "speed",
+            "title": "缺少速限標誌",
+            "text": "主要依賴速限標字，缺少清楚的標誌提示。"
+          },
+          {
+            "id": "space",
+            "title": "外側車道兼供停車",
+            "text": "停車與行車使用同一外側空間，邊界不明確。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G3-04": {
+      "name": "無號誌鄉區斜交四岔路口",
+      "sourceSlides": [
+        83,
+        84
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G3-04",
+      "issue": {
+        "title": "鄉區斜交四岔，主次道路是否容易分辨？",
+        "intro": "鄉區路口的主次道路關係不易由道路外觀直接判斷。",
+        "images": [
+          {
+            "key": "results:g3-04-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              0,
+              0,
+              2920.072,
+              2424
+            ]
+          },
+          {
+            "key": "results:g3-04-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-04-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-04-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g3-04-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "主次道路辨識不足",
+            "text": "路口缺少必要的警示與管制提示，駕駛不易判斷停讓。"
+          },
+          {
+            "id": "speed",
+            "title": "速度限制不明確",
+            "text": "兩條道路的速限標字與標誌提示不足。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G4-03": {
+      "name": "號誌化市區斜交四岔路口",
+      "sourceSlides": [
+        86,
+        87
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G4-03",
+      "issue": {
+        "title": "市區斜交路口，行人、車流與公車如何安排？",
+        "intro": "主要道路約 20 m、次要道路約 15 m，路側含停車及公車停靠需求。",
+        "images": [
+          {
+            "key": "results:g4-03-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              353.758,
+              73.636,
+              3260.289,
+              2593.364
+            ]
+          },
+          {
+            "key": "results:g4-03-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-03-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-03-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-03-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "pedestrian",
+            "title": "行人穿越缺少庇護",
+            "text": "行人穿越距離長，未提供庇護島。"
+          },
+          {
+            "id": "lanes",
+            "title": "次要道路車道數不平衡",
+            "text": "進入與離開路口的車道數不同，銜接不夠清楚。"
+          },
+          {
+            "id": "bus",
+            "title": "公車停靠位置不明確",
+            "text": "缺少容易辨識的停靠區範圍，路側空間需要整理。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "G4-04": {
+      "name": "號誌化鄉區斜交四岔路口",
+      "sourceSlides": [
+        89,
+        90
+      ],
+      "archive": "materials/04-一般道路情境/current-conditions/G4-04",
+      "issue": {
+        "title": "鄉區斜交路口，穿越與速限提示是否完整？",
+        "intro": "主要道路約 20 m、次要道路約 6 m，兩側無人行設施。",
+        "images": [
+          {
+            "key": "results:g4-04-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-04-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-04-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-04-photo-3",
+            "label": "現況照片 3",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:g4-04-photo-4",
+            "label": "現況照片 4",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "pedestrian",
+            "title": "長距離穿越缺少庇護",
+            "text": "主要道路穿越距離長，路口未提供行人庇護島。"
+          },
+          {
+            "id": "lanes",
+            "title": "主要道路車道銜接不一致",
+            "text": "路口進出車道數不同，行車動線需要清楚引導。"
+          },
+          {
+            "id": "speed",
+            "title": "速限資訊不連續",
+            "text": "主要道路僅部分方向有速限提示，次要道路則缺少速限標示。"
+          }
+        ],
+        "photoStatus": "available"
+      }
+    },
+    "C1-01": {
+      "name": "號誌化左／右錯位 T 字路口",
+      "sourceSlides": [
+        93,
+        94
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-01",
+      "issue": {
+        "title": "錯位路口之間，車流與行人如何銜接？",
+        "intro": "兩個號誌路口錯位約 65 m，需一併檢視中央街廓。",
+        "images": [
+          {
+            "key": "results:c1-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "central",
+            "title": "中央街廓導引不足",
+            "text": "清道距離長，穿越路口後缺少連續的車道與號誌導引。"
+          },
+          {
+            "id": "branch",
+            "title": "錯位分支提示不清楚",
+            "text": "道路幾何與車道選擇缺少清楚的標誌、標線提示。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人缺少庇護",
+            "text": "路口未提供完整的行人中途庇護設施。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+          "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+          "slideCount": 71
+        },
+        "slides": [
+          18
+        ],
+        "contextSlides": [
+          17
+        ]
+      }
+    },
+    "C1-02": {
+      "name": "號誌化右／左錯位 T 字路口",
+      "sourceSlides": [
+        96,
+        97
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-02",
+      "issue": {
+        "title": "錯位路口之間，車道與號誌是否容易判讀？",
+        "intro": "兩個號誌路口錯位約 55 m，中央街廓的銜接與可視性需一起檢視。",
+        "images": [
+          {
+            "key": "results:c1-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              60.681,
+              26.597,
+              1911.028,
+              1315.94
+            ]
+          },
+          {
+            "key": "results:c1-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-02-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "直行與左轉車道銜接不佳",
+            "text": "中央街廓的直行車道接到左轉專用道，行進路徑不易判讀。"
+          },
+          {
+            "id": "guidance",
+            "title": "分支與號誌提示不足",
+            "text": "缺少選道導引，中央街廓的遠端燈面又偏在左側。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人缺少庇護",
+            "text": "行人穿越路口時，缺少中途停等與庇護空間。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-02_user-photos.json",
+          "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-02-photo-1",
+          "results:c1-02-photo-2"
+        ]
+      }
+    },
+    "C1-03": {
+      "name": "號誌化短街廓",
+      "sourceSlides": [
+        99,
+        100
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-03",
+      "issue": {
+        "title": "街廓短，駕駛能否及時判斷與停等？",
+        "intro": "相鄰路口距離短，選道、號誌判讀與儲車空間相互影響。",
+        "images": [
+          {
+            "key": "results:c1-03-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              146.794,
+              17.448,
+              1533.682,
+              1327.771
+            ]
+          },
+          {
+            "key": "results:c1-03-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "decision",
+            "title": "方向與燈號容易混淆",
+            "text": "駕駛須快速選擇道路，也可能誤看下游路口的號誌。"
+          },
+          {
+            "id": "queue",
+            "title": "儲車不足，易發生溢流",
+            "text": "短街廓可容納的車隊有限，號誌與左轉配置需配合。"
+          },
+          {
+            "id": "turn",
+            "title": "雙向左轉可能互相干擾",
+            "text": "兩側左轉需求較大時，需檢視左轉車道的配置與衝突。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-03_user-photos.json",
+          "sha256": "34fe927e731bd9e992832c2a6cbe58523eef4e35a943c8936d9c9970425864d7",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-03-photo-1"
+        ]
+      }
+    },
+    "C1-04": {
+      "name": "主要道路多叉路口",
+      "sourceSlides": [
+        102,
+        104
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-04",
+      "issue": {
+        "title": "多叉大路口，導引資訊是否清楚一致？",
+        "intro": "分支多、交叉面積大，車流、行人與號誌配置更複雜。",
+        "images": [
+          {
+            "key": "results:c1-04-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-04-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "guidance",
+            "title": "車流路徑不明確",
+            "text": "交叉面積大，缺少清楚的車道導引，特殊管制又增加判讀負擔。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "穿越距離長，缺少庇護",
+            "text": "缺少分隔與庇護空間，行人須一次穿越較大路口。"
+          },
+          {
+            "id": "signals",
+            "title": "燈面距離與角度不佳",
+            "text": "遠端燈面過遠，標誌與號誌角度也可能造成誤判。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-04_user-photos.json",
+          "sha256": "59dbb7e7444c06e90fbe0489631b63fe68274116cb8d7d54f0424df8941125d3",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-04-photo-1"
+        ]
+      }
+    },
+    "C1-05": {
+      "name": "主要道路與街巷道多叉路口",
+      "sourceSlides": [
+        106,
+        108
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-05",
+      "issue": {
+        "title": "幹道與巷道多叉，誰該走哪一條路？",
+        "intro": "主要道路與街巷道同時交會，需清楚區分動線與管制資訊。",
+        "images": [
+          {
+            "key": "results:c1-05-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              191.894,
+              21.118,
+              1950.915,
+              1167.537
+            ]
+          },
+          {
+            "key": "results:c1-05-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-05-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "guidance",
+            "title": "交叉面積大，缺少導引",
+            "text": "車流穿越路口時，行進路徑不夠明確。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人動線不佳",
+            "text": "步行與穿越空間缺少清楚銜接。"
+          },
+          {
+            "id": "information",
+            "title": "標誌與號誌不易判讀",
+            "text": "標誌過多、燈面過遠，設置角度也可能造成誤判。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-05_user-photos.json",
+          "sha256": "bbb9b24f49f8416252d8271390bb5aee48ff550e07a4aa20c19ef1234ebe8a11",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-05-photo-1",
+          "results:c1-05-photo-2"
+        ]
+      }
+    },
+    "C1-06": {
+      "name": "街巷道多叉路口",
+      "sourceSlides": [
+        110,
+        111
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-06",
+      "issue": {
+        "title": "巷弄多叉路口，環境是否以行人為主？",
+        "intro": "多條街巷交會，現況空間與資訊不足以清楚引導行人及車輛。",
+        "images": [
+          {
+            "key": "results:c1-06-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-06-diagram-2",
+            "label": "現況圖 2",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              133.369,
+              72.786,
+              2012.987,
+              1326.17
+            ]
+          },
+          {
+            "key": "results:c1-06-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-06-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "speed",
+            "title": "路口未形成減速環境",
+            "text": "交叉口的空間與標線配置，未能有效提醒駕駛減速。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "步行空間不足",
+            "text": "行人在巷弄與路口間缺少完整的通行空間。"
+          },
+          {
+            "id": "direction",
+            "title": "道路幾何與方向難辨識",
+            "text": "缺少岔路提示與巷道路名資訊，不易提早選擇方向。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-06_user-photos.json",
+          "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-06-photo-1",
+          "results:c1-06-photo-2"
+        ]
+      }
+    },
+    "C1-07": {
+      "name": "迷你圓環",
+      "sourceSlides": [
+        113,
+        114
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-07",
+      "issue": {
+        "title": "小型路口，車速與穿越空間是否合適？",
+        "intro": "路口空間偏寬，現況停等、穿越與道路使用範圍不夠清楚。",
+        "images": [
+          {
+            "key": "results:c1-07-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              1354.416,
+              933.306,
+              1181.118,
+              1107.275
+            ]
+          },
+          {
+            "key": "results:c1-07-diagram-2",
+            "label": "現況圖 2",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-07-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-07-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "space",
+            "title": "路口寬，車速不易降低",
+            "text": "空間使用混亂，車輛通過路口時容易維持較高速度。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行穿線銜接不足",
+            "text": "行穿線兩端缺少適當的人行設施銜接。"
+          },
+          {
+            "id": "visibility",
+            "title": "停止位置視距不佳",
+            "text": "駕駛在停止線處不容易清楚觀察來車。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-07_user-photos.json",
+          "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-07-photo-1",
+          "results:c1-07-photo-2"
+        ]
+      }
+    },
+    "C1-08": {
+      "name": "渦輪圓環",
+      "sourceSlides": [
+        116,
+        117
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-08",
+      "issue": {
+        "title": "進入圓環之前，能否提早選對車道？",
+        "intro": "現況圓環的選道、步行與標誌資訊需要一起檢視。",
+        "images": [
+          {
+            "key": "results:c1-08-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-08-diagram-2",
+            "label": "現況圖 2",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-08-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "入口選道提示不足",
+            "text": "進入圓環前缺少清楚的指向線，駕駛不易提早選擇車道。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "步行空間偏窄",
+            "text": "圓環周邊的行人通行空間不足。"
+          },
+          {
+            "id": "signs",
+            "title": "圓環標誌不完整",
+            "text": "缺少清楚的圓環相關標誌提示。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-08_user-photos.json",
+          "sha256": "fc9562897d3c3f2188e787fe79c3d46f366383a2143be09e850b0c35f6131b4e",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-08-photo-1"
+        ]
+      }
+    },
+    "C1-09": {
+      "name": "號誌化圓環",
+      "sourceSlides": [
+        119,
+        120
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C1-09",
+      "issue": {
+        "title": "號誌化圓環，動線與管制資訊是否一致？",
+        "intro": "環內外的選道、標誌與號誌資訊多，駕駛判讀負擔較高。",
+        "images": [
+          {
+            "key": "results:c1-09-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              1296.623,
+              234.601,
+              2362.214,
+              2455.956
+            ]
+          },
+          {
+            "key": "results:c1-09-diagram-2",
+            "label": "現況圖 2",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              331.166,
+              32.721,
+              1868.752,
+              1410.057
+            ]
+          },
+          {
+            "key": "results:c1-09-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c1-09-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "環內外導引不連續",
+            "text": "入口選道提示不足，環內標線與行車空間也不夠清楚。"
+          },
+          {
+            "id": "signs",
+            "title": "標誌數量與設置方式不佳",
+            "text": "部分牌面、角度不合適，特殊管制的文字告示又過多。"
+          },
+          {
+            "id": "signal",
+            "title": "號誌有誤看與察覺不及風險",
+            "text": "外環燈面偏遠，燈頭角度與右轉處行人燈號轉換不易判讀。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C1-09_user-photos.json",
+          "sha256": "a086e875de4a7e59d25bbb3fd47501ee279b01559e2b8cd9a4f27bfccf727808",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-09-photo-1",
+          "results:c1-09-photo-2"
+        ]
+      }
+    },
+    "C2-01": {
+      "name": "部分苜蓿葉型交流道",
+      "sourceSlides": [
+        122,
+        123
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C2-01",
+      "issue": {
+        "title": "匝道接上市區道路，車道與行人如何銜接？",
+        "intro": "交流道附近同時存在匯入、轉向與行人穿越需求。",
+        "images": [
+          {
+            "key": "results:c2-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c2-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "車道與車種導引不足",
+            "text": "車道連續性及左轉銜接不佳，標誌也未清楚區分可通行車種。"
+          },
+          {
+            "id": "merge",
+            "title": "匯入與右轉號誌需檢視",
+            "text": "匯入距離有限，下匝道右轉車流與主線容易產生交織。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人動線與空間不足",
+            "text": "橫向穿越與人行道銜接不完整，且需面對較快的匝道車流。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C2-01_user-photos.json",
+          "sha256": "7a3142b8daa3147ea4aa955fe003edbcb5f01d14d3966ffa60da2e202ee97001",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c2-01-photo-1"
+        ]
+      }
+    },
+    "C3-01": {
+      "name": "鐵路平交道",
+      "sourceSlides": [
+        125,
+        126
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C3-01",
+      "issue": {
+        "title": "平交道靠近路口，能否避免車隊滯留？",
+        "intro": "平交道與號誌路口距離近，須一起檢視淨空與車流銜接。",
+        "images": [
+          {
+            "key": "results:c3-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              1207.799,
+              91.955,
+              1747.064,
+              2062.234
+            ]
+          },
+          {
+            "key": "results:c3-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c3-01-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "guidance",
+            "title": "車流導引不明確",
+            "text": "大面積網狀線可提醒保持淨空，但行車路徑仍不夠清楚。"
+          },
+          {
+            "id": "queue",
+            "title": "車隊可能回堵到平交道",
+            "text": "路口與平交道過近，停等車隊可能占用淨空範圍，牌面也易混雜。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越設施不完整",
+            "text": "行人通行與穿越空間缺少完整安排。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C3-01_user-photos.json",
+          "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c3-01-photo-1",
+          "results:c3-01-photo-2"
+        ]
+      }
+    },
+    "C4-01": {
+      "name": "快慢分隔型",
+      "sourceSlides": [
+        128,
+        129
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C4-01",
+      "issue": {
+        "title": "快慢分隔道路，轉向與路側空間如何安排？",
+        "intro": "快慢車道、轉向、公車或停車需求集中於路口附近。",
+        "images": [
+          {
+            "key": "results:c4-01-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              208.755,
+              100.477,
+              1648.627,
+              2534.472
+            ]
+          },
+          {
+            "key": "results:c4-01-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c4-01-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "turn",
+            "title": "快車道轉向導引不足",
+            "text": "缺少提早匯入慢車道的設施與提示，路口標誌又多且不一致。"
+          },
+          {
+            "id": "space",
+            "title": "慢車道兼供停車",
+            "text": "慢車道與路邊停車空間混用，使用邊界不清楚。"
+          },
+          {
+            "id": "signals",
+            "title": "寬路口增加判讀與穿越負擔",
+            "text": "遠端號誌辨識不佳，分隔島也未完整提供行人庇護。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C4-01_user-photos.json",
+          "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-01-photo-1",
+          "results:c4-01-photo-2"
+        ]
+      }
+    },
+    "C4-02": {
+      "name": "調撥車道",
+      "sourceSlides": [
+        134,
+        135
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C4-02",
+      "issue": {
+        "title": "調撥期間切換，駕駛能否清楚判讀？",
+        "intro": "調撥與非調撥期間的車道功能不同，需要明確且一致的引導。",
+        "images": [
+          {
+            "key": "results:c4-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          },
+          {
+            "key": "results:c4-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c4-02-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "entry",
+            "title": "調撥起點與進入提示不清楚",
+            "text": "不熟悉路況的駕駛可能誤入車道，甚至產生逆向風險。"
+          },
+          {
+            "id": "information",
+            "title": "告示資訊不易快速理解",
+            "text": "大量依賴文字告示，駕駛不易掌握調撥車道的使用方式。"
+          },
+          {
+            "id": "signals",
+            "title": "車道與路口號誌需分清楚",
+            "text": "燈面對應、設置距離及轉換清道方式，都會影響駕駛判斷。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C4-02_user-photos.json",
+          "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-02-photo-1",
+          "results:c4-02-photo-2"
+        ]
+      }
+    },
+    "C4-03": {
+      "name": "單行道",
+      "sourceSlides": [
+        137,
+        138
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C4-03",
+      "issue": {
+        "title": "單行道轉向，軌跡與行向提示是否一致？",
+        "intro": "多車道單向通行時，轉向軌跡與號誌顯示需要配合。",
+        "images": [
+          {
+            "key": "results:c4-03-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              763.649,
+              167.69,
+              2966.064,
+              2613.715
+            ]
+          },
+          {
+            "key": "results:c4-03-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          },
+          {
+            "key": "results:c4-03-photo-2",
+            "label": "現況照片 2",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "trajectory",
+            "title": "轉向軌跡可能碰觸分隔島",
+            "text": "多車道轉向需檢視車輛軌跡，避免與鄰向設施衝突。"
+          },
+          {
+            "id": "direction",
+            "title": "行車方向導引不足",
+            "text": "禁止進入、轉向限制與遵行方向的提示不夠明確。"
+          },
+          {
+            "id": "signals",
+            "title": "燈號意義需清楚對應",
+            "text": "圓形與箭頭綠燈的選用，應與實際允許行向相互對照。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C4-03_user-photos.json",
+          "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-03-photo-1",
+          "results:c4-03-photo-2"
+        ]
+      }
+    },
+    "C4-04": {
+      "name": "路段中央分隔迴轉道",
+      "sourceSlides": [
+        140,
+        141
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C4-04",
+      "issue": {
+        "title": "迴轉與匯入相接，路徑是否容易理解？",
+        "intro": "迴轉道鄰近交流道動線，需避免匯入衝突與誤闖。",
+        "images": [
+          {
+            "key": "results:c4-04-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              662.328,
+              61.249,
+              3124.976,
+              2583.639
+            ]
+          },
+          {
+            "key": "results:c4-04-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "merge",
+            "title": "匯入段缺少漸變與停等提示",
+            "text": "車流銜接處缺少足夠的空間與標線，容易產生衝突。"
+          },
+          {
+            "id": "signs",
+            "title": "同一門架資訊型式混雜",
+            "text": "不同型式的指示標誌並列，可能增加誤判及誤闖國道的風險。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C4-04_user-photos.json",
+          "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-04-photo-1"
+        ]
+      }
+    },
+    "C4-05": {
+      "name": "斑馬紋行人穿越道",
+      "sourceSlides": [
+        143,
+        144
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C4-05",
+      "issue": {
+        "title": "路段中穿越，駕駛與行人能否提早看見彼此？",
+        "intro": "行穿線附近的停車、停等空間與預告資訊會影響穿越安全。",
+        "images": [
+          {
+            "key": "results:c4-05-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              662.451,
+              617.117,
+              3346.445,
+              2534.441
+            ]
+          },
+          {
+            "key": "results:c4-05-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "visibility",
+            "title": "停車影響行穿線辨識",
+            "text": "鄰近機車停車格容易干擾駕駛注意，需檢視穿越處的可視性。"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人停等與庇護不足",
+            "text": "穿越處未提供完整的停等及中途庇護空間。"
+          },
+          {
+            "id": "control",
+            "title": "預告與管制方式需一致",
+            "text": "駕駛不易預期路段中穿越，標誌、行穿線與號誌須一起檢視。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C4-05_user-photos.json",
+          "sha256": "5bacc9e49a58b8530908d2322d645aae89ee7db127ec927300cf46ce9ced8a66",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-05-photo-1"
+        ]
+      }
+    },
+    "C4-06": {
+      "name": "山區彎道",
+      "sourceSlides": [
+        146,
+        147
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C4-06",
+      "issue": {
+        "title": "山區彎道，線型與預告是否容易掌握？",
+        "intro": "山區環境限制視距，駕駛需要足夠的辨識與反應時間。",
+        "images": [
+          {
+            "key": "results:c4-06-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              319.867,
+              815.644,
+              3223.419,
+              1796.253
+            ]
+          },
+          {
+            "key": "results:c4-06-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "speed",
+            "title": "進彎速度與線型不易配合",
+            "text": "道路線型與接近速度的落差，可能壓縮駕駛的反應空間。"
+          },
+          {
+            "id": "guidance",
+            "title": "彎道動線與容錯空間需檢視",
+            "text": "先以清楚標線引導行進路徑，再檢查道路中央的緩衝空間。"
+          },
+          {
+            "id": "warning",
+            "title": "連續彎道預告需完整",
+            "text": "彎路與超車限制的提示位置、連續性需一併檢視。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "photoSource": {
+        "source": {
+          "file": "C4-06_user-photos.json",
+          "sha256": "4c8bc6515c7ed59ce6ffd9de1e5e4610be82852c8e7d00a0ec8604bf4b0c954e",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-06-photo-1"
+        ]
+      }
+    },
+    "C2-02": {
+      "name": "平行匝道型交流道",
+      "sourceSlides": [
+        140,
+        141
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/C2-02",
+      "issue": {
+        "title": "迴轉與匯入相接，路徑是否容易理解？",
+        "intro": "迴轉道鄰近交流道動線，需避免匯入衝突與誤闖。",
+        "images": [
+          {
+            "key": "results:c2-02-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0,
+            "crop": [
+              662.328,
+              61.249,
+              3124.976,
+              2583.639
+            ]
+          },
+          {
+            "key": "results:c2-02-photo-1",
+            "label": "現況照片",
+            "role": "photo",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "merge",
+            "title": "匯入段缺少漸變與停等提示",
+            "text": "車流銜接處缺少足夠的空間與標線，容易產生衝突。"
+          },
+          {
+            "id": "signs",
+            "title": "同一門架資訊型式混雜",
+            "text": "不同型式的指示標誌並列，可能增加誤判及誤闖國道的風險。"
+          }
+        ],
+        "photoStatus": "available"
+      },
+      "reuseSource": {
+        "scenario": "C4-04",
+        "source": {
+          "file": "C2-02_reused-content.json",
+          "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+          "type": "scenario-reuse",
+          "receivedDate": "2026-10-31"
+        }
+      },
+      "photoSource": {
+        "source": {
+          "file": "C2-02_reused-content.json",
+          "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+          "type": "scenario-reuse",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c2-02-photo-1"
+        ]
+      }
+    }
+  },
+  "unmatched": [
+    {
+      "id": "legacy-living-side-road",
+      "name": "生活副道（原 PowerPoint 案例）",
+      "sourceSlides": [
+        131,
+        132
+      ],
+      "archive": "materials/05-複雜道路情境/current-conditions/legacy-living-side-road",
+      "issue": {
+        "title": "生活副道，出入與通行空間是否清楚？",
+        "intro": "原 PowerPoint 的生活副道案例，與目前目錄的平行匝道型交流道不同。",
+        "images": [
+          {
+            "key": "results:legacy-living-side-road-diagram-1",
+            "label": "現況圖",
+            "role": "diagram",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "merge",
+            "title": "匯入匯出不佳",
+            "text": "副道與主線的銜接角度大，容易形成車流衝突。"
+          },
+          {
+            "id": "speed",
+            "title": "速限與自行車導引不足",
+            "text": "副道速限與自行車路線提示不清楚，影響沿線出入。"
+          },
+          {
+            "id": "signals",
+            "title": "主副道號誌需配合",
+            "text": "須一併檢視快車道與生活副道的號誌管制關係。"
+          }
+        ],
+        "photoStatus": "not-in-source"
+      }
+    }
+  ],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+        "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+        "slideCount": 71
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-02_user-photos.json",
+        "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-02"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-07_user-photos.json",
+        "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-07"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-03_user-photos.json",
+        "sha256": "34fe927e731bd9e992832c2a6cbe58523eef4e35a943c8936d9c9970425864d7",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-03"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-04_user-photos.json",
+        "sha256": "59dbb7e7444c06e90fbe0489631b63fe68274116cb8d7d54f0424df8941125d3",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-04"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-05_user-photos.json",
+        "sha256": "bbb9b24f49f8416252d8271390bb5aee48ff550e07a4aa20c19ef1234ebe8a11",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-05"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-06_user-photos.json",
+        "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-06"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-09_user-photos.json",
+        "sha256": "a086e875de4a7e59d25bbb3fd47501ee279b01559e2b8cd9a4f27bfccf727808",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-09"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-08_user-photos.json",
+        "sha256": "fc9562897d3c3f2188e787fe79c3d46f366383a2143be09e850b0c35f6131b4e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-08"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-03_user-photos.json",
+        "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-03"
+      ]
+    },
+    {
+      "source": {
+        "file": "C2-01_user-photos.json",
+        "sha256": "7a3142b8daa3147ea4aa955fe003edbcb5f01d14d3966ffa60da2e202ee97001",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C2-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-04_user-photos.json",
+        "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-04"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-05_user-photos.json",
+        "sha256": "5bacc9e49a58b8530908d2322d645aae89ee7db127ec927300cf46ce9ced8a66",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-05"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-06_user-photos.json",
+        "sha256": "4c8bc6515c7ed59ce6ffd9de1e5e4610be82852c8e7d00a0ec8604bf4b0c954e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-06"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-02_user-photos.json",
+        "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-02"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-01_user-photos.json",
+        "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C3-01_user-photos.json",
+        "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C3-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C2-02_reused-content.json",
+        "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+        "type": "scenario-reuse",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "issue",
+      "scenarios": [
+        "C2-02"
+      ]
+    }
+  ]
+}

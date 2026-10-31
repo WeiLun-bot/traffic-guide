@@ -1,0 +1,212 @@
+{
+  "scenario": "C1-02",
+  "name": "號誌化右／左錯位 T 字路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 96,
+      "texts": [
+        "2026/10/29",
+        "96",
+        "設置圖例2-錯位T字路口號誌化(右左)​",
+        "現況分析:",
+        " ",
+        "",
+        " ",
+        "",
+        "錯位距離55公尺",
+        "道路",
+        "幹線道",
+        "支線道",
+        "土地使用情境",
+        "商業區、機關用地",
+        "",
+        "控制型式",
+        "號誌化",
+        "",
+        "道路分級",
+        "次要道路",
+        "次要道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "公車、汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：18 m",
+        "路寬：18 m",
+        "",
+        "雙向車道數：6",
+        "雙向車道數：6",
+        "",
+        "方向分隔型式：標線分隔",
+        "方向分隔型式：標線分隔",
+        "",
+        "車種管制：內側車道禁行機車",
+        "車種管制：",
+        "南：內側車道禁行機車；北：無",
+        "",
+        "路邊停車：無",
+        "路邊停車：無",
+        "",
+        "人行道：實體人行道",
+        "人行道：實體人行道"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image125.png",
+          "slide": 96,
+          "shapeId": "7",
+          "crop": {
+            "l": "2747",
+            "t": "1877",
+            "r": "10742",
+            "b": "5255"
+          },
+          "rotation": 0.0,
+          "position": [
+            1736387,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 97,
+      "texts": [
+        "2026/10/29",
+        "97",
+        "設置圖例2-錯位T字路口號誌化(右左)​",
+        "設置議題​:",
+        " ",
+        "",
+        " ",
+        "",
+        "幹線道至錯位道路路口中央車道銜接處理。",
+        "直行車道銜接至左彎專用道",
+        "",
+        "錯位分支缺乏適當導引。",
+        "缺乏清楚標誌、標線提示駕駛人道路幾何以及車道選擇。",
+        "",
+        "缺乏行人庇護設施。",
+        "",
+        "號誌可視性問題。",
+        "中央街廓僅有一遠端燈面在左。",
+        "",
+        "1",
+        "",
+        "2",
+        "",
+        "3",
+        "",
+        "",
+        "4"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image125.png",
+          "slide": 97,
+          "shapeId": "7",
+          "crop": {
+            "l": "15343",
+            "t": "1986",
+            "r": "12127",
+            "b": "4176"
+          },
+          "rotation": 0.0,
+          "position": [
+            1519062,
+            128384
+          ]
+        },
+        {
+          "part": "ppt/media/image126.png",
+          "slide": 97,
+          "shapeId": "22",
+          "crop": {
+            "l": "2",
+            "t": "17269",
+            "r": "-2"
+          },
+          "rotation": 0.0,
+          "position": [
+            4655486,
+            3114642
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c1-02-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-02/C1-02_現況圖_01.png",
+      "width": 2209,
+      "height": 1417,
+      "label": "C1-02 現況圖",
+      "scenario": "C1-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 96,
+      "sourcePart": "ppt/media/image125.png",
+      "sha256": "c0ee474d551bd14de314136a8bac2c0f012d6084d1bce0964f93d91f4f7f6743"
+    }
+  ],
+  "ignoredSymbols": [
+    {
+      "part": "ppt/media/image126.png",
+      "slide": 97,
+      "shapeId": "22",
+      "crop": {
+        "l": "2",
+        "t": "17269",
+        "r": "-2"
+      },
+      "rotation": 0.0,
+      "position": [
+        4655486,
+        3114642
+      ],
+      "reason": "設施符號，非現況圖或照片"
+    }
+  ],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C1-02_user-photos.json",
+        "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c1-02-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-02/C1-02_現況照片_01.png",
+          "width": 538,
+          "height": 583,
+          "label": "C1-02 現況照片",
+          "scenario": "C1-02",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "b1f61190c5abf4b557f45d8ee154f99e51fc70b49aaccde4a41343b5194cf228"
+        },
+        {
+          "key": "results:c1-02-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-02/C1-02_現況照片_02.png",
+          "width": 911,
+          "height": 464,
+          "label": "C1-02 現況照片 2",
+          "scenario": "C1-02",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "6cbf235a2ad16d057c88d3889d10ed0dfff8fd7bcc2b2135b8cf889f329948d4"
+        }
+      ]
+    }
+  ]
+}

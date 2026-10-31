@@ -22,9 +22,74 @@
       "materials/03-modules/M2-04/M2-04_交通島通行導引代表型2_對向分隔.svg",
       "materials/03-modules/M2-04/M2-04_單行道代表型.svg"
     ],
+    "userImageFiles": [
+      "materials/03-modules/M2-04/M2-04.1_現況議題_01.png",
+      "materials/03-modules/M2-04/M2-04.1_現況議題_02.png",
+      "materials/03-modules/M2-04/M2-04.2_現況議題_01.png",
+      "materials/03-modules/M2-04/M2-04.2_現況議題_02.png",
+      "materials/03-modules/M2-04/M2-04.2_現況議題_03.png",
+      "materials/03-modules/M2-04/M2-04.3_現況議題_01.png",
+      "materials/03-modules/M2-04/M2-04.3_現況議題_02.png"
+    ],
     "notes": []
   },
   "assets": {
+    "m204-oneway-issue-photo-1": {
+      "file": "materials/03-modules/M2-04/M2-04.3_現況議題_01.png",
+      "width": 651,
+      "height": 445,
+      "label": "現況照片 1：單行道入口",
+      "caption": "M2-04.3 單行道現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m204-oneway-issue-photo-2": {
+      "file": "materials/03-modules/M2-04/M2-04.3_現況議題_02.png",
+      "width": 672,
+      "height": 445,
+      "label": "現況照片 2：禁止進入提示",
+      "caption": "M2-04.3 單行道現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m204-island-issue-photo-1": {
+      "file": "materials/03-modules/M2-04/M2-04.2_現況議題_01.png",
+      "width": 582,
+      "height": 466,
+      "label": "現況照片 1：島頭標誌配置",
+      "caption": "M2-04.2 交通島通行導引現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m204-island-issue-photo-2": {
+      "file": "materials/03-modules/M2-04/M2-04.2_現況議題_02.png",
+      "width": 536,
+      "height": 466,
+      "label": "現況照片 2：交通島通行導引",
+      "caption": "M2-04.2 交通島通行導引現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m204-island-issue-photo-3": {
+      "file": "materials/03-modules/M2-04/M2-04.2_現況議題_03.png",
+      "width": 722,
+      "height": 783,
+      "label": "現況照片 3：島頭標誌與淨距",
+      "caption": "M2-04.2 交通島通行導引現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m204-movement-issue-photo-1": {
+      "file": "materials/03-modules/M2-04/M2-04.1_現況議題_01.png",
+      "width": 1241,
+      "height": 748,
+      "label": "現況照片 1：近、遠端標誌配置",
+      "caption": "M2-04.1 行駛動線遵行與限制現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m204-movement-issue-photo-2": {
+      "file": "materials/03-modules/M2-04/M2-04.1_現況議題_02.png",
+      "width": 599,
+      "height": 447,
+      "label": "現況照片 2：僅設置指向線",
+      "caption": "M2-04.1 行駛動線遵行與限制現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m204-08538b11c2": {
       "file": "materials/03-modules/M2-04/M2-04_行駛動線遵行與限制代表型1.svg",
       "width": 422,
@@ -144,6 +209,25 @@
       "section": "overview",
       "title": "M2-04 路口行向管制",
       "intro": "統一道路可行方向、島頭導引與單行道入口的辨識方式。",
+      "overviewGroups": {
+        "M2-04.1": {
+          "assets": [
+            "m204-08538b11c2",
+            "m204-7592970ada"
+          ]
+        },
+        "M2-04.2": {
+          "assets": [
+            "m204-e6f9a94e50",
+            "m204-55b65042db"
+          ]
+        },
+        "M2-04.3": {
+          "assets": [
+            "m204-8bd169718b"
+          ]
+        }
+      },
       "assets": [
         "m204-08538b11c2",
         "m204-55b65042db"
@@ -177,9 +261,11 @@
       "submoduleId": "M2-04.1",
       "title": "行駛動線遵行與限制｜現況議題與相關條文",
       "intro": "先讓駕駛看懂可行方向，再配合近、遠端位置表達限制。",
+      "defaultView": "pair",
+      "imageFit": "contain",
       "assets": [
-        "m204-08538b11c2",
-        "m204-7592970ada"
+        "m204-movement-issue-photo-1",
+        "m204-movement-issue-photo-2"
       ],
       "points": [
         {
@@ -292,9 +378,11 @@
       "submoduleId": "M2-04.2",
       "title": "交通島通行導引｜現況議題與相關條文",
       "intro": "以通行方向、高度與淨距，讓島頭位置更容易辨識。",
+      "defaultView": "pair",
       "assets": [
-        "m204-e6f9a94e50",
-        "m204-55b65042db"
+        "m204-island-issue-photo-1",
+        "m204-island-issue-photo-2",
+        "m204-island-issue-photo-3"
       ],
       "points": [
         {
@@ -401,8 +489,10 @@
       "submoduleId": "M2-04.3",
       "title": "單行道｜現況議題與相關條文",
       "intro": "讓駕駛在進入路段前，清楚辨識單行方向與禁止進入方向。",
+      "defaultView": "pair",
       "assets": [
-        "m204-8bd169718b"
+        "m204-oneway-issue-photo-1",
+        "m204-oneway-issue-photo-2"
       ],
       "points": [
         {

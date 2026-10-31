@@ -35,6 +35,9 @@
     assert(value.imageViews === undefined || record(value.imageViews), '初始圖面設定無效');
     const result = clone(value);
     result.content = validateContent(result.content);
+    if (result.imageOrders === undefined) result.imageOrders = {};
+    assert(record(result.imageOrders) && Object.keys(result.imageOrders).length <= 2000, '圖片排序設定無效');
+    for (const [key, ids] of Object.entries(result.imageOrders)) assert(/^(results|module):[\w-]{1,160}\/[\w.:-]{1,240}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id=>typeof id==='string'&&/^[\w:-]{1,200}$/.test(id)) && new Set(ids).size===ids.length, '圖片排序清單無效');
     if (result.navigationOrders === undefined) result.navigationOrders = {};
     assert(record(result.navigationOrders) && Object.keys(result.navigationOrders).length <= 2000, '導覽排序設定無效');
     for (const [key, ids] of Object.entries(result.navigationOrders)) {
@@ -76,12 +79,14 @@
     return text;
   }
   function validateContent(content) {
-    if (content === undefined) return {conditions:{},articles:{},overviews:{},modules:{}};
+    if (content === undefined) return {conditions:{},articles:{},overviews:{},modules:{},results:{}};
     assert(record(content) && record(content.conditions) && record(content.articles), '內容設定無效');
     if(content.overviews===undefined)content.overviews={};
     assert(record(content.overviews),'佈設策略設定無效');
     if(content.modules===undefined)content.modules={};
     assert(record(content.modules),'模組說明設定無效');
+    if(content.results===undefined)content.results={};
+    assert(record(content.results),'情境議題與佈設說明設定無效');
     const id=value=>typeof value==='string' && /^[\w:-]{1,240}$/.test(value);
     const text=value=>typeof value==='string' && value.length<=100000;
     const key=value=>typeof value==='string' && value.length>0 && value.length<=1000 && !['__proto__','constructor','prototype'].includes(value);
@@ -99,6 +104,10 @@
     for(const [page,entry] of Object.entries(content.modules)){
       assert(id(page)&&record(entry),'模組說明設定無效');points(entry.points);
       for(const point of entry.points)assert(text(point.title)&&key(point.titleKey)&&(point.topicId===undefined||id(point.topicId)),'模組說明標題或主題無效');
+    }
+    for(const [page,entry] of Object.entries(content.results)){
+      assert(/^results-scenario-[gc][1-4]-\d{2}(?:-strategy)?$/.test(page)&&record(entry),'情境說明所屬頁面無效');points(entry.points);
+      for(const point of entry.points)assert(text(point.title)&&key(point.titleKey)&&(point.moduleId===undefined||typeof point.moduleId==='string'&&/^M[1-4]-\d{2}$/.test(point.moduleId)),'情境說明標題或關聯模組無效');
     }
     for(const [page,entry] of Object.entries(content.overviews)) {
       assert(id(page)&&record(entry)&&Array.isArray(entry.items)&&entry.items.length<=200,'佈設策略清單無效');
@@ -160,7 +169,7 @@
   }
   function signature(config) {
     const views = config.imageViews || {};
-    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
   }
   class Store {
     constructor(config) {

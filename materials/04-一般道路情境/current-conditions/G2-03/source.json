@@ -1,0 +1,137 @@
+{
+  "scenario": "G2-03",
+  "name": "號誌化市區斜交三岔路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 74,
+      "texts": [
+        "三.設置圖例成果說明：情境十三",
+        "13. 號誌化市區斜交三叉路口：現況分析",
+        "74",
+        "現況交通設施",
+        "主要道路路寬約24公尺，實體分隔，道路兩側無人行設施，停車無管制，路段速限為60公里/小時。",
+        "次要道路路寬約22公尺，實體分隔，道路兩側無人行設施，北側停車無管制，南側設有停車格位，路段速限為50公里/小時。",
+        "現況議題",
+        "行人穿越安全性不足：行人穿越距離長，但路口無設置行人庇護島",
+        "車道數配置不一致：進入路口車道數不等於離開路口車道數",
+        "速度限制範圍界定不明確：路面速限標字及速限標誌位置不同"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image88.png",
+          "slide": 74,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1714939,
+            5631044
+          ]
+        }
+      ]
+    },
+    {
+      "number": 75,
+      "texts": [
+        "",
+        "",
+        "75",
+        "現況照片"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image90.png",
+          "slide": 75,
+          "shapeId": "8",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1143000,
+            6659232
+          ]
+        },
+        {
+          "part": "ppt/media/image89.png",
+          "slide": 75,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1323854,
+            334433
+          ]
+        },
+        {
+          "part": "ppt/media/image91.png",
+          "slide": 75,
+          "shapeId": "10",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3576534,
+            6449918
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:g2-03-diagram-1",
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況圖_01.png",
+      "width": 3527,
+      "height": 2245,
+      "label": "G2-03 現況圖",
+      "scenario": "G2-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 74,
+      "sourcePart": "ppt/media/image88.png",
+      "sha256": "4409126d3d2cde25efc455390e1e5bb69d8ebd1b755e6a5693650e0d63f4f20c"
+    },
+    {
+      "key": "results:g2-03-photo-1",
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況照片_01.png",
+      "width": 2567,
+      "height": 1056,
+      "label": "G2-03 現況照片",
+      "scenario": "G2-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 75,
+      "sourcePart": "ppt/media/image90.png",
+      "sha256": "f4dfbd57ec4970415695945633dcd086924fa153726d04152db946572a9de7c4"
+    },
+    {
+      "key": "results:g2-03-photo-2",
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況照片_02.png",
+      "width": 2581,
+      "height": 1399,
+      "label": "G2-03 現況照片 2",
+      "scenario": "G2-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 75,
+      "sourcePart": "ppt/media/image89.png",
+      "sha256": "5eb9bc2c71495d16f49e61fc68dfac8e171bff814df4f328e9ec8999b80a787a"
+    },
+    {
+      "key": "results:g2-03-photo-3",
+      "file": "materials/04-一般道路情境/current-conditions/G2-03/G2-03_現況照片_03.png",
+      "width": 2574,
+      "height": 1073,
+      "label": "G2-03 現況照片 3",
+      "scenario": "G2-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 75,
+      "sourcePart": "ppt/media/image91.png",
+      "sha256": "6e5130bea2686356718e6a75b27ad781dfadb05d28536e048e6a2242c344eec7"
+    }
+  ],
+  "ignoredSymbols": []
+}

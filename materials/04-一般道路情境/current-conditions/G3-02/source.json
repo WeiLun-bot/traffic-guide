@@ -1,0 +1,163 @@
+{
+  "scenario": "G3-02",
+  "name": "無號誌鄉區正交四岔路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 59,
+      "texts": [
+        "三.設置圖例成果說明：情境八",
+        "8. 無號誌鄉區正交四叉路口：現況分析",
+        "59",
+        "現況交通設施",
+        "主要道路路寬約10公尺，標線分隔，道路兩側無人行設施，停車無管制，路段速限50公里/小時。",
+        "次要道路路寬約5公尺，雙向無分隔，道路兩側無人行設施，停車無管制，路段速限為30公里/小時。",
+        "現況議題",
+        "主、次道路管制明示性不足：主、次道路皆無設置警示設施，用以提醒用路人注意有車輛穿越行為",
+        "次要道路車道數配置不一致：次要道路往東配置1單線雙向混合車道，往西配置1單線雙向混合車道及1自行車道",
+        "主、次道路速度限制不明確",
+        "     主、次道路皆無設置速限標字、標誌"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image58.png",
+          "slide": 59,
+          "shapeId": "4",
+          "crop": {
+            "r": "10780"
+          },
+          "rotation": 0.0,
+          "position": [
+            1714360,
+            6262938
+          ]
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "texts": [
+        "",
+        "60",
+        "現況照片"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image60.png",
+          "slide": 60,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            866103,
+            7007160
+          ]
+        },
+        {
+          "part": "ppt/media/image59.png",
+          "slide": 60,
+          "shapeId": "8",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            866105,
+            1690007
+          ]
+        },
+        {
+          "part": "ppt/media/image62.png",
+          "slide": 60,
+          "shapeId": "12",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3690903,
+            7120294
+          ]
+        },
+        {
+          "part": "ppt/media/image61.png",
+          "slide": 60,
+          "shapeId": "10",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3707216,
+            1690008
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:g3-02-diagram-1",
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況圖_01.png",
+      "width": 3446,
+      "height": 2321,
+      "label": "G3-02 現況圖",
+      "scenario": "G3-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 59,
+      "sourcePart": "ppt/media/image58.png",
+      "sha256": "7e61cade63e38f1f57af6d0ec5743fe67669a410a3960282dd6f0f1f2cc67671"
+    },
+    {
+      "key": "results:g3-02-photo-1",
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_01.png",
+      "width": 1841,
+      "height": 943,
+      "label": "G3-02 現況照片",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image60.png",
+      "sha256": "7a020de4f7dcc65de4b09f1b868b8a59a3a3afb32e9504708376318112d34538"
+    },
+    {
+      "key": "results:g3-02-photo-2",
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_02.png",
+      "width": 2500,
+      "height": 1412,
+      "label": "G3-02 現況照片 2",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image59.png",
+      "sha256": "8ddfd8dacd86ef90614057d519d91a3c35e0040a34030808eacc39e8ab57db7e"
+    },
+    {
+      "key": "results:g3-02-photo-3",
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_03.png",
+      "width": 2465,
+      "height": 1362,
+      "label": "G3-02 現況照片 3",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image62.png",
+      "sha256": "e4f3554bb208d572b79d7c263c6b58ebadea20bca1022806ba3250a005dd9109"
+    },
+    {
+      "key": "results:g3-02-photo-4",
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_04.png",
+      "width": 2490,
+      "height": 1386,
+      "label": "G3-02 現況照片 4",
+      "scenario": "G3-02",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 60,
+      "sourcePart": "ppt/media/image61.png",
+      "sha256": "4ac58a4a40d83b2e02a10e482db0fcbd9eae06118d8d36b58800e996ddb3f25a"
+    }
+  ],
+  "ignoredSymbols": []
+}

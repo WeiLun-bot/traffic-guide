@@ -1,0 +1,105 @@
+{
+  "scenario": "legacy-living-side-road",
+  "name": "生活副道（原 PowerPoint 案例）",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 131,
+      "texts": [
+        "2026/10/29",
+        "131",
+        "設置圖例13-車道分隔-生活副道",
+        "現況分析:",
+        "道路",
+        "路段1",
+        "土地使用情境",
+        "住宅區、商業區、農業區",
+        "控制型式",
+        "號誌化",
+        "道路分級",
+        "次要道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：主線車道23 m；副道各7 m",
+        "",
+        "車道數：主線車道7；副道2",
+        "",
+        "方向分隔型式：實體分隔",
+        "",
+        "車種管制：主線車道禁行機車",
+        "",
+        "路邊停車：路肩停車",
+        "",
+        "人行道：無"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image152.png",
+          "slide": 131,
+          "shapeId": "7",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1809000,
+            315464
+          ]
+        }
+      ]
+    },
+    {
+      "number": 132,
+      "texts": [
+        "行車空間與行駛導引不明確。",
+        "缺乏良好的匯入與匯出設計，形成大角度的車輛衝突風險。",
+        "副道速限未清楚規定，造成臨道路住戶出入之極大風險。",
+        "自行車道牌面設置不明確，自行車用路人無明顯路線依循。",
+        "",
+        "號誌議題。",
+        "快車道與生活副道須遵守號誌不可並亮規定。",
+        "2026/10/29",
+        "132",
+        "設置圖例13-車道分隔-生活副道",
+        "設置議題:",
+        "",
+        "1",
+        "",
+        "2"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image152.png",
+          "slide": 132,
+          "shapeId": "7",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1989000,
+            -789000
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:legacy-living-side-road-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/legacy-living-side-road/legacy-living-side-road_現況圖_01.png",
+      "width": 3168,
+      "height": 2001,
+      "label": "legacy-living-side-road 現況圖",
+      "scenario": "legacy-living-side-road",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 131,
+      "sourcePart": "ppt/media/image152.png",
+      "sha256": "6cc648fb1f815970ce0ae7325210b90ffdb1ce35e431ae8d6810ea116ee9e851"
+    }
+  ],
+  "ignoredSymbols": []
+}

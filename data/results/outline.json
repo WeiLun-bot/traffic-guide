@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "currentConditions": "data/results/current-conditions.json",
+  "strategies": "data/results/general-strategies.json",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "slides": [4,5,7,9,10,11,12,14,15,16,17,18,19,20,22,36,38,39,40,149],
+    "note": "依提供素材重整敘事；圖例形成流程為整合呈現，第三期會議資料與逐項修訂紀錄待補。情境編號與名稱採目前簡報目錄。"
+  },
+  "pages": [
+    {"id":"results-intro","chapter":"results-intro","type":"cover","title":"三年成果與模組化整體架構","intro":"道路交通標誌標線號誌設置參考指引","takeaway":"從單一設施，走向完整的交通管制功能。"},
+    {"id":"results-outline","chapter":"results-intro","type":"outline","title":"從佈設原則，走到道路現場","intro":"先建立共同的設計邏輯，再看模組與各種道路情境。"},
+    {"id":"results-background","chapter":"results-intro","type":"cards","title":"為什麼需要這份指引？","intro":"讓標線、標誌與號誌的組合方式更清楚、更一致。","items":[
+      {"id":"gap","title":"補足組合式圖例","text":"由單一設施的設置要求，延伸到路口與路段的整體配置。"},
+      {"id":"logic","title":"說清楚設置理由","text":"說明各設施的功能、位置，以及彼此如何配合。"},
+      {"id":"practice","title":"協助第一線運用","text":"透過圖例與運用解說，提供設計、檢核與溝通的共同依據。"}
+    ],"takeaway":"以參考圖例與運用解說，協助將設置要求落實到現場。"},
+    {"id":"results-three-years","chapter":"results-intro","type":"steps","title":"三期成果，逐步建立完整架構","items":[
+      {"id":"year1","title":"第一期｜一般道路情境","text":"整理三岔、四岔與號誌化、無號誌路口的佈設圖例。"},
+      {"id":"year2","title":"第二期｜複雜道路情境","text":"延伸至多叉、圓環、交流道、平交道與特殊路段。"},
+      {"id":"year3","title":"第三期｜功能模組化","text":"集中共同內容，補充設施分工與組合邏輯，回頭檢視情境。"}
+    ],"takeaway":"共同原則 → 功能模組 → 道路情境應用。"},
+    {"id":"results-principles","chapter":"results-principles","type":"cards","title":"佈設之前，先問四個問題","intro":"標線與標誌的共同基本要求。","items":[
+      {"id":"need","title":"需要性","text":"是否提供用路人真正需要的資訊？"},
+      {"id":"notice","title":"醒目性","text":"能否在行進中及時發現？"},
+      {"id":"read","title":"易讀性","text":"內容能否快速理解，並留有反應時間？"},
+      {"id":"consistent","title":"一致性","text":"型式、意義與佈設方式是否一致？"}
+    ]},
+    {"id":"results-facilities","chapter":"results-principles","type":"cards","title":"三類設施，分工也要配合","items":[
+      {"id":"marking","title":"標線｜界定空間與路徑","text":"把車道、停等與穿越空間畫清楚，銜接上下游動線。"},
+      {"id":"sign","title":"標誌｜預告與傳達規則","text":"在看得見、來得及判讀的位置，提供簡潔且必要的資訊。"},
+      {"id":"signal","title":"號誌｜分配通行時間","text":"依交通需求安排運作方式，兼顧人車通行與清道時間。"}
+    ],"takeaway":"一起檢查設施間的系統性、一致性與連續性。"},
+    {"id":"results-modular","chapter":"results-modular","type":"cards","title":"今年的主軸：以功能整合設施","intro":"同一個管制目的，需要哪些設施共同完成？","items":[
+      {"id":"position","title":"位置要合理","text":"停止位置、觀察位置與行人穿越空間，必須一起檢視。"},
+      {"id":"role","title":"功能要清楚","text":"分清標誌告知的規則與標線引導的位置。"},
+      {"id":"combination","title":"搭配要完整","text":"以共同管制目的，組合標線、標誌、號誌與幾何設施。"}
+    ]},
+    {"id":"results-module-definition","chapter":"results-modular","type":"steps","title":"什麼是功能模組？","intro":"把能共同完成管制目的的設施，整理成可重複運用的設計單元。","items":[
+      {"id":"purpose","title":"管制目的","text":"先確認要解決的問題與用路需求。"},
+      {"id":"devices","title":"設施組合","text":"說明各設施的分工、位置與搭配關係。"},
+      {"id":"conditions","title":"適用條件","text":"依道路幾何、視距與交通條件調整。"}
+    ],"takeaway":"查找更直接，也能跨情境延伸運用。"},
+    {"id":"results-formation","chapter":"results-modular","type":"steps","title":"模組圖例如何形成？","intro":"把現場問題整理成可對照、可討論的佈設圖例。","items":[
+      {"id":"collect","title":"辨識問題","text":"蒐集情境與現況，整理常見設置問題。"},
+      {"id":"purpose","title":"確認功能","text":"釐清管制目的與用路需求。"},
+      {"id":"compose","title":"組合設施","text":"配置幾何空間、標線、標誌及號誌。"},
+      {"id":"check","title":"檢核條件","text":"對照設置依據與道路適用條件。"},
+      {"id":"discuss","title":"討論修整","text":"比較圖例，檢視設施分工與佈設方式。"},
+      {"id":"apply","title":"回到情境","text":"套用到完整道路，檢查銜接與一致性。"}
+    ]},
+    {"id":"results-modules","chapter":"results-modules","type":"module-index","themes":["M1","M2"],"title":"功能模組全覽｜空間與路權","intro":"4 個主題、15 個模組、27 個子模組。"},
+    {"id":"results-module-list-2","chapter":"results-modules","type":"module-index","themes":["M3","M4"],"title":"功能模組全覽｜用路人與管制","intro":"從不同用路人的需求，延伸至危險預告與通行規則。"},
+    {"id":"results-module-example","chapter":"results-modules","type":"module-example","title":"以停、讓管制，看模組如何說明","intro":"M2-01｜先分清通行優先關係，再安排停讓與觀察位置。","items":[
+      {"id":"issue","title":"要討論的問題","text":"停讓規則、駕駛觀察位置及行人穿越需求，是否互相配合？"},
+      {"id":"diagram","title":"代表型的分工","text":"以標誌宣告管制，再以標線引導停讓位置與通行路徑。"},
+      {"id":"extension","title":"依條件延伸","text":"遇行穿線、庇護空間或路緣調整時，重新檢視配置。"}
+    ]},
+    {"id":"results-review","chapter":"results-review","type":"cards","title":"模組化之後，情境一起檢視","intro":"把共同邏輯帶回完整道路，檢查整體佈設。","items":[
+      {"id":"space","title":"空間與動線","text":"車道是否連續？行人、轉向與路側停放空間是否清楚？"},
+      {"id":"control","title":"管制與設施","text":"標線、標誌與號誌是否表達相同規則？"},
+      {"id":"common","title":"共同內容集中","text":"共通設置邏輯放入模組，情境聚焦現地條件與整體組合。"},
+      {"id":"trace","title":"情境與模組對照","text":"從情境找到適用模組，也能由模組回查情境。"}
+    ],"takeaway":"先確認共同原則，再檢查各情境的整體配置。"},
+    {"id":"results-general","chapter":"results-general","type":"scenario-index","deck":"general","title":"一般道路情境｜整體佈設圖總覽"},
+    {"id":"results-complex","chapter":"results-complex","type":"scenario-index","deck":"complex","title":"複雜道路情境｜逐一看問題與佈設","intro":"從平面交叉到特殊路段，依各情境條件整理問題與佈設方式。"},
+    {"id":"results-wrap","chapter":"results-wrap","type":"cards","title":"從原則、模組，到完整情境","items":[
+      {"id":"principle","title":"原則｜建立共同要求","text":"讓設施看得見、讀得懂，並留有反應時間。"},
+      {"id":"module","title":"模組｜說清功能分工","text":"以管制目的整合設施，整理可延伸運用的圖例。"},
+      {"id":"scene","title":"情境｜檢視整體佈設","text":"依道路條件組合模組，檢查上下游與人車動線。"}
+    ],"takeaway":"由共同邏輯出發，讓不同地點的佈設更一致。"}
+  ],
+  "scenarioExamples": {
+    "G1-01": {
+      "sceneId":"g1-01",
+      "issue":{"title":"先看現況：人車空間與提示是否清楚？","intro":"主要道路約 28 m、次要道路約 14 m，周邊為住宅與商業區。","images":[{"key":"g101-before","label":"現況圖","rotation":90,"crop":[0,500,2454,1500]},{"key":"g101-photo-1","label":"現況照片"}],"items":[
+        {"id":"priority","title":"停讓提示不完整","text":"次要道路僅有「停」標字，需一起檢視路權提示與行人警示。"},
+        {"id":"space","title":"路側空間混用","text":"慢車道同時承擔停車與公車停靠，行車邊界需要整理。"},
+        {"id":"turn","title":"左轉影響直行續進","text":"直行與左轉共用車道，需檢視轉向等待空間。"}
+      ]},
+      "strategy":{"title":"把行車、穿越與停放空間分清楚","intro":"用一張完整佈設圖，對照本情境的四項改善重點。","images":[{"key":"overall","label":"整體佈設圖","rotation":90}],"items":[
+        {"id":"edge","title":"界定行車與路側空間","text":"以路面邊線、停放線整理邊界與停車範圍。","articleId":"edge","moduleId":"M1-03"},
+        {"id":"pedestrian","title":"看見行人穿越需求","text":"配置行穿線，搭配當心行人等必要提示。","articleId":"crosswalk","moduleId":"M3-01"},
+        {"id":"path","title":"引導直行與轉彎動線","text":"以指向線、導引線與穿越虛線，銜接左彎附加車道。","articleId":"taper","moduleId":"M1-01"},
+        {"id":"environment","title":"傳達速限與學校環境","text":"檢視速限與學校標誌，讓道路環境資訊更清楚。","articleId":"speed","moduleId":"M4-01"}
+      ]}
+    }
+  }
+}

@@ -32,11 +32,13 @@
   const editable=()=>typeof window==='object'&&window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing&&!window.visualLayoutEditor?.busy;
   function refresh(api=app){
     const root=document.getElementById('presentation'),state=api.state;
+    const imageViews=window.PresentationImageOrder?.captureViews(api);
     const views=[...root.querySelectorAll('svg')].map(svg=>window.generalRoadViewport?.get(svg)?.read()).map((view,index)=>({view,index}));
     const scroll=[root,...root.querySelectorAll('.explanation,.module-explanation')].map(node=>[node.scrollLeft,node.scrollTop]);
     api.refreshStructure(state.page,state.phase);
     if(api.state.page!==state.page)return true;
-    const svgs=root.querySelectorAll('svg');for(const {view,index}of views){const control=window.generalRoadViewport?.get(svgs[index]);if(view&&control){control.start();control.write(view);}}
+    if(imageViews)window.PresentationImageOrder.restoreViews(imageViews,api);
+    else{const svgs=root.querySelectorAll('svg');for(const {view,index}of views){const control=window.generalRoadViewport?.get(svgs[index]);if(view&&control){control.start();control.write(view);}}}
     [root,...root.querySelectorAll('.explanation,.module-explanation')].forEach((node,index)=>{if(scroll[index]){node.scrollLeft=scroll[index][0];node.scrollTop=scroll[index][1];}});
     return true;
   }

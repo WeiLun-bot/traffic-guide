@@ -1,0 +1,137 @@
+{
+  "scenario": "C4-06",
+  "name": "山區彎道",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 146,
+      "texts": [
+        "2026/10/29",
+        "146",
+        "設置圖例18-山區道路",
+        "現況分析:",
+        "道路",
+        "路段1",
+        "土地使用情境",
+        "保護區、山坡地保育區",
+        "控制型式",
+        "－",
+        "道路分級",
+        "主要道路",
+        "主要使用者",
+        "公車、汽機車",
+        "設計速率",
+        "40 km/h",
+        "道路設計特徵",
+        "路寬：9 m",
+        "",
+        "雙向車道數：2",
+        "",
+        "方向分隔型式：標線分隔",
+        "",
+        "車種管制：無",
+        "",
+        "路邊停車：無",
+        "",
+        "人行道：無"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image164.png",
+          "slide": 146,
+          "shapeId": "7",
+          "crop": {
+            "l": "7730",
+            "t": "28801",
+            "r": "14372",
+            "b": "7772"
+          },
+          "rotation": 0.0,
+          "position": [
+            1899000,
+            155999
+          ]
+        }
+      ]
+    },
+    {
+      "number": 147,
+      "texts": [
+        "2026/10/29",
+        "147",
+        "設置圖例18-山區道路",
+        "設置議題​:",
+        "路型設計。",
+        "山區道路深受環境因素影響，駕駛人之視距及反應能力均可能受到限制。",
+        "山區道路首先應注意道路線型避免駕駛進入彎道之安全速率與期望速率落差過大。",
+        "以標線做清楚導引，再利用標誌加強警示。",
+        "利用分向限制線加寬為槽化線，以提供足夠容錯空間，進而提升車輛過彎之安全性。",
+        "利用標誌創造更清楚之彎道行車動線。",
+        "連續彎路警告標誌及禁止超車標誌設置方式。",
+        "",
+        ""
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image164.png",
+          "slide": 147,
+          "shapeId": "4",
+          "crop": {
+            "l": "7730",
+            "t": "28801",
+            "r": "14372",
+            "b": "7772"
+          },
+          "rotation": 0.0,
+          "position": [
+            1944000,
+            156000
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c4-06-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C4-06/C4-06_現況圖_01.png",
+      "width": 4138,
+      "height": 2832,
+      "label": "C4-06 現況圖",
+      "scenario": "C4-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 146,
+      "sourcePart": "ppt/media/image164.png",
+      "sha256": "7773241e706700bd1f7aa79fe382bd381f0b7391c2465aa263a28721a654af35"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C4-06_user-photos.json",
+        "sha256": "4c8bc6515c7ed59ce6ffd9de1e5e4610be82852c8e7d00a0ec8604bf4b0c954e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c4-06-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-06/C4-06_現況照片_01.png",
+          "width": 1699,
+          "height": 1032,
+          "label": "C4-06 現況照片",
+          "scenario": "C4-06",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "fa3a504dd49a74068d7a693c01f1010bd3ea4ea0fb51d48f2f94b86ab459e986"
+        }
+      ]
+    }
+  ]
+}

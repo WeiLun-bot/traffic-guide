@@ -233,7 +233,7 @@
     Object.assign(editor.state, Core.clone(store.config.legacyState));
     const fresh = JSON.parse(document.getElementById('presentation-data').textContent);
     for (const key of Object.keys(api.data)) delete api.data[key]; Object.assign(api.data, fresh);
-    window.generalRoadConditions?.prepare(api.data); window.PresentationModules?.prepare(api.data); editor.prepare(api.data);
+    window.generalRoadConditions?.prepare(api.data); window.PresentationModules?.prepare(api.data); window.PresentationResults?.prepare(api.data); editor.prepare(api.data);
     api.pages.splice(0, api.pages.length, ...legacyPages.map(page => ({...page, ...(page.article ? {article: api.data.articles.find(article => article.id === page.article.id)} : {})})));
     editor.restorePages(api.pages); api.refreshStructure(previousState.page, previousState.phase);restoreComparison(captured);
   }

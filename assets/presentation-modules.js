@@ -16,7 +16,7 @@
   function validateModule(value,catalog){
     assert(value?.schemaVersion===1&&catalog.modules.some(entry=>entry.id===value.id)&&value.assets&&Array.isArray(value.pages),'模組內容格式無效');
     const submodules=new Set(catalog.modules.find(entry=>entry.id===value.id).submodules.map(sub=>sub.id));
-    for(const page of value.pages){assert(page.submoduleId===undefined||submodules.has(page.submoduleId),'解說頁的子模組歸屬無效');assert(page.defaultView===undefined||['single','pair'].includes(page.defaultView),'圖面預設顯示方式無效');}
+    for(const page of value.pages){assert(page.submoduleId===undefined||submodules.has(page.submoduleId),'解說頁的子模組歸屬無效');assert(page.defaultView===undefined||['single','pair'].includes(page.defaultView),'圖面預設顯示方式無效');assert(page.imageFit===undefined||['contain','cover'].includes(page.imageFit),'圖面填滿方式無效');}
     for(const page of value.pages)if(page.excludedOverviewPointIds!==undefined)assert(page===value.pages[0]&&!page.submoduleId&&Array.isArray(page.excludedOverviewPointIds)&&new Set(page.excludedOverviewPointIds).size===page.excludedOverviewPointIds.length&&page.excludedOverviewPointIds.every(id=>typeof id==='string'&&/^[\w-]+$/.test(id)),'總覽排除項目無效');
     for(const page of value.pages)if(page.overviewGroups!==undefined){
       assert(page===value.pages[0]&&!page.submoduleId&&page.overviewGroups&&typeof page.overviewGroups==='object'&&!Array.isArray(page.overviewGroups),'模組總覽圖框設定無效');
@@ -75,7 +75,8 @@
       const flow=content.submoduleFlows?.find(flow=>flow.submoduleId===sub.id),source=content.pages.find(item=>item.id===flow?.stages.find(stage=>stage.id==='issues')?.pageId)||content.pages.find(item=>item.submoduleId===sub.id);
       const options=page.overviewGroups?.[sub.id]||{},owner=options.sourceModuleId?contents.get(options.sourceModuleId):content;
       if(options.hidden)return null;
-      return {id:sub.id,key:page.id+'/'+sub.id,label:options.label||sub.id+' '+sub.name,sourcePageId:source?.id||submoduleStart(entry,sub),assets:owner?[...(options.assets||source?.assets||[])]:[],intro:source?.intro||''};
+      const group={id:sub.id,key:page.id+'/'+sub.id,label:options.label||sub.id+' '+sub.name,sourcePageId:source?.id||submoduleStart(entry,sub),assets:owner?[...(options.assets||source?.assets||[])]:[],intro:source?.intro||''};
+      group.assets=orderedAssets(group.assets,page,group);return group;
     }).filter(Boolean);
   }
   function overviewPoints(page,points=page.points){
@@ -86,8 +87,9 @@
       return id?{...point,title:id+' '+point.title.replace(/^M[1-4]-\d{2}\.\d+\s*/,'').trim()}:point;
     });
   }
-  function overviewAsset(group){return group.assets.includes(selectedOverviewAssets.get(group.key))?selectedOverviewAssets.get(group.key):group.assets[0];}
-  function shownAssets(page){const groups=overviewGroups(page);if(groups.length)return groups.map(overviewAsset).filter(Boolean);const id=page.assets.includes(selectedAssets.get(page.id))?selectedAssets.get(page.id):page.assets[0];return id?(page.mode==='pair'?[id,page.assets[(page.assets.indexOf(id)+1)%page.assets.length]]:[id]):[];}
+  function overviewAsset(group){const id=group.assets.includes(selectedOverviewAssets.get(group.key))?selectedOverviewAssets.get(group.key):group.assets[0];if(id)selectedOverviewAssets.set(group.key,id);return id;}
+  function activeAsset(page){const id=page.assets.includes(selectedAssets.get(page.id))?selectedAssets.get(page.id):page.assets[0];if(id)selectedAssets.set(page.id,id);return id;}
+  function shownAssets(page){const groups=overviewGroups(page);if(groups.length)return groups.map(overviewAsset).filter(Boolean);const id=activeAsset(page);return id?(page.mode==='pair'?[id,page.assets[(page.assets.indexOf(id)+1)%page.assets.length]]:[id]):[];}
   function activePoint(page){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),assets=shownAssets(page),state=typeof window==='object'?window.generalRoadEditor?.state||{}:{};return points.find(point=>point.id===selectedPoints.get(page.id))||points.find(point=>assets.some(id=>highlightSpec(page,point,id,state).hasBox))||(displayContext().stage?.id==='diagram'?points[0]:undefined);}
   const orderedStage=stage=>stage.id==='diagram'&&typeof window==='object'&&window.PresentationOrder?{...stage,topics:window.PresentationOrder.forKey(stage.topics,'module:'+stage.pageId)}:stage;
   function stageContext(id){const content=moduleFor(id);for(const flow of content?.submoduleFlows||[])for(const stage of flow.stages)if(stage.pageId===id)return {flow,stage:orderedStage(stage)};return null;}
@@ -102,7 +104,9 @@
     const source=content.pages.find(page=>page.id===(topic?.sourcePageId||id));
     return {...context,topic,source};
   }
-  const visualPage=source=>source&&({...source,mode:(comparisonPages.get(source.id)??source.defaultView==='pair')&&source.assets.length>1?'pair':undefined});
+  function imageOrderKey(page,group){const context=presentation?displayContext():null;return 'module:'+(presentation?.page.id||page.id)+'/'+(group?'overview:'+group.id:context?.stage?.id==='diagram'?'topic:'+context.topic.id:'main');}
+  function orderedAssets(assets,page,group){return typeof window==='object'&&window.PresentationImageOrder?window.PresentationImageOrder.ordered(assets,imageOrderKey(page,group),assetKey):assets;}
+  const visualPage=source=>source&&({...source,assets:orderedAssets(source.assets,source),mode:(comparisonPages.get(source.id)??source.defaultView==='pair')&&source.assets.length>1?'pair':undefined});
   const currentPage=()=>{const {source,topic}=displayContext();return visualPage(source&&topic?.assets?{...source,assets:topic.assets}:source);};
   function pointVisible(pageId,point,topicId){
     const {stage,topic:active}=displayContext(),topic=topicId?stage?.topics?.find(topic=>topic.id===topicId):active;if(!topic||topic.sourcePageId!==pageId)return true;
@@ -233,14 +237,16 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
   }
   function figure(page,id,controls=false,group=null){
     const content=moduleFor(page.id),asset=content.assets[id]||sharedAsset(id),key=assetKey(id),multiple=controls&&page.assets.length>1,index=page.assets.indexOf(id);
-    const picker=multiple&&(group||page.mode!=='pair')?`<div class="module-figure-picker" data-editor-ui="module-view-tabs"><select data-module-view-select aria-label="選擇代表型">${page.assets.map(value=>`<option value="${value}" ${id===value?'selected':''}>${esc((content.assets[value]||sharedAsset(value)).label)}</option>`).join('')}</select><div class="module-figure-steps"><button type="button" data-module-view-step="-1" aria-label="上一張代表型">‹</button><span aria-live="polite">${index+1}／${page.assets.length}</span><button type="button" data-module-view-step="1" aria-label="下一張代表型">›</button></div></div>`:`<strong title="${esc(asset.label)}">${esc(asset.label)}</strong>`;
-    return `<figure class="map-card module-map-card" ${group?`data-overview-submodule="${group.id}" data-overview-key="${group.key}"`:''}><div class="map-toolbar${group?' module-overview-toolbar':''}">${group?`<strong title="${esc(group.label)}">${esc(group.label)}</strong>${multiple?picker:''}`:picker}<div class="map-tools">${multiple&&!group?`<button type="button" data-module-compare aria-pressed="${page.mode==='pair'}" title="${page.mode==='pair'?'回到單張代表型':'與下一張代表型並排比較'}">${page.mode==='pair'?'單圖顯示':'並排比較'}</button>`:''}<button data-asset="${key}">原圖 ↗</button></div></div><div class="map-canvas module-map-canvas" data-editor-image-key="${key}">${orientedImage(asset,key,'scenario-detail-image module-diagram')}</div></figure>`;
+    const picker=multiple&&(group||page.mode!=='pair'||page.assets.length>2)?`<div class="module-figure-picker" data-editor-ui="module-view-tabs"><select data-module-view-select aria-label="選擇代表型">${page.assets.map(value=>`<option value="${value}" ${id===value?'selected':''}>${esc((content.assets[value]||sharedAsset(value)).label)}</option>`).join('')}</select><div class="module-figure-steps"><button type="button" data-module-view-step="-1" aria-label="上一張代表型">‹</button><span aria-live="polite">${index+1}／${page.assets.length}</span><button type="button" data-module-view-step="1" aria-label="下一張代表型">›</button></div></div>`:`<strong title="${esc(asset.label)}">${esc(asset.label)}</strong>`;
+    const items=page.assets.map(value=>{const item=content.assets[value]||sharedAsset(value);return {id:assetKey(value),label:item.label,src:presentation.data.embeddedAssets[assetKey(value)]?.url||item.file};});
+    const order=multiple&&window.PresentationImageOrder?window.PresentationImageOrder.button({key:imageOrderKey(page,group),photos:items.every(item=>item.label.includes('照片')),selectedId:key,items}):'';
+    return `<figure class="map-card module-map-card" ${page.imageFit==='contain'?'data-image-fit="contain" ':''}${group?`data-overview-submodule="${group.id}" data-overview-key="${group.key}"`:''}><div class="map-toolbar${group?' module-overview-toolbar':''}">${group?`<strong title="${esc(group.label)}">${esc(group.label)}</strong>${multiple?picker:''}`:picker}<div class="map-tools">${multiple&&!group?`<button type="button" data-module-compare aria-pressed="${page.mode==='pair'}" title="${page.mode==='pair'?'回到單張代表型':'與下一張代表型並排比較'}">${page.mode==='pair'?'單圖顯示':'並排比較'}</button>`:''}<button data-asset="${key}">原圖 ↗</button>${order}</div></div><div class="map-canvas module-map-canvas" data-editor-image-key="${key}">${orientedImage(asset,key,'scenario-detail-image module-diagram')}</div></figure>`;
   }
   function visuals(page){
     const groups=overviewGroups(page);
     if(groups.length)return `<div class="module-overview-grid${groups.some(group=>group.assets.length>1)?' has-switchers':''}" style="--overview-columns:${groups.length}">${groups.map(group=>group.assets.length?figure({...page,assets:group.assets},overviewAsset(group),true,group):`<article class="module-overview-reference" data-overview-submodule="${group.id}"><h2>${esc(group.label)}</h2><p>${esc(group.intro)}</p><button type="button" class="text-button" data-page="${group.sourcePageId}">查看說明 ↗</button></article>`).join('')}</div>`;
     if(!page.assets.length)return applications();
-    const id=page.assets.includes(selectedAssets.get(page.id))?selectedAssets.get(page.id):page.assets[0];
+    const id=activeAsset(page);
     if(page.mode==='pair'){const next=page.assets[(page.assets.indexOf(id)+1)%page.assets.length];return `<div class="module-pair">${figure(page,id,true)}${figure(page,next)}</div>`;}
     return figure(page,id,true);
   }

@@ -18,6 +18,7 @@ const initialConfig = Core.parse(initialConfigText);
 // The fixture is served through the same live-source route as the real project.
 for(const [id,view] of Object.entries(initialConfig.imageViews))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
 initialConfig.removedModuleExtensions=[];
+initialConfig.imageOrders={};
 const previewConfigPath=path.join(artifacts,'preview-layout.json');
 const previewConfigText=JSON.stringify(initialConfig);
 class CDP {
@@ -113,6 +114,11 @@ async function main() {
     if(process.argv.includes('--completion-only')){await navigate(base+'/presentation-demo/#cover');await completionCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' completed-module browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--library-only')){await navigate(base+'/presentation-demo/#cover');await libraryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module library browser regression groups; no uncaught JavaScript exceptions.');return;}
     const structureCheck=async()=>require('./presentation-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
+    if(process.argv.includes('--results-content-only')){await require('./results-content-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario explanation browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--results-overview-only')){await require('./results-thumbnail-overview-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' thumbnail overview browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--results-strategies-only')){await require('./results-strategies-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' strategy browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--image-order-only')){await require('./image-order-browser.cjs')({evaluate,view,click,navigate,wait,mouse,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' image-order browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--results-only')){await require('./presentation-results-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' results presentation browser regression groups; no uncaught JavaScript exceptions.');return;}
     const pickerCheck=async()=>require('./presentation-picker-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});
     const directoryCheck=async()=>require('./presentation-directories-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
     const fullscreenCheck=async()=>require('./fullscreen-module-topics-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});

@@ -27,12 +27,32 @@
       "materials/03-modules/M2-03/M2-03_我國特長筒式罩簷示例.png",
       "materials/03-modules/M2-03/M2-03_日本側式罩簷及垂直百葉窗示例_1.png"
     ],
+    "userImageFiles": [
+      "materials/03-modules/M2-03/M2-03.1_現況議題_01.png",
+      "materials/03-modules/M2-03/M2-03.1_現況議題_02.png"
+    ],
     "notes": [
       "號誌可視模板與立桿錯距檢核分別參照指引附錄 C、附錄 B。",
       "號誌橫向位置以燈面判斷，不能僅以立桿位於左側或右側判定。"
     ]
   },
   "assets": {
+    "m203-signals-issue-photo-1": {
+      "file": "materials/03-modules/M2-03/M2-03.1_現況議題_01.png",
+      "width": 1492,
+      "height": 840,
+      "label": "現況照片 1：號誌化路口",
+      "caption": "M2-03.1 號誌化路口現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m203-signals-issue-photo-2": {
+      "file": "materials/03-modules/M2-03/M2-03.1_現況議題_02.png",
+      "width": 835,
+      "height": 394,
+      "label": "現況照片 2：燈面配置",
+      "caption": "M2-03.1 號誌化路口現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m203-2f27e58a6a": {
       "file": "materials/03-modules/M2-03/M2-03_號誌化路口基本配置代表型.svg",
       "width": 661,
@@ -193,8 +213,10 @@
       "submoduleId": "M2-03.1",
       "title": "號誌化路口｜現況議題與相關條文",
       "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "defaultView": "pair",
       "assets": [
-        "m203-2f27e58a6a"
+        "m203-signals-issue-photo-1",
+        "m203-signals-issue-photo-2"
       ],
       "points": [
         {

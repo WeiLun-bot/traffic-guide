@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "scenario": "C1-05",
+  "sourceType": "user-attachments",
+  "receivedDate": "2026-10-31",
+  "note": "使用者確認對應情境；照片依提供順序保存，不拆分組合圖。",
+  "files": [
+    {
+      "key": "results:c1-05-photo-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-05/C1-05_現況照片_01.png",
+      "width": 2031,
+      "height": 1127,
+      "label": "C1-05 現況照片",
+      "scenario": "C1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "23b2985896cd79c2305446c391abb839e5b09ec84d9e222fc2acb629af0245f7"
+    },
+    {
+      "key": "results:c1-05-photo-2",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-05/C1-05_現況照片_02.png",
+      "width": 2000,
+      "height": 1116,
+      "label": "C1-05 現況照片 2",
+      "scenario": "C1-05",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "603fbd5a2c9a127f9e3fd183d71580d20ee851f617f272e957b6dafdf6845342"
+    }
+  ]
+}

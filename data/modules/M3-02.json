@@ -10,9 +10,38 @@
       "materials/03-modules/M3-02/M3-02_自行車道代表型.svg",
       "materials/03-modules/M3-02/自行車放大.svg"
     ],
+    "userImageFiles": [
+      "materials/03-modules/M3-02/M3-02.1_現況議題_01.png",
+      "materials/03-modules/M3-02/M3-02.1_現況議題_02.png",
+      "materials/03-modules/M3-02/M3-02.1_現況議題_03.png"
+    ],
     "notes": []
   },
   "assets": {
+    "m302-lane-issue-photo-1": {
+      "file": "materials/03-modules/M3-02/M3-02.1_現況議題_01.png",
+      "width": 1102,
+      "height": 899,
+      "label": "現況照片 1：自行車道銜接",
+      "caption": "M3-02.1 自行車道現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m302-lane-issue-photo-2": {
+      "file": "materials/03-modules/M3-02/M3-02.1_現況議題_02.png",
+      "width": 1079,
+      "height": 799,
+      "label": "現況照片 2：自行車與行人空間",
+      "caption": "M3-02.1 自行車道現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m302-lane-issue-photo-3": {
+      "file": "materials/03-modules/M3-02/M3-02.1_現況議題_03.png",
+      "width": 827,
+      "height": 591,
+      "label": "現況照片 3：自行車通行現況",
+      "caption": "M3-02.1 自行車道現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m302-b172c5ac34": {
       "file": "materials/03-modules/M3-02/M3-02_自行車道代表型.svg",
       "width": 2121,
@@ -41,7 +70,10 @@
       ],
       "overviewGroups": {
         "M3-02.1": {
-          "label": "M3-02.1 自行車道、M3-02.2 自行車穿越道"
+          "label": "M3-02.1 自行車道、M3-02.2 自行車穿越道",
+          "assets": [
+            "m302-b172c5ac34"
+          ]
         },
         "M3-02.2": {
           "hidden": true
@@ -70,8 +102,11 @@
       "submoduleId": "M3-02.1",
       "title": "自行車道｜現況議題與相關條文",
       "intro": "把自行車路段、穿越與匯入車行道的動線連續安排。",
+      "defaultView": "single",
       "assets": [
-        "m302-b172c5ac34"
+        "m302-lane-issue-photo-1",
+        "m302-lane-issue-photo-2",
+        "m302-lane-issue-photo-3"
       ],
       "points": [
         {

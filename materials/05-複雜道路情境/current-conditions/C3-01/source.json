@@ -1,0 +1,164 @@
+{
+  "scenario": "C3-01",
+  "name": "鐵路平交道",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 125,
+      "texts": [
+        "2026/10/29",
+        "125",
+        "設置圖例11-鐵路平交道",
+        "現況分析:",
+        "道路",
+        "平面道路",
+        "支線道",
+        "土地使用情境",
+        "鐵路用地、住宅區、工業區",
+        "",
+        "控制型式",
+        "號誌化",
+        "",
+        "道路分級",
+        "主要道路",
+        "服務道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：8 m",
+        "路寬：6-7 m",
+        "",
+        "雙向車道數：2",
+        "雙向車道數：2",
+        "",
+        "方向分隔型式：標線分隔",
+        "方向分隔型式：標線分隔",
+        "",
+        "車種管制：無",
+        "車種管制：無",
+        "",
+        "路邊停車：路肩",
+        "路邊停車：路肩",
+        "",
+        "人行道：單側實體人行道、路肩",
+        "人行道：路肩"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image148.png",
+          "slide": 125,
+          "shapeId": "7",
+          "crop": {
+            "l": "29188",
+            "t": "3247",
+            "r": "28592",
+            "b": "23934"
+          },
+          "rotation": 0.0,
+          "position": [
+            1580990,
+            471000
+          ]
+        }
+      ]
+    },
+    {
+      "number": 126,
+      "texts": [
+        "2026/10/29",
+        "126",
+        "設置圖例11-鐵路平交道",
+        "設置議題​:",
+        "",
+        "1",
+        "",
+        "2",
+        "",
+        "3",
+        "行車空間與行駛導引不明確。",
+        "路口處設置大面積網狀線以避免車輛佔用交叉口空間，但車流導引用意不夠彰顯。",
+        "平交道與鄰近路口協調。",
+        "平交道處距離號誌化路口過近，將導致平交道與號誌化路口之牌面混雜，降低整體牌面識別及有效程度。",
+        "平交道若距離號誌化交叉口過近，可能因車輛停等造成車流滯留於平交道淨空範圍。於設計時應特別留意平交道淨空區與路口車隊溢流之管理。",
+        "行人安全。",
+        "缺乏完善之行人穿越設施。"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image148.png",
+          "slide": 126,
+          "shapeId": "4",
+          "crop": {
+            "l": "29188",
+            "t": "3247",
+            "r": "28592",
+            "b": "23934"
+          },
+          "rotation": 0.0,
+          "position": [
+            1580990,
+            471000
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c3-01-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C3-01/C3-01_現況圖_01.png",
+      "width": 4138,
+      "height": 2832,
+      "label": "C3-01 現況圖",
+      "scenario": "C3-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 125,
+      "sourcePart": "ppt/media/image148.png",
+      "sha256": "a8e2ace5e759e2011fe9b05a3a6989a6c66624700f7362543208f891880a412c"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C3-01_user-photos.json",
+        "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c3-01-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C3-01/C3-01_現況照片_01.png",
+          "width": 1725,
+          "height": 1118,
+          "label": "C3-01 現況照片",
+          "scenario": "C3-01",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "b8d496c63c31802d2236d14e741e05a6602182adee88b8cbff1530835c9f0b81"
+        },
+        {
+          "key": "results:c3-01-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C3-01/C3-01_現況照片_02.png",
+          "width": 1699,
+          "height": 1076,
+          "label": "C3-01 現況照片 2",
+          "scenario": "C3-01",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "1de0d312c7f9ceb66546fd22610fa49c3a1659793b63eb7532b03f041362d8dc"
+        }
+      ]
+    }
+  ]
+}

@@ -7,8 +7,8 @@ test('module architecture has four themes, fifteen modules and twenty-seven subm
   Modules.validateCatalog(catalog);assert.equal(catalog.themes.length,4);assert.equal(catalog.modules.length,15);
   assert.equal(catalog.modules.flatMap(item=>item.submodules).length,27);assert.equal(catalog.modules.filter(item=>item.ready).length,15);
 });
-test('complete M2-01 has twelve unique content pages and eight local original figures',()=>{
-  Modules.validateModule(data,catalog);assert.equal(data.pages.length,12);assert.equal(Object.keys(data.assets).length,8);
+test('complete M2-01 has twelve unique content pages, eight original figures and four issue photos',()=>{
+  Modules.validateModule(data,catalog);assert.equal(data.pages.length,12);assert.equal(Object.keys(data.assets).length,12);
   assert(data.pages.some(page=>page.id==='m201-stop-extensions'));assert(data.pages.some(page=>page.id==='m201-yield-buffer'));
   for(const asset of Object.values(data.assets)){
     const bytes=fs.readFileSync(path.join(root,asset.file));assert(bytes.length>100);
@@ -87,13 +87,13 @@ test('module highlights preserve legacy identities and support deletion, manual 
   const stop=api.contents.find(doc=>doc.id==='M2-01').pages.find(page=>page.id==='m201-stop-layout'),sign=stop.points.find(point=>point.focus?.rect);assert.equal(api.highlightSpec(stop,sign,sign.focus.asset).key,'module:'+stop.id+':'+sign.id);
 });
 
-test('all source subsections have content or explicit referrals, with only active Typst figures and preserved orientations',async()=>{
+test('all source subsections have content or explicit referrals, with active Typst figures, explicit user photos and preserved orientations',async()=>{
   const docs=catalog.modules.map(entry=>read('data/modules/'+entry.id+'.json'));
   assert.equal(docs.reduce((n,doc)=>n+(doc.submoduleFlows?.length||0),0),25);
   assert.equal(docs.flatMap(doc=>doc.pages).filter(page=>page.links).length,2);
   for(const entry of catalog.modules){const doc=docs.find(doc=>doc.id===entry.id);for(const sub of entry.submodules)assert(doc.pages.some(page=>page.submoduleId===sub.id),sub.id+' has no content');}
-  const added=docs.filter(doc=>doc.source.imageFiles);assert.equal(added.length,10);assert.equal(added.reduce((n,doc)=>n+Object.keys(doc.assets).length,0),79);
-  for(const doc of added){assert.deepEqual(Object.values(doc.assets).map(asset=>asset.file).sort(),[...doc.source.imageFiles].sort());const used=new Set(doc.pages.flatMap(page=>page.assets));for(const id of Object.keys(doc.assets))assert(used.has(id),'Unused declared image: '+id);}
+  const added=docs.filter(doc=>doc.source.imageFiles);assert.equal(added.length,10);assert.equal(added.reduce((n,doc)=>n+doc.source.imageFiles.length,0),79);assert.equal(added.reduce((n,doc)=>n+(doc.source.userImageFiles?.length||0),0),22);
+  for(const doc of added){assert.deepEqual(Object.values(doc.assets).map(asset=>asset.file).sort(),[...doc.source.imageFiles,...doc.source.userImageFiles||[]].sort());const used=new Set(doc.pages.flatMap(page=>page.assets));for(const [id,asset]of Object.entries(doc.assets)){assert(used.has(id),'Unused declared image: '+id);if(doc.source.userImageFiles?.includes(asset.file)){const bytes=fs.readFileSync(path.join(root,asset.file));assert.equal(bytes.readUInt32BE(16),asset.width);assert.equal(bytes.readUInt32BE(20),asset.height);}}}
   const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();const data={embeddedAssets:{},assetMeta:{}};api.prepare(data);
   const page=api.pages().find(page=>page.id==='m304-lane-diagram');api.connect({page,data});const source=docs.find(doc=>doc.id==='M3-04'),asset=Object.values(source.assets).find(asset=>asset.file.includes('公車專用道進出端'));

@@ -1,0 +1,162 @@
+{
+  "scenario": "G4-01",
+  "name": "號誌化市區正交四岔路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 62,
+      "texts": [
+        "三.設置圖例成果說明：情境九",
+        "9. 號誌化市區正交四叉路口：現況分析",
+        "62",
+        "現況交通設施",
+        "主要道路路寬約40公尺，實體分隔，道路兩設有實體人行道及停車格，路段速限為50公里/小時。",
+        "次要道路路寬約24公尺，標線分隔，道路兩設有實體人行道及停車格，路段速限為50公里/小時。",
+        "現況議題",
+        "左轉空間配置不佳：路口左轉空間配置在路段直行車道之延續，左轉車道為負偏移",
+        "行人穿越安全性不足：行人穿越距離長，缺少行人庇護島",
+        "進入路口車道數不等於離開路口車道數，交叉口中間車流引導效果較差。",
+        "缺少路口上游預示與導引：預告標誌太近路口、位置不當"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image64.png",
+          "slide": 62,
+          "shapeId": "7",
+          "crop": {
+            "r": "5996"
+          },
+          "rotation": 0.0,
+          "position": [
+            1998675,
+            6488482
+          ]
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "texts": [
+        "現況照片",
+        "63"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image67.png",
+          "slide": 63,
+          "shapeId": "10",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            529364,
+            6095999
+          ]
+        },
+        {
+          "part": "ppt/media/image66.png",
+          "slide": 63,
+          "shapeId": "8",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            571500,
+            388769
+          ]
+        },
+        {
+          "part": "ppt/media/image65.png",
+          "slide": 63,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3450624,
+            388769
+          ]
+        },
+        {
+          "part": "ppt/media/image68.png",
+          "slide": 63,
+          "shapeId": "13",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3541756,
+            5963344
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:g4-01-diagram-1",
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況圖_01.png",
+      "width": 3022,
+      "height": 1933,
+      "label": "G4-01 現況圖",
+      "scenario": "G4-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 62,
+      "sourcePart": "ppt/media/image64.png",
+      "sha256": "e31101f81a134b3e51b84eae3326506b4197da9df350e92498e65ffad0531d85"
+    },
+    {
+      "key": "results:g4-01-photo-1",
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_01.png",
+      "width": 2596,
+      "height": 1467,
+      "label": "G4-01 現況照片",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image67.png",
+      "sha256": "762d83e022333ed5057463307c8f8dff7c2bfa0f0412744520165dedb9126151"
+    },
+    {
+      "key": "results:g4-01-photo-2",
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_02.png",
+      "width": 2588,
+      "height": 1389,
+      "label": "G4-01 現況照片 2",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image66.png",
+      "sha256": "0ab8b1c54dbffe6e7eacd934e4dec3d9303c29244d455e2b64b8e32c132c8f08"
+    },
+    {
+      "key": "results:g4-01-photo-3",
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_03.png",
+      "width": 2593,
+      "height": 1407,
+      "label": "G4-01 現況照片 3",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image65.png",
+      "sha256": "a6a6d7d2e145f24710dac2093a1da8103944a901266bbbe393914998a437d57b"
+    },
+    {
+      "key": "results:g4-01-photo-4",
+      "file": "materials/04-一般道路情境/current-conditions/G4-01/G4-01_現況照片_04.png",
+      "width": 2605,
+      "height": 1401,
+      "label": "G4-01 現況照片 4",
+      "scenario": "G4-01",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 63,
+      "sourcePart": "ppt/media/image68.png",
+      "sha256": "3bc1684ce95e07a76a29a82dd712448c0cdd627a866c49e30c05130f23a202a7"
+    }
+  ],
+  "ignoredSymbols": []
+}

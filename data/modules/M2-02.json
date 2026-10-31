@@ -5,11 +5,22 @@
   "source": {
     "file": "05-roundabout-control.typ",
     "section": "M2-02「圓環管制」",
+    "userImageFiles": [
+      "materials/03-modules/M2-02/M2-02.1_現況議題_01.png"
+    ],
     "notes": [
       "圓環遵行方向標誌的側向位置依《設置規則》第 16 條原則；讓路標誌可一併參照 M2-01.2。"
     ]
   },
   "assets": {
+    "m202-roundabout-issue-photo-1": {
+      "file": "materials/03-modules/M2-02/M2-02.1_現況議題_01.png",
+      "width": 1737,
+      "height": 941,
+      "label": "圓環現況照片",
+      "caption": "M2-02.1 圓環現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m202-roundabout": {
       "file": "materials/03-modules/M2-02/M2-02_圓環管制路口模組代表型.svg",
       "width": 684,
@@ -27,7 +38,7 @@
       "title": "無號誌圓環｜現況議題與相關條文",
       "intro": "建立環內優先，讓入口、環內與出口的動線連續。",
       "assets": [
-        "m202-roundabout"
+        "m202-roundabout-issue-photo-1"
       ],
       "points": [
         {

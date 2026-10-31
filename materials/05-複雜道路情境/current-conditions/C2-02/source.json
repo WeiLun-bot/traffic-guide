@@ -1,0 +1,71 @@
+{
+  "scenario": "C2-02",
+  "name": "平行匝道型交流道",
+  "source": {
+    "file": "C2-02_reused-content.json",
+    "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+    "type": "scenario-reuse",
+    "receivedDate": "2026-10-31"
+  },
+  "status": "scenario-reuse",
+  "note": "依使用者指示複用現況圖、照片與議題；保留目標情境編號與名稱。",
+  "fromScenario": "C4-04",
+  "sourceSlides": [
+    140,
+    141
+  ],
+  "files": [
+    {
+      "key": "results:c2-02-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C2-02/C2-02_現況圖_01.png",
+      "width": 4138,
+      "height": 2833,
+      "label": "C2-02 現況圖",
+      "scenario": "C2-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 140,
+      "sourcePart": "ppt/media/image159.png",
+      "sha256": "c0e7cd544a4c096b3d7e0f48fbae79c74c6d309e1a3228ac3ad2a0e28be9ebbb",
+      "reusedFrom": {
+        "scenario": "C4-04",
+        "key": "results:c4-04-diagram-1",
+        "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況圖_01.png",
+        "source": {
+          "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+          "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+        }
+      }
+    },
+    {
+      "key": "results:c2-02-photo-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C2-02/C2-02_現況照片_01.png",
+      "width": 1821,
+      "height": 887,
+      "label": "C2-02 現況照片",
+      "scenario": "C2-02",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "99da3c351ffa54a591da2db2a7c0a2c53006427c2a4e027638fc2cfb9add9b6d",
+      "reusedFrom": {
+        "scenario": "C4-04",
+        "key": "results:c4-04-photo-1",
+        "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況照片_01.png",
+        "source": {
+          "file": "C4-04_user-photos.json",
+          "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        }
+      }
+    }
+  ],
+  "originalSourceStatus": {
+    "source": {
+      "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+      "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+    },
+    "status": "missing",
+    "note": "原簡報的生活副道與本情境不同，不互相替代。"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "scenario": "C2-01",
+  "name": "部分苜蓿葉型交流道",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 122,
+      "texts": [
+        "2026/10/29",
+        "122",
+        "設置圖例10-部分苜蓿葉交流道",
+        "現況分析:",
+        "道路",
+        "平面道路",
+        "土地使用情境",
+        "住宅區、文教區、工業區、高（快速公路用地）",
+        "控制型式",
+        "號誌化",
+        "道路分級",
+        "主要道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：26 m",
+        "",
+        "雙向車道數：7 ",
+        "",
+        "方向分隔型式：實體分隔",
+        "",
+        "車種管制：往北內側2車道禁行機車",
+        "往南內側1車道禁行機車",
+        "",
+        "路邊停車：無",
+        "",
+        "人行道：單側實體人行道"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image146.png",
+          "slide": 122,
+          "shapeId": "8",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1737025,
+            156000
+          ]
+        }
+      ]
+    },
+    {
+      "number": 123,
+      "texts": [
+        "2026/10/29",
+        "123",
+        "設置圖例10-部分苜蓿葉交流道",
+        "設置議題​:",
+        "",
+        "1",
+        "",
+        "2",
+        "",
+        "3",
+        "行車空間與行駛導引不明確。",
+        "車道連續性配置不佳，且左轉車道順接不良。",
+        "交流道附近之標誌未能有效指引道路僅特定車輛專行，可能使部分車種誤入；車道眾多，但未有相關標誌指示車道遵行方向，可能導致車道誤用。",
+        "匝道與主線銜接介面。",
+        "匯入段距離不足，駕駛人無法在匯入完成觀察判斷，增加與主線車流發生交織衝突及事故的風險。",
+        "下匝道右轉車道號誌無適當設計",
+        "行人安全。",
+        "行人動線不佳，缺乏橫向通行的行穿配置外，且實體人行道寬度不足，安全性不佳。",
+        "下匝道車速快，應採人車分離號誌設計。"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image146.png",
+          "slide": 123,
+          "shapeId": "4",
+          "crop": {
+            "l": "25271",
+            "t": "1515",
+            "r": "14469",
+            "b": "6629"
+          },
+          "rotation": 0.0,
+          "position": [
+            1597122,
+            261219
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c2-01-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C2-01/C2-01_現況圖_01.png",
+      "width": 2920,
+      "height": 1998,
+      "label": "C2-01 現況圖",
+      "scenario": "C2-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 122,
+      "sourcePart": "ppt/media/image146.png",
+      "sha256": "dfa5e8f8a90ac9c443114aa920089eb1317c1d42bba468cb132ca443d96d0025"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C2-01_user-photos.json",
+        "sha256": "7a3142b8daa3147ea4aa955fe003edbcb5f01d14d3966ffa60da2e202ee97001",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c2-01-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C2-01/C2-01_現況照片_01.png",
+          "width": 2028,
+          "height": 915,
+          "label": "C2-01 現況照片",
+          "scenario": "C2-01",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "241a39417c4bbbb75e5bfb8be7e7ccd9d5bfe92402fabd67bafad77e0e02a406"
+        }
+      ]
+    }
+  ]
+}

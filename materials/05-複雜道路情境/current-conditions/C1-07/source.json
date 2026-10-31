@@ -1,0 +1,180 @@
+{
+  "scenario": "C1-07",
+  "name": "迷你圓環",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 113,
+      "texts": [
+        "2026/10/29",
+        "113",
+        "設置圖例7-迷你圓環",
+        "現況分析:",
+        " ",
+        "",
+        " ",
+        "",
+        "道路",
+        "分支1",
+        "分支2",
+        "土地使用情境",
+        "住宅區",
+        "",
+        "控制型式",
+        "無號誌",
+        "",
+        "道路分級",
+        "服務道路",
+        "服務道路",
+        "主要使用者",
+        "小巴士、汽機車、行人",
+        "小巴士、汽機車、行人",
+        "設計速率",
+        "30 km/h",
+        "30 km/h",
+        "道路設計特徵",
+        "路寬：7 m",
+        "路寬：6 m",
+        "",
+        "雙向車道數：2",
+        "雙向車道數：2",
+        "",
+        "方向分隔型式：標線分隔",
+        "方向分隔型式：單行道",
+        "",
+        "車種管制：無",
+        "車種管制：無",
+        "",
+        "路邊停車：汽機車停車帶",
+        "路邊停車：汽機車停車帶",
+        "",
+        "人行道：單側人行道；騎樓",
+        "人行道：單側人行道"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image137.png",
+          "slide": 113,
+          "shapeId": "8",
+          "crop": {
+            "l": "32747",
+            "t": "35166",
+            "r": "38696",
+            "b": "23113"
+          },
+          "rotation": 0.0,
+          "position": [
+            1745154,
+            380999
+          ]
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "texts": [
+        "2026/10/29",
+        "114",
+        "設置圖例7-迷你圓環",
+        "設置議題​:",
+        " ",
+        "",
+        " ",
+        "",
+        "路口過寬，容易讓機車、汽車行駛時保持較高速度。",
+        "行穿線處缺乏適當行人設施銜接。",
+        "停止線處視距不佳。",
+        "道路空間使用混亂。",
+        "",
+        "1",
+        "",
+        "2",
+        "",
+        "3",
+        "",
+        "4"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image138.png",
+          "slide": 114,
+          "shapeId": "11",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1693323,
+            261220
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c1-07-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況圖_01.png",
+      "width": 4136,
+      "height": 2654,
+      "label": "C1-07 現況圖",
+      "scenario": "C1-07",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 113,
+      "sourcePart": "ppt/media/image137.png",
+      "sha256": "cad3f7df811b6cd6125cf5f164ef545d15b9d60b18a9c054289b0cab689dd8fc"
+    },
+    {
+      "key": "results:c1-07-diagram-2",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況圖_02.png",
+      "width": 1341,
+      "height": 974,
+      "label": "C1-07 現況圖 2",
+      "scenario": "C1-07",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 114,
+      "sourcePart": "ppt/media/image138.png",
+      "sha256": "499d055952ae9ce737c5a1057310a82495d0dc4997e2afbcf04ec9084355ba36"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C1-07_user-photos.json",
+        "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c1-07-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況照片_01.png",
+          "width": 933,
+          "height": 467,
+          "label": "C1-07 現況照片",
+          "scenario": "C1-07",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "5cf0b94587cc07cd92cd94a274da01dd8da082b85c001b4c2620a4173d075830"
+        },
+        {
+          "key": "results:c1-07-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況照片_02.png",
+          "width": 933,
+          "height": 467,
+          "label": "C1-07 現況照片 2",
+          "scenario": "C1-07",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "07613cc6ad55596cd4e7f0ad7f2684bf89a1ffddd459ee3897456048b98ae10f"
+        }
+      ],
+      "correctedFrom": "C1-06"
+    }
+  ]
+}

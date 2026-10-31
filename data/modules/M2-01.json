@@ -26,6 +26,22 @@
     ]
   },
   "assets": {
+    "stop-issue-photo-1": {
+      "file": "materials/03-modules/M2-01/M2-01.1_現況議題_01.png",
+      "width": 1657,
+      "height": 1081,
+      "label": "現況照片 1：停止位置",
+      "caption": "M2-01.1 停管制路口現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "stop-issue-photo-2": {
+      "file": "materials/03-modules/M2-01/M2-01.1_現況議題_02.png",
+      "width": 824,
+      "height": 494,
+      "label": "現況照片 2：停讓提示",
+      "caption": "M2-01.1 停管制路口現況",
+      "credit": "使用者提供之現況照片"
+    },
     "stop-basic": {
       "file": "materials/03-modules/M2-01/stop-basic.png",
       "width": 963,
@@ -57,6 +73,22 @@
       "label": "停管制路緣修飾",
       "caption": "圖 3.21 停管制路口路緣修飾圖",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "yield-issue-photo-1": {
+      "file": "materials/03-modules/M2-01/M2-01.2_現況議題_01.png",
+      "width": 727,
+      "height": 517,
+      "label": "現況照片 1：讓路標線",
+      "caption": "M2-01.2 讓管制路口現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "yield-issue-photo-2": {
+      "file": "materials/03-modules/M2-01/M2-01.2_現況議題_02.png",
+      "width": 894,
+      "height": 687,
+      "label": "現況照片 2：路口配置",
+      "caption": "M2-01.2 讓管制路口現況",
+      "credit": "使用者提供之現況照片"
     },
     "yield-basic": {
       "file": "materials/03-modules/M2-01/yield-basic.png",
@@ -124,6 +156,18 @@
         51
       ],
       "mode": "pair",
+      "overviewGroups": {
+        "M2-01.1": {
+          "assets": [
+            "stop-basic"
+          ]
+        },
+        "M2-01.2": {
+          "assets": [
+            "yield-basic"
+          ]
+        }
+      },
       "references": [
         "16",
         "58",
@@ -145,37 +189,21 @@
       "section": "stop",
       "title": "停管制：停車位置與視距",
       "intro": "停車後是否看得見來車，是配置檢核的重點。",
+      "defaultView": "pair",
       "assets": [
-        "stop-basic"
+        "stop-issue-photo-1",
+        "stop-issue-photo-2"
       ],
       "points": [
         {
           "id": "sight",
           "title": "停車後看得見來車嗎？",
-          "text": "停止線退縮過多、視距又受限時，停車後仍可能看不清幹道來車。",
-          "focus": {
-            "asset": "stop-basic",
-            "rect": [
-              380,
-              65,
-              295,
-              95
-            ]
-          }
+          "text": "停止線退縮過多、視距又受限時，停車後仍可能看不清幹道來車。"
         },
         {
           "id": "notice",
           "title": "標誌提早提醒，標字再次提示",
-          "text": "路側標誌可在遠處辨識；路面「停」標字在接近路口時提醒。",
-          "focus": {
-            "asset": "stop-basic",
-            "rect": [
-              710,
-              155,
-              190,
-              180
-            ]
-          }
+          "text": "路側標誌可在遠處辨識；路面「停」標字在接近路口時提醒。"
         },
         {
           "id": "composition",
@@ -456,51 +484,26 @@
       "section": "yield",
       "title": "讓管制：辨識讓行對象",
       "intro": "讓行對象要清楚，標誌與標線要一致。",
+      "defaultView": "pair",
       "assets": [
-        "yield-basic"
+        "yield-issue-photo-1",
+        "yield-issue-photo-2"
       ],
       "points": [
         {
           "id": "recognition",
           "title": "讓路線容易被忽略",
-          "text": "用路人若不熟悉白色倒三角形標線，容易忽略減速、讓幹道先行的提醒。",
-          "focus": {
-            "asset": "yield-basic",
-            "rect": [
-              502,
-              173,
-              58,
-              105
-            ]
-          }
+          "text": "用路人若不熟悉白色倒三角形標線，容易忽略減速、讓幹道先行的提醒。"
         },
         {
           "id": "consistency",
           "title": "配置一致，減少誤判",
-          "text": "雙白虛線與行穿線的搭配方式不一致，容易造成標線功能誤判。",
-          "focus": {
-            "asset": "yield-basic",
-            "rect": [
-              478,
-              80,
-              188,
-              45
-            ]
-          }
+          "text": "雙白虛線與行穿線的搭配方式不一致，容易造成標線功能誤判。"
         },
         {
           "id": "notice",
           "title": "標誌與標線分工提醒",
-          "text": "讓路標誌提早提醒，讓路線在接近路口時再次提示幹道優先。",
-          "focus": {
-            "asset": "yield-basic",
-            "rect": [
-              715,
-              167,
-              232,
-              201
-            ]
-          }
+          "text": "讓路標誌提早提醒，讓路線在接近路口時再次提示幹道優先。"
         },
         {
           "id": "composition",

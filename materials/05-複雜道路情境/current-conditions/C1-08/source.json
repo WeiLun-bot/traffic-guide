@@ -1,0 +1,176 @@
+{
+  "scenario": "C1-08",
+  "name": "渦輪圓環",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 116,
+      "texts": [
+        "2026/10/29",
+        "116",
+        "設置圖例8-渦輪圓環",
+        "現況分析:",
+        " ",
+        "",
+        " ",
+        "",
+        "道路",
+        "分支1,2",
+        "分支3,4",
+        "圓環車道",
+        "土地使用情境",
+        "商業區",
+        "",
+        "",
+        "控制型式",
+        "無號誌",
+        "",
+        "",
+        "道路分級",
+        "主要道路",
+        "主要道路",
+        "-",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "公車、汽機車、行人",
+        "公車、汽機車",
+        "設計速率",
+        "50 km/h",
+        "50 km/h",
+        "-",
+        "道路設計特徵",
+        "路寬：15-16 m",
+        "路寬：7 m",
+        "路寬：8 m",
+        "",
+        "雙向車道數：4",
+        "雙向車道數：2",
+        "車道數：2",
+        "",
+        "方向分隔型式：標線分隔",
+        "方向分隔型式：標線分隔",
+        "-",
+        "",
+        "車種管制：無",
+        "車種管制：無",
+        "車種管制：無",
+        "",
+        "路邊停車：路肩",
+        "路邊停車：路肩",
+        "-",
+        "",
+        "公車：路肩公車停靠區",
+        "公車：路肩公車停靠區",
+        "-",
+        "",
+        "人行道：騎樓",
+        "人行道：騎樓",
+        "-"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image140.png",
+          "slide": 116,
+          "shapeId": "7",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            2124000,
+            201000
+          ]
+        }
+      ]
+    },
+    {
+      "number": 117,
+      "texts": [
+        "2026/10/29",
+        "117",
+        "設置圖例8-渦輪圓環",
+        "設置議題​:",
+        " ",
+        "",
+        " ",
+        "",
+        "進入圓環前缺乏適當的指向線，指示駕駛如何選擇車道。",
+        "行人步行空間過窄。",
+        "缺乏圓環相關標誌設置。",
+        "",
+        "1",
+        "",
+        "2",
+        "",
+        "3"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image141.png",
+          "slide": 117,
+          "shapeId": "10",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1733498,
+            261820
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c1-08-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況圖_01.png",
+      "width": 4138,
+      "height": 2600,
+      "label": "C1-08 現況圖",
+      "scenario": "C1-08",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 116,
+      "sourcePart": "ppt/media/image140.png",
+      "sha256": "286fd21b8d19af514996262c8f2b7d15bd175a3b15d2d2280828b1a0badc769e"
+    },
+    {
+      "key": "results:c1-08-diagram-2",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況圖_02.png",
+      "width": 2248,
+      "height": 1412,
+      "label": "C1-08 現況圖 2",
+      "scenario": "C1-08",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 117,
+      "sourcePart": "ppt/media/image141.png",
+      "sha256": "aa55c1a664cda033f0fb96cd8d4219db2cbb8f43ffb3b294fbef646c289a1bc9"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C1-08_user-photos.json",
+        "sha256": "fc9562897d3c3f2188e787fe79c3d46f366383a2143be09e850b0c35f6131b4e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c1-08-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況照片_01.png",
+          "width": 1774,
+          "height": 1058,
+          "label": "C1-08 現況照片",
+          "scenario": "C1-08",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "4094509f3c6a3d98d51426e00a8bc54f55a4f58f988d73ede262fae1c835d2ec"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "scenarios": [
+    {
+      "id": "G1-01",
+      "name": "無號誌市區正交三岔路口",
+      "slides": [
+        38,
+        39
+      ],
+      "sourceMissing": false,
+      "folder": "G1-01",
+      "images": 6
+    },
+    {
+      "id": "G1-02",
+      "name": "無號誌鄉區正交三岔路口",
+      "slides": [
+        41,
+        42
+      ],
+      "sourceMissing": false,
+      "folder": "G1-02",
+      "images": 3
+    },
+    {
+      "id": "G1-03",
+      "name": "無號誌市區匯入型巷道路口",
+      "slides": [
+        44,
+        45
+      ],
+      "sourceMissing": false,
+      "folder": "G1-03",
+      "images": 4
+    },
+    {
+      "id": "G1-04",
+      "name": "無號誌鄉區匯入型巷道路口",
+      "slides": [
+        47,
+        48
+      ],
+      "sourceMissing": false,
+      "folder": "G1-04",
+      "images": 3
+    },
+    {
+      "id": "G2-01",
+      "name": "號誌化市區正交三岔路口",
+      "slides": [
+        50,
+        51
+      ],
+      "sourceMissing": false,
+      "folder": "G2-01",
+      "images": 5
+    },
+    {
+      "id": "G2-02",
+      "name": "號誌化鄉區正交三岔路口",
+      "slides": [
+        53,
+        54
+      ],
+      "sourceMissing": false,
+      "folder": "G2-02",
+      "images": 4
+    },
+    {
+      "id": "G3-01",
+      "name": "無號誌市區正交四岔路口",
+      "slides": [
+        56,
+        57
+      ],
+      "sourceMissing": false,
+      "folder": "G3-01",
+      "images": 5
+    },
+    {
+      "id": "G3-02",
+      "name": "無號誌鄉區正交四岔路口",
+      "slides": [
+        59,
+        60
+      ],
+      "sourceMissing": false,
+      "folder": "G3-02",
+      "images": 5
+    },
+    {
+      "id": "G4-01",
+      "name": "號誌化市區正交四岔路口",
+      "slides": [
+        62,
+        63
+      ],
+      "sourceMissing": false,
+      "folder": "G4-01",
+      "images": 5
+    },
+    {
+      "id": "G4-02",
+      "name": "號誌化鄉區正交四岔路口",
+      "slides": [
+        65,
+        66
+      ],
+      "sourceMissing": false,
+      "folder": "G4-02",
+      "images": 6
+    },
+    {
+      "id": "G1-05",
+      "name": "無號誌市區斜交三岔路口",
+      "slides": [
+        68,
+        69
+      ],
+      "sourceMissing": false,
+      "folder": "G1-05",
+      "images": 4
+    },
+    {
+      "id": "G1-06",
+      "name": "無號誌鄉區斜交三岔路口",
+      "slides": [
+        71,
+        72
+      ],
+      "sourceMissing": false,
+      "folder": "G1-06",
+      "images": 5
+    },
+    {
+      "id": "G2-03",
+      "name": "號誌化市區斜交三岔路口",
+      "slides": [
+        74,
+        75
+      ],
+      "sourceMissing": false,
+      "folder": "G2-03",
+      "images": 4
+    },
+    {
+      "id": "G2-04",
+      "name": "號誌化鄉區斜交三岔路口",
+      "slides": [
+        77,
+        78
+      ],
+      "sourceMissing": false,
+      "folder": "G2-04",
+      "images": 5
+    },
+    {
+      "id": "G3-03",
+      "name": "無號誌市區斜交四岔路口",
+      "slides": [
+        80,
+        81
+      ],
+      "sourceMissing": false,
+      "folder": "G3-03",
+      "images": 5
+    },
+    {
+      "id": "G3-04",
+      "name": "無號誌鄉區斜交四岔路口",
+      "slides": [
+        83,
+        84
+      ],
+      "sourceMissing": false,
+      "folder": "G3-04",
+      "images": 5
+    },
+    {
+      "id": "G4-03",
+      "name": "號誌化市區斜交四岔路口",
+      "slides": [
+        86,
+        87
+      ],
+      "sourceMissing": false,
+      "folder": "G4-03",
+      "images": 5
+    },
+    {
+      "id": "G4-04",
+      "name": "號誌化鄉區斜交四岔路口",
+      "slides": [
+        89,
+        90
+      ],
+      "sourceMissing": false,
+      "folder": "G4-04",
+      "images": 5
+    }
+  ]
+}

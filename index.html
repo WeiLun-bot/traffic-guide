@@ -160,8 +160,14 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
 </style><link rel="stylesheet" href="assets/visual-editor.css">
 <link rel="stylesheet" href="assets/presentation-modules.css">
 <link rel="stylesheet" href="assets/presentation-structure.css">
+<link rel="stylesheet" href="assets/presentation-results.css">
 <link rel="stylesheet" href="assets/presentation-scenarios.css">
 <link rel="stylesheet" href="assets/presentation-order.css">
+<link rel="stylesheet" href="assets/presentation-image-order.css">
+<style id="paired-image-layout-styles">
+svg[data-pair-cover]{overflow:hidden}
+img[data-pair-cover]{object-fit:cover}
+</style>
 </head>
 <body data-presentation-variant="figure-focused" class="" style="">
 <div id="presentation-startup" role="status" aria-live="polite">
@@ -227,9 +233,11 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
 <script src="assets/visual-editor.js"></script>
 <script src="assets/initial-image-view.js"></script>
 <script src="assets/structured-content.js"></script>
+<script src="assets/presentation-image-order.js"></script>
 <script src="assets/presentation-modules.js"></script>
 <script src="assets/presentation-structure.js"></script>
 <script src="assets/presentation-scenarios.js"></script>
+<script src="assets/presentation-results.js"></script>
 <script id="general-page-templates">(() => {
   'use strict';
   const escape=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -281,11 +289,34 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
 <script id="general-image-viewport">(() => {
   'use strict';
   const controllers=new WeakMap();
+  const pairedLayouts=new Map();
   const selector='#main-map,.cover-map,.custom-diagram,.scenario-detail-image,#asset-view>svg,.custom-image-frame>img';
   const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
   let pan=null;
   let suppressClick=null;
   function readView(svg) {return svg.getAttribute('viewBox').trim().split(/[\s,]+/).map(Number);}
+  function alignPair(record) {
+    if(!record.pair.isConnected)return;
+    for(const [header,value,priority]of record.headers){if(value)header.style.setProperty('min-height',value,priority);else header.style.removeProperty('min-height');}
+    const [first,second]=record.cards.map(card=>card.getBoundingClientRect());
+    if(!second||Math.abs(first.left-second.left)<2)return;
+    const height=Math.max(0,...record.headers.map(([header])=>header.getBoundingClientRect().height));
+    for(const [header]of record.headers)header.style.setProperty('min-height',height+'px');
+  }
+  function mountPairs(root) {
+    for(const [pair,record]of pairedLayouts)if(!pair.isConnected){record.observer.disconnect();cancelAnimationFrame(record.frame);pairedLayouts.delete(pair);}
+    for(const pair of root.querySelectorAll('.results-image-pair,.module-pair,.module-overview-grid,.custom-comparison-grid')){
+      const cards=[...pair.children],images=cards.flatMap(card=>[...card.querySelectorAll('svg.scenario-detail-image,svg.custom-diagram,.custom-image-frame>img')]);
+      if(images.length<2&&!pair.matches('.results-image-pair'))continue;
+      for(const image of images){const contain=Boolean(image.closest('[data-image-fit="contain"]'));if(contain)delete image.dataset.pairCover;else image.dataset.pairCover='';if(image instanceof SVGSVGElement)image.setAttribute('preserveAspectRatio',contain?'xMidYMid meet':'xMidYMid slice');controllers.get(image)?.configure({fullLabel:contain?'完整圖面':'填滿圖框'});}
+      if(pairedLayouts.has(pair))continue;
+      const headers=cards.map(card=>card.querySelector('.map-toolbar,.custom-side-title')).filter(Boolean).map(header=>[header,header.style.getPropertyValue('min-height'),header.style.getPropertyPriority('min-height')]);
+      const record={pair,cards,headers,frame:0};
+      record.observer=new ResizeObserver(()=>{cancelAnimationFrame(record.frame);record.frame=requestAnimationFrame(()=>alignPair(record));});
+      pairedLayouts.set(pair,record);alignPair(record);
+      record.observer.observe(pair);for(const [header]of headers)record.observer.observe(header);
+    }
+  }
   function releasePan(cancel=false) {
     if(!pan)return;
     const finished=pan;pan=null;
@@ -407,7 +438,7 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
     if(performance.now()>suppressClick.until){suppressClick=null;return;}
     if(suppressClick.element.contains(event.target)) {suppressClick=null;event.preventDefault();event.stopImmediatePropagation();}
   },true);
-  window.generalRoadViewport={attach,mount(root=document){root.querySelectorAll(selector).forEach(element=>attach(element));},sync:element=>controllers.get(element)?.sync(),get:element=>controllers.get(element),cancel:()=>releasePan(true)};
+  window.generalRoadViewport={attach,mount(root=document){root.querySelectorAll(selector).forEach(element=>attach(element));mountPairs(root);},sync:element=>controllers.get(element)?.sync(),get:element=>controllers.get(element),cancel:()=>releasePan(true)};
 })();
 </script>
 <script id="general-explanation-blocks">(() => {
@@ -1589,8 +1620,10 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
   await window.presentationModulesReady;
   await window.presentationStructureReady;
   await window.presentationScenariosReady;
+  await window.presentationResultsReady;
   window.PresentationModules?.prepare(data);
   window.generalRoadConditions?.prepare(data);
+  window.PresentationResults?.prepare(data);
   const editor = window.generalRoadEditor;
   const viewport = window.generalRoadViewport;
   editor?.prepare(data);
@@ -1606,6 +1639,7 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
   const pages = [
     {id:'presentations',chapter:'presentations',kind:'presentations-home',name:'四場簡報總覽'},
     ...(window.PresentationStructure?.placeholders()||[]),
+    ...(window.PresentationResults?.pages()||[]),
     { id:'cover', chapter:'intro', kind:'cover', name:'一般道路情境' },
     { id:'contents', chapter:'intro', kind:'contents', name:'五章導覽' },
     {id:'general-scenarios-index',chapter:'intro',kind:'scenario-directory',name:'全部情境總覽'},
@@ -1818,7 +1852,9 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
     cancelAnimationFrame(animation);
     clearTimeout(animationEnd);
     const pageChanged=before?.id!==page.id;
-    if(page.kind==='scenario-directory') {
+    if(page.kind==='results') {
+      $('presentation').innerHTML=window.PresentationResults.render(page,data);
+    } else if(page.kind==='scenario-directory') {
       $('presentation').innerHTML=window.PresentationScenarios.render(page,data);
     } else if(['presentations-home','presentation-empty'].includes(page.kind)) {
       $('presentation').innerHTML=window.PresentationStructure.render(page);
@@ -1852,7 +1888,7 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
     if(page.kind==='current-conditions')$('next-label').textContent='整體佈設策略';
     $('next').setAttribute('aria-label',$('next-label').textContent);
     $('announcer').textContent=`第 ${current().page+1} 頁，共 ${pages.length} 頁。${page.name}${page.article?'，'+(current().phase?'放大解說':'框選定位'):''}`;
-    if(!['module','presentations-home','presentation-empty','scenario-directory'].includes(page.kind))scenarioUI.decorate(page);
+    if(!['module','results','presentations-home','presentation-empty','scenario-directory'].includes(page.kind))scenarioUI.decorate(page);
     window.PresentationScenarios?.decorate(page,data);
     window.PresentationModules?.decorate(page);
     editor?.decorate();
@@ -1867,6 +1903,7 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
     document.title=`${page.name}｜${page.kind==='module'?'交通設施功能模組':'一般道路情境簡報（圖面放大版）'}`;
     window.PresentationStructure?.decorate(page);
     window.PresentationOrder?.mount(window.generalRoadPresentation);
+    window.PresentationImageOrder?.mount(window.generalRoadPresentation);
     if(options.hash!==false) {
       const hash=page.kind==='module'?window.PresentationModules.hashFor(page):`#${page.id}${page.article&&current().phase?'/zoom':page.kind==='custom'&&current().phase?'/step-'+current().phase:''}`;
       try {history.replaceState(null,'',hash);} catch {location.hash=hash;}
@@ -2008,6 +2045,7 @@ body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding
   window.visualLayoutEditor?.connect(window.generalRoadPresentation);
   window.PresentationModules?.connect(window.generalRoadPresentation);
   window.PresentationStructure?.connect(window.generalRoadPresentation,scenarioUI);
+  window.PresentationResults?.connect(window.generalRoadPresentation);
   fromHash();
   window.presentationStartup.complete();
 })().catch(error=>{console.error('簡報初始化失敗',error);window.presentationStartup.fail();});

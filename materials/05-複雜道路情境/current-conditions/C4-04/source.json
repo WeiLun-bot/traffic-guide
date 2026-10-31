@@ -1,0 +1,137 @@
+{
+  "scenario": "C4-04",
+  "name": "路段中央分隔迴轉道",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 140,
+      "texts": [
+        "2026/10/29",
+        "140",
+        "設置圖例16-迴轉道",
+        "現況分析:",
+        "道路",
+        "路段1",
+        "土地使用情境",
+        "農業用地",
+        "控制型式",
+        "號誌化",
+        "道路分級",
+        "主要公路",
+        "主要使用者",
+        "大客車、汽機車",
+        "設計速率",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：東：11 m；西：11 m",
+        "",
+        "車道數：",
+        "東：3；西：3",
+        "",
+        "方向分隔型式：實體分隔",
+        "",
+        "車種管制：往國道車道禁行機車",
+        "",
+        "路邊停車：無",
+        "",
+        "人行道：無"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image159.png",
+          "slide": 140,
+          "shapeId": "7",
+          "crop": {
+            "l": "16006",
+            "t": "2162",
+            "r": "8475",
+            "b": "6640"
+          },
+          "rotation": 0.0,
+          "position": [
+            1667823,
+            606000
+          ]
+        }
+      ]
+    },
+    {
+      "number": 141,
+      "texts": [
+        "2026/10/29",
+        "141",
+        "設置圖例16-迴轉道",
+        "設置議題​:",
+        "行車動線規劃。",
+        "車道匯入處缺乏足夠漸變或相關標線讓駕駛人停等，易產生衝突。",
+        "指示標誌。",
+        "同一門架有兩型式之指示標誌，可能造成駕駛人混亂，增加誤闖國道可能",
+        "",
+        "1",
+        "",
+        "2"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image159.png",
+          "slide": 141,
+          "shapeId": "7",
+          "crop": {
+            "l": "16006",
+            "t": "2162",
+            "r": "8475",
+            "b": "6640"
+          },
+          "rotation": 0.0,
+          "position": [
+            1667823,
+            606000
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c4-04-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況圖_01.png",
+      "width": 4138,
+      "height": 2833,
+      "label": "C4-04 現況圖",
+      "scenario": "C4-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 140,
+      "sourcePart": "ppt/media/image159.png",
+      "sha256": "c0e7cd544a4c096b3d7e0f48fbae79c74c6d309e1a3228ac3ad2a0e28be9ebbb"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C4-04_user-photos.json",
+        "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c4-04-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-04/C4-04_現況照片_01.png",
+          "width": 1821,
+          "height": 887,
+          "label": "C4-04 現況照片",
+          "scenario": "C4-04",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "99da3c351ffa54a591da2db2a7c0a2c53006427c2a4e027638fc2cfb9add9b6d"
+        }
+      ]
+    }
+  ]
+}

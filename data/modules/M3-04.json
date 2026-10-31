@@ -13,9 +13,38 @@
       "materials/03-modules/M3-04/M3-04_公車路側停靠站結合自行車道.svg",
       "materials/03-modules/M3-04/M3-04_公車彎設置參考圖.png"
     ],
+    "userImageFiles": [
+      "materials/03-modules/M3-04/M3-04.1_現況議題_01.png",
+      "materials/03-modules/M3-04/M3-04.1_現況議題_02.png",
+      "materials/03-modules/M3-04/M3-04.2_現況議題_01.png"
+    ],
     "notes": []
   },
   "assets": {
+    "m304-stop-issue-photo-1": {
+      "file": "materials/03-modules/M3-04/M3-04.2_現況議題_01.png",
+      "width": 747,
+      "height": 404,
+      "label": "公車路側停靠站現況照片",
+      "caption": "M3-04.2 公車路側停靠站現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m304-lane-issue-photo-1": {
+      "file": "materials/03-modules/M3-04/M3-04.1_現況議題_01.png",
+      "width": 1130,
+      "height": 497,
+      "label": "現況照片 1：公車進出動線",
+      "caption": "M3-04.1 公車專用道現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m304-lane-issue-photo-2": {
+      "file": "materials/03-modules/M3-04/M3-04.1_現況議題_02.png",
+      "width": 1531,
+      "height": 969,
+      "label": "現況照片 2：專用道島頭現況",
+      "caption": "M3-04.1 公車專用道現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m304-55a30512cf": {
       "file": "materials/03-modules/M3-04/M3-04_公車專用道代表型.svg",
       "width": 892,
@@ -67,6 +96,19 @@
       "section": "overview",
       "title": "M3-04 公車",
       "intro": "把公車專用空間、進出動線與乘客上下車一起安排。",
+      "overviewGroups": {
+        "M3-04.1": {
+          "assets": [
+            "m304-55a30512cf"
+          ]
+        },
+        "M3-04.2": {
+          "assets": [
+            "m304-599bae677d",
+            "m304-3d1fe5b8ea"
+          ]
+        }
+      },
       "assets": [
         "m304-55a30512cf",
         "m304-599bae677d"
@@ -94,8 +136,10 @@
       "submoduleId": "M3-04.1",
       "title": "公車專用道｜現況議題與相關條文",
       "intro": "從進出端、島頭到路口轉向，維持公車專用道的清楚辨識。",
+      "defaultView": "pair",
       "assets": [
-        "m304-55a30512cf"
+        "m304-lane-issue-photo-1",
+        "m304-lane-issue-photo-2"
       ],
       "points": [
         {
@@ -256,8 +300,7 @@
       "title": "公車路側停靠站｜現況議題與相關條文",
       "intro": "讓公車靠站、離站與乘客上下車，都有清楚且足夠的空間。",
       "assets": [
-        "m304-599bae677d",
-        "m304-3d1fe5b8ea"
+        "m304-stop-issue-photo-1"
       ],
       "points": [
         {

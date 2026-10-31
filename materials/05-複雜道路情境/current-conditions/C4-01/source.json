@@ -1,0 +1,166 @@
+{
+  "scenario": "C4-01",
+  "name": "快慢分隔型",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 128,
+      "texts": [
+        "2026/10/29",
+        "128",
+        "設置圖例12-車道分隔-快慢分隔",
+        "現況分析:",
+        "道路",
+        "平面道路",
+        "支線道",
+        "土地使用情境",
+        "鐵路用地、住宅區、工業區",
+        "",
+        "控制型式",
+        "號誌化",
+        "",
+        "道路分級",
+        "主要道路",
+        "服務道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：8 m",
+        "路寬：6-7 m",
+        "",
+        "雙向車道數：2",
+        "雙向車道數：2",
+        "",
+        "方向分隔型式：標線分隔",
+        "方向分隔型式：標線分隔",
+        "",
+        "車種管制：無",
+        "車種管制：無",
+        "",
+        "路邊停車：路肩",
+        "路邊停車：路肩",
+        "",
+        "人行道：單側實體人行道、路肩",
+        "人行道：路肩"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image150.png",
+          "slide": 128,
+          "shapeId": "7",
+          "crop": {
+            "l": "10755",
+            "t": "3441",
+            "r": "4308",
+            "b": "9762"
+          },
+          "rotation": 0.0,
+          "position": [
+            1712823,
+            786000
+          ]
+        }
+      ]
+    },
+    {
+      "number": 129,
+      "texts": [
+        "2026/10/29",
+        "129",
+        "設置圖例12-車道分隔-快慢分隔",
+        "設置議題​:",
+        "行車空間與行駛導引不明確。",
+        "快車道轉向處理不佳。",
+        "路口標誌應用眾多且無統一，另未有路段中快車道右轉車匯入慢車道之設施及牌面設置，造成用路人無從得知需先匯入慢車道後才得右轉之規定。",
+        "慢車道與路邊停車空間混用，空間定位不明確。",
+        "號誌議題。",
+        "路口過大，遠端號誌明視性不足。",
+        "快慢車道須遵守號誌不可並亮規定。",
+        "行人安全。",
+        "路口寬度大，分隔島未延伸為行人庇護島",
+        "",
+        "1",
+        "",
+        "2",
+        "",
+        "3"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image150.png",
+          "slide": 129,
+          "shapeId": "4",
+          "crop": {
+            "l": "10755",
+            "t": "3441",
+            "r": "4308",
+            "b": "9762"
+          },
+          "rotation": 0.0,
+          "position": [
+            1712823,
+            786000
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c4-01-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C4-01/C4-01_現況圖_01.png",
+      "width": 1941,
+      "height": 2920,
+      "label": "C4-01 現況圖",
+      "scenario": "C4-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 128,
+      "sourcePart": "ppt/media/image150.png",
+      "sha256": "575cd3f1dfd230bbbd94938b11d91a7e17b0b6fd9415c2905eb660a868f5e201"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C4-01_user-photos.json",
+        "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c4-01-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-01/C4-01_現況照片_01.png",
+          "width": 1708,
+          "height": 1030,
+          "label": "C4-01 現況照片",
+          "scenario": "C4-01",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "34e84f6b5d6f6f22d20c32f1b9c375eadda904b1439d361ef72ce3bf0b682b3b"
+        },
+        {
+          "key": "results:c4-01-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-01/C4-01_現況照片_02.png",
+          "width": 1545,
+          "height": 974,
+          "label": "C4-01 現況照片 2",
+          "scenario": "C4-01",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "fb1a80c3c2514b2057accc53ca9b0d5c1b644d5a74ef010c0aa06bc45b3e1c06"
+        }
+      ]
+    }
+  ]
+}

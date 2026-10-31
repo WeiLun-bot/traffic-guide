@@ -1,0 +1,72 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+module.exports=async({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,editText})=>{
+  const baseline=fs.readFileSync(previewConfigPath,'utf8'),fixture=JSON.parse(baseline),strategies=require('../data/results/general-strategies.json');
+  const strategy='results-scenario-g1-02-strategy',legacyId=strategies.scenarios['G1-02'].strategy.items[0].id;
+  fixture.content.results={};fixture.legacyState.texts[strategy+'|results|'+legacyId+'-text']='先前儲存的佈設說明，新增項目後仍要保留。';
+  fs.writeFileSync(previewConfigPath,JSON.stringify(fixture));
+  const shot=async name=>{await evaluate('(async()=>{await document.fonts.ready;await Promise.all(document.getAnimations().filter(animation=>animation.effect.getTiming().iterations!==Infinity).map(animation=>animation.finished.catch(()=>{})))})()');const result=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(result.data,'base64'));};
+  const rows=()=>evaluate('[...document.querySelectorAll(".results-points>li")].map(row=>row.dataset.contentItemId)');
+  const cameras=()=>evaluate('[...document.querySelectorAll(".results-diagram")].map(svg=>({key:svg.closest("[data-editor-image-key]").dataset.editorImageKey,view:window.generalRoadViewport.get(svg).read()}))');
+  const results={};
+  await navigate(base+'/presentation-demo/#results-scenario-g1-01');
+  assert.equal(await evaluate('document.querySelectorAll("[data-content-action]").length'),0);
+  await click('.edit-toggle');
+  for(const page of ['results-scenario-g1-01',strategy,'results-scenario-c1-02','results-scenario-c2-02']){
+    await view(page);assert.equal(await evaluate('window.PresentationContent.current.type'),'results');
+    const original=await rows(),originalTitle=await evaluate('document.querySelector(".results-points h3").textContent');
+    if(page===strategy)assert.equal(await evaluate('document.querySelector(".results-points p").textContent'),fixture.legacyState.texts[strategy+'|results|'+legacyId+'-text']);
+    if(page==='results-scenario-c1-02')await click('[data-results-image-step="1"][data-results-image-role="photo"]');
+    await evaluate('(()=>{const svg=document.querySelector(".results-diagram"),controller=window.generalRoadViewport.get(svg),view=controller.read();controller.write([view[0]+10,view[1]-20,view[2]/1.3,view[3]/1.3],false);})()');const before=await cameras();
+    await click('.results-case-copy [data-content-action="add-point"]');assert.deepEqual(await cameras(),before,'Adding an item must preserve current image choices and panning');
+    const added=await evaluate('window.PresentationContent.current.model.points.at(-1)'),selector='.results-points>li[data-content-item-id="'+added.id+'"]';
+    await editText(selector+' h3','新增的情境說明 '+page);await editText(selector+' p','新增、排序與儲存後保留這段說明。');
+    await click(selector+' [data-content-action="up"]');assert.equal((await rows())[original.length-1],added.id);assert.deepEqual(await cameras(),before);
+    await click(selector+' [data-content-action="down"]');assert.equal((await rows()).at(-1),added.id);
+    const first='.results-points>li[data-content-item-id="'+original[0]+'"]';
+    await click(first+' [data-content-action="remove"]');assert.equal((await rows()).length,original.length);assert(!(await rows()).includes(original[0]));
+    await click('[data-vl-action="undo"]');assert.equal((await rows()).length,original.length+1);assert.equal(await evaluate('document.querySelector('+JSON.stringify(first+' h3')+').textContent'),originalTitle);
+    await click('[data-vl-action="redo"]');assert(!(await rows()).includes(original[0]));await click('[data-vl-action="undo"]');
+    await click(selector+' [data-content-action="remove"]');assert.equal((await rows()).length,original.length);await click('[data-vl-action="undo"]');
+    assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector+' p')+').textContent'),'新增、排序與儲存後保留這段說明。');
+    assert(await evaluate('[...document.querySelectorAll(".results-points>li")].every((row,index)=>row.querySelector(":scope>span").textContent===String(index+1).padStart(2,"0"))'));
+    assert.equal(await evaluate('document.querySelector(".results-points>li:first-child [data-content-action=up]").disabled'),true);
+    assert.equal(await evaluate('document.querySelector(".results-points>li:last-child [data-content-action=down]").disabled'),true);
+    results[page]={ids:await rows(),added};
+    if(page===strategy)await shot('results-description-editing');
+  }
+  await click('.edit-toggle');assert.equal(await evaluate('document.querySelectorAll("[data-content-action],[contenteditable]").length'),0);
+  await view('results-scenario-c4-04');assert(!await evaluate('document.querySelector(".results-points").textContent.includes("新增的情境說明")'),'Editing reused C2-02 notes must leave C4-04 independent');
+  await click('.edit-toggle');
+  while((await rows()).length)await click('.results-points>li:first-child [data-content-action="remove"]');
+  await click('.edit-toggle');assert.equal((await rows()).length,0);assert.equal(await evaluate('document.querySelectorAll(".results-diagram").length'),2);
+  await view(strategy);await click('.edit-toggle');
+  for(let index=0;index<6;index++)await click('.results-case-copy [data-content-action="add-point"]');
+  results[strategy].ids=await rows();await click('.edit-toggle');
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false});await view(strategy);
+  assert(await evaluate('(()=>{const main=document.querySelector("main"),list=document.querySelector(".results-points");return main.scrollHeight<=main.clientHeight+2&&list.scrollHeight>list.clientHeight+5})()'),'Long explanations must scroll inside their panel and keep the slide within one screen');await shot('results-description-overflow-preview');
+  pass('general issue/strategy and complex issue lists add, edit, reorder, remove and undo/redo with automatic numbers, isolated cases, preserved pictures/cameras and bounded preview height');
+  await evaluate(`(async()=>{
+    const directory=await navigator.storage.getDirectory(),handle=await directory.getFileHandle('results-description-test.json',{create:true});window.__resultsSaveHandle=handle;
+    window.visualLayoutEditor.files.disconnect();window.showOpenFilePicker=async()=>[];window.showSaveFilePicker=async()=>({name:handle.name,queryPermission:async()=> 'granted',getFile:()=>handle.getFile(),createWritable:()=>handle.createWritable()});
+  })()`);
+  await click('.edit-toggle');await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy&&!window.visualLayoutEditor.store.dirty');
+  const saved=await evaluate('(async()=>await(await window.__resultsSaveHandle.getFile()).text())()');
+  const config=require('../assets/visual-editor-core.js').parse(saved);assert.equal(config.content.results['results-scenario-c4-04'].points.length,0);
+  fs.writeFileSync(previewConfigPath,saved);await navigate(base+'/presentation-demo/#'+strategy);
+  for(const [page,result]of Object.entries(results)){
+    await view(page);assert.deepEqual(await rows(),result.ids);const selector='.results-points>li[data-content-item-id="'+result.added.id+'"]';
+    assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector+' h3')+').textContent'),'新增的情境說明 '+page);assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector+' p')+').textContent'),'新增、排序與儲存後保留這段說明。');
+    assert.equal(await evaluate('document.querySelectorAll("[data-content-action],[contenteditable]").length'),0);
+  }
+  await view('results-scenario-c4-04');assert.equal((await rows()).length,0);await click('.edit-toggle');assert.equal(await evaluate('document.querySelectorAll("[data-content-action=add-point]").length'),1);await click('.edit-toggle');
+  await view(strategy);assert.equal(await evaluate('document.querySelector(".results-points p").textContent'),fixture.legacyState.texts[strategy+'|results|'+legacyId+'-text']);
+  pass('the existing Save action writes valid JSON through a native writable stream; full reload restores titles, text, order, legacy edits and intentionally empty lists without preview controls');
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});await view('results-scenario-c2-02');await click('.edit-toggle');
+  assert(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'));await shot('results-description-mobile');await click('.edit-toggle');
+  await view('m201-stop-layout');await click('.edit-toggle');assert(await evaluate('Boolean(document.querySelector(".module-explain-points [data-content-action=remove]"))'));await click('.edit-toggle');
+  await view('g101-conditions');await click('.edit-toggle');assert(await evaluate('Boolean(document.querySelector("[data-content-action=add-issue]"))'));await click('.edit-toggle');
+  await view('speed',1);await click('.edit-toggle');assert(await evaluate('Boolean(document.querySelector(".explain-points [data-content-action=remove]"))'));await click('.edit-toggle');
+  pass('mobile editing has no horizontal overflow, and existing module, scenario-condition and article editors still expose their original controls');
+  fs.writeFileSync(previewConfigPath,baseline);
+};

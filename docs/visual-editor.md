@@ -1,5 +1,7 @@
 # 互動簡報視覺編輯器
 
+第一場「三年成果與模組化整體架構」的大綱、來源與 G1-01 試作使用方式，請見 [第一場簡報說明](results-presentation.md)。
+
 ## 架構與實作階段
 
 整份教材最上層是四場簡報，載入時先顯示「四場簡報總覽」。頂部平常只顯示目前簡報名稱，例如「02 交通管制設施模組設計 ▾」，旁邊保留 00–04 章節，整合成同一列導覽。四場簡報收在名稱選單內；原有目錄仍可按簡報分組展開。前後頁、Home／End、頁碼及進度各自以當場簡報為範圍；第一頁按上一頁回總覽，最後一頁按下一頁回本場開頭。點左上品牌或名稱選單中的「四場簡報總覽」也可回總覽。
@@ -36,10 +38,13 @@
 - 每組現況問題下方的「＋新增說明項目」增加圓點條列。
 - 條文放大解說頁的「＋新增說明項目」增加同款編號條列，編號自動接續。
 - 每筆項目旁的 ↑、↓、刪除用來排序或移除；上方「復原」「重做」可還原操作。新增內容向下排列並沿用原本的捲動區域，左圖保持原設定。
+- 第一場簡報的一般、複雜情境「現況議題」及一般情境「佈設成果」，也可在右欄新增、刪除與用 ↑、↓ 排序。每項包含可編輯的標題、內文，編號自動接續；可刪除全部項目，之後再新增。操作時保留目前照片與圖面視角，預覽時僅說明清單在需要時捲動。
 - 「整體佈設策略」右欄可直接編輯策略名稱，清單下方的「＋新增佈設策略」可增加列點。每列同樣可排序、刪除、復原，編號會自動接續。
 - 一般編輯時顯示共用儲存與復原工具。「設定檔」選單提供連結、重新授權、重新載入、匯出與匯入；進階版面內另保留頁面管理及舊補充區塊管理。
 
 結構化內容存在根層 `content.conditions[pageId].issues`、`content.articles[articleId].points` 與 `content.overviews[pageId].items`。每個問題、條列及策略有固定 ID、文字鍵；排序不改 ID，照片以固定圖片鍵保存於既有 `legacyState.images`。第一次編輯時從原頁面讀取已套用的舊文字設定，後續以結構化內容為準，並同步舊文字鍵供既有樣式辨識。舊 JSON 沒有 `content` 或 `overviews` 時仍正常載入，不會自動清空或覆寫既有版面、圖面視角與打亮。文字樣式變更會清除同一物件相應的舊視覺字型覆寫，避免兩套設定互相遮蓋。
+
+第一場情境的議題與佈設說明存在 `content.results[pageId].points`，以完整頁面 ID 區分情境與現況／成果階段，包含固定 ID、標題、內文、原文字鍵及既有模組對應。舊 JSON 沒有 `results` 時沿用原說明與舊文字設定；清單明確設為空陣列時保持刪除狀態。修改、排序、刪除均進入共用復原／重做及儲存流程，不改寫來源素材 JSON 或其他情境。
 
 ### 策略與關聯條文
 
@@ -64,6 +69,10 @@
 新增的四個模組依提供的 Typst 章節整理，共 16 個主頁、25 張原圖。每個子模組依序為「現況議題與相關條文 → 圖例說明 → 延伸應用」。現況議題頁保留條文索引與適用情境連結，點進情境後可回到原模組；單一子分類不另增一列切換按鈕。M1-02 與 M1-03 的延伸應用收錄章節中的補充圖例及實例。
 
 M1-01.1 的現況議題頁另使用提供的兩張空拍照片，桌面預設左右並排，兩張圖可各自縮放、拖曳及開啟原圖。並排時各自顯示照片標題，省略選圖選單、切換箭頭及張數；按「單圖顯示」切回單張時，才顯示圖片選單與左右切換功能。窄螢幕則將兩張圖上下排列。此頁以 `defaultView: "pair"` 設定預設顯示方式。總覽與圖例說明繼續使用原配置圖；照片使用獨立素材 ID，初始視角不會套用舊配置圖的位置。
+
+M2-04.1 的現況議題頁使用兩張附有紅圈及文字標註的照片，以 `imageFit: "contain"` 在等高圖框中完整呈現，避免裁掉標註；仍可縮放、拖曳及另存初始畫面。補充照片列於 `source.userImageFiles`，與 Typst 原用圖清單 `source.imageFiles` 分別記錄。總覽的 `overviewGroups` 保留原代表型。
+
+M2-04.2 新增第三張現況照片後，預設保留前兩張並排。超過兩張照片的並排頁面會在左圖保留選圖與左右箭頭，右圖隨之顯示下一張；只有兩張照片時繼續省略切換控制。編輯模式可排列全部照片，第一張為重新載入後的起始照片。
 
 M1-01.2「附加車道」的現況議題頁使用提供的路口空拍照片，原檔存於 `materials/03-modules/M1-01/M1-01.2_現況議題_附加車道.png`。照片可縮放、拖曳及開啟原圖，總覽與附加車道圖例說明保留原設置圖。
 
@@ -140,6 +149,14 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 
 點右上角「編輯內容」，再開啟「設定檔 → 連結設定檔」，選擇本機 Git 專案的 `layout/presentation-layout.json`。之後「儲存」或 Ctrl/Cmd+S 會寫回同一個檔案，不會每次下載。瀏覽器可能在重新開啟後要求再次授權；檔案控制代碼保存在該瀏覽器的 IndexedDB，不會放進公開設定。File System Access API 需要安全來源（localhost 或 HTTPS）和使用者操作。
 
+### 排列照片與多張代表型
+
+按「編輯內容」，多張照片的圖框旁會出現「排列照片」；模組的多張代表型則顯示「排列圖片」。開啟後拖曳縮圖左側的把手，或按 ↑／↓ 調整。也可聚焦把手，使用 Alt＋↑／↓。第一張標示「預設顯示」，儲存後重新開啟頁面會先顯示這張；下拉選單與前後切換也依新順序排列。拖曳中按 Esc 或放到清單外可取消。
+
+排序時保留目前正在看的照片，各照片原有的縮放、位置、旋轉與更換圖片設定依固定素材 ID 保存。每個情境、模組子分類及圖例主題分別排序，彼此不影響；並排的照片保留目前畫面，重新開啟後才以新順序排列。支援共用工具列的「復原／重做」，完成後按上方「儲存」或 Ctrl＋S，寫入已連結的正式 JSON；也支援 JSON 匯出／匯入。預覽模式不顯示排序工具。
+
+根層 `imageOrders` 保存各圖框的固定素材 ID 陣列。鍵為 `results:頁面ID/photo`、`results:頁面ID/diagram`，或 `module:頁面ID/main`、`module:頁面ID/overview:子模組ID`、`module:頁面ID/topic:主題ID`。舊設定未包含此欄位時沿用素材原順序；新圖片接在已排序圖片後，失效的素材 ID 會略過。共用介面與排序邏輯位於 `assets/presentation-image-order.js`、`.css`。
+
 ### 現況圖的初始畫面
 
 情境開場頁、「現況問題」及模組圖面都有「設定初始畫面」按鈕。開啟後可調整初始縮放百分比、左右位置、上下位置與旋轉角度；位置正值分別向右、向下移動，角度正值順時針旋轉。可直接輸入 -360°～360°，或使用「左轉 90°／右轉 90°」。旋轉後仍可在圖上使用滾輪及拖曳，再按「套用目前畫面」。
@@ -176,10 +193,12 @@ API 依據：[Chrome File System Access](https://developer.chrome.com/docs/capab
 node tools/prepare-github-pages.cjs
 node --test tests/visual-editor.test.cjs tests/presentation-modules.test.cjs tests/presentation-structure.test.cjs tests/presentation-scenarios.test.cjs
 node --test tests/presentation-order.test.cjs
+node --test tests/image-order.test.cjs
 node --test tests/extension-layout.test.cjs
 node --test tests/module-extension-removal.test.cjs
 node tests/verify-github-pages.cjs --artifacts-only
 node tests/visual-editor-browser.cjs --navigation-order-only
+node tests/visual-editor-browser.cjs --image-order-only
 node tests/visual-editor-browser.cjs --extension-layout-only
 node tests/visual-editor-browser.cjs --extension-removal-only
 node tests/visual-editor-browser.cjs

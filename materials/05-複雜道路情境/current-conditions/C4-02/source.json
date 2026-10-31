@@ -1,0 +1,142 @@
+{
+  "scenario": "C4-02",
+  "name": "調撥車道",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 134,
+      "texts": [
+        "2026/10/29",
+        "134",
+        "設置圖例14-調撥車道",
+        "現況分析:",
+        "道路",
+        "路段1",
+        "土地使用情境",
+        "商業區、住宅區",
+        "控制型式",
+        "號誌化",
+        "道路分級",
+        "主要道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：33 m",
+        "",
+        "雙向車道數：7",
+        "",
+        "方向分隔型式：標線分隔",
+        "實體快慢分隔",
+        "",
+        "車種管制：快車道禁行機車",
+        "",
+        "路邊停車：汽機車停車彎",
+        "",
+        "人行道：實體人行道"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image154.png",
+          "slide": 134,
+          "shapeId": "7",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1715229,
+            268506
+          ]
+        }
+      ]
+    },
+    {
+      "number": 135,
+      "texts": [
+        "2026/10/29",
+        "135",
+        "設置圖例14-調撥車道",
+        "設置議題​:",
+        "調撥車道設計",
+        "調撥車道起始點應為路段。",
+        "現況道路於調撥期間與非調撥期間之切換，對不熟悉該路段調撥方式的用路人而言，易因誤入非調撥車道而造成逆向行駛之風險。",
+        "現況調撥車道於《設置規則》內少有相關專門牌面，而多以告示牌形式處理，可能造成不熟稔路況之用路人誤入或未能善用調撥車道。",
+        "號誌議題。",
+        "車道管制號誌與行車管制號誌應有適當距離。",
+        "調撥車道應以一燈面管制一車道，使駕駛人在接近時之適當距離內能同時看到同方向各車道之所有管制燈面。",
+        "調撥車道於轉換期間之燈號顯示與變換應有適當顯示並足以清除管制車道內之車輛。",
+        "",
+        "1",
+        "",
+        "2"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image154.png",
+          "slide": 135,
+          "shapeId": "4",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1715229,
+            268506
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c4-02-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C4-02/C4-02_現況圖_01.png",
+      "width": 1740,
+      "height": 2164,
+      "label": "C4-02 現況圖",
+      "scenario": "C4-02",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 134,
+      "sourcePart": "ppt/media/image154.png",
+      "sha256": "2ed7346c8ca6f35530925e0971ceea5b69c857f3ea03138f5d40ca07c21968ff"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C4-02_user-photos.json",
+        "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c4-02-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-02/C4-02_現況照片_01.png",
+          "width": 1543,
+          "height": 1139,
+          "label": "C4-02 現況照片",
+          "scenario": "C4-02",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "6945a7659365a5f6549e2e02d46f9a400241cb4f56840ac8d5ab0fd30f8fc642"
+        },
+        {
+          "key": "results:c4-02-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-02/C4-02_現況照片_02.png",
+          "width": 1401,
+          "height": 822,
+          "label": "C4-02 現況照片 2",
+          "scenario": "C4-02",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "964ea5f8e8babb000eb59c6a5a3aa0b613e2236cb1ca850cc50b54efa674b4d1"
+        }
+      ]
+    }
+  ]
+}

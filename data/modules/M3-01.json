@@ -25,12 +25,59 @@
       "materials/03-modules/M3-01/M3-01_行人路段穿越代表型1.svg",
       "materials/03-modules/M3-01/M3-01_行人穿越道號誌.png"
     ],
+    "userImageFiles": [
+      "materials/03-modules/M3-01/M3-01.1_現況議題_01.png",
+      "materials/03-modules/M3-01/M3-01.2_現況議題_01.png",
+      "materials/03-modules/M3-01/M3-01.2_現況議題_02.png",
+      "materials/03-modules/M3-01/M3-01.3_現況議題_01.png",
+      "materials/03-modules/M3-01/M3-01.3_現況議題_02.png"
+    ],
     "notes": [
       "行人穿越道長度達 15 m 以上宜設庇護島，達 25 m 以上應設置；設計細節參照市區道路及附屬工程設計規範。",
       "無號誌路口可一併參照停讓管制及無號誌圓環模組。"
     ]
   },
   "assets": {
+    "m301-midblock-issue-photo-1": {
+      "file": "materials/03-modules/M3-01/M3-01.3_現況議題_01.png",
+      "width": 1170,
+      "height": 722,
+      "label": "現況照片 1：市區路段穿越",
+      "caption": "M3-01.3 路段穿越現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m301-midblock-issue-photo-2": {
+      "file": "materials/03-modules/M3-01/M3-01.3_現況議題_02.png",
+      "width": 1469,
+      "height": 751,
+      "label": "現況照片 2：路段穿越警示",
+      "caption": "M3-01.3 路段穿越現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m301-crossing-issue-photo-1": {
+      "file": "materials/03-modules/M3-01/M3-01.2_現況議題_01.png",
+      "width": 624,
+      "height": 536,
+      "label": "現況照片 1：路口穿越動線",
+      "caption": "M3-01.2 路口穿越現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m301-crossing-issue-photo-2": {
+      "file": "materials/03-modules/M3-01/M3-01.2_現況議題_02.png",
+      "width": 1336,
+      "height": 875,
+      "label": "現況照片 2：行人號誌配置",
+      "caption": "M3-01.2 路口穿越現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m301-sidewalk-issue-photo-1": {
+      "file": "materials/03-modules/M3-01/M3-01.1_現況議題_01.png",
+      "width": 1359,
+      "height": 575,
+      "label": "人行道標線現況照片",
+      "caption": "M3-01.1 人行道標線現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m301-1ce77bf207": {
       "file": "materials/03-modules/M3-01/M3-01_人行道標線代表型1.svg",
       "width": 207,
@@ -174,6 +221,25 @@
       "section": "overview",
       "title": "M3-01 行人",
       "intro": "從連續步行空間，到路口與路段穿越，整合標線、庇護與號誌。",
+      "overviewGroups": {
+        "M3-01.1": {
+          "assets": [
+            "m301-1ce77bf207",
+            "m301-7f710fdd90"
+          ]
+        },
+        "M3-01.2": {
+          "assets": [
+            "m301-d5772b64b2",
+            "m301-4b73804d52"
+          ]
+        },
+        "M3-01.3": {
+          "assets": [
+            "m301-c80421bad4"
+          ]
+        }
+      },
       "assets": [
         "m301-d5772b64b2",
         "m301-c80421bad4"
@@ -208,8 +274,7 @@
       "title": "人行道標線｜現況議題與相關條文",
       "intro": "讓人行空間跨越路段與轉角，形成連續的步行路徑。",
       "assets": [
-        "m301-1ce77bf207",
-        "m301-7f710fdd90"
+        "m301-sidewalk-issue-photo-1"
       ],
       "points": [
         {
@@ -296,9 +361,10 @@
       "submoduleId": "M3-01.2",
       "title": "路口穿越｜現況議題與相關條文",
       "intro": "把穿越路徑、停等空間與行人號誌一起檢查。",
+      "defaultView": "pair",
       "assets": [
-        "m301-d5772b64b2",
-        "m301-4b73804d52"
+        "m301-crossing-issue-photo-1",
+        "m301-crossing-issue-photo-2"
       ],
       "points": [
         {
@@ -568,8 +634,10 @@
       "submoduleId": "M3-01.3",
       "title": "路段穿越｜現況議題與相關條文",
       "intro": "在路段中提供清楚的穿越提示與分段停等空間。",
+      "defaultView": "pair",
       "assets": [
-        "m301-c80421bad4"
+        "m301-midblock-issue-photo-1",
+        "m301-midblock-issue-photo-2"
       ],
       "points": [
         {

@@ -25,6 +25,9 @@ test('original data and unaffected presentation blocks remain unchanged', () => 
     const id = match[2].match(/id="([^"]+)"/)?.[1] || 'anonymous';
     // Startup visibility is new and exercised with delayed loads in the browser.
     if (['presentation-startup-styles','presentation-startup-script'].includes(id)) continue;
+    // Shared panning and equal-height pairing were intentionally extended after
+    // this fixture; viewport and scenario-content browser regressions cover them.
+    if (['paired-image-layout-styles','general-image-viewport'].includes(id)) continue;
     // These blocks intentionally change comparison placement, article headings,
     // and the shared content/visual editing controls.
     if (match[1] === 'script' && ['general-editor', 'general-formatting', 'general-current-conditions', 'general-scenario-structure', 'anonymous'].includes(id)) continue;
@@ -163,7 +166,7 @@ test('rotated cameras fit the original bounds and capture the same zoom/position
 
 test('structured content is backward compatible and preserves identities through ordering, deletion, history and JSON',()=>{
   const legacy=original();delete legacy.content;
-  const store=new Core.Store(legacy);assert.deepEqual(store.config.content,{conditions:{},articles:{},overviews:{},modules:{}});
+  const store=new Core.Store(legacy);assert.deepEqual(store.config.content,{conditions:{},articles:{},overviews:{},modules:{},results:{}});
   const next=store.snapshot();
   const point=id=>({id,text:'說明 '+id,textKey:'context|content|'+id});
   next.content.conditions['g101-conditions']={issues:[{id:'issue-a',title:'現況問題',titleKey:'context|title',imageKey:'content:issue-a',photo:false,points:[point('a'),point('b')]}]};

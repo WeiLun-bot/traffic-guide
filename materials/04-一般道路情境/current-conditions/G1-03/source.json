@@ -1,0 +1,135 @@
+{
+  "scenario": "G1-03",
+  "name": "無號誌市區匯入型巷道路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 44,
+      "texts": [
+        "三.設置圖例成果說明：情境三",
+        "3. 無號誌市區匯入型巷道路口：現況分析",
+        "44",
+        "現況交通設施",
+        "主要道路路寬約24公尺，實體分隔，道路北側設置停車格及人行道，道路南側比鄰河道防汛牆，路段速限為50公里/小時。",
+        "次要道路路寬約8公尺，雙向無分隔，路側設有機車停車格，行人利用住宅退縮區域通行，路段速限為30公里/小時。",
+        "現況議題",
+        "主、次道路管制明示性不足：主要道路無設置警示設施，用以提醒用路人注意次要道路來車",
+        "速度限制不明確：主要道路無標字、標誌表示速限，次要道路僅標字表示速限、無設置標誌",
+        "路口無右轉空間配置"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image32.png",
+          "slide": 44,
+          "shapeId": "7",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            2107569,
+            6409150
+          ]
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "texts": [
+        "現況照片",
+        "45"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image34.png",
+          "slide": 45,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            851170,
+            6407319
+          ]
+        },
+        {
+          "part": "ppt/media/image35.png",
+          "slide": 45,
+          "shapeId": "9",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1506074,
+            106748
+          ]
+        },
+        {
+          "part": "ppt/media/image33.png",
+          "slide": 45,
+          "shapeId": "8",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3555979,
+            6565692
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:g1-03-diagram-1",
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況圖_01.png",
+      "width": 3463,
+      "height": 2225,
+      "label": "G1-03 現況圖",
+      "scenario": "G1-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 44,
+      "sourcePart": "ppt/media/image32.png",
+      "sha256": "5462184bdc4e2381fc271d481c9e2f1cc1121a19d27b35f60abbb4965db73f2d"
+    },
+    {
+      "key": "results:g1-03-photo-1",
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況照片_01.png",
+      "width": 2581,
+      "height": 1417,
+      "label": "G1-03 現況照片",
+      "scenario": "G1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 45,
+      "sourcePart": "ppt/media/image34.png",
+      "sha256": "71ad7d93002fa0924598e216fb0ed0ed74f77b0b617359f2c1dc175ce6e31385"
+    },
+    {
+      "key": "results:g1-03-photo-2",
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況照片_02.png",
+      "width": 1904,
+      "height": 1158,
+      "label": "G1-03 現況照片 2",
+      "scenario": "G1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 45,
+      "sourcePart": "ppt/media/image35.png",
+      "sha256": "82975350e876eee37b6fd58ca11259d82e14d4e36781e6cad6102052197a225b"
+    },
+    {
+      "key": "results:g1-03-photo-3",
+      "file": "materials/04-一般道路情境/current-conditions/G1-03/G1-03_現況照片_03.png",
+      "width": 2568,
+      "height": 1406,
+      "label": "G1-03 現況照片 3",
+      "scenario": "G1-03",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 45,
+      "sourcePart": "ppt/media/image33.png",
+      "sha256": "6cdbd6fe67c37902a7723dd1b3c0a1895197db34e4dafea9d7ac34e8ef0659d9"
+    }
+  ],
+  "ignoredSymbols": []
+}

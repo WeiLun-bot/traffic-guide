@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "scenario": "C1-07",
+  "sourceType": "user-attachments",
+  "receivedDate": "2026-10-31",
+  "note": "使用者更正情境為 C1-07；兩張原圖依提供順序完整保存。",
+  "files": [
+    {
+      "key": "results:c1-07-photo-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況照片_01.png",
+      "width": 933,
+      "height": 467,
+      "label": "C1-07 現況照片",
+      "scenario": "C1-07",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "5cf0b94587cc07cd92cd94a274da01dd8da082b85c001b4c2620a4173d075830"
+    },
+    {
+      "key": "results:c1-07-photo-2",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-07/C1-07_現況照片_02.png",
+      "width": 933,
+      "height": 467,
+      "label": "C1-07 現況照片 2",
+      "scenario": "C1-07",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "07613cc6ad55596cd4e7f0ad7f2684bf89a1ffddd459ee3897456048b98ae10f"
+    }
+  ],
+  "correctedFrom": "C1-06",
+  "correctionDate": "2026-10-31"
+}

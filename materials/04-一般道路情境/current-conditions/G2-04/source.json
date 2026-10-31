@@ -1,0 +1,161 @@
+{
+  "scenario": "G2-04",
+  "name": "號誌化鄉區斜交三岔路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 77,
+      "texts": [
+        "三.設置圖例成果說明：情境十四",
+        "14. 號誌化鄉區斜交三叉路口：現況分析",
+        "77",
+        "現況交通設施",
+        "主要道路路寬約10公尺，標線分隔，道路兩側無人行設施，停車無管制，路段速限為40公里/小時。",
+        "次要道路路寬約10公尺，標線分隔，道路兩側無人行設施，停車無管制，路段速限為30公里/小時。",
+        "現況議題",
+        "速度限制不明確：",
+        "     僅於路面繪設速限標字，無設置速限標誌",
+        "號誌不易辨識路側緊鄰民房，號誌設置位置不恰當，不易辨識",
+        " 路口位於鄉區，但有行人穿越需求，但路口無設置行人停等空間"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image93.png",
+          "slide": 77,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1786059,
+            6560377
+          ]
+        }
+      ]
+    },
+    {
+      "number": 78,
+      "texts": [
+        "",
+        "78",
+        "現況照片"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image96.png",
+          "slide": 78,
+          "shapeId": "10",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            66315,
+            6452481
+          ]
+        },
+        {
+          "part": "ppt/media/image94.png",
+          "slide": 78,
+          "shapeId": "6",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            224509,
+            388769
+          ]
+        },
+        {
+          "part": "ppt/media/image97.png",
+          "slide": 78,
+          "shapeId": "5",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            2704415,
+            6597455
+          ]
+        },
+        {
+          "part": "ppt/media/image95.png",
+          "slide": 78,
+          "shapeId": "8",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            3299272,
+            497960
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:g2-04-diagram-1",
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況圖_01.png",
+      "width": 4116,
+      "height": 3208,
+      "label": "G2-04 現況圖",
+      "scenario": "G2-04",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 77,
+      "sourcePart": "ppt/media/image93.png",
+      "sha256": "a5857c071a95f5c4ebd2df97ee9f8e813ef7c9365c8d9a250a8100f1f611bb83"
+    },
+    {
+      "key": "results:g2-04-photo-1",
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_01.png",
+      "width": 2505,
+      "height": 1409,
+      "label": "G2-04 現況照片",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image96.png",
+      "sha256": "07eeb7f74f97437283d8eebd4811149f3eee6c4e4b5284ffa5b4cbc4b8ed312f"
+    },
+    {
+      "key": "results:g2-04-photo-2",
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_02.png",
+      "width": 2518,
+      "height": 1411,
+      "label": "G2-04 現況照片 2",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image94.png",
+      "sha256": "238e64449217833798cae0d4a93b1d289764382ff52edc7db6d30844417913b3"
+    },
+    {
+      "key": "results:g2-04-photo-3",
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_03.png",
+      "width": 1650,
+      "height": 1344,
+      "label": "G2-04 現況照片 3",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image97.png",
+      "sha256": "0c479b1aae45415c777a1cde8da2d2a36ff43b162857515c2e43bc647bddbe2a"
+    },
+    {
+      "key": "results:g2-04-photo-4",
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_04.png",
+      "width": 2490,
+      "height": 1334,
+      "label": "G2-04 現況照片 4",
+      "scenario": "G2-04",
+      "role": "photo",
+      "rotation": 0,
+      "sourceSlide": 78,
+      "sourcePart": "ppt/media/image95.png",
+      "sha256": "09069cf835aaafedd9673fb89ad6725a7e3361672e515bb6f7e1beabdd9da3d1"
+    }
+  ],
+  "ignoredSymbols": []
+}

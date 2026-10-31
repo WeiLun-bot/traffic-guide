@@ -2,7 +2,7 @@
   'use strict';
   const Core = window.VisualLayoutCore;
   const records = new WeakMap(), active = new Map(), opened = new Set();
-  const selector = '.context-map-canvas svg.context-map,.conditions-current-canvas svg.conditions-current-diagram,.module-map-canvas svg.module-diagram';
+  const selector = '.context-map-canvas svg.context-map,.conditions-current-canvas svg.conditions-current-diagram,.module-map-canvas svg.module-diagram,.results-map-canvas svg.results-diagram';
   const number = value => String(Math.round(value * 1000) / 1000);
   function place(record) {
     if (record.panel.hidden) return;

@@ -1,0 +1,644 @@
+{
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "scenarios": [
+    {
+      "id": "C1-01",
+      "name": "號誌化左／右錯位 T 字路口",
+      "slides": [
+        93,
+        94
+      ],
+      "sourceMissing": false,
+      "folder": "C1-01",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+          "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+          "slideCount": 71
+        },
+        "slides": [
+          18
+        ],
+        "contextSlides": [
+          17
+        ]
+      }
+    },
+    {
+      "id": "C1-02",
+      "name": "號誌化右／左錯位 T 字路口",
+      "slides": [
+        96,
+        97
+      ],
+      "sourceMissing": false,
+      "folder": "C1-02",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C1-02_user-photos.json",
+          "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-02-photo-1",
+          "results:c1-02-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C1-03",
+      "name": "號誌化短街廓",
+      "slides": [
+        99,
+        100
+      ],
+      "sourceMissing": false,
+      "folder": "C1-03",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "C1-03_user-photos.json",
+          "sha256": "34fe927e731bd9e992832c2a6cbe58523eef4e35a943c8936d9c9970425864d7",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-03-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C1-04",
+      "name": "主要道路多叉路口",
+      "slides": [
+        102,
+        104
+      ],
+      "sourceMissing": false,
+      "folder": "C1-04",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "C1-04_user-photos.json",
+          "sha256": "59dbb7e7444c06e90fbe0489631b63fe68274116cb8d7d54f0424df8941125d3",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-04-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C1-05",
+      "name": "主要道路與街巷道多叉路口",
+      "slides": [
+        106,
+        108
+      ],
+      "sourceMissing": false,
+      "folder": "C1-05",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C1-05_user-photos.json",
+          "sha256": "bbb9b24f49f8416252d8271390bb5aee48ff550e07a4aa20c19ef1234ebe8a11",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-05-photo-1",
+          "results:c1-05-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C1-06",
+      "name": "街巷道多叉路口",
+      "slides": [
+        110,
+        111
+      ],
+      "sourceMissing": false,
+      "folder": "C1-06",
+      "images": 4,
+      "photoSource": {
+        "source": {
+          "file": "C1-06_user-photos.json",
+          "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-06-photo-1",
+          "results:c1-06-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C1-07",
+      "name": "迷你圓環",
+      "slides": [
+        113,
+        114
+      ],
+      "sourceMissing": false,
+      "folder": "C1-07",
+      "images": 4,
+      "photoSource": {
+        "source": {
+          "file": "C1-07_user-photos.json",
+          "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-07-photo-1",
+          "results:c1-07-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C1-08",
+      "name": "渦輪圓環",
+      "slides": [
+        116,
+        117
+      ],
+      "sourceMissing": false,
+      "folder": "C1-08",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C1-08_user-photos.json",
+          "sha256": "fc9562897d3c3f2188e787fe79c3d46f366383a2143be09e850b0c35f6131b4e",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-08-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C1-09",
+      "name": "號誌化圓環",
+      "slides": [
+        119,
+        120
+      ],
+      "sourceMissing": false,
+      "folder": "C1-09",
+      "images": 4,
+      "photoSource": {
+        "source": {
+          "file": "C1-09_user-photos.json",
+          "sha256": "a086e875de4a7e59d25bbb3fd47501ee279b01559e2b8cd9a4f27bfccf727808",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c1-09-photo-1",
+          "results:c1-09-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C2-01",
+      "name": "部分苜蓿葉型交流道",
+      "slides": [
+        122,
+        123
+      ],
+      "sourceMissing": false,
+      "folder": "C2-01",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "C2-01_user-photos.json",
+          "sha256": "7a3142b8daa3147ea4aa955fe003edbcb5f01d14d3966ffa60da2e202ee97001",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c2-01-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C3-01",
+      "name": "鐵路平交道",
+      "slides": [
+        125,
+        126
+      ],
+      "sourceMissing": false,
+      "folder": "C3-01",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C3-01_user-photos.json",
+          "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c3-01-photo-1",
+          "results:c3-01-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C4-01",
+      "name": "快慢分隔型",
+      "slides": [
+        128,
+        129
+      ],
+      "sourceMissing": false,
+      "folder": "C4-01",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C4-01_user-photos.json",
+          "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-01-photo-1",
+          "results:c4-01-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C4-02",
+      "name": "調撥車道",
+      "slides": [
+        134,
+        135
+      ],
+      "sourceMissing": false,
+      "folder": "C4-02",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C4-02_user-photos.json",
+          "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-02-photo-1",
+          "results:c4-02-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C4-03",
+      "name": "單行道",
+      "slides": [
+        137,
+        138
+      ],
+      "sourceMissing": false,
+      "folder": "C4-03",
+      "images": 3,
+      "photoSource": {
+        "source": {
+          "file": "C4-03_user-photos.json",
+          "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-03-photo-1",
+          "results:c4-03-photo-2"
+        ]
+      }
+    },
+    {
+      "id": "C4-04",
+      "name": "路段中央分隔迴轉道",
+      "slides": [
+        140,
+        141
+      ],
+      "sourceMissing": false,
+      "folder": "C4-04",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "C4-04_user-photos.json",
+          "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-04-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C4-05",
+      "name": "斑馬紋行人穿越道",
+      "slides": [
+        143,
+        144
+      ],
+      "sourceMissing": false,
+      "folder": "C4-05",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "C4-05_user-photos.json",
+          "sha256": "5bacc9e49a58b8530908d2322d645aae89ee7db127ec927300cf46ce9ced8a66",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-05-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C4-06",
+      "name": "山區彎道",
+      "slides": [
+        146,
+        147
+      ],
+      "sourceMissing": false,
+      "folder": "C4-06",
+      "images": 2,
+      "photoSource": {
+        "source": {
+          "file": "C4-06_user-photos.json",
+          "sha256": "4c8bc6515c7ed59ce6ffd9de1e5e4610be82852c8e7d00a0ec8604bf4b0c954e",
+          "type": "user-attachments",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c4-06-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "C2-02",
+      "name": "平行匝道型交流道",
+      "slides": [
+        140,
+        141
+      ],
+      "sourceMissing": false,
+      "folder": "C2-02",
+      "images": 2,
+      "reusedFrom": "C4-04",
+      "photoSource": {
+        "source": {
+          "file": "C2-02_reused-content.json",
+          "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+          "type": "scenario-reuse",
+          "receivedDate": "2026-10-31"
+        },
+        "files": [
+          "results:c2-02-photo-1"
+        ]
+      }
+    },
+    {
+      "id": "legacy-living-side-road",
+      "name": "生活副道（原 PowerPoint 案例）",
+      "slides": [
+        131,
+        132
+      ],
+      "folder": "legacy-living-side-road",
+      "unmatched": true,
+      "images": 1
+    }
+  ],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+        "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+        "slideCount": 71
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-02_user-photos.json",
+        "sha256": "43cf98a6d61b6007f345126b4861d9364c93a1d338c152d9f767b8a8a8cae69c",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-02"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-07_user-photos.json",
+        "sha256": "8bf71e4b605b0955eca29ed6e4a346897d518ccb28eb4f7e6d5d92cc702e692b",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-07"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-03_user-photos.json",
+        "sha256": "34fe927e731bd9e992832c2a6cbe58523eef4e35a943c8936d9c9970425864d7",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-03"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-04_user-photos.json",
+        "sha256": "59dbb7e7444c06e90fbe0489631b63fe68274116cb8d7d54f0424df8941125d3",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-04"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-05_user-photos.json",
+        "sha256": "bbb9b24f49f8416252d8271390bb5aee48ff550e07a4aa20c19ef1234ebe8a11",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-05"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-06_user-photos.json",
+        "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-06"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-09_user-photos.json",
+        "sha256": "a086e875de4a7e59d25bbb3fd47501ee279b01559e2b8cd9a4f27bfccf727808",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-09"
+      ]
+    },
+    {
+      "source": {
+        "file": "C1-08_user-photos.json",
+        "sha256": "fc9562897d3c3f2188e787fe79c3d46f366383a2143be09e850b0c35f6131b4e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C1-08"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-03_user-photos.json",
+        "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-03"
+      ]
+    },
+    {
+      "source": {
+        "file": "C2-01_user-photos.json",
+        "sha256": "7a3142b8daa3147ea4aa955fe003edbcb5f01d14d3966ffa60da2e202ee97001",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C2-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-04_user-photos.json",
+        "sha256": "f6d45eb9615a1b0079ba3e6a7cf3cc5012e7731891bc4daa3e785cfbc695e1bb",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-04"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-05_user-photos.json",
+        "sha256": "5bacc9e49a58b8530908d2322d645aae89ee7db127ec927300cf46ce9ced8a66",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-05"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-06_user-photos.json",
+        "sha256": "4c8bc6515c7ed59ce6ffd9de1e5e4610be82852c8e7d00a0ec8604bf4b0c954e",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-06"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-02_user-photos.json",
+        "sha256": "dfc21da447eaff961065e3e35c8015a3fa1e452e6b9fe6155091587a4bf9d530",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-02"
+      ]
+    },
+    {
+      "source": {
+        "file": "C4-01_user-photos.json",
+        "sha256": "f1ccc8be900cec2e36c62f85d1b73fc21457562e3a413e5563904f6bb7fb29fe",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C4-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C3-01_user-photos.json",
+        "sha256": "ee4cc22dbc34d55272eead2b3121481e9e4c7f138165ba1dc6844c0758ef5ea8",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "scenarios": [
+        "C3-01"
+      ]
+    },
+    {
+      "source": {
+        "file": "C2-02_reused-content.json",
+        "sha256": "bca16a0c911553d579536c15091f873778be6db118f13797400c7ea82c4d3db0",
+        "type": "scenario-reuse",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "issue",
+      "scenarios": [
+        "C2-02"
+      ]
+    }
+  ]
+}

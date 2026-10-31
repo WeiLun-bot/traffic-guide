@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "scenario": "C1-08",
+  "sourceType": "user-attachments",
+  "receivedDate": "2026-10-31",
+  "note": "使用者確認對應情境；照片依提供順序保存，不拆分組合圖。",
+  "files": [
+    {
+      "key": "results:c1-08-photo-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-08/C1-08_現況照片_01.png",
+      "width": 1774,
+      "height": 1058,
+      "label": "C1-08 現況照片",
+      "scenario": "C1-08",
+      "role": "photo",
+      "rotation": 0,
+      "sha256": "4094509f3c6a3d98d51426e00a8bc54f55a4f58f988d73ede262fae1c835d2ec"
+    }
+  ]
+}

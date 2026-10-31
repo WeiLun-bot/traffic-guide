@@ -1,0 +1,181 @@
+{
+  "scenario": "C1-06",
+  "name": "街巷道多叉路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 110,
+      "texts": [
+        "2026/10/29",
+        "110",
+        "設置圖例6-多叉路口－街巷道多叉",
+        "現況分析:",
+        " ",
+        "",
+        " ",
+        "",
+        "道路",
+        "分支1-5 ",
+        "土地使用情境",
+        "住宅區、公園用地",
+        "控制型式",
+        "無號誌",
+        "道路分級",
+        "服務道路",
+        "主要使用者",
+        "汽機車、行人",
+        "設計速率",
+        "30 km/h",
+        "道路設計特徵",
+        "路寬：5 m",
+        "",
+        "車道數：1",
+        "",
+        "方向分隔型式：單行道",
+        "",
+        "車種管制：無",
+        "",
+        "路邊停車：汽機車停車帶",
+        "",
+        "人行道：北、東側標線型人行道。"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image134.png",
+          "slide": 110,
+          "shapeId": "7",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1702098,
+            204429
+          ]
+        }
+      ]
+    },
+    {
+      "number": 111,
+      "texts": [
+        "2026/10/29",
+        "111",
+        "設置議題​:",
+        " ",
+        "",
+        " ",
+        "",
+        "類別",
+        "現況設置問題​",
+        "路型與標線議題",
+        "交岔口標線配置無法有效使駕駛人減速。",
+        "行人步行空間不足。",
+        "標誌",
+        "進入路口前無岔路標誌，無法得知前方路口幾何狀態。",
+        "無巷道路牌（指25），用路人無法決策前往道路方向。",
+        "環境未形塑成行人為主體的巷弄環境",
+        "交岔口標線配置無法有效使駕駛人減速。",
+        "行人步行空間不足。",
+        "道路幾何不易辨識",
+        "進入路口前無岔路標誌，無法得知前方路口幾何狀態。",
+        "無巷道路牌（指25），用路人無法決策前往道路方向。",
+        "",
+        "設置圖例6-多叉路口－街巷道多叉"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image135.png",
+          "slide": 111,
+          "shapeId": "10",
+          "crop": {
+            "l": "6065",
+            "t": "5133",
+            "r": "2394",
+            "b": "1343"
+          },
+          "rotation": 0.0,
+          "position": [
+            1865259,
+            -474000
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c1-06-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況圖_01.png",
+      "width": 4138,
+      "height": 2668,
+      "label": "C1-06 現況圖",
+      "scenario": "C1-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 110,
+      "sourcePart": "ppt/media/image134.png",
+      "sha256": "28d1467d8c7bc18bc7b55898d7bd13e651266c19a0aa17247eeb1b78a2bee87c"
+    },
+    {
+      "key": "results:c1-06-diagram-2",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況圖_02.png",
+      "width": 2199,
+      "height": 1418,
+      "label": "C1-06 現況圖 2",
+      "scenario": "C1-06",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 111,
+      "sourcePart": "ppt/media/image135.png",
+      "sha256": "a54cd64c4a072bbfe81d2620b832209ce7ab58797af36a3f7d70c0610c082ef4"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C1-06_user-photos.json",
+        "sha256": "27aa6f4c3716ce732c7f78fbaf7382c24338cc7ec6bdd9e92f0d38427bd4cae9",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c1-06-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況照片_01.png",
+          "width": 1806,
+          "height": 1116,
+          "label": "C1-06 現況照片",
+          "scenario": "C1-06",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "14312e5511dac766b7c745535809319affdb16c5165d14a9649e58350de14d8a"
+        },
+        {
+          "key": "results:c1-06-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-06/C1-06_現況照片_02.png",
+          "width": 1851,
+          "height": 1191,
+          "label": "C1-06 現況照片 2",
+          "scenario": "C1-06",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "d74041d55b0b65e91aa74fdf10b4c638282a8a42edaf4e8d1ccb64c55117d870"
+        }
+      ]
+    }
+  ],
+  "photoCorrections": [
+    {
+      "to": "C1-07",
+      "date": "2026-10-31",
+      "note": "使用者更正照片歸屬，兩張照片已移至 C1-07。",
+      "sha256": [
+        "5cf0b94587cc07cd92cd94a274da01dd8da082b85c001b4c2620a4173d075830",
+        "07613cc6ad55596cd4e7f0ad7f2684bf89a1ffddd459ee3897456048b98ae10f"
+      ]
+    }
+  ]
+}

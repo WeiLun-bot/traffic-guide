@@ -44,6 +44,8 @@
   }
   function seed(context) {
     const root=context.root, page=context.api.page;
+    const resultsList=root.querySelector('.results-points[data-results-editable]');
+    if(resultsList&&page.kind==='results')return {type:'results',pageId:page.id,host:resultsList,model:{points:[...resultsList.querySelectorAll(':scope>li')].map(node=>{const title=node.querySelector('h3'),text=node.querySelector('p');return {id:node.dataset.resultsPoint,title:title.textContent,titleKey:title.dataset.editKey||title.dataset.blockEditKey,text:text.textContent,textKey:text.dataset.editKey||text.dataset.blockEditKey,...(node.dataset.resultsModuleId?{moduleId:node.dataset.resultsModuleId}:{})};})}};
     const moduleList=context.moduleList||root.querySelector('.module-explain-points');
     if(moduleList&&page.kind==='module')return {type:'modules',pageId:moduleList.closest('[data-module-source-page]')?.dataset.moduleSourcePage||page.id,moduleTopic:moduleList.closest('[data-module-topic-id]')?.dataset.moduleTopicId||window.PresentationModules?.displayContext(page.id).topic?.id,host:moduleList,model:{points:[...moduleList.querySelectorAll(':scope>li')].map(node=>{const title=node.querySelector('h3'),text=node.querySelector('p');return {id:node.dataset.modulePoint,title:title.textContent,titleKey:title.dataset.editKey||title.dataset.blockEditKey,text:text.textContent,textKey:text.dataset.editKey||text.dataset.blockEditKey};})}};
     const sidebar=root.querySelector('.conditions-issues');
@@ -150,6 +152,21 @@
         if(editing())row.append(actions('point',point.id,index,visible.length));host.append(row);
       });
       if(editing()){const add=action('＋新增說明項目','add-point');add.dataset.editorUi='content-add';host.after(add);}
+    } else if(type==='results') {
+      const templates=new Map([...host.children].map(node=>[node.dataset.resultsPoint,node]));host.replaceChildren();
+      model.points.forEach((point,index)=>{
+        const row=templates.get(point.id)||element('li');row.dataset.resultsPoint=point.id;row.dataset.contentItemId=point.id;
+        let number=row.querySelector(':scope>span'),body=row.querySelector(':scope>div');
+        if(!number){number=element('span');row.prepend(number);}number.textContent=String(index+1).padStart(2,'0');
+        if(!body){body=element('div');row.append(body);}
+        let title=body.querySelector('h3'),text=body.querySelector('p');
+        if(!title){title=element('h3');body.prepend(title);}if(!text){text=element('p');title.after(text);}
+        textNode(title,point.titleKey,point.title,context,['results',pageId,'points',point.id,'title']);
+        textNode(text,point.textKey,point.text,context,['results',pageId,'points',point.id,'text']);
+        body.querySelector('.content-item-actions')?.remove();
+        if(editing())body.append(actions('point',point.id,index,model.points.length));host.append(row);
+      });
+      if(editing()){const add=action(context.api.page.stage==='issue'?'＋新增現況議題':'＋新增佈設說明','add-point');add.dataset.editorUi='content-add';host.after(add);}
     } else renderOverview(context);
   }
   function renderOverview(context) {
@@ -224,7 +241,9 @@
   function mutate(change) {
     if(!current||!editing()||editor().busy)return;
     const model=clone(current.model),focus=change(model);
-    editor().transact(next=>{next.content[current.type][current.pageId]=model;},true);
+    const context=current;
+    const applied=editor().transact(next=>{next.content[context.type][context.pageId]=model;},context.type!=='results');
+    if(applied&&context.type==='results')window.PresentationOrder.refresh(context.context.api);
     if(focus){const node=[...document.querySelectorAll('[data-content-item-id]')].find(node=>node.dataset.contentItemId===focus);node?.scrollIntoView({block:'nearest'});(node?.matches('[contenteditable]')?node:node?.querySelector('[contenteditable]'))?.focus({preventScroll:true});}
   }
   document.addEventListener('click',event=>{
@@ -242,7 +261,7 @@
       const issue=current.type==='conditions'?model.issues.find(value=>value.id===issueId):null;
       const list=kind==='strategy'?model.items:kind==='issue'?model.issues:issue?issue.points:model.points;
       if(!list)return;
-      if(operation==='add-point'){const id=uid('point'),point={id,text:'在此輸入說明。',textKey:current.pageId+'|content|'+(issueId||current.type)+'|'+id};if(current.type==='modules')Object.assign(point,{title:'補充說明',titleKey:current.pageId+'|content|'+id+'|title',...(current.moduleTopic?{topicId:current.moduleTopic}:{})});list.push(point);return id;}
+      if(operation==='add-point'){const id=uid('point'),point={id,text:'在此輸入說明。',textKey:current.pageId+'|content|'+(issueId||current.type)+'|'+id};if(current.type==='modules')Object.assign(point,{title:'補充說明',titleKey:current.pageId+'|content|'+id+'|title',...(current.moduleTopic?{topicId:current.moduleTopic}:{})});if(current.type==='results')Object.assign(point,{title:current.context.api.page.stage==='issue'?'新增現況議題':'新增佈設說明',titleKey:current.pageId+'|results|'+id+'-title',textKey:current.pageId+'|results|'+id+'-text'});list.push(point);return id;}
       const index=list.findIndex(value=>value.id===itemId);if(index<0)return;
       if(operation==='remove'){list.splice(index,1);return;}
       const candidates=current.type==='modules'?list.filter(point=>window.PresentationModules?.pointVisible(current.pageId,point,current.moduleTopic)!==false):list;

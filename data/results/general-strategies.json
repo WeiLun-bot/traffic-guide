@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "section": "第4章 一般道路情境：交通設施設置建議與整體設置圖例",
+    "note": "使用各情境資料夾的完整SVG，依既有Typst解說濃縮。G1-01保留原頁面與素材ID；G1-02採Typst明確引用的高雄甲典街完整圖。"
+  },
+  "assets": {
+    "results:g1-02-strategy": {
+      "file": "materials/04-一般道路情境/G1-02/G1-02_無號誌鄉區正交三叉路口-高雄甲典街.svg",
+      "width": 699.0,
+      "height": 414.0,
+      "label": "G1-02 整體佈設圖",
+      "scenario": "G1-02",
+      "role": "strategy",
+      "sha256": "86411591069071b4b8e00a940cd9d877584b4f57477d50a0cadfe166fbff0196"
+    },
+    "results:g1-03-strategy": {
+      "file": "materials/04-一般道路情境/G1-03/G1-03_無號誌市區匯入型巷道路口交通設施整體設置圖例.svg",
+      "width": 1292.0,
+      "height": 711.0,
+      "label": "G1-03 整體佈設圖",
+      "scenario": "G1-03",
+      "role": "strategy",
+      "sha256": "cfff3705ec0c1e40f6ee23e4d6b5da24eb2454b9ff18baa3cfeea1fcaeddf669"
+    },
+    "results:g1-04-strategy": {
+      "file": "materials/04-一般道路情境/G1-04/G1-04_無號誌鄉區匯入型巷道路口交通設施整體設置圖例.svg",
+      "width": 856.0,
+      "height": 600.0,
+      "label": "G1-04 整體佈設圖",
+      "scenario": "G1-04",
+      "role": "strategy",
+      "sha256": "58ddd66354d4401bf2fdc6b4047bddb13958d80fbfede5719744068e61a9385c"
+    },
+    "results:g1-05-strategy": {
+      "file": "materials/04-一般道路情境/G1-05/G1-05_無號誌市區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 1097.0,
+      "height": 544.0,
+      "label": "G1-05 整體佈設圖",
+      "scenario": "G1-05",
+      "role": "strategy",
+      "sha256": "ebbd03f87d87d5fcf1c3f3018f11c2e366afb23cbc4f6dfe5c204037ab0e6da4"
+    },
+    "results:g1-06-strategy": {
+      "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 1006.0,
+      "height": 1646.0,
+      "label": "G1-06 整體佈設圖",
+      "scenario": "G1-06",
+      "role": "strategy",
+      "sha256": "bbef75f2be71146e11c0e7b32b96a5517d23ec2307c5d0c94f53a7ea4dcb3881"
+    },
+    "results:g2-01-strategy": {
+      "file": "materials/04-一般道路情境/G2-01/G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.svg",
+      "width": 942.0,
+      "height": 996.0,
+      "label": "G2-01 整體佈設圖",
+      "scenario": "G2-01",
+      "role": "strategy",
+      "sha256": "f8ed20ff57207822d63c9d2c3d3d603d93f34efa8be905058ab02dcf883e162d"
+    },
+    "results:g2-02-strategy": {
+      "file": "materials/04-一般道路情境/G2-02/G2-02_號誌化鄉區正交三叉路口交通設施整體設置圖例.svg",
+      "width": 1189.0,
+      "height": 565.0,
+      "label": "G2-02 整體佈設圖",
+      "scenario": "G2-02",
+      "role": "strategy",
+      "sha256": "1d7a5f9a70ca16b4e8fe5738055cb7d2c82eff87e8acbc9f8b458718d7665022"
+    },
+    "results:g2-03-strategy": {
+      "file": "materials/04-一般道路情境/G2-03/G2-03_號誌化市區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 2654.0,
+      "height": 1763.0,
+      "label": "G2-03 整體佈設圖",
+      "scenario": "G2-03",
+      "role": "strategy",
+      "sha256": "8ba523dbfcf9485e141bfa21da7ce1eccb1e07faf1085e96706a4fd974a8b075"
+    },
+    "results:g2-04-strategy": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 1183.0,
+      "height": 655.0,
+      "label": "G2-04 整體佈設圖",
+      "scenario": "G2-04",
+      "role": "strategy",
+      "sha256": "dd2e3f36d8aed3f6dc40854ee321e334031d2916d5632a284374ad101a204977"
+    },
+    "results:g3-01-strategy": {
+      "file": "materials/04-一般道路情境/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg",
+      "width": 1264.0,
+      "height": 787.0,
+      "label": "G3-01 整體佈設圖",
+      "scenario": "G3-01",
+      "role": "strategy",
+      "sha256": "d87fd89490d2769f288333743d4ad371457eff54143e4e1c0894be6cba570f6b"
+    },
+    "results:g3-02-strategy": {
+      "file": "materials/04-一般道路情境/G3-02/G3-02_無號誌鄉區正交四叉路口交通設施整體設置圖例.svg",
+      "width": 777.0,
+      "height": 1104.0,
+      "label": "G3-02 整體佈設圖",
+      "scenario": "G3-02",
+      "role": "strategy",
+      "sha256": "69f2b286a7e3c695ad274af5aa14ca22290c3f66833ecdbd08bdf304f72098dc"
+    },
+    "results:g3-03-strategy": {
+      "file": "materials/04-一般道路情境/G3-03/G3-03_無號誌市區斜交四叉路口交通設施整體設置圖例.svg",
+      "width": 1015.0,
+      "height": 670.0,
+      "label": "G3-03 整體佈設圖",
+      "scenario": "G3-03",
+      "role": "strategy",
+      "sha256": "be1c1ed0e99fb242072d5e3de3026cef31e7350cf6d457a8055c12e3b804b28a"
+    },
+    "results:g3-04-strategy": {
+      "file": "materials/04-一般道路情境/G3-04/G3-04_無號誌鄉區斜交四叉路口交通設施整體設置圖例.svg",
+      "width": 729.0,
+      "height": 724.0,
+      "label": "G3-04 整體佈設圖",
+      "scenario": "G3-04",
+      "role": "strategy",
+      "sha256": "b853fbe5c6974e2585c8b166bb5abf7b2bafd011d9982624de7767949d3fd542"
+    },
+    "results:g4-01-strategy": {
+      "file": "materials/04-一般道路情境/G4-01/G4-01_號誌化市區正交四叉路口交通設施整體設置圖例.svg",
+      "width": 2455.0,
+      "height": 1505.0,
+      "label": "G4-01 整體佈設圖",
+      "scenario": "G4-01",
+      "role": "strategy",
+      "sha256": "1b0604147b7c7f6bd6197f63841e577f8244555a30abef82ae3a679bcd9364ac"
+    },
+    "results:g4-02-strategy": {
+      "file": "materials/04-一般道路情境/G4-02/G4-02_號誌化鄉區正交四叉路口交通設施整體設置圖例.svg",
+      "width": 1046.0,
+      "height": 1706.0,
+      "label": "G4-02 整體佈設圖",
+      "scenario": "G4-02",
+      "role": "strategy",
+      "sha256": "cad03d92ac5e7f37e33aad1b4a487fd37e724bf9dcca2d70e49edc75a988e6df"
+    },
+    "results:g4-03-strategy": {
+      "file": "materials/04-一般道路情境/G4-03/G4-03_號誌化市區斜交四叉路口交通設施整體設置圖例.svg",
+      "width": 2665.0,
+      "height": 1778.0,
+      "label": "G4-03 整體佈設圖",
+      "scenario": "G4-03",
+      "role": "strategy",
+      "sha256": "0d551d0fc81a525407eb03989511458d3cc2d204e34f5da60b9b57c35e9d449d"
+    },
+    "results:g4-04-strategy": {
+      "file": "materials/04-一般道路情境/G4-04/G4-04_號誌化鄉區斜交四叉路口交通設施整體設置圖例.svg",
+      "width": 896.0,
+      "height": 2047.0,
+      "label": "G4-04 整體佈設圖",
+      "scenario": "G4-04",
+      "role": "strategy",
+      "sha256": "972f1d63f0f7831869a6afc1534bc5801bddadba019ae1f3ec36b7f0dbc3a6d7"
+    }
+  },
+  "scenarios": {
+    "G1-02": {
+      "strategy": {
+        "title": "先看見路口，再清楚停讓",
+        "intro": "以停讓管制、速限預告與行車導引，讓鄉區路口更容易辨識。",
+        "images": [
+          {
+            "key": "results:g1-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "priority",
+            "title": "明確次要道路停讓",
+            "text": "搭配停車再開標誌、停止線與「停」標字，說清楚停讓位置。",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "warning",
+            "title": "提前提醒路口與速限",
+            "text": "以岔路標誌、速限標誌與減速提示，提醒駕駛接近路口。",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "path",
+            "title": "畫清車行範圍",
+            "text": "以分向與行車導引線銜接路口，配合大型車轉向調整停止位置。",
+            "moduleId": "M1-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-1-02-unsignalized-rural-orthogonal-t.typ",
+        "sha256": "d60fbbb6aad55342c7dea762bbf542d3d22160a39ad5b149fc42c72b511971e5",
+        "section": "交通設施設置建議與整體設置圖例",
+        "figureNote": "沿用本情境Typst在整體設置圖例章節明確引用的高雄甲典街SVG。"
+      }
+    },
+    "G1-03": {
+      "strategy": {
+        "title": "整理巷道匯入與路側空間",
+        "intro": "將行人、停車、公車停靠與巷道匯入的位置一起安排。",
+        "images": [
+          {
+            "key": "results:g1-03-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "walking",
+            "title": "串接人行空間",
+            "text": "調整過寬車道與路肩，留出人行空間，並以路緣外擴整理轉角。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "parking",
+            "title": "分清停車與行車",
+            "text": "配置嵌入式汽車停車位及斜角機車格，減少進出車位的干擾。",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "entry",
+            "title": "讓匯入口保持清楚",
+            "text": "以車道彎曲提醒減速，並在巷道匯入口劃設網狀線，提示保持淨空。",
+            "moduleId": "M2-04"
+          },
+          {
+            "id": "bus",
+            "title": "安排公車停靠範圍",
+            "text": "配合人行道外擴，整理公車彎與停靠區標線。",
+            "moduleId": "M3-04"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-1-03-unsignalized-urban-merge-t.typ",
+        "sha256": "2f2b316af81f73cca010e9c444fbf418ff223098534e32b6324ec478460362b3",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G1-04": {
+      "strategy": {
+        "title": "提高鄉區匯入口辨識度",
+        "intro": "以槽化、導引線與讓路管制，整理主要道路和巷道的銜接。",
+        "images": [
+          {
+            "key": "results:g1-04-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "guidance",
+            "title": "標出匯入口與行車路徑",
+            "text": "在主要道路劃設路口行車導引線，讓進出巷道的路徑更清楚。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "space",
+            "title": "區分路肩與車行空間",
+            "text": "以槽化線整理寬路肩，避免路口可行駛範圍過於模糊。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "yield",
+            "title": "說清次要道路讓路規則",
+            "text": "配置分向線、讓路標誌與讓路線，提醒巷道車輛先確認主要道路來車。",
+            "moduleId": "M2-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-1-04-unsignalized-rural-merge-t.typ",
+        "sha256": "93012b4670fd9cd39e3f944ec670307659e7b40c8379ef36a258e4507d23d486",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G1-05": {
+      "strategy": {
+        "title": "兼顧停車需求與轉角行人",
+        "intro": "以停車帶、人行道外擴與路口導引，整理市區斜交三岔路口。",
+        "images": [
+          {
+            "key": "results:g1-05-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "parking",
+            "title": "停車帶與行車空間分開",
+            "text": "配置嵌入式停車位，標清可停放與禁止停車的範圍。",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "corner",
+            "title": "整理轉角與行人穿越",
+            "text": "以人行道路緣外擴調整轉角，讓轉彎車輛更容易注意行人。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "priority",
+            "title": "強化停讓與低速提示",
+            "text": "搭配停讓設施、路口導引線及本例30 km/h速限提示，說清楚路權與行進範圍。",
+            "moduleId": "M2-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-1-05-unsignalized-urban-skewed-t.typ",
+        "sha256": "5b98483294db3e43dffeadd32eb6515704f966fa5584acb6ec3509fafb7288ee",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G1-06": {
+      "strategy": {
+        "title": "調整斜交角度，分開轉向空間",
+        "intro": "讓次要道路容易觀察來車，並為主要道路轉向車流安排等待位置。",
+        "images": [
+          {
+            "key": "results:g1-06-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "angle",
+            "title": "調整巷道接近角度",
+            "text": "讓次要道路以接近直角的方式銜接主要道路，改善停等時的觀察條件。",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "turn",
+            "title": "分開左轉與直右車流",
+            "text": "主要道路配置左轉車道與直右車道，減少轉向等待對直行的干擾。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "continuity",
+            "title": "讓車道銜接更清楚",
+            "text": "配合車道線、快慢車道分隔線與速限提示，整理進出路口的行進範圍。",
+            "moduleId": "M4-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-1-06-unsignalized-rural-skewed-t.typ",
+        "sha256": "5b7389ee42ffe730ee30a7795e20f834bb78be14fe8c4103b9a99f7743ee84d8",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G2-01": {
+      "strategy": {
+        "title": "平衡車道，分開轉向與路側活動",
+        "intro": "整合左轉車道、停車配置與號誌，銜接市區三岔路口的人車動線。",
+        "images": [
+          {
+            "key": "results:g2-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "讓直行車道連續",
+            "text": "以槽化整理車道數，配置左轉專用道，減少直行與轉向車流互相干擾。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "parking",
+            "title": "依路段條件安排停車",
+            "text": "主要道路保留通行空間；次要道路配合人行道外擴，安排嵌入式停車位。",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "signals",
+            "title": "清楚對應行車與行人號誌",
+            "text": "配合車道與行穿線配置燈面，檢查駕駛與行人能否看見對應號誌。",
+            "moduleId": "M2-03"
+          },
+          {
+            "id": "speed",
+            "title": "補齊速限與淨空提示",
+            "text": "搭配速限標字、網狀線與停車管制，讓路口的通行與停放規則一致。",
+            "moduleId": "M4-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-2-01-signalized-urban-orthogonal-t.typ",
+        "sha256": "f36b15319448c0fb73a03e61cf3a4ad4f34c2a6a8a3e2350576a664026ae2b70",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G2-02": {
+      "strategy": {
+        "title": "界定車行範圍，留下路側活動空間",
+        "intro": "在鄉區號誌路口，同時整理車道、人行預留空間與路口預告。",
+        "images": [
+          {
+            "key": "results:g2-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "先確認車道與方向分隔",
+            "text": "以分向限制線及車道配置，說清楚路口前後的行車範圍。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "walking",
+            "title": "預留人行與路側使用空間",
+            "text": "依鄰近工廠及路側活動需求，整理車行道外的空間，供後續配置人行設施。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "notice",
+            "title": "提早辨識路口與號誌",
+            "text": "搭配岔路、路名等提示，並檢查號誌對應位置，提高鄉區路口辨識度。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-2-02-signalized-rural-orthogonal-t.typ",
+        "sha256": "294d98073d908c35673411f655073198f1c4a43a1c101ea65c3579cd0cb14ad6",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G2-03": {
+      "strategy": {
+        "title": "以槽化整理寬廣斜交路口",
+        "intro": "將車流路徑、進出車道與行人庇護空間一起配置。",
+        "images": [
+          {
+            "key": "results:g2-03-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "path",
+            "title": "分清各方向行車路徑",
+            "text": "以槽化線區隔不同方向車流，搭配導引線，讓轉彎路徑有清楚依循。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "balance",
+            "title": "平衡進出路口車道數",
+            "text": "重新分配路段空間，讓進入與離開路口的車道順暢銜接。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "refuge",
+            "title": "提供行人中途停等空間",
+            "text": "配置行人庇護島，並配合行穿線及號誌安排穿越動線。",
+            "moduleId": "M3-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-2-03-signalized-urban-skewed-t.typ",
+        "sha256": "297fa2ba804c69e9fecade214662781040216786b694e2ee4f4872b1ccad44f4",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G2-04": {
+      "strategy": {
+        "title": "先保障步行，再強化彎道路口預告",
+        "intro": "配合鄰近民房的通行需求，整理標線型人行道與號誌提示。",
+        "images": [
+          {
+            "key": "results:g2-04-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "walking",
+            "title": "安排連續步行空間",
+            "text": "在路側劃設標線型人行道，並配合本例30 km/h速限，降低人車混用的風險。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "warning",
+            "title": "提前預告彎道後的號誌",
+            "text": "在接近路口的轉彎路段設置注意號誌等預告，讓駕駛提早準備停等。",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "direction",
+            "title": "讓允許行向容易判讀",
+            "text": "搭配道路遵行方向標誌與號誌配置，清楚提示路口的通行方向。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-2-04-signalized-rural-skewed-t.typ",
+        "sha256": "cd23524851f5874b777078dc8146acb7814bc2a00cb35658e2ec7f873c0ed33b",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G3-01": {
+      "strategy": {
+        "title": "以交錯車道整理低速街道",
+        "intro": "結合車道橫移、交錯停車與停讓提示，回應市區路側活動需求。",
+        "images": [
+          {
+            "key": "results:g3-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "offset",
+            "title": "用車道橫移提醒減速",
+            "text": "採交錯車道配置，搭配本例30 km/h速限，提醒駕駛注意路口與行人。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "parking",
+            "title": "配合動線交錯設置停車格",
+            "text": "將停車格沿路段單邊交錯配置，明確區分停車與行車範圍。",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "guidance",
+            "title": "說清路口停讓與續行路徑",
+            "text": "搭配停讓設施、慢行提示及路口行車導引線，銜接前後車道。",
+            "moduleId": "M2-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-3-01-unsignalized-urban-orthogonal-cross.typ",
+        "sha256": "eea5b0d69bef27202fc63448a5a043d9901454245292c451f0aa44db696136b4",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G3-02": {
+      "strategy": {
+        "title": "以槽化提高鄉區路口辨識度",
+        "intro": "透過類滴狀島槽化、方向分隔與預告，讓駕駛提早察覺交叉口。",
+        "images": [
+          {
+            "key": "results:g3-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "channelization",
+            "title": "讓車輛看見路口範圍",
+            "text": "在主要道路接近路口處配置類滴狀島槽化，引導車輛循明確路徑通行。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "boundaries",
+            "title": "區分雙向車流與路肩",
+            "text": "以行車分向線及路面邊線界定車道，避免行駛範圍與路肩混淆。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "priority",
+            "title": "補齊停讓與岔路提示",
+            "text": "配合次要道路停讓管制與岔路標誌，提醒駕駛注意交叉來車。",
+            "moduleId": "M2-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-3-02-unsignalized-rural-orthogonal-cross.typ",
+        "sha256": "85e3e43a1e71438ef6fb714bb50c92517138ab8527350ee011a407cc2ae8fcfc",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G3-03": {
+      "strategy": {
+        "title": "以連續人行空間說清路權",
+        "intro": "延續主要道路人行道，並分清次要道路停等與路側停車空間。",
+        "images": [
+          {
+            "key": "results:g3-03-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "walking",
+            "title": "串接人行道穿越巷口",
+            "text": "以連續人行道及不同鋪面凸顯步行空間，並以路面高突標誌提醒車輛。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "priority",
+            "title": "讓次要道路先停再開",
+            "text": "配合停讓設施與路口行車導引線，明確提示主要道路的先行關係。",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "parking",
+            "title": "分開停車、行車與減速提示",
+            "text": "整理路側停車範圍，搭配慢行與本例30 km/h速限提示。",
+            "moduleId": "M1-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-3-03-unsignalized-urban-skewed-cross.typ",
+        "sha256": "024f90aae893240071498b42e8c01b929cfed7eda62c4729b132c196c2664948",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G3-04": {
+      "strategy": {
+        "title": "用槽化與停讓提示整理斜交路口",
+        "intro": "從次要道路入口、路面邊界到橋梁限制，依序提示駕駛通行條件。",
+        "images": [
+          {
+            "key": "results:g3-04-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "channelization",
+            "title": "讓次要道路入口更明確",
+            "text": "以類滴狀島槽化分隔來車，引導車輛接近斜交路口。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "priority",
+            "title": "明確停等與車行邊界",
+            "text": "搭配停止線、停讓提示及路面邊線，界定駕駛的停等與行駛位置。",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "walking",
+            "title": "依需求安排穿越設施",
+            "text": "有行人穿越需求時配置行穿線，並與兩端步行空間一起檢視。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "bridge",
+            "title": "提前告知橋梁限重",
+            "text": "在路口上游提示前方橋梁限制，讓受限車輛能提早選擇繞道或迴轉。",
+            "moduleId": "M4-02"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-3-04-unsignalized-rural-skewed-cross.typ",
+        "sha256": "045f9fe5624845ad15ed66e980554773ded33346728ac8ee28540c172d9dc811",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G4-01": {
+      "strategy": {
+        "title": "分開轉向與直行，安排分段穿越",
+        "intro": "以附加車道、行人庇護及號誌分工，整理寬廣的市區四岔路口。",
+        "images": [
+          {
+            "key": "results:g4-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "turn",
+            "title": "以附加車道安排左右轉",
+            "text": "在接近路口處漸變增加轉向車道，保留直行車道的連續性。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "choice",
+            "title": "讓駕駛提早選擇車道",
+            "text": "搭配車道預告與機車行向提示，減少臨近路口才換道的情況。",
+            "moduleId": "M3-03"
+          },
+          {
+            "id": "refuge",
+            "title": "安排庇護與錯開式穿越",
+            "text": "配合中央分隔與庇護島，整理錯開式行穿線及兩端人行銜接。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "signals",
+            "title": "配合動線安排號誌",
+            "text": "檢視行車與行人號誌的對應關係，減少轉向車流與行人穿越的衝突。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-4-01-signalized-urban-orthogonal-cross.typ",
+        "sha256": "d3b61b0d46fb4aca63ccba5f10da3b923be28bf37c5f71d5f78947216d10f38b",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G4-02": {
+      "strategy": {
+        "title": "銜接車道，安排機車與行人穿越",
+        "intro": "配合鄉區寬路口的行車速度與路側需求，整合轉向、待轉和步行空間。",
+        "images": [
+          {
+            "key": "results:g4-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "讓上下游車道保持一致",
+            "text": "調整直行車道數，搭配左轉附加車道及路口導引線，銜接未對齊的道路。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "motorcycle",
+            "title": "清楚安排機車兩段左轉",
+            "text": "配合本例的車速與車種管制，設置停等區、待轉區及相應標誌。",
+            "moduleId": "M3-03"
+          },
+          {
+            "id": "walking",
+            "title": "串接四個方向的人行空間",
+            "text": "整理路側寬度，配置人行空間與錯開式行穿線，配合行人號誌使用。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "direction",
+            "title": "整合方向與管制資訊",
+            "text": "搭配地名方向指示、轉向限制與號誌位置，讓通行規則容易判讀。",
+            "moduleId": "M1-02"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-4-02-signalized-rural-orthogonal-cross.typ",
+        "sha256": "0abc30e1fb1f54c49ceb7a324e9ed205c32b50e8e15de2e775118c45c6930e3e",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G4-03": {
+      "strategy": {
+        "title": "整合行人庇護、車道與公車停靠",
+        "intro": "重新分配市區斜交路口空間，讓穿越、轉向與停靠各有清楚位置。",
+        "images": [
+          {
+            "key": "results:g4-03-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "walking",
+            "title": "提供庇護與右轉停讓空間",
+            "text": "配置行人庇護島及錯開式行穿線，讓右轉車輛有較清楚的停讓位置。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "lanes",
+            "title": "平衡次要道路進出車道",
+            "text": "重新配置上、下游車道，搭配路口導引線，維持行車動線連續。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "bus",
+            "title": "標清公車停靠範圍",
+            "text": "以人行道外擴、路面邊線與停靠區標線，區分公車彎和一般行車空間。",
+            "moduleId": "M3-04"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-4-03-signalized-urban-skewed-cross.typ",
+        "sha256": "38f7efe8f22065fb33b1c6060ea68705a4aa624a975c8962ae0e16788e720c1f",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "G4-04": {
+      "strategy": {
+        "title": "平衡斜交車道，補足行人庇護",
+        "intro": "透過槽化與導引線整理轉向空間，並安排長距離穿越的中途停等位置。",
+        "images": [
+          {
+            "key": "results:g4-04-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "lanes",
+            "title": "調整車道與左轉等待空間",
+            "text": "以槽化線平衡進出車道數，並留出左轉專用車道空間。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "guidance",
+            "title": "引導次要道路穿越路口",
+            "text": "配合斜交幾何劃設路口行車導引線，讓通過路口的路徑容易判讀。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "walking",
+            "title": "提供行人中途庇護",
+            "text": "在較寬、車速較快的主要道路配置庇護島，銜接行穿線與人行空間。",
+            "moduleId": "M3-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/04-general-scenarios/04-4-04-signalized-rural-skewed-cross.typ",
+        "sha256": "59f8a90fb90e07ca491c3636e42d0f2e1d87ebefff3abfebaadc48f6a66b2f16",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    }
+  }
+}

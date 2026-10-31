@@ -12,9 +12,29 @@
       "materials/03-modules/M3-03/M3-03_機車兩段式左轉代表型2.svg",
       "materials/03-modules/M3-03/機車直接左轉.svg"
     ],
+    "userImageFiles": [
+      "materials/03-modules/M3-03/M3-03.2_現況議題_01.png",
+      "materials/03-modules/M3-03/M3-03.2_現況議題_02.png"
+    ],
     "notes": []
   },
   "assets": {
+    "m303-turning-issue-photo-1": {
+      "file": "materials/03-modules/M3-03/M3-03.2_現況議題_01.png",
+      "width": 514,
+      "height": 509,
+      "label": "現況照片 1：左轉資訊提示",
+      "caption": "M3-03.2 機車左轉現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m303-turning-issue-photo-2": {
+      "file": "materials/03-modules/M3-03/M3-03.2_現況議題_02.png",
+      "width": 1524,
+      "height": 1025,
+      "label": "現況照片 2：路口停等空間",
+      "caption": "M3-03.2 機車左轉現況",
+      "credit": "使用者提供之現況照片"
+    },
     "m303-eb74f285de": {
       "file": "materials/03-modules/M3-03/M3-03_機車直接左轉代表型.svg",
       "width": 528,
@@ -65,6 +85,13 @@
           "assets": [
             "m101-slow-wide",
             "m101-slow-narrow"
+          ]
+        },
+        "M3-03.2": {
+          "assets": [
+            "m303-eb74f285de",
+            "m303-6861b608fc",
+            "m303-a5220c3ae3"
           ]
         }
       },
@@ -118,10 +145,10 @@
       "submoduleId": "M3-03.2",
       "title": "機車左轉｜現況議題與相關條文",
       "intro": "讓騎士提早確認左轉方式，並找到適用的停等空間。",
+      "defaultView": "pair",
       "assets": [
-        "m303-eb74f285de",
-        "m303-6861b608fc",
-        "m303-a5220c3ae3"
+        "m303-turning-issue-photo-1",
+        "m303-turning-issue-photo-2"
       ],
       "points": [
         {

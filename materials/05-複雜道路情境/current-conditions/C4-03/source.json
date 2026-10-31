@@ -1,0 +1,149 @@
+{
+  "scenario": "C4-03",
+  "name": "單行道",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 137,
+      "texts": [
+        "2026/10/29",
+        "137",
+        "設置圖例15-單行道",
+        "現況分析:",
+        "道路",
+        "路段1",
+        "土地使用情境",
+        "商業區",
+        "控制型式",
+        "號誌化",
+        "道路分級",
+        "次要道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "設計速率",
+        "50 km/h",
+        "道路設計特徵",
+        "路寬：11 m",
+        "",
+        "車道數：3 ",
+        "",
+        "方向分隔型式：無",
+        "",
+        "車種管制：無",
+        "",
+        "路邊停車：汽車停車帶",
+        "",
+        "人行道：實體人行道"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image157.png",
+          "slide": 137,
+          "shapeId": "7",
+          "crop": {
+            "l": "18459",
+            "t": "5614",
+            "r": "9845",
+            "b": "6883"
+          },
+          "rotation": 0.0,
+          "position": [
+            1715229,
+            261220
+          ]
+        }
+      ]
+    },
+    {
+      "number": 138,
+      "texts": [
+        "2026/10/29",
+        "138",
+        "設置圖例15-單行道",
+        "設置議題​:",
+        "多車道轉向行車軌跡確認。",
+        "單行道左轉須注意軌跡檢驗避免與鄰向分隔島碰撞",
+        "行車方向導引不明確。",
+        "禁止進入、禁止左右轉、遵行方向之標誌應用。",
+        "號誌議題。",
+        "採用圓形綠燈或箭頭綠燈之選用原則。",
+        "",
+        "1",
+        "",
+        "2"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image157.png",
+          "slide": 138,
+          "shapeId": "8",
+          "crop": {
+            "l": "18459",
+            "t": "5614",
+            "r": "9845",
+            "b": "6883"
+          },
+          "rotation": 0.0,
+          "position": [
+            1715229,
+            261220
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c4-03-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C4-03/C4-03_現況圖_01.png",
+      "width": 4137,
+      "height": 2987,
+      "label": "C4-03 現況圖",
+      "scenario": "C4-03",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 137,
+      "sourcePart": "ppt/media/image157.png",
+      "sha256": "99dce3d454f2ffc36c9804a918f0b2b01461d9ffa2d7a037a7a42c510dcb8e2c"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "C4-03_user-photos.json",
+        "sha256": "00125f68409d22ff1d2e5d70c4f21af70db31bf3e85b5addffa28975819fac53",
+        "type": "user-attachments",
+        "receivedDate": "2026-10-31"
+      },
+      "role": "photo",
+      "files": [
+        {
+          "key": "results:c4-03-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-03/C4-03_現況照片_01.png",
+          "width": 1856,
+          "height": 1116,
+          "label": "C4-03 現況照片",
+          "scenario": "C4-03",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "0649de6e4abdb3c7c5fd88409fc64f3ec1aa2131e6288554c0ddd34c735f1b8d"
+        },
+        {
+          "key": "results:c4-03-photo-2",
+          "file": "materials/05-複雜道路情境/current-conditions/C4-03/C4-03_現況照片_02.png",
+          "width": 1940,
+          "height": 976,
+          "label": "C4-03 現況照片 2",
+          "scenario": "C4-03",
+          "role": "photo",
+          "rotation": 0,
+          "sha256": "78fad1874068632b7a103e131bd9852d9ade7e497b1fb7562b4c558f3a185f60"
+        }
+      ]
+    }
+  ]
+}

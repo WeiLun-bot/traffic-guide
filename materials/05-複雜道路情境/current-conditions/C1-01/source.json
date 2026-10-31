@@ -1,0 +1,185 @@
+{
+  "scenario": "C1-01",
+  "name": "號誌化左／右錯位 T 字路口",
+  "source": {
+    "file": "01.參考指引說明會(草案)-整體簡報檔_新版型_許.pptx",
+    "sha256": "01e0e4fae9ea40e14458e488c28a4580a80d23a408b8e29acfb67e2d73b9b12f"
+  },
+  "slides": [
+    {
+      "number": 93,
+      "texts": [
+        "2026/10/29",
+        "93",
+        "設置圖例1-錯位T字路口號誌化(左右)​",
+        "現況分析:",
+        " ",
+        "",
+        " ",
+        "",
+        "錯位距離65公尺",
+        "道路",
+        "幹線道",
+        "支線道",
+        "土地使用情境",
+        "商業區、住宅區",
+        "",
+        "控制型式",
+        "號誌化",
+        "",
+        "道路分級",
+        "主要道路",
+        "次要道路",
+        "主要使用者",
+        "公車、汽機車、行人",
+        "公車、汽機車、行人",
+        "設計速率",
+        "50 km/h；慢車道 40 km/h",
+        "50 km/h",
+        "道路設計",
+        "特徵",
+        "路寬：28 m",
+        "路寬：北：15 m；南：20 m",
+        "",
+        "雙向車道數：8",
+        "（內側公車專用道、外側機慢車道）",
+        "車道數：",
+        "北：5；南：6",
+        "",
+        "方向分隔型式：實體分隔",
+        "方向分隔型式：",
+        "北：標線分隔；南：實體分隔",
+        "",
+        "車種管制：公車專用道時段性專用",
+        "車種管制：無",
+        "",
+        "路邊停車：汽機車停車彎",
+        "路邊停車：北：無；南：機車停車彎",
+        "",
+        "人行道：實體人行道",
+        "人行道：實體人行道"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image124.png",
+          "slide": 93,
+          "shapeId": "9",
+          "crop": {},
+          "rotation": 0.0,
+          "position": [
+            1779539,
+            -6089
+          ]
+        }
+      ]
+    },
+    {
+      "number": 94,
+      "texts": [
+        "2026/10/29",
+        "94",
+        "設置圖例1-錯位T字路口號誌化(左右)​",
+        "設置議題​:",
+        " ",
+        "",
+        " ",
+        "",
+        "",
+        "1",
+        "錯位道路路口中央缺乏設計。",
+        "清道距離過遠。",
+        "穿越時缺乏導引，應考慮車道與號誌續進。",
+        "若儲車空間足夠，應佈設停止線並增設號誌，中央應有標線導引。",
+        "錯位分支缺乏適當導引。",
+        "缺乏清楚標誌、標線提示駕駛人道路幾何以及車道選擇。",
+        "",
+        "缺乏行人庇護設施。",
+        "",
+        "2",
+        "",
+        "3"
+      ],
+      "pictures": [
+        {
+          "part": "ppt/media/image124.png",
+          "slide": 94,
+          "shapeId": "9",
+          "crop": {
+            "r": "2578"
+          },
+          "rotation": 0.0,
+          "position": [
+            1365170,
+            -1316803
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "key": "results:c1-01-diagram-1",
+      "file": "materials/05-複雜道路情境/current-conditions/C1-01/C1-01_現況圖_01.png",
+      "width": 2124,
+      "height": 1362,
+      "label": "C1-01 現況圖",
+      "scenario": "C1-01",
+      "role": "diagram",
+      "rotation": 0,
+      "sourceSlide": 93,
+      "sourcePart": "ppt/media/image124.png",
+      "sha256": "43eced456b9358eae2d023bdb0bad02dd99c99f5e6d1fbcf9d8c5967c791a519"
+    }
+  ],
+  "ignoredSymbols": [],
+  "supplementalSources": [
+    {
+      "source": {
+        "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+        "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+        "slideCount": 71
+      },
+      "role": "photo",
+      "contextSlides": [
+        17
+      ],
+      "slides": [
+        {
+          "number": 18,
+          "part": "ppt/slides/slide18.xml",
+          "texts": [
+            "18"
+          ],
+          "pictures": [
+            {
+              "part": "ppt/media/image13.png",
+              "shapeId": "6",
+              "crop": {},
+              "rotation": 0
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "key": "results:c1-01-photo-1",
+          "file": "materials/05-複雜道路情境/current-conditions/C1-01/C1-01_現況照片_01.png",
+          "width": 2542,
+          "height": 871,
+          "label": "C1-01 現況照片",
+          "scenario": "C1-01",
+          "role": "photo",
+          "rotation": 0,
+          "sourceSlide": 18,
+          "sourcePart": "ppt/media/image13.png",
+          "sha256": "526c1cef658692787136f741cf9170904fbc4b505a4c23d677a10cf45f9280bc",
+          "source": {
+            "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+            "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+            "slideCount": 71
+          }
+        }
+      ]
+    }
+  ]
+}

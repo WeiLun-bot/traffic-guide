@@ -16,13 +16,94 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   for(const page of pages){
     await view(page.id);assert.equal(await evaluate('document.getElementById("slide-title").textContent'),page.title);
     assert.equal(await evaluate('document.querySelectorAll(".module-explanation [data-module-focus],.module-focus-button").length'),0);
-    const shown=await evaluate('(()=>{const {source,topic,stage}=window.PresentationModules.displayContext();if(stage?.id==="extensions")return 0;const groups=window.PresentationModules.overviewGroups(source);if(groups.length)return groups.filter(group=>group.assets.length).length;const assets=topic?.assets||source.assets;return assets.length?1:0})()');assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),shown);
+    const shown=await evaluate('(()=>{const {source,topic,stage}=window.PresentationModules.displayContext();if(stage?.id==="extensions")return 0;const groups=window.PresentationModules.overviewGroups(source);if(groups.length)return groups.filter(group=>group.assets.length).length;const assets=topic?.assets||source.assets;return assets.length?(source.defaultView==="pair"&&assets.length>1?2:1):0})()');assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),shown);
     const bounds=await evaluate('[...document.querySelectorAll(".module-diagram")].map(svg=>{const b=svg.getBoundingClientRect();return [b.width,b.height]})');
     assert(bounds.every(b=>b[0]>100&&b[1]>160),'Collapsed module image: '+page.id);
     assert(await evaluate('(()=>{const aside=document.querySelector(".module-explanation"),first=aside?.querySelector(".module-reference-row");return !first||first.getBoundingClientRect().top>=aside.getBoundingClientRect().top-1})()'),'Clipped first module explanation: '+page.id);
   }
   const images=await evaluate('(async()=>{const result=[];for(const asset of Object.values(window.PresentationModules.content.assets)){const response=await fetch(asset.file);const image=new Image();image.src=asset.file;await image.decode();result.push([response.status,image.naturalWidth,image.naturalHeight,response.headers.get("content-type")]);}return result})()');
-  assert.equal(images.length,8);assert(images.every(([status,w,h,mime])=>status===200&&w>0&&h>0&&/image\//.test(mime)));
+  assert.equal(images.length,12);assert(images.every(([status,w,h,mime])=>status===200&&w>0&&h>0&&/image\//.test(mime)));
+  await view('m201-overview');assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-map-canvas")].map(node=>node.dataset.editorImageKey)'),['module:stop-basic','module:yield-basic'],'Overview must retain its representative diagrams');
+  await view('m204-overview');assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[0].assets'),['m204-08538b11c2','m204-7592970ada'],'Movement overview must retain both representative diagrams');
+  assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[1].assets'),['m204-e6f9a94e50','m204-55b65042db'],'Island overview must retain both representative diagrams');
+  assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[2].assets'),['m204-8bd169718b'],'One-way overview must retain its representative diagram');
+  for(const [pagePrefix,assetPrefix,references,pointCount]of [['m201-stop','stop',['58','170','177','189'],4],['m201-yield','yield',['59','149','172','189'],4],['m204-movement','m204-movement',['49','61','73','74'],2],['m204-island','m204-island',['32','64','162'],2],['m204-oneway','m204-oneway',['49','63','73','74'],2],['m203-signals','m203-signals',['201','220','221'],3],['m301-crossing','m301-crossing',['185','185-1','194','200','201','220','222','231'],3],['m301-midblock','m301-midblock',['41','46','64','119','162','186','201','224','233'],2],['m303-turning','m303-turning',['65','137','174-2','191'],2],['m304-lane','m304-lane',['69','73-1','74','167','171','174','175','189'],2]]){
+  await view(pagePrefix+'-issues');
+  const photoKeys=['module:'+assetPrefix+'-issue-photo-1','module:'+assetPrefix+'-issue-photo-2'];
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-map-canvas")].map(node=>node.dataset.editorImageKey)'),photoKeys);
+  const extraPhotos=await evaluate('window.PresentationModules.displayContext().source.assets.length>2');
+  assert.equal(await evaluate('document.querySelectorAll("[data-module-view-select]").length'),extraPhotos?1:0,'Only a gallery with additional photos needs a paired-view picker');assert.equal(await evaluate('document.querySelectorAll("[data-module-view-step]").length'),extraPhotos?2:0);assert.equal(await evaluate('document.querySelectorAll(".module-focus-rect").length'),0);
+  if(extraPhotos){
+    const gallery=[...photoKeys,'module:'+assetPrefix+'-issue-photo-3'],shown=()=>evaluate('[...document.querySelectorAll(".module-map-canvas")].map(node=>node.dataset.editorImageKey)');
+    assert.deepEqual(await evaluate('[...document.querySelector("[data-module-view-select]").options].map(node=>"module:"+node.value)'),gallery);
+    await click('[data-module-view-step="1"]');assert.deepEqual(await shown(),[gallery[1],gallery[2]]);
+    assert.deepEqual(await evaluate('(async()=>{const image=new Image();image.src=document.querySelector(".module-map-card:last-child .module-diagram image").getAttribute("href");await image.decode();return [image.naturalWidth,image.naturalHeight]})()'),[722,783]);
+    await click('[data-asset="'+gallery[2]+'"]');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');
+    await click('[data-module-view-step="1"]');assert.deepEqual(await shown(),[gallery[2],gallery[0]]);await shot('m204-island-third-photo');
+    await evaluate('(()=>{const select=document.querySelector("[data-module-view-select]");select.value="m204-island-issue-photo-1";select.dispatchEvent(new Event("change",{bubbles:true}))})()');assert.deepEqual(await shown(),photoKeys);
+    await click('.edit-toggle');await click('[data-image-order-open="module:m204-island-issues/main"]');assert.deepEqual(await evaluate('[...document.querySelectorAll(".image-order-list>li")].map(node=>node.dataset.imageOrderId)'),gallery);
+    const third='.image-order-list>li[data-image-order-id="'+gallery[2]+'"] [data-image-order-step="-1"]';await click(third);await click(third);assert.deepEqual(await evaluate('JSON.parse(window.visualLayoutEditor.store.serialize()).imageOrders["module:m204-island-issues/main"]'),[gallery[2],gallery[0],gallery[1]]);assert.deepEqual(await shown(),photoKeys,'Reordering must preserve the currently displayed pair');
+    await click('[data-vl-action="undo"]');await click('[data-vl-action="redo"]');await click('[data-vl-action="undo"]');await click('[data-vl-action="undo"]');await click('[data-image-order-close]');await click('.edit-toggle');assert.deepEqual(await shown(),photoKeys);
+  }
+  assert.equal(await evaluate('document.querySelectorAll(".module-map-card .iv-trigger").length'),2);
+  assert.equal(await evaluate('document.querySelectorAll(".module-explain-points>li").length'),pointCount);
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-related-nav [data-module-reference]")].map(node=>node.dataset.moduleReference)'),references);
+  for(const key of photoKeys){await click('.module-map-card [data-asset="'+key+'"]');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');}
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false});await view(pagePrefix+'-issues');
+  assert(await evaluate('(()=>{const images=[...document.querySelectorAll(".module-diagram")],rects=images.map(node=>node.getBoundingClientRect()),main=document.querySelector("main"),fit=window.PresentationModules.displayContext().source.imageFit==="contain"?"meet":"slice";return rects.every(r=>r.height>=250)&&Math.abs(rects[0].height-rects[1].height)<1&&Math.abs(rects[0].top-rects[1].top)<1&&images.every(svg=>svg.getAttribute("preserveAspectRatio")==="xMidYMid "+fit)&&main.scrollHeight<=main.clientHeight+1})()'),'Issue photos must use equal-height frames and their specified image fit within one presentation screen');
+  if(pagePrefix==='m204-movement')assert(await evaluate('[...document.querySelectorAll(".module-diagram")].every(svg=>{const image=svg.querySelector("image"),a=image.getBoundingClientRect(),b=svg.getBoundingClientRect();return a.left>=b.left-1&&a.right<=b.right+1&&a.top>=b.top-1&&a.bottom<=b.bottom+1})'),'All red circles and labels must remain visible in the annotated photos');
+  await shot(pagePrefix+'-issue-photos');
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  }
+  await view('m203-signals-diagram');assert.equal(await evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey'),'module:m203-cd5bcd9029','Signal diagram explanations must retain their original basic-layout illustration');
+  await view('m301-overview');assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[0].assets'),['m301-1ce77bf207','m301-7f710fdd90'],'Pedestrian overview must retain both sidewalk representatives');assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),3);
+  assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[1].assets'),['m301-d5772b64b2','m301-4b73804d52'],'Pedestrian overview must retain both crossing representatives');
+  assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[2].assets'),['m301-c80421bad4'],'Pedestrian overview must retain its midblock representative');
+  await view('m301-crossing-diagram');assert.equal(await evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey'),'module:m301-d5772b64b2','Crossing diagram explanations must retain their original representative');
+  await view('m301-midblock-diagram');assert.equal(await evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey'),'module:m301-c80421bad4','Midblock diagram explanations must retain their original representative');
+  await view('m303-overview');assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source).map(group=>group.assets)'),[['m101-slow-wide','m101-slow-narrow'],['m303-eb74f285de','m303-6861b608fc','m303-a5220c3ae3']],'Motorcycle overview must retain the shared lane diagrams and all three turning representatives');
+  await view('m303-turning-diagram');await click('[data-module-topic="direct"]');assert.equal(await evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey'),'module:m303-87b5f62998','Motorcycle turning explanations must retain their original illustration');
+  await view('m304-overview');assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[0].assets'),['m304-55a30512cf'],'Bus overview must retain its original lane representative');
+  assert.deepEqual(await evaluate('window.PresentationModules.overviewGroups(window.PresentationModules.displayContext().source)[1].assets'),['m304-599bae677d','m304-3d1fe5b8ea'],'Bus overview must retain both original roadside-stop representatives');
+  await view('m304-lane-diagram');await click('[data-module-topic="channel"]');assert.equal(await evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey'),'module:m304-4ce4616de6','Bus-lane diagram explanations must retain their original illustration');
+  for(const [pagePrefix,references,pointCount,dimensions,diagramAsset]of [['m202-roundabout',['34','59','66','171','172','189'],3,[1737,941],'m202-roundabout'],['m301-sidewalk',['174-3'],2,[1359,575],'m301-1ce77bf207'],['m304-stop',['169','183','189-1','171'],2,[747,404],'m304-599bae677d']]){
+  const photoKey='module:'+pagePrefix+'-issue-photo-1';await view(pagePrefix+'-issues');
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-map-canvas")].map(node=>node.dataset.editorImageKey)'),[photoKey]);
+  assert.equal(await evaluate('document.querySelectorAll("[data-module-view-select],[data-module-view-step],[data-module-compare],.module-focus-rect").length'),0,'A single issue photo must not show photo selection or comparison controls');
+  assert.equal(await evaluate('document.querySelectorAll(".module-map-card .iv-trigger").length'),1);
+  assert.equal(await evaluate('document.querySelectorAll(".module-explain-points>li").length'),pointCount);
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-related-nav [data-module-reference]")].map(node=>node.dataset.moduleReference)'),references);
+  assert.deepEqual(await evaluate('(async()=>{const image=new Image();image.src=document.querySelector(".module-diagram image").getAttribute("href");await image.decode();return [image.naturalWidth,image.naturalHeight]})()'),dimensions);
+  await click('[data-asset="'+photoKey+'"]');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false});await view(pagePrefix+'-issues');
+  assert(await evaluate('(()=>{const main=document.querySelector("main"),svg=document.querySelector(".module-diagram");return main.scrollHeight<=main.clientHeight+1&&svg.getBoundingClientRect().height>=250&&svg.getAttribute("preserveAspectRatio")==="xMidYMid meet"})()'),'The single issue photo must fit one presentation screen');
+  await shot(pagePrefix+'-issue-photo');await cdp.send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  await view(pagePrefix+'-diagram');assert.equal(await evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey'),'module:'+diagramAsset,'Diagram explanations must retain their original representative');
+  }
+  await view('m302-overview');assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-map-canvas")].map(node=>node.dataset.editorImageKey)'),['module:m302-b172c5ac34'],'The merged bicycle overview must retain its original diagram');
+  assert.match(await evaluate('document.querySelector(".module-overview-toolbar>strong").textContent'),/M3-02\.1.*M3-02\.2/);
+  const bicyclePhotos=[1,2,3].map(index=>'m302-lane-issue-photo-'+index),bicycleFixture=fs.readFileSync(previewConfigPath,'utf8');
+  const bicycleKey=()=>evaluate('document.querySelector(".module-map-canvas").dataset.editorImageKey');
+  const chooseBicycle=async id=>evaluate('(()=>{const select=document.querySelector("[data-module-view-select]");select.value='+JSON.stringify(id)+';select.dispatchEvent(new Event("change",{bubbles:true}))})()');
+  await view('m302-lane-issues');assert.equal(await bicycleKey(),'module:'+bicyclePhotos[0]);assert.equal(await evaluate('document.querySelectorAll(".module-map-card").length'),1);
+  assert.deepEqual(await evaluate('[...document.querySelector("[data-module-view-select]").options].map(node=>node.value)'),bicyclePhotos);
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-related-nav [data-module-reference]")].map(node=>node.dataset.moduleReference)'),['46','67','174-4','186-1']);assert.equal(await evaluate('document.querySelectorAll(".module-explain-points>li").length'),2);
+  for(const [index,id]of bicyclePhotos.entries()){
+    await chooseBicycle(id);assert.equal(await bicycleKey(),'module:'+id);assert.equal(await evaluate('document.querySelectorAll(".module-map-card .iv-trigger").length'),1);
+    assert.deepEqual(await evaluate('(async()=>{const image=new Image();image.src=document.querySelector(".module-diagram image").getAttribute("href");await image.decode();return [image.naturalWidth,image.naturalHeight]})()'),[[1102,899],[1079,799],[827,591]][index]);
+    await click('[data-asset="module:'+id+'"]');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');
+  }
+  await click('[data-module-view-step="1"]');assert.equal(await bicycleKey(),'module:'+bicyclePhotos[0]);await click('[data-module-view-step="-1"]');assert.equal(await bicycleKey(),'module:'+bicyclePhotos[2]);
+  await chooseBicycle(bicyclePhotos[0]);await cdp.send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false});await view('m302-lane-issues');assert(await evaluate('(()=>{const main=document.querySelector("main");return main.scrollHeight<=main.clientHeight+1})()'));await shot('m302-lane-issue-photos');await cdp.send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  await click('.edit-toggle');await click('[data-image-order-open="module:m302-lane-issues/main"]');
+  const bicycleThird='.image-order-list>li[data-image-order-id="module:'+bicyclePhotos[2]+'"] [data-image-order-step="-1"]';await click(bicycleThird);await click(bicycleThird);
+  assert.deepEqual(await evaluate('window.visualLayoutEditor.store.config.imageOrders["module:m302-lane-issues/main"]'),[bicyclePhotos[2],bicyclePhotos[0],bicyclePhotos[1]].map(id=>'module:'+id));assert.equal(await bicycleKey(),'module:'+bicyclePhotos[0],'Sorting must preserve the currently shown photo');
+  await click('[data-vl-action="undo"]');await click('[data-vl-action="redo"]');fs.writeFileSync(previewConfigPath,await evaluate('window.visualLayoutEditor.store.serialize()'));
+  await navigate(base+'/presentation-demo/#m302-lane-issues');assert.equal(await bicycleKey(),'module:'+bicyclePhotos[2],'The saved first photo must be the default after reload');
+  fs.writeFileSync(previewConfigPath,bicycleFixture);await navigate(base+'/presentation-demo/#m302-lane-issues');assert.equal(await bicycleKey(),'module:'+bicyclePhotos[0]);
+  await view('m302-lane-diagram');assert.equal(await bicycleKey(),'module:m302-3167eda215','Bicycle diagram explanations must retain their original illustration');
+  pass('all supplied module issue photos use equal-height frames and independent initial views; annotated movement photos remain complete and original-image enlargement, explanations, references and representative diagrams are preserved');
+  pass('three bicycle issue photos support selection, wrapping arrows, editable ordering, undo/redo and a saved first-photo default after reload without changing the merged overview');
   await view('m201-stop-layout');await shot('m201-stop-layout');
   assert(await evaluate('Boolean(document.querySelector(".module-focus-rect"))'));
   await click('.module-map-card [data-asset]');assert(await evaluate('document.getElementById("asset-dialog").open'));assert.match(await evaluate('document.getElementById("asset-kicker").textContent'),/M2-01/);await evaluate('document.getElementById("asset-dialog").close()');
@@ -30,7 +111,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await view('m201-stop-extensions');assert.equal(await evaluate('document.querySelectorAll(".module-extension-card").length'),4);assert.equal(await evaluate('document.querySelectorAll(\'.module-extension-card[data-module-topic-id="warning"] img\').length'),0);await click('.module-extension-card[data-module-topic-id="curb"] [data-asset]');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');await shot('m201-stop-extensions');
   await view('m201-yield-buffer');await shot('m201-yield-buffer');
   await view('m201-applications');await click('[data-module-scenario="overview"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'overview');await click('[data-back-module]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m201-applications');
-  pass('all eight M2-01 presentation pages and eight PNG/SVG originals load; focus, topic figures, source dialogs and module-to-case links work');
+  pass('all eight M2-01 presentation pages, eight PNG/SVG originals and four current-condition photos load; focus, topic figures, source dialogs and module-to-case links work');
   await require('./module-switcher-browser.cjs')({evaluate,view,click,cdp,artifacts,pass});
   await require('./module-subcategories-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
   await view('m201-stop-layout');await click('[data-module-topic="sign"]');await click('.edit-toggle');

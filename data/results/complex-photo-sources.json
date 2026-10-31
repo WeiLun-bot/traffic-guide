@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.參考指引說明會(草案)_整體簡報檔.pptx",
+    "sha256": "41ce9e74e2c1c1a0498e3be9014bbcd9869f5d3e569ec9baaea07dbe377f58dd",
+    "slideCount": 71
+  },
+  "scenarios": {
+    "C1-01": {
+      "contextSlides": [17],
+      "contextText": ["錯位T字路口", "左/右錯位"],
+      "photos": [
+        {"slide": 18, "part": "ppt/media/image13.png", "sha256": "526c1cef658692787136f741cf9170904fbc4b505a4c23d677a10cf45f9280bc"}
+      ]
+    }
+  },
+  "note": "第17–19頁為左／右錯位T字路口；第20–70頁為一般道路情境，不移配至其他複雜情境。其餘複雜情境照片未見於本版本。"
+}
