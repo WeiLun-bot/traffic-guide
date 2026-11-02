@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g1-05",
+    "code": "G1-05",
+    "chapter": "g1",
+    "name": "無號誌市區斜交三岔路口",
+    "short": "市區斜交",
+    "setting": "市區",
+    "geometry": "斜交",
+    "rotation": 0,
+    "overall": "g105-overall",
+    "figure": "G1-05 圖例",
+    "contextId": "g105-context",
+    "overviewId": "g105-overview",
+    "reviewId": "g105-review",
+    "source": {
+      "typst": "04-1-05-unsignalized-urban-skewed-t.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "5b98483294db3e43dffeadd32eb6515704f966fa5584acb6ec3509fafb7288ee"
+    },
+    "originalTypst": "// 04-1-05-unsignalized-urban-skewed-t.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌三叉路口／無號誌市區斜交三叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G1-05] 無號誌市區斜交三叉路口設置圖例與運用解說 <section:unsignalized_urban_skewed_t>\n\n==== 路口現況與議題 <paragraph:unsignalized_urban_skewed_t_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例選擇之無號誌市區斜交三叉路口，其周邊土地使用以住宅區為主，房屋型式多為公寓或華廈，因此通常無設置地下停車場。本示例之主要道路路寬約15~m，採標線分隔，雙向各配置1車道，道路兩側設有停車格及實體人行道，路段速限為30~km/h。次要道路路寬約6.5~m，雙向無分隔且配置1車道，道路兩側無停車管制及人行設施，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類無號誌市區斜交三叉路口，交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[主、次道路管制明示性不足][\n\n    此類路口通常次要道路交通量較少，因而在主要道路上經常無設置警示設施，用以提醒主要道路用路人注意次要道路之來車。\n\n    ]\n\n  + #guide-item[行車空間分隔不明確][\n\n    市區道路經常於道路最外側車道處同時佈設停車格，提供用路人路邊停車使用，但因路面通常無劃設路面邊線區隔行車空間與停車空間，以致行車空間分隔不明確。\n\n    ]\n\n  + #guide-item[速度限制不明確][\n\n    市區道路經常因為路側空間不足，因此通常僅於路面繪設速限標字，而無設置速限標誌。\n\n    ]\n\n  + #guide-item[次要道路斜交角度過小][\n\n    此種路口之次要道路與主要道路的交角通常較小，加上轉角處路緣通常緊貼著建物，而使得次要道路車輛於匯入主要道路時，不易判別主要道路車輛的位置，導致有行車安全上的疑慮。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標誌及標線來提高路口的自明性，如使用遵行標誌引導次要道路車流方向等；\n  - 如何利用路口人行空間外擴，以及透過標誌、標線來提高行人穿越道的安全；\n  - 對於路側的停車空間應加以明確繪設，並注意路側停放車輛之進出安全性。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_urban_skewed_t_suggestions_and_overall_diagram>\n\n有關無號誌市區斜交三叉路口的交通設施建議設置如 @fig:unsignalized_urban_skewed_t_33 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 此路口位於市區且鄰近公寓住宅，有路邊停車需求，故本示例於停車帶範圍使用嵌入式停車位，並注意車輛停車進出的安全；\n+ 對於進出巷道之右轉車輛，透過人行道路口處的外緣外擴，來增加轉彎半徑及提高注意到行人穿越道及行人；\n+ 在主要道路上仍建議強化提示速限30~km/h，同時在路口處加繪路口行車導引線，以提高對於路口穿越的自明性。\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M1-03\", \"M2-01\", \"M2-04\", \"M4-01\"),\n  [#scenario-reg-link(\"78\", [禁止停車標誌「禁25」])],\n  [#scenario-reg-link(\"79\", [禁止臨時停車標誌「禁26」])],\n  [#scenario-reg-link(\"118\", [停車處標誌「指46」])],\n  [#scenario-reg-link(\"168\", [禁止停車線])],\n  [#scenario-reg-link(\"169\", [禁止臨時停車線])],\n  // [#scenario-reg-link(\"177\", [「停」標字])],\n) <scenario-index-g1-05>\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G1-05/G1-05_無號誌市區斜交三叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [無號誌市區斜交三叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_urban_skewed_t_33\",\n)\n\n\n\n\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G1-05/G1-05_無號誌市區斜交三叉路口交通設施整體設置圖例.png\", width: 94.7%, height: 94.46mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌市區斜交三叉路口交通設施整體設置圖例],\n// ) <fig:unsignalized_urban_skewed_t_33>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_urban_skewed_t_marking_diagram_explanation>\n\n+ #guide-item[禁止停車線，《設置規則》第168條][\n\n  由於此示例鄰近學校，會有短暫停車接送之臨停需求，故將實體人行道退縮，創造臨時停車彎，並依《設置規則》規定之線形及位置佈設禁止停車線。\n\n  建議同時劃設路面邊線，以利用路人判斷車道位置及禁止停車線之範圍。如 @fig:unsignalized_urban_skewed_t_34 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_臨時停車彎圖例.svg\", width: 65%, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [臨時停車彎圖例],\n  ) <fig:unsignalized_urban_skewed_t_34>\n\n  ]\n\n+ #guide-item[禁止臨時停車線，《設置規則》第169條][\n\n  禁止臨時停車線用以指示禁止臨時停車路段，以劃設於道路緣石正面或頂面為原則，無緣石之道路得標繪於路面上，距路面邊緣以30~cm為度。\n\n  本指引建議於路口轉彎處需繪設禁止臨時停車線，路口如有佈設行穿線時，禁止臨時停車線於行穿線處行穿線中斷。如 @fig:unsignalized_urban_skewed_t_35 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_禁止臨時停車線圖例.svg\", width: 65%, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [禁止臨時停車線圖例],\n  ) <fig:unsignalized_urban_skewed_t_35>\n\n  ]\n\n// + #guide-item[「停」標字，《設置規則》第177條][\n\n//   「停」標字表示車輛需停車再開，佈設於停止線上游至少2~m處，雖《設置規則》規定「停」標字與停車再開標誌可擇一佈設，本參考指引建議應設立桿「停車再開」標誌為主，地面停標字為輔，如 @fig:unsignalized_urban_skewed_t_36 所示。\n\n//   #figure(\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_停標字佈設間距圖例.png\", width: 52.7%, height: 70.27mm, fit: \"contain\"), kind: \"local\")],\n//     kind: image,\n//     caption: [「停」標字佈設間距圖例],\n//   ) <fig:unsignalized_urban_skewed_t_36>\n\n//   ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_skewed_t_signage_diagram_explanation>\n\n+ #guide-item[禁止停車標誌「禁25」，《設置規則》第78條][\n\n  本示例參考《設置規則》說明，建議將禁止停車標誌設置於禁止停車路段的起點、終點處，並加設附牌，以箭頭標示禁停路段方向。另可視實際需要於中間加設一面禁止停車標誌。\n\n  另建議本標誌與禁止停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人，起點、終點標誌牌面採面行車方向45度設置，設置圖例如 @fig:unsignalized_urban_skewed_t_37 所示。\n\n  #figure(\n    [\n      #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_禁止停車.svg\", width: 60%, fit: \"contain\"), kind: \"general\")\n    ],\n    kind: image,\n    caption: [禁止停車標誌設置圖例],\n  ) <fig:unsignalized_urban_skewed_t_37>\n\n  ]\n+ #guide-item[禁止臨時停車標誌「禁26」，《設置規則》第79條][其設置方式同禁止停車標誌「禁25」之《設置規則》說明，設於禁止停車路段的起點、終點處，並可視實際需要於中間加設一面禁止臨時停車標誌，並加設附牌，以箭頭標示禁停路段方向，起點、終點處標誌牌面採面行車方向45度設置。設置圖例如 @fig:unsignalized_urban_skewed_t_37 所示。\n\n本標誌建議與禁止臨時停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人。]\n+ #guide-item[停車處標誌「指46」，《設置規則》第118條][\n\n  路邊設有停車格位時，參考實務上常見作法，於停車格位旁設置停車處標誌，採平行行車方向設置，並以附牌告知駕駛人收費的時段、收費方式、收費金額等資訊，建議可設於路邊停車格位的起點、終點處，若停車格位區段長，可於中間再增設一面停車處標誌。路邊停車格位設置停車處標誌之圖例，可參閱@sec-module-m1-03[]路側停車模組。\n\n  #figure(\n    [\n      #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_停車處與禁止臨時停車.svg\", width: 80%, fit: \"contain\"), kind: \"general\")\n    ],\n    kind: image,\n    caption: [路邊停車格位設置停車處標誌圖例],\n  ) <fig:unsignalized_urban_skewed_t_38>\n\n  ]\n",
+    "sourceLine": "資料：G1-05 路口現況與設置建議",
+    "summary": "住宅區斜交路口，以清楚的停讓、停車範圍與轉角人行空間，減少匯入時的辨識負擔。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "15",
+        "description": "雙向各 1 車道，兩側停車格及實體人行道",
+        "speed": "30"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "6.5",
+        "description": "雙向共 1 車道，無人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "辨識主次道路",
+        "補強巷道來車提示與停讓關係。"
+      ],
+      [
+        "分清停車與行車空間",
+        "界定路邊停放範圍，保留車道與轉角。"
+      ],
+      [
+        "改善斜交視角與人行空間",
+        "整理路口交角、轉角與行人穿越位置。"
+      ]
+    ],
+    "condition": "將停車進出、路口視距與行人穿越一起檢視。",
+    "overviewIntro": "以嵌入式停車、轉角人行道外擴及一致的禁停資訊，整理斜交路口。",
+    "overviewRows": [
+      [
+        "g105-yellow-line",
+        "01　安排臨時停車空間",
+        "§168"
+      ],
+      [
+        "g105-red-line",
+        "02　保留轉角與行穿線",
+        "§169"
+      ],
+      [
+        "g105-no-parking-sign",
+        "03　明示禁停路段及時段",
+        "§78 / §79"
+      ],
+      [
+        "g105-parking-sign",
+        "04　交代停車服務資訊",
+        "§118"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M1-03 路側停車",
+      "M2-01 停讓管制",
+      "M2-04 行向管制",
+      "M4-01 危險警示"
+    ],
+    "recapTitle": "停車有範圍，\n路口才清楚。",
+    "recapIntro": "以嵌入式停車、轉角人行道外擴及一致的禁停資訊，整理斜交路口。",
+    "recapRows": [
+      [
+        "停放與行車分開",
+        "停車彎與路面邊線共同界定空間。",
+        "§168"
+      ],
+      [
+        "轉角保持清楚",
+        "紅線配合行穿線位置，保留轉彎及視距。",
+        "§169"
+      ],
+      [
+        "標誌與標線同步",
+        "禁停範圍、時段及停車服務資訊一致呈現。",
+        "§78 / §79 / §118"
+      ]
+    ],
+    "articleIds": [
+      "g105-yellow-line",
+      "g105-red-line",
+      "g105-no-parking-sign",
+      "g105-no-stopping-sign",
+      "g105-parking-sign"
+    ],
+    "assets": {
+      "g105-overall": "G1-05_無號誌市區斜交三叉路口交通設施整體設置圖例.svg",
+      "g105-before": "G1-05_現況圖_01.png",
+      "g105-photo-1": "G1-05_現況照片_01.png",
+      "g105-photo-2": "G1-05_現況照片_02.png",
+      "g105-photo-3": "G1-05_現況照片_03.png"
+    },
+    "width": 1097,
+    "height": 544,
+    "currentConditions": {
+      "pageId": "g105-conditions",
+      "before": "g105-before",
+      "after": "g105-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g105-conditions:content",
+      "photos": [
+        {
+          "image": "g105-photo-1",
+          "kind": "photo",
+          "title": "橫向來車提示不足",
+          "alt": "G1-05 現況照片 1",
+          "points": [
+            "主要道路缺少提醒駕駛留意橫向道路來車的警示。"
+          ]
+        },
+        {
+          "image": "g105-photo-2",
+          "kind": "photo",
+          "title": "停車與行車空間混用",
+          "alt": "G1-05 現況照片 2",
+          "points": [
+            "外側車道兼供路邊停車，行車範圍不夠清楚。"
+          ]
+        },
+        {
+          "image": "g105-photo-3",
+          "kind": "photo",
+          "title": "速限資訊不完整",
+          "alt": "G1-05 現況照片 3",
+          "points": [
+            "街廓較短，速限提示多依賴路面標字，需檢視提示的連續性。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-1-05-unsignalized-urban-skewed-t.typ 整理。",
+      "takeaway": "將停車進出、路口視距與行人穿越一起檢視。"
+    }
+  },
+  "assets": {
+    "g105-overall": {
+      "file": "materials/04-一般道路情境/G1-05/G1-05_無號誌市區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 1097,
+      "height": 544,
+      "rotation": 0,
+      "scenario": "G1-05",
+      "label": "無號誌市區斜交三叉路口交通設施整體設置圖例",
+      "sha256": "8e6abca1278e47bc0ef47ecfedd9a5afe0cd6dbf6d6cab4424c3a7d9c088138f"
+    },
+    "g105-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況圖_01.png",
+      "width": 3000,
+      "height": 2225,
+      "rotation": 0,
+      "scenario": "G1-05",
+      "label": "現況圖_01",
+      "sha256": "6caec6e8bfde382eed3bfd96fc65ec96d5e54b3d521e4adc59737b35dd1bbe62"
+    },
+    "g105-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況照片_01.png",
+      "width": 2572,
+      "height": 1412,
+      "rotation": 0,
+      "scenario": "G1-05",
+      "label": "現況照片_01",
+      "sha256": "3d5d1605796a8d6772d472367aea1f402b3d2bc7463b9ad4dc531c0709270b57"
+    },
+    "g105-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況照片_02.png",
+      "width": 2583,
+      "height": 1477,
+      "rotation": 0,
+      "scenario": "G1-05",
+      "label": "現況照片_02",
+      "sha256": "b378bf744b4bf5bd6ce9b33ef22e9e018208e4eafaae1481ce4284d44118f3c8"
+    },
+    "g105-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-05/G1-05_現況照片_03.png",
+      "width": 2587,
+      "height": 1402,
+      "rotation": 0,
+      "scenario": "G1-05",
+      "label": "現況照片_03",
+      "sha256": "4890c9cc426d2d9cafdbd2d69fcd07190712e2c10eb5a5bfa9a14022765d830a"
+    }
+  },
+  "articles": [
+    {
+      "id": "g105-yellow-line",
+      "scenario": "g1-05",
+      "reg": "168",
+      "name": "禁止停車線",
+      "category": "標線",
+      "mapAsset": "g105-overall",
+      "asset": "g105-overall",
+      "headline": "禁止停車線",
+      "locate": "對照圖例，檢視禁止停車線的配置。",
+      "box": [
+        142.61,
+        364.48,
+        186.49,
+        27.2
+      ],
+      "crop": [
+        77.34,
+        284.84,
+        317.03,
+        186.49
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "禁止停車線",
+      "points": [
+        "利用人行道退縮，安排短暫接送的臨時停車彎。",
+        "黃色禁止停車線與路面邊線一併配置，區分停車彎與行車空間。"
+      ],
+      "takeaway": "利用人行道退縮，安排短暫接送的臨時停車彎。",
+      "sourceRaw": "+ #guide-item[禁止停車線，《設置規則》第168條][\n\n  由於此示例鄰近學校，會有短暫停車接送之臨停需求，故將實體人行道退縮，創造臨時停車彎，並依《設置規則》規定之線形及位置佈設禁止停車線。\n\n  建議同時劃設路面邊線，以利用路人判斷車道位置及禁止停車線之範圍。如 @fig:unsignalized_urban_skewed_t_34 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_臨時停車彎圖例.svg\", width: 65%, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [臨時停車彎圖例],\n  ) <fig:unsignalized_urban_skewed_t_34>\n\n  ]\n",
+      "sourceParagraphs": [
+        "由於此示例鄰近學校，會有短暫停車接送之臨停需求，故將實體人行道退縮，創造臨時停車彎，並依《設置規則》規定之線形及位置佈設禁止停車線。",
+        "建議同時劃設路面邊線，以利用路人判斷車道位置及禁止停車線之範圍。如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g105-red-line",
+      "scenario": "g1-05",
+      "reg": "169",
+      "name": "禁止臨時停車線",
+      "category": "標線",
+      "mapAsset": "g105-overall",
+      "asset": "g105-overall",
+      "headline": "禁止臨時停車線",
+      "locate": "對照圖例，檢視禁止臨時停車線的配置。",
+      "box": [
+        318.13,
+        320.96,
+        142.61,
+        70.72
+      ],
+      "crop": [
+        246.82,
+        272.43,
+        285.22,
+        167.78
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "禁止臨時停車線",
+      "points": [
+        "路口轉彎處劃設禁止臨時停車線，保留轉彎與視距空間。",
+        "以緣石正面或頂面為原則；無緣石時，可距路面邊緣約 30 cm 標繪。",
+        "行穿線範圍內中斷紅線，避免標線重疊。"
+      ],
+      "takeaway": "路口轉彎處劃設禁止臨時停車線，保留轉彎與視距空間。",
+      "sourceRaw": "+ #guide-item[禁止臨時停車線，《設置規則》第169條][\n\n  禁止臨時停車線用以指示禁止臨時停車路段，以劃設於道路緣石正面或頂面為原則，無緣石之道路得標繪於路面上，距路面邊緣以30~cm為度。\n\n  本指引建議於路口轉彎處需繪設禁止臨時停車線，路口如有佈設行穿線時，禁止臨時停車線於行穿線處行穿線中斷。如 @fig:unsignalized_urban_skewed_t_35 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_禁止臨時停車線圖例.svg\", width: 65%, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [禁止臨時停車線圖例],\n  ) <fig:unsignalized_urban_skewed_t_35>\n\n  ]\n\n\n\n\n\n\n\n\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_skewed_t_signage_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "禁止臨時停車線用以指示禁止臨時停車路段，以劃設於道路緣石正面或頂面為原則，無緣石之道路得標繪於路面上，距路面邊緣以30 cm為度。",
+        "本指引建議於路口轉彎處需繪設禁止臨時停車線，路口如有佈設行穿線時，禁止臨時停車線於行穿線處行穿線中斷。如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g105-no-parking-sign",
+      "scenario": "g1-05",
+      "reg": "78",
+      "name": "禁止停車標誌",
+      "category": "標誌",
+      "mapAsset": "g105-overall",
+      "asset": "g105-overall",
+      "headline": "禁止停車標誌",
+      "locate": "對照圖例，檢視禁止停車標誌的配置。",
+      "box": [
+        219.4,
+        315.52,
+        76.79,
+        38.08
+      ],
+      "crop": [
+        115.19,
+        250.67,
+        285.22,
+        167.78
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "禁止停車標誌",
+      "points": [
+        "設於禁停路段起點、終點，必要時於中間增設。",
+        "以箭頭附牌說明禁停方向與範圍，並傳達禁停時段。",
+        "起終點牌面朝向來車約 45°，與禁止停車線配合。"
+      ],
+      "takeaway": "設於禁停路段起點、終點，必要時於中間增設。",
+      "sourceRaw": "+ #guide-item[禁止停車標誌「禁25」，《設置規則》第78條][\n\n  本示例參考《設置規則》說明，建議將禁止停車標誌設置於禁止停車路段的起點、終點處，並加設附牌，以箭頭標示禁停路段方向。另可視實際需要於中間加設一面禁止停車標誌。\n\n  另建議本標誌與禁止停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人，起點、終點標誌牌面採面行車方向45度設置，設置圖例如 @fig:unsignalized_urban_skewed_t_37 所示。\n\n  #figure(\n    [\n      #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_禁止停車.svg\", width: 60%, fit: \"contain\"), kind: \"general\")\n    ],\n    kind: image,\n    caption: [禁止停車標誌設置圖例],\n  ) <fig:unsignalized_urban_skewed_t_37>\n\n  ]",
+      "sourceParagraphs": [
+        "本示例參考《設置規則》說明，建議將禁止停車標誌設置於禁止停車路段的起點、終點處，並加設附牌，以箭頭標示禁停路段方向。另可視實際需要於中間加設一面禁止停車標誌。",
+        "另建議本標誌與禁止停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人，起點、終點標誌牌面採面行車方向45度設置，設置圖例如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g105-no-stopping-sign",
+      "scenario": "g1-05",
+      "reg": "79",
+      "name": "禁止臨時停車標誌",
+      "category": "標誌",
+      "mapAsset": "g105-overall",
+      "asset": "g105-overall",
+      "headline": "禁止臨時停車標誌",
+      "locate": "對照圖例，檢視禁止臨時停車標誌的配置。",
+      "box": [
+        943.42,
+        266.56,
+        54.85,
+        48.96
+      ],
+      "crop": [
+        811.78,
+        207.15,
+        285.22,
+        167.78
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "禁止臨時停車標誌",
+      "points": [
+        "起點、終點標誌搭配箭頭附牌，說明禁止臨時停車的路段。",
+        "牌面朝向來車約 45°；路段較長時，視需要於中間加設。",
+        "與紅線同步配置，讓限制範圍與時段更清楚。"
+      ],
+      "takeaway": "起點、終點標誌搭配箭頭附牌，說明禁止臨時停車的路段。",
+      "sourceRaw": "+ #guide-item[禁止臨時停車標誌「禁26」，《設置規則》第79條][其設置方式同禁止停車標誌「禁25」之《設置規則》說明，設於禁止停車路段的起點、終點處，並可視實際需要於中間加設一面禁止臨時停車標誌，並加設附牌，以箭頭標示禁停路段方向，起點、終點處標誌牌面採面行車方向45度設置。設置圖例如 @fig:unsignalized_urban_skewed_t_37 所示。\n\n本標誌建議與禁止臨時停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人。]",
+      "sourceParagraphs": [
+        "本標誌建議與禁止臨時停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人。"
+      ]
+    },
+    {
+      "id": "g105-parking-sign",
+      "scenario": "g1-05",
+      "reg": "118",
+      "name": "停車處標誌",
+      "category": "標誌",
+      "mapAsset": "g105-overall",
+      "asset": "g105-overall",
+      "headline": "停車處標誌",
+      "locate": "對照圖例，檢視停車處標誌的配置。",
+      "box": [
+        559.47,
+        293.76,
+        76.79,
+        38.08
+      ],
+      "crop": [
+        455.26,
+        228.91,
+        285.22,
+        167.78
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "停車處標誌",
+      "points": [
+        "路邊停車格位旁設置停車處標誌，牌面平行行車方向。",
+        "以附牌說明收費時段、方式及金額。",
+        "起終點分別設置；格位區段較長時，可於中間增設。"
+      ],
+      "takeaway": "路邊停車格位旁設置停車處標誌，牌面平行行車方向。",
+      "sourceRaw": "+ #guide-item[停車處標誌「指46」，《設置規則》第118條][\n\n  路邊設有停車格位時，參考實務上常見作法，於停車格位旁設置停車處標誌，採平行行車方向設置，並以附牌告知駕駛人收費的時段、收費方式、收費金額等資訊，建議可設於路邊停車格位的起點、終點處，若停車格位區段長，可於中間再增設一面停車處標誌。路邊停車格位設置停車處標誌之圖例，可參閱@sec-module-m1-03[]路側停車模組。\n\n  #figure(\n    [\n      #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-05/G1-05_停車處與禁止臨時停車.svg\", width: 80%, fit: \"contain\"), kind: \"general\")\n    ],\n    kind: image,\n    caption: [路邊停車格位設置停車處標誌圖例],\n  ) <fig:unsignalized_urban_skewed_t_38>\n\n  ]\n",
+      "sourceParagraphs": [
+        "路邊設有停車格位時，參考實務上常見作法，於停車格位旁設置停車處標誌，採平行行車方向設置，並以附牌告知駕駛人收費的時段、收費方式、收費金額等資訊，建議可設於路邊停車格位的起點、終點處，若停車格位區段長，可於中間再增設一面停車處標誌。路邊停車格位設置停車處標誌之圖例，可參閱（見相關圖例或模組）路側停車模組。"
+      ],
+      "moduleLinks": [
+        {
+          "route": "m103-parking-diagram",
+          "label": "M1-03 路側停放與裝卸車位配置"
+        }
+      ]
+    }
+  ]
+}

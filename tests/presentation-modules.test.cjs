@@ -7,6 +7,50 @@ test('module architecture has four themes, fifteen modules and twenty-seven subm
   Modules.validateCatalog(catalog);assert.equal(catalog.themes.length,4);assert.equal(catalog.modules.length,15);
   assert.equal(catalog.modules.flatMap(item=>item.submodules).length,27);assert.equal(catalog.modules.filter(item=>item.ready).length,15);
 });
+
+test('module formation keeps ten ordered stages with eight native drawings, independent shared-image focus and isolated load failures',async()=>{
+  const formation=read('data/modules/formation.json');Modules.validateFormation(formation,catalog);
+  assert.equal(formation.stages.length,10);assert.deepEqual(formation.stages.map(stage=>stage.moduleId||null),[null,'M1-01','M1-02','M1-03','M2-03','M2-04','M3-01','M3-02','M3-03','M4-01']);
+  for(const [index,stage]of formation.stages.entries()){
+    const asset=formation.assets[stage.asset];assert.equal(asset.file,'materials/03-modules/00/'+[1,2,3,4,5,6,7,7,7,8][index]+'.svg');
+    const size=require('../tools/svg-native-size.cjs')(fs.readFileSync(path.join(root,asset.file),'utf8'));assert.deepEqual([asset.width,asset.height],size);
+  }
+  assert.equal(Object.keys(formation.assets).length,8);assert.deepEqual(formation.stages.filter(stage=>stage.startView==='focus').map(stage=>stage.moduleId),['M3-02','M3-03']);assert.notDeepEqual(formation.stages[7].focus.crop,formation.stages[8].focus.crop);
+  for(const mutate of [doc=>doc.stages[0].moduleId='M1-01',doc=>doc.stages[1].moduleId='missing',doc=>doc.stages[2].asset='missing',doc=>doc.stages[1].id=doc.stages[0].id,doc=>doc.assets['formation-base'].file='../private.svg',doc=>doc.assets['formation-base'].rotation=45,doc=>doc.stages[7].startView='other',doc=>delete doc.stages[7].focus,doc=>doc.stages[7].focus.rect=[0,0,99999,1],doc=>doc.stages[7].focus.crop=[0,0,1,1]]){const invalid=structuredClone(formation);mutate(invalid);assert.throws(()=>Modules.validateFormation(invalid,catalog));}
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);let api=sandbox.module.exports;await api.load();
+  const pages=Array.from(api.pages());assert.deepEqual(pages.slice(0,3).map(page=>page.id),['modules-structure','modules-index','modules-formation']);assert.equal(pages[2].stepCount,10);
+  const data={embeddedAssets:{},assetMeta:{}};api.prepare(data);for(const stage of formation.stages)assert.equal(data.embeddedAssets['module:'+stage.asset].url,formation.assets[stage.asset].file);
+  for(const [index,stage]of formation.stages.entries()){
+    const empty=api.formationHighlightSpec(index);assert.equal(empty.key,'module:modules-formation:'+stage.id);assert.equal(empty.enabled,Boolean(stage.focus));assert.equal(empty.hasBox,Boolean(stage.focus));
+    const box=[1000,800,700,350],crop=[800,600,1100,750],saved={highlights:{[empty.key]:{box,crop,rotation:27,imageKey:empty.imageKey}}};
+    const spec=api.formationHighlightSpec(index,saved);assert(spec.enabled);assert.deepEqual(Array.from(spec.box),box);assert.deepEqual(Array.from(spec.crop),crop);assert.equal(spec.rotation,27);
+    const other=(index+1)%formation.stages.length;assert.deepEqual(api.formationHighlightSpec(other,saved).box,api.formationHighlightSpec(other).box);
+    saved.highlights[empty.key].deleted=true;assert.equal(api.formationHighlightSpec(index,saved).enabled,false);assert.equal(api.formationHighlightSpec(index,saved).hasBox,true);
+    delete saved.highlights[empty.key].deleted;saved.disabledHighlights={[empty.key]:true};assert.equal(api.formationHighlightSpec(index,saved).enabled,false);
+  }
+  assert.equal(api.formationHighlightSpec(99),null);
+  sandbox.fetch=async url=>new URL(url).pathname.endsWith('/formation.json')?{ok:false,status:404}:{ok:true,json:async()=>read(new URL(url).pathname.slice(1))};
+  await api.load();assert(api.pages().some(page=>page.id==='m101-overview'));assert.equal(api.pages().find(page=>page.id==='modules-formation').stepCount,1);assert.match(api.render(api.pages().find(page=>page.id==='modules-formation')),/模組形成示範尚未載入/);
+});
+
+test('directory representatives cover every module and retain shared/merged diagrams without issue photos or close-up sign details',async()=>{
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  const all=new Map(api.contents.flatMap(doc=>Object.entries(doc.assets)));
+  for(const entry of catalog.modules){
+    const ids=Array.from(api.directoryAssets(entry.id));assert(ids.length>0,entry.id+' has no representative');assert.equal(new Set(ids).size,ids.length);
+    for(const id of ids){assert(all.has(id));assert(!/現況|附牌配置|箭頭起始端示例|車道數示例/.test(all.get(id).label),entry.id+': '+all.get(id).label);}
+  }
+  assert.deepEqual(Array.from(api.directoryAssets('M1-02')),['m102-offset','m102-roundabout']);
+  assert.deepEqual(Array.from(api.directoryAssets('M1-03')),['m103-layout']);
+  assert.deepEqual(Array.from(api.directoryAssets('M2-03')),['m203-2f27e58a6a']);
+  assert.equal(api.directoryAssets('M2-04').length,5);
+  assert.deepEqual(Array.from(api.directoryAssets('M3-02')),['m302-b172c5ac34']);
+  assert(api.directoryAssets('M3-03').includes('m101-slow-wide'));assert(api.directoryAssets('M3-03').includes('m101-slow-narrow'));
+  assert.deepEqual(Array.from(api.directoryAssets('missing')),[]);
+  for(const directoryAssets of [[],['missing'],['m102-offset','m102-offset']]){const invalid=read('data/modules/M1-02.json');invalid.directoryAssets=directoryAssets;assert.throws(()=>Modules.validateModule(invalid,catalog));}
+});
 test('complete M2-01 has twelve unique content pages, eight original figures and four issue photos',()=>{
   Modules.validateModule(data,catalog);assert.equal(data.pages.length,12);assert.equal(Object.keys(data.assets).length,12);
   assert(data.pages.some(page=>page.id==='m201-stop-extensions'));assert(data.pages.some(page=>page.id==='m201-yield-buffer'));

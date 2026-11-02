@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "M2-02",
+  "directoryAssets": ["m202-roundabout"],
   "title": "圓環管制",
   "source": {
     "file": "05-roundabout-control.typ",

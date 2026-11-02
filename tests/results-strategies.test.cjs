@@ -21,7 +21,7 @@ test('each new strategy uses the owning SVG and concise source-backed points, wi
     const asset=strategies.assets[entry.strategy.images[0].key];assert.equal(asset.scenario,code);assert(asset.file.startsWith('materials/04-一般道路情境/'+code+'/'+code+'_'));
     const raw=fs.readFileSync(path.resolve(__dirname,'..',asset.file));assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),asset.sha256);assert.match(raw.toString('utf8'),/<svg\b/);
   }
-  assert(strategies.assets['results:g1-02-strategy'].file.endsWith('高雄甲典街.svg'));
+  assert(strategies.assets['results:g1-02-strategy'].file.endsWith('G1-02_無號誌鄉區正交三叉路口設施設置圖例.svg'));
   assert(strategies.assets['results:g4-02-strategy'].file.includes('/G4-02/'),'Ignore the duplicate G4-02 file in the G4-01 folder');
 });
 test('strategy input rejects cross-case images, unsafe paths, duplicate points and missing issue pages',()=>{

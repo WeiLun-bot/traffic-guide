@@ -90,36 +90,21 @@
                 <g id="點虛線">
                     <path d="M124.279,176.189L273.832,177.462" style="fill:none;stroke:white;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:5,5,0,0,0,0;"/>
                 </g>
-                <path d="M266.034,179.602L266.166,205.527L136.833,206.183L136.701,180.258L266.034,179.602Z" style="fill:none;"/>
+                <path d="M248.034,180.602L248.166,206.527L143.833,206.183L143.701,180.258L248.034,180.602Z" style="fill:none;"/>
                 <clipPath id="_clip6">
-                    <path d="M266.034,179.602L266.166,205.527L136.833,206.183L136.701,180.258L266.034,179.602Z"/>
+                    <path d="M248.034,180.602L248.166,206.527L143.833,206.183L143.701,180.258L248.034,180.602Z"/>
                 </clipPath>
                 <g clip-path="url(#_clip6)">
-                    <path d="M224.604,227.608L275.744,168.696" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M194.196,227.046L245.336,168.134" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M156.093,231.206L207.233,172.293" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M126.213,224.277L177.353,165.365" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M187.097,224.09L128.185,172.95" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M222.793,222.298L163.88,171.157" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M255.583,219.315L196.671,168.175" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M292.997,223.087L234.458,167.383" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M224.604,227.608L279.767,172.445" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M194.196,227.046L249.359,171.883" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M156.093,231.206L211.256,176.042" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M126.213,224.277L181.376,169.114" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M187.097,224.09L131.934,168.927" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M222.793,222.298L167.629,167.134" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M255.583,219.315L200.42,164.152" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M292.997,223.087L235.858,165.948" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
                 </g>
-                <path d="M266.034,179.602L266.166,205.527L136.833,206.183L136.701,180.258L266.034,179.602Z" style="fill:none;stroke:rgb(250,215,21);stroke-width:2px;stroke-linejoin:miter;"/>
-                <path d="M265.966,211.703L266.098,237.628L136.765,238.284L136.633,212.359L265.966,211.703Z" style="fill:none;"/>
-                <clipPath id="_clip7">
-                    <path d="M265.966,211.703L266.098,237.628L136.765,238.284L136.633,212.359L265.966,211.703Z"/>
-                </clipPath>
-                <g clip-path="url(#_clip7)">
-                    <path d="M224.536,259.709L275.676,200.797" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M194.128,259.147L245.268,200.235" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M156.025,263.306L207.165,204.394" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M126.145,256.378L177.285,197.466" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M187.03,256.191L128.117,205.051" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M222.725,254.398L163.813,203.258" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M255.515,251.416L196.603,200.276" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M290.309,250.629L229.378,196.933" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                </g>
-                <path d="M265.966,211.703L266.098,237.628L136.765,238.284L136.633,212.359L265.966,211.703Z" style="fill:none;stroke:rgb(250,215,21);stroke-width:2px;stroke-linejoin:miter;"/>
+                <path d="M248.034,180.602L248.166,206.527L143.833,206.183L143.701,180.258L248.034,180.602Z" style="fill:none;stroke:rgb(250,215,21);stroke-width:2px;stroke-linejoin:miter;"/>
                 <g id="停止線">
                     <path d="M185.786,95.898L208.895,95.414" style="fill:none;stroke:white;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
                 </g>
@@ -132,45 +117,45 @@
             <g id="停車格">
             </g>
         </g>
-        <g id="Signs">
-            <g>
-                <g>
-                    <path d="M182.554,112.23L170.555,112.23" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.25px;stroke-linecap:butt;"/>
-                    <circle cx="176.554" cy="114.48" r="2.25" style="fill:rgb(64,64,64);"/>
-                </g>
-                <g>
-                    <g id="桿件">
-                        <path id="path3090" d="M126.926,78.965L126.926,38.399L130.136,38.399L130.136,78.965L126.926,78.965Z" style="fill:rgb(224,222,221);fill-rule:nonzero;stroke:rgb(21,22,21);stroke-width:0.77px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
-                        <path id="path3155" d="M135.24,38.399L121.823,38.399" style="fill:none;fill-rule:nonzero;stroke:rgb(21,22,21);stroke-width:0.77px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
-                    </g>
-                </g>
-                <g id="禁18">
-                    <path id="Path-1" affinity:id="Path 1" d="M128.533,80.415C134.337,80.415 139.032,85.11 139.032,90.914C139.032,96.718 134.337,101.413 128.533,101.413C122.729,101.413 118.034,96.718 118.034,90.914C118.034,85.11 122.729,80.415 128.533,80.415Z" style="fill:white;"/>
-                    <path id="_-Compound-Path-" affinity:id="&lt;Compound Path&gt;" d="M128.533,75.912C136.827,75.912 143.531,82.62 143.531,90.914C143.531,99.208 136.827,105.912 128.533,105.912C120.239,105.912 113.531,99.208 113.531,90.914C113.531,82.62 120.239,75.912 128.533,75.912ZM118.147,90.914C118.147,96.655 122.789,101.296 128.533,101.296C134.274,101.296 138.916,96.655 138.916,90.914C138.916,85.17 134.274,80.528 128.533,80.528C122.789,80.528 118.147,85.17 118.147,90.914Z" style="fill:rgb(255,0,0);"/>
-                    <path id="_-Path-" affinity:id="&lt;Path&gt;" d="M127.078,95.938L135.762,95.938L136.782,94.66L135.762,93.385L127.078,93.385C126.516,93.385 126.058,92.928 126.058,92.365L126.058,82.661L124.78,83.681L123.505,82.661L123.505,92.365C123.505,94.337 125.106,95.938 127.078,95.938Z" style="fill-rule:nonzero;"/>
-                    <path id="Path2" d="M135.226,99.59L119.875,84.24L121.836,82.275L137.191,97.626L135.226,99.59Z" style="fill:rgb(255,0,0);"/>
-                </g>
-                <path id="path31551" affinity:id="path3155" d="M176.554,114.48L135.24,38.399" style="fill:none;fill-rule:nonzero;stroke:rgb(21,22,21);stroke-width:0.77px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
-                <g id="遵1">
-                    <path id="_-Path-1" affinity:id="&lt;Path&gt;" d="M119.211,105.912L137.852,105.912L151.031,119.092L151.031,137.733L137.852,150.912L119.211,150.912L106.031,137.733L106.031,119.092L119.211,105.912Z" style="fill:white;fill-rule:nonzero;"/>
-                    <path id="_-Path--copy" affinity:id="&lt;Path&gt; copy" d="M119.992,107.701L137.126,107.701L149.242,119.817L149.242,136.951L137.126,149.067L119.992,149.067L107.876,136.951L107.876,119.817L119.992,107.701Z" style="fill:rgb(235,28,35);fill-rule:nonzero;"/>
-                    <path id="path8" d="M106.144,137.671L119.272,150.8L137.846,150.8L150.975,137.671L150.975,119.097L137.846,105.968L119.272,105.968L106.144,119.097L106.144,137.671Z" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:0.17px;stroke-miterlimit:4;"/>
-                    <path id="停" d="M125.691,138.903C125.972,139.55 126.309,140.197 126.619,140.759L124.228,141.434C123.75,140.703 123.216,139.69 122.906,138.903L115.678,138.903L115.678,136.737L133.116,136.737L133.116,138.903L125.691,138.903ZM131.259,129.818L131.259,135.415L117.844,135.415L117.844,129.818L131.259,129.818ZM128.869,131.647L120.375,131.647L120.375,133.615L128.869,133.615L128.869,131.647ZM132.862,140.422C133.622,138.312 134.578,136.118 135.675,134.122L135.675,115.447L138.066,115.447L138.066,130.24C138.712,129.312 139.387,128.468 140.062,127.737C140.287,128.328 141.019,129.734 141.469,130.381C138.966,133.025 136.631,137.075 135.225,141.209L132.862,140.422ZM131.034,124.418L118.322,124.418L118.322,122.337L123.216,122.337L123.216,118.147C123.216,116.881 123.497,116.206 124.509,115.868C125.522,115.531 126.984,115.531 129.15,115.531C129.291,116.234 129.6,117.162 129.937,117.809C128.419,117.753 126.844,117.753 126.422,117.781C125.972,117.781 125.859,117.893 125.859,118.231L125.859,122.337L131.034,122.337L131.034,124.418ZM115.594,128.356L115.594,123.603L117.928,123.603L117.928,126.247L131.4,126.247L131.4,123.603L133.65,123.603L133.65,128.356L115.594,128.356Z" style="fill:white;"/>
-                </g>
+        <g>
+            <path id="引線" d="M201.965,247.888L201.965,384.922" style="fill:none;stroke:rgb(35,31,32);stroke-width:0.55px;stroke-linecap:square;stroke-linejoin:miter;"/>
+            <g id="遵8">
+                <circle cx="202.34" cy="382.576" r="15" style="fill:rgb(0,63,127);"/>
+                <path d="M196.507,381.119L215.466,379.659L215.464,385.492L196.506,384.034L196.506,387.437L189.214,382.575L196.506,377.715L196.507,381.119Z" style="fill:white;"/>
             </g>
             <g>
-                <path id="引線" d="M200.53,247.903L203.4,384.906" style="fill:none;stroke:rgb(35,31,32);stroke-width:0.55px;stroke-linecap:square;stroke-linejoin:miter;"/>
-                <g id="遵8">
-                    <path d="M203.714,399.903C195.437,400.077 188.576,393.498 188.403,385.221C188.229,376.944 194.808,370.083 203.085,369.91C211.362,369.736 218.223,376.315 218.396,384.592C218.57,392.869 211.991,399.73 203.714,399.903Z" style="fill:rgb(0,63,127);"/>
-                    <path d="M197.537,383.572L216.461,381.715L216.582,387.547L197.597,386.487L197.668,389.889L190.277,385.181L197.464,380.168L197.537,383.572Z" style="fill:white;"/>
-                </g>
-                <g>
-                    <path d="M206.481,245.528L194.484,245.779" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.25px;stroke-linecap:butt;"/>
-                    <path d="M200.577,250.152C199.335,250.178 198.306,249.191 198.28,247.95C198.254,246.709 199.241,245.679 200.483,245.653C201.724,245.627 202.753,246.614 202.779,247.856C202.805,249.097 201.818,250.126 200.577,250.152Z" style="fill:rgb(64,64,64);"/>
+                <path d="M207.964,245.638L195.965,245.638" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.25px;stroke-linecap:butt;"/>
+                <circle cx="201.965" cy="247.888" r="2.25" style="fill:rgb(64,64,64);"/>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M182.554,112.23L170.555,112.23" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.25px;stroke-linecap:butt;"/>
+                <circle cx="176.554" cy="114.48" r="2.25" style="fill:rgb(64,64,64);"/>
+            </g>
+            <g>
+                <g id="桿件">
+                    <path id="path3155" d="M135.24,59.916L121.823,59.916" style="fill:none;fill-rule:nonzero;stroke:rgb(21,22,21);stroke-width:0.77px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+                    <path id="path31551" affinity:id="path3155" d="M128.531,59.916L128.531,128.44" style="fill:none;fill-rule:nonzero;stroke:rgb(21,22,21);stroke-width:0.77px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
                 </g>
             </g>
-            <g id="定位物件">
+            <g id="禁18">
+                <path id="Path-1" affinity:id="Path 1" d="M128.533,80.415C134.337,80.415 139.032,85.11 139.032,90.914C139.032,96.718 134.337,101.413 128.533,101.413C122.729,101.413 118.034,96.718 118.034,90.914C118.034,85.11 122.729,80.415 128.533,80.415Z" style="fill:white;"/>
+                <path id="_-Compound-Path-" affinity:id="&lt;Compound Path&gt;" d="M128.533,75.912C136.827,75.912 143.531,82.62 143.531,90.914C143.531,99.208 136.827,105.912 128.533,105.912C120.239,105.912 113.531,99.208 113.531,90.914C113.531,82.62 120.239,75.912 128.533,75.912ZM118.147,90.914C118.147,96.655 122.789,101.296 128.533,101.296C134.274,101.296 138.916,96.655 138.916,90.914C138.916,85.17 134.274,80.528 128.533,80.528C122.789,80.528 118.147,85.17 118.147,90.914Z" style="fill:rgb(255,0,0);"/>
+                <path id="_-Path-" affinity:id="&lt;Path&gt;" d="M127.078,95.938L135.762,95.938L136.782,94.66L135.762,93.385L127.078,93.385C126.516,93.385 126.058,92.928 126.058,92.365L126.058,82.661L124.78,83.681L123.505,82.661L123.505,92.365C123.505,94.337 125.106,95.938 127.078,95.938Z" style="fill-rule:nonzero;"/>
+                <path id="Path2" d="M135.226,99.59L119.875,84.24L121.836,82.275L137.191,97.626L135.226,99.59Z" style="fill:rgb(255,0,0);"/>
             </g>
+            <path id="path31552" affinity:id="path3155" d="M176.554,114.48L135.24,59.916" style="fill:none;fill-rule:nonzero;stroke:rgb(21,22,21);stroke-width:0.77px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+            <g id="遵1">
+                <path id="_-Path-1" affinity:id="&lt;Path&gt;" d="M119.211,105.912L137.852,105.912L151.031,119.092L151.031,137.733L137.852,150.912L119.211,150.912L106.031,137.733L106.031,119.092L119.211,105.912Z" style="fill:white;fill-rule:nonzero;"/>
+                <path id="_-Path--copy" affinity:id="&lt;Path&gt; copy" d="M119.992,107.701L137.126,107.701L149.242,119.817L149.242,136.951L137.126,149.067L119.992,149.067L107.876,136.951L107.876,119.817L119.992,107.701Z" style="fill:rgb(235,28,35);fill-rule:nonzero;"/>
+                <path id="path8" d="M106.144,137.671L119.272,150.8L137.846,150.8L150.975,137.671L150.975,119.097L137.846,105.968L119.272,105.968L106.144,119.097L106.144,137.671Z" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:0.17px;stroke-miterlimit:4;"/>
+                <path id="停" d="M125.691,138.903C125.972,139.55 126.309,140.197 126.619,140.759L124.228,141.434C123.75,140.703 123.216,139.69 122.906,138.903L115.678,138.903L115.678,136.737L133.116,136.737L133.116,138.903L125.691,138.903ZM131.259,129.818L131.259,135.415L117.844,135.415L117.844,129.818L131.259,129.818ZM128.869,131.647L120.375,131.647L120.375,133.615L128.869,133.615L128.869,131.647ZM132.862,140.422C133.622,138.312 134.578,136.118 135.675,134.122L135.675,115.447L138.066,115.447L138.066,130.24C138.712,129.312 139.387,128.468 140.062,127.737C140.287,128.328 141.019,129.734 141.469,130.381C138.966,133.025 136.631,137.075 135.225,141.209L132.862,140.422ZM131.034,124.418L118.322,124.418L118.322,122.337L123.216,122.337L123.216,118.147C123.216,116.881 123.497,116.206 124.509,115.868C125.522,115.531 126.984,115.531 129.15,115.531C129.291,116.234 129.6,117.162 129.937,117.809C128.419,117.753 126.844,117.753 126.422,117.781C125.972,117.781 125.859,117.893 125.859,118.231L125.859,122.337L131.034,122.337L131.034,124.418ZM115.594,128.356L115.594,123.603L117.928,123.603L117.928,126.247L131.4,126.247L131.4,123.603L133.65,123.603L133.65,128.356L115.594,128.356Z" style="fill:white;"/>
+            </g>
+        </g>
+        <g id="輔2左">
+            <rect x="164" y="367.417" width="72" height="30" style="fill:rgb(255,191,0);"/>
+            <path d="M224,382.417L235.2,396.617L224,396.617L212.8,382.417L224,368.217L235.2,368.217L224,382.417ZM200,382.417L211.2,396.617L200,396.617L188.8,382.417L200,368.217L211.2,368.217L200,382.417ZM176,382.417L187.2,396.617L176,396.617L164.8,382.417L176,368.217L187.2,368.217L176,382.417Z" style="fill-rule:nonzero;"/>
         </g>
     </g>
 </svg>

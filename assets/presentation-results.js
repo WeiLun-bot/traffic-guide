@@ -135,7 +135,7 @@
     const home=image.crop||[0,0,turned?h:w,turned?w:h],Core=window.VisualLayoutCore;
     const defaults=Core.imageView(pageId,image.key),settings=window.visualLayoutEditor?.store?.config.imageViews[defaults.id]||defaults;
     const view=Core.viewBoxFor(home,settings),angle=settings.rotation??0;
-    return `<span class="results-scenario-thumb" data-results-thumbnail-key="${esc(image.key)}" aria-hidden="true"><svg viewBox="${view.join(' ')}" preserveAspectRatio="xMidYMid meet" focusable="false"><g data-results-thumbnail-rotation transform="rotate(${angle} ${home[0]+home[2]/2} ${home[1]+home[3]/2})"><g transform="${transform}"><image href="${esc(asset.url)}" width="${w}" height="${h}"/></g></g></svg></span>`;
+    return `<span class="results-scenario-thumb" data-results-thumbnail-key="${esc(image.key)}" data-thumbnail-page="${esc(pageId)}" aria-hidden="true"><svg viewBox="${view.join(' ')}" preserveAspectRatio="xMidYMid meet" focusable="false"><g data-results-thumbnail-rotation transform="rotate(${angle} ${home[0]+home[2]/2} ${home[1]+home[3]/2})"><g transform="${transform}"><image href="${esc(asset.url)}" width="${w}" height="${h}"/></g></g></svg></span>`;
   }
   function scenarioIndex(page,data){
     const catalog=window.PresentationScenarios.catalog,groups=catalog.groups.filter(group=>group.deck===page.content.deck),entries=catalog.scenarios.filter(scene=>groups.some(group=>group.id===scene.group));
@@ -166,5 +166,5 @@
     }
     return `<section class="slide results-slide results-${page.resultType}" data-results-page="${page.id}" aria-labelledby="slide-title">${header(page)}${body}${item.takeaway?p(page,'takeaway',item.takeaway,'results-takeaway'):''}</section>`;
   }
-  return {load,validate,validateConditions,validateStrategies,mergeConditions,mergeStrategies,prepare,connect:api=>{app=api;},buildPages,scenarioPageId,pages:()=>buildPages(outline,window.PresentationScenarios.catalog),render,get outline(){return outline;},get error(){return loadError;}};
+  return {load,validate,validateConditions,validateStrategies,mergeConditions,mergeStrategies,prepare,connect:api=>{app=api;},buildPages,scenarioPageId,scenarioThumbnail,pages:()=>buildPages(outline,window.PresentationScenarios.catalog),render,get outline(){return outline;},get error(){return loadError;}};
 });

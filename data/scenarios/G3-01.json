@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g3-01",
+    "code": "G3-01",
+    "chapter": "g3",
+    "name": "無號誌市區正交四岔路口",
+    "short": "市區正交",
+    "setting": "市區",
+    "geometry": "正交",
+    "rotation": 0,
+    "overall": "g301-overall",
+    "figure": "G3-01 圖例",
+    "contextId": "g301-context",
+    "overviewId": "g301-overview",
+    "reviewId": "g301-review",
+    "source": {
+      "typst": "04-3-01-unsignalized-urban-orthogonal-cross.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "eea5b0d69bef27202fc63448a5a043d9901454245292c451f0aa44db696136b4"
+    },
+    "originalTypst": "// 04-3-01-unsignalized-urban-orthogonal-cross.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌四叉路口／無號誌市區正交四叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n=== #text(weight: 500, fill: rgb(\"666666\"))[G3-01] 無號誌市區正交四叉路口設置圖例與運用解說 <section:unsignalized_urban_orthogonal_cross>\n\n==== 路口現況與議題 <paragraph:unsignalized_urban_orthogonal_cross_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例選擇之無號誌市區正交四叉路口，其周邊土地使用以住宅區為主，房屋型式則多為公寓或華廈，因此通常無設置地下停車場。本示例之主要道路路寬約15~m，採標線分隔，雙向各配置1混合車道，道路兩側設有停車格及實體人行道，路段速限為30~km/h。次要道路路寬約8~m，雙向無分隔，雙向配置1混合車道，往北路段設有停車格，往南路段無停車管制，南北路段皆無人行設施，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類市區無號誌化四叉路口交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[缺少主、次道路管制][\n\n    市區道路經常因路側空間不足，故多未設置相關之警示設施，因此用路人較難識別前方是否有路口，亦難以判別哪個方向的車輛可以有先行權。\n\n    ]\n\n  + #guide-item[行車空間分隔不明確][\n\n    市區道路常於車道最外側同時設置停車格位，提供路邊停車使用，以滿足當地停車需求，但因路面通常無劃設路面邊線區隔行車空間與停車空間，以致行車空間分隔不明確。\n\n    ]\n\n  + #guide-item[速度限制不明確][\n\n    市區道路經常因為街廓較短，因此無足夠路面空間劃設速限標字。\n\n    ]\n\n  + #guide-item[行人穿越道路之警示設施不足][\n\n    由於市區道路路側活動較多，因此行人量較多，雖路面有劃設行穿線提供行人穿越馬路使用，但路面標線易受到遮蔽，相較於豎立式標誌，警示效果較差。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標誌及標線來提高路口的自明性，增設岔路標誌及速限標誌等；\n  - 如何透過標誌來提高行人穿越道的安全；\n  - 對於路側的停車空間應加以明確繪設，並注意路側停放車輛之進出安全性。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_urban_orthogonal_cross_suggestions_and_overall_diagram>\n\n標線設置有關無號誌市區正交四叉路口的交通設施建議設置如 @fig:unsignalized_urban_orthogonal_cross_96 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 此路口位於市區且路側活動較強，有路邊停車需求，故本示例以交錯車道配置的30~km/h速限區的概念來配置車道；\n+ 並透過橫移錯開路口處車道的方式，提高無號誌下的路口自明性，並達成限速的效果，同時又可提高車輛注意到行穿線及看到欲穿越道路的行人；\n+ 對於路邊停車格則示範如何配合車道的交錯，進行單邊交錯設置停車格的示範做法；\n+ 在主要道路上仍建議強化提示慢及速限30~km/h，同時在路口處加繪路口行車導引線，以提高對於路口穿越的自明性。\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M1-03\", \"M2-01\", \"M4-01\"),\n  [#scenario-reg-link(\"54\", [慢行標誌「警49」])],\n  [#scenario-reg-link(\"189\", [路口行車導引線])],\n) <scenario-index-g3-01>\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [無號誌市區正交四叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_urban_orthogonal_cross_96\",\n)\n\n\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.png\", width: 95.8%, height: 94.00mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌市區正交四叉路口交通設施整體設置圖例],\n// ) <fig:unsignalized_urban_orthogonal_cross_96>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_urban_orthogonal_cross_marking_diagram_explanation>\n\n+ #guide-item[路口行車導引線，《設置規則》第 189條][\n\n  本示例位於地區服務道路，透過調整路型之方式，使得車輛得以限速在30~km/h以下；有關路型設計規範，如屬市區道路部分，應遵循《市區道路及附屬工程設計規範》之規定；如屬公路部分，應遵循《公路路線設計規範》之規定。\n\n  路口採用些微斜向交岔型式，可使主要道路及次要道路之車輛達到減速至30~km/h以下之效果，且因車速降低，更不易造成視線上的死角，提高整個行車安全。\n\n  同時透過繪製路口行車導引線，如 @fig:unsignalized_urban_orthogonal_cross_97 所示，可引導主要道路之直行車輛通過路口，並彰顯主要道路之車流方向。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G3-01/G3-01_路口行車導引線圖例.svg\", width: 70%, fit: \"contain\")],\n    kind: image,\n    caption: [路口行車導引線圖例],\n  ) <fig:unsignalized_urban_orthogonal_cross_97>\n\n  ]\n\n// ==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_orthogonal_cross_signage_diagram_explanation>\n\n// + #guide-item[慢行標誌「警49」，《設置規則》第54條][\n\n//   當無號誌路口之主要道路上無設置岔路標誌時，建議可於主要道路上設置慢行標誌「警49」，以提醒駕駛人注意前方路況。\n\n//   本標誌設置位置依《道路交通安全規則》第102條之規定，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，故建議宜設置於距路口前約30~m處，並依行車速限及最短安全視距增加，並可加設「前方30~m岔路」附牌，以預告駕駛人前方30~m處，道路有特殊情況，將影響行車安全，例如前方有岔路，應小心慢行，設置圖例如 @fig:unsignalized_urban_orthogonal_cross_98 所示。\n\n//   #figure(\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-01/G3-01_慢行標誌設置圖例.png\", width: 52.3%, height: 80.01mm, fit: \"contain\"), kind: \"general\")],\n//     kind: image,\n//     caption: [慢行標誌設置圖例],\n//   ) <fig:unsignalized_urban_orthogonal_cross_98>\n\n//   ]\n",
+    "sourceLine": "資料：G3-01 路口現況與設置建議",
+    "summary": "住宅區的無號誌四岔路口，以交錯車道、停車配置與導引線建立低速環境。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "15",
+        "description": "雙向各 1 混合車道，兩側停車格及實體人行道",
+        "speed": "30"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "8",
+        "description": "雙向共 1 混合車道，北側路段有停車格，無人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "主次道路不易辨識",
+        "缺少路口與先行權提示。"
+      ],
+      [
+        "停車與行車空間混用",
+        "路側停車需求與車道邊界需共同整理。"
+      ],
+      [
+        "行人與速限提示不足",
+        "短街廓中仍需清楚表達低速及穿越需求。"
+      ]
+    ],
+    "condition": "以 30 km/h 低速區概念，交錯配置車道及停車格，再以導引線串接路口。",
+    "overviewIntro": "以 30 km/h 低速區概念，交錯配置車道及停車格，再以導引線串接路口。",
+    "overviewRows": [
+      [
+        "g301-staggered-layout",
+        "01　交錯配置車道與停車空間",
+        "佈設原則"
+      ],
+      [
+        "g301-guide",
+        "02　引導主要道路車流",
+        "§ 189"
+      ],
+      [
+        "g301-staggered-layout",
+        "03　讓行穿線與行人被看見",
+        "行人安全"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M1-03 路側停車",
+      "M2-01 停、讓管制",
+      "M4-01 危險警示"
+    ],
+    "recapTitle": "住宅區路口，\n用配置帶出低速。",
+    "recapIntro": "以 30 km/h 低速區概念，交錯配置車道及停車格，再以導引線串接路口。",
+    "recapRows": [
+      [
+        "交錯配置車道與停車空間",
+        "將路側停車格單邊交錯配置，並明確區分停車及行車空間。",
+        "佈設原則"
+      ],
+      [
+        "引導主要道路車流",
+        "以略為橫移的路口車道配置，提醒車輛減速至 30 km/h 以下。",
+        "§ 189"
+      ],
+      [
+        "讓行穿線與行人被看見",
+        "將路側停車格單邊交錯配置，並明確區分停車及行車空間。",
+        "行人安全"
+      ]
+    ],
+    "articleIds": [
+      "g301-guide",
+      "g301-staggered-layout"
+    ],
+    "assets": {
+      "g301-overall": "G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg",
+      "g301-before": "G3-01_現況圖_01.png",
+      "g301-photo-1": "G3-01_現況照片_01.png",
+      "g301-photo-2": "G3-01_現況照片_02.png",
+      "g301-photo-3": "G3-01_現況照片_03.png",
+      "g301-photo-4": "G3-01_現況照片_04.png"
+    },
+    "width": 1264,
+    "height": 787,
+    "currentConditions": {
+      "pageId": "g301-conditions",
+      "before": "g301-before",
+      "after": "g301-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g301-conditions:content",
+      "photos": [
+        {
+          "image": "g301-photo-1",
+          "kind": "photo",
+          "title": "缺少主次道路提示",
+          "alt": "G3-01 現況照片 1",
+          "points": [
+            "主要道路缺少提醒駕駛留意次要道路來車的警示。"
+          ]
+        },
+        {
+          "image": "g301-photo-2",
+          "kind": "photo",
+          "title": "外側行車與停車混用",
+          "alt": "G3-01 現況照片 2",
+          "points": [
+            "外側空間同時供車輛行駛與停車，邊界不明確。"
+          ]
+        },
+        {
+          "image": "g301-photo-3",
+          "kind": "photo",
+          "title": "速限提示不足",
+          "alt": "G3-01 現況照片 3",
+          "points": [
+            "兩條道路皆缺少清楚的速限標字與標誌。"
+          ]
+        },
+        {
+          "image": "g301-photo-4",
+          "kind": "photo",
+          "title": "缺少主次道路提示",
+          "alt": "G3-01 現況照片 4",
+          "points": [
+            "主要道路缺少提醒駕駛留意次要道路來車的警示。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-3-01-unsignalized-urban-orthogonal-cross.typ 整理。",
+      "takeaway": "以 30 km/h 低速區概念，交錯配置車道及停車格，再以導引線串接路口。"
+    }
+  },
+  "assets": {
+    "g301-overall": {
+      "file": "materials/04-一般道路情境/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg",
+      "width": 1264,
+      "height": 787,
+      "rotation": 0,
+      "scenario": "G3-01",
+      "label": "無號誌市區正交四叉路口交通設施整體設置圖例",
+      "sha256": "a6bf999d277532409b33636a4e86deac42a5fe916c3a58f744e4949e4f5d6d6a"
+    },
+    "g301-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況圖_01.png",
+      "width": 3479,
+      "height": 2300,
+      "rotation": 0,
+      "scenario": "G3-01",
+      "label": "現況圖_01",
+      "sha256": "bd9a78c7f084656db56c7069f6703df825735e3b9deecbe773d7aac6e5aca1ae"
+    },
+    "g301-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_01.png",
+      "width": 2526,
+      "height": 1386,
+      "rotation": 0,
+      "scenario": "G3-01",
+      "label": "現況照片_01",
+      "sha256": "469129ec275d0510b2034a090f857726769afbd1a790374a4e0ad7647d0086e5"
+    },
+    "g301-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_02.png",
+      "width": 2570,
+      "height": 1402,
+      "rotation": 0,
+      "scenario": "G3-01",
+      "label": "現況照片_02",
+      "sha256": "2f104b7b26b3bed6ddbef1680a71080a88c14e7ba15ea10fc16f619dcf42a516"
+    },
+    "g301-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_03.png",
+      "width": 2607,
+      "height": 1387,
+      "rotation": 0,
+      "scenario": "G3-01",
+      "label": "現況照片_03",
+      "sha256": "25b51b27193ff8238cfe24a4ebc2a29127c4442a7b88650059160b5caa452a90"
+    },
+    "g301-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-01/G3-01_現況照片_04.png",
+      "width": 2594,
+      "height": 1425,
+      "rotation": 0,
+      "scenario": "G3-01",
+      "label": "現況照片_04",
+      "sha256": "e338b3022c889e97a42221d9938bc0edd9d18f0ea395989a93fc12f1f0a83f5d"
+    }
+  },
+  "articles": [
+    {
+      "id": "g301-guide",
+      "scenario": "g3-01",
+      "reg": "189",
+      "name": "路口行車導引線",
+      "category": "標線",
+      "mapAsset": "g301-overall",
+      "asset": "g301-overall",
+      "headline": "路口行車導引線",
+      "locate": "對照圖例，檢視路口行車導引線的配置。",
+      "box": [
+        505.6,
+        385.63,
+        240.16,
+        102.31
+      ],
+      "crop": [
+        421.54,
+        316.71,
+        408.28,
+        240.16
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "路口行車導引線",
+      "points": [
+        "以略為橫移的路口車道配置，提醒車輛減速至 30 km/h 以下。",
+        "繪設導引線銜接主要道路直行車道，清楚宣示主要車流方向。"
+      ],
+      "takeaway": "以略為橫移的路口車道配置，提醒車輛減速至 30 km/h 以下。",
+      "sourceRaw": "+ #guide-item[路口行車導引線，《設置規則》第 189條][\n\n  本示例位於地區服務道路，透過調整路型之方式，使得車輛得以限速在30~km/h以下；有關路型設計規範，如屬市區道路部分，應遵循《市區道路及附屬工程設計規範》之規定；如屬公路部分，應遵循《公路路線設計規範》之規定。\n\n  路口採用些微斜向交岔型式，可使主要道路及次要道路之車輛達到減速至30~km/h以下之效果，且因車速降低，更不易造成視線上的死角，提高整個行車安全。\n\n  同時透過繪製路口行車導引線，如 @fig:unsignalized_urban_orthogonal_cross_97 所示，可引導主要道路之直行車輛通過路口，並彰顯主要道路之車流方向。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G3-01/G3-01_路口行車導引線圖例.svg\", width: 70%, fit: \"contain\")],\n    kind: image,\n    caption: [路口行車導引線圖例],\n  ) <fig:unsignalized_urban_orthogonal_cross_97>\n\n  ]\n\n\n\n\n\n\n\n\n\n\n",
+      "sourceParagraphs": [
+        "本示例位於地區服務道路，透過調整路型之方式，使得車輛得以限速在30 km/h以下；有關路型設計規範，如屬市區道路部分，應遵循《市區道路及附屬工程設計規範》之規定；如屬公路部分，應遵循《公路路線設計規範》之規定。",
+        "路口採用些微斜向交岔型式，可使主要道路及次要道路之車輛達到減速至30 km/h以下之效果，且因車速降低，更不易造成視線上的死角，提高整個行車安全。",
+        "同時透過繪製路口行車導引線，如 （見相關圖例或模組） 所示，可引導主要道路之直行車輛通過路口，並彰顯主要道路之車流方向。"
+      ]
+    },
+    {
+      "id": "g301-staggered-layout",
+      "scenario": "g3-01",
+      "reg": "配置",
+      "name": "交錯車道與路側停車",
+      "category": "道路設施",
+      "mapAsset": "g301-overall",
+      "asset": "g301-overall",
+      "headline": "交錯車道與路側停車",
+      "locate": "對照圖例，檢視交錯車道與路側停車的配置。",
+      "box": [
+        632,
+        369.89,
+        265.44,
+        110.18
+      ],
+      "crop": [
+        539.1,
+        292.26,
+        451.24,
+        265.44
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "交錯車道與路側停車",
+      "points": [
+        "將路側停車格單邊交錯配置，並明確區分停車及行車空間。",
+        "車道橫移配合行穿線及路側活動，提高路口與行人的可見度。"
+      ],
+      "takeaway": "將路側停車格單邊交錯配置，並明確區分停車及行車空間。",
+      "sourceRaw": "+ #guide-item[路型議題分析][\n\n  此類市區無號誌化四叉路口交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[缺少主、次道路管制][\n\n    市區道路經常因路側空間不足，故多未設置相關之警示設施，因此用路人較難識別前方是否有路口，亦難以判別哪個方向的車輛可以有先行權。\n\n    ]\n\n  + #guide-item[行車空間分隔不明確][\n\n    市區道路常於車道最外側同時設置停車格位，提供路邊停車使用，以滿足當地停車需求，但因路面通常無劃設路面邊線區隔行車空間與停車空間，以致行車空間分隔不明確。\n\n    ]\n\n  + #guide-item[速度限制不明確][\n\n    市區道路經常因為街廓較短，因此無足夠路面空間劃設速限標字。\n\n    ]\n\n  + #guide-item[行人穿越道路之警示設施不足][\n\n    由於市區道路路側活動較多，因此行人量較多，雖路面有劃設行穿線提供行人穿越馬路使用，但路面標線易受到遮蔽，相較於豎立式標誌，警示效果較差。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標誌及標線來提高路口的自明性，增設岔路標誌及速限標誌等；\n  - 如何透過標誌來提高行人穿越道的安全；\n  - 對於路側的停車空間應加以明確繪設，並注意路側停放車輛之進出安全性。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_urban_orthogonal_cross_suggestions_and_overall_diagram>\n\n標線設置有關無號誌市區正交四叉路口的交通設施建議設置如 @fig:unsignalized_urban_orthogonal_cross_96 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 此路口位於市區且路側活動較強，有路邊停車需求，故本示例以交錯車道配置的30~km/h速限區的概念來配置車道；\n+ 並透過橫移錯開路口處車道的方式，提高無號誌下的路口自明性，並達成限速的效果，同時又可提高車輛注意到行穿線及看到欲穿越道路的行人；\n+ 對於路邊停車格則示範如何配合車道的交錯，進行單邊交錯設置停車格的示範做法；\n+ 在主要道路上仍建議強化提示慢及速限30~km/h，同時在路口處加繪路口行車導引線，以提高對於路口穿越的自明性。\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M1-03\", \"M2-01\", \"M4-01\"),\n  [#scenario-reg-link(\"54\", [慢行標誌「警49」])],\n  [#scenario-reg-link(\"189\", [路口行車導引線])],\n) <scenario-index-g3-01>\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [無號誌市區正交四叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_urban_orthogonal_cross_96\",\n)\n\n\n\n\n\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_urban_orthogonal_cross_marking_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "市區道路經常因路側空間不足，故多未設置相關之警示設施，因此用路人較難識別前方是否有路口，亦難以判別哪個方向的車輛可以有先行權。",
+        "市區道路常於車道最外側同時設置停車格位，提供路邊停車使用，以滿足當地停車需求，但因路面通常無劃設路面邊線區隔行車空間與停車空間，以致行車空間分隔不明確。",
+        "市區道路經常因為街廓較短，因此無足夠路面空間劃設速限標字。",
+        "由於市區道路路側活動較多，因此行人量較多，雖路面有劃設行穿線提供行人穿越馬路使用，但路面標線易受到遮蔽，相較於豎立式標誌，警示效果較差。",
+        "標線設置有關無號誌市區正交四叉路口的交通設施建議設置如 （見相關圖例或模組） 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：",
+        "本情境涉及之相關模組及《設置規則》條文彙整如下。"
+      ],
+      "reference": "本情境整體佈設原則",
+      "regLabel": "佈設原則"
+    }
+  ]
+}

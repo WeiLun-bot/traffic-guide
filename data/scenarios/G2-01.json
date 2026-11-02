@@ -1,0 +1,868 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g2-01",
+    "code": "G2-01",
+    "chapter": "g2",
+    "name": "號誌化市區正交三岔路口",
+    "short": "市區正交",
+    "setting": "市區",
+    "geometry": "正交",
+    "rotation": 0,
+    "overall": "g201-overall",
+    "figure": "G2-01 圖例",
+    "contextId": "g201-context",
+    "overviewId": "g201-overview",
+    "reviewId": "g201-review",
+    "source": {
+      "typst": "04-2-01-signalized-urban-orthogonal-t.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "f36b15319448c0fb73a03e61cf3a4ad4f34c2a6a8a3e2350576a664026ae2b70"
+    },
+    "originalTypst": "// 04-2-01-signalized-urban-orthogonal-t.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—號誌化三叉路口／號誌化市區正交三叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n=== #text(weight: 500, fill: rgb(\"666666\"))[G2-01] 號誌化市區正交三叉路口設置圖例與運用解說 <section:signalized_urban_orthogonal_t>\n\n==== 路口現況與議題 <paragraph:signalized_urban_orthogonal_t_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例之號誌化市區正交三叉路口鄰近商業區，房屋的1樓多做為店面使用，人行道及行人需求較高且有較高之轉向交通量。本示例參考一個現況路口為例，其主要道路路寬約20~m，採標線分隔，此類路寬之下的現況路口大多會採2車道或1車道的配置，道路兩側設有停車格及實體人行道，路段速限為50~km/h。橫交之次要道路路寬約14~m，採標線分隔，雙向各配置1車道，道路兩側設有停車格，無設置人行設施，路段速限為50~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類位於市區的路口交通設施大多會存在以下問題，分述說明如下：\n\n  + #guide-item[路口空間配置不佳][\n\n    由於市區道路在鄰近路口時，通常缺少左、右轉空間之配置設計，若有左、右轉車輛無法順利轉向而停留在路口等待時，將會影響路口直行車輛之續進。\n\n    ]\n\n  + #guide-item[速度限制不明確][\n\n    由於市區道路經常因為立桿空間不足而未設置速限標誌，又因市區街廓較短而忽略設置速限標字，以致用路人經常無法識別目前道路之行車速限為何。\n\n    ]\n\n  + #guide-item[行人專用號誌設置位置不恰當][\n\n    由於市區號誌化路口之行人專用號誌，經常為了減少立柱而選擇與行車管制號誌共桿，因此常會出現行人專用號誌未能配合行穿線位置設置，行人於行穿線處等候時無法直視行人專用號誌，以致行人通過路口時易有疑慮。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何搭配左轉專用道佈設標線及設置號誌；\n  - 如何配合行穿線設置行人專用號誌；\n  - 如何透過標線方式或道路工程調整道路空間配置，來提供較舒適之人行空間等。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:signalized_urban_orthogonal_t_suggestions_and_overall_diagram>\n\n有關號誌化市區正交三叉路口的交通設施建議設置如 @fig:signalized_urban_orthogonal_t_44 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 本路口位於市區，故在車行道的配置考慮到車道的平衡及左轉車輛的安全，設置左彎專用道，並設置槽化設施達成車道平衡的效果；\n+ 路側的寬度足夠提供劃設停車格或拓寬人行道使用，但考量主要道路街廓長度較短，且速限為50~km/h，較不適合設置路邊停車格，故於此示範禁止路邊停車之圖例；\n+ 次要道路速限訂為40~km/h，因道路寬度較寬，故有足夠空間可設置停車格，另配合路口人行道外擴及提高路口的自明性，將此停車格設為嵌入式；\n+ 於此路口示範行車管制號誌及行人專用號誌之設置方式，以及提出號誌是否正確設置的檢查表。\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n#scenario-index-box(\n  (\"M1-01\", \"M1-03\", \"M2-03\", \"M3-01\", \"M3-03\"),\n  [#scenario-reg-link(\"79\", [禁止臨時停車標誌「禁26」])],\n  [#scenario-reg-link(\"173\", [網狀線])],\n  [#scenario-reg-link(\"179\", [速度限制標字])],\n  [#scenario-reg-link(\"189-1\", [穿越虛線])],\n  [#scenario-reg-link(\"194\", [號誌分類與視覺功能障礙語音號誌])],\n  [#scenario-reg-link(\"201\", [號誌燈面數與設置方式])],\n  [#scenario-reg-link(\"220\", [號誌設置高度])],\n  [#scenario-reg-link(\"221\", [行車管制號誌布設])],\n  [#scenario-reg-link(\"231\", [號誌燈號變換與清道時間])],\n  [#scenario-rule-reference([§ 5.6], [號誌設置檢核（《交工規範》）])],\n  ) <scenario-index-g2-01>\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.svg\",\n    width: 179mm,\n    fit: \"contain\",\n  ),\n  rotate-image: false,\n  caption: [號誌化市區正交三叉路口交通設施整體設置圖例],\n  label-name: \"fig:signalized_urban_orthogonal_t_44\",\n)\n\n\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.png\", width: 78.4%, height: 101.07mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [號誌化市區正交三叉路口交通設施整體設置圖例],\n// ) <fig:signalized_urban_orthogonal_t_44>\n\n\n==== 標線設置圖例運用解說 <paragraph:signalized_urban_orthogonal_t_marking_diagram_explanation>\n\n// + #guide-item[網狀線，《設置規則》173條][\n\n//   本示例將網狀線佈設於建築物的地下停車場出入口處，如 @fig:signalized_urban_orthogonal_t_45 所示，主要是提醒此處為出入口，並告知用路人禁止於此區域停車，保持進出的可能，且於道路壅塞時，提供進出車輛較佳的視野。\n\n//   《設置規則》註明網狀線斜線間隔為1 至 5~m，且佈設於路口時，則須距離枕木紋線形邊緣處至少1~m。\n\n//   本指引建議如於路段或路口使用時，其間隔採最大間距5~m，使用路人於視覺上容易辨識。\n\n//   #figure(\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G2-01/G2-01_設於出入口處之網狀線圖例.png\", width: 33.6%, height: 76.73mm, fit: \"contain\"), kind: \"local\")],\n//     kind: image,\n//     caption: [設於出入口處之網狀線圖例],\n//   ) <fig:signalized_urban_orthogonal_t_45>\n\n//   ]\n\n// + #guide-item[速度限制標字，《設置規則》第179條][\n\n//   速度限制標字為黃色數字，如 @fig:signalized_urban_orthogonal_t_46 所示，主要告示車輛駕駛人前方道路最高行車時速之限制，佈設於標誌或標線規定最高速限路段起點及行車管制號誌路口遠端適當距離處。\n\n//   於《設置規則》中註明其速度限制標字與第85條最高速限標誌得同時或擇一設置，本指引為使用路人清楚判斷其速限，建議標線及標誌均需設置。\n\n//   #figure(\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G2-01/G2-01_速度限制標字圖例.jpg\", width: 29.7%, height: 83.16mm, fit: \"contain\"), kind: \"local\")],\n//     kind: image,\n//     caption: [速度限制標字圖例],\n//   ) <fig:signalized_urban_orthogonal_t_46>\n\n//   ]\n+ #guide-item[機慢車停等區線，《設置規則》第174-2條][\n  行車速限60~km/h以下之道路，於行車管制號誌路口之停止線後方設置機慢車停等區線，不得繪製於非號誌化路口。尺寸標準為橫向（前後）線寬20~cm，縱向（二側）線寬10或15~cm，縱深長度為2.5 至 6~m，於停等區內需繪設縮小行指向線，機慢車停等區部分橫向標線與縱向標線得與鄰近實線共用，如 @fig:signalized_urban_orthogonal_t_waiting_area 所示。\n\n  #figure(\n    [#scenario-explanation-image(\n      stack(\n        dir: ltr,\n        spacing: 4mm,\n        // 兩張 SVG 的原始高度皆為 116，以相同輸出高度維持比例尺。\n        image(\"../../media/04-general-scenarios/G2-01/G2-01_waiting_area1.svg\", height: 70mm, fit: \"contain\"),\n        rotate(180deg, reflow: true,\n          image(\"../../media/04-general-scenarios/G2-01/G2-01_waiting_area2.svg\", height: 70mm, fit: \"contain\"),\n        ),\n      ),\n      kind: \"general\",\n    )],\n    kind: image,\n    caption: [機慢車停等區線圖例],\n  ) <fig:signalized_urban_orthogonal_t_waiting_area>\n\n  ]\n// + #guide-item[穿越虛線，《設置規則》第189-1條][\n\n//   主要道路由1車道（直）進入下游增加至2車道（左轉、直右），需劃設穿越虛線供左轉車道之車輛匯出至附加車道，如 @fig:signalized_urban_orthogonal_t_47 所示。漸變長度須符合附加車道漸變長度之規定（《市區道路及附屬工程設計規範》第四章道路交叉設計）要求。\n\n//   #figure(\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G2-01/G2-01_穿越虛線圖例.png\", width: 30.2%, height: 89.12mm, fit: \"contain\"), kind: \"local\")],\n//     kind: image,\n//     caption: [穿越虛線圖例],\n//   ) <fig:signalized_urban_orthogonal_t_47>\n\n//   ]\n\n// ==== 標誌設置圖例運用解說 <paragraph:signalized_urban_orthogonal_t_signage_diagram_explanation>\n\n// 禁止臨時停車標誌「禁26」，《設置規則》第79條。其設置方式同禁止停車標誌「禁25」之《設置規則》說明（詳見 @paragraph:unsignalized_urban_skewed_t_signage_diagram_explanation），設於禁止停車路段的起點、終點處，並可視實際需要於中間加設一面禁止臨時停車標誌，並加設附牌，以箭頭標示禁停路段方向，起點、終點處標誌牌面採面行車方向45度設置。設置圖例如 @fig:signalized_urban_orthogonal_t_48 所示。\n\n// 本標誌建議與禁止臨時停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌傳達禁停時間訊息給駕駛人。\n\n// #figure(\n//   [\n//     #scenario-explanation-image(image(\"../../media/04-general-scenarios/G2-01/G2-01_禁止臨時停車標誌設置圖例.png\", width: 94.4%, height: 59.80mm, fit: \"contain\"), kind: \"general\")\n//   ],\n//   kind: image,\n//   caption: [禁止臨時停車標誌設置圖例],\n// ) <fig:signalized_urban_orthogonal_t_48>\n\n==== 號誌設置圖例運用解說 <paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation>\n\n由於號誌設置之考量與標線、標誌不同，《設置規則》中之號誌條文互為援引，非以滿足單一條文規定即可完備號誌設置。故本指引依據《設置規則》中之號誌相關條文規定，綜整出號誌設置之法規檢查表。此設置規範檢查表主要有8大項，於進行號誌化路口之設計時，可依檢查表項目逐項檢查，以確保號誌設置在符合安全，且有人因工程考量的前提下，符合《設置規則》之規定。\n\n本示例為市區道路號誌化三叉路口，主線為雙向二車道，臨近路口處增設附加車道。號誌配置目標是能以最少立桿數達成完整之配置，因此若行人專用號誌與行車管制號誌位置相近時，則可以共桿。路口可依左轉車流型態選擇採用機會左轉（佈設法1）或保護左轉（佈設法2）2種佈設方式，此示例機會左轉採用三燈式號誌（圓綠箭頭），保護左轉採用四燈式號誌（直行與左轉箭頭）。有關本路口之號誌平、立面佈設如 @fig:signalized_urban_orthogonal_t_49 ~ @fig:signalized_urban_orthogonal_t_51 所示。\n\n// *號誌燈面之編號原則係參考美國NEMA之編碼方式，詳如 * ，惟編號之目的僅為賦予各燈桿與燈面唯一代碼，以便在檢核時與檢查表之說明交互參照，即使不理解編號原則亦不影響指引之閱讀。本路口號誌立桿標示分別為A、B、C、D及ZB、ZC，各桿之行車管制、行人專用號誌編號及號誌燈面顯示如 @tab:signalized_urban_orthogonal_t_7 所示。\n\n// #figure(\n//   table(\n//   columns: 3,\n//   table.header(\n//     [號誌桿], [行車管制號誌], [行人專用號誌],\n//   ),\n//   [A桿], [A2、A6], [A23],\n//   [B桿], [B3], [B26],\n//   [ZB桿], [--], [ZB33],\n//   [C桿], [C2、C6], [C23],\n//   [ZC桿], [--], [ZC36],\n//   [D桿], [D3], [D33],\n//   table.cell(colspan: 3, [#image(\"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口號誌佈設彙整表.png\", width: 91.0%, height: 39.97mm, fit: \"contain\")]),\n// ),\n//   kind: table,\n//   caption: [號誌化市區正交三叉路口號誌佈設彙整表],\n// ) <tab:signalized_urban_orthogonal_t_7>\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，相關規定與條文對照彙整於 @tab-3-1 。  @tab:signalized_urban_orthogonal_t_8 至@tab:signalized_urban_orthogonal_t_10 將說明如何操作。\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口號誌平面設置圖例（佈設法1）.png\", width: 100.0%, height: 130.74mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [號誌化市區正交三叉路口號誌平面設置圖例（佈設法1）],\n// ) <fig:signalized_urban_orthogonal_t_49>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口號誌立面設置圖例（佈設法1）.png\", width: 93.4%, height: 167.82mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [號誌化市區正交三叉路口號誌立面設置圖例（佈設法1）],\n// ) <fig:signalized_urban_orthogonal_t_50>\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-01/sig1.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化市區正交三叉路口號誌立面設置圖例佈設法1－－北上機會左轉],\n) <fig:signalized_urban_orthogonal_t_49>\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-01/sig2.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化市區正交三叉路口號誌平面設置圖例佈設法2－－北上保護左轉],\n) <fig:signalized_urban_orthogonal_t_51>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口號誌平面設置圖例（佈設法2）.png\", width: 100.0%, height: 136.05mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [號誌化市區正交三叉路口號誌平面設置圖例（佈設法2）],\n// ) <fig:signalized_urban_orthogonal_t_51>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_號誌化市區正交三叉路口號誌立面設置圖例（佈設法2）.png\", width: 86.8%, height: 166.48mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [號誌化市區正交三叉路口號誌立面設置圖例（佈設法2）],\n// ) <fig:signalized_urban_orthogonal_t_52>\n\n#sourced-figure(\n  table(\n  // 第一欄約 49.3 mm，容納「[4]12 m寬視覺漏洞檢查」；餘寬移至佈設說明欄。\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:南下/ 編號:2]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面2.1、2.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面2.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面2.2與南下停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面2.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面2.1、2.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面2.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [通過], [號誌非東西走向],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [南下編號2之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_8>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面8.1、8.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2與北上停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，8.1、8.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [通過], [號誌非東西走向],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_9>\n\n\n#figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人面向建物，若背景龐雜需處理（例如近端同時設立柱立式與懸臂式號誌，或其他號誌部件的處理）以避免背景龐雜導致號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_10>\n\n本示例除檢查表之第\\[3a\\]項、第\\[8\\]項、第\\[9\\]項於此情境不適用外，以下就檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌佈設及行人有聲號誌之佈設等運用分別說明。\n\n+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  「可視模板」提供符合人因工程（human\n  factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 @appendix:visibility-template[] 。\n\n  以「55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 @fig:signalized_urban_orthogonal_t_53 所示。\n\n  #figure(\n    layout(size => align(center,\n      rotate(90deg, reflow: true,\n        image(\"../../media/04-general-scenarios/G2-01/visibility template.svg\", width: size.width * 50%, fit: \"contain\"),\n      ),\n    )),\n    kind: image,\n    caption: [號誌化市區正交三叉路口之可視模板],\n  ) <fig:signalized_urban_orthogonal_t_53>\n\n  ]\n\n+ #guide-item[檢查表第\\[2\\]項 至少有遠端燈面在左][\n\n  本檢查項目為遠端號誌「燈面」位置檢討，而非立桿位置。惟立桿位置不同亦會影響用路人整體視覺，若立桿在左側，檢核條件較寬鬆；若立桿在右側，則需與近端有明顯「左右錯開」之效果，方能順勢使用路人能夠辨別號誌。為分析遠端燈面是否在左，本指引以「向左錯距」$O S_1$進行探討，「向左錯距」之定義為由上游近端燈面之綠燈鏡面邊緣，沿垂直停止線方向投射，量測至遠端燈面之綠燈鏡面邊緣之橫斷面距離。根據立桿位置，「向左錯距」$O S_1$之值依下列四種情境有不同要求以滿足《設置規則》：\n\n  + #guide-item[若遠端號誌之燈桿立於車行道之左方：][\n\n    至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$ \\>\n    0~cm且不得為負值），如 @fig:signalized_urban_orthogonal_t_54 所示。\n\n    #figure(\n      [#image(\"../../media/04-general-scenarios/G2-01/G2-01_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png\", width: 64.0%, height: 104.16mm, fit: \"contain\")],\n      kind: image,\n      caption: [遠端號誌燈桿立於車行道左方之向左錯距示意圖],\n    ) <fig:signalized_urban_orthogonal_t_54>\n\n    ]\n\n  + #guide-item[若遠端燈桿立於車行道之右方：][\n\n    與近端燈面應有向左錯距$O S_1$ \\>\n    90~cm。藉由錯距，使用路人能夠辨認出有左右兩組號誌，增加號誌燈面之可視性來路口之辨識性，以達成「相對左側」。\n\n    ]\n\n  + #guide-item[若遠端號誌佈設為門架式：][\n\n    門架本就於車行道之兩側立桿，則至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$\n    \\> 0~cm且不得為負值）。\n\n    ]\n\n  + #guide-item[若遠端為柱立式：][\n\n    依照第221條第1款「至少應有一燈面設於遠端左側」，應設左右兩側之柱立號誌。 不同立桿位置之向左錯距詳見 @appendix:signal-placement[] 。\n\n    本示例遠端為懸臂式，因此查看「佈設法1：若遠端號誌之燈桿立於車行道之左方」，從用路人之視角，遠端燈面2.2在近端燈面2.1之左側（$O S_1$  \\> 0），如 @fig:signalized_urban_orthogonal_t_55 所示。\n\n    #figure(\n      [#image(\"../../media/04-general-scenarios/G2-01/G2-01_向左錯距佈設檢查圖例.png\", width: 60%, fit: \"contain\")],\n      kind: image,\n      caption: [向左錯距佈設檢查圖例],\n    ) <fig:signalized_urban_orthogonal_t_55>]\n\n  ]\n\n+ #guide-item[檢查表第\\[2a\\]項遠端燈面縱向佈設][\n\n  根據《設置規則》第221條「行車管制號誌至少應有一燈面設於遠端左側，且距近端停止線10~m以上。…（後略）」，由南下停止線起算至遠端號誌燈面2.2.2，其距離$X_2$為28~m，符合10~m以上的標準，如 @fig:signalized_urban_orthogonal_t_56 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-01/G2-01_縱向佈設檢查圖例.png\", width: 45%, fit: \"contain\")],\n    kind: image,\n    caption: [縱向佈設檢查圖例],\n  ) <fig:signalized_urban_orthogonal_t_56>\n\n  ]\n\n+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  號誌燈面應有以下功能，如果未達成將造成安全或效率之疑慮：\n\n  + 協助車輛自上游辨識號誌之燈號：需有近端號誌負責。\n\n  + 指示停止線：需有近端號誌負責。\n\n  + 協助起步：需有近端或遠端號誌負責。雖然我國一般由遠端號誌擔任此功能，但必要時可由近端燈面提供此功能。\n\n  + 協助兩段式待轉機慢車起步（我國特有）：需有遠端號誌負責。\n\n  + 通過路口時確認現在燈號：需有遠端號誌負責。\n\n  + 導引正確的「接收車道（receiving lanes）」方向：需有遠端號誌負責\n\n  只有遠端號誌，而沒有近端號誌之國家，常有用路人找不到停止線之困境，形成安全疑慮。尤其只有遠端號誌之國家，燈面越靠近停止線用路人較願意遵守號誌(Kim等人，2008)。美國法定為遠端號誌，試辦加裝近端號誌後，90度角交叉撞降低33%至47%(Bonneson等人，2002)。因此我國有近端號誌裝設在停止線附近之現行習慣，是相對安全的。\n\n  本指引建議近端至少要有1組號誌燈面提示停止線，以確保用路人安全。此路口之近端燈面2.1符合檢查標準。\n\n  ]\n\n+ #guide-item[檢查表第\\[4\\]項 12~m寬視覺漏洞檢查][\n\n  根據《交工規範》第5.6節「同向車輛或行人之行車管制號誌同向燈面之法線垂直距離以不超過12~m為度，若超過時，易被忽略，應考慮增設1組。」由可視模板沿行車方向投射，燈面2.1、2.2之間並沒有12~m的空隙，因此不用額外增設燈面。（可視模板如 @fig:signalized_urban_orthogonal_t_53 所示）\n\n  // #sourced-figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_《交通工程規範》之號誌設置示意圖.jpeg\", width: 69.8%, height: 64.82mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [《交工規範》之號誌設置示意圖],\n  //   source: [《交工規範》#cite(<motc-traffic-engineering-specifications-2025>)],\n  // ) <fig:signalized_urban_orthogonal_t_57>\n\n  ]\n\n+ #guide-item[檢查表第\\[5\\]項 待轉區/停止線綠燈啟動可視30度角檢查][\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n  // 為了確保起步時（尤其待轉區）車輛可以明確看到燈號指示，「起步可視模板」應考量人因工程及光的直線傳播性。若號誌之罩簷採用帽式設計（建議為近端），則起步可視模板為三角形、左右展開$med 30 med \"\"^compose$，直到下游54~m；若號誌之罩簷採用筒式設計，則應呈現左右各$med 20 med \"\"^compose$展開之梯形，範圍自停止線下游15~m延伸至下游54~m，如 @fig:signalized_urban_orthogonal_t_58 所示。\n\n  // 「起步可視模板」比「可視模板」寬廣，因為起步靜止狀態較無狹視的狀況。帽式罩簷（近端）對應$30 med \"\"^compose$角三角形（參考英國《TSM-6》@dft-traffic-signs-manual-ch6-2019 圖3‑4）；筒式罩簷對應$med 20 med \"\"^compose$角梯形（參考美國《MUTCD》@fhwa-mutcd-11th-2023 圖4D-4）。\n\n  // 若有待轉區並佈設於停止線下游，則以待轉車輛之視野計算。若無，則以停止線第一輛車之視野計算。\n\n  // 遠端號誌燈箱，建議採取「筒式罩簷」，以「筒式罩簷」為左右各$med 20 med \"\"^compose$展開之梯形檢查且通過，確定於停止線（本示例無待轉區）之用路人可看到燈面並起步。\n\n  // 有關帽式罩簷及筒式罩簷之樣態如 @fig:signalized_urban_orthogonal_t_59 所示。\n\n  // #figure(\n  //   [#align(center)[#stack(\n  //     dir: ltr,\n  //     spacing: 4mm,\n  //     image(\"../../media/04-general-scenarios/G2-01/G2-01_帽式罩簷及筒式罩簷之起步可視模板_01.png\", width: 41.4%, height: 68.00mm, fit: \"contain\"),\n  //     image(\"../../media/04-general-scenarios/G2-01/G2-01_帽式罩簷及筒式罩簷之起步可視模板_02.png\", width: 50.7%, height: 68.00mm, fit: \"contain\"),\n  //   )]],\n  //   kind: image,\n  //   caption: [帽式罩簷及筒式罩簷之「起步可視模板」],\n  // ) <fig:signalized_urban_orthogonal_t_58>\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_帽式罩簷及筒式罩簷之樣態.png\", width: 70%, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [帽式罩簷及筒式罩簷之樣態],\n  // ) <fig:signalized_urban_orthogonal_t_59>\n\n  ]\n\n+ #guide-item[檢查表第\\[6\\]項 淨寬檢查][\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n  //  《交工規範》指出「號誌桿柱原則上應設於路側或交通島上，距車道邊緣外30~cm以上。不易受撞之位置，避免妨礙視線及路面、路肩之正常使用。若無法設於最小側距以外者，則應設置防護設施，並應避免設於行人穿越道附近之人行道上，以免妨礙行人之行動。」\n\n  //   目前《交工規範》僅規範號誌桿柱距離車道邊緣之距離（定義為$L C_1$），但應該以實際淨寬（定義$L C_0$））為計算基準。實際淨寬指的是立桿位置要滿足最小淨寬30~cm，但是號誌的所有部件也應該都要滿足，例如加設各種號誌部件後，號誌整體淨寬不可小於30 cm。因此車道邊緣距離號誌之任何柱立（非符合懸臂標準）之部件，實際淨寬$L C_0$可能比$L C_1$之值相同或較小─尤其有柱立式號誌燈面時，其燈箱或其他號誌部件距離車輛「動態包絡線」較靠近。$L C_0$為最嚴格之淨寬，$L C_0$與$L C_1$取最小值。$L C_0$之理想值 1.00~m、至少0.30~m。由於道路用地狹小，造成道路淨寬非常侷限，因此需仔細佈設以利用有限空間達成淨寬要求。\n\n  //   號誌布設參數與建議值彙整如@fig-4-58 與@tab-4-6。\n\n  //   #figure(\n  //     image(\"../../media/03-modules/M2-03/M2-03_號誌布設參數圖例.png\", width: 75.2%),\n  //     caption: [號誌布設參數圖例],\n  //   ) <fig-4-58>\n\n  //   #figure(\n  //     [\n  //     #[\n  //       #set par(first-line-indent: 0pt)\n  //       #table(\n  //         columns: (0.20fr, 0.25fr, 0.55fr),\n  //         table.header([*參數*], [#par(first-line-indent: 0pt)[*條文*]], [*說明*]),\n  //         [車道邊緣至桿柱淨距離\n\n  //         $ bold(L) bold(C)_(bold(0)) $],\n  //         [《交工規範》C5.6],\n  //         [- 至少0.30~m\n\n  //         - 理想值1.00~m],\n  //         [懸臂式、門架式、懸掛式\n\n  //         $ bold(h) bold(O)_(bold(2)) $],\n  //         table.cell(rowspan: 2)[《設置規則》§ 220],\n  //         [- 高出路面4.60~m至5.60~m\n\n  //         - 最小值：大客車或大貨車不至撞擊號誌\n\n  //         - 最大值：使號誌不超出用路人視線之外],\n  //         [柱立式\n\n  //         $ bold(h) bold(V)_(bold(2)) $],\n  //         [- 高出人行道2.40~m至4.60~m\n\n  //         - 防止行人與腳踏車碰撞],\n  //       )\n  //     ]\n  //     ],\n  //     kind: table,\n  //     caption: [號誌布設參數與規範及建議值],\n  //   ) <tab-4-6>\n\n    ]\n\n+ #guide-item[檢查表第\\[7\\]項 淨高檢查][\n\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n  // 如@fig-4-58 與@tab-4-6 所示，本指引以$h O$表示以燈箱起算之淨高；以圖例$h O_2$表示懸臂式號誌部件淨高─所有「車行道」上方皆須符合上述之條件。\n\n  // 本指引以圖例$h V$表示柱立式號誌燈箱底部距離人行道地面或交通島之高度，必須確認其下方僅有行人空間而不含車行空間。由於除了燈箱外，號誌燈面可能有其他附屬設施，淨高以$h V_2$計。根據《設置規則》，$h O$應高出路面4.6~m至5.6~m、$h V$應高出人行道2.4~m至4.6~m。此外，本指引參考前述《設置規則》，建議$h O_2$應高出路面4.6~m，$h V_2$應高出人行道2.4~m。\n\n  ]\n\n+ #guide-item[「行人專用號誌」之佈設][\n  參閱@sec-mod-m3-01-2[]行人模組之路口穿越說明。\n  // 佈設行人專用號誌時，除搭配行車管制號誌時相，亦可選擇採用「行人專用時相」或「行人早開時相」之設計。採行「行人專用時相」時，需檢核路口是否有完整行穿線、完整行人專用號誌燈箱、各臨近路口均設有行車管制號誌以及相交道路不得過寬等。採行「行人早開時相」時，需檢核路口是否有完整行穿線、完整行人專用號誌燈箱、各臨近路口均設有行車管制號誌等。有關「行人專用時相」或「行人早開時相」的設置原則可參閱 @appendix:pedestrian-phase-principles[]。\n\n  \n  // 行人專用號誌各個部件之基本尺寸如 @fig:signalized_urban_orthogonal_t_61 所示。不同鏡面尺寸之行人專用號誌設置圖例如 @fig:signalized_urban_orthogonal_t_62 所示。行人專用號誌與柱立式行車號誌共桿時，行人號誌燈箱與行車號誌燈箱之間距至少為0.3~m，遠端號誌桿設置圖例如 @fig:signalized_urban_orthogonal_t_63 所示，近端號誌桿設置圖例如 @fig:signalized_urban_orthogonal_t_64 所示。\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌基本尺寸圖.png\", width: 83.4%, height: 99.55mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」基本尺寸圖],\n  // ) <fig:signalized_urban_orthogonal_t_61>\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_不同鏡面尺寸之行人專用號誌設置圖例.png\", width: 64.7%, height: 97.72mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [不同鏡面尺寸之行人專用號誌設置圖例],\n  // ) <fig:signalized_urban_orthogonal_t_62>\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌與遠端柱立式號誌共桿圖.png\", width: 95.8%, height: 102.63mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」與遠端柱立式號誌共桿圖],\n  // ) <fig:signalized_urban_orthogonal_t_63>\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌與近端柱立式號誌共桿圖.png\", width: 95.8%, height: 81.80mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」與近端柱立式號誌共桿圖],\n  // ) <fig:signalized_urban_orthogonal_t_64>\n\n  // 「行人專用號誌」若未經詳細檢驗距離穿越路徑之水平距離$Y P o$與縱深$Z p$，將影響行人查看號誌。安全風險為：行人若不慎誤認為無號誌而認定自身路權較高易產生未察看來車之行為， @fig:signalized_urban_orthogonal_t_65 所示。\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌不良樣態.png\", width: 95.8%, height: 95.73mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」不良樣態],\n  // ) <fig:signalized_urban_orthogonal_t_65>\n\n  // 行人專用號誌可行之佈設型式如 @fig:signalized_urban_orthogonal_t_66 、 @fig:signalized_urban_orthogonal_t_67 所示。\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌標準樣態1.png\", width: 95.8%, height: 96.16mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」標準樣態1],\n  // ) <fig:signalized_urban_orthogonal_t_66>\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌標準樣態2.png\", width: 95.8%, height: 93.78mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」標準樣態2],\n  // ) <fig:signalized_urban_orthogonal_t_67>\n\n  // 若上述佈設型式無法達成且無行人觸動按鈕需求者，可佈設如 @fig:signalized_urban_orthogonal_t_68 所示。\n\n  // #figure(\n  //   [#image(\"../../media/04-general-scenarios/G2-01/G2-01_行人專用號誌妥協樣態.png\", width: 95.8%, height: 90.31mm, fit: \"contain\")],\n  //   kind: image,\n  //   caption: [「行人專用號誌」妥協樣態],\n  // ) <fig:signalized_urban_orthogonal_t_68>\n\n  // （只有在特殊狀況，如與私有地門戶有衝突，方得採用）\n\n  ]\n\n// + #guide-item[視覺功能障礙語音號誌之佈設][\n\n//   號誌化路口得設置「視覺功能障礙語音號誌」協助有需要之行人穿越號誌化路口，《設置規則》相關規範如下。\n\n//   ․ 《設置規則》第194條第3款：\n\n//   視覺功能障礙語音號誌係以行人專用號誌或行人穿越道號誌，以聲音告知視覺功能障礙者可通行之方向及警告車輛駕駛人有視覺功能障礙者通過。視覺功能障礙語音號誌優先設於學校、車站、醫院周邊及其他視覺功能障礙者有需要之交岔路口或路段。其導引音響應以固定聲響導引使用者路口通行之方位與時段，南北向為布穀聲、東西向為鳥叫聲、行人專用時相為蟋蟀聲；並應有定位音提示使用者判定按鈕位置，及搭配設置視覺功能障礙引導標線。\n\n//   ․ 《設置規則》第231條第5款：\n\n//   $V$：行走速率，視覺功能障礙語音號誌處使用0.5~m/s。\n\n//   另有關於視覺功能障礙語音號誌之導引聲響、定位音（提示使用者判定按鈕位置）、允許導引聲響服務時間、啟動時間、組件規格、音量（含「定位音音量」與「導引聲響音量」）及運作排程及導盲設施，建議參閱交通部《視覺功能障礙語音號誌設置指南》#cite(<motc-audible-signal-installation-guidelines-2023>)。\n\n//   ]\n",
+    "sourceLine": "資料：G2-01 路口現況與設置建議",
+    "summary": "商業區人車活動密集，將左轉空間、路側使用與號誌可視性一起安排。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "20",
+        "description": "標線分隔，兩側停車格及實體人行道",
+        "speed": "50"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "14",
+        "description": "雙向各 1 車道，兩側停車格、無人行設施",
+        "speed": "50"
+      }
+    ],
+    "issues": [
+      [
+        "轉向停等影響直行",
+        "接近路口時缺少清楚的左、右轉空間。"
+      ],
+      [
+        "速限提示不連續",
+        "立桿空間及短街廓影響速限資訊。"
+      ],
+      [
+        "行人不易直視號誌",
+        "行穿線位置與共桿號誌未妥善對應。"
+      ]
+    ],
+    "condition": "車道平衡、行人通行與號誌可視性同步檢核。",
+    "overviewIntro": "主線配置左轉車道並禁止路邊停車；次要道路以 40 km/h 及嵌入式停車配合人行道外擴。號誌依轉向需求選擇佈設法。",
+    "overviewRows": [
+      [
+        "g201-waiting",
+        "01　安排機慢車停等空間",
+        "§174-2"
+      ],
+      [
+        "g201-permissive",
+        "02　比較機會及保護左轉",
+        "§201"
+      ],
+      [
+        "g201-visible",
+        "03　逐項檢核號誌可視性",
+        "§201 / §220 / §221"
+      ],
+      [
+        "g201-pedestrian",
+        "04　對應行穿線與行人號誌",
+        "§231"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M1-03 路側停車",
+      "M2-03 號誌化管制",
+      "M3-01 行人",
+      "M3-03 機車"
+    ],
+    "recapTitle": "車道與號誌，\n一起說明動線。",
+    "recapIntro": "主線配置左轉車道並禁止路邊停車；次要道路以 40 km/h 及嵌入式停車配合人行道外擴。號誌依轉向需求選擇佈設法。",
+    "recapRows": [
+      [
+        "車道分工清楚",
+        "左轉與機慢車停等空間配合配置。",
+        "§174-2 / §201"
+      ],
+      [
+        "號誌看得到也看得懂",
+        "由上游辨識、遠端位置到起步視角逐項檢查。",
+        "§201 / §220 / §221"
+      ],
+      [
+        "行人指示對應穿越",
+        "依行穿線與等候位置安排燈面。",
+        "§231"
+      ]
+    ],
+    "articleIds": [
+      "g201-waiting",
+      "g201-permissive",
+      "g201-protected",
+      "g201-checklist",
+      "g201-visible",
+      "g201-left",
+      "g201-far",
+      "g201-near",
+      "g201-gap",
+      "g201-start",
+      "g201-clearance",
+      "g201-pedestrian"
+    ],
+    "assets": {
+      "g201-overall": "G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.svg",
+      "g201-signal-1": "sig1.svg",
+      "g201-signal-2": "sig2.svg",
+      "g201-visibility": "visibility template.svg",
+      "g201-left-offset": "G2-01_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png",
+      "g201-left-check": "G2-01_向左錯距佈設檢查圖例.png",
+      "g201-distance": "G2-01_縱向佈設檢查圖例.png",
+      "g201-before": "G2-01_現況圖_01.png",
+      "g201-photo-1": "G2-01_現況照片_01.png",
+      "g201-photo-2": "G2-01_現況照片_02.png",
+      "g201-photo-3": "G2-01_現況照片_03.png",
+      "g201-photo-4": "G2-01_現況照片_04.png"
+    },
+    "width": 954,
+    "height": 963,
+    "currentConditions": {
+      "pageId": "g201-conditions",
+      "before": "g201-before",
+      "after": "g201-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g201-conditions:content",
+      "photos": [
+        {
+          "image": "g201-photo-1",
+          "kind": "photo",
+          "title": "左右轉空間不足",
+          "alt": "G2-01 現況照片 1",
+          "points": [
+            "主要道路接近路口處，缺少清楚的左右轉空間配置。"
+          ]
+        },
+        {
+          "image": "g201-photo-2",
+          "kind": "photo",
+          "title": "速限提示不足",
+          "alt": "G2-01 現況照片 2",
+          "points": [
+            "兩條道路皆缺少速限標字與標誌。"
+          ]
+        },
+        {
+          "image": "g201-photo-3",
+          "kind": "photo",
+          "title": "行人號誌不易直視",
+          "alt": "G2-01 現況照片 3",
+          "points": [
+            "行穿線與行人號誌位置不易相互對照，行人判讀較困難。"
+          ]
+        },
+        {
+          "image": "g201-photo-4",
+          "kind": "photo",
+          "title": "左右轉空間不足",
+          "alt": "G2-01 現況照片 4",
+          "points": [
+            "主要道路接近路口處，缺少清楚的左右轉空間配置。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-2-01-signalized-urban-orthogonal-t.typ 整理。",
+      "takeaway": "車道平衡、行人通行與號誌可視性同步檢核。"
+    }
+  },
+  "assets": {
+    "g201-overall": {
+      "file": "materials/04-一般道路情境/G2-01/G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.svg",
+      "width": 954,
+      "height": 963,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "號誌化市區正交三叉路口交通設施整體設置圖例",
+      "sha256": "154ec10a1220f91eaa2c0520e68bcf26782f7332406cea6cd9d9d899c7f9668c"
+    },
+    "g201-signal-1": {
+      "file": "materials/04-一般道路情境/G2-01/sig1.svg",
+      "width": 396,
+      "height": 457,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "機會左轉號誌配置",
+      "sha256": "5d9695135decca8487ad3056859c769877ee55f6fc736bb7b0234513a701a2ed"
+    },
+    "g201-signal-2": {
+      "file": "materials/04-一般道路情境/G2-01/sig2.svg",
+      "width": 396,
+      "height": 457,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "保護左轉號誌配置",
+      "sha256": "76e5ea925f8d9075924687aede345c59e382bc28a1cec2423ab94b724ad123c8"
+    },
+    "g201-visibility": {
+      "file": "materials/04-一般道路情境/G2-01/visibility template.svg",
+      "width": 456,
+      "height": 574,
+      "rotation": 90,
+      "scenario": "G2-01",
+      "label": "上游號誌可視模板",
+      "sha256": "e1cb638e7d96032435a7ede05a785efc36da24587eae4e275cfa98142e73a247"
+    },
+    "g201-left-offset": {
+      "file": "materials/04-一般道路情境/G2-01/G2-01_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png",
+      "width": 578,
+      "height": 615,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "遠端號誌燈桿立於車行道左方之向左錯距示意圖",
+      "sha256": "2ca30bdfcdf5d48f3238714f5655ba1068d6173a71de7d9c8d5f41341454c874"
+    },
+    "g201-left-check": {
+      "file": "materials/04-一般道路情境/G2-01/G2-01_向左錯距佈設檢查圖例.png",
+      "width": 2102,
+      "height": 1310,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "向左錯距佈設檢查圖例",
+      "sha256": "a52862daddaf42e317eda75327adb59f1ea6f9d38ac86290f8e0e15e5a9e1222"
+    },
+    "g201-distance": {
+      "file": "materials/04-一般道路情境/G2-01/G2-01_縱向佈設檢查圖例.png",
+      "width": 492,
+      "height": 660,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "縱向佈設檢查圖例",
+      "sha256": "9b128586068ff767426f90a8cd9f274d3760c6b6c3e019a7034e25af6e6858cf"
+    },
+    "g201-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況圖_01.png",
+      "width": 3354,
+      "height": 2474,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "現況圖_01",
+      "sha256": "6b84faf6ef590df33811b5210d036f1c783c9270f87d2692d8b7c788ea7a4ac2"
+    },
+    "g201-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_01.png",
+      "width": 2580,
+      "height": 1434,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "現況照片_01",
+      "sha256": "d5874adcb258bbc286bb83f5be450bfd3d4ebe918380833a91162d24712eca25"
+    },
+    "g201-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_02.png",
+      "width": 2608,
+      "height": 1417,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "現況照片_02",
+      "sha256": "9e20532e66eaaf7ef52752db2edba29c93e3dccca52238822d7b87a990a3a0f8"
+    },
+    "g201-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_03.png",
+      "width": 2583,
+      "height": 1456,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "現況照片_03",
+      "sha256": "e5d083b19f16599245ec67809d1668433e31dbd0e266f525edd36003431f7d08"
+    },
+    "g201-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-01/G2-01_現況照片_04.png",
+      "width": 2436,
+      "height": 1321,
+      "rotation": 0,
+      "scenario": "G2-01",
+      "label": "現況照片_04",
+      "sha256": "cf980b7da5d29b7bffd548106ad4f836d3577a7a54a9ef2816d7a694222965a5"
+    }
+  },
+  "articles": [
+    {
+      "id": "g201-waiting",
+      "scenario": "g2-01",
+      "reg": "174-2",
+      "name": "機慢車停等區線",
+      "category": "標線",
+      "mapAsset": "g201-overall",
+      "asset": "g201-overall",
+      "headline": "機慢車停等區線",
+      "locate": "對照圖例，檢視機慢車停等區線的配置。",
+      "box": [
+        682.11,
+        399.65,
+        62.01,
+        57.77
+      ],
+      "crop": [
+        516.66,
+        312.97,
+        392.91,
+        231.12
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "機慢車停等區線",
+      "points": [
+        "設於速限 60 km/h 以下的號誌化路口，位在停止線後方。",
+        "縱深 2.5–6 m；橫向線寬 20 cm，縱向線寬 10 或 15 cm。",
+        "區內繪設縮小型指向線，部分邊線可與相鄰實線共用。"
+      ],
+      "takeaway": "設於速限 60 km/h 以下的號誌化路口，位在停止線後方。",
+      "sourceRaw": "+ #guide-item[機慢車停等區線，《設置規則》第174-2條][\n  行車速限60~km/h以下之道路，於行車管制號誌路口之停止線後方設置機慢車停等區線，不得繪製於非號誌化路口。尺寸標準為橫向（前後）線寬20~cm，縱向（二側）線寬10或15~cm，縱深長度為2.5 至 6~m，於停等區內需繪設縮小行指向線，機慢車停等區部分橫向標線與縱向標線得與鄰近實線共用，如 @fig:signalized_urban_orthogonal_t_waiting_area 所示。\n\n  #figure(\n    [#scenario-explanation-image(\n      stack(\n        dir: ltr,\n        spacing: 4mm,\n\n        image(\"../../media/04-general-scenarios/G2-01/G2-01_waiting_area1.svg\", height: 70mm, fit: \"contain\"),\n        rotate(180deg, reflow: true,\n          image(\"../../media/04-general-scenarios/G2-01/G2-01_waiting_area2.svg\", height: 70mm, fit: \"contain\"),\n        ),\n      ),\n      kind: \"general\",\n    )],\n    kind: image,\n    caption: [機慢車停等區線圖例],\n  ) <fig:signalized_urban_orthogonal_t_waiting_area>\n\n  ]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n==== 號誌設置圖例運用解說 <paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation>\n\n由於號誌設置之考量與標線、標誌不同，《設置規則》中之號誌條文互為援引，非以滿足單一條文規定即可完備號誌設置。故本指引依據《設置規則》中之號誌相關條文規定，綜整出號誌設置之法規檢查表。此設置規範檢查表主要有8大項，於進行號誌化路口之設計時，可依檢查表項目逐項檢查，以確保號誌設置在符合安全，且有人因工程考量的前提下，符合《設置規則》之規定。\n\n本示例為市區道路號誌化三叉路口，主線為雙向二車道，臨近路口處增設附加車道。號誌配置目標是能以最少立桿數達成完整之配置，因此若行人專用號誌與行車管制號誌位置相近時，則可以共桿。路口可依左轉車流型態選擇採用機會左轉（佈設法1）或保護左轉（佈設法2）2種佈設方式，此示例機會左轉採用三燈式號誌（圓綠箭頭），保護左轉採用四燈式號誌（直行與左轉箭頭）。有關本路口之號誌平、立面佈設如 @fig:signalized_urban_orthogonal_t_49 ~ @fig:signalized_urban_orthogonal_t_51 所示。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，相關規定與條文對照彙整於 @tab-3-1 。  @tab:signalized_urban_orthogonal_t_8 至@tab:signalized_urban_orthogonal_t_10 將說明如何操作。\n\n\n\n\n\n\n\n\n\n\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-01/sig1.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化市區正交三叉路口號誌立面設置圖例佈設法1－－北上機會左轉],\n) <fig:signalized_urban_orthogonal_t_49>\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-01/sig2.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化市區正交三叉路口號誌平面設置圖例佈設法2－－北上保護左轉],\n) <fig:signalized_urban_orthogonal_t_51>\n\n\n\n\n\n\n\n\n\n\n\n#sourced-figure(\n  table(\n\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:南下/ 編號:2]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面2.1、2.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面2.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面2.2與南下停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面2.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面2.1、2.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面2.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [通過], [號誌非東西走向],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [南下編號2之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_8>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面8.1、8.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2與北上停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，8.1、8.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [通過], [號誌非東西走向],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_9>\n\n\n#figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人面向建物，若背景龐雜需處理（例如近端同時設立柱立式與懸臂式號誌，或其他號誌部件的處理）以避免背景龐雜導致號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_10>\n\n本示例除檢查表之第\\[3a\\]項、第\\[8\\]項、第\\[9\\]項於此情境不適用外，以下就檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌佈設及行人有聲號誌之佈設等運用分別說明。\n",
+      "sourceParagraphs": [
+        "由於號誌設置之考量與標線、標誌不同，《設置規則》中之號誌條文互為援引，非以滿足單一條文規定即可完備號誌設置。故本指引依據《設置規則》中之號誌相關條文規定，綜整出號誌設置之法規檢查表。此設置規範檢查表主要有8大項，於進行號誌化路口之設計時，可依檢查表項目逐項檢查，以確保號誌設置在符合安全，且有人因工程考量的前提下，符合《設置規則》之規定。",
+        "本示例為市區道路號誌化三叉路口，主線為雙向二車道，臨近路口處增設附加車道。號誌配置目標是能以最少立桿數達成完整之配置，因此若行人專用號誌與行車管制號誌位置相近時，則可以共桿。路口可依左轉車流型態選擇採用機會左轉（佈設法1）或保護左轉（佈設法2）2種佈設方式，此示例機會左轉採用三燈式號誌（圓綠箭頭），保護左轉採用四燈式號誌（直行與左轉箭頭）。有關本路口之號誌平、立面佈設如 （見相關圖例或模組） ~ （見相關圖例或模組） 所示。",
+        "路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，相關規定與條文對照彙整於 （見相關圖例或模組） 。  （見相關圖例或模組） 至（見相關圖例或模組） 將說明如何操作。",
+        "本示例除檢查表之第\\[3a\\]項、第\\[8\\]項、第\\[9\\]項於此情境不適用外，以下就檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌佈設及行人有聲號誌之佈設等運用分別說明。"
+      ]
+    },
+    {
+      "id": "g201-permissive",
+      "scenario": "g2-01",
+      "reg": "201",
+      "name": "機會左轉配置",
+      "category": "號誌",
+      "mapAsset": "g201-signal-1",
+      "asset": "g201-signal-1",
+      "headline": "機會左轉配置",
+      "locate": "對照圖例，檢視機會左轉配置的配置。",
+      "box": [
+        178.2,
+        315.33,
+        35.64,
+        45.7
+      ],
+      "crop": [
+        102.79,
+        283.34,
+        186.46,
+        109.68
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "機會左轉配置",
+      "points": [
+        "依轉向交通型態選擇機會左轉，使用三燈式號誌。",
+        "與附加車道、行穿線及行人號誌位置一起配置。",
+        "近端及遠端燈面分工，兼顧停止線提示與通過路口的燈號確認。"
+      ],
+      "takeaway": "依轉向交通型態選擇機會左轉，使用三燈式號誌。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  「可視模板」提供符合人因工程（human\n  factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 @appendix:visibility-template[] 。\n\n  以「55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 @fig:signalized_urban_orthogonal_t_53 所示。\n\n  #figure(\n    layout(size => align(center,\n      rotate(90deg, reflow: true,\n        image(\"../../media/04-general-scenarios/G2-01/visibility template.svg\", width: size.width * 50%, fit: \"contain\"),\n      ),\n    )),\n    kind: image,\n    caption: [號誌化市區正交三叉路口之可視模板],\n  ) <fig:signalized_urban_orthogonal_t_53>\n\n  ]\n",
+      "sourceParagraphs": [
+        "「可視模板」提供符合人因工程（human   factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 （見相關圖例或模組） 。",
+        "以「55 km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g201-protected",
+      "scenario": "g2-01",
+      "reg": "201",
+      "name": "保護左轉配置",
+      "category": "號誌",
+      "mapAsset": "g201-signal-2",
+      "asset": "g201-signal-2",
+      "headline": "保護左轉配置",
+      "locate": "對照圖例，檢視保護左轉配置的配置。",
+      "box": [
+        178.2,
+        315.33,
+        35.64,
+        45.7
+      ],
+      "crop": [
+        102.79,
+        283.34,
+        186.46,
+        109.68
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "保護左轉配置",
+      "points": [
+        "採保護左轉時，使用含直行及左轉箭頭的四燈式號誌。",
+        "依左轉車流與時相需求選擇配置，並逐項檢核各方向。"
+      ],
+      "takeaway": "採保護左轉時，使用含直行及左轉箭頭的四燈式號誌。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  「可視模板」提供符合人因工程（human\n  factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 @appendix:visibility-template[] 。\n\n  以「55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 @fig:signalized_urban_orthogonal_t_53 所示。\n\n  #figure(\n    layout(size => align(center,\n      rotate(90deg, reflow: true,\n        image(\"../../media/04-general-scenarios/G2-01/visibility template.svg\", width: size.width * 50%, fit: \"contain\"),\n      ),\n    )),\n    kind: image,\n    caption: [號誌化市區正交三叉路口之可視模板],\n  ) <fig:signalized_urban_orthogonal_t_53>\n\n  ]\n",
+      "sourceParagraphs": [
+        "「可視模板」提供符合人因工程（human   factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 （見相關圖例或模組） 。",
+        "以「55 km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g201-checklist",
+      "scenario": "g2-01",
+      "reg": "221",
+      "name": "號誌設置檢核總表",
+      "category": "號誌",
+      "mapAsset": "g201-signal-1",
+      "asset": "g201-signal-1",
+      "headline": "號誌設置檢核總表",
+      "locate": "對照圖例，檢視號誌設置檢核總表的配置。",
+      "box": [
+        249.48,
+        86.83,
+        39.6,
+        50.27
+      ],
+      "crop": [
+        176.05,
+        57.13,
+        186.46,
+        109.68
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "號誌設置檢核總表",
+      "points": [
+        "依行車方向分別檢核，避免只檢查單一燈面。",
+        "此表彙整本案例檢核結果；西向眩光仍需現地確認。"
+      ],
+      "takeaway": "依行車方向分別檢核，避免只檢查單一燈面。",
+      "sourceRaw": "==== 號誌設置圖例運用解說 <paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation>\n\n由於號誌設置之考量與標線、標誌不同，《設置規則》中之號誌條文互為援引，非以滿足單一條文規定即可完備號誌設置。故本指引依據《設置規則》中之號誌相關條文規定，綜整出號誌設置之法規檢查表。此設置規範檢查表主要有8大項，於進行號誌化路口之設計時，可依檢查表項目逐項檢查，以確保號誌設置在符合安全，且有人因工程考量的前提下，符合《設置規則》之規定。\n\n本示例為市區道路號誌化三叉路口，主線為雙向二車道，臨近路口處增設附加車道。號誌配置目標是能以最少立桿數達成完整之配置，因此若行人專用號誌與行車管制號誌位置相近時，則可以共桿。路口可依左轉車流型態選擇採用機會左轉（佈設法1）或保護左轉（佈設法2）2種佈設方式，此示例機會左轉採用三燈式號誌（圓綠箭頭），保護左轉採用四燈式號誌（直行與左轉箭頭）。有關本路口之號誌平、立面佈設如 @fig:signalized_urban_orthogonal_t_49 ~ @fig:signalized_urban_orthogonal_t_51 所示。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，相關規定與條文對照彙整於 @tab-3-1 。  @tab:signalized_urban_orthogonal_t_8 至@tab:signalized_urban_orthogonal_t_10 將說明如何操作。\n\n\n\n\n\n\n\n\n\n\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-01/sig1.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化市區正交三叉路口號誌立面設置圖例佈設法1－－北上機會左轉],\n) <fig:signalized_urban_orthogonal_t_49>\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-01/sig2.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化市區正交三叉路口號誌平面設置圖例佈設法2－－北上保護左轉],\n) <fig:signalized_urban_orthogonal_t_51>\n\n\n\n\n\n\n\n\n\n\n\n#sourced-figure(\n  table(\n\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:南下/ 編號:2]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面2.1、2.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面2.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面2.2與南下停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面2.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面2.1、2.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面2.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [通過], [號誌非東西走向],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [南下編號2之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_8>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面8.1、8.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2與北上停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，8.1、8.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [通過], [號誌非東西走向],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_9>\n\n\n#figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人面向建物，若背景龐雜需處理（例如近端同時設立柱立式與懸臂式號誌，或其他號誌部件的處理）以避免背景龐雜導致號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [非斜交路口],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_urban_orthogonal_t_10>\n\n本示例除檢查表之第\\[3a\\]項、第\\[8\\]項、第\\[9\\]項於此情境不適用外，以下就檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌佈設及行人有聲號誌之佈設等運用分別說明。\n\n+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  「可視模板」提供符合人因工程（human\n  factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 @appendix:visibility-template[] 。\n\n  以「55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 @fig:signalized_urban_orthogonal_t_53 所示。\n\n  #figure(\n    layout(size => align(center,\n      rotate(90deg, reflow: true,\n        image(\"../../media/04-general-scenarios/G2-01/visibility template.svg\", width: size.width * 50%, fit: \"contain\"),\n      ),\n    )),\n    kind: image,\n    caption: [號誌化市區正交三叉路口之可視模板],\n  ) <fig:signalized_urban_orthogonal_t_53>\n\n  ]\n\n+ #guide-item[檢查表第\\[2\\]項 至少有遠端燈面在左][\n\n  本檢查項目為遠端號誌「燈面」位置檢討，而非立桿位置。惟立桿位置不同亦會影響用路人整體視覺，若立桿在左側，檢核條件較寬鬆；若立桿在右側，則需與近端有明顯「左右錯開」之效果，方能順勢使用路人能夠辨別號誌。為分析遠端燈面是否在左，本指引以「向左錯距」$O S_1$進行探討，「向左錯距」之定義為由上游近端燈面之綠燈鏡面邊緣，沿垂直停止線方向投射，量測至遠端燈面之綠燈鏡面邊緣之橫斷面距離。根據立桿位置，「向左錯距」$O S_1$之值依下列四種情境有不同要求以滿足《設置規則》：\n\n  + #guide-item[若遠端號誌之燈桿立於車行道之左方：][\n\n    至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$ \\>\n    0~cm且不得為負值），如 @fig:signalized_urban_orthogonal_t_54 所示。\n\n    #figure(\n      [#image(\"../../media/04-general-scenarios/G2-01/G2-01_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png\", width: 64.0%, height: 104.16mm, fit: \"contain\")],\n      kind: image,\n      caption: [遠端號誌燈桿立於車行道左方之向左錯距示意圖],\n    ) <fig:signalized_urban_orthogonal_t_54>\n\n    ]\n\n  + #guide-item[若遠端燈桿立於車行道之右方：][\n\n    與近端燈面應有向左錯距$O S_1$ \\>\n    90~cm。藉由錯距，使用路人能夠辨認出有左右兩組號誌，增加號誌燈面之可視性來路口之辨識性，以達成「相對左側」。\n\n    ]\n\n  + #guide-item[若遠端號誌佈設為門架式：][\n\n    門架本就於車行道之兩側立桿，則至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$\n    \\> 0~cm且不得為負值）。\n\n    ]\n\n  + #guide-item[若遠端為柱立式：][\n\n    依照第221條第1款「至少應有一燈面設於遠端左側」，應設左右兩側之柱立號誌。 不同立桿位置之向左錯距詳見 @appendix:signal-placement[] 。\n\n    本示例遠端為懸臂式，因此查看「佈設法1：若遠端號誌之燈桿立於車行道之左方」，從用路人之視角，遠端燈面2.2在近端燈面2.1之左側（$O S_1$  \\> 0），如 @fig:signalized_urban_orthogonal_t_55 所示。\n\n    #figure(\n      [#image(\"../../media/04-general-scenarios/G2-01/G2-01_向左錯距佈設檢查圖例.png\", width: 60%, fit: \"contain\")],\n      kind: image,\n      caption: [向左錯距佈設檢查圖例],\n    ) <fig:signalized_urban_orthogonal_t_55>]\n\n  ]\n\n+ #guide-item[檢查表第\\[2a\\]項遠端燈面縱向佈設][\n\n  根據《設置規則》第221條「行車管制號誌至少應有一燈面設於遠端左側，且距近端停止線10~m以上。…（後略）」，由南下停止線起算至遠端號誌燈面2.2.2，其距離$X_2$為28~m，符合10~m以上的標準，如 @fig:signalized_urban_orthogonal_t_56 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-01/G2-01_縱向佈設檢查圖例.png\", width: 45%, fit: \"contain\")],\n    kind: image,\n    caption: [縱向佈設檢查圖例],\n  ) <fig:signalized_urban_orthogonal_t_56>\n\n  ]\n\n+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  號誌燈面應有以下功能，如果未達成將造成安全或效率之疑慮：\n\n  + 協助車輛自上游辨識號誌之燈號：需有近端號誌負責。\n\n  + 指示停止線：需有近端號誌負責。\n\n  + 協助起步：需有近端或遠端號誌負責。雖然我國一般由遠端號誌擔任此功能，但必要時可由近端燈面提供此功能。\n\n  + 協助兩段式待轉機慢車起步（我國特有）：需有遠端號誌負責。\n\n  + 通過路口時確認現在燈號：需有遠端號誌負責。\n\n  + 導引正確的「接收車道（receiving lanes）」方向：需有遠端號誌負責\n\n  只有遠端號誌，而沒有近端號誌之國家，常有用路人找不到停止線之困境，形成安全疑慮。尤其只有遠端號誌之國家，燈面越靠近停止線用路人較願意遵守號誌(Kim等人，2008)。美國法定為遠端號誌，試辦加裝近端號誌後，90度角交叉撞降低33%至47%(Bonneson等人，2002)。因此我國有近端號誌裝設在停止線附近之現行習慣，是相對安全的。\n\n  本指引建議近端至少要有1組號誌燈面提示停止線，以確保用路人安全。此路口之近端燈面2.1符合檢查標準。\n\n  ]\n\n+ #guide-item[檢查表第\\[4\\]項 12~m寬視覺漏洞檢查][\n\n  根據《交工規範》第5.6節「同向車輛或行人之行車管制號誌同向燈面之法線垂直距離以不超過12~m為度，若超過時，易被忽略，應考慮增設1組。」由可視模板沿行車方向投射，燈面2.1、2.2之間並沒有12~m的空隙，因此不用額外增設燈面。（可視模板如 @fig:signalized_urban_orthogonal_t_53 所示）\n\n\n\n\n\n\n\n  ]\n\n+ #guide-item[檢查表第\\[5\\]項 待轉區/停止線綠燈啟動可視30度角檢查][\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  ]\n\n+ #guide-item[檢查表第\\[6\\]項 淨寬檢查][\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    ]\n\n+ #guide-item[檢查表第\\[7\\]項 淨高檢查][\n\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n\n\n\n  ]\n\n+ #guide-item[「行人專用號誌」之佈設][\n  參閱@sec-mod-m3-01-2[]行人模組之路口穿越說明。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  ]\n\n\n\n\n\n\n\n\n",
+      "sourceParagraphs": [
+        "由於號誌設置之考量與標線、標誌不同，《設置規則》中之號誌條文互為援引，非以滿足單一條文規定即可完備號誌設置。故本指引依據《設置規則》中之號誌相關條文規定，綜整出號誌設置之法規檢查表。此設置規範檢查表主要有8大項，於進行號誌化路口之設計時，可依檢查表項目逐項檢查，以確保號誌設置在符合安全，且有人因工程考量的前提下，符合《設置規則》之規定。",
+        "本示例為市區道路號誌化三叉路口，主線為雙向二車道，臨近路口處增設附加車道。號誌配置目標是能以最少立桿數達成完整之配置，因此若行人專用號誌與行車管制號誌位置相近時，則可以共桿。路口可依左轉車流型態選擇採用機會左轉（佈設法1）或保護左轉（佈設法2）2種佈設方式，此示例機會左轉採用三燈式號誌（圓綠箭頭），保護左轉採用四燈式號誌（直行與左轉箭頭）。有關本路口之號誌平、立面佈設如 （見相關圖例或模組） ~ （見相關圖例或模組） 所示。",
+        "路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，相關規定與條文對照彙整於 （見相關圖例或模組） 。  （見相關圖例或模組） 至（見相關圖例或模組） 將說明如何操作。",
+        "本示例除檢查表之第\\[3a\\]項、第\\[8\\]項、第\\[9\\]項於此情境不適用外，以下就檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌佈設及行人有聲號誌之佈設等運用分別說明。",
+        "「可視模板」提供符合人因工程（human   factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 （見相關圖例或模組） 。",
+        "以「55 km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 （見相關圖例或模組） 所示。",
+        "本檢查項目為遠端號誌「燈面」位置檢討，而非立桿位置。惟立桿位置不同亦會影響用路人整體視覺，若立桿在左側，檢核條件較寬鬆；若立桿在右側，則需與近端有明顯「左右錯開」之效果，方能順勢使用路人能夠辨別號誌。為分析遠端燈面是否在左，本指引以「向左錯距」$O S_1$進行探討，「向左錯距」之定義為由上游近端燈面之綠燈鏡面邊緣，沿垂直停止線方向投射，量測至遠端燈面之綠燈鏡面邊緣之橫斷面距離。根據立桿位置，「向左錯距」$O S_1$之值依下列四種情境有不同要求以滿足《設置規則》：",
+        "至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$ \\>     0 cm且不得為負值），如 （見相關圖例或模組） 所示。",
+        "與近端燈面應有向左錯距$O S_1$ \\>     90 cm。藉由錯距，使用路人能夠辨認出有左右兩組號誌，增加號誌燈面之可視性來路口之辨識性，以達成「相對左側」。",
+        "門架本就於車行道之兩側立桿，則至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$     \\> 0 cm且不得為負值）。",
+        "依照第221條第1款「至少應有一燈面設於遠端左側」，應設左右兩側之柱立號誌。 不同立桿位置之向左錯距詳見 （見相關圖例或模組） 。",
+        "本示例遠端為懸臂式，因此查看「佈設法1：若遠端號誌之燈桿立於車行道之左方」，從用路人之視角，遠端燈面2.2在近端燈面2.1之左側（$O S_1$  \\> 0），如 （見相關圖例或模組） 所示。",
+        "根據《設置規則》第221條「行車管制號誌至少應有一燈面設於遠端左側，且距近端停止線10 m以上。…（後略）」，由南下停止線起算至遠端號誌燈面2.2.2，其距離$X_2$為28 m，符合10 m以上的標準，如 （見相關圖例或模組） 所示。",
+        "只有遠端號誌，而沒有近端號誌之國家，常有用路人找不到停止線之困境，形成安全疑慮。尤其只有遠端號誌之國家，燈面越靠近停止線用路人較願意遵守號誌(Kim等人，2008)。美國法定為遠端號誌，試辦加裝近端號誌後，90度角交叉撞降低33%至47%(Bonneson等人，2002)。因此我國有近端號誌裝設在停止線附近之現行習慣，是相對安全的。",
+        "本指引建議近端至少要有1組號誌燈面提示停止線，以確保用路人安全。此路口之近端燈面2.1符合檢查標準。",
+        "根據《交工規範》第5.6節「同向車輛或行人之行車管制號誌同向燈面之法線垂直距離以不超過12 m為度，若超過時，易被忽略，應考慮增設1組。」由可視模板沿行車方向投射，燈面2.1、2.2之間並沒有12 m的空隙，因此不用額外增設燈面。（可視模板如 （見相關圖例或模組） 所示）",
+        "參閱（見相關圖例或模組）號誌化路口說明。"
+      ],
+      "reference": "《設置規則》號誌條文 /《交工規範》§ 5.6",
+      "table": {
+        "columns": [
+          "檢核項目",
+          "南下2",
+          "北上8",
+          "西行5"
+        ],
+        "rows": [
+          [
+            "[1] 上游可視兩燈面",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[2] 遠端燈面在左",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[2a] 遠端距停止線 ≥10 m",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[3] 近端提示停止線",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[3a] 高速時近端兩燈面",
+            "免（非高速）",
+            "免（非高速）",
+            "免（非高速）"
+          ],
+          [
+            "[4] 12 m 視覺漏洞",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[5] 起步可視範圍",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[6] 淨寬",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[7] 淨高",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[8] 眩光與背景",
+            "通過",
+            "通過",
+            "現地檢查"
+          ],
+          [
+            "[9] 斜交防窺",
+            "免（非斜交）",
+            "免（非斜交）",
+            "免（非斜交）"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "g201-visible",
+      "scenario": "g2-01",
+      "reg": "201",
+      "name": "上游兩燈面可視檢查",
+      "category": "號誌",
+      "mapAsset": "g201-visibility",
+      "asset": "g201-visibility",
+      "headline": "上游兩燈面可視檢查",
+      "locate": "對照圖例，檢視上游兩燈面可視檢查的配置。",
+      "box": [
+        132.24,
+        223.86,
+        59.28,
+        68.88
+      ],
+      "crop": [
+        107.16,
+        165.28,
+        109.44,
+        186.04
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "上游兩燈面可視檢查",
+      "points": [
+        "依接近速率選擇可視模板，檢查行進中的視域。",
+        "本例以 55 km/h 以下模板檢核南下方向，確認能辨認燈面 2.1、2.2。"
+      ],
+      "takeaway": "依接近速率選擇可視模板，檢查行進中的視域。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  「可視模板」提供符合人因工程（human\n  factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 @appendix:visibility-template[] 。\n\n  以「55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 @fig:signalized_urban_orthogonal_t_53 所示。\n\n  #figure(\n    layout(size => align(center,\n      rotate(90deg, reflow: true,\n        image(\"../../media/04-general-scenarios/G2-01/visibility template.svg\", width: size.width * 50%, fit: \"contain\"),\n      ),\n    )),\n    kind: image,\n    caption: [號誌化市區正交三叉路口之可視模板],\n  ) <fig:signalized_urban_orthogonal_t_53>\n\n  ]\n",
+      "sourceParagraphs": [
+        "「可視模板」提供符合人因工程（human   factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見 （見相關圖例或模組） 。",
+        "以「55 km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到2.1、2.2兩個燈面，如 （見相關圖例或模組） 所示。"
+      ],
+      "regLabel": "[1] § 201",
+      "moduleLinks": [
+        {
+          "route": "m203-signals-diagram/topic-visibility",
+          "label": "M2-03.1 號誌化路口：可視模板"
+        }
+      ]
+    },
+    {
+      "id": "g201-left",
+      "scenario": "g2-01",
+      "reg": "221",
+      "name": "遠端燈面在左",
+      "category": "號誌",
+      "mapAsset": "g201-left-offset",
+      "asset": "g201-left-check",
+      "headline": "遠端燈面在左",
+      "locate": "對照圖例，檢視遠端燈面在左的配置。",
+      "box": [
+        248.54,
+        12.3,
+        121.38,
+        239.85
+      ],
+      "crop": [
+        0,
+        0,
+        578,
+        407.75
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "遠端燈面在左",
+      "points": [
+        "以近端與遠端綠燈鏡面邊緣量測向左錯距，而非只看立桿位置。",
+        "遠端立桿位於左側或採門架式時，至少一燈面不得偏到近端右方。",
+        "遠端立桿位於右側時，建議向左錯距大於 90 cm；柱立式則於兩側配置。"
+      ],
+      "takeaway": "以近端與遠端綠燈鏡面邊緣量測向左錯距，而非只看立桿位置。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[2\\]項 至少有遠端燈面在左][\n\n  本檢查項目為遠端號誌「燈面」位置檢討，而非立桿位置。惟立桿位置不同亦會影響用路人整體視覺，若立桿在左側，檢核條件較寬鬆；若立桿在右側，則需與近端有明顯「左右錯開」之效果，方能順勢使用路人能夠辨別號誌。為分析遠端燈面是否在左，本指引以「向左錯距」$O S_1$進行探討，「向左錯距」之定義為由上游近端燈面之綠燈鏡面邊緣，沿垂直停止線方向投射，量測至遠端燈面之綠燈鏡面邊緣之橫斷面距離。根據立桿位置，「向左錯距」$O S_1$之值依下列四種情境有不同要求以滿足《設置規則》：\n\n  + #guide-item[若遠端號誌之燈桿立於車行道之左方：][\n\n    至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$ \\>\n    0~cm且不得為負值），如 @fig:signalized_urban_orthogonal_t_54 所示。\n\n    #figure(\n      [#image(\"../../media/04-general-scenarios/G2-01/G2-01_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png\", width: 64.0%, height: 104.16mm, fit: \"contain\")],\n      kind: image,\n      caption: [遠端號誌燈桿立於車行道左方之向左錯距示意圖],\n    ) <fig:signalized_urban_orthogonal_t_54>\n\n    ]\n\n  + #guide-item[若遠端燈桿立於車行道之右方：][\n\n    與近端燈面應有向左錯距$O S_1$ \\>\n    90~cm。藉由錯距，使用路人能夠辨認出有左右兩組號誌，增加號誌燈面之可視性來路口之辨識性，以達成「相對左側」。\n\n    ]\n\n  + #guide-item[若遠端號誌佈設為門架式：][\n\n    門架本就於車行道之兩側立桿，則至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$\n    \\> 0~cm且不得為負值）。\n\n    ]\n\n  + #guide-item[若遠端為柱立式：][\n\n    依照第221條第1款「至少應有一燈面設於遠端左側」，應設左右兩側之柱立號誌。 不同立桿位置之向左錯距詳見 @appendix:signal-placement[] 。\n\n    本示例遠端為懸臂式，因此查看「佈設法1：若遠端號誌之燈桿立於車行道之左方」，從用路人之視角，遠端燈面2.2在近端燈面2.1之左側（$O S_1$  \\> 0），如 @fig:signalized_urban_orthogonal_t_55 所示。\n\n    #figure(\n      [#image(\"../../media/04-general-scenarios/G2-01/G2-01_向左錯距佈設檢查圖例.png\", width: 60%, fit: \"contain\")],\n      kind: image,\n      caption: [向左錯距佈設檢查圖例],\n    ) <fig:signalized_urban_orthogonal_t_55>]\n\n  ]\n",
+      "sourceParagraphs": [
+        "本檢查項目為遠端號誌「燈面」位置檢討，而非立桿位置。惟立桿位置不同亦會影響用路人整體視覺，若立桿在左側，檢核條件較寬鬆；若立桿在右側，則需與近端有明顯「左右錯開」之效果，方能順勢使用路人能夠辨別號誌。為分析遠端燈面是否在左，本指引以「向左錯距」$O S_1$進行探討，「向左錯距」之定義為由上游近端燈面之綠燈鏡面邊緣，沿垂直停止線方向投射，量測至遠端燈面之綠燈鏡面邊緣之橫斷面距離。根據立桿位置，「向左錯距」$O S_1$之值依下列四種情境有不同要求以滿足《設置規則》：",
+        "至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$ \\>     0 cm且不得為負值），如 （見相關圖例或模組） 所示。",
+        "與近端燈面應有向左錯距$O S_1$ \\>     90 cm。藉由錯距，使用路人能夠辨認出有左右兩組號誌，增加號誌燈面之可視性來路口之辨識性，以達成「相對左側」。",
+        "門架本就於車行道之兩側立桿，則至少有一遠端燈面應齊平或於近段燈面之左方（向左錯距$O S_1$     \\> 0 cm且不得為負值）。",
+        "依照第221條第1款「至少應有一燈面設於遠端左側」，應設左右兩側之柱立號誌。 不同立桿位置之向左錯距詳見 （見相關圖例或模組） 。",
+        "本示例遠端為懸臂式，因此查看「佈設法1：若遠端號誌之燈桿立於車行道之左方」，從用路人之視角，遠端燈面2.2在近端燈面2.1之左側（$O S_1$  \\> 0），如 （見相關圖例或模組） 所示。"
+      ],
+      "regLabel": "[2] § 221"
+    },
+    {
+      "id": "g201-far",
+      "scenario": "g2-01",
+      "reg": "221",
+      "name": "遠端縱向距離",
+      "category": "號誌",
+      "mapAsset": "g201-distance",
+      "asset": "g201-distance",
+      "headline": "遠端縱向距離",
+      "locate": "對照圖例，檢視遠端縱向距離的配置。",
+      "box": [
+        231.24,
+        79.2,
+        103.32,
+        448.8
+      ],
+      "crop": [
+        0,
+        52.27,
+        492,
+        502.66
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "遠端縱向距離",
+      "points": [
+        "遠端燈面距近端停止線至少 10 m。",
+        "本例南下方向量得約 28 m，符合示例的距離檢核。"
+      ],
+      "takeaway": "遠端燈面距近端停止線至少 10 m。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[2a\\]項遠端燈面縱向佈設][\n\n  根據《設置規則》第221條「行車管制號誌至少應有一燈面設於遠端左側，且距近端停止線10~m以上。…（後略）」，由南下停止線起算至遠端號誌燈面2.2.2，其距離$X_2$為28~m，符合10~m以上的標準，如 @fig:signalized_urban_orthogonal_t_56 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-01/G2-01_縱向佈設檢查圖例.png\", width: 45%, fit: \"contain\")],\n    kind: image,\n    caption: [縱向佈設檢查圖例],\n  ) <fig:signalized_urban_orthogonal_t_56>\n\n  ]\n",
+      "sourceParagraphs": [
+        "根據《設置規則》第221條「行車管制號誌至少應有一燈面設於遠端左側，且距近端停止線10 m以上。…（後略）」，由南下停止線起算至遠端號誌燈面2.2.2，其距離$X_2$為28 m，符合10 m以上的標準，如 （見相關圖例或模組） 所示。"
+      ],
+      "regLabel": "[2a] § 221"
+    },
+    {
+      "id": "g201-near",
+      "scenario": "g2-01",
+      "reg": "221",
+      "name": "近端提示停止線",
+      "category": "號誌",
+      "mapAsset": "g201-signal-1",
+      "asset": "g201-signal-1",
+      "headline": "近端提示停止線",
+      "locate": "對照圖例，檢視近端提示停止線的配置。",
+      "box": [
+        289.08,
+        169.09,
+        39.6,
+        45.7
+      ],
+      "crop": [
+        209.54,
+        137.1,
+        186.46,
+        109.68
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "近端提示停止線",
+      "points": [
+        "近端至少一組燈面，協助駕駛辨認停止位置。",
+        "近端與遠端共同提供接近、停等、起步及通過路口的燈號資訊。"
+      ],
+      "takeaway": "近端至少一組燈面，協助駕駛辨認停止位置。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  號誌燈面應有以下功能，如果未達成將造成安全或效率之疑慮：\n\n  + 協助車輛自上游辨識號誌之燈號：需有近端號誌負責。\n\n  + 指示停止線：需有近端號誌負責。\n\n  + 協助起步：需有近端或遠端號誌負責。雖然我國一般由遠端號誌擔任此功能，但必要時可由近端燈面提供此功能。\n\n  + 協助兩段式待轉機慢車起步（我國特有）：需有遠端號誌負責。\n\n  + 通過路口時確認現在燈號：需有遠端號誌負責。\n\n  + 導引正確的「接收車道（receiving lanes）」方向：需有遠端號誌負責\n\n  只有遠端號誌，而沒有近端號誌之國家，常有用路人找不到停止線之困境，形成安全疑慮。尤其只有遠端號誌之國家，燈面越靠近停止線用路人較願意遵守號誌(Kim等人，2008)。美國法定為遠端號誌，試辦加裝近端號誌後，90度角交叉撞降低33%至47%(Bonneson等人，2002)。因此我國有近端號誌裝設在停止線附近之現行習慣，是相對安全的。\n\n  本指引建議近端至少要有1組號誌燈面提示停止線，以確保用路人安全。此路口之近端燈面2.1符合檢查標準。\n\n  ]\n",
+      "sourceParagraphs": [
+        "只有遠端號誌，而沒有近端號誌之國家，常有用路人找不到停止線之困境，形成安全疑慮。尤其只有遠端號誌之國家，燈面越靠近停止線用路人較願意遵守號誌(Kim等人，2008)。美國法定為遠端號誌，試辦加裝近端號誌後，90度角交叉撞降低33%至47%(Bonneson等人，2002)。因此我國有近端號誌裝設在停止線附近之現行習慣，是相對安全的。",
+        "本指引建議近端至少要有1組號誌燈面提示停止線，以確保用路人安全。此路口之近端燈面2.1符合檢查標準。"
+      ],
+      "regLabel": "[3] § 221"
+    },
+    {
+      "id": "g201-gap",
+      "scenario": "g2-01",
+      "reg": "5.6",
+      "name": "12 m 視覺漏洞",
+      "category": "號誌",
+      "mapAsset": "g201-visibility",
+      "asset": "g201-visibility",
+      "headline": "12 m 視覺漏洞",
+      "locate": "對照圖例，檢視12 m 視覺漏洞的配置。",
+      "box": [
+        182.4,
+        177.94,
+        132.24,
+        195.16
+      ],
+      "crop": [
+        136.12,
+        84.43,
+        224.8,
+        382.18
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "12 m 視覺漏洞",
+      "points": [
+        "沿行車方向檢查同向燈面的橫向間隔。",
+        "間距超過 12 m 時，應考慮增設燈面；本例未出現此寬度的空隙。"
+      ],
+      "takeaway": "沿行車方向檢查同向燈面的橫向間隔。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[4\\]項 12~m寬視覺漏洞檢查][\n\n  根據《交工規範》第5.6節「同向車輛或行人之行車管制號誌同向燈面之法線垂直距離以不超過12~m為度，若超過時，易被忽略，應考慮增設1組。」由可視模板沿行車方向投射，燈面2.1、2.2之間並沒有12~m的空隙，因此不用額外增設燈面。（可視模板如 @fig:signalized_urban_orthogonal_t_53 所示）\n\n\n\n\n\n\n\n  ]\n",
+      "sourceParagraphs": [
+        "根據《交工規範》第5.6節「同向車輛或行人之行車管制號誌同向燈面之法線垂直距離以不超過12 m為度，若超過時，易被忽略，應考慮增設1組。」由可視模板沿行車方向投射，燈面2.1、2.2之間並沒有12 m的空隙，因此不用額外增設燈面。（可視模板如 （見相關圖例或模組） 所示）"
+      ],
+      "regLabel": "[4] 規範",
+      "reference": "《交工規範》§ 5.6"
+    },
+    {
+      "id": "g201-start",
+      "scenario": "g2-01",
+      "reg": "221",
+      "name": "起步可視範圍",
+      "category": "號誌",
+      "mapAsset": "g201-signal-1",
+      "asset": "g201-signal-1",
+      "headline": "起步可視範圍",
+      "locate": "對照圖例，檢視起步可視範圍的配置。",
+      "box": [
+        174.24,
+        315.33,
+        43.56,
+        50.27
+      ],
+      "crop": [
+        102.79,
+        285.63,
+        186.46,
+        109.68
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "起步可視範圍",
+      "points": [
+        "由停止線前第一輛車或兩段式待轉車輛的視點檢核。",
+        "配合罩簷型式使用起步可視模板，確認綠燈能被辨識。"
+      ],
+      "takeaway": "由停止線前第一輛車或兩段式待轉車輛的視點檢核。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[5\\]項 待轉區/停止線綠燈啟動可視30度角檢查][\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  ]\n",
+      "sourceParagraphs": [
+        "由停止線前第一輛車或兩段式待轉車輛的視點檢核。",
+        "配合罩簷型式使用起步可視模板，確認綠燈能被辨識。"
+      ],
+      "regLabel": "[5] § 221",
+      "moduleLinks": [
+        {
+          "route": "m203-signals-diagram/topic-start",
+          "label": "M2-03.1 號誌化路口：起步可視範圍"
+        }
+      ]
+    },
+    {
+      "id": "g201-clearance",
+      "scenario": "g2-01",
+      "reg": "220",
+      "name": "淨寬與淨高",
+      "category": "號誌",
+      "mapAsset": "g201-signal-1",
+      "asset": "g201-signal-1",
+      "headline": "淨寬與淨高",
+      "locate": "對照圖例，檢視淨寬與淨高的配置。",
+      "box": [
+        289.08,
+        164.52,
+        39.6,
+        54.84
+      ],
+      "crop": [
+        209.54,
+        137.1,
+        186.46,
+        109.68
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "淨寬與淨高",
+      "points": [
+        "燈箱、桿柱及附屬部件均納入淨寬檢查；示例以距車道邊緣至少 0.30 m 檢核。",
+        "車行道上方燈箱高出路面 4.6–5.6 m；人行道上方柱立式燈箱為 2.4–4.6 m。"
+      ],
+      "takeaway": "燈箱、桿柱及附屬部件均納入淨寬檢查；示例以距車道邊緣至少 0.30 m 檢核。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[6\\]項 淨寬檢查][\n  參閱@sec-mod-m2-03-1[]號誌化路口說明。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    ]\n",
+      "sourceParagraphs": [
+        "燈箱、桿柱及附屬部件均納入淨寬檢查；示例以距車道邊緣至少 0.30 m 檢核。",
+        "車行道上方燈箱高出路面 4.6–5.6 m；人行道上方柱立式燈箱為 2.4–4.6 m。"
+      ],
+      "regLabel": "[6–7] § 220",
+      "moduleLinks": [
+        {
+          "route": "m203-signals-diagram/topic-clearance",
+          "label": "M2-03.1 號誌化路口：淨寬與淨高"
+        }
+      ]
+    },
+    {
+      "id": "g201-pedestrian",
+      "scenario": "g2-01",
+      "reg": "231",
+      "name": "行人專用號誌",
+      "category": "號誌",
+      "mapAsset": "g201-overall",
+      "asset": "g201-overall",
+      "headline": "行人專用號誌",
+      "locate": "對照圖例，檢視行人專用號誌的配置。",
+      "box": [
+        515.16,
+        616.32,
+        133.56,
+        96.3
+      ],
+      "crop": [
+        385.49,
+        548.91,
+        392.9,
+        231.12
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "行人專用號誌",
+      "points": [
+        "配合行穿線及實際等候位置設置，使行人可以直視燈面。",
+        "與行車號誌位置相近時可共桿，仍需保留清楚的行人指示。"
+      ],
+      "takeaway": "配合行穿線及實際等候位置設置，使行人可以直視燈面。",
+      "sourceRaw": "+ #guide-item[「行人專用號誌」之佈設][\n  參閱@sec-mod-m3-01-2[]行人模組之路口穿越說明。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  ]\n\n\n\n\n\n\n\n\n",
+      "sourceParagraphs": [
+        "配合行穿線及實際等候位置設置，使行人可以直視燈面。",
+        "與行車號誌位置相近時可共桿，仍需保留清楚的行人指示。"
+      ],
+      "moduleLinks": [
+        {
+          "route": "m301-crossing-diagram",
+          "label": "M3-01.2 路口穿越"
+        }
+      ]
+    }
+  ]
+}

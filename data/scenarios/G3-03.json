@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g3-03",
+    "code": "G3-03",
+    "chapter": "g3",
+    "name": "無號誌市區斜交四岔路口",
+    "short": "市區斜交",
+    "setting": "市區",
+    "geometry": "斜交",
+    "rotation": 0,
+    "overall": "g303-overall",
+    "figure": "G3-03 圖例",
+    "contextId": "g303-context",
+    "overviewId": "g303-overview",
+    "reviewId": "g303-review",
+    "source": {
+      "typst": "04-3-03-unsignalized-urban-skewed-cross.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "877474ec1cb163b2e19dbfcb694fd0c2e5c59684065d410f0668e94d5afd194e"
+    },
+    "originalTypst": "// 04-3-03-unsignalized-urban-skewed-cross.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌四叉路口／無號誌市區斜交四叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G3-03] 無號誌市區斜交四叉路口設置圖例與運用解說 <section:unsignalized_urban_skewed_cross>\n\n==== 路口現況與議題 <paragraph:unsignalized_urban_skewed_cross_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例選擇之無號誌市區斜交四叉路口，其周邊土地使用以住宅區為主，房屋型式則多為公寓或華廈，因此通常無設置地下停車場。本示例之主要道路路寬約15~m，採標線分隔，雙向各配置1混合車道，道路兩側設有停車格及實體人行道，路段速限為30~km/h。次要道路路寬約8~m，雙向無分隔，雙向配置1混合車道，道路兩側無停車管制及人行設施，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類市區無號誌斜交四叉路口，交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[缺少主、次道路管制][\n\n    市區道路經常未設置必要或正確之標誌、標線，用以區別出主、次要道路，不僅用路人難以識別前方是否有路口，亦難以快速判斷那個方向的車輛有先行權。\n\n    ]\n\n  + #guide-item[速度限制不明確][\n\n    市區道路路側空間經常因為不夠寬，所以難以豎立速限標誌；又因為街廓通常較短，因此亦無足夠路面空間劃設速限標字。\n\n    ]\n\n  + #guide-item[行車空間分隔不明確][\n\n    市區道路常於車道最外側同時設置停車格位，提供路邊停車使用，以滿足居民之停車需求，但因路面通常無劃設路面邊線區隔行車空間與停車空間，以致行車空間分隔不明確。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何明確區分主要道路及次要道路；\n  - 如何透過標誌及標線來提高行人穿越道的安全；\n  - 對於路側的停車空間應加以明確繪設，並注意車輛停車進出的安全。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_urban_skewed_cross_suggestions_and_overall_diagram>\n\n有關無號誌市區斜交四叉路口的交通設施建議設置如 @fig:unsignalized_urban_skewed_cross_106 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 此路口位於市區且路側活動行為較頻繁，故本示例透過主要道路人行道連續串接的方式，宣示主要道路的先行權，強迫次要道路用路人一定要停車再開，另次要道路面臨人行道高差部分，設置路面高突標誌提醒用路人，並於車輛穿越人行道部分，以不同的材質凸顯人行空間區域；\n+ 對於路邊停車格則示範如何明確區分車行空間及停車空間；\n+ 在主要道路上，雖不用停或讓次要道路，但仍強化提示慢及速限30~km/h，同時在路口處加繪車道導引線，以提高對於路口穿越的自明性。\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G3-03/G3-03_無號誌市區斜交四叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [無號誌市區斜交四叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_urban_skewed_cross_106\",\n)\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M1-03\", \"M2-01\", \"M4-01\"),\n  [#scenario-reg-link(\"38\", [路面高突標誌「警31」])],\n  [#scenario-reg-link(\"185\", [枕木紋行人穿越道線])],\n  [#scenario-rule-reference([§ 16], [實體人行道（《市區道路及附屬工程設計標準》）])],\n) <scenario-index-g3-03>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G3-03/G3-03_無號誌市區斜交四叉路口交通設施整體設置圖例.png\", width: 92.9%, height: 85.09mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌市區斜交四叉路口交通設施整體設置圖例],\n// ) <fig:unsignalized_urban_skewed_cross_106>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_urban_skewed_cross_marking_diagram_explanation>\n\n+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  本示例有行人南北向的穿越需求，且行人僅跨越兩車行道，槽化線僅作分隔使用，並無行人庇護功能，此外，行穿線上游處會增設停止線，使車輛行駛於此處時會注意並停等行人通過，如 @fig:unsignalized_urban_skewed_cross_107 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-03/G3-03_枕木紋行人穿越道線示意圖.png\", width: 33.3%, height: 70.78mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [枕木紋行人穿越道線示意圖],\n  ) <fig:unsignalized_urban_skewed_cross_107>\n\n  ]\n\n+ #guide-item[實體人行道，市區道路及附屬工程設計標準第16條][\n\n  此示例於主要道路有較高的行人穿越需求，故採實體人行道連續佈設方式，以做為次要道路之減速平台，同時採不同鋪面區隔人行道及路面，如 @fig:unsignalized_urban_skewed_cross_108 所示。減速平台的設計須符合《市區道路及附屬工程設計規範》第12.5.2節之規定。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-03/G3-03_實體人行道鋪面立體示意圖.png\", width: 53.8%, height: 57.05mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [實體人行道鋪面立體示意圖],\n  ) <fig:unsignalized_urban_skewed_cross_108>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_skewed_cross_signage_diagram_explanation>\n\n+ #guide-item[路面高突標誌「警31」，《設置規則》第38條][\n\n  路面突然高聳路段鄰近處，宜設置該標誌，提醒駕駛人減速慢行。建置設於路面突然高聳地點前約30~m處，並依行車速限及最短安全視距增加，並搭配設置「前方30~m」附牌，以提前預告駕駛人。設置圖例如 @fig:unsignalized_urban_skewed_cross_109 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-03/G3-03_路面高突標誌設置圖例.png\", width: 52.3%, height: 80.06mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [路面高突標誌設置圖例],\n  ) <fig:unsignalized_urban_skewed_cross_109>\n\n  ]\n",
+    "sourceLine": "資料：G3-03 路口現況與設置建議",
+    "summary": "住宅區斜交四岔路口，以連續人行道及減速平台，強化主要道路與行人空間。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "15",
+        "description": "雙向各 1 混合車道，兩側停車格及實體人行道",
+        "speed": "30"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "8",
+        "description": "雙向共 1 混合車道，無停車管制及人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "主次道路關係不清楚",
+        "以人行道連續性及停車再開配置加強辨識。"
+      ],
+      [
+        "停車與行車界線不清楚",
+        "明確劃分路側停車與車流空間。"
+      ],
+      [
+        "行人與速限提示不足",
+        "低速配置配合穿越警示。"
+      ]
+    ],
+    "condition": "延續主要道路人行道，形成次要道路減速平台，並以標誌及停止線提示。",
+    "overviewIntro": "延續主要道路人行道，形成次要道路減速平台，並以標誌及停止線提示。",
+    "overviewRows": [
+      [
+        "g303-sidewalk",
+        "01　延續人行道與減速平台",
+        "標準 § 16"
+      ],
+      [
+        "g303-crosswalk",
+        "02　明示行人穿越與停讓",
+        "§ 185"
+      ],
+      [
+        "g303-hump-warning",
+        "03　提前預告路面高差",
+        "§ 38"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M1-03 路側停車",
+      "M2-01 停、讓管制",
+      "M4-01 危險警示"
+    ],
+    "recapTitle": "人行道連續，\n主次關係更清楚。",
+    "recapIntro": "延續主要道路人行道，形成次要道路減速平台，並以標誌及停止線提示。",
+    "recapRows": [
+      [
+        "延續人行道與減速平台",
+        "人行道連續穿越次要道路，以高差形成減速平台。",
+        "標準 § 16"
+      ],
+      [
+        "明示行人穿越與停讓",
+        "主要道路配置行穿線，並於上游設停止線，提醒停讓行人。",
+        "§ 185"
+      ],
+      [
+        "提前預告路面高差",
+        "減速平台前以路面高突標誌提醒減速。",
+        "§ 38"
+      ]
+    ],
+    "articleIds": [
+      "g303-crosswalk",
+      "g303-sidewalk",
+      "g303-hump-warning"
+    ],
+    "assets": {
+      "g303-overall": "G3-03_無號誌市區斜交四叉路口交通設施整體設置圖例.svg",
+      "g303-before": "G3-03_現況圖_01.png",
+      "g303-photo-1": "G3-03_現況照片_01.png",
+      "g303-photo-2": "G3-03_現況照片_02.png",
+      "g303-photo-3": "G3-03_現況照片_03.png",
+      "g303-photo-4": "G3-03_現況照片_04.png"
+    },
+    "width": 1009,
+    "height": 680,
+    "currentConditions": {
+      "pageId": "g303-conditions",
+      "before": "g303-before",
+      "after": "g303-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g303-conditions:content",
+      "photos": [
+        {
+          "image": "g303-photo-1",
+          "kind": "photo",
+          "title": "路權主要依賴標字",
+          "alt": "G3-03 現況照片 1",
+          "points": [
+            "現況僅以路面標字區分主次道路，管制提示不夠完整。"
+          ]
+        },
+        {
+          "image": "g303-photo-2",
+          "kind": "photo",
+          "title": "缺少速限標誌",
+          "alt": "G3-03 現況照片 2",
+          "points": [
+            "主要依賴速限標字，缺少清楚的標誌提示。"
+          ]
+        },
+        {
+          "image": "g303-photo-3",
+          "kind": "photo",
+          "title": "外側車道兼供停車",
+          "alt": "G3-03 現況照片 3",
+          "points": [
+            "停車與行車使用同一外側空間，邊界不明確。"
+          ]
+        },
+        {
+          "image": "g303-photo-4",
+          "kind": "photo",
+          "title": "路權主要依賴標字",
+          "alt": "G3-03 現況照片 4",
+          "points": [
+            "現況僅以路面標字區分主次道路，管制提示不夠完整。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-3-03-unsignalized-urban-skewed-cross.typ 整理。",
+      "takeaway": "延續主要道路人行道，形成次要道路減速平台，並以標誌及停止線提示。"
+    }
+  },
+  "assets": {
+    "g303-overall": {
+      "file": "materials/04-一般道路情境/G3-03/G3-03_無號誌市區斜交四叉路口交通設施整體設置圖例.svg",
+      "width": 1009,
+      "height": 680,
+      "rotation": 0,
+      "scenario": "G3-03",
+      "label": "無號誌市區斜交四叉路口交通設施整體設置圖例",
+      "sha256": "da70df1b0d6b4ffa4313149ab93d1650ccd82b119048f093cc545a798ee8f6c1"
+    },
+    "g303-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況圖_01.png",
+      "width": 4086,
+      "height": 2610,
+      "rotation": 0,
+      "scenario": "G3-03",
+      "label": "現況圖_01",
+      "sha256": "bb443757382c92c4560a48d5feaec0c6e3741e6b44b6bbe3d5468f8dbfa27537"
+    },
+    "g303-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_01.png",
+      "width": 2506,
+      "height": 1438,
+      "rotation": 0,
+      "scenario": "G3-03",
+      "label": "現況照片_01",
+      "sha256": "810df5e3047702671a65dbab6a354506f1cf79941bb0f1f850af598633e02019"
+    },
+    "g303-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_02.png",
+      "width": 2517,
+      "height": 1396,
+      "rotation": 0,
+      "scenario": "G3-03",
+      "label": "現況照片_02",
+      "sha256": "65ba3bae85491cb9c2ae608c177c99a079385cb38a3d5e5332eb49373ea370bd"
+    },
+    "g303-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_03.png",
+      "width": 2485,
+      "height": 1371,
+      "rotation": 0,
+      "scenario": "G3-03",
+      "label": "現況照片_03",
+      "sha256": "0d30183e4d2ab1fbad2cfb45ea62f8efc362ed2d9ad81ac6454f34698c6c3241"
+    },
+    "g303-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-03/G3-03_現況照片_04.png",
+      "width": 2514,
+      "height": 1445,
+      "rotation": 0,
+      "scenario": "G3-03",
+      "label": "現況照片_04",
+      "sha256": "82ed1ca1b481f60afaccf9a7e8790f45262d0602c8dcf2a9b04cb0b183847fa9"
+    }
+  },
+  "articles": [
+    {
+      "id": "g303-crosswalk",
+      "scenario": "g3-03",
+      "reg": "185",
+      "name": "枕木紋行人穿越道線",
+      "category": "標線",
+      "mapAsset": "g303-overall",
+      "asset": "g303-overall",
+      "headline": "枕木紋行人穿越道線",
+      "locate": "對照圖例，檢視枕木紋行人穿越道線的配置。",
+      "box": [
+        443.96,
+        326.4,
+        50.45,
+        74.8
+      ],
+      "crop": [
+        330.47,
+        282.2,
+        277.44,
+        163.2
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "枕木紋行人穿越道線",
+      "points": [
+        "主要道路配置行穿線，並於上游設停止線，提醒停讓行人。",
+        "本例槽化線僅作車流分隔，不能當作行人庇護空間。"
+      ],
+      "takeaway": "主要道路配置行穿線，並於上游設停止線，提醒停讓行人。",
+      "sourceRaw": "+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  本示例有行人南北向的穿越需求，且行人僅跨越兩車行道，槽化線僅作分隔使用，並無行人庇護功能，此外，行穿線上游處會增設停止線，使車輛行駛於此處時會注意並停等行人通過，如 @fig:unsignalized_urban_skewed_cross_107 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-03/G3-03_枕木紋行人穿越道線示意圖.png\", width: 33.3%, height: 70.78mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [枕木紋行人穿越道線示意圖],\n  ) <fig:unsignalized_urban_skewed_cross_107>\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例有行人南北向的穿越需求，且行人僅跨越兩車行道，槽化線僅作分隔使用，並無行人庇護功能，此外，行穿線上游處會增設停止線，使車輛行駛於此處時會注意並停等行人通過，如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g303-sidewalk",
+      "scenario": "g3-03",
+      "reg": "16",
+      "name": "連續實體人行道",
+      "category": "道路設施",
+      "mapAsset": "g303-overall",
+      "asset": "g303-overall",
+      "headline": "連續實體人行道",
+      "locate": "對照圖例，檢視連續實體人行道的配置。",
+      "box": [
+        534.77,
+        272,
+        100.9,
+        61.2
+      ],
+      "crop": [
+        446.5,
+        221,
+        277.44,
+        163.2
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "連續實體人行道",
+      "points": [
+        "人行道連續穿越次要道路，以高差形成減速平台。",
+        "以不同鋪面凸顯人行空間，並依減速平台規範檢核設計。"
+      ],
+      "takeaway": "人行道連續穿越次要道路，以高差形成減速平台。",
+      "sourceRaw": "+ #guide-item[實體人行道，市區道路及附屬工程設計標準第16條][\n\n  此示例於主要道路有較高的行人穿越需求，故採實體人行道連續佈設方式，以做為次要道路之減速平台，同時採不同鋪面區隔人行道及路面，如 @fig:unsignalized_urban_skewed_cross_108 所示。減速平台的設計須符合《市區道路及附屬工程設計規範》第12.5.2節之規定。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-03/G3-03_實體人行道鋪面立體示意圖.png\", width: 53.8%, height: 57.05mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [實體人行道鋪面立體示意圖],\n  ) <fig:unsignalized_urban_skewed_cross_108>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_skewed_cross_signage_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "此示例於主要道路有較高的行人穿越需求，故採實體人行道連續佈設方式，以做為次要道路之減速平台，同時採不同鋪面區隔人行道及路面，如 （見相關圖例或模組） 所示。減速平台的設計須符合《市區道路及附屬工程設計規範》第12.5.2節之規定。"
+      ],
+      "reference": "《市區道路及附屬工程設計標準》§ 16",
+      "regLabel": "標準 § 16"
+    },
+    {
+      "id": "g303-hump-warning",
+      "scenario": "g3-03",
+      "reg": "38",
+      "name": "路面高突標誌",
+      "category": "標誌",
+      "mapAsset": "g303-overall",
+      "asset": "g303-overall",
+      "headline": "路面高突標誌",
+      "locate": "對照圖例，檢視路面高突標誌的配置。",
+      "box": [
+        554.95,
+        47.6,
+        70.63,
+        68
+      ],
+      "crop": [
+        451.55,
+        0,
+        277.44,
+        163.2
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "路面高突標誌",
+      "points": [
+        "減速平台前以路面高突標誌提醒減速。",
+        "建議於高突地點前約 30 m 預告，並依速限及視距增加。"
+      ],
+      "takeaway": "減速平台前以路面高突標誌提醒減速。",
+      "sourceRaw": "+ #guide-item[路面高突標誌「警31」，《設置規則》第38條][\n\n  路面突然高聳路段鄰近處，宜設置該標誌，提醒駕駛人減速慢行。建置設於路面突然高聳地點前約30~m處，並依行車速限及最短安全視距增加，並搭配設置「前方30~m」附牌，以提前預告駕駛人。設置圖例如 @fig:unsignalized_urban_skewed_cross_109 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-03/G3-03_路面高突標誌設置圖例.png\", width: 52.3%, height: 80.06mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [路面高突標誌設置圖例],\n  ) <fig:unsignalized_urban_skewed_cross_109>\n\n  ]\n",
+      "sourceParagraphs": [
+        "路面突然高聳路段鄰近處，宜設置該標誌，提醒駕駛人減速慢行。建置設於路面突然高聳地點前約30 m處，並依行車速限及最短安全視距增加，並搭配設置「前方30 m」附牌，以提前預告駕駛人。設置圖例如 （見相關圖例或模組） 所示。"
+      ]
+    }
+  ]
+}

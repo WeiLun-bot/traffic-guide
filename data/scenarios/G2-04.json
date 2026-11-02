@@ -1,0 +1,1146 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g2-04",
+    "code": "G2-04",
+    "chapter": "g2",
+    "name": "號誌化鄉區斜交三岔路口",
+    "short": "鄉區斜交",
+    "setting": "鄉區",
+    "geometry": "斜交",
+    "rotation": 0,
+    "overall": "g204-overall",
+    "figure": "G2-04 圖例",
+    "contextId": "g204-context",
+    "overviewId": "g204-overview",
+    "reviewId": "g204-review",
+    "source": {
+      "typst": "04-2-04-signalized-rural-skewed-t.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "cd23524851f5874b777078dc8146acb7814bc2a00cb35658e2ec7f873c0ed33b"
+    },
+    "originalTypst": "// 04-2-04-signalized-rural-skewed-t.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—號誌化三叉路口／號誌化鄉區斜交三叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G2-04] 號誌化鄉區斜交三叉路口設置圖例與運用解說 <section:signalized_rural_skewed_t>\n\n==== 路口現況與議題 <paragraph:signalized_rural_skewed_t_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例之號誌化鄉區斜交三叉路口，其周邊有小型聚落，且聚落之住宅型式多為2~3層樓之低矮建築。本示例參考一個現況路口為例，其主要道路路寬約10~m，採標線分隔，雙向各配置1混合車道，道路兩側無停車管制，無設置人行設施，路段速限為40~km/h。橫交之次要道路路寬約10~m，採標線分隔，雙向各配置1混合車道，道路兩側無停車管制，無設置人行設施，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類鄉區號誌化斜交三叉路口，交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[速度限制不明確][\n\n    由於鄉區道路寬度通常較狹窄且通常無設置人行道，因而缺乏適當空間設置速限標誌，無法有效地提醒用路人注意行車速度。\n\n    ]\n\n  + #guide-item[號誌不易被辨識][\n\n    由於鄉區道路臨近聚落之處，路側通常比鄰民房，因此行車管制號誌常遷就現地條件，設置在不適當之位置，以致用路人較難輕易辨識出前方路口為號誌化路口。\n\n    ]\n\n  + #strong[此示例雖然位在鄉區，會設號誌經常是因為附近聚落有行人穿越之需求，但常因路側空間不足而無留設行人的停等空間。]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何提供行人安全的停等空間；\n  - 如何配合行穿線設置行人專用號誌；\n  - 如何明確提供用路人必要之道路資訊，如路段速限及道路名稱等。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:signalized_rural_skewed_t_suggestions_and_overall_diagram>\n\n有關號誌化鄉區斜交三叉路口的交通設施建議設置如 @fig:signalized_rural_skewed_t_86 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 此路口雖位於鄉區，但鄰近路口處有較多之民房，考慮到有行人及路側活動之需求，故於路側空間佈設標線型人行道，另由於標線型人行道無實體分隔，為保障行人步行安全，故配合將速限下修為30~km/h；\n+ 由於鄰近路口前之路段為一轉彎路段，故設置注意號誌標誌，以提前預告用路人前方為一號誌化路口，需注意通行；\n+ 雖此處為號誌化三叉路口，仍建議設遵行標誌，提高自明性。\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [號誌化鄉區斜交三叉路口交通設施整體設置圖例],\n  label-name: \"fig:signalized_rural_skewed_t_86\",\n)\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M2-03\", \"M3-01\"),\n  [#scenario-reg-link(\"24\", [彎路標誌「警2」])],\n  [#scenario-reg-link(\"33\", [注意號誌標誌「警23」])],\n  [#scenario-reg-link(\"174-3\", [人行道標線])],\n  [#scenario-reg-link(\"201\", [號誌燈面數與設置方式])],\n  [#scenario-reg-link(\"220\", [號誌設置高度])],\n  [#scenario-reg-link(\"221\", [行車管制號誌布設])],\n  [#scenario-rule-reference([§ 5.6], [號誌設置檢核（《交工規範》）])],\n) <scenario-index-g2-04>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.png\", width: 100.0%, height: 112.24mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [號誌化鄉區斜交三叉路口交通設施整體設置圖例],\n// ) <fig:signalized_rural_skewed_t_86>\n\n\n==== 標線設置圖例運用解說 <paragraph:signalized_rural_skewed_t_marking_diagram_explanation>\n\n+ #guide-item[人行道標線，《設置規則》第174-3條][\n\n  本示例透過佈設人行道標線，使行人可以通行、等候穿越路口。此外路口處之標線線形曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。人行道標線如 @fig:signalized_rural_skewed_t_87 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_人行道標線示意圖.svg\", width: 80%, fit: \"contain\")],\n    kind: image,\n    caption: [人行道標線示意圖],\n  ) <fig:signalized_rural_skewed_t_87>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signage_diagram_explanation>\n\n+ #guide-item[彎路標誌「警2」，《設置規則》第24條][\n\n  當彎道路段曲線半徑與安全停車視距低於 @tab:signalized_rural_skewed_t_19 中之規定時（《設置規則》第24條），應設置彎路標誌。此標誌建議設於彎道路段起點前約30~m處，並依行車速限及最短安全視距增加，並可加設附牌以提醒駕駛人注意。如 @fig:signalized_rural_skewed_t_88 所示。\n\n  #sourced-figure(\n    table(\n    columns: 12,\n    table.header(\n      [設計速率（km/h）\n      ], [25], [30], [40], [50], [60], [70], [80], [90], [100], [110], [120],\n    ),\n    [平曲線半徑（m）\n      ], [20], [30], [50], [80], [120], [170], [230], [300], [390], [500], [620],\n    [安全停車視距（m）\n      ], [30], [35], [50], [65], [85], [105], [130], [160], [185], [220], [250],\n  ),\n    kind: table,\n    caption: [路段平曲線半徑與視距規定],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_19>\n\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_彎路、注意號誌標誌設置圖例.svg\", width: 100%, fit: \"contain\")],\n    kind: image,\n    caption: [彎路、注意號誌標誌設置圖例],\n  ) <fig:signalized_rural_skewed_t_88>\n\n  ]\n\n+ #guide-item[注意號誌標誌「警23」，《設置規則》第33條][\n\n  駛人於路段中受道路幾何線形或其他因素影響，致使其視線受阻，不易辨識前方路口之號誌，應設此標誌。本示例之情境，由於路口東側為一曲線路段，以號誌視覺模板進行檢視，駕駛人確實不易辨識前方路口號誌，故增設注意號誌標誌。依《道路交通安全規則》第102條之規定，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，故建議於距路口號誌前約30~m處設置注意號誌標誌「警23\n  」，標誌的設立建議在彎道之前，並依行車速限及最短安全視距增加。設置圖例如 @fig:signalized_rural_skewed_t_88 所示。\n\n  // #figure(\n  //   [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G2-04/G2-04_注意號誌標誌設置圖例.png\", width: 63.7%, height: 68.58mm, fit: \"contain\"), kind: \"general\")],\n  //   kind: image,\n  //   caption: [注意號誌標誌設置圖例],\n  // ) <fig:signalized_rural_skewed_t_89>\n\n  ]\n\n==== 號誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signal_diagram_explanation>\n\n本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 @fig:signalized_rural_skewed_t_90 所示。\n\n有關本路口之號誌平面佈設如 @fig:signalized_rural_skewed_t_91 所示。\n\n// 本路口號誌立桿標示分別為A、B、C、D及ZA、ZB、ZC，各桿之行車管制、行人專用號誌編號及號誌燈面顯示如 @tab:signalized_rural_skewed_t_20 所示。\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04軌跡圖.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [車輛於路口轉向軌跡模擬],\n) <fig:signalized_rural_skewed_t_90>\n\n// #figure(\n//   table(\n//   columns: 3,\n//   table.header(\n//     [號誌桿], [行車管制號誌], [行人專用號誌],\n//   ),\n//   [A桿], [A2、A6], [A24],\n//   [ZA桿], [ZA4直], [--],\n//   [B桿], [B3、B4], [B26],\n//   [ZB桿], [--], [ZB34],\n//   [C桿], [C2、C6], [C23],\n//   [ZC桿], [--], [ZC36],\n//   [D桿], [D4直], [D33],\n//   table.cell(colspan: 3, [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化市區正交三叉路口號誌佈設彙整表.png\", width: 94.2%, height: 33.02mm, fit: \"contain\")]),\n// ),\n//   kind: table,\n//   caption: [號誌化市區正交三叉路口號誌佈設彙整表],\n// ) <tab:signalized_rural_skewed_t_20>\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 @tab:signalized_rural_skewed_t_22 、 @tab:signalized_rural_skewed_t_23 及 @tab:signalized_rural_skewed_t_21 ，並說明如何操作。\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg\", width: 80%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例],\n) <fig:signalized_rural_skewed_t_91>\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:西行/編號:5]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [設置「注意號誌」標誌], [檢驗設計速率為30~km/h之道路，近端燈面5.1符合《設置規則》§ 201:2之表，但仍增設注意號誌標誌],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面5.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面5.2與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面5.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面5.1、5.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面5.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向西之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免夕陽眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [西行編號5之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_22>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到三個燈面8.1、8.2（直）、8.3（直）],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.3（直）],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2（直）、8.3（直）與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面8.1與遠端2燈面之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2（直）、8.3（直）通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [三叉路口背景龐雜可能導致號誌不清，若導致用路人辨識困難，近端同時設立柱立式與懸臂式號誌或其他號誌部件的處理],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_23>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免早晨眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_21>\n\n\n本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 @paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[8\\]項運用說明可參閱第 @paragraph:signalized_rural_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[9\\]項運用說明可參閱第 @paragraph:signalized_urban_skewed_t_signal_diagram_explanation[] 節內容。\n\n+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n      // 三張 SVG 的原始高度皆為 296，使用相同輸出高度維持圖內物件的比例尺。\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n\n+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：\n\n  - 替選方案1：與既有公共設施共桿，採以柱立式設置。\n\n  - 替選方案2：橫桿斜置。注意號誌佈設所在之空間為3維，橫桿不一定要水平面（垂直行車方向），而是可由他處立桿後，斜向延伸。如 @fig:signalized_rural_skewed_t_93 與 @fig:signalized_rural_skewed_t_94 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2],\n  ) <fig:signalized_rural_skewed_t_93>\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [替選方案2近端懸臂式號誌模擬示意圖],\n  ) <fig:signalized_rural_skewed_t_94>\n\n  受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 @fig:signalized_rural_skewed_t_95 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [遠端號誌若採用柱立式號誌示意],\n  ) <fig:signalized_rural_skewed_t_95>\n\n  ]\n",
+    "sourceLine": "資料：G2-04 路口現況與設置建議",
+    "summary": "聚落旁的彎道斜交路口，優先保留行人停等空間，並讓號誌提早被看見。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "10",
+        "description": "雙向各 1 混合車道，無停車管制及人行設施",
+        "speed": "40"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "10",
+        "description": "雙向各 1 混合車道，無停車管制及人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "行人缺少等候位置",
+        "道路兩側需保留通行與等候穿越空間。"
+      ],
+      [
+        "彎道不易看見號誌",
+        "連同停止線、立桿位置及預告標誌一起檢查。"
+      ],
+      [
+        "速限與道路資訊不足",
+        "配合路側活動補強速限及路名提示。"
+      ]
+    ],
+    "condition": "留設標線型人行道並降速，配合彎道預告與號誌立桿替選方案。",
+    "overviewIntro": "留設標線型人行道並降速，配合彎道預告與號誌立桿替選方案。",
+    "overviewRows": [
+      [
+        "g204-sidewalk",
+        "01　保留行人通行與停等空間",
+        "§ 174-3"
+      ],
+      [
+        "g204-signal-warning",
+        "02　彎道前提前預告號誌",
+        "§ 33"
+      ],
+      [
+        "g204-trajectory",
+        "03　依轉彎軌跡決定停止位置",
+        "軌跡檢核"
+      ],
+      [
+        "g204-bend",
+        "04　以速率與視距檢核彎道",
+        "§ 24"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M2-03 號誌化管制",
+      "M3-01 行人"
+    ],
+    "recapTitle": "彎道號誌，\n提早辨識才來得及。",
+    "recapIntro": "留設標線型人行道並降速，配合彎道預告與號誌立桿替選方案。",
+    "recapRows": [
+      [
+        "保留行人通行與停等空間",
+        "保留行人通行及等候穿越的空間，並配合將示例速限調整為 30 km/h。",
+        "§ 174-3"
+      ],
+      [
+        "彎道前提前預告號誌",
+        "彎道或遮蔽使號誌不易辨認時，在彎道前提早預告。",
+        "§ 33"
+      ],
+      [
+        "依轉彎軌跡決定停止位置",
+        "先檢查各方向轉彎軌跡，再決定停止線及立桿位置。",
+        "軌跡檢核"
+      ]
+    ],
+    "articleIds": [
+      "g204-sidewalk",
+      "g204-bend",
+      "g204-signal-warning",
+      "g204-trajectory",
+      "g204-signal-plan",
+      "g204-recognition-distance",
+      "g204-curve-option-1",
+      "g204-curve-option-2",
+      "g204-curve-option-3",
+      "g204-near-alternative",
+      "g204-far-post",
+      "g204-checklist"
+    ],
+    "assets": {
+      "g204-overall": "G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.svg",
+      "g204-trajectory": "G2-04軌跡圖.svg",
+      "g204-signals": "G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg",
+      "g204-curve-option-1": "option1.svg",
+      "g204-curve-option-2": "option2.svg",
+      "g204-curve-option-3": "option3.svg",
+      "g204-near-alternative": "G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg",
+      "g204-near-simulation": "G2-04_替選方案2近端懸臂式號誌模擬示意圖.png",
+      "g204-far-post": "G2-04_遠端號誌若採用柱立式號誌示意.png",
+      "g204-before": "G2-04_現況圖_01.png",
+      "g204-photo-1": "G2-04_現況照片_01.png",
+      "g204-photo-2": "G2-04_現況照片_02.png",
+      "g204-photo-3": "G2-04_現況照片_03.png",
+      "g204-photo-4": "G2-04_現況照片_04.png"
+    },
+    "width": 1183,
+    "height": 655,
+    "currentConditions": {
+      "pageId": "g204-conditions",
+      "before": "g204-before",
+      "after": "g204-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g204-conditions:content",
+      "photos": [
+        {
+          "image": "g204-photo-1",
+          "kind": "photo",
+          "title": "速限只靠標字提示",
+          "alt": "G2-04 現況照片 1",
+          "points": [
+            "路面雖有速限標字，卻缺少速限標誌。"
+          ]
+        },
+        {
+          "image": "g204-photo-2",
+          "kind": "photo",
+          "title": "號誌位置不易辨識",
+          "alt": "G2-04 現況照片 2",
+          "points": [
+            "路側建物與設置位置影響號誌的可視性。"
+          ]
+        },
+        {
+          "image": "g204-photo-3",
+          "kind": "photo",
+          "title": "缺少行人停等空間",
+          "alt": "G2-04 現況照片 3",
+          "points": [
+            "路口有行人穿越需求，卻未清楚安排停等位置。"
+          ]
+        },
+        {
+          "image": "g204-photo-4",
+          "kind": "photo",
+          "title": "速限只靠標字提示",
+          "alt": "G2-04 現況照片 4",
+          "points": [
+            "路面雖有速限標字，卻缺少速限標誌。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-2-04-signalized-rural-skewed-t.typ 整理。",
+      "takeaway": "留設標線型人行道並降速，配合彎道預告與號誌立桿替選方案。"
+    }
+  },
+  "assets": {
+    "g204-overall": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 1183,
+      "height": 655,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "號誌化鄉區斜交三叉路口交通設施整體設置圖例",
+      "sha256": "9f5ef39b04c1bbde48f056f8834f1678e8a13ed27292e761bcffd9548e30415f"
+    },
+    "g204-trajectory": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04軌跡圖.svg",
+      "width": 284,
+      "height": 203,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "G2-04軌跡圖",
+      "sha256": "b99b02ccd552341a97fdcd1b7c7c2587655e8200fdf15c35515cbb49e412e08a"
+    },
+    "g204-signals": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg",
+      "width": 500,
+      "height": 337,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "號誌化鄉區斜交三叉路口號誌平面設置圖例",
+      "sha256": "4de80047c22aef6f4263dffb366a9d1b6aceff901201f693462fb273cf8f3754"
+    },
+    "g204-curve-option-1": {
+      "file": "materials/04-一般道路情境/G2-04/option1.svg",
+      "width": 474,
+      "height": 296,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "option1",
+      "sha256": "86ed80274418b41e1b12fb617a7a9a5b0c52aca669d5a8c52fab5ba99de2e467"
+    },
+    "g204-curve-option-2": {
+      "file": "materials/04-一般道路情境/G2-04/option2.svg",
+      "width": 474,
+      "height": 296,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "option2",
+      "sha256": "627605bc14e12accbf59f0ee487990635c12ba993983d839cb748037ca3341f1"
+    },
+    "g204-curve-option-3": {
+      "file": "materials/04-一般道路情境/G2-04/option3.svg",
+      "width": 552,
+      "height": 296,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "option3",
+      "sha256": "39f721eb597b8f88548b53e820fd952369eaf6261d8140340ce2414843548124"
+    },
+    "g204-near-alternative": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg",
+      "width": 500,
+      "height": 337,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2",
+      "sha256": "8be12981e29a04dc11407afa49e83f380f829a06572b4e4b358d661e303045a0"
+    },
+    "g204-near-simulation": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png",
+      "width": 1624,
+      "height": 1124,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "替選方案2近端懸臂式號誌模擬示意圖",
+      "sha256": "7beea16ba3b966b6e4859f22c6b72b683b0b3d81706a61c746e209c013734ab8"
+    },
+    "g204-far-post": {
+      "file": "materials/04-一般道路情境/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png",
+      "width": 2294,
+      "height": 1286,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "遠端號誌若採用柱立式號誌示意",
+      "sha256": "67a489a67738e29b943e6cf96d6c7687132479d1a0ff58f5f9c1546221b31011"
+    },
+    "g204-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況圖_01.png",
+      "width": 4116,
+      "height": 3208,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "現況圖_01",
+      "sha256": "a5857c071a95f5c4ebd2df97ee9f8e813ef7c9365c8d9a250a8100f1f611bb83"
+    },
+    "g204-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_01.png",
+      "width": 2505,
+      "height": 1409,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "現況照片_01",
+      "sha256": "07eeb7f74f97437283d8eebd4811149f3eee6c4e4b5284ffa5b4cbc4b8ed312f"
+    },
+    "g204-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_02.png",
+      "width": 2518,
+      "height": 1411,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "現況照片_02",
+      "sha256": "238e64449217833798cae0d4a93b1d289764382ff52edc7db6d30844417913b3"
+    },
+    "g204-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_03.png",
+      "width": 1650,
+      "height": 1344,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "現況照片_03",
+      "sha256": "0c479b1aae45415c777a1cde8da2d2a36ff43b162857515c2e43bc647bddbe2a"
+    },
+    "g204-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G2-04/G2-04_現況照片_04.png",
+      "width": 2490,
+      "height": 1334,
+      "rotation": 0,
+      "scenario": "G2-04",
+      "label": "現況照片_04",
+      "sha256": "09069cf835aaafedd9673fb89ad6725a7e3361672e515bb6f7e1beabdd9da3d1"
+    }
+  },
+  "articles": [
+    {
+      "id": "g204-sidewalk",
+      "scenario": "g2-04",
+      "reg": "174-3",
+      "name": "人行道標線",
+      "category": "標線",
+      "mapAsset": "g204-overall",
+      "asset": "g204-overall",
+      "headline": "人行道標線",
+      "locate": "對照圖例，檢視人行道標線的配置。",
+      "box": [
+        496.86,
+        275.1,
+        106.47,
+        144.1
+      ],
+      "crop": [
+        341.87,
+        224.67,
+        416.45,
+        244.97
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "人行道標線",
+      "points": [
+        "保留行人通行及等候穿越的空間，並配合將示例速限調整為 30 km/h。",
+        "轉角線形須檢核設計車種的最小轉彎軌跡。"
+      ],
+      "takeaway": "保留行人通行及等候穿越的空間，並配合將示例速限調整為 30 km/h。",
+      "sourceRaw": "+ #guide-item[人行道標線，《設置規則》第174-3條][\n\n  本示例透過佈設人行道標線，使行人可以通行、等候穿越路口。此外路口處之標線線形曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。人行道標線如 @fig:signalized_rural_skewed_t_87 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_人行道標線示意圖.svg\", width: 80%, fit: \"contain\")],\n    kind: image,\n    caption: [人行道標線示意圖],\n  ) <fig:signalized_rural_skewed_t_87>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signage_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "本示例透過佈設人行道標線，使行人可以通行、等候穿越路口。此外路口處之標線線形曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。人行道標線如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g204-bend",
+      "scenario": "g2-04",
+      "reg": "24",
+      "name": "彎路標誌",
+      "category": "標誌",
+      "mapAsset": "g204-overall",
+      "asset": "g204-overall",
+      "headline": "彎路標誌",
+      "locate": "對照圖例，檢視彎路標誌的配置。",
+      "box": [
+        768.95,
+        216.15,
+        331.24,
+        91.7
+      ],
+      "crop": [
+        619.89,
+        96.38,
+        563.11,
+        331.24
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "彎路標誌",
+      "points": [
+        "依設計速率檢查曲線半徑及安全停車視距。",
+        "建議於彎道起點前約 30 m 預告，再依速限及視距增加。"
+      ],
+      "takeaway": "依設計速率檢查曲線半徑及安全停車視距。",
+      "sourceRaw": "+ #guide-item[彎路標誌「警2」，《設置規則》第24條][\n\n  當彎道路段曲線半徑與安全停車視距低於 @tab:signalized_rural_skewed_t_19 中之規定時（《設置規則》第24條），應設置彎路標誌。此標誌建議設於彎道路段起點前約30~m處，並依行車速限及最短安全視距增加，並可加設附牌以提醒駕駛人注意。如 @fig:signalized_rural_skewed_t_88 所示。\n\n  #sourced-figure(\n    table(\n    columns: 12,\n    table.header(\n      [設計速率（km/h）\n      ], [25], [30], [40], [50], [60], [70], [80], [90], [100], [110], [120],\n    ),\n    [平曲線半徑（m）\n      ], [20], [30], [50], [80], [120], [170], [230], [300], [390], [500], [620],\n    [安全停車視距（m）\n      ], [30], [35], [50], [65], [85], [105], [130], [160], [185], [220], [250],\n  ),\n    kind: table,\n    caption: [路段平曲線半徑與視距規定],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_19>\n\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_彎路、注意號誌標誌設置圖例.svg\", width: 100%, fit: \"contain\")],\n    kind: image,\n    caption: [彎路、注意號誌標誌設置圖例],\n  ) <fig:signalized_rural_skewed_t_88>\n\n  ]\n",
+      "sourceParagraphs": [
+        "當彎道路段曲線半徑與安全停車視距低於 （見相關圖例或模組） 中之規定時（《設置規則》第24條），應設置彎路標誌。此標誌建議設於彎道路段起點前約30 m處，並依行車速限及最短安全視距增加，並可加設附牌以提醒駕駛人注意。如 （見相關圖例或模組） 所示。"
+      ],
+      "table": {
+        "columns": [
+          "設計速率（km/h）",
+          "平曲線半徑（m）",
+          "安全停車視距（m）"
+        ],
+        "rows": [
+          [
+            "25",
+            "20",
+            "30"
+          ],
+          [
+            "30",
+            "30",
+            "35"
+          ],
+          [
+            "40",
+            "50",
+            "50"
+          ],
+          [
+            "50",
+            "80",
+            "65"
+          ],
+          [
+            "60",
+            "120",
+            "85"
+          ],
+          [
+            "70",
+            "170",
+            "105"
+          ],
+          [
+            "80",
+            "230",
+            "130"
+          ],
+          [
+            "90",
+            "300",
+            "160"
+          ],
+          [
+            "100",
+            "390",
+            "185"
+          ],
+          [
+            "110",
+            "500",
+            "220"
+          ],
+          [
+            "120",
+            "620",
+            "250"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "g204-signal-warning",
+      "scenario": "g2-04",
+      "reg": "33",
+      "name": "注意號誌標誌",
+      "category": "標誌",
+      "mapAsset": "g204-overall",
+      "asset": "g204-overall",
+      "headline": "注意號誌標誌",
+      "locate": "對照圖例，檢視注意號誌標誌的配置。",
+      "box": [
+        1029.21,
+        157.2,
+        59.15,
+        52.4
+      ],
+      "crop": [
+        875.42,
+        92.94,
+        307.58,
+        180.92
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "注意號誌標誌",
+      "points": [
+        "彎道或遮蔽使號誌不易辨認時，在彎道前提早預告。",
+        "示例建議距路口約 30 m，並配合實際速率及可視距離調整。"
+      ],
+      "takeaway": "彎道或遮蔽使號誌不易辨認時，在彎道前提早預告。",
+      "sourceRaw": "+ #guide-item[注意號誌標誌「警23」，《設置規則》第33條][\n\n  駛人於路段中受道路幾何線形或其他因素影響，致使其視線受阻，不易辨識前方路口之號誌，應設此標誌。本示例之情境，由於路口東側為一曲線路段，以號誌視覺模板進行檢視，駕駛人確實不易辨識前方路口號誌，故增設注意號誌標誌。依《道路交通安全規則》第102條之規定，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，故建議於距路口號誌前約30~m處設置注意號誌標誌「警23\n  」，標誌的設立建議在彎道之前，並依行車速限及最短安全視距增加。設置圖例如 @fig:signalized_rural_skewed_t_88 所示。\n\n\n\n\n\n\n  ]\n\n==== 號誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signal_diagram_explanation>\n\n本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 @fig:signalized_rural_skewed_t_90 所示。\n\n有關本路口之號誌平面佈設如 @fig:signalized_rural_skewed_t_91 所示。\n\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04軌跡圖.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [車輛於路口轉向軌跡模擬],\n) <fig:signalized_rural_skewed_t_90>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 @tab:signalized_rural_skewed_t_22 、 @tab:signalized_rural_skewed_t_23 及 @tab:signalized_rural_skewed_t_21 ，並說明如何操作。\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg\", width: 80%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例],\n) <fig:signalized_rural_skewed_t_91>\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:西行/編號:5]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [設置「注意號誌」標誌], [檢驗設計速率為30~km/h之道路，近端燈面5.1符合《設置規則》§ 201:2之表，但仍增設注意號誌標誌],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面5.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面5.2與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面5.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面5.1、5.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面5.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向西之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免夕陽眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [西行編號5之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_22>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到三個燈面8.1、8.2（直）、8.3（直）],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.3（直）],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2（直）、8.3（直）與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面8.1與遠端2燈面之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2（直）、8.3（直）通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [三叉路口背景龐雜可能導致號誌不清，若導致用路人辨識困難，近端同時設立柱立式與懸臂式號誌或其他號誌部件的處理],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_23>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免早晨眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_21>\n\n\n本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 @paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[8\\]項運用說明可參閱第 @paragraph:signalized_rural_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[9\\]項運用說明可參閱第 @paragraph:signalized_urban_skewed_t_signal_diagram_explanation[] 節內容。\n",
+      "sourceParagraphs": [
+        "駛人於路段中受道路幾何線形或其他因素影響，致使其視線受阻，不易辨識前方路口之號誌，應設此標誌。本示例之情境，由於路口東側為一曲線路段，以號誌視覺模板進行檢視，駕駛人確實不易辨識前方路口號誌，故增設注意號誌標誌。依《道路交通安全規則》第102條之規定，「鴐駛人於交叉路口欲轉向時，應於交岔路口30 m前顯示方向燈，並變換車道」，故建議於距路口號誌前約30 m處設置注意號誌標誌「警23   」，標誌的設立建議在彎道之前，並依行車速限及最短安全視距增加。設置圖例如 （見相關圖例或模組） 所示。",
+        "本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 （見相關圖例或模組） 所示。",
+        "有關本路口之號誌平面佈設如 （見相關圖例或模組） 所示。",
+        "路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 （見相關圖例或模組） 、 （見相關圖例或模組） 及 （見相關圖例或模組） ，並說明如何操作。",
+        "本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[8\\]項運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[9\\]項運用說明可參閱第 （見相關圖例或模組） 節內容。"
+      ]
+    },
+    {
+      "id": "g204-trajectory",
+      "scenario": "g2-04",
+      "reg": "1.5",
+      "name": "轉彎軌跡與停止位置",
+      "category": "道路設施",
+      "mapAsset": "g204-trajectory",
+      "asset": "g204-trajectory",
+      "headline": "轉彎軌跡與停止位置",
+      "locate": "對照圖例，檢視轉彎軌跡與停止位置的配置。",
+      "box": [
+        90.88,
+        54.81,
+        53.96,
+        69.02
+      ],
+      "crop": [
+        18.13,
+        30.65,
+        199.46,
+        117.34
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "轉彎軌跡與停止位置",
+      "points": [
+        "先檢查各方向轉彎軌跡，再決定停止線及立桿位置。",
+        "狹窄路口仍要保留行人等候空間。"
+      ],
+      "takeaway": "先檢查各方向轉彎軌跡，再決定停止線及立桿位置。",
+      "sourceRaw": "\n\n\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G2-04] 號誌化鄉區斜交三叉路口設置圖例與運用解說 <section:signalized_rural_skewed_t>\n\n==== 路口現況與議題 <paragraph:signalized_rural_skewed_t_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例之號誌化鄉區斜交三叉路口，其周邊有小型聚落，且聚落之住宅型式多為2~3層樓之低矮建築。本示例參考一個現況路口為例，其主要道路路寬約10~m，採標線分隔，雙向各配置1混合車道，道路兩側無停車管制，無設置人行設施，路段速限為40~km/h。橫交之次要道路路寬約10~m，採標線分隔，雙向各配置1混合車道，道路兩側無停車管制，無設置人行設施，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類鄉區號誌化斜交三叉路口，交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[速度限制不明確][\n\n    由於鄉區道路寬度通常較狹窄且通常無設置人行道，因而缺乏適當空間設置速限標誌，無法有效地提醒用路人注意行車速度。\n\n    ]\n\n  + #guide-item[號誌不易被辨識][\n\n    由於鄉區道路臨近聚落之處，路側通常比鄰民房，因此行車管制號誌常遷就現地條件，設置在不適當之位置，以致用路人較難輕易辨識出前方路口為號誌化路口。\n\n    ]\n\n  + #strong[此示例雖然位在鄉區，會設號誌經常是因為附近聚落有行人穿越之需求，但常因路側空間不足而無留設行人的停等空間。]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何提供行人安全的停等空間；\n  - 如何配合行穿線設置行人專用號誌；\n  - 如何明確提供用路人必要之道路資訊，如路段速限及道路名稱等。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:signalized_rural_skewed_t_suggestions_and_overall_diagram>\n\n有關號誌化鄉區斜交三叉路口的交通設施建議設置如 @fig:signalized_rural_skewed_t_86 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 此路口雖位於鄉區，但鄰近路口處有較多之民房，考慮到有行人及路側活動之需求，故於路側空間佈設標線型人行道，另由於標線型人行道無實體分隔，為保障行人步行安全，故配合將速限下修為30~km/h；\n+ 由於鄰近路口前之路段為一轉彎路段，故設置注意號誌標誌，以提前預告用路人前方為一號誌化路口，需注意通行；\n+ 雖此處為號誌化三叉路口，仍建議設遵行標誌，提高自明性。\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [號誌化鄉區斜交三叉路口交通設施整體設置圖例],\n  label-name: \"fig:signalized_rural_skewed_t_86\",\n)\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M2-03\", \"M3-01\"),\n  [#scenario-reg-link(\"24\", [彎路標誌「警2」])],\n  [#scenario-reg-link(\"33\", [注意號誌標誌「警23」])],\n  [#scenario-reg-link(\"174-3\", [人行道標線])],\n  [#scenario-reg-link(\"201\", [號誌燈面數與設置方式])],\n  [#scenario-reg-link(\"220\", [號誌設置高度])],\n  [#scenario-reg-link(\"221\", [行車管制號誌布設])],\n  [#scenario-rule-reference([§ 5.6], [號誌設置檢核（《交工規範》）])],\n) <scenario-index-g2-04>\n\n\n\n\n\n\n\n==== 標線設置圖例運用解說 <paragraph:signalized_rural_skewed_t_marking_diagram_explanation>\n\n+ #guide-item[人行道標線，《設置規則》第174-3條][\n\n  本示例透過佈設人行道標線，使行人可以通行、等候穿越路口。此外路口處之標線線形曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。人行道標線如 @fig:signalized_rural_skewed_t_87 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_人行道標線示意圖.svg\", width: 80%, fit: \"contain\")],\n    kind: image,\n    caption: [人行道標線示意圖],\n  ) <fig:signalized_rural_skewed_t_87>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signage_diagram_explanation>\n\n+ #guide-item[彎路標誌「警2」，《設置規則》第24條][\n\n  當彎道路段曲線半徑與安全停車視距低於 @tab:signalized_rural_skewed_t_19 中之規定時（《設置規則》第24條），應設置彎路標誌。此標誌建議設於彎道路段起點前約30~m處，並依行車速限及最短安全視距增加，並可加設附牌以提醒駕駛人注意。如 @fig:signalized_rural_skewed_t_88 所示。\n\n  #sourced-figure(\n    table(\n    columns: 12,\n    table.header(\n      [設計速率（km/h）\n      ], [25], [30], [40], [50], [60], [70], [80], [90], [100], [110], [120],\n    ),\n    [平曲線半徑（m）\n      ], [20], [30], [50], [80], [120], [170], [230], [300], [390], [500], [620],\n    [安全停車視距（m）\n      ], [30], [35], [50], [65], [85], [105], [130], [160], [185], [220], [250],\n  ),\n    kind: table,\n    caption: [路段平曲線半徑與視距規定],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_19>\n\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_彎路、注意號誌標誌設置圖例.svg\", width: 100%, fit: \"contain\")],\n    kind: image,\n    caption: [彎路、注意號誌標誌設置圖例],\n  ) <fig:signalized_rural_skewed_t_88>\n\n  ]\n\n+ #guide-item[注意號誌標誌「警23」，《設置規則》第33條][\n\n  駛人於路段中受道路幾何線形或其他因素影響，致使其視線受阻，不易辨識前方路口之號誌，應設此標誌。本示例之情境，由於路口東側為一曲線路段，以號誌視覺模板進行檢視，駕駛人確實不易辨識前方路口號誌，故增設注意號誌標誌。依《道路交通安全規則》第102條之規定，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，故建議於距路口號誌前約30~m處設置注意號誌標誌「警23\n  」，標誌的設立建議在彎道之前，並依行車速限及最短安全視距增加。設置圖例如 @fig:signalized_rural_skewed_t_88 所示。\n\n\n\n\n\n\n  ]\n\n==== 號誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signal_diagram_explanation>\n\n本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 @fig:signalized_rural_skewed_t_90 所示。\n\n有關本路口之號誌平面佈設如 @fig:signalized_rural_skewed_t_91 所示。\n\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04軌跡圖.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [車輛於路口轉向軌跡模擬],\n) <fig:signalized_rural_skewed_t_90>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 @tab:signalized_rural_skewed_t_22 、 @tab:signalized_rural_skewed_t_23 及 @tab:signalized_rural_skewed_t_21 ，並說明如何操作。\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg\", width: 80%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例],\n) <fig:signalized_rural_skewed_t_91>\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:西行/編號:5]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [設置「注意號誌」標誌], [檢驗設計速率為30~km/h之道路，近端燈面5.1符合《設置規則》§ 201:2之表，但仍增設注意號誌標誌],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面5.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面5.2與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面5.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面5.1、5.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面5.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向西之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免夕陽眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [西行編號5之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_22>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到三個燈面8.1、8.2（直）、8.3（直）],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.3（直）],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2（直）、8.3（直）與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面8.1與遠端2燈面之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2（直）、8.3（直）通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [三叉路口背景龐雜可能導致號誌不清，若導致用路人辨識困難，近端同時設立柱立式與懸臂式號誌或其他號誌部件的處理],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_23>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免早晨眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_21>\n\n\n本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 @paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[8\\]項運用說明可參閱第 @paragraph:signalized_rural_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[9\\]項運用說明可參閱第 @paragraph:signalized_urban_skewed_t_signal_diagram_explanation[] 節內容。\n\n+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n\n+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：\n\n  - 替選方案1：與既有公共設施共桿，採以柱立式設置。\n\n  - 替選方案2：橫桿斜置。注意號誌佈設所在之空間為3維，橫桿不一定要水平面（垂直行車方向），而是可由他處立桿後，斜向延伸。如 @fig:signalized_rural_skewed_t_93 與 @fig:signalized_rural_skewed_t_94 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2],\n  ) <fig:signalized_rural_skewed_t_93>\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [替選方案2近端懸臂式號誌模擬示意圖],\n  ) <fig:signalized_rural_skewed_t_94>\n\n  受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 @fig:signalized_rural_skewed_t_95 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [遠端號誌若採用柱立式號誌示意],\n  ) <fig:signalized_rural_skewed_t_95>\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例之號誌化鄉區斜交三叉路口，其周邊有小型聚落，且聚落之住宅型式多為2~3層樓之低矮建築。本示例參考一個現況路口為例，其主要道路路寬約10 m，採標線分隔，雙向各配置1混合車道，道路兩側無停車管制，無設置人行設施，路段速限為40 km/h。橫交之次要道路路寬約10 m，採標線分隔，雙向各配置1混合車道，道路兩側無停車管制，無設置人行設施，路段速限為30 km/h。",
+        "由於鄉區道路寬度通常較狹窄且通常無設置人行道，因而缺乏適當空間設置速限標誌，無法有效地提醒用路人注意行車速度。",
+        "由於鄉區道路臨近聚落之處，路側通常比鄰民房，因此行車管制號誌常遷就現地條件，設置在不適當之位置，以致用路人較難輕易辨識出前方路口為號誌化路口。",
+        "有關號誌化鄉區斜交三叉路口的交通設施建議設置如 （見相關圖例或模組） 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：",
+        "本情境涉及之相關模組及《設置規則》條文彙整如下。",
+        "本示例透過佈設人行道標線，使行人可以通行、等候穿越路口。此外路口處之標線線形曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。人行道標線如 （見相關圖例或模組） 所示。",
+        "當彎道路段曲線半徑與安全停車視距低於 （見相關圖例或模組） 中之規定時（《設置規則》第24條），應設置彎路標誌。此標誌建議設於彎道路段起點前約30 m處，並依行車速限及最短安全視距增加，並可加設附牌以提醒駕駛人注意。如 （見相關圖例或模組） 所示。",
+        "駛人於路段中受道路幾何線形或其他因素影響，致使其視線受阻，不易辨識前方路口之號誌，應設此標誌。本示例之情境，由於路口東側為一曲線路段，以號誌視覺模板進行檢視，駕駛人確實不易辨識前方路口號誌，故增設注意號誌標誌。依《道路交通安全規則》第102條之規定，「鴐駛人於交叉路口欲轉向時，應於交岔路口30 m前顯示方向燈，並變換車道」，故建議於距路口號誌前約30 m處設置注意號誌標誌「警23   」，標誌的設立建議在彎道之前，並依行車速限及最短安全視距增加。設置圖例如 （見相關圖例或模組） 所示。",
+        "本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 （見相關圖例或模組） 所示。",
+        "有關本路口之號誌平面佈設如 （見相關圖例或模組） 所示。",
+        "路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 （見相關圖例或模組） 、 （見相關圖例或模組） 及 （見相關圖例或模組） ，並說明如何操作。",
+        "本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[8\\]項運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[9\\]項運用說明可參閱第 （見相關圖例或模組） 節內容。",
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為",
+        "如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：",
+        "受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 （見相關圖例或模組） 所示。"
+      ],
+      "reference": "《公路路線設計規範》§ 1.5",
+      "regLabel": "軌跡檢核"
+    },
+    {
+      "id": "g204-signal-plan",
+      "scenario": "g2-04",
+      "reg": "221",
+      "name": "狹窄斜交路口號誌配置",
+      "category": "號誌",
+      "mapAsset": "g204-signals",
+      "asset": "g204-signals",
+      "headline": "狹窄斜交路口號誌配置",
+      "locate": "對照圖例，檢視狹窄斜交路口號誌配置的配置。",
+      "box": [
+        200,
+        77.51,
+        100,
+        47.18
+      ],
+      "crop": [
+        165,
+        51.1,
+        170,
+        100
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "狹窄斜交路口號誌配置",
+      "points": [
+        "檢查彎道中的車輛能否辨認號誌，必要時增設或調整燈面。",
+        "丁字頂端有車輛進出需求時，仍須提供對應號誌。"
+      ],
+      "takeaway": "檢查彎道中的車輛能否辨認號誌，必要時增設或調整燈面。",
+      "sourceRaw": "==== 號誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signal_diagram_explanation>\n\n本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 @fig:signalized_rural_skewed_t_90 所示。\n\n有關本路口之號誌平面佈設如 @fig:signalized_rural_skewed_t_91 所示。\n\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04軌跡圖.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [車輛於路口轉向軌跡模擬],\n) <fig:signalized_rural_skewed_t_90>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 @tab:signalized_rural_skewed_t_22 、 @tab:signalized_rural_skewed_t_23 及 @tab:signalized_rural_skewed_t_21 ，並說明如何操作。\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg\", width: 80%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例],\n) <fig:signalized_rural_skewed_t_91>\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:西行/編號:5]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [設置「注意號誌」標誌], [檢驗設計速率為30~km/h之道路，近端燈面5.1符合《設置規則》§ 201:2之表，但仍增設注意號誌標誌],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面5.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面5.2與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面5.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面5.1、5.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面5.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向西之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免夕陽眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [西行編號5之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_22>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到三個燈面8.1、8.2（直）、8.3（直）],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.3（直）],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2（直）、8.3（直）與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面8.1與遠端2燈面之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2（直）、8.3（直）通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [三叉路口背景龐雜可能導致號誌不清，若導致用路人辨識困難，近端同時設立柱立式與懸臂式號誌或其他號誌部件的處理],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_23>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免早晨眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_21>\n\n\n本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 @paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[8\\]項運用說明可參閱第 @paragraph:signalized_rural_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[9\\]項運用說明可參閱第 @paragraph:signalized_urban_skewed_t_signal_diagram_explanation[] 節內容。\n\n+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n\n+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：\n\n  - 替選方案1：與既有公共設施共桿，採以柱立式設置。\n\n  - 替選方案2：橫桿斜置。注意號誌佈設所在之空間為3維，橫桿不一定要水平面（垂直行車方向），而是可由他處立桿後，斜向延伸。如 @fig:signalized_rural_skewed_t_93 與 @fig:signalized_rural_skewed_t_94 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2],\n  ) <fig:signalized_rural_skewed_t_93>\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [替選方案2近端懸臂式號誌模擬示意圖],\n  ) <fig:signalized_rural_skewed_t_94>\n\n  受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 @fig:signalized_rural_skewed_t_95 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [遠端號誌若採用柱立式號誌示意],\n  ) <fig:signalized_rural_skewed_t_95>\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 （見相關圖例或模組） 所示。",
+        "有關本路口之號誌平面佈設如 （見相關圖例或模組） 所示。",
+        "路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 （見相關圖例或模組） 、 （見相關圖例或模組） 及 （見相關圖例或模組） ，並說明如何操作。",
+        "本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[8\\]項運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[9\\]項運用說明可參閱第 （見相關圖例或模組） 節內容。",
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為",
+        "如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：",
+        "受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g204-recognition-distance",
+      "scenario": "g2-04",
+      "reg": "201",
+      "name": "彎道號誌辨認距離",
+      "category": "號誌",
+      "mapAsset": "g204-signals",
+      "asset": "g204-signals",
+      "headline": "彎道號誌辨認距離",
+      "locate": "對照圖例，檢視彎道號誌辨認距離的配置。",
+      "box": [
+        270,
+        94.36,
+        45,
+        33.7
+      ],
+      "crop": [
+        223.75,
+        70.77,
+        137.5,
+        80.88
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "彎道號誌辨認距離",
+      "points": [
+        "彎道中的視線朝向彎道末端，不能直接套用直線路段的可視模板。",
+        "先設法滿足辨認距離，再評估注意號誌標誌；預告位置另考量約 2 秒反應距離。"
+      ],
+      "takeaway": "彎道中的視線朝向彎道末端，不能直接套用直線路段的可視模板。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n",
+      "sourceParagraphs": [
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為"
+      ],
+      "regLabel": "[1] § 201",
+      "table": {
+        "columns": [
+          "行車速限（km/h）",
+          "辨認距離（m）"
+        ],
+        "rows": [
+          [
+            "30",
+            "30"
+          ],
+          [
+            "40",
+            "50"
+          ],
+          [
+            "50",
+            "80"
+          ],
+          [
+            "60",
+            "110"
+          ],
+          [
+            "70",
+            "140"
+          ],
+          [
+            "80",
+            "170"
+          ],
+          [
+            "90",
+            "200"
+          ],
+          [
+            "100",
+            "220"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "g204-curve-option-1",
+      "scenario": "g2-04",
+      "reg": "201",
+      "name": "彎道方案 1：近端號誌同在右側",
+      "category": "號誌",
+      "mapAsset": "g204-curve-option-1",
+      "asset": "g204-curve-option-1",
+      "headline": "彎道方案 1：近端號誌同在右側",
+      "locate": "對照圖例，檢視彎道方案 1：近端號誌同在右側的配置。",
+      "box": [
+        4.74,
+        130.24,
+        75.84,
+        71.04
+      ],
+      "crop": [
+        0,
+        105.38,
+        205.31,
+        120.76
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "彎道方案 1：近端號誌同在右側",
+      "points": [
+        "比較彎道中第一次可見兩燈面的位置，並檢查預告距離。",
+        "三個方案均需同時檢查停止線、視距及注意號誌預告位置。"
+      ],
+      "takeaway": "比較彎道中第一次可見兩燈面的位置，並檢查預告距離。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n",
+      "sourceParagraphs": [
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為"
+      ],
+      "regLabel": "[1] § 201"
+    },
+    {
+      "id": "g204-curve-option-2",
+      "scenario": "g2-04",
+      "reg": "201",
+      "name": "彎道方案 2：近端號誌改設左側",
+      "category": "號誌",
+      "mapAsset": "g204-curve-option-2",
+      "asset": "g204-curve-option-2",
+      "headline": "彎道方案 2：近端號誌改設左側",
+      "locate": "對照圖例，檢視彎道方案 2：近端號誌改設左側的配置。",
+      "box": [
+        47.4,
+        148,
+        33.18,
+        59.2
+      ],
+      "crop": [
+        0,
+        127.28,
+        171.09,
+        100.64
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "彎道方案 2：近端號誌改設左側",
+      "points": [
+        "比較移至左側後的辨認距離與立桿條件。",
+        "三個方案均需同時檢查停止線、視距及注意號誌預告位置。"
+      ],
+      "takeaway": "比較移至左側後的辨認距離與立桿條件。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n",
+      "sourceParagraphs": [
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為"
+      ],
+      "regLabel": "[1] § 201"
+    },
+    {
+      "id": "g204-curve-option-3",
+      "scenario": "g2-04",
+      "reg": "201",
+      "name": "彎道方案 3：右側號誌加左側柱立式",
+      "category": "號誌",
+      "mapAsset": "g204-curve-option-3",
+      "asset": "g204-curve-option-3",
+      "headline": "彎道方案 3：右側號誌加左側柱立式",
+      "locate": "對照圖例，檢視彎道方案 3：右側號誌加左側柱立式的配置。",
+      "box": [
+        49.68,
+        189.44,
+        38.64,
+        23.68
+      ],
+      "crop": [
+        0,
+        159.07,
+        143.52,
+        84.42
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "彎道方案 3：右側號誌加左側柱立式",
+      "points": [
+        "示例建議採用，以左側燈面提供較遠的辨認距離。",
+        "三個方案均需同時檢查停止線、視距及注意號誌預告位置。"
+      ],
+      "takeaway": "示例建議採用，以左側燈面提供較遠的辨認距離。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n",
+      "sourceParagraphs": [
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為"
+      ],
+      "regLabel": "[1] § 201"
+    },
+    {
+      "id": "g204-near-alternative",
+      "scenario": "g2-04",
+      "reg": "221",
+      "name": "近端立桿受限的替選方案",
+      "category": "號誌",
+      "mapAsset": "g204-near-alternative",
+      "asset": "g204-near-simulation",
+      "headline": "近端立桿受限的替選方案",
+      "locate": "對照圖例，檢視近端立桿受限的替選方案的配置。",
+      "box": [
+        210,
+        84.25,
+        30,
+        26.96
+      ],
+      "crop": [
+        156.25,
+        57.29,
+        137.5,
+        80.88
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "近端立桿受限的替選方案",
+      "points": [
+        "避免橫向大車通過時遮住唯一的號誌。",
+        "可與公共設施共桿，或從合適位置斜向延伸橫桿，保留近端提示。"
+      ],
+      "takeaway": "避免橫向大車通過時遮住唯一的號誌。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：\n\n  - 替選方案1：與既有公共設施共桿，採以柱立式設置。\n\n  - 替選方案2：橫桿斜置。注意號誌佈設所在之空間為3維，橫桿不一定要水平面（垂直行車方向），而是可由他處立桿後，斜向延伸。如 @fig:signalized_rural_skewed_t_93 與 @fig:signalized_rural_skewed_t_94 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2],\n  ) <fig:signalized_rural_skewed_t_93>\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [替選方案2近端懸臂式號誌模擬示意圖],\n  ) <fig:signalized_rural_skewed_t_94>\n\n  受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 @fig:signalized_rural_skewed_t_95 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [遠端號誌若採用柱立式號誌示意],\n  ) <fig:signalized_rural_skewed_t_95>\n\n  ]\n",
+      "sourceParagraphs": [
+        "如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：",
+        "受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g204-far-post",
+      "scenario": "g2-04",
+      "reg": "221",
+      "name": "遠端採柱立式時",
+      "category": "號誌",
+      "mapAsset": "g204-far-post",
+      "asset": "g204-far-post",
+      "headline": "遠端採柱立式時",
+      "locate": "對照圖例，檢視遠端採柱立式時的配置。",
+      "box": [
+        1972.84,
+        64.3,
+        137.64,
+        270.06
+      ],
+      "crop": [
+        1513.53,
+        0,
+        780.47,
+        459.1
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "遠端採柱立式時",
+      "points": [
+        "無法設置懸臂式號誌時，檢查遠端兩側配置。",
+        "柱立式應有兩燈面分設於遠端兩側，並仍須確認起步與接近可視性。"
+      ],
+      "takeaway": "無法設置懸臂式號誌時，檢查遠端兩側配置。",
+      "sourceRaw": "+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：\n\n  - 替選方案1：與既有公共設施共桿，採以柱立式設置。\n\n  - 替選方案2：橫桿斜置。注意號誌佈設所在之空間為3維，橫桿不一定要水平面（垂直行車方向），而是可由他處立桿後，斜向延伸。如 @fig:signalized_rural_skewed_t_93 與 @fig:signalized_rural_skewed_t_94 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2],\n  ) <fig:signalized_rural_skewed_t_93>\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [替選方案2近端懸臂式號誌模擬示意圖],\n  ) <fig:signalized_rural_skewed_t_94>\n\n  受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 @fig:signalized_rural_skewed_t_95 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [遠端號誌若採用柱立式號誌示意],\n  ) <fig:signalized_rural_skewed_t_95>\n\n  ]\n",
+      "sourceParagraphs": [
+        "如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：",
+        "受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g204-checklist",
+      "scenario": "g2-04",
+      "reg": "221",
+      "name": "各方向號誌檢核",
+      "category": "號誌",
+      "mapAsset": "g204-signals",
+      "asset": "g204-signals",
+      "headline": "各方向號誌檢核",
+      "locate": "對照圖例，檢視各方向號誌檢核的配置。",
+      "box": [
+        335,
+        124.69,
+        50,
+        50.55
+      ],
+      "crop": [
+        286.96,
+        107,
+        146.08,
+        85.93
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "各方向號誌檢核",
+      "points": [
+        "西行以彎道停車視距檢核並設注意號誌標誌。",
+        "北上、東行另確認近端、遠端與起步視角；眩光均需現地檢查。"
+      ],
+      "takeaway": "西行以彎道停車視距檢核並設注意號誌標誌。",
+      "sourceRaw": "==== 號誌設置圖例運用解說 <paragraph:signalized_rural_skewed_t_signal_diagram_explanation>\n\n本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 @fig:signalized_rural_skewed_t_90 所示。\n\n有關本路口之號誌平面佈設如 @fig:signalized_rural_skewed_t_91 所示。\n\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04軌跡圖.svg\", width: 60%, fit: \"contain\")],\n  kind: image,\n  caption: [車輛於路口轉向軌跡模擬],\n) <fig:signalized_rural_skewed_t_90>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 @tab:signalized_rural_skewed_t_22 、 @tab:signalized_rural_skewed_t_23 及 @tab:signalized_rural_skewed_t_21 ，並說明如何操作。\n\n#figure(\n  [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例.svg\", width: 80%, fit: \"contain\")],\n  kind: image,\n  caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例],\n) <fig:signalized_rural_skewed_t_91>\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:西行/編號:5]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [設置「注意號誌」標誌], [檢驗設計速率為30~km/h之道路，近端燈面5.1符合《設置規則》§ 201:2之表，但仍增設注意號誌標誌],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面5.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面5.2與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面5.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面5.1、5.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面5.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向西之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免夕陽眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [西行編號5之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_22>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:北上/編號:8]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到三個燈面8.1、8.2（直）、8.3（直）],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面8.3（直）],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面8.2（直）、8.3（直）與西行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面8.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面8.1與遠端2燈面之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2（直）、8.3（直）通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [三叉路口背景龐雜可能導致號誌不清，若導致用路人辨識困難，近端同時設立柱立式與懸臂式號誌或其他號誌部件的處理],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [北上編號8之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_23>\n\n\n#sourced-figure(\n  table(\n  columns: (1.18fr, 0.7fr, 2.02fr),\n  table.header(\n    table.cell(colspan: 3, [行車方向:東行/編號:11]),\n    [法規、指引項目], [符合規範與否], [佈設說明],\n  ),\n  [\\[1\\]上游來車可視2燈面「可視模板」檢查\n\n    #text(size: 10pt)[※彎道改以停車視距檢查]\n\n    ], [通過], [由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2],\n  [\\[2\\] 至少有遠端燈面在左], [通過], [由「遠端左側條件1」，已有遠端燈面11.2],\n  [\\[2a\\]遠端燈面縱向佈設], [通過], [經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上],\n  [\\[3\\] 近端至少要有燈面提示停止線], [通過], [已有近端燈面11.1],\n  [\\[3a\\] 若高速，近端要有2燈面提示停止線], [免（非高速）], [（免）],\n  [\\[4\\]12~m寬視覺漏洞檢查], [通過], [沿行車方向投射，以用路人的觀點來看，燈面11.1、11.2之間空隙小於12~m，因此不用額外增設燈面],\n  [\\[5\\]待轉區/停止線綠燈啟動可視30度角檢查], [通過], [沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過],\n  [\\[6\\]淨寬檢查], [通過], [依法號誌桿柱與車道邊緣距離大於0.30~m],\n  [\\[7\\]淨高檢查], [通過], [依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m],\n  [\\[8\\]眩光、背景燈光龐雜是否可避免], [需現地檢查], [向東之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免早晨眩光（陽光面對用路人）而號誌不清],\n  [\\[9\\]斜交路口（60度以內）防窺處理檢查], [免設防窺處理], [斜交路口小於60度],\n),\n  kind: table,\n  caption: [東行編號11之號誌佈設符合法規情況檢查表],\n) <tab:signalized_rural_skewed_t_21>\n\n\n本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 @paragraph:signalized_urban_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[8\\]項運用說明可參閱第 @paragraph:signalized_rural_orthogonal_t_signal_diagram_explanation[] 節內容；第\\[9\\]項運用說明可參閱第 @paragraph:signalized_urban_skewed_t_signal_diagram_explanation[] 節內容。\n\n+ #guide-item[檢查表第\\[1\\]項 上游來車可視2燈面「可視模板」檢查][\n\n  《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 @tab:signalized_rural_skewed_t_24 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」\n\n  可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。\n\n  設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。\n  \n  #sourced-figure(\n    table(\n    columns: 2,\n    table.header(\n      [行車速限（km/h）], [辨認距離$D_0$（m）],\n    ),\n    [30], [30],\n    [40], [50],\n    [50], [80],\n    [60], [110],\n    [70], [140],\n    [80], [170],\n    [90], [200],\n    [100], [220],\n  ),\n    kind: table,\n    caption: [行車速限與號誌辨認距離對應表],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:signalized_rural_skewed_t_24>\n\n  此例西行有三種可能設置形式，  如 @fig:signalized_rural_skewed_t_92 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為\n\n  \n  $ D_\"a\" / \"m\" = 2 times (v_\"lim\" / (\"km/h\")) times (1000 / 3600) $\n\n\n  #figure(\n    layout(size => {\n\n      let gutter = 3mm\n      let image-height = (size.width - gutter) / 2 * (296 / 474) * 1\n      grid(\n        columns: (1fr, 1fr),\n        column-gutter: gutter,\n        row-gutter: 2mm,\n        align: center + horizon,\n        image(\"../../media/04-general-scenarios/G2-04/option1.svg\", height: image-height),\n        image(\"../../media/04-general-scenarios/G2-04/option2.svg\", height: image-height),\n        [方案1：近端號誌同在右側], [方案2：近端號誌設立在左側],\n        grid.cell(colspan: 2,\n          image(\"../../media/04-general-scenarios/G2-04/option3.svg\", height: image-height)),\n        grid.cell(colspan: 2, [方案3：近端號誌在右側，左側加設柱立式號誌（提供較遠辨識距離），建議採用]),\n      )\n    }),\n    kind: image,\n    caption: [車輛於彎道號辨認號誌檢核圖],\n  ) <fig:signalized_rural_skewed_t_92>\n\n  ]\n\n+ #guide-item[檢查表第\\[3\\]項 近端至少要有燈面提示停止線][\n\n  如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：\n\n  - 替選方案1：與既有公共設施共桿，採以柱立式設置。\n\n  - 替選方案2：橫桿斜置。注意號誌佈設所在之空間為3維，橫桿不一定要水平面（垂直行車方向），而是可由他處立桿後，斜向延伸。如 @fig:signalized_rural_skewed_t_93 與 @fig:signalized_rural_skewed_t_94 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2],\n  ) <fig:signalized_rural_skewed_t_93>\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [替選方案2近端懸臂式號誌模擬示意圖],\n  ) <fig:signalized_rural_skewed_t_94>\n\n  受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 @fig:signalized_rural_skewed_t_95 所示。\n\n  #figure(\n    [#image(\"../../media/04-general-scenarios/G2-04/G2-04_遠端號誌若採用柱立式號誌示意.png\", width: 65%, fit: \"contain\")],\n    kind: image,\n    caption: [遠端號誌若採用柱立式號誌示意],\n  ) <fig:signalized_rural_skewed_t_95>\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例為鄉區斜交三叉路口，常見於國內市區道路，在安排東西向為主要道路，北向為次要道路。在號誌佈設上，受到臨近路段彎道影響，需檢核彎道中車輛能否望見號誌，必要時需增設號誌，或調整號誌佈設位置。丁字頂端有車輛進出需求時，仍須提供號誌。此外，因本例路口較狹小，號誌佈設位置須配合停止線，而停止線之位置應使其他方向車輛，轉向離開路口時軌跡符合《公路路線設計規範》第1.5節，如 （見相關圖例或模組） 所示。",
+        "有關本路口之號誌平面佈設如 （見相關圖例或模組） 所示。",
+        "路口之行車管制號誌及行人專用號誌之佈設，均應符合相關《設置規則》條文及《交工規範》之規定，主要為《設置規則》第201條、《設置規則》221條及《交工規範》第5.6節等，相關之運用條文、規範及佈設說明彙整於 （見相關圖例或模組） 、 （見相關圖例或模組） 及 （見相關圖例或模組） ，並說明如何操作。",
+        "本示例主要就檢查表第\\[1\\]項、第\\[3\\]項運用進行說明。其他如檢查表之第\\[1\\]項、第\\[2\\]項、第\\[2a\\]項、第\\[3\\]項、第\\[4\\]項、第\\[5\\]項、第\\[6\\]項、第\\[7\\]項、行人專用號誌之佈設、視覺功能障礙語音號誌之佈設等運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[8\\]項運用說明可參閱第 （見相關圖例或模組） 節內容；第\\[9\\]項運用說明可參閱第 （見相關圖例或模組） 節內容。",
+        "《設置規則》§ 201：2「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表(如 （見相關圖例或模組） 所示)要求時，應於號誌將近之處輔設『注意號誌』標誌，或作速率限制。」",
+        "可視模板應用於路段中，檢核車輛駕駛人，在平行道路的情況下，向前望去所能看到的號誌。然而於彎道中，因為駕駛人視線是向彎道末端望去，而非沿著單點的切線望去，因此可視模板無法應用於彎道情境中。",
+        "設置時應窮盡方法符合《設置規則》§ 201：2之附表，而非僅考慮設置警23「注意號誌」標誌。 如果符合《設置規則》§ 201：2之附表，仍需考量設置「注意號誌」標誌。標誌設置位置為可明確見到號誌前2秒（反應時間）之處。",
+        "此例西行有三種可能設置形式，  如 （見相關圖例或模組） 所示。其中，$D_0$為用路人第一次可見到兩燈面之位置，或是《設置規則》§201：2之附表所訂之距離，取大者。$D_a$為",
+        "如果沒有近端號誌，橫交道路貨車、大客車通過即遮蔽號誌。北上近端立桿位置難尋，可能替選方案：",
+        "受限於有建築入口意象需求，本路口不能設置懸臂式號誌。依《設置規則》221:1「…如係以柱立式設置，應有二燈面分設於遠端兩側。…」因此應該設置兩燈面於遠端兩側。如 （見相關圖例或模組） 所示。"
+      ],
+      "reference": "《設置規則》號誌條文 /《交工規範》§ 5.6",
+      "table": {
+        "columns": [
+          "檢核項目",
+          "西行5",
+          "北上8",
+          "東行11"
+        ],
+        "rows": [
+          [
+            "[1] 上游可視兩燈面",
+            "設置「注意號誌」標誌",
+            "通過",
+            "通過"
+          ],
+          [
+            "[2] 遠端燈面在左",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[2a] 遠端距停止線 ≥10 m",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[3] 近端提示停止線",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[3a] 高速近端兩燈面",
+            "免（非高速）",
+            "免（非高速）",
+            "免（非高速）"
+          ],
+          [
+            "[4] 12 m 視覺漏洞",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[5] 起步可視範圍",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[6] 淨寬",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[7] 淨高",
+            "通過",
+            "通過",
+            "通過"
+          ],
+          [
+            "[8] 眩光與背景",
+            "需現地檢查",
+            "需現地檢查",
+            "需現地檢查"
+          ],
+          [
+            "[9] 斜交防誤認",
+            "免設防窺處理",
+            "免設防窺處理",
+            "免設防窺處理"
+          ]
+        ],
+        "sourceDirections": [
+          {
+            "direction": "西行5",
+            "rows": [
+              {
+                "status": "設置「注意號誌」標誌",
+                "explanation": "檢驗設計速率為30~km/h之道路，近端燈面5.1符合《設置規則》§ 201:2之表，但仍增設注意號誌標誌"
+              },
+              {
+                "status": "通過",
+                "explanation": "由「遠端左側條件1」，已有遠端燈面5.2"
+              },
+              {
+                "status": "通過",
+                "explanation": "經量測，遠端燈面5.2與西行停止線之距離$X_2$達到10~m以上"
+              },
+              {
+                "status": "通過",
+                "explanation": "已有近端燈面5.1"
+              },
+              {
+                "status": "免（非高速）",
+                "explanation": "（免）"
+              },
+              {
+                "status": "通過",
+                "explanation": "沿行車方向投射，以用路人的觀點來看，燈面5.1、5.2之間空隙小於12~m，因此不用額外增設燈面"
+              },
+              {
+                "status": "通過",
+                "explanation": "沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面5.2通過"
+              },
+              {
+                "status": "通過",
+                "explanation": "依法號誌桿柱與車道邊緣距離大於0.30~m"
+              },
+              {
+                "status": "通過",
+                "explanation": "依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m"
+              },
+              {
+                "status": "需現地檢查",
+                "explanation": "向西之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免夕陽眩光（陽光面對用路人）而號誌不清"
+              },
+              {
+                "status": "免設防窺處理",
+                "explanation": "斜交路口小於60度"
+              }
+            ]
+          },
+          {
+            "direction": "北上8",
+            "rows": [
+              {
+                "status": "通過",
+                "explanation": "由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到三個燈面8.1、8.2（直）、8.3（直）"
+              },
+              {
+                "status": "通過",
+                "explanation": "由「遠端左側條件1」，已有遠端燈面8.3（直）"
+              },
+              {
+                "status": "通過",
+                "explanation": "經量測，遠端燈面8.2（直）、8.3（直）與西行停止線之距離$X_2$達到10~m以上"
+              },
+              {
+                "status": "通過",
+                "explanation": "已有近端燈面8.1"
+              },
+              {
+                "status": "免（非高速）",
+                "explanation": "（免）"
+              },
+              {
+                "status": "通過",
+                "explanation": "沿行車方向投射，以用路人的觀點來看，燈面8.1與遠端2燈面之間空隙小於12~m，因此不用額外增設燈面"
+              },
+              {
+                "status": "通過",
+                "explanation": "沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面8.2（直）、8.3（直）通過"
+              },
+              {
+                "status": "通過",
+                "explanation": "依法號誌桿柱與車道邊緣距離大於0.30~m"
+              },
+              {
+                "status": "通過",
+                "explanation": "依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m"
+              },
+              {
+                "status": "需現地檢查",
+                "explanation": "三叉路口背景龐雜可能導致號誌不清，若導致用路人辨識困難，近端同時設立柱立式與懸臂式號誌或其他號誌部件的處理"
+              },
+              {
+                "status": "免設防窺處理",
+                "explanation": "斜交路口小於60度"
+              }
+            ]
+          },
+          {
+            "direction": "東行11",
+            "rows": [
+              {
+                "status": "通過",
+                "explanation": "由「速限55~km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面11.1、11.2"
+              },
+              {
+                "status": "通過",
+                "explanation": "由「遠端左側條件1」，已有遠端燈面11.2"
+              },
+              {
+                "status": "通過",
+                "explanation": "經量測，遠端燈面11.2與東行停止線之距離$X_2$達到10~m以上"
+              },
+              {
+                "status": "通過",
+                "explanation": "已有近端燈面11.1"
+              },
+              {
+                "status": "免（非高速）",
+                "explanation": "（免）"
+              },
+              {
+                "status": "通過",
+                "explanation": "沿行車方向投射，以用路人的觀點來看，燈面11.1、11.2之間空隙小於12~m，因此不用額外增設燈面"
+              },
+              {
+                "status": "通過",
+                "explanation": "沿停止線（本方向無兩段式左轉待轉區）方向投射梯形檢核，遠端燈面11.2通過"
+              },
+              {
+                "status": "通過",
+                "explanation": "依法號誌桿柱與車道邊緣距離大於0.30~m"
+              },
+              {
+                "status": "通過",
+                "explanation": "依法高出路面4.60~m至5.60~m、高出人行道2.40~m至4.60~m"
+              },
+              {
+                "status": "需現地檢查",
+                "explanation": "向東之用路人所見之號誌需處理（例如近端同時設立柱立式與懸臂式號誌，使至少有一燈面與陽光直射方向為不同角度，或其他號誌部件的處理）以避免早晨眩光（陽光面對用路人）而號誌不清"
+              },
+              {
+                "status": "免設防窺處理",
+                "explanation": "斜交路口小於60度"
+              }
+            ]
+          }
+        ]
+      },
+      "moduleLinks": [
+        {
+          "page": "g201-checklist",
+          "label": "共同號誌檢核"
+        },
+        {
+          "page": "g202-glare",
+          "label": "眩光與背景干擾"
+        },
+        {
+          "route": "m203-signals-diagram",
+          "label": "M2-03.1 號誌化路口"
+        }
+      ]
+    }
+  ]
+}

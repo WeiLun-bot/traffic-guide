@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "M1-02",
+  "directoryAssets": ["m102-offset", "m102-roundabout"],
   "title": "行車指示",
   "source": {
     "file": "02-route-guidance.typ",

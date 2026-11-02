@@ -1,0 +1,56 @@
+[
+  {
+    "page": 1,
+    "id": "context",
+    "textCharacters": 433,
+    "sizePoints": [
+      842.0,
+      595.0
+    ]
+  },
+  {
+    "page": 2,
+    "id": "g101-conditions",
+    "textCharacters": 328,
+    "sizePoints": [
+      842.0,
+      595.0
+    ]
+  },
+  {
+    "page": 3,
+    "id": "overview",
+    "textCharacters": 368,
+    "sizePoints": [
+      842.0,
+      595.0
+    ]
+  },
+  {
+    "page": 4,
+    "id": "edge",
+    "textCharacters": 327,
+    "sizePoints": [
+      842.0,
+      595.0
+    ]
+  },
+  {
+    "page": 5,
+    "id": "crosswalk",
+    "textCharacters": 349,
+    "sizePoints": [
+      842.0,
+      595.0
+    ]
+  },
+  {
+    "page": 6,
+    "id": "speed",
+    "textCharacters": 316,
+    "sizePoints": [
+      842.0,
+      595.0
+    ]
+  }
+]

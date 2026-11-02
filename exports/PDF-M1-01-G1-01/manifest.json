@@ -1,0 +1,670 @@
+{
+  "paper": "16:9 landscape",
+  "viewport": {
+    "width": 1600,
+    "height": 900
+  },
+  "configSha256": "41e867777455b50ce6f92dbd30fda36a47f5e1a7366b71f36b4d94dd93781871",
+  "generatedAt": "2026-11-02T12:25:42.144Z",
+  "documents": [
+    {
+      "id": "M1-01",
+      "title": "M1-01 路口動線導引",
+      "sheets": [
+        {
+          "id": "m101-overview",
+          "title": "M1-01 路口動線導引",
+          "file": "M1-01/01-m101-overview.pdf",
+          "image": "M1-01/01-m101-overview.png",
+          "titleInPresentation": "M1-01 路口動線導引",
+          "frames": [
+            [
+              80,
+              227.59375,
+              466,
+              578.40625
+            ],
+            [
+              81,
+              291.59375,
+              464,
+              513.40625
+            ],
+            [
+              558,
+              227.59375,
+              466,
+              578.40625
+            ],
+            [
+              559,
+              291.59375,
+              464,
+              513.40625
+            ]
+          ],
+          "textCharacters": 168
+        },
+        {
+          "id": "m101-lanes-issues",
+          "title": "M1-01.1 現況議題與相關條文",
+          "file": "M1-01/02-m101-lanes-issues.pdf",
+          "image": "M1-01/02-m101-lanes-issues.png",
+          "titleInPresentation": "路口與路段車道配置｜現況議題與相關條文",
+          "frames": [
+            [
+              80,
+              227.59375,
+              466,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              464,
+              491.40625
+            ],
+            [
+              558,
+              227.59375,
+              466,
+              533.40625
+            ],
+            [
+              559,
+              268.59375,
+              464,
+              491.40625
+            ]
+          ],
+          "textCharacters": 213
+        },
+        {
+          "id": "m101-lanes-diagram",
+          "topic": "dotted",
+          "title": "M1-01.1 圖例說明｜穿越虛線",
+          "file": "M1-01/03-m101-lanes-diagram-dotted.pdf",
+          "image": "M1-01/03-m101-lanes-diagram-dotted.png",
+          "titleInPresentation": "路口與路段車道配置｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 189
+        },
+        {
+          "id": "m101-lanes-diagram",
+          "topic": "arrows",
+          "title": "M1-01.1 圖例說明｜指向線",
+          "file": "M1-01/04-m101-lanes-diagram-arrows.pdf",
+          "image": "M1-01/04-m101-lanes-diagram-arrows.png",
+          "titleInPresentation": "路口與路段車道配置｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 138
+        },
+        {
+          "id": "m101-lanes-diagram",
+          "topic": "advance",
+          "title": "M1-01.1 圖例說明｜車道預告標誌",
+          "file": "M1-01/05-m101-lanes-diagram-advance.pdf",
+          "image": "M1-01/05-m101-lanes-diagram-advance.png",
+          "titleInPresentation": "路口與路段車道配置｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 112
+        },
+        {
+          "id": "m101-lanes-diagram",
+          "topic": "guide",
+          "title": "M1-01.1 圖例說明｜路口行車導引線",
+          "file": "M1-01/06-m101-lanes-diagram-guide.pdf",
+          "image": "M1-01/06-m101-lanes-diagram-guide.png",
+          "titleInPresentation": "路口與路段車道配置｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 208
+        },
+        {
+          "id": "m101-lanes-diagram",
+          "topic": "channel",
+          "title": "M1-01.1 圖例說明｜槽化線",
+          "file": "M1-01/07-m101-lanes-diagram-channel.pdf",
+          "image": "M1-01/07-m101-lanes-diagram-channel.png",
+          "titleInPresentation": "路口與路段車道配置｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 107
+        },
+        {
+          "id": "m101-lanes-diagram",
+          "topic": "waiting",
+          "title": "M1-01.1 圖例說明｜左彎待轉區線",
+          "file": "M1-01/08-m101-lanes-diagram-waiting.pdf",
+          "image": "M1-01/08-m101-lanes-diagram-waiting.png",
+          "titleInPresentation": "路口與路段車道配置｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 119
+        },
+        {
+          "id": "m101-lanes-extensions",
+          "title": "M1-01.1 延伸應用",
+          "file": "M1-01/09-m101-lanes-extensions.pdf",
+          "image": "M1-01/09-m101-lanes-extensions.png",
+          "titleInPresentation": "路口與路段車道配置｜延伸應用",
+          "frames": [],
+          "textCharacters": 326
+        },
+        {
+          "id": "m101-additional-issues",
+          "title": "M1-01.2 現況議題與相關條文",
+          "file": "M1-01/10-m101-additional-issues.pdf",
+          "image": "M1-01/10-m101-additional-issues.png",
+          "titleInPresentation": "附加車道｜現況議題與相關條文",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 156
+        },
+        {
+          "id": "m101-additional-diagram",
+          "topic": "taper",
+          "title": "M1-01.2 圖例說明｜漸變長度",
+          "file": "M1-01/11-m101-additional-diagram-taper.pdf",
+          "image": "M1-01/11-m101-additional-diagram-taper.png",
+          "titleInPresentation": "附加車道｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 192
+        },
+        {
+          "id": "m101-additional-diagram",
+          "topic": "arrows",
+          "title": "M1-01.2 圖例說明｜指向線",
+          "file": "M1-01/12-m101-additional-diagram-arrows.pdf",
+          "image": "M1-01/12-m101-additional-diagram-arrows.png",
+          "titleInPresentation": "附加車道｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 189
+        },
+        {
+          "id": "m101-additional-diagram",
+          "topic": "dotted",
+          "title": "M1-01.2 圖例說明｜穿越虛線",
+          "file": "M1-01/13-m101-additional-diagram-dotted.pdf",
+          "image": "M1-01/13-m101-additional-diagram-dotted.png",
+          "titleInPresentation": "附加車道｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 121
+        },
+        {
+          "id": "m101-additional-diagram",
+          "topic": "advance",
+          "title": "M1-01.2 圖例說明｜車道預告標誌",
+          "file": "M1-01/14-m101-additional-diagram-advance.pdf",
+          "image": "M1-01/14-m101-additional-diagram-advance.png",
+          "titleInPresentation": "附加車道｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 100
+        },
+        {
+          "id": "m101-additional-diagram",
+          "topic": "channel",
+          "title": "M1-01.2 圖例說明｜槽化線",
+          "file": "M1-01/15-m101-additional-diagram-channel.pdf",
+          "image": "M1-01/15-m101-additional-diagram-channel.png",
+          "titleInPresentation": "附加車道｜圖例說明",
+          "frames": [
+            [
+              80,
+              227.59375,
+              944,
+              533.40625
+            ],
+            [
+              81,
+              268.59375,
+              942,
+              491.40625
+            ]
+          ],
+          "textCharacters": 93
+        },
+        {
+          "id": "m101-additional-extensions",
+          "title": "M1-01.2 延伸應用",
+          "file": "M1-01/16-m101-additional-extensions.pdf",
+          "image": "M1-01/16-m101-additional-extensions.png",
+          "titleInPresentation": "附加車道｜延伸應用",
+          "frames": [],
+          "textCharacters": 139
+        }
+      ]
+    },
+    {
+      "id": "G1-01",
+      "title": "G1-01 無號誌市區正交三岔路口",
+      "sheets": [
+        {
+          "id": "context",
+          "phase": 0,
+          "title": "G1-01 路口現況與議題",
+          "file": "G1-01/01-context.pdf",
+          "image": "G1-01/01-context.png",
+          "titleInPresentation": "無號誌市區正交三岔路口",
+          "frames": [
+            [
+              80,
+              288.9375,
+              838.796875,
+              350
+            ],
+            [
+              81,
+              335.9375,
+              836.796875,
+              270
+            ]
+          ],
+          "textCharacters": 370
+        },
+        {
+          "id": "g101-conditions",
+          "phase": 0,
+          "title": "G1-01 現況問題",
+          "file": "G1-01/02-g101-conditions.pdf",
+          "image": "G1-01/02-g101-conditions.png",
+          "titleInPresentation": "現況問題",
+          "frames": [
+            [
+              80,
+              230.796875,
+              774.390625,
+              538.203125
+            ],
+            [
+              81,
+              277.796875,
+              772.390625,
+              458.203125
+            ]
+          ],
+          "textCharacters": 277
+        },
+        {
+          "id": "overview",
+          "phase": 0,
+          "title": "G1-01 整體佈設策略",
+          "file": "G1-01/03-overview.pdf",
+          "image": "G1-01/03-overview.png",
+          "titleInPresentation": "整體佈設策略",
+          "frames": [
+            [
+              80,
+              231.796875,
+              901.71875,
+              527.203125
+            ],
+            [
+              81,
+              280.796875,
+              899.71875,
+              376.203125
+            ]
+          ],
+          "textCharacters": 305
+        },
+        {
+          "id": "edge",
+          "phase": 1,
+          "title": "路面邊線",
+          "file": "G1-01/04-edge.pdf",
+          "image": "G1-01/04-edge.png",
+          "titleInPresentation": "標線條文運用解說",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 239
+        },
+        {
+          "id": "crosswalk",
+          "phase": 1,
+          "title": "枕木紋行人穿越道線",
+          "file": "G1-01/05-crosswalk.pdf",
+          "image": "G1-01/05-crosswalk.png",
+          "titleInPresentation": "標線條文運用解說",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 218
+        },
+        {
+          "id": "arrows",
+          "phase": 1,
+          "title": "指向線",
+          "file": "G1-01/06-arrows.pdf",
+          "image": "G1-01/06-arrows.png",
+          "titleInPresentation": "標線條文運用解說",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 210
+        },
+        {
+          "id": "guidance",
+          "phase": 1,
+          "title": "路口行車導引線",
+          "file": "G1-01/07-guidance.pdf",
+          "image": "G1-01/07-guidance.png",
+          "titleInPresentation": "標線條文運用解說",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 242
+        },
+        {
+          "id": "taper",
+          "phase": 1,
+          "title": "穿越虛線",
+          "file": "G1-01/08-taper.pdf",
+          "image": "G1-01/08-taper.png",
+          "titleInPresentation": "標線條文運用解說",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 279
+        },
+        {
+          "id": "parking",
+          "phase": 1,
+          "title": "車輛停放線",
+          "file": "G1-01/09-parking.pdf",
+          "image": "G1-01/09-parking.png",
+          "titleInPresentation": "標線條文運用解說",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 210
+        },
+        {
+          "id": "pedestrian",
+          "phase": 1,
+          "title": "當心行人標誌",
+          "file": "G1-01/10-pedestrian.pdf",
+          "image": "G1-01/10-pedestrian.png",
+          "titleInPresentation": "標誌條文",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 235
+        },
+        {
+          "id": "speed",
+          "phase": 1,
+          "title": "最高速限標誌",
+          "file": "G1-01/11-speed.pdf",
+          "image": "G1-01/11-speed.png",
+          "titleInPresentation": "標誌條文",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 203
+        },
+        {
+          "id": "school",
+          "phase": 1,
+          "title": "學校標誌",
+          "file": "G1-01/12-school.pdf",
+          "image": "G1-01/12-school.png",
+          "titleInPresentation": "標誌條文",
+          "frames": [
+            [
+              80,
+              231.796875,
+              1023.828125,
+              527.203125
+            ],
+            [
+              81,
+              278.796875,
+              1021.828125,
+              447.203125
+            ]
+          ],
+          "textCharacters": 217
+        },
+        {
+          "id": "review",
+          "phase": 0,
+          "title": "G1-01 情境回顧",
+          "file": "G1-01/13-review.pdf",
+          "image": "G1-01/13-review.png",
+          "titleInPresentation": "回到全圖，讓配置連成一體。",
+          "frames": [],
+          "textCharacters": 303
+        }
+      ]
+    }
+  ]
+}

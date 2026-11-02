@@ -9,7 +9,21 @@ module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifa
     await wait('Boolean(document.fullscreenElement)==='+enable,'Fullscreen button did not '+(enable?'enter':'exit')+' the real Fullscreen API');await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');
   };
   const shot=async name=>{const result=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(result.data,'base64'));};
-  await navigate(base+'/presentation-demo/#modules-M3');
+  await navigate(base+'/presentation-demo/#modules-structure');
+  assert.equal(await evaluate('document.querySelectorAll(".module-structure .module-source-note").length'),0);
+  for(const [width,height]of [[1920,1080],[1440,900],[1366,768],[1280,720],[768,1024]]){
+    await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await view('modules-structure');
+    const saved=await evaluate('window.visualLayoutEditor.store.serialize()'),fonts=await evaluate('[...document.querySelectorAll(".module-structure h1,.module-theme h2,.module-theme p")].map(n=>getComputedStyle(n).fontSize)');
+    await fullscreen(true);
+    assert(await evaluate('(()=>{const main=document.querySelector("main"),bounds=main.getBoundingClientRect(),cards=[...document.querySelectorAll(".module-theme")];return cards.length===4&&main.scrollHeight<=main.clientHeight+1&&cards.every(card=>{const r=card.getBoundingClientRect();return r.top>=bounds.top-1&&r.bottom<=bounds.bottom+1&&card.scrollHeight<=card.clientHeight+1})&&document.documentElement.scrollWidth<=innerWidth+1})()'),'Module framework must fit all four cards without clipping at '+width+'x'+height);
+    assert.deepEqual(await evaluate('[...document.querySelectorAll(".module-structure h1,.module-theme h2,.module-theme p")].map(n=>getComputedStyle(n).fontSize)'),fonts,'Framework font sizes should stay readable');
+    if(width===1366)await shot('fullscreen-modules-structure-1366');if(width===1920)await shot('fullscreen-modules-structure-1920');
+    assert.equal(await evaluate('window.visualLayoutEditor.store.serialize()'),saved,'Fitting the framework must not change saved edits');
+    await click('.edit-toggle');assert.equal(await evaluate('getComputedStyle(document.querySelector(".module-structure")).height===getComputedStyle(document.querySelector("main")).height&&getComputedStyle(document.querySelector(".module-structure")).display==="flex"'),false,'Editing should use the natural layout');await click('.edit-toggle');
+    await fullscreen(false);
+  }
+  pass('module framework removes the source footer and fits all four theme cards in real fullscreen at five sizes without changing fonts or saved settings');
+  await view('modules-M3');
   for(const size of [[1920,1080],[1440,900],[1366,768],[1280,720],[768,1024]]){
     const [width,height]=size;await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
     const normal=new Map();for(const theme of ['M1','M2','M3','M4']){await view('modules-'+theme);normal.set(theme,await metrics());}

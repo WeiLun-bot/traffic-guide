@@ -52,36 +52,21 @@
                 <g id="點虛線">
                     <path d="M124.279,66.189L273.832,67.462" style="fill:none;stroke:white;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:5,5,0,0,0,0;"/>
                 </g>
-                <path d="M266.034,69.602L266.166,95.527L136.833,96.183L136.701,70.258L266.034,69.602Z" style="fill:none;"/>
+                <path d="M248.034,70.602L248.166,96.527L143.833,96.183L143.701,70.258L248.034,70.602Z" style="fill:none;"/>
                 <clipPath id="_clip4">
-                    <path d="M266.034,69.602L266.166,95.527L136.833,96.183L136.701,70.258L266.034,69.602Z"/>
+                    <path d="M248.034,70.602L248.166,96.527L143.833,96.183L143.701,70.258L248.034,70.602Z"/>
                 </clipPath>
                 <g clip-path="url(#_clip4)">
-                    <path d="M224.604,117.608L275.744,58.696" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M194.196,117.046L245.336,58.134" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M156.093,121.206L207.233,62.293" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M126.213,114.277L177.353,55.365" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M187.097,114.09L128.185,62.95" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M222.793,112.298L163.88,61.157" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M255.583,109.315L196.671,58.175" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M292.997,113.087L234.458,57.383" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M224.604,117.608L279.767,62.445" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M194.196,117.046L249.359,61.883" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M156.093,121.206L211.256,66.042" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M126.213,114.277L181.376,59.114" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M187.097,114.09L131.934,58.927" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M222.793,112.298L167.629,57.134" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M255.583,109.315L200.42,54.152" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
+                    <path d="M292.997,113.087L235.858,55.948" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
                 </g>
-                <path d="M266.034,69.602L266.166,95.527L136.833,96.183L136.701,70.258L266.034,69.602Z" style="fill:none;stroke:rgb(250,215,21);stroke-width:2px;stroke-linejoin:miter;"/>
-                <path d="M265.966,101.703L266.098,127.628L136.765,128.284L136.633,102.359L265.966,101.703Z" style="fill:none;"/>
-                <clipPath id="_clip5">
-                    <path d="M265.966,101.703L266.098,127.628L136.765,128.284L136.633,102.359L265.966,101.703Z"/>
-                </clipPath>
-                <g clip-path="url(#_clip5)">
-                    <path d="M224.536,149.709L275.676,90.797" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M194.128,149.147L245.268,90.235" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M156.025,153.306L207.165,94.394" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M126.145,146.378L177.285,87.466" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M187.03,146.191L128.117,95.051" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M222.725,144.398L163.813,93.258" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M255.515,141.416L196.603,90.276" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                    <path d="M290.309,140.629L229.378,86.933" style="fill:none;stroke:rgb(250,215,21);stroke-width:1px;stroke-linejoin:miter;"/>
-                </g>
-                <path d="M265.966,101.703L266.098,127.628L136.765,128.284L136.633,102.359L265.966,101.703Z" style="fill:none;stroke:rgb(250,215,21);stroke-width:2px;stroke-linejoin:miter;"/>
+                <path d="M248.034,70.602L248.166,96.527L143.833,96.183L143.701,70.258L248.034,70.602Z" style="fill:none;stroke:rgb(250,215,21);stroke-width:2px;stroke-linejoin:miter;"/>
                 <g id="停止線">
                     <path d="M185.786,-14.102L208.895,-14.586" style="fill:none;stroke:white;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;"/>
                 </g>

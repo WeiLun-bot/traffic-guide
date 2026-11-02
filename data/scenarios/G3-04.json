@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g3-04",
+    "code": "G3-04",
+    "chapter": "g3",
+    "name": "無號誌鄉區斜交四岔路口",
+    "short": "鄉區斜交",
+    "setting": "鄉區",
+    "geometry": "斜交",
+    "rotation": 0,
+    "overall": "g304-overall",
+    "figure": "G3-04 圖例",
+    "contextId": "g304-context",
+    "overviewId": "g304-overview",
+    "reviewId": "g304-review",
+    "source": {
+      "typst": "04-3-04-unsignalized-rural-skewed-cross.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "f1e53e28643ec51f64e7c29e611af77ce299eedc47e43eeaf5714ec6f56a8eb6"
+    },
+    "originalTypst": "// 04-3-04-unsignalized-rural-skewed-cross.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌四叉路口／無號誌鄉區斜交四叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G3-04] 無號誌鄉區斜交四叉路口設置圖例與運用解說 <section:unsignalized_rural_skewed_cross>\n\n==== 路口現況與議題 <paragraph:unsignalized_rural_skewed_cross_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例所選擇之無號誌鄉區斜交四叉路口，周邊多為未開發區域，鄰近有零散聚落。本示例之主要道路路寬約8~m，採標線分隔，雙向各配置1混合車道，道路兩側無人行設施，停車無管制，路段速限50~km/h。次要道路路寬約6~m，雙向無分隔，路口以東配置1混合車道，路口以西配置雙向各1混合車道，道路兩側無人行設施，停車無管制，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類鄉區無號誌斜交四叉路口，交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[主、次道路管制明示性不足][\n\n    由於鄉區道路之主、次要道路通常較難區分，若無設置必要之警示設施，用路人難以快速判斷那個方向可以有先行權。\n\n    ]\n\n  + #guide-item[主、次道路速度限制不明確][\n\n    由於鄉區道路車流量低，故常忽略設置速限標誌及標字，用以提醒用路人注意行車速度。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標誌及標線來提高路口的自明性；\n  - 如何透過調整路口空間配置，來降低車輛行經路口的速度；\n  - 如何強化處理路口的路側空間等。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_rural_skewed_cross_suggestions_and_overall_diagram>\n\n有關無號誌鄉區斜交四叉路口的交通設施建議設置如 @fig:unsignalized_rural_skewed_cross_110 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n- 因示範路口位於鄉區，在無號誌化之情況下，為了提高斜交路口的自明性及路口安全，本示例於次要道路佈設類滴狀島概念的槽化線，以便在速限40~km/h之下，讓行經於此的車輛能明確注意到前方路口。\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G3-04/G3-04_無號誌鄉區斜交四叉路口交通設施整體設置圖例.svg\",\n    width: 179mm,\n    fit: \"contain\",\n  ),\n  rotate-image: false,\n  caption: [無號誌鄉區斜交四叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_rural_skewed_cross_110\",\n)\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M2-01\", \"M3-01\", \"M4-01\"),\n  [#scenario-reg-link(\"81\", [車輛總重限制標誌「限1」])],\n  [#scenario-reg-link(\"170\", [停止線])],\n  [#scenario-reg-link(\"183\", [路面邊線])],\n  [#scenario-reg-link(\"185\", [枕木紋行人穿越道線])],\n) <scenario-index-g3-04>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G3-04/G3-04_無號誌鄉區斜交四叉路口交通設施整體設置圖例.png\", width: 94.6%, height: 143.80mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌鄉區斜交四叉路口交通設施整體設置圖例],\n// ) <fig:unsignalized_rural_skewed_cross_110>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_rural_skewed_cross_marking_diagram_explanation>\n\n+ #guide-item[停止線，《設置規則》第170 條][\n\n  建議採與橫交道路平行佈設，如 @fig:unsignalized_rural_skewed_cross_111 所示。斜交路口多車道之停止線設置，各車道可採鋸齒狀佈設，但如需配合號誌位置也可佈設在同一斷面。\n\n  ]\n\n+ #guide-item[路面邊線，《設置規則》第183 條][\n\n  路面邊線用以標示車行道範圍，並引導車輛行駛。交叉口內最右側的路口行車引導線須與路面邊線連接，為引導主線道直行車輛的車道位置，同時引導支線道車輛進入路口前觀察主線車輛的位置，如 @fig:unsignalized_rural_skewed_cross_111 所示。\n\n  避免路面邊線與快慢車道分隔線混淆，於路口轉角與交岔道路的路面邊線連接，路緣轉角處若未設人行道標線時，則佈設槽化線（路口停止線起至上游10~m範圍，路肩畫設槽化線，惟實際長度以滿足路口視距三角淨空為主），且其轉角處的曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_路面邊線設置圖例.png\", width: 46.9%, height: 92.64mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [路面邊線設置圖例],\n  ) <fig:unsignalized_rural_skewed_cross_111>\n\n  ]\n\n+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如主(次)要道路有行人穿越之需求，路口可佈設行穿線及搭配設置人行道標線，如 @fig:unsignalized_rural_skewed_cross_112 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_無號誌鄉區斜交四叉路口設置行穿線圖例.jpg\", width: 43.8%, height: 81.29mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區斜交四叉路口設置行穿線圖例],\n  ) <fig:unsignalized_rural_skewed_cross_112>\n\n  如主(次)要道路評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_skewed_cross_113 所示。並於次要道路口佈設停止線及「停」標字，並採槽化線分隔雙向來車。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_無號誌鄉區斜交四叉路口不設置行穿線圖例.png\", width: 43.8%, height: 78.93mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區斜交四叉路口不設置行穿線圖例],\n  ) <fig:unsignalized_rural_skewed_cross_113>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_skewed_cross_signage_diagram_explanation>\n\n+ #guide-item[車輛總重限制標誌「限1」，《設置規則》第81條][\n\n  當道路或橋梁所能承載之重量有所限制時，應設置車輛總重限制標誌「限1」，以禁止超重車輛通行。車輛總重限制標誌「限1」建議設於限制車輛總重地點前方鄰近之處，並應考量超重車輛能於該地點繞道行駛或迴車。本情境中，由西往東方向，因過路口後即為一處需限制通行車輛重量之橋梁，故本計畫於路口上游鄰近路口處設置車輛總重限制標誌「限1」，並搭配「前方橋梁限重」附牌，提醒駕駛人注意，使駕駛人可於前方路口繞道行駛。設置圖例如 @fig:unsignalized_rural_skewed_cross_114 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_車輛總重限制標誌設置圖例.png\", width: 54.0%, height: 82.68mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [車輛總重限制標誌設置圖例],\n  ) <fig:unsignalized_rural_skewed_cross_114>\n\n  ]\n",
+    "sourceLine": "資料：G3-04 路口現況與設置建議",
+    "summary": "零散聚落旁的斜交四岔路口，整理停讓觀察位置、路側空間及橋梁限重預告。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "8",
+        "description": "雙向各 1 混合車道，無人行設施及停車管制",
+        "speed": "50"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "6",
+        "description": "東側共 1 混合車道，西側雙向各 1 車道，無人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "主次道路管制不清楚",
+        "以停讓及槽化提示路口優先關係。"
+      ],
+      [
+        "速限資訊不足",
+        "配合路口減速需求補強提示。"
+      ],
+      [
+        "斜交與路側空間影響觀察",
+        "一起檢查停止位置、轉角及淨空。"
+      ]
+    ],
+    "condition": "以次要道路槽化提高辨識，配置適當停止位置，並於路口前預告橋梁限重。",
+    "overviewIntro": "以次要道路槽化提高辨識，配置適當停止位置，並於路口前預告橋梁限重。",
+    "overviewRows": [
+      [
+        "g304-stopline",
+        "01　確定停讓觀察位置",
+        "§ 170"
+      ],
+      [
+        "g304-edge",
+        "02　整理轉角與行車邊界",
+        "§ 183"
+      ],
+      [
+        "g304-crosswalk",
+        "03　依人行需求選擇穿越方案",
+        "§ 185"
+      ],
+      [
+        "g304-weight",
+        "04　讓限重車輛提早繞道",
+        "§ 81"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M2-01 停、讓管制",
+      "M3-01 行人",
+      "M4-01 危險警示"
+    ],
+    "recapTitle": "把道路動線，\n連成清楚的配置。",
+    "recapIntro": "以次要道路槽化提高辨識，配置適當停止位置，並於路口前預告橋梁限重。",
+    "recapRows": [
+      [
+        "確定停讓觀察位置",
+        "停止線原則與橫交道路平行，配合觀察及轉彎軌跡決定位置。",
+        "§ 170"
+      ],
+      [
+        "整理轉角與行車邊界",
+        "路口最外側導引線銜接路面邊線，指引主線直行與支線停讓觀察。",
+        "§ 183"
+      ],
+      [
+        "依人行需求選擇穿越方案",
+        "主、次要道路有人行需求時，配置行穿線及人行道標線。",
+        "§ 185"
+      ]
+    ],
+    "articleIds": [
+      "g304-stopline",
+      "g304-edge",
+      "g304-crosswalk",
+      "g304-weight"
+    ],
+    "assets": {
+      "g304-overall": "G3-04_無號誌鄉區斜交四叉路口交通設施整體設置圖例.svg",
+      "g304-crosswalk-option": "G3-04_無號誌鄉區斜交四叉路口設置行穿線圖例.jpg",
+      "g304-no-crosswalk-option": "G3-04_無號誌鄉區斜交四叉路口不設置行穿線圖例.png",
+      "g304-before": "G3-04_現況圖_01.png",
+      "g304-photo-1": "G3-04_現況照片_01.png",
+      "g304-photo-2": "G3-04_現況照片_02.png",
+      "g304-photo-3": "G3-04_現況照片_03.png",
+      "g304-photo-4": "G3-04_現況照片_04.png"
+    },
+    "width": 729,
+    "height": 674,
+    "currentConditions": {
+      "pageId": "g304-conditions",
+      "before": "g304-before",
+      "after": "g304-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g304-conditions:content",
+      "photos": [
+        {
+          "image": "g304-photo-1",
+          "kind": "photo",
+          "title": "主次道路辨識不足",
+          "alt": "G3-04 現況照片 1",
+          "points": [
+            "路口缺少必要的警示與管制提示，駕駛不易判斷停讓。"
+          ]
+        },
+        {
+          "image": "g304-photo-2",
+          "kind": "photo",
+          "title": "速度限制不明確",
+          "alt": "G3-04 現況照片 2",
+          "points": [
+            "兩條道路的速限標字與標誌提示不足。"
+          ]
+        },
+        {
+          "image": "g304-photo-3",
+          "kind": "photo",
+          "title": "主次道路辨識不足",
+          "alt": "G3-04 現況照片 3",
+          "points": [
+            "路口缺少必要的警示與管制提示，駕駛不易判斷停讓。"
+          ]
+        },
+        {
+          "image": "g304-photo-4",
+          "kind": "photo",
+          "title": "速度限制不明確",
+          "alt": "G3-04 現況照片 4",
+          "points": [
+            "兩條道路的速限標字與標誌提示不足。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-3-04-unsignalized-rural-skewed-cross.typ 整理。",
+      "takeaway": "以次要道路槽化提高辨識，配置適當停止位置，並於路口前預告橋梁限重。"
+    },
+    "comparisonId": "g304-comparison",
+    "comparisonRows": [
+      [
+        "g304-crosswalk-option",
+        "設置行穿線",
+        "有人行需求時，配合人行道標線安排穿越。",
+        "行穿線方案"
+      ],
+      [
+        "g304-no-crosswalk-option",
+        "不設置行穿線",
+        "需求較低時，保留停止線、停標字及槽化。",
+        "停讓方案"
+      ]
+    ],
+    "comparisonHeadline": "是否設行穿線，都要保留清楚的停讓配置。",
+    "comparisonNote": "停止位置仍須配合斜交觀察與轉彎軌跡。",
+    "comparisonSourceLine": "資料：G3-04 枕木紋行人穿越道線運用解說。"
+  },
+  "assets": {
+    "g304-overall": {
+      "file": "materials/04-一般道路情境/G3-04/G3-04_無號誌鄉區斜交四叉路口交通設施整體設置圖例.svg",
+      "width": 729,
+      "height": 674,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "無號誌鄉區斜交四叉路口交通設施整體設置圖例",
+      "sha256": "ac54083ffe073c5480742aec56a2d84b2418b703621f4789982c5d88be376e76"
+    },
+    "g304-crosswalk-option": {
+      "file": "materials/04-一般道路情境/G3-04/G3-04_無號誌鄉區斜交四叉路口設置行穿線圖例.jpg",
+      "width": 422,
+      "height": 512,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "無號誌鄉區斜交四叉路口設置行穿線圖例",
+      "sha256": "9d32e362ebfc9d214344655c45c02497e00a2082968a7add1b45a2944fde9ef7"
+    },
+    "g304-no-crosswalk-option": {
+      "file": "materials/04-一般道路情境/G3-04/G3-04_無號誌鄉區斜交四叉路口不設置行穿線圖例.png",
+      "width": 354,
+      "height": 417,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "無號誌鄉區斜交四叉路口不設置行穿線圖例",
+      "sha256": "d9187f919c0deb9d9455386983a2f78d8af77b31db4b9ad190367529a405c4c9"
+    },
+    "g304-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況圖_01.png",
+      "width": 3040,
+      "height": 2424,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "現況圖_01",
+      "sha256": "f8238559dc4b079d4bff51ede3797e6804ca6eb17a9ef2ce91fcf77f797a4399"
+    },
+    "g304-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_01.png",
+      "width": 2502,
+      "height": 1387,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "現況照片_01",
+      "sha256": "160f1b291666e4d0e05bddd5a61f3e48cce825687167eb66f16370931df11bf3"
+    },
+    "g304-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_02.png",
+      "width": 2490,
+      "height": 1422,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "現況照片_02",
+      "sha256": "4a97e1bc600b1ed1c7c126cbd3bae510db97a3326894ada2103979c6c7e1aedc"
+    },
+    "g304-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_03.png",
+      "width": 2509,
+      "height": 1368,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "現況照片_03",
+      "sha256": "bd061a71a6cbec636d82c5557cbc0caa18a3eb88d0f1dadfc3fd7c3672e70641"
+    },
+    "g304-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-04/G3-04_現況照片_04.png",
+      "width": 2541,
+      "height": 1403,
+      "rotation": 0,
+      "scenario": "G3-04",
+      "label": "現況照片_04",
+      "sha256": "f543eaa2b4ded20e96a1285aceb41dc68d37b507010b9048f3615e3b118bec89"
+    }
+  },
+  "articles": [
+    {
+      "id": "g304-stopline",
+      "scenario": "g3-04",
+      "reg": "170",
+      "name": "停止線",
+      "category": "標線",
+      "mapAsset": "g304-overall",
+      "asset": "g304-overall",
+      "headline": "停止線",
+      "locate": "對照圖例，檢視停止線的配置。",
+      "box": [
+        408.24,
+        256.12,
+        58.32,
+        33.7
+      ],
+      "crop": [
+        299.9,
+        192.09,
+        275,
+        161.76
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "停止線",
+      "points": [
+        "停止線原則與橫交道路平行，配合觀察及轉彎軌跡決定位置。",
+        "斜交多車道路口可採鋸齒狀；需配合號誌位置時，也可設於同一斷面。"
+      ],
+      "takeaway": "停止線原則與橫交道路平行，配合觀察及轉彎軌跡決定位置。",
+      "sourceRaw": "+ #guide-item[停止線，《設置規則》第170 條][\n\n  建議採與橫交道路平行佈設，如 @fig:unsignalized_rural_skewed_cross_111 所示。斜交路口多車道之停止線設置，各車道可採鋸齒狀佈設，但如需配合號誌位置也可佈設在同一斷面。\n\n  ]\n",
+      "sourceParagraphs": [
+        "建議採與橫交道路平行佈設，如 （見相關圖例或模組） 所示。斜交路口多車道之停止線設置，各車道可採鋸齒狀佈設，但如需配合號誌位置也可佈設在同一斷面。"
+      ]
+    },
+    {
+      "id": "g304-edge",
+      "scenario": "g3-04",
+      "reg": "183",
+      "name": "路面邊線",
+      "category": "標線",
+      "mapAsset": "g304-overall",
+      "asset": "g304-overall",
+      "headline": "路面邊線",
+      "locate": "對照圖例，檢視路面邊線的配置。",
+      "box": [
+        87.48,
+        148.28,
+        116.64,
+        101.1
+      ],
+      "crop": [
+        0,
+        112.9,
+        292.18,
+        171.87
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "路面邊線",
+      "points": [
+        "路口最外側導引線銜接路面邊線，指引主線直行與支線停讓觀察。",
+        "轉角未設人行道標線時，以槽化整理路肩，並滿足視距三角淨空與轉彎軌跡。"
+      ],
+      "takeaway": "路口最外側導引線銜接路面邊線，指引主線直行與支線停讓觀察。",
+      "sourceRaw": "+ #guide-item[路面邊線，《設置規則》第183 條][\n\n  路面邊線用以標示車行道範圍，並引導車輛行駛。交叉口內最右側的路口行車引導線須與路面邊線連接，為引導主線道直行車輛的車道位置，同時引導支線道車輛進入路口前觀察主線車輛的位置，如 @fig:unsignalized_rural_skewed_cross_111 所示。\n\n  避免路面邊線與快慢車道分隔線混淆，於路口轉角與交岔道路的路面邊線連接，路緣轉角處若未設人行道標線時，則佈設槽化線（路口停止線起至上游10~m範圍，路肩畫設槽化線，惟實際長度以滿足路口視距三角淨空為主），且其轉角處的曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_路面邊線設置圖例.png\", width: 46.9%, height: 92.64mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [路面邊線設置圖例],\n  ) <fig:unsignalized_rural_skewed_cross_111>\n\n  ]\n",
+      "sourceParagraphs": [
+        "路面邊線用以標示車行道範圍，並引導車輛行駛。交叉口內最右側的路口行車引導線須與路面邊線連接，為引導主線道直行車輛的車道位置，同時引導支線道車輛進入路口前觀察主線車輛的位置，如 （見相關圖例或模組） 所示。",
+        "避免路面邊線與快慢車道分隔線混淆，於路口轉角與交岔道路的路面邊線連接，路緣轉角處若未設人行道標線時，則佈設槽化線（路口停止線起至上游10 m範圍，路肩畫設槽化線，惟實際長度以滿足路口視距三角淨空為主），且其轉角處的曲率需符合設計車種最小轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。"
+      ]
+    },
+    {
+      "id": "g304-crosswalk",
+      "scenario": "g3-04",
+      "reg": "185",
+      "name": "枕木紋行人穿越道線",
+      "category": "標線",
+      "mapAsset": "g304-overall",
+      "asset": "g304-overall",
+      "headline": "枕木紋行人穿越道線",
+      "locate": "對照圖例，檢視枕木紋行人穿越道線的配置。",
+      "box": [
+        277.02,
+        289.82,
+        80.19,
+        74.14
+      ],
+      "crop": [
+        179.62,
+        246.01,
+        274.99,
+        161.76
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "枕木紋行人穿越道線",
+      "points": [
+        "主、次要道路有人行需求時，配置行穿線及人行道標線。",
+        "需求較低時，仍保留停止線、停標字及雙向槽化。"
+      ],
+      "takeaway": "主、次要道路有人行需求時，配置行穿線及人行道標線。",
+      "sourceRaw": "+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如主(次)要道路有行人穿越之需求，路口可佈設行穿線及搭配設置人行道標線，如 @fig:unsignalized_rural_skewed_cross_112 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_無號誌鄉區斜交四叉路口設置行穿線圖例.jpg\", width: 43.8%, height: 81.29mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區斜交四叉路口設置行穿線圖例],\n  ) <fig:unsignalized_rural_skewed_cross_112>\n\n  如主(次)要道路評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_skewed_cross_113 所示。並於次要道路口佈設停止線及「停」標字，並採槽化線分隔雙向來車。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_無號誌鄉區斜交四叉路口不設置行穿線圖例.png\", width: 43.8%, height: 78.93mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區斜交四叉路口不設置行穿線圖例],\n  ) <fig:unsignalized_rural_skewed_cross_113>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_skewed_cross_signage_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "如主(次)要道路有行人穿越之需求，路口可佈設行穿線及搭配設置人行道標線，如 （見相關圖例或模組） 所示。",
+        "如主(次)要道路評估行人通行需求較低，則路口採不設置行穿線，如 （見相關圖例或模組） 所示。並於次要道路口佈設停止線及「停」標字，並採槽化線分隔雙向來車。"
+      ]
+    },
+    {
+      "id": "g304-weight",
+      "scenario": "g3-04",
+      "reg": "81",
+      "name": "車輛總重限制標誌",
+      "category": "標誌",
+      "mapAsset": "g304-overall",
+      "asset": "g304-overall",
+      "headline": "車輛總重限制標誌",
+      "locate": "對照圖例，檢視車輛總重限制標誌的配置。",
+      "box": [
+        349.92,
+        175.24,
+        51.03,
+        53.92
+      ],
+      "crop": [
+        237.94,
+        121.32,
+        274.99,
+        161.76
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "車輛總重限制標誌",
+      "points": [
+        "橋梁限重前提早告知，讓超重車輛有機會繞道或迴車。",
+        "本例於路口上游配置標誌，搭配前方橋梁限重附牌。"
+      ],
+      "takeaway": "橋梁限重前提早告知，讓超重車輛有機會繞道或迴車。",
+      "sourceRaw": "+ #guide-item[車輛總重限制標誌「限1」，《設置規則》第81條][\n\n  當道路或橋梁所能承載之重量有所限制時，應設置車輛總重限制標誌「限1」，以禁止超重車輛通行。車輛總重限制標誌「限1」建議設於限制車輛總重地點前方鄰近之處，並應考量超重車輛能於該地點繞道行駛或迴車。本情境中，由西往東方向，因過路口後即為一處需限制通行車輛重量之橋梁，故本計畫於路口上游鄰近路口處設置車輛總重限制標誌「限1」，並搭配「前方橋梁限重」附牌，提醒駕駛人注意，使駕駛人可於前方路口繞道行駛。設置圖例如 @fig:unsignalized_rural_skewed_cross_114 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-04/G3-04_車輛總重限制標誌設置圖例.png\", width: 54.0%, height: 82.68mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [車輛總重限制標誌設置圖例],\n  ) <fig:unsignalized_rural_skewed_cross_114>\n\n  ]\n",
+      "sourceParagraphs": [
+        "當道路或橋梁所能承載之重量有所限制時，應設置車輛總重限制標誌「限1」，以禁止超重車輛通行。車輛總重限制標誌「限1」建議設於限制車輛總重地點前方鄰近之處，並應考量超重車輛能於該地點繞道行駛或迴車。本情境中，由西往東方向，因過路口後即為一處需限制通行車輛重量之橋梁，故本計畫於路口上游鄰近路口處設置車輛總重限制標誌「限1」，並搭配「前方橋梁限重」附牌，提醒駕駛人注意，使駕駛人可於前方路口繞道行駛。設置圖例如 （見相關圖例或模組） 所示。"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "M2-03",
+  "directoryAssets": ["m203-2f27e58a6a"],
   "title": "號誌化管制",
   "source": {
     "file": "06-signalized-control.typ",

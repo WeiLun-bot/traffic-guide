@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "M1-03",
+  "directoryAssets": ["m103-layout"],
   "title": "路側停車",
   "source": {
     "file": "03-roadside-parking.typ",

@@ -15,6 +15,8 @@ def main():
         if not re.fullmatch(r'G[1-4]-\d{2}',code):raise ValueError('Unexpected scenario')
         folder=ROOT/'materials/04-一般道路情境'/code
         candidates=list(folder.glob(code+'_*交通設施整體設置圖例.svg'))
+        if code=='G1-02':
+            candidates=[folder/'G1-02_無號誌鄉區正交三叉路口設施設置圖例.svg']
         chapters=list(args.chapters.glob('04-'+code[1]+'-'+code[3:]+'-*.typ'))
         if len(chapters)!=1:raise ValueError('Missing or ambiguous source chapter: '+code)
         typst=chapters[0];raw=typst.read_text(encoding='utf-8');active=re.sub(r'/\*[\s\S]*?\*/','',raw);active=re.sub(r'(?m)^\s*//.*$','',active)
@@ -34,7 +36,7 @@ def main():
         assets[key]={'file':svg.relative_to(ROOT).as_posix(),'width':view[2],'height':view[3],'label':code+' 整體佈設圖','scenario':code,'role':'strategy','sha256':hashlib.sha256(svg_bytes).hexdigest()}
         entry['strategy']['images']=[{'key':key,'label':'整體佈設圖','rotation':0}]
         entry['source']={'file':'chapters/04-general-scenarios/'+typst.name,'sha256':hashlib.sha256(typst.read_bytes()).hexdigest(),'section':'交通設施設置建議與整體設置圖例'}
-        if code=='G1-02':entry['source']['figureNote']='沿用本情境Typst在整體設置圖例章節明確引用的高雄甲典街SVG。'
+        if code=='G1-02':entry['source']['figureNote']='使用G1-02_無號誌鄉區正交三叉路口設施設置圖例.svg。'
     data['assets']=assets;file.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'strategyPages':len(data['scenarios']),'svgFiles':len(assets),'preserved':'G1-01 uses the original page and asset identities'},ensure_ascii=False))
 

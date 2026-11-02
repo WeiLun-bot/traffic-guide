@@ -30,6 +30,9 @@
     assert(value.documentId === DOCUMENT_ID && value.units === 'css-px', '這不是本簡報的版面設定');
     assert(record(value.legacyState) && value.legacyState.version === 1 && Number.isFinite(value.legacyState.updatedAt), '缺少有效的原簡報編輯設定');
     for (const key of ['texts', 'images', 'highlights', 'disabledHighlights', 'styles', 'frames', 'layouts', 'blocks', 'comparisonTransforms', 'templateMigrations']) assert(record(value.legacyState[key]), '原簡報的 ' + key + ' 設定無效');
+    for (const highlight of Object.values(value.legacyState.highlights)) {
+      if (record(highlight) && highlight.rotation !== undefined) assert(Number.isFinite(highlight.rotation) && Math.abs(highlight.rotation) <= 360, '打亮框旋轉角度須介於 -360° 與 360°');
+    }
     assert(Array.isArray(value.legacyState.pages) && Array.isArray(value.legacyState.pageOrder), '原簡報的頁面設定無效');
     assert(record(value.elements) && Object.keys(value.elements).length <= 20000, '元素清單無效');
     assert(value.imageViews === undefined || record(value.imageViews), '初始圖面設定無效');
@@ -167,6 +170,43 @@
     home = rotatedHome(home, rotation); viewBounds(view);
     return {zoom: home[2] / view[2], x: (home[0] + (home[2] - view[2]) / 2 - view[0]) / view[2] * 100, y: (home[1] + (home[3] - view[3]) / 2 - view[1]) / view[3] * 100, rotation};
   }
+  function highlightAngle(value = 0) {
+    assert(Number.isFinite(value), '打亮框旋轉角度無效');
+    const angle = ((value + 180) % 360 + 360) % 360 - 180;
+    return Math.abs(angle) < 1e-10 ? 0 : angle;
+  }
+  function highlightCorners(box, rotation = 0) {
+    const [x,y,w,h] = box, cx = x+w/2, cy = y+h/2, radians = highlightAngle(rotation)*Math.PI/180, c = Math.cos(radians), s = Math.sin(radians);
+    return [[-w/2,-h/2],[w/2,-h/2],[w/2,h/2],[-w/2,h/2]].map(([dx,dy]) => [cx+dx*c-dy*s,cy+dx*s+dy*c]);
+  }
+  function highlightBounds(box, rotation = 0) {
+    if (!highlightAngle(rotation)) return [...box];
+    const corners = highlightCorners(box,rotation), xs = corners.map(p=>p[0]), ys = corners.map(p=>p[1]);
+    return [Math.min(...xs),Math.min(...ys),Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys)];
+  }
+  function highlightTransform(box, rotation = 0) {
+    return `rotate(${highlightAngle(rotation)} ${box[0]+box[2]/2} ${box[1]+box[3]/2})`;
+  }
+  function fitHighlight(box, rotation, width, height) {
+    const envelope = highlightBounds(box,rotation), scale = Math.min(1,width/Math.max(box[2],envelope[2]),height/Math.max(box[3],envelope[3]));
+    const w = box[2]*scale, h = box[3]*scale, halfW = Math.max(w,envelope[2]*scale)/2, halfH = Math.max(h,envelope[3]*scale)/2;
+    const cx = Math.max(halfW,Math.min(width-halfW,box[0]+box[2]/2)), cy = Math.max(halfH,Math.min(height-halfH,box[1]+box[3]/2));
+    return [cx-w/2,cy-h/2,w,h];
+  }
+  function resizeHighlight(box, rotation, corner, dx, dy, width, height) {
+    const [x,y,w,h] = box, radians = highlightAngle(rotation)*Math.PI/180, c = Math.cos(radians), s = Math.sin(radians), sx = corner.includes('e')?1:-1, sy = corner.includes('s')?1:-1;
+    const localX = dx*c+dy*s, localY = -dx*s+dy*c;
+    const anchor = [x+w/2-(sx*w*c-sy*h*s)/2,y+h/2-(sx*w*s+sy*h*c)/2];
+    const candidate = t => {
+      const nw = Math.max(Math.min(4,w),w+sx*localX*t), nh = Math.max(Math.min(4,h),h+sy*localY*t);
+      return [anchor[0]+(sx*nw*c-sy*nh*s)/2-nw/2,anchor[1]+(sx*nw*s+sy*nh*c)/2-nh/2,nw,nh];
+    };
+    const inside = b => [b,highlightBounds(b,rotation)].every(r=>r[0]>=-1e-8&&r[1]>=-1e-8&&r[0]+r[2]<=width+1e-8&&r[1]+r[3]<=height+1e-8);
+    if (inside(candidate(1))) return candidate(1);
+    let low=0,high=1;
+    for(let i=0;i<40;i++){const mid=(low+high)/2;if(inside(candidate(mid)))low=mid;else high=mid;}
+    return candidate(low);
+  }
   function signature(config) {
     const views = config.imageViews || {};
     return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
@@ -201,5 +241,5 @@
     markSaved(snapshot) { this.saved = signature(snapshot); }
     serialize(snapshot = this.config) { return checkSize(JSON.stringify(validate(snapshot), null, 2) + '\n'); }
   }
-  return {DOCUMENT_ID, fonts, limits, clone, validate, validateOverviewReferences, parse, checkSize, element, overrides, imageView, viewBoxFor, settingsForView, signature, Store};
+  return {DOCUMENT_ID, fonts, limits, clone, validate, validateOverviewReferences, parse, checkSize, element, overrides, imageView, viewBoxFor, settingsForView, highlightAngle, highlightCorners, highlightBounds, highlightTransform, fitHighlight, resizeHighlight, signature, Store};
 });

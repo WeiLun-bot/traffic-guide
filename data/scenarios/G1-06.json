@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g1-06",
+    "code": "G1-06",
+    "chapter": "g1",
+    "name": "無號誌鄉區斜交三岔路口",
+    "short": "鄉區斜交",
+    "setting": "鄉區",
+    "geometry": "斜交",
+    "rotation": 90,
+    "overall": "g106-overall",
+    "figure": "G1-06 圖例",
+    "contextId": "g106-context",
+    "overviewId": "g106-overview",
+    "reviewId": "g106-review",
+    "source": {
+      "typst": "04-1-06-unsignalized-rural-skewed-t.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "5b7389ee42ffe730ee30a7795e20f834bb78be14fe8c4103b9a99f7743ee84d8"
+    },
+    "originalTypst": "// 04-1-06-unsignalized-rural-skewed-t.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌三叉路口／無號誌鄉區斜交三叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G1-06] 無號誌鄉區斜交三叉路口設置圖例與運用解說 <section:unsignalized_rural_skewed_t>\n\n==== 路口現況與議題 <paragraph:unsignalized_rural_skewed_t_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  無號誌鄉區斜交三叉路口選擇位在鄉區，且附近住家較為稀少之地點。本示例之主要道路屬於服務通過性交通為主之公路，道路路寬約20~m，採中央實體分隔，雙向各佈設1快車道及1慢車道，道路兩側無人行設施，停車無管制，路段速限為60~km/h。橫交之次要道路路寬約6~m，無分隔，雙向共佈設1車道，道路兩側無人行設施，停車無管制，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類鄉區無號誌斜交三叉路口，交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[主、次道路管制明示性不足][\n\n    此類路口通常次要道路交通量較少，因而在主要道路上經常無設置警示設施，用以提醒主要道路用路人注意次要道路之來車。\n\n    ]\n\n  + #guide-item[主要道路鄰近路口缺少左、右轉空間配置][\n\n    此類路口通常於主要道路最外側配置慢車道，但忽略右轉車輛之轉向需求，於路口處無特別處理主要道路右轉次要道路之空間配置，因而造成右轉車輛需要跨越慢車道，進而產生不同車速之車輛交織，有行車安全上之問題。\n\n    ]\n\n  + #guide-item[次要道路斜交角度過小][\n\n    此類路口之次要道路與主要道路的交角通常較小，次要道路車輛於匯入主要道路時，在判別主要道路車輛的位置時，容易有死角產生，導致行車安全的疑慮。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標誌、標線來明確化此處為一斜交路口；\n  - 如何處理速度較快的主要道路車輛右轉進入次要道路的轉彎半徑；\n  - 如何處理左轉車輛的待轉空間；\n  - 如何處理次要道路斜交角度過小等。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_rural_skewed_t_suggestions_and_overall_diagram>\n\n有關無號誌鄉區斜交三叉路口的交通設施建議設置如 @fig:unsignalized_rural_skewed_t_39 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 因為此路口屬於交角較小的斜交路口，透過調整交角為90度的方式，讓次要道路車輛可以垂直主要道路做停等動作，增加穿越主要道路之安全性；\n+ 主要道路於路口處調整道路空間配置，往北方向佈設左轉車道，往南方向佈設直右車道，以提供左轉及右轉車輛安全進出次要道路之待停空間。\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G1-06/G1-06_無號誌鄉區斜交三叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: false,\n  caption: [無號誌鄉區斜交三叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_rural_skewed_t_39\",\n)\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-index-box(\n  (\"M1-01\", \"M2-01\", \"M2-04\", \"M4-01\", \"M4-02\", \"M4-03\"),\n  [#scenario-reg-link(\"59\", [讓路標誌「遵2」])],\n  [#scenario-reg-link(\"85\", [最高速限標誌「限5」])],\n  [#scenario-reg-link(\"162\", [反光導標及危險標記])],\n  [#scenario-reg-link(\"182\", [車道線])],\n  [#scenario-reg-link(\"183-1\", [快慢車道分隔線])],\n  [#scenario-reg-link(\"185\", [枕木紋行人穿越道線])],\n) <scenario-index-g1-06>\n\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G1-06/G1-06_無號誌鄉區斜交三叉路口交通設施整體設置圖例.png\", width: 83.0%, height: 156.77mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌鄉區斜交三叉路口交通設施整體設置圖例],\n// ) <fig:unsignalized_rural_skewed_t_39>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_rural_skewed_t_marking_diagram_explanation>\n\n+ #guide-item[反光導標及危險標記，《設置規則》第162條][\n\n  此示例因有道路急彎處且為提升夜間用路人之行車安全，依《設置規則》規定之間距，分別佈設反光導標及危險標記，其中反光導標共細分成四類，如 @tab:unsignalized_rural_skewed_t_6 所示，佈設之類別則依照交通工程師之判斷決定。\n\n  #sourced-figure(\n    table(\n    columns: (0.7fr, 1fr, 1fr, 1fr, 1fr),\n    table.header(\n      [區分], table.cell(colspan: 4, [反光導標]),\n    ),\n    [設置情況], [道路急彎處、危險土堤急路幅狹窄處順向標示。], [道路急彎處、危險土堤急路幅狹窄處雙向標示。], [高速公路單向匝道及山區及彎處順向標示。], [高速公路單向匝道及山區之特殊危險及彎處雙向標示。],\n    [分類], [第一類], [第二類], [第三類], [第四類],\n    [反光顏色], [黃], [黃（順向）\n\n      紅（逆向）\n\n      ], [黃], [黃（順向）\n\n      紅（逆向）\n\n      ],\n    [說明], table.cell(colspan: 4, [- 圖形反光片直徑為7.5 至 20~cm\n\n      - 設置高度應距車道道路面1至1.3~m，但利用現有護欄設置者，其高度不得低於60~cm。\n\n      ]),\n  ),\n    kind: table,\n    caption: [反光導標類別],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:unsignalized_rural_skewed_t_6>\n\n\n  ]\n\n+ #guide-item[車道線，《設置規則》第182條][\n\n  本示例於距離路口前30 至\n  60~m範圍，取消佈設快慢車道分隔線，改佈設混合車道，如 @fig:unsignalized_rural_skewed_t_40 所示。\n\n  透過指向線引導、劃分直行或右轉方向，使用路人明確判斷其遵循的車道位置，並於取消快慢車道分隔線處佈設車道線，依照《設置規則》線形進行繪設。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_車道線示意圖.svg\", width: 80%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [車道線示意圖],\n  ) <fig:unsignalized_rural_skewed_t_40>\n\n  ]\n\n+ #guide-item[快慢車道分隔線，《設置規則》第183-1條][\n\n  此示例北往南過路口後，為使車道數平衡且接續路口上游車道寬度，慢車道寬度由一般車道寬度縮減為慢車道寬度，因此透過槽化線做出車道縮減之形式，並須同步考量漸變之長度，如 @fig:unsignalized_rural_skewed_t_41 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_快慢車道分隔線圖例.svg\", width: 80%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [快慢車道分隔線圖例],\n  ) <fig:unsignalized_rural_skewed_t_41>\n\n  ]\n\n+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如次要道路配合路側人行道有佈設行穿線之需求時，佈設方式如 @fig:unsignalized_rural_skewed_t_42 所示。如次要道路評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_skewed_t_43 所示。並於次要道路口佈設讓路線並以分向限制線區隔雙向來車。\n\n  #block(breakable: false)[\n    #grid(\n      columns: (1fr, 1fr),\n      column-gutter: 8pt,\n      align: center + top,\n      [\n        #figure(\n          [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_無號誌鄉區斜交三叉路口設置行穿線圖例.svg\", width: 100%, height: 65mm, fit: \"contain\"), kind: \"general\")],\n          kind: image,\n          caption: [無號誌鄉區斜交三叉路口設置行穿線圖例],\n        ) <fig:unsignalized_rural_skewed_t_42>\n      ],\n      [\n        #figure(\n          [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_無號誌鄉區斜交三叉路口不設置行穿線圖例.svg\", width: 100%, height: 65mm, fit: \"contain\"), kind: \"general\")],\n          kind: image,\n          caption: [無號誌鄉區斜交三叉路口不設置行穿線圖例],\n        ) <fig:unsignalized_rural_skewed_t_43>\n      ],\n    )\n  ]\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_skewed_t_signage_diagram_explanation>\n\n+ #guide-item[讓路標誌「遵2」，《設置規則》第59條（鄰近路口處為曲線段）][\n\n  本示例如於次要道路路口設置讓路線時，將配合設置讓路標誌「遵2」。而由於本示例之讓路線佈設在一曲線段中，若讓路標誌設置於曲線段將會影響駕駛人之識別，故須將標誌往上游移至與行車方向垂直之處，以利駕駛人識別。\n\n  ]\n\n+ #guide-item[最高速限標誌「限5」，《設置規則》第85條（快慢車道最高速限標誌設置、鄰近路口處為曲線段）][\n\n  本示例中主要道路設有快慢車道，因最高速限不一致，但考量未設有中央分隔島，若要於右側路外同時設置快車道與慢車道之「最高速限標誌」，其情況過於複雜，故在有快慢車道但未設中央分隔島之情況下，建議以地面之「速度限制標字」替代。\n\n  次要道路鄰近路口處為一曲線路段，若按本指引設於路口下游距離路口20~m之設置原則，速限標誌將會過於接近曲線段，車輛右轉進入次要道路後，駕駛人不易辨識該速限標誌。故本示例將最高速限標誌再往下游位置佈設，並與行車方向垂直。\n\n  ]\n",
+    "sourceLine": "資料：G1-06 路口現況與設置建議",
+    "summary": "主線速限較高且設有快慢車道，透過交角調整、轉向空間與讓路提示，整理斜交匯入動線。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "20",
+        "description": "中央實體分隔，雙向各 1 快車道及 1 慢車道",
+        "speed": "60"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "6",
+        "description": "雙向共 1 車道，無人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "提早辨識斜交路口",
+        "讓主線車輛察覺次要道路來車。"
+      ],
+      [
+        "安排轉向與交織空間",
+        "避免右轉車臨時跨越慢車道，並保留左轉停等空間。"
+      ],
+      [
+        "改善次要道路的觀察角度",
+        "將停等方向調整為接近垂直，減少斜交死角。"
+      ]
+    ],
+    "condition": "交角、速差與轉向空間共同檢核，再依需求決定行穿線配置。",
+    "overviewIntro": "將次要道路交角調整至接近 90°，並在主線安排左轉與直右車道。",
+    "overviewRows": [
+      [
+        "g106-lane-line",
+        "01　整理路口前車道分工",
+        "§182"
+      ],
+      [
+        "g106-slow-line",
+        "02　銜接快慢車道與漸變",
+        "§183-1"
+      ],
+      [
+        "g106-crosswalk-line",
+        "03　依需求安排人行穿越",
+        "§185"
+      ],
+      [
+        "g106-yield-sign",
+        "04　讓路、速限與夜間導引",
+        "§59 / §85 / §162"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M2-01 停讓管制",
+      "M2-04 行向管制",
+      "M4-01 危險警示",
+      "M4-02 通行限制",
+      "M4-03 路段行為管制"
+    ],
+    "recapTitle": "先整理交角，\n再串接轉向動線。",
+    "recapIntro": "將次要道路交角調整至接近 90°，並在主線安排左轉與直右車道。",
+    "recapRows": [
+      [
+        "轉向車提前就位",
+        "路口前整理混合車道及轉向空間。",
+        "§182 / §183-1"
+      ],
+      [
+        "讓路位置容易辨識",
+        "標誌配合彎道視角，並依人行需求安排穿越。",
+        "§59 / §185"
+      ],
+      [
+        "速限及夜間提示連續",
+        "標誌位置、路面標字與導標共同檢核。",
+        "§85 / §162"
+      ]
+    ],
+    "articleIds": [
+      "g106-reflectors",
+      "g106-lane-line",
+      "g106-slow-line",
+      "g106-crosswalk-line",
+      "g106-yield-sign",
+      "g106-speed-sign"
+    ],
+    "assets": {
+      "g106-overall": "G1-06_無號誌鄉區斜交三叉路口交通設施整體設置圖例.svg",
+      "g106-crosswalk": "G1-06_無號誌鄉區斜交三叉路口設置行穿線圖例.svg",
+      "g106-no-crosswalk": "G1-06_無號誌鄉區斜交三叉路口不設置行穿線圖例.svg",
+      "g106-before": "G1-06_現況圖_01.png",
+      "g106-photo-1": "G1-06_現況照片_01.png",
+      "g106-photo-2": "G1-06_現況照片_02.png",
+      "g106-photo-3": "G1-06_現況照片_03.png",
+      "g106-photo-4": "G1-06_現況照片_04.png"
+    },
+    "width": 879,
+    "height": 1699,
+    "currentConditions": {
+      "pageId": "g106-conditions",
+      "before": "g106-before",
+      "after": "g106-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g106-conditions:content",
+      "photos": [
+        {
+          "image": "g106-photo-1",
+          "kind": "photo",
+          "title": "主次道路提示不足",
+          "alt": "G1-06 現況照片 1",
+          "points": [
+            "主要道路缺少提醒駕駛留意路口來車的警示。"
+          ]
+        },
+        {
+          "image": "g106-photo-2",
+          "kind": "photo",
+          "title": "轉向與機慢車交織",
+          "alt": "G1-06 現況照片 2",
+          "points": [
+            "路口前缺少左右轉空間，右轉汽車與機慢車容易交織。"
+          ]
+        },
+        {
+          "image": "g106-photo-3",
+          "kind": "photo",
+          "title": "斜交影響觀察視距",
+          "alt": "G1-06 現況照片 3",
+          "points": [
+            "次要道路斜交角度小，駕駛觀察主要道路來車較困難。"
+          ]
+        },
+        {
+          "image": "g106-photo-4",
+          "kind": "photo",
+          "title": "主次道路提示不足",
+          "alt": "G1-06 現況照片 4",
+          "points": [
+            "主要道路缺少提醒駕駛留意路口來車的警示。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-1-06-unsignalized-rural-skewed-t.typ 整理。",
+      "takeaway": "交角、速差與轉向空間共同檢核，再依需求決定行穿線配置。"
+    },
+    "comparisonId": "g106-comparison",
+    "comparisonRows": [
+      [
+        "g106-crosswalk",
+        "設置行穿線",
+        "有人行需求時，銜接兩側人行空間。",
+        "行穿線配置"
+      ],
+      [
+        "g106-no-crosswalk",
+        "不設置行穿線",
+        "需求較低時，以讓路線及分向限制線說明停讓。",
+        "讓路配置"
+      ]
+    ],
+    "comparisonHeadline": "依人行需求選擇，讓路關係仍須清楚。",
+    "comparisonNote": "兩種方案均保留斜交入口的觀察與讓路空間。"
+  },
+  "assets": {
+    "g106-overall": {
+      "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口交通設施整體設置圖例.svg",
+      "width": 879,
+      "height": 1699,
+      "rotation": 90,
+      "scenario": "G1-06",
+      "label": "無號誌鄉區斜交三叉路口交通設施整體設置圖例",
+      "sha256": "c5d4abb93ed29d81e4668fb1511b971b4f63303c5918795d8f11a371957cf3b8"
+    },
+    "g106-crosswalk": {
+      "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口設置行穿線圖例.svg",
+      "width": 215,
+      "height": 286,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "無號誌鄉區斜交三叉路口設置行穿線圖例",
+      "sha256": "939802885d3404b1629014bc1a72dec238b18a231d3b8acfd5ea577df639a8ba"
+    },
+    "g106-no-crosswalk": {
+      "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口不設置行穿線圖例.svg",
+      "width": 215,
+      "height": 286,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "無號誌鄉區斜交三叉路口不設置行穿線圖例",
+      "sha256": "99a2bed6f4d9e45d016380bdcb446cbe4ac73f78ca45c48b5001967aaf736b13"
+    },
+    "g106-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況圖_01.png",
+      "width": 2414,
+      "height": 2637,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "現況圖_01",
+      "sha256": "61c6156aa7895f17ea3a2773e3e8168353e09e757cdd3ecc29eb8c941d96c63d"
+    },
+    "g106-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_01.png",
+      "width": 2498,
+      "height": 1389,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "現況照片_01",
+      "sha256": "f3b6d3e107b648624efa26c57167b89f8dc96c2c54f3d35f858f2b4feca95565"
+    },
+    "g106-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_02.png",
+      "width": 2509,
+      "height": 1414,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "現況照片_02",
+      "sha256": "4c6542fcf9e2489c141d14f7cf8e1c7e51d78498e094b7ae29b1d9791e83853a"
+    },
+    "g106-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_03.png",
+      "width": 2491,
+      "height": 1385,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "現況照片_03",
+      "sha256": "22f6253bb437ba62ac44ac78ff7b1cf878fee98e3abad3d99ef1c82830d176a7"
+    },
+    "g106-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況照片_04.png",
+      "width": 2525,
+      "height": 1407,
+      "rotation": 0,
+      "scenario": "G1-06",
+      "label": "現況照片_04",
+      "sha256": "b9eb48e40d8ee12a1d8bdedc3dab1704afe949155f54f3a8803f553b77af311f"
+    }
+  },
+  "articles": [
+    {
+      "id": "g106-reflectors",
+      "scenario": "g1-06",
+      "reg": "162",
+      "name": "反光導標及危險標記",
+      "category": "標線",
+      "mapAsset": "g106-overall",
+      "asset": "g106-overall",
+      "headline": "反光導標及危險標記",
+      "locate": "對照圖例，檢視反光導標及危險標記的配置。",
+      "box": [
+        193.38,
+        713.58,
+        79.11,
+        152.91
+      ],
+      "crop": [
+        103.01,
+        569.17,
+        259.85,
+        441.74
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "反光導標及危險標記",
+      "points": [
+        "急彎與危險處配置反光導標及危險標記，補強夜間辨識。",
+        "導標類別依道路條件與單、雙向提示需求選擇。",
+        "一般設置高度距路面 1–1.3 m；利用既有護欄設置時，不低於 0.6 m。"
+      ],
+      "takeaway": "急彎與危險處配置反光導標及危險標記，補強夜間辨識。",
+      "sourceRaw": "+ #guide-item[反光導標及危險標記，《設置規則》第162條][\n\n  此示例因有道路急彎處且為提升夜間用路人之行車安全，依《設置規則》規定之間距，分別佈設反光導標及危險標記，其中反光導標共細分成四類，如 @tab:unsignalized_rural_skewed_t_6 所示，佈設之類別則依照交通工程師之判斷決定。\n\n  #sourced-figure(\n    table(\n    columns: (0.7fr, 1fr, 1fr, 1fr, 1fr),\n    table.header(\n      [區分], table.cell(colspan: 4, [反光導標]),\n    ),\n    [設置情況], [道路急彎處、危險土堤急路幅狹窄處順向標示。], [道路急彎處、危險土堤急路幅狹窄處雙向標示。], [高速公路單向匝道及山區及彎處順向標示。], [高速公路單向匝道及山區之特殊危險及彎處雙向標示。],\n    [分類], [第一類], [第二類], [第三類], [第四類],\n    [反光顏色], [黃], [黃（順向）\n\n      紅（逆向）\n\n      ], [黃], [黃（順向）\n\n      紅（逆向）\n\n      ],\n    [說明], table.cell(colspan: 4, [- 圖形反光片直徑為7.5 至 20~cm\n\n      - 設置高度應距車道道路面1至1.3~m，但利用現有護欄設置者，其高度不得低於60~cm。\n\n      ]),\n  ),\n    kind: table,\n    caption: [反光導標類別],\n    source: [《設置規則》#cite(<motc-sign-marking-signal-regulations-2025>)。],\n  ) <tab:unsignalized_rural_skewed_t_6>\n\n\n  ]\n",
+      "sourceParagraphs": [
+        "此示例因有道路急彎處且為提升夜間用路人之行車安全，依《設置規則》規定之間距，分別佈設反光導標及危險標記，其中反光導標共細分成四類，如 （見相關圖例或模組） 所示，佈設之類別則依照交通工程師之判斷決定。"
+      ],
+      "table": {
+        "columns": [
+          "類別",
+          "適用方向",
+          "反光顏色"
+        ],
+        "rows": [
+          [
+            "第一類",
+            "一般危險處順向",
+            "黃"
+          ],
+          [
+            "第二類",
+            "一般危險處雙向",
+            "順向黃、逆向紅"
+          ],
+          [
+            "第三類",
+            "單向匝道、山區急彎順向",
+            "黃"
+          ],
+          [
+            "第四類",
+            "匝道、山區特殊危險急彎雙向",
+            "順向黃、逆向紅"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "g106-lane-line",
+      "scenario": "g1-06",
+      "reg": "182",
+      "name": "車道線",
+      "category": "標線",
+      "mapAsset": "g106-overall",
+      "asset": "g106-overall",
+      "headline": "車道線",
+      "locate": "對照圖例，檢視車道線的配置。",
+      "box": [
+        457.08,
+        934.45,
+        79.11,
+        288.83
+      ],
+      "crop": [
+        352.22,
+        833.36,
+        288.83,
+        491.01
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "車道線",
+      "points": [
+        "路口前約 30–60 m 中斷快慢車道分隔，改以混合車道銜接。",
+        "利用指向線區分直行及右轉，並以車道線交代各方向行車空間。"
+      ],
+      "takeaway": "路口前約 30–60 m 中斷快慢車道分隔，改以混合車道銜接。",
+      "sourceRaw": "+ #guide-item[車道線，《設置規則》第182條][\n\n  本示例於距離路口前30 至\n  60~m範圍，取消佈設快慢車道分隔線，改佈設混合車道，如 @fig:unsignalized_rural_skewed_t_40 所示。\n\n  透過指向線引導、劃分直行或右轉方向，使用路人明確判斷其遵循的車道位置，並於取消快慢車道分隔線處佈設車道線，依照《設置規則》線形進行繪設。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_車道線示意圖.svg\", width: 80%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [車道線示意圖],\n  ) <fig:unsignalized_rural_skewed_t_40>\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例於距離路口前30 至   60 m範圍，取消佈設快慢車道分隔線，改佈設混合車道，如 （見相關圖例或模組） 所示。",
+        "透過指向線引導、劃分直行或右轉方向，使用路人明確判斷其遵循的車道位置，並於取消快慢車道分隔線處佈設車道線，依照《設置規則》線形進行繪設。"
+      ]
+    },
+    {
+      "id": "g106-slow-line",
+      "scenario": "g1-06",
+      "reg": "183-1",
+      "name": "快慢車道分隔線",
+      "category": "標線",
+      "mapAsset": "g106-overall",
+      "asset": "g106-overall",
+      "headline": "快慢車道分隔線",
+      "locate": "對照圖例，檢視快慢車道分隔線的配置。",
+      "box": [
+        184.59,
+        305.82,
+        61.53,
+        288.83
+      ],
+      "crop": [
+        70.94,
+        204.73,
+        288.83,
+        491.01
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "快慢車道分隔線",
+      "points": [
+        "通過路口後，配合上下游車道數與寬度，逐步恢復慢車道。",
+        "以槽化線安排車道縮減，並一併檢核漸變長度。"
+      ],
+      "takeaway": "通過路口後，配合上下游車道數與寬度，逐步恢復慢車道。",
+      "sourceRaw": "+ #guide-item[快慢車道分隔線，《設置規則》第183-1條][\n\n  此示例北往南過路口後，為使車道數平衡且接續路口上游車道寬度，慢車道寬度由一般車道寬度縮減為慢車道寬度，因此透過槽化線做出車道縮減之形式，並須同步考量漸變之長度，如 @fig:unsignalized_rural_skewed_t_41 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_快慢車道分隔線圖例.svg\", width: 80%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [快慢車道分隔線圖例],\n  ) <fig:unsignalized_rural_skewed_t_41>\n\n  ]\n",
+      "sourceParagraphs": [
+        "此示例北往南過路口後，為使車道數平衡且接續路口上游車道寬度，慢車道寬度由一般車道寬度縮減為慢車道寬度，因此透過槽化線做出車道縮減之形式，並須同步考量漸變之長度，如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g106-crosswalk-line",
+      "scenario": "g1-06",
+      "reg": "185",
+      "name": "枕木紋行人穿越道線",
+      "category": "標線",
+      "mapAsset": "g106-overall",
+      "asset": "g106-overall",
+      "headline": "枕木紋行人穿越道線",
+      "locate": "對照圖例，檢視枕木紋行人穿越道線的配置。",
+      "box": [
+        202.17,
+        798.53,
+        61.53,
+        118.93
+      ],
+      "crop": [
+        103.01,
+        637.13,
+        259.85,
+        441.74
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "枕木紋行人穿越道線",
+      "points": [
+        "次要道路有人行穿越需求時，將行穿線與路側人行空間銜接。",
+        "評估需求較低時，可採不設行穿線方案，以讓路線及分向限制線交代停讓與方向。"
+      ],
+      "takeaway": "次要道路有人行穿越需求時，將行穿線與路側人行空間銜接。",
+      "sourceRaw": "+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如次要道路配合路側人行道有佈設行穿線之需求時，佈設方式如 @fig:unsignalized_rural_skewed_t_42 所示。如次要道路評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_skewed_t_43 所示。並於次要道路口佈設讓路線並以分向限制線區隔雙向來車。\n\n  #block(breakable: false)[\n    #grid(\n      columns: (1fr, 1fr),\n      column-gutter: 8pt,\n      align: center + top,\n      [\n        #figure(\n          [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_無號誌鄉區斜交三叉路口設置行穿線圖例.svg\", width: 100%, height: 65mm, fit: \"contain\"), kind: \"general\")],\n          kind: image,\n          caption: [無號誌鄉區斜交三叉路口設置行穿線圖例],\n        ) <fig:unsignalized_rural_skewed_t_42>\n      ],\n      [\n        #figure(\n          [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-06/G1-06_無號誌鄉區斜交三叉路口不設置行穿線圖例.svg\", width: 100%, height: 65mm, fit: \"contain\"), kind: \"general\")],\n          kind: image,\n          caption: [無號誌鄉區斜交三叉路口不設置行穿線圖例],\n        ) <fig:unsignalized_rural_skewed_t_43>\n      ],\n    )\n  ]\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_skewed_t_signage_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "如次要道路配合路側人行道有佈設行穿線之需求時，佈設方式如 （見相關圖例或模組） 所示。如次要道路評估行人通行需求較低，則路口採不設置行穿線，如 （見相關圖例或模組） 所示。並於次要道路口佈設讓路線並以分向限制線區隔雙向來車。"
+      ]
+    },
+    {
+      "id": "g106-yield-sign",
+      "scenario": "g1-06",
+      "reg": "59",
+      "name": "讓路標誌",
+      "category": "標誌",
+      "mapAsset": "g106-overall",
+      "asset": "g106-overall",
+      "headline": "讓路標誌",
+      "locate": "對照圖例，檢視讓路標誌的配置。",
+      "box": [
+        254.91,
+        951.44,
+        70.32,
+        67.96
+      ],
+      "crop": [
+        160.15,
+        764.55,
+        259.84,
+        441.74
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "讓路標誌",
+      "points": [
+        "讓路線搭配讓路標誌，明示次要道路的讓路義務。",
+        "入口為曲線段時，將標誌移至上游容易辨識處，牌面朝向來車。"
+      ],
+      "takeaway": "讓路線搭配讓路標誌，明示次要道路的讓路義務。",
+      "sourceRaw": "+ #guide-item[讓路標誌「遵2」，《設置規則》第59條（鄰近路口處為曲線段）][\n\n  本示例如於次要道路路口設置讓路線時，將配合設置讓路標誌「遵2」。而由於本示例之讓路線佈設在一曲線段中，若讓路標誌設置於曲線段將會影響駕駛人之識別，故須將標誌往上游移至與行車方向垂直之處，以利駕駛人識別。\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例如於次要道路路口設置讓路線時，將配合設置讓路標誌「遵2」。而由於本示例之讓路線佈設在一曲線段中，若讓路標誌設置於曲線段將會影響駕駛人之識別，故須將標誌往上游移至與行車方向垂直之處，以利駕駛人識別。"
+      ]
+    },
+    {
+      "id": "g106-speed-sign",
+      "scenario": "g1-06",
+      "reg": "85",
+      "name": "最高速限標誌",
+      "category": "標誌",
+      "mapAsset": "g106-overall",
+      "asset": "g106-overall",
+      "headline": "最高速限標誌",
+      "locate": "對照圖例，檢視最高速限標誌的配置。",
+      "box": [
+        175.8,
+        730.57,
+        61.53,
+        50.97
+      ],
+      "crop": [
+        76.64,
+        535.18,
+        259.85,
+        441.74
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "最高速限標誌",
+      "points": [
+        "快、慢車道速限不同，且未設中央分隔島時，避免在右側堆疊複雜資訊，可用速度限制標字提示。",
+        "次要道路下游為曲線段時，速限標誌可再往下游調整至容易辨識的位置。"
+      ],
+      "takeaway": "快、慢車道速限不同，且未設中央分隔島時，避免在右側堆疊複雜資訊，可用速度限制標字提示。",
+      "sourceRaw": "+ #guide-item[最高速限標誌「限5」，《設置規則》第85條（快慢車道最高速限標誌設置、鄰近路口處為曲線段）][\n\n  本示例中主要道路設有快慢車道，因最高速限不一致，但考量未設有中央分隔島，若要於右側路外同時設置快車道與慢車道之「最高速限標誌」，其情況過於複雜，故在有快慢車道但未設中央分隔島之情況下，建議以地面之「速度限制標字」替代。\n\n  次要道路鄰近路口處為一曲線路段，若按本指引設於路口下游距離路口20~m之設置原則，速限標誌將會過於接近曲線段，車輛右轉進入次要道路後，駕駛人不易辨識該速限標誌。故本示例將最高速限標誌再往下游位置佈設，並與行車方向垂直。\n\n  ]\n",
+      "sourceParagraphs": [
+        "本示例中主要道路設有快慢車道，因最高速限不一致，但考量未設有中央分隔島，若要於右側路外同時設置快車道與慢車道之「最高速限標誌」，其情況過於複雜，故在有快慢車道但未設中央分隔島之情況下，建議以地面之「速度限制標字」替代。",
+        "次要道路鄰近路口處為一曲線路段，若按本指引設於路口下游距離路口20 m之設置原則，速限標誌將會過於接近曲線段，車輛右轉進入次要道路後，駕駛人不易辨識該速限標誌。故本示例將最高速限標誌再往下游位置佈設，並與行車方向垂直。"
+      ]
+    }
+  ]
+}

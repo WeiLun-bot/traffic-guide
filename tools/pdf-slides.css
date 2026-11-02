@@ -1,0 +1,18 @@
+/* Used only in the export browser. Keep screen geometry when controls disappear. */
+@page { size:1600px 900px; margin:0; }
+html,body { width:1600px!important;height:900px!important;margin:0!important;overflow:hidden!important;print-color-adjust:exact;-webkit-print-color-adjust:exact; }
+* { animation:none!important;transition:none!important;caret-color:transparent!important; }
+body.pdf-hide-controls :is(button:not(.pdf-content-control),select,input,.reading-progress,.presentation-navigation,#toc-button,.edit-toggle,.playbar,.scenario-switcher,.scenario-back,.catalog-back,.article-nav,.module-navigation,.module-page-nav,.module-extension-footer,.editor-toolbar,#visual-layout-editor,#visual-layout-status,.iv-trigger,.iv-panel,.viewport-tools,.map-tools,.compare-controls,.compare-handle,.compare-divider,.compare-label,.zoom-label,.image-edit-button,.content-tools,.content-add-point,.content-item-actions,.condition-photo-caption,.source-line,dialog) { visibility:hidden!important;pointer-events:none!important; }
+.pdf-content-control { visibility:visible!important;pointer-events:none!important;cursor:default!important; }
+.pdf-content-control:not(.module-extension-image-open):not(.overview-list button) { border-color:transparent!important;background:transparent!important; }
+.pdf-content-control:focus { outline:none!important; }
+.pdf-section-label { position:absolute;right:3.4vw;top:30px;color:var(--green);font-size:14px;letter-spacing:.04em; }
+.pdf-footer { position:fixed;left:4.3vw;right:4.3vw;bottom:22px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted); }
+body.pdf-hide-controls .compare-before-wrap { visibility:hidden!important; }
+body.pdf-hide-controls :is(.map-foot span:last-child,.compare-help) { visibility:hidden!important; }
+body.pdf-hide-controls :is(#presentation,.explanation,.module-explanation,.conditions-issues) { scrollbar-color:transparent transparent!important; }
+body.pdf-hide-controls :is(.explanation,.conditions-issues)::before,body.pdf-hide-controls :is(.explanation,.conditions-issues)::after { visibility:hidden!important; }
+@media print {
+  html,body { min-width:1600px!important;min-height:900px!important; }
+  #presentation { break-inside:avoid; }
+}

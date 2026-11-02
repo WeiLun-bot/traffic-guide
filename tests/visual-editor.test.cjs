@@ -12,10 +12,18 @@ const {createServer} = require('../tools/serve-github-pages.cjs');
 const root = path.resolve(__dirname, '..');
 const original = () => Core.parse(fs.readFileSync(path.join(root, 'layout/presentation-layout.json'), 'utf8'));
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
-test('original data and unaffected presentation blocks remain unchanged', () => {
+test('original content and unaffected presentation blocks remain unchanged while source SVGs can be refreshed', () => {
   const baseline = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/presentation-baseline.json'), 'utf8'));
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
-  assert.equal(hash(html.match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/)[1]), baseline.data);
+  const dataText=html.match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/)[1],data=JSON.parse(dataText);
+  for(const [key,asset]of Object.entries(data.embeddedAssets))if(asset.url?.startsWith('data:image/svg+xml;')){
+    const file=path.join(root,'materials','04-一般道路情境',data.assetMeta[key].scenario.toUpperCase(),data.assets[key]);
+    const bytes=fs.readFileSync(file),view=bytes.toString('utf8').match(/<svg\b[^>]*\bviewBox="([^"]+)"/)[1].split(/[\s,]+/).map(Number);
+    assert(Buffer.from(asset.url.split(',')[1],'base64').equals(bytes),'Stale embedded SVG: '+key);assert.equal(asset.width,view[2]);assert.equal(asset.height,view[3]);
+    Object.assign(asset,{url:'[source SVG]',width:0,height:0});
+  }
+  for(const scene of data.scenarios){scene.width=0;scene.height=0;}
+  assert.equal(hash(JSON.stringify(data)),baseline.dataStructure,'Image refresh changed explanation text, article boxes, source identities or other presentation data');
   // The external JSON is user-editable; its current highlights and layout may
   // legitimately differ from the original migration fixture.
   Core.validate(original());

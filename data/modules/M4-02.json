@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "M4-02",
+  "directoryAssets": ["m402-b18c7d1f2f", "m402-ae32e39564"],
   "title": "通行限制",
   "source": {
     "file": "13-access-restriction.typ",

@@ -1,0 +1,65 @@
+/* Applied only in the isolated PDF browser; the interactive presentation is unchanged. */
+@page { size: 1440px 1018px; margin: 0; }
+html,body { width:1440px!important;height:1018px!important;margin:0!important;overflow:hidden!important;print-color-adjust:exact;-webkit-print-color-adjust:exact; }
+* { animation:none!important;transition:none!important;caret-color:transparent!important; }
+:root { --header:68px;--footer:40px; }
+.header { height:68px!important;padding:0 36px!important;gap:20px!important; }
+.header .brand { font-size:15px!important; }
+.header .brand-title { font-size:15px!important; }
+.pdf-section-label { margin-left:auto;color:var(--green);font-size:14px;letter-spacing:.04em; }
+.header>:not(.brand):not(.pdf-section-label),.playbar,.reading-progress,.scenario-switcher,.article-nav,.editor-toolbar,#visual-layout-editor,#visual-layout-status,[data-editor-ui],.iv-trigger,.iv-panel,.viewport-tools,.map-tools,.compare-controls,.compare-handle,.compare-divider,.compare-label,.zoom-label,.map-foot,.condition-photo-caption,.explain-footer,.scenario-related-links,.image-edit-button,.content-tools,.content-add-point,dialog { display:none!important; }
+#presentation { width:1440px!important;height:910px!important;overflow:visible!important; }
+#presentation>.slide { height:910px!important;min-height:0!important;max-height:910px!important;padding:22px 36px 18px!important;overflow:visible!important; }
+.pdf-footer { position:fixed;bottom:0;left:36px;right:36px;height:40px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted); }
+.context-opening .context-header { margin-bottom:20px!important; }
+.context-opening .context-title,.conditions-heading h1 { font-size:32px!important; }
+.context-opening .context-intro { font-size:17px!important;line-height:1.7!important; }
+.context-opening .context-grid { gap:32px!important; }
+.context-opening .context-map-canvas { height:490px!important; }
+.context-opening .context-issues h2 { font-size:23px!important;padding-top:6px!important; }
+.context-opening .issue-row { padding:24px 0!important; }
+.context-opening .issue-row strong { font-size:21px!important; }
+.context-opening .issue-row p { font-size:17px!important;line-height:1.75!important; }
+.context-opening .road-fact { grid-template-columns:145px 85px minmax(0,1fr)!important;gap:12px!important;padding:12px 0!important; }
+.context-opening .road-fact h3,.context-opening .road-fact p { font-size:14px!important; }
+.context-opening .road-fact strong { font-size:21px!important; }
+.context-opening .road-speed { margin-left:8px!important; }
+.context-opening .context-note { font-size:15px!important;line-height:1.7!important;margin-top:20px!important; }
+.conditions-heading { margin-bottom:18px!important; }
+.conditions-current-slide .conditions-layout { flex:1;min-height:0!important;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)!important;gap:28px!important; }
+.conditions-current-figure { height:100%!important; }
+.conditions-current-canvas { min-height:0!important; }
+.conditions-issues.context-issues { overflow:visible!important;height:auto!important;max-height:none!important;padding:0!important; }
+.conditions-current-slide .condition-issue { grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:18px!important;padding:0 0 20px!important;margin:0 0 22px!important; }
+.condition-card-heading h3 { font-size:20px!important; }
+.condition-card-heading>span { font-size:15px!important; }
+.conditions-current-slide .condition-photo { aspect-ratio:4/3!important;height:auto!important;max-height:none!important; }
+.conditions-current-slide .condition-points p { font-size:16px!important;line-height:1.7!important;margin:0 0 7px!important; }
+.conditions-bottom { display:none!important; }
+.map-slide { display:flex!important;flex-direction:column!important; }
+.map-heading { flex:none!important;margin-bottom:18px!important; }
+.map-heading h1 { font-size:30px!important; }
+.map-heading .case-code { font-size:14px!important; }
+.map-layout { flex:1!important;min-height:0!important;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr)!important;gap:28px!important;align-items:stretch!important; }
+.map-card { min-height:0!important; }
+.map-toolbar { padding:12px 16px!important;min-height:46px!important;flex:none!important; }
+.map-toolbar strong { font-size:16px!important; }
+.map-canvas { min-height:0!important;flex:1!important; }
+.explanation { overflow:visible!important;height:auto!important;max-height:none!important;padding:0!important;align-self:stretch!important; }
+.explanation::before,.explanation::after,.conditions-issues::before,.conditions-issues::after { display:none!important; }
+.explanation h2 { font-size:32px!important;line-height:1.45!important;margin:18px 0 25px!important; }
+.explain-topline { gap:12px!important; }
+.explain-topline .tag { font-size:13px!important; }
+.explain-index { font-size:12px!important; }
+.explain-points li { font-size:18px!important;line-height:1.8!important;padding:17px 0!important; }
+.explain-points li::before { font-size:12px!important; }
+.explain-intro { font-size:18px!important;line-height:1.8!important; }
+.takeaway { font-size:15px!important;line-height:1.7!important; }
+.overview-list button { font-size:19px!important;line-height:1.7!important;padding:19px 0!important; }
+.overview-list button small { font-size:12px!important; }
+.module-row { gap:6px!important;margin-top:25px!important; }
+.module-row span { font-size:11px!important; }
+.mini-diagram-note { font-size:13px!important;line-height:1.8!important; }
+.compare-before-wrap { display:none!important; }
+.source-line { display:none!important; }
+

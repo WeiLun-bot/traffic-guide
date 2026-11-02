@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g3-02",
+    "code": "G3-02",
+    "chapter": "g3",
+    "name": "無號誌鄉區正交四岔路口",
+    "short": "鄉區正交",
+    "setting": "鄉區",
+    "geometry": "正交",
+    "rotation": 90,
+    "overall": "g302-overall",
+    "figure": "G3-02 圖例",
+    "contextId": "g302-context",
+    "overviewId": "g302-overview",
+    "reviewId": "g302-review",
+    "source": {
+      "typst": "04-3-02-unsignalized-rural-orthogonal-cross.typ",
+      "note": "依本情境章節整理；現況圖及照片沿用已歸檔的簡報素材。",
+      "sha256": "85e3e43a1e71438ef6fb714bb50c92517138ab8527350ee011a407cc2ae8fcfc"
+    },
+    "originalTypst": "// 04-3-02-unsignalized-rural-orthogonal-cross.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌四叉路口／無號誌鄉區正交四叉路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G3-02] 無號誌鄉區正交四叉路口設置圖例與運用解說 <section:unsignalized_rural_orthogonal_cross>\n\n==== 路口現況與議題 <paragraph:unsignalized_rural_orthogonal_cross_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  本示例所選擇之無號誌鄉區正交四叉路口，其周邊土地使用多為農田，鄰近路口處有民房座落。本示例之主要道路路寬約10~m，採標線分隔，雙向各配置1混合車道，道路兩側路肩寬度小於1~m，無人行設施及無停車管制，路段速限50~km/h。次要道路路寬約5~m，雙向無分隔，路口以東配置1混合車道，路口以西配置1混合車道及1自行車道，道路兩側無人行設施，停車無管制，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類無號誌鄉區正交四叉路口交通設施現況大多存在以下問題，分述說明如下：\n\n  + #guide-item[主次要道路交叉口管制明示性不足][\n\n    鄉區道路常會忽略設置必要之警示設施，用以提醒用路人注意前方橫交道路有車輛穿越行為。\n\n    ]\n\n  + #guide-item[道路車道數配置不一致][\n\n    鄉區道路常會做為自行車路線使用，因鄉區道路通常不是太寬，在劃設自行車道後，常會造常路口兩側之車道數與車道寬有不一致之情況。\n\n    ]\n\n  + #guide-item[主、次要道路速度限制不明確][\n\n    鄉區道路常會忽略設置速限標誌及標字，用以提醒用路人注意行車速度。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標誌及標線來提高路口的自明性，增設岔路標誌及速限標誌等；\n  - 如何透過調整路口車道寬度，來降低車輛行經路口的速度,及區分主、次要道路及路側空間。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_rural_orthogonal_cross_suggestions_and_overall_diagram>\n\n有關無號誌鄉區正交四叉路口的交通設施建議設置如 @fig:unsignalized_rural_orthogonal_cross_99 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 因為位於鄉區，主要道路較寬，無號誌化之下，為了提高自明性及路口安全，本示例示範於主要道路設置槽化線，屬於類滴狀島的概念，以便在速限50~km/h之下，車輛行經於此，即明確注意到前方路口。\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G3-02/G3-02_無號誌鄉區正交四叉路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: false,\n  caption: [無號誌鄉區正交四叉路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_rural_orthogonal_cross_99\",\n)\n\n#scenario-index-box(\n  (\"M1-01\", \"M2-01\", \"M4-01\"),\n  [#scenario-reg-link(\"30\", [岔路標誌「警11」])],\n  [#scenario-reg-link(\"171\", [槽化線])],\n  [#scenario-reg-link(\"181\", [行車分向線])],\n  [#scenario-reg-link(\"183\", [路面邊線])],\n  [#scenario-reg-link(\"185\", [枕木紋行人穿越道線])],\n) <scenario-index-g3-02>\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G3-02/G3-02_無號誌鄉區正交四叉路口交通設施整體設置圖例.png\", width: 90.9%, height: 165.90mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌鄉區正交四叉路口交通設施整體設置圖例],\n// ) <fig:unsignalized_rural_orthogonal_cross_99>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_rural_orthogonal_cross_marking_diagram_explanation>\n\n+ #guide-item[槽化線，《設置規則》第 171 條][\n\n  槽化線主要劃設於交岔路口、立體交岔之匝道口或其他特殊地點。本示例於南北向主要道路鄰近路口處劃設槽化線，如 @fig:unsignalized_rural_orthogonal_cross_100 所示，藉由槽化線用以引導車輛駕駛人循指示之路線行駛，若車輛偏移進入槽化區域，可透過槽化斜紋線方向導回原行駛動線。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_槽化線圖例.png\", width: 48.0%, height: 82.40mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [槽化線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_100>\n\n  ]\n\n+ #guide-item[行車分向線，《設置規則》第 181條][\n\n  行車分向線主要用以劃分路面成雙向車道，指示車輛駕駛人分向行駛並靠右行車，如 @fig:unsignalized_rural_orthogonal_cross_101 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_行車分向線圖例.png\", width: 30.1%, height: 103.80mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [行車分向線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_101>\n\n  ]\n\n+ #guide-item[路面邊線，《設置規則》第183條][\n\n  路面邊線，用以指示路肩或路面外側邊緣之界線，並透過道路設計的原則，首先決定道路中心線的位置，而後決定車道數與車道寬，以及規劃是否需要中央分隔，最終決定路肩寬度並以路面邊線做為界線標示。如 @fig:unsignalized_rural_orthogonal_cross_102 所示。\n\n  路肩寬度屬市區道路範疇者，須符合市區道路及附屬工程設計規範第2.4節之規定；屬公路範疇者，須符合公路路線設計規範第2.3節之規定。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_路面邊線圖例.png\", width: 30.7%, height: 113.77mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [路面邊線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_102>\n\n  ]\n\n+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如次要道路有提供行人安全穿越道路之環境時，可於次要道路口佈設行穿線，如 @fig:unsignalized_rural_orthogonal_cross_103 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_無號誌鄉區正交四叉路口設置行穿線圖例.png\", width: 58.6%, height: 66.15mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區正交四叉路口設置行穿線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_103>\n\n  如次要道路評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_orthogonal_cross_104 所示。並於次要道路口佈設讓路線及路口行車導引線。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_無號誌鄉區正交四叉路口不設置行穿線圖例.png\", width: 46.8%, height: 82.11mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區正交四叉路口不設置行穿線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_104>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_orthogonal_cross_signage_diagram_explanation>\n\n+ #guide-item[岔路標誌「警11」，《設置規則》第30條][\n\n  當主要道路上無設置慢行標誌「警49」或當心行人標誌「警34」時，建議可設置岔路標誌，提醒駕駛人注意。\n\n  設置位置參考道路交通安全規則第102條，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，因此，建議本標誌宜設置於距離路口前約30~m處，並依行車速限及最短安全視距增加，並可加設「前方30~m」附牌，以預告駕駛人前方岔路之距離，減速慢行；另外，亦可於鄰近路口處再增設一面岔路標誌，提醒駕駛人注意路口其他車輛與行人動向，設置圖例如 @fig:unsignalized_rural_orthogonal_cross_105 所示。\n\n  #figure(\n    [\n      #scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_岔路標誌設置圖例.png\", width: 62.7%, height: 96.03mm, fit: \"contain\"), kind: \"general\")\n    ],\n    kind: image,\n    caption: [岔路標誌設置圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_105>\n\n  ]\n",
+    "sourceLine": "資料：G3-02 路口現況與設置建議",
+    "summary": "農田與聚落旁的無號誌四岔路口，以槽化、邊線與預告提高路口辨識。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "10",
+        "description": "雙向各 1 混合車道，路肩小於 1 m，無人行設施",
+        "speed": "50"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "5",
+        "description": "東側混合車道，西側另有自行車道，無人行設施",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "路口管制提示不足",
+        "缺少橫交車流與主次道路提示。"
+      ],
+      [
+        "車道及自行車空間不連續",
+        "路口兩側的寬度與車道配置需銜接。"
+      ],
+      [
+        "速限資訊不足",
+        "補強主次道路速度提示。"
+      ]
+    ],
+    "condition": "主要道路以類滴狀島槽化提高辨識，並依行人需求選擇穿越配置。",
+    "overviewIntro": "主要道路以類滴狀島槽化提高辨識，並依行人需求選擇穿越配置。",
+    "overviewRows": [
+      [
+        "g302-channel",
+        "01　槽化提示前方路口",
+        "§ 171"
+      ],
+      [
+        "g302-edge",
+        "02　界定車道與路肩",
+        "§ 183"
+      ],
+      [
+        "g302-crosswalk",
+        "03　依需求安排穿越",
+        "§ 185"
+      ],
+      [
+        "g302-junction-warning",
+        "04　提前預告橫交道路",
+        "§ 30"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M2-01 停、讓管制",
+      "M4-01 危險警示"
+    ],
+    "recapTitle": "把道路動線，\n連成清楚的配置。",
+    "recapIntro": "主要道路以類滴狀島槽化提高辨識，並依行人需求選擇穿越配置。",
+    "recapRows": [
+      [
+        "槽化提示前方路口",
+        "在主要道路接近路口處配置類滴狀島的槽化區，提醒前方交岔。",
+        "§ 171"
+      ],
+      [
+        "界定車道與路肩",
+        "依中心線、車道數及車道寬決定路肩，最後以路面邊線界定。",
+        "§ 183"
+      ],
+      [
+        "依需求安排穿越",
+        "次要道路有穿越需求時，配置行穿線並銜接路側人行空間。",
+        "§ 185"
+      ]
+    ],
+    "articleIds": [
+      "g302-channel",
+      "g302-center",
+      "g302-edge",
+      "g302-crosswalk",
+      "g302-junction-warning"
+    ],
+    "assets": {
+      "g302-overall": "G3-02_無號誌鄉區正交四叉路口交通設施整體設置圖例.svg",
+      "g302-crosswalk-option": "G3-02_無號誌鄉區正交四叉路口設置行穿線圖例.png",
+      "g302-no-crosswalk-option": "G3-02_無號誌鄉區正交四叉路口不設置行穿線圖例.png",
+      "g302-before": "G3-02_現況圖_01.png",
+      "g302-photo-1": "G3-02_現況照片_01.png",
+      "g302-photo-2": "G3-02_現況照片_02.png",
+      "g302-photo-3": "G3-02_現況照片_03.png",
+      "g302-photo-4": "G3-02_現況照片_04.png"
+    },
+    "width": 777,
+    "height": 1104,
+    "currentConditions": {
+      "pageId": "g302-conditions",
+      "before": "g302-before",
+      "after": "g302-overall",
+      "beforeOffsetY": 0,
+      "textKey": "g302-conditions:content",
+      "photos": [
+        {
+          "image": "g302-photo-1",
+          "kind": "photo",
+          "title": "缺少交叉來車警示",
+          "alt": "G3-02 現況照片 1",
+          "points": [
+            "主次道路均缺少警示設施，駕駛不易預期橫向穿越車流。"
+          ]
+        },
+        {
+          "image": "g302-photo-2",
+          "kind": "photo",
+          "title": "東西向車道配置不同",
+          "alt": "G3-02 現況照片 2",
+          "points": [
+            "次要道路東西兩側的車道及自行車空間配置不同，銜接需檢視。"
+          ]
+        },
+        {
+          "image": "g302-photo-3",
+          "kind": "photo",
+          "title": "速限提示不足",
+          "alt": "G3-02 現況照片 3",
+          "points": [
+            "兩條道路皆缺少速限標字與標誌。"
+          ]
+        },
+        {
+          "image": "g302-photo-4",
+          "kind": "photo",
+          "title": "缺少交叉來車警示",
+          "alt": "G3-02 現況照片 4",
+          "points": [
+            "主次道路均缺少警示設施，駕駛不易預期橫向穿越車流。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖及照片沿用本專案已歸檔的情境素材；解說依 04-3-02-unsignalized-rural-orthogonal-cross.typ 整理。",
+      "takeaway": "主要道路以類滴狀島槽化提高辨識，並依行人需求選擇穿越配置。"
+    },
+    "comparisonId": "g302-comparison",
+    "comparisonRows": [
+      [
+        "g302-crosswalk-option",
+        "設置行穿線",
+        "有人行需求時，銜接次要道路兩側空間。",
+        "行穿線方案"
+      ],
+      [
+        "g302-no-crosswalk-option",
+        "不設置行穿線",
+        "需求較低時，以讓路線及導引線交代停讓。",
+        "讓路方案"
+      ]
+    ],
+    "comparisonHeadline": "依穿越需求選擇，停讓關係都要清楚。",
+    "comparisonNote": "兩方案皆需檢核路側環境及通過路口的行車路徑。",
+    "comparisonSourceLine": "資料：G3-02 枕木紋行人穿越道線運用解說。"
+  },
+  "assets": {
+    "g302-overall": {
+      "file": "materials/04-一般道路情境/G3-02/G3-02_無號誌鄉區正交四叉路口交通設施整體設置圖例.svg",
+      "width": 777,
+      "height": 1104,
+      "rotation": 90,
+      "scenario": "G3-02",
+      "label": "無號誌鄉區正交四叉路口交通設施整體設置圖例",
+      "sha256": "31e7f596b020d1d15b352de2c2c5109597dcbca1d861323cff3d310469e85cb9"
+    },
+    "g302-crosswalk-option": {
+      "file": "materials/04-一般道路情境/G3-02/G3-02_無號誌鄉區正交四叉路口設置行穿線圖例.png",
+      "width": 534,
+      "height": 394,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "無號誌鄉區正交四叉路口設置行穿線圖例",
+      "sha256": "74b2e416af3a947cf93d6e5b6a8d33e727a344cb9d7c3c0696f865b5dcd87506"
+    },
+    "g302-no-crosswalk-option": {
+      "file": "materials/04-一般道路情境/G3-02/G3-02_無號誌鄉區正交四叉路口不設置行穿線圖例.png",
+      "width": 375,
+      "height": 430,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "無號誌鄉區正交四叉路口不設置行穿線圖例",
+      "sha256": "7db66d1e098b828b751be1577b12d36284b04750d82778ab87d80d15bb2df9ef"
+    },
+    "g302-before": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況圖_01.png",
+      "width": 3446,
+      "height": 2321,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "現況圖_01",
+      "sha256": "7e61cade63e38f1f57af6d0ec5743fe67669a410a3960282dd6f0f1f2cc67671"
+    },
+    "g302-photo-1": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_01.png",
+      "width": 1841,
+      "height": 943,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "現況照片_01",
+      "sha256": "7a020de4f7dcc65de4b09f1b868b8a59a3a3afb32e9504708376318112d34538"
+    },
+    "g302-photo-2": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_02.png",
+      "width": 2500,
+      "height": 1412,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "現況照片_02",
+      "sha256": "8ddfd8dacd86ef90614057d519d91a3c35e0040a34030808eacc39e8ab57db7e"
+    },
+    "g302-photo-3": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_03.png",
+      "width": 2465,
+      "height": 1362,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "現況照片_03",
+      "sha256": "e4f3554bb208d572b79d7c263c6b58ebadea20bca1022806ba3250a005dd9109"
+    },
+    "g302-photo-4": {
+      "file": "materials/04-一般道路情境/current-conditions/G3-02/G3-02_現況照片_04.png",
+      "width": 2490,
+      "height": 1386,
+      "rotation": 0,
+      "scenario": "G3-02",
+      "label": "現況照片_04",
+      "sha256": "4ac58a4a40d83b2e02a10e482db0fcbd9eae06118d8d36b58800e996ddb3f25a"
+    }
+  },
+  "articles": [
+    {
+      "id": "g302-channel",
+      "scenario": "g3-02",
+      "reg": "171",
+      "name": "槽化線",
+      "category": "標線",
+      "mapAsset": "g302-overall",
+      "asset": "g302-overall",
+      "headline": "槽化線",
+      "locate": "對照圖例，檢視槽化線的配置。",
+      "box": [
+        357.42,
+        629.28,
+        38.85,
+        209.76
+      ],
+      "crop": [
+        271.97,
+        555.86,
+        209.76,
+        356.6
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "槽化線",
+      "points": [
+        "在主要道路接近路口處配置類滴狀島的槽化區，提醒前方交岔。",
+        "槽化斜紋方向需能把誤入車輛引回原行駛動線。"
+      ],
+      "takeaway": "在主要道路接近路口處配置類滴狀島的槽化區，提醒前方交岔。",
+      "sourceRaw": "+ #guide-item[槽化線，《設置規則》第 171 條][\n\n  槽化線主要劃設於交岔路口、立體交岔之匝道口或其他特殊地點。本示例於南北向主要道路鄰近路口處劃設槽化線，如 @fig:unsignalized_rural_orthogonal_cross_100 所示，藉由槽化線用以引導車輛駕駛人循指示之路線行駛，若車輛偏移進入槽化區域，可透過槽化斜紋線方向導回原行駛動線。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_槽化線圖例.png\", width: 48.0%, height: 82.40mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [槽化線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_100>\n\n  ]\n",
+      "sourceParagraphs": [
+        "槽化線主要劃設於交岔路口、立體交岔之匝道口或其他特殊地點。本示例於南北向主要道路鄰近路口處劃設槽化線，如 （見相關圖例或模組） 所示，藉由槽化線用以引導車輛駕駛人循指示之路線行駛，若車輛偏移進入槽化區域，可透過槽化斜紋線方向導回原行駛動線。"
+      ]
+    },
+    {
+      "id": "g302-center",
+      "scenario": "g3-02",
+      "reg": "181",
+      "name": "行車分向線",
+      "category": "標線",
+      "mapAsset": "g302-overall",
+      "asset": "g302-overall",
+      "headline": "行車分向線",
+      "locate": "對照圖例，檢視行車分向線的配置。",
+      "box": [
+        349.65,
+        816.96,
+        31.08,
+        154.56
+      ],
+      "crop": [
+        271.95,
+        735.73,
+        186.48,
+        317.02
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "行車分向線",
+      "points": [
+        "劃分雙向車道，提示靠右行駛。",
+        "同時檢查路口兩側自行車道及混合車道的銜接。"
+      ],
+      "takeaway": "劃分雙向車道，提示靠右行駛。",
+      "sourceRaw": "+ #guide-item[行車分向線，《設置規則》第 181條][\n\n  行車分向線主要用以劃分路面成雙向車道，指示車輛駕駛人分向行駛並靠右行車，如 @fig:unsignalized_rural_orthogonal_cross_101 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_行車分向線圖例.png\", width: 30.1%, height: 103.80mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [行車分向線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_101>\n\n  ]\n",
+      "sourceParagraphs": [
+        "行車分向線主要用以劃分路面成雙向車道，指示車輛駕駛人分向行駛並靠右行車，如 （見相關圖例或模組） 所示。"
+      ]
+    },
+    {
+      "id": "g302-edge",
+      "scenario": "g3-02",
+      "reg": "183",
+      "name": "路面邊線",
+      "category": "標線",
+      "mapAsset": "g302-overall",
+      "asset": "g302-overall",
+      "headline": "路面邊線",
+      "locate": "對照圖例，檢視路面邊線的配置。",
+      "box": [
+        419.58,
+        220.8,
+        46.62,
+        220.8
+      ],
+      "crop": [
+        332.49,
+        143.52,
+        220.8,
+        375.36
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "路面邊線",
+      "points": [
+        "依中心線、車道數及車道寬決定路肩，最後以路面邊線界定。",
+        "路肩寬度配合道路類型，依相應設計規範檢核。"
+      ],
+      "takeaway": "依中心線、車道數及車道寬決定路肩，最後以路面邊線界定。",
+      "sourceRaw": "+ #guide-item[路面邊線，《設置規則》第183條][\n\n  路面邊線，用以指示路肩或路面外側邊緣之界線，並透過道路設計的原則，首先決定道路中心線的位置，而後決定車道數與車道寬，以及規劃是否需要中央分隔，最終決定路肩寬度並以路面邊線做為界線標示。如 @fig:unsignalized_rural_orthogonal_cross_102 所示。\n\n  路肩寬度屬市區道路範疇者，須符合市區道路及附屬工程設計規範第2.4節之規定；屬公路範疇者，須符合公路路線設計規範第2.3節之規定。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_路面邊線圖例.png\", width: 30.7%, height: 113.77mm, fit: \"contain\"), kind: \"local\")],\n    kind: image,\n    caption: [路面邊線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_102>\n\n  ]\n",
+      "sourceParagraphs": [
+        "路面邊線，用以指示路肩或路面外側邊緣之界線，並透過道路設計的原則，首先決定道路中心線的位置，而後決定車道數與車道寬，以及規劃是否需要中央分隔，最終決定路肩寬度並以路面邊線做為界線標示。如 （見相關圖例或模組） 所示。",
+        "路肩寬度屬市區道路範疇者，須符合市區道路及附屬工程設計規範第2.4節之規定；屬公路範疇者，須符合公路路線設計規範第2.3節之規定。"
+      ]
+    },
+    {
+      "id": "g302-crosswalk",
+      "scenario": "g3-02",
+      "reg": "185",
+      "name": "枕木紋行人穿越道線",
+      "category": "標線",
+      "mapAsset": "g302-overall",
+      "asset": "g302-overall",
+      "headline": "枕木紋行人穿越道線",
+      "locate": "對照圖例，檢視枕木紋行人穿越道線的配置。",
+      "box": [
+        326.34,
+        518.88,
+        62.16,
+        55.2
+      ],
+      "crop": [
+        264.18,
+        387.97,
+        186.48,
+        317.02
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "枕木紋行人穿越道線",
+      "points": [
+        "次要道路有穿越需求時，配置行穿線並銜接路側人行空間。",
+        "需求較低時，可採不設行穿線方案，保留讓路線及路口行車導引線。"
+      ],
+      "takeaway": "次要道路有穿越需求時，配置行穿線並銜接路側人行空間。",
+      "sourceRaw": "+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如次要道路有提供行人安全穿越道路之環境時，可於次要道路口佈設行穿線，如 @fig:unsignalized_rural_orthogonal_cross_103 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_無號誌鄉區正交四叉路口設置行穿線圖例.png\", width: 58.6%, height: 66.15mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區正交四叉路口設置行穿線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_103>\n\n  如次要道路評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_orthogonal_cross_104 所示。並於次要道路口佈設讓路線及路口行車導引線。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_無號誌鄉區正交四叉路口不設置行穿線圖例.png\", width: 46.8%, height: 82.11mm, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [無號誌鄉區正交四叉路口不設置行穿線圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_104>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_orthogonal_cross_signage_diagram_explanation>\n",
+      "sourceParagraphs": [
+        "如次要道路有提供行人安全穿越道路之環境時，可於次要道路口佈設行穿線，如 （見相關圖例或模組） 所示。",
+        "如次要道路評估行人通行需求較低，則路口採不設置行穿線，如 （見相關圖例或模組） 所示。並於次要道路口佈設讓路線及路口行車導引線。"
+      ]
+    },
+    {
+      "id": "g302-junction-warning",
+      "scenario": "g3-02",
+      "reg": "30",
+      "name": "岔路標誌",
+      "category": "標誌",
+      "mapAsset": "g302-overall",
+      "asset": "g302-overall",
+      "headline": "岔路標誌",
+      "locate": "對照圖例，檢視岔路標誌的配置。",
+      "box": [
+        380.73,
+        44.16,
+        62.16,
+        66.24
+      ],
+      "crop": [
+        318.57,
+        0,
+        186.48,
+        317.02
+      ],
+      "noDefaultHighlight": false,
+      "metric": "檢核",
+      "unit": "",
+      "metricLabel": "岔路標誌",
+      "points": [
+        "主要道路未設慢行或當心行人標誌時，可設岔路標誌預告。",
+        "建議距路口約 30 m，並依速限與視距增加；必要時於路口附近再次提示。"
+      ],
+      "takeaway": "主要道路未設慢行或當心行人標誌時，可設岔路標誌預告。",
+      "sourceRaw": "+ #guide-item[岔路標誌「警11」，《設置規則》第30條][\n\n  當主要道路上無設置慢行標誌「警49」或當心行人標誌「警34」時，建議可設置岔路標誌，提醒駕駛人注意。\n\n  設置位置參考道路交通安全規則第102條，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，因此，建議本標誌宜設置於距離路口前約30~m處，並依行車速限及最短安全視距增加，並可加設「前方30~m」附牌，以預告駕駛人前方岔路之距離，減速慢行；另外，亦可於鄰近路口處再增設一面岔路標誌，提醒駕駛人注意路口其他車輛與行人動向，設置圖例如 @fig:unsignalized_rural_orthogonal_cross_105 所示。\n\n  #figure(\n    [\n      #scenario-explanation-image(image(\"../../media/04-general-scenarios/G3-02/G3-02_岔路標誌設置圖例.png\", width: 62.7%, height: 96.03mm, fit: \"contain\"), kind: \"general\")\n    ],\n    kind: image,\n    caption: [岔路標誌設置圖例],\n  ) <fig:unsignalized_rural_orthogonal_cross_105>\n\n  ]\n",
+      "sourceParagraphs": [
+        "當主要道路上無設置慢行標誌「警49」或當心行人標誌「警34」時，建議可設置岔路標誌，提醒駕駛人注意。",
+        "設置位置參考道路交通安全規則第102條，「鴐駛人於交叉路口欲轉向時，應於交岔路口30 m前顯示方向燈，並變換車道」，因此，建議本標誌宜設置於距離路口前約30 m處，並依行車速限及最短安全視距增加，並可加設「前方30 m」附牌，以預告駕駛人前方岔路之距離，減速慢行；另外，亦可於鄰近路口處再增設一面岔路標誌，提醒駕駛人注意路口其他車輛與行人動向，設置圖例如 （見相關圖例或模組） 所示。"
+      ]
+    }
+  ]
+}

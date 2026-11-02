@@ -1,6 +1,12 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const writeVerifiedFile=require('./write-verified-file.cjs');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'_site');
+const quiet=process.argv.includes('--quiet');
+if(quiet)console.log('Refreshing source images...');
+// Material files can be replaced between preview sessions. Refresh only image
+// bytes and dimensions before copying the current presentation into _site.
+require('./refresh-general-scenario-images.cjs').refresh({root});
 const files=[
   ['index.html','index.html'],
   ['index.html','一般道路情境-圖面放大版.html'],
@@ -34,8 +40,10 @@ for(const [source,name]of files){
   if(!fs.statSync(input).isFile())throw new Error('Missing presentation: '+source);
   fs.mkdirSync(path.dirname(destination),{recursive:true});
   if(fs.existsSync(destination)&&(!fs.lstatSync(destination).isFile()||fs.lstatSync(destination).isSymbolicLink()))throw new Error('Release target must be a regular file: '+name);
-  const bytes=fs.readFileSync(input);fs.writeFileSync(destination,bytes);
-  if(!fs.readFileSync(destination).equals(bytes))throw new Error('Copy verification failed: '+name);
+  const bytes=fs.readFileSync(input);
+  writeVerifiedFile(destination,bytes,name);
   report.push({file:name,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex')});
+  if(quiet&&report.length%100===0)console.log('Updated '+report.length+' / '+files.length+' preview files...');
 }
-console.log(JSON.stringify({output:'_site/',entry:'index.html',files:report},null,2));
+if(quiet)console.log('Preview files updated: '+report.length+'.');
+else console.log(JSON.stringify({output:'_site/',entry:'index.html',files:report},null,2));

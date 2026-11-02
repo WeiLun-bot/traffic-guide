@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText}){
   const ids=['M1-01','M1-02','M1-03','M2-02'];
   const shot=async name=>{const data=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(data.data,'base64'));};
-  await view('modules-index');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card small").length'),15);
+  await view('modules-index');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card").length'),15);assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card small").length'),0);
   const library=await evaluate('window.PresentationModules.contents.filter(content=>'+JSON.stringify(ids)+'.includes(content.id))');assert.equal(library.length,4);
   for(const content of library){
     for(const flow of content.submoduleFlows){
