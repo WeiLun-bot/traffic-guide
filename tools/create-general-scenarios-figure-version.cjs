@@ -19,10 +19,10 @@ const backupPath=unique(backupFolder,'index-改版前備份-'+timestamp,'.html')
 fs.writeFileSync(backupPath,bytes,{flag:'wx'});
 if(hash(fs.readFileSync(backupPath))!==sourceHash)throw new Error('Backup verification failed');
 let html=bytes.toString('utf8');
-const dataMatch=html.match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/);
+const dataMatch=html.match(/<script id="presentation-data" type="application\/json"[^>]*>([\s\S]*?)<\/script>/);
 const stateMatch=html.match(/<script id="editor-saved-data" type="application\/json"([^>]*)>([\s\S]*?)<\/script>/);
 if(!dataMatch||!stateMatch)throw new Error('Presentation data or editor state is missing');
-const data=JSON.parse(dataMatch[1]);
+const data=require('./presentation-source.cjs').dataFromHtml(html,{root});
 const configSource=stateMatch[1].match(/data-source="([^"]+)"/)?.[1];
 const configPath=configSource?path.resolve(root,configSource):null;
 if(configPath&&!configPath.startsWith(root+path.sep))throw new Error('Layout configuration must stay inside the project');

@@ -3,13 +3,13 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const digest=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function refresh({root=path.resolve(__dirname,'..')}={}){
   const index=path.join(root,'index.html'),original=fs.readFileSync(index,'utf8');
-  const match=original.match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/);
+  const match=original.match(/<script id="presentation-data" type="application\/json"([^>]*)>([\s\S]*?)<\/script>/);
   if(!match)throw new Error('Presentation data is missing');
-  const data=JSON.parse(match[1]),updates=[],cache=new Map();
+  const separated=match[1].includes('data-source='),data=separated?require('./presentation-source.cjs').readData(root):JSON.parse(match[2]),updates=[],cache=new Map();
   const inspect=relative=>{
     if(cache.has(relative))return cache.get(relative);
     const file=path.resolve(root,relative),within=path.relative(root,file);
-    if(!relative.startsWith('materials/04-一般道路情境/')||relative.includes('\\')||within==='..'||within.startsWith('..'+path.sep)||path.isAbsolute(within))throw new Error('Invalid general-scenario image path: '+relative);
+    if(!/^materials\/(?:04-一般道路情境|05-複雜道路情境)\//.test(relative)||relative.includes('\\')||within==='..'||within.startsWith('..'+path.sep)||path.isAbsolute(within))throw new Error('Invalid scenario image path: '+relative);
     const bytes=fs.readFileSync(file),svg=bytes.toString('utf8');
     const [width,height]=require('./svg-native-size.cjs')(svg,relative);
     if(/<\s*(?:script|foreignObject)\b/i.test(svg))throw new Error('Unexpected interactive SVG content: '+relative);
@@ -17,10 +17,13 @@ function refresh({root=path.resolve(__dirname,'..')}={}){
     const image={bytes,width,height,sha256:digest(bytes)};cache.set(relative,image);return image;
   };
   for(const [key,asset]of Object.entries(data.embeddedAssets)){
-    if(!asset.url?.startsWith('data:image/svg+xml;'))continue;
+    const embedded=asset.url?.startsWith('data:image/svg+xml;');
+    if(!embedded&&!asset.url?.endsWith('.svg'))continue;
     const scenario=data.assetMeta[key]?.scenario,name=data.assets[key];
     if(!/^g[1-4]-\d{2}$/.test(scenario)||typeof name!=='string'||path.basename(name)!==name||!name.endsWith('.svg'))throw new Error('Missing source identity for embedded SVG: '+key);
-    const image=inspect('materials/04-一般道路情境/'+scenario.toUpperCase()+'/'+name),url='data:image/svg+xml;base64,'+image.bytes.toString('base64');
+    const relative='materials/04-一般道路情境/'+scenario.toUpperCase()+'/'+name;
+    if(!embedded&&decodeURIComponent(asset.url)!==relative)throw new Error('Source identity differs from external SVG: '+key);
+    const image=inspect(relative),url=embedded?'data:image/svg+xml;base64,'+image.bytes.toString('base64'):encodeURI(relative);
     if(asset.url!==url||asset.width!==image.width||asset.height!==image.height){Object.assign(asset,{url,width:image.width,height:image.height});updates.push(key);}
   }
   for(const scenario of data.scenarios){const image=data.embeddedAssets[scenario.overall];if(image){scenario.width=image.width;scenario.height=image.height;}}
@@ -44,7 +47,7 @@ function refresh({root=path.resolve(__dirname,'..')}={}){
   // Validate every source before writing; retain all IDs, explanation text,
   // scripts, styles, aliases and saved layout settings.
   const replacement=JSON.stringify(data).replace(/</g,'\\u003c');
-  if(updates.length){const offset=match.index+match[0].indexOf(match[1]);fs.writeFileSync(index,original.slice(0,offset)+replacement+original.slice(offset+match[1].length),'utf8');}
+  if(updates.length){if(separated)require('./presentation-source.cjs').writeData(root,data);else{const offset=match.index+match[0].indexOf(match[2]);fs.writeFileSync(index,original.slice(0,offset)+replacement+original.slice(offset+match[2].length),'utf8');}}
   if(strategies.length)fs.writeFileSync(manifestFile,JSON.stringify(manifest,null,2)+'\n','utf8');
   for(const [file,text]of detailWrites)fs.writeFileSync(file,text,'utf8');
   return {embeddedImages:updates.length,strategyImages:strategies.length,detailFiles:detailWrites.length,embeddedKeys:updates,strategyKeys:strategies};

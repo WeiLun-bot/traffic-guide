@@ -167,7 +167,11 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 
 啟動後會立即顯示提示，依序列出三個階段：啟動工具、更新圖片與預覽檔、檢查伺服器。已有同專案的預覽執行時，會更新檔案並顯示原網址，不會重複啟動；回到瀏覽器按 Ctrl+Shift+R 即可。完成或失敗時視窗會保留訊息，按任意鍵關閉。若連接埠由其他程式使用，會顯示明確錯誤，不會停止其他程式。啟動檔會優先使用 64 位元 PowerShell，亦可從 32 位元終端啟動。
 
-替換 `materials/04-一般道路情境` 裡已使用的 SVG 時，保留原資料夾與檔名。先在預覽視窗按 Ctrl+C，再重新雙擊 `start-editor.cmd`，最後重新整理瀏覽器。啟動時會同步 HTML 內嵌圖、整體佈設圖的尺寸與來源紀錄，以及 `_site` 的圖片副本，保留原圖片 ID、說明、版面與初始畫面設定。執行中的預覽不會自動監看素材變動；新增或更改檔名仍需更新圖片對應。只需同步檔案而不重啟伺服器時，也可在專案根目錄執行 `node tools/prepare-github-pages.cjs` 後重新整理。
+替換 `materials/04-一般道路情境` 裡已使用的 SVG 時，保留原資料夾與檔名。先在預覽視窗按 Ctrl+C，再重新雙擊 `start-editor.cmd`，最後重新整理瀏覽器。啟動時會同步圖面尺寸、來源紀錄及 `_site` 的圖片副本，保留原圖片 ID、說明、版面與初始畫面設定。圖片以原檔路徑引用，不再重新內嵌回 HTML。執行中的預覽不會自動監看素材變動；新增或更改檔名仍需更新圖片對應。只需同步檔案而不重啟伺服器時，也可在專案根目錄執行 `node tools/prepare-github-pages.cjs` 後重新整理。
+
+四場簡報的共用入口仍為 `index.html`。大型程式與樣式已移至 `assets/general/`，依編輯器、圖片操作、現況對照、情境導覽及簡報主程式分檔；載入與樣式順序保留。28 張原本內嵌的圖片引用 `materials/` 既有原檔，素材位元組、頁面與圖片 ID 均保留。HTML 只保留頁面外殼與小段啟動復原程式，內容已分檔並在進入案例時載入；共用版面設定仍使用原 JSON。資料位置與共用元件請見 [四場簡報架構](presentation-architecture.md)。
+
+`tools/presentation-release-files.cjs` 會把入口依賴的程式、樣式與圖片加入發布清單。發布或移交時，須提供產生的完整 `_site` 資料夾。`tools/externalize-presentation.cjs` 可在舊匯入流程重新產生內嵌版本後執行，並核對拆出後能重建原始內容；一般修改直接編輯 `assets/general/` 與素材即可。`tools/presentation-source.cjs` 供來源比對工具重建舊格式，瀏覽器使用外部檔案。
 
 也可以在專案根目錄的 PowerShell 執行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\preview-editor.ps1`。啟動腳本採用 ASCII，避免 Windows PowerShell 5.1（含 x86）誤讀無 BOM 的 UTF-8 中文字串。本機伺服器的 HTML／資源來自 `_site`，但 `layout/presentation-layout.json` 每次都讀取專案根目錄的正式設定，不使用 `_site/layout` 的舊副本。因此儲存正式 JSON 後，重新整理就能讀回最新設定，不需要重建預覽或依賴瀏覽器保留的檔案授權。JSON 寫入仍透過瀏覽器授權，伺服器只接受讀取。
 

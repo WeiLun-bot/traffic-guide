@@ -179,6 +179,16 @@
   const validBox=(box,asset)=>Array.isArray(box)&&box.length===4&&box.every(Number.isFinite)&&box[0]>=0&&box[1]>=0&&box[2]>0&&box[3]>0&&box[0]+box[2]<=asset.width+.01&&box[1]+box[3]<=asset.height+.01;
   async function load(){
     contents.clear();pageOwners.clear();moduleErrors.clear();loadError='';formation=null;formationError='';
+    if(typeof window==='object'&&window.PresentationRepository){
+      try{
+      const repository=window.PresentationRepository;await repository.ready;
+      catalog=validateCatalog(repository.registry.modules.catalog);formation=validateFormation(repository.registry.modules.formation,catalog);
+      const hydrate=content=>{contents.set(content.id,content);for(const page of content.pages)pageOwners.set(page.id,content);moduleErrors.delete(content.id);};
+      for(const content of repository.registry.modules.contents)hydrate(repository.get('module:'+content.id)||JSON.parse(JSON.stringify(content)));
+      repository.subscribe((resource,value)=>{if(resource.type==='module')hydrate(validateModule(value,catalog));if(resource.type==='formation')formation=validateFormation(value,catalog);});
+      return;
+      }catch(error){loadError=error.message;return;}
+    }
     const read=async file=>{const response=await fetch(new URL(file,document.baseURI),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.json();};
     try{catalog=validateCatalog(await read('data/modules/catalog.json'));await Promise.all(catalog.modules.filter(entry=>entry.ready).map(async entry=>{
       try{const content=validateModule(await read('data/modules/'+entry.id+'.json'),catalog);assert(content.id===entry.id,'模組內容歸屬不符');

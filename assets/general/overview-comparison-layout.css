@@ -1,0 +1,17 @@
+
+.conditions-current-slide .conditions-layout{grid-template-columns:minmax(0,11fr) minmax(0,9fr);gap:32px}
+.conditions-current-figure{min-width:0;min-height:0}
+.conditions-current-canvas{min-height:300px}
+.conditions-current-canvas>.conditions-current-diagram{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:0}
+.conditions-current-slide .condition-issue{display:grid;grid-template-columns:minmax(0,9fr) minmax(0,11fr);column-gap:18px;row-gap:8px;align-items:start}
+.conditions-current-slide .condition-card-heading{grid-column:1/-1;margin:0}
+.conditions-current-slide .condition-photo{grid-column:1;grid-row:2;margin:0;height:auto;aspect-ratio:4/3;min-height:0;max-height:none}
+.conditions-current-slide .condition-points{grid-column:2;grid-row:2;min-width:0;overflow-wrap:anywhere}
+.overview-comparison-slide .conditions-comparison{min-width:0;min-height:0}
+.map-slide .map-heading h1{font-size:clamp(21px,1.7vw,26px)}
+@media(max-width:620px){.map-slide .map-heading h1{font-size:20px}}
+@media(min-width:901px) and (max-width:1100px){.conditions-current-slide{padding-left:4.3vw;padding-right:4.3vw}}
+@media(max-width:900px){.conditions-current-slide{padding-left:25px;padding-right:25px}.conditions-current-slide .conditions-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:23px}.conditions-current-slide .condition-issue{column-gap:12px}}
+@media(max-width:700px){.conditions-current-slide .conditions-layout{display:flex;flex-direction:column;gap:25px}}
+@media(max-width:620px){.conditions-current-slide{padding-left:21px;padding-right:21px}}
+@media(max-width:620px){.conditions-current-slide .conditions-layout{display:flex;flex-direction:column}.conditions-current-slide .conditions-current-figure{height:430px;min-height:430px;flex:none}.conditions-current-canvas{min-height:280px}.overview-comparison-slide .map-layout{display:flex;flex-direction:column;gap:20px}.overview-comparison-slide .conditions-comparison{min-height:440px;height:440px;flex:none}.overview-comparison-slide .compare-stage{min-height:230px}}

@@ -2,6 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText}){
   const ids=['M1-01','M1-02','M1-03','M2-02'];
+  const sourceAssets=ids.flatMap(id=>Object.values(JSON.parse(fs.readFileSync(path.join(__dirname,'../data/modules',id+'.json'),'utf8')).assets));
   const shot=async name=>{const data=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(data.data,'base64'));};
   await view('modules-index');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card").length'),15);assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card small").length'),0);
   const library=await evaluate('window.PresentationModules.contents.filter(content=>'+JSON.stringify(ids)+'.includes(content.id))');assert.equal(library.length,4);
@@ -31,14 +32,14 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   }
   pass('all four added modules retain three-stage flows, related-article names, diagram tabs, optional extension images and appropriate child navigation');
   const images=await evaluate('(async()=>{const assets=window.PresentationModules.contents.filter(content=>'+JSON.stringify(ids)+'.includes(content.id)).flatMap(content=>Object.values(content.assets));return Promise.all(assets.map(async asset=>{const response=await fetch(asset.file);const image=new Image();image.src=URL.createObjectURL(await response.blob());try{await image.decode();return {file:asset.file,ok:response.ok,mime:response.headers.get("content-type"),width:image.naturalWidth,height:image.naturalHeight};}catch(error){return {file:asset.file,error:error.message};}finally{URL.revokeObjectURL(image.src);}}))})()');
-  assert.equal(images.length,31);assert(images.every(image=>image.ok&&image.width>0&&image.height>0),JSON.stringify(images.filter(image=>!image.ok||!image.width)));assert(images.find(image=>image.file.endsWith('.jpeg')).mime.startsWith('image/jpeg'));
+  assert.deepEqual(images.map(image=>image.file).sort(),sourceAssets.map(asset=>asset.file).sort());assert(images.every(image=>image.ok&&image.width>0&&image.height>0),JSON.stringify(images.filter(image=>!image.ok||!image.width)));assert(images.find(image=>image.file.endsWith('.jpeg')).mime.startsWith('image/jpeg'));
   await view('m103-parking-extensions');await click('.module-extension-card[data-module-topic-id="germany"] .module-extension-image-open');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');
   await view('m202-roundabout-extensions');assert.equal(await evaluate('document.querySelectorAll(".module-extension-image").length'),0);
   for(const [old,id]of [['module-M1-01','m101-overview'],['submodule-M1-01-2','m101-additional-issues'],['module-M1-02','m102-route-issues'],['module-M1-03','m103-parking-issues'],['module-M2-02','m202-roundabout-issues']]){await navigate(base+'/presentation-demo/#'+old);assert.equal(await evaluate('window.generalRoadPresentation.page.id'),id);}
   await view('m103-parking-issues');await click('[data-module-reference="118"]');assert.match(await evaluate('document.querySelector(".module-info-dialog h2").textContent'),/停車處標誌/);assert(!await evaluate('document.querySelector(".module-info-dialog").textContent.includes("M2-01 資料來源")'));await click('.module-info-dialog [data-close]');
   await click('[data-module-scenario="overview"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'overview');await click('[data-back-module]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m103-parking-issues');
   await click('[data-module-scenario="scenario-c4-05"]');assert.equal(await evaluate('window.generalRoadPresentation.page.scenarioCode'),'C4-05');await click('[data-back-module]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m103-parking-issues');
-  pass('all thirty-one supplied figures and issue photos decode, image enlargement works, legacy module links resolve and scenario links return to their owning module');
+  pass('all supplied figures and issue photos match the source inventory and decode; image enlargement, legacy links and scenario return links work');
   await view('m102-route-diagram');await click('[data-module-topic="single"]');await click('.edit-toggle');await click('[data-content-action="add-point"]');
   const added=await evaluate('window.PresentationContent.current.model.points.at(-1)'),selector='.module-explain-points>li[data-content-item-id="'+added.id+'"]';
   await editText(selector+' p','路徑指示測試補充。');assert.equal(added.topicId,'single');await click('.edit-toggle');

@@ -12,15 +12,17 @@
     const groups=new Map(),ids=new Set();
     for(const group of value.groups){check(/^[GC][1-4]$/.test(group.id)&&!groups.has(group.id)&&['general','complex'].includes(group.deck)&&group.deck===(group.id[0]==='G'?'general':'complex')&&/^[\w-]+$/.test(group.chapter)&&/^[\w-]+$/.test(group.entry)&&typeof group.name==='string'&&group.name.trim(),'情境主題無效');groups.set(group.id,group);}
     for(const item of value.scenarios){check(/^[GC][1-4]-\d{2}$/.test(item.id)&&!ids.has(item.id)&&groups.has(item.group)&&item.id.startsWith(item.group+'-')&&typeof item.name==='string'&&item.name.trim()&&typeof item.short==='string'&&item.short.trim()&&Number.isInteger(item.sourcePage)&&item.sourcePage>0,'情境項目無效');ids.add(item.id);}
-    if(value.details)check(Array.isArray(value.details)&&value.details.every(file=>/^data\/scenarios\/G[1-4]-\d{2}\.json$/.test(file))&&new Set(value.details).size===value.details.length,'情境內容清單無效');
+    if(value.details)check(Array.isArray(value.details)&&value.details.every(file=>/^data\/scenarios\/[GC][1-4]-\d{2}\.json$/.test(file))&&new Set(value.details).size===value.details.length,'情境內容清單無效');
+    if(value.baseDetails)check(Array.isArray(value.baseDetails)&&value.baseDetails.every(file=>/^data\/scenarios\/G[1-4]-\d{2}\.json$/.test(file)),'既有情境內容路徑無效');
     return value;
   }
   function validateDetail(doc,directory=catalog){
     const scene=doc?.scenario,entry=directory?.scenarios.find(item=>item.id===scene?.code);
-    check(doc?.schemaVersion===1&&entry&&scene.id===scene.code.toLowerCase()&&scene.chapter===entry.group.toLowerCase()&&scene.name===entry.name&&doc.assets&&Array.isArray(doc.articles)&&doc.articles.length,'情境內容格式無效');
+    check(doc?.schemaVersion===1&&entry&&scene.id===scene.code.toLowerCase()&&scene.chapter===directory.groups.find(group=>group.id===entry.group)?.chapter&&scene.name===entry.name&&doc.assets&&Array.isArray(doc.articles)&&doc.articles.length,'情境內容格式無效');
     const assetIds=new Set(Object.keys(doc.assets));
     for(const [id,asset]of Object.entries(doc.assets)){
-      check(/^[\w-]+$/.test(id)&&asset.scenario===scene.code&&typeof asset.file==='string'&&!asset.file.includes('\\')&&!asset.file.split('/').includes('..')&&(asset.file.startsWith('materials/04-一般道路情境/'+scene.code+'/')||asset.file.startsWith('materials/04-一般道路情境/current-conditions/'+scene.code+'/'))&&/\.(svg|png|jpe?g)$/.test(asset.file)&&asset.width>0&&asset.height>0&&Number.isFinite(asset.width)&&Number.isFinite(asset.height)&&[0,90,180,270].includes(asset.rotation||0)&&/^[a-f0-9]{64}$/.test(asset.sha256),'情境圖片格式無效');
+      const folder=scene.code.startsWith('C')?'05-複雜道路情境':'04-一般道路情境';
+      check(/^[\w-]+$/.test(id)&&asset.scenario===scene.code&&typeof asset.file==='string'&&!asset.file.includes('\\')&&!asset.file.split('/').includes('..')&&(asset.file.startsWith('materials/'+folder+'/'+scene.code+'/')||asset.file.startsWith('materials/'+folder+'/current-conditions/'+scene.code+'/'))&&/\.(svg|png|jpe?g)$/.test(asset.file)&&asset.width>0&&asset.height>0&&Number.isFinite(asset.width)&&Number.isFinite(asset.height)&&[0,90,180,270].includes(asset.rotation||0)&&/^[a-f0-9]{64}$/.test(asset.sha256),'情境圖片格式無效');
     }
     const pageIds=[scene.contextId,scene.overviewId,scene.reviewId,scene.currentConditions?.pageId,...(scene.comparisonId?[scene.comparisonId]:[])],articleIds=new Set();
     check(pageIds.every(id=>/^[\w-]+$/.test(id))&&new Set(pageIds).size===pageIds.length&&assetIds.has(scene.overall),'情境頁面或全圖無效');
@@ -37,18 +39,25 @@
     return doc;
   }
   async function load(){try{
+    if(typeof window==='object'&&window.PresentationRepository){
+      const repository=window.PresentationRepository;await repository.ready;catalog=validate(repository.registry.scenarios.catalog);
+      details=JSON.parse(JSON.stringify(repository.registry.scenarios.details));
+      repository.subscribe((resource,value)=>{if(resource.type!=='scenario')return;const index=details.findIndex(doc=>doc.scenario.code===resource.id);if(index>=0)details[index]=validateDetail(value,catalog);});
+      return;
+    }
     const read=async file=>{const response=await fetch(new URL(file,document.baseURI),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status+' / '+file);return response.json();};
     catalog=validate(await read('data/scenarios/catalog.json'));details=await Promise.all((catalog.details||[]).map(async file=>validateDetail(await read(file),catalog)));
     check(new Set(details.map(doc=>doc.scenario.code)).size===details.length,'情境內容重複');
   }catch(error){details=[];loadError=error.message;}}
   function prepare(data){
     for(const doc of details){
-      if(data.scenarios.some(scene=>scene.id===doc.scenario.id))continue;
-      check(!doc.articles.some(article=>data.articles.some(existing=>existing.id===article.id))&&!Object.keys(doc.assets).some(key=>data.embeddedAssets[key]),'情境內容識別重複');
-      data.scenarios.push(JSON.parse(JSON.stringify(doc.scenario)));data.articles.push(...JSON.parse(JSON.stringify(doc.articles)));
+      const existing=data.scenarios.find(scene=>scene.id===doc.scenario.id);
+      if(!existing)check(!doc.articles.some(article=>data.articles.some(existing=>existing.id===article.id))&&!Object.keys(doc.assets).some(key=>data.embeddedAssets[key]),'情境內容識別重複');
+      if(existing){Object.assign(existing,JSON.parse(JSON.stringify(doc.scenario)));for(const article of doc.articles){const current=data.articles.find(item=>item.id===article.id);if(current)Object.assign(current,JSON.parse(JSON.stringify(article)));}}
+      else{data.scenarios.push(JSON.parse(JSON.stringify(doc.scenario)));data.articles.push(...JSON.parse(JSON.stringify(doc.articles)));}
       for(const [key,asset]of Object.entries(doc.assets)){data.assets[key]=asset.file.split('/').at(-1);data.embeddedAssets[key]={url:encodeURI(asset.file),width:asset.width,height:asset.height};data.assetMeta[key]={scenario:doc.scenario.id,label:asset.label,rotation:asset.rotation||0};}
     }
-    data.scenarios.sort((a,b)=>a.code.localeCompare(b.code));
+    data.scenarios.sort((a,b)=>Number(a.code.startsWith('C'))-Number(b.code.startsWith('C'))||a.code.localeCompare(b.code));
   }
   function sceneFor(page,data){const scene=data.scenarios.find(scene=>scene.id===page.scenario)||data.scenarios[0],key=page.article?.mapAsset,image=data.embeddedAssets[key];return image?{...scene,overall:key,width:image.width,height:image.height,rotation:data.assetMeta[key]?.rotation||0}:scene;}
   function bounds([x,y,w,h],scene,inverse=false){const r=scene.rotation,W=scene.width,H=scene.height;if(r===180)return[W-x-w,H-y-h,w,h];if(r===90)return inverse?[y,H-x-w,h,w]:[H-y-h,x,h,w];if(r===270)return inverse?[W-y-h,x,h,w]:[y,W-x-w,h,w];return[x,y,w,h];}
@@ -59,7 +68,7 @@
   function extendPages(pages,data){
     if(!catalog)return;
     for(const group of catalog.groups){
-      const page=pages.find(page=>page.id===group.entry);if(!page||group.deck!=='general'||!data.scenarios.some(scene=>scene.chapter===group.chapter))continue;
+      const page=pages.find(page=>page.id===group.entry);if(!page||!data.scenarios.some(scene=>scene.chapter===group.chapter))continue;
       page.kind='chapter-scenarios';
       const entryIndex=pages.indexOf(page),firstCase=pages.findIndex(item=>item.scenario&&data.scenarios.find(scene=>scene.id===item.scenario)?.chapter===group.chapter);
       if(firstCase>=0&&entryIndex>firstCase){pages.splice(entryIndex,1);pages.splice(firstCase,0,page);}
@@ -77,7 +86,7 @@
   function returnLink(deck){return `<button type="button" class="catalog-back" data-page="${overviewId(deck)}">全部情境總覽 ↖</button>`;}
   function card(item,data){
     const scene=built(item,data),general=item.id.startsWith('G'),results=typeof window==='object'&&window.PresentationResults,source=general&&results?.outline?.scenarioExamples?.[item.id]?.strategy?.images[0];
-    const preview=general&&scene&&results?.scenarioThumbnail?.(source?results.scenarioPageId(item.id)+'-strategy':scene.overviewId,source||{key:scene.overall,rotation:data.assetMeta[scene.overall]?.rotation||0},data);
+    const preview=scene&&results?.scenarioThumbnail?.(source?results.scenarioPageId(item.id)+'-strategy':scene.overviewId,source||{key:scene.overall,rotation:data.assetMeta[scene.overall]?.rotation||0},data);
     return `<button type="button" class="directory-card${preview?' has-thumbnail':''}" data-page="${pageFor(item,data)}" data-catalog-scenario="${item.id}" aria-label="${esc(item.id+' '+item.name+'，'+(scene?'進入情境':'開啟預留頁'))}"><span class="directory-card-code">${item.id}</span><h3>${esc(item.name)}</h3>${preview?`<span class="directory-card-visual">${preview}</span>`:''}<span class="directory-card-bottom">${general&&scene?'':`<small class="${scene?'is-ready':''}">${scene?'已製作':'素材待補'}</small>`}<span>${scene?'進入情境':'開啟預留頁'} ↗</span></span></button>`;
   }
   function render(page,data){
@@ -96,7 +105,7 @@
     const scene=data.scenarios.find(scene=>scene.id===page.scenario),item=catalog.scenarios.find(item=>item.id===(page.scenarioCode||scene?.code));
     if(item){
       slide.querySelector('.scenario-switcher')?.remove();slide.insertAdjacentHTML('afterbegin',switcher(item,data));
-      const group=catalog.groups.find(group=>group.id===item.group),contextLabel=slide.querySelector('.context-header>.eyebrow');if(contextLabel)contextLabel.textContent=group.id+' / '+item.id+' / '+(scene.setting==='市區'?'URBAN':'RURAL')+(group.id==='G3'||group.id==='G4'?' CROSS-INTERSECTION':' T-INTERSECTION');
+      const group=catalog.groups.find(group=>group.id===item.group),contextLabel=slide.querySelector('.context-header>.eyebrow');if(contextLabel)contextLabel.textContent=group.id+' / '+item.id+' / '+(scene.setting==='市區'?'URBAN':'RURAL')+(group.deck==='complex'?' ROAD SCENARIO':group.id==='G3'||group.id==='G4'?' CROSS-INTERSECTION':' T-INTERSECTION');
       if(page.kind==='review'&&group.id!=='G1'){const back=slide.querySelector('.opening-actions [data-page="g1-scenarios"]');if(back){back.dataset.page=group.entry;back.textContent='回到 '+group.id+' 情境總覽 ↗';}}
       if(scene?.facts&&page.kind==='context')slide.querySelectorAll('.road-speed').forEach((node,index)=>{if(scene.facts[index]?.speed==null)node.textContent='路段速限未載明';});
       const article=page.article,host=slide.querySelector('#explanation'),footer=host?.querySelector('.explain-footer');

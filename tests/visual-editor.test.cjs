@@ -9,12 +9,13 @@ const {spawnSync} = require('node:child_process');
 const Core = require('../assets/visual-editor-core.js');
 const {Files} = require('../assets/visual-editor-io.js');
 const {createServer} = require('../tools/serve-github-pages.cjs');
+const {readHtml} = require('../tools/presentation-source.cjs');
 const root = path.resolve(__dirname, '..');
 const original = () => Core.parse(fs.readFileSync(path.join(root, 'layout/presentation-layout.json'), 'utf8'));
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 test('original content and unaffected presentation blocks remain unchanged while source SVGs can be refreshed', () => {
   const baseline = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/presentation-baseline.json'), 'utf8'));
-  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
+  const html = readHtml(path.join(root, 'index.html')).replace(/\r\n/g, '\n');
   const dataText=html.match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/)[1],data=JSON.parse(dataText);
   for(const [key,asset]of Object.entries(data.embeddedAssets))if(asset.url?.startsWith('data:image/svg+xml;')){
     const file=path.join(root,'materials','04-一般道路情境',data.assetMeta[key].scenario.toUpperCase(),data.assets[key]);
@@ -47,7 +48,7 @@ test('original content and unaffected presentation blocks remain unchanged while
 });
 test('comparison relocation preserves article animation and original-image interactions', () => {
   const fixture = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/overview-relocation.json'), 'utf8'));
-  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
+  const html = readHtml(path.join(root, 'index.html')).replace(/\r\n/g, '\n');
   const runtime = html.match(/<script>\n'use strict';([\s\S]*?)<\/script>/)[1];
   for (const [name, expected] of Object.entries(fixture.unaffected)) {
     const start = runtime.indexOf('  function ' + name + '('), end = runtime.indexOf('\n  function ', start + 1);
@@ -59,7 +60,7 @@ test('comparison relocation preserves article animation and original-image inter
   }
 });
 test('all four scenarios separate current issues from the reusable comparison and retain saved alignment keys', () => {
-  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  const html = readHtml(path.join(root, 'index.html'));
   const data = JSON.parse(html.match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
   const state = original().legacyState, calls = [];
   const window = {generalRoadEditor: {state, editing: false, getComparisonTransform(key, side) {calls.push([key, side]);return state.comparisonTransforms[key]?.[side] || {x: 0, y: 0, scaleX: 1, scaleY: 1, angle: 0};}}};
@@ -240,12 +241,12 @@ test('the existing figure-version tool reads external JSON and writes a separate
   const fixture = fs.mkdtempSync(path.join(__dirname, 'artifacts', 'variant-'));
   try {
     for (const directory of ['tools', 'assets', 'layout']) fs.mkdirSync(path.join(fixture, directory));
-    for (const file of ['index.html', 'tools/create-general-scenarios-figure-version.cjs', 'assets/visual-editor-core.js', 'layout/presentation-layout.json']) fs.copyFileSync(path.join(root, file), path.join(fixture, file));
+    for (const file of ['index.html', 'tools/create-general-scenarios-figure-version.cjs','tools/presentation-source.cjs','data/scenarios/presentation.json',...require('../data/scenarios/presentation.json').caseFiles, 'assets/visual-editor-core.js', 'layout/presentation-layout.json']) {fs.mkdirSync(path.dirname(path.join(fixture,file)),{recursive:true});fs.copyFileSync(path.join(root, file), path.join(fixture, file));}
     const result = spawnSync(process.execPath, [path.join(fixture, 'tools/create-general-scenarios-figure-version.cjs')], {encoding: 'utf8', env: {...process.env, ELECTRON_RUN_AS_NODE: '1'}, windowsHide: true});
     assert.equal(result.status, 0, result.stderr);
     const manifest = JSON.parse(result.stdout), variant = fs.readFileSync(path.join(fixture, manifest.output), 'utf8');
     assert.match(variant, /id="editor-saved-data"[^>]+data-source="[^"]+\.layout.json"><\/script>/);
-    assert.equal((variant.match(/<style id="figure-focused-styles">/g) || []).length, 1);
+    assert.equal((variant.match(/<(?:style|link) id="figure-focused-styles"(?:>|\s)/g) || []).length, 1);
     Core.parse(fs.readFileSync(path.join(fixture, manifest.layout), 'utf8'));
     assert.equal(fs.readFileSync(path.join(fixture, 'layout/presentation-layout.json'), 'utf8'), fs.readFileSync(configPathForTest(), 'utf8'));
     assert.equal(hash(fs.readFileSync(path.join(fixture, 'index.html'))), hash(fs.readFileSync(path.join(root, 'index.html'))));

@@ -13,6 +13,7 @@ const strategies=require('../assets/presentation-results.js').validateStrategies
 const Scenarios=require('../assets/presentation-scenarios.js'),scenarios=Scenarios.validate(require('../data/scenarios/catalog.json'));
 const scenarioFiles=(scenarios.details||[]).flatMap(file=>{const doc=Scenarios.validateDetail(require(path.join(root,file)),scenarios);return[file,...Object.values(doc.assets).map(asset=>asset.file)];});
 module.exports=Array.from(new Set([
+  ...require('./presentation-release-files.cjs'),
   'assets/presentation-order.js','assets/presentation-order.css',
   'assets/presentation-image-order.js','assets/presentation-image-order.css',
   'assets/presentation-scenarios.js','assets/presentation-scenarios.css','data/scenarios/catalog.json',

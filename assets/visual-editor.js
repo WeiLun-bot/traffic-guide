@@ -231,7 +231,7 @@
     restoreStyles();
     for (const key of Object.keys(editor.state)) delete editor.state[key];
     Object.assign(editor.state, Core.clone(store.config.legacyState));
-    const fresh = JSON.parse(document.getElementById('presentation-data').textContent);
+    const fresh = window.PresentationRepository?.fresh()||JSON.parse(document.getElementById('presentation-data').textContent);
     for (const key of Object.keys(api.data)) delete api.data[key]; Object.assign(api.data, fresh);
     window.PresentationScenarios?.prepare(api.data); window.generalRoadConditions?.prepare(api.data); window.PresentationModules?.prepare(api.data); window.PresentationResults?.prepare(api.data); editor.prepare(api.data);
     api.pages.splice(0, api.pages.length, ...legacyPages.map(page => ({...page, ...(page.article ? {article: api.data.articles.find(article => article.id === page.article.id)} : {})})));
@@ -333,7 +333,7 @@
   }
   function install(config, saved = true) {
     const validated = Core.validate(config);
-    if(Object.keys(validated.content.overviews).length)Core.validateOverviewReferences(validated,api?.data||JSON.parse(document.getElementById('presentation-data').textContent));
+    if(Object.keys(validated.content.overviews).length)Core.validateOverviewReferences(validated,api?.data||window.PresentationRepository?.fresh()||JSON.parse(document.getElementById('presentation-data').textContent));
     if (window.generalRoadTemplates && !validated.legacyState.pages.every(window.generalRoadTemplates.validPage)) throw new Error('設定包含無效的自訂頁面');
     if (!store) { store = new Core.Store(validated); document.getElementById('editor-saved-data').textContent = JSON.stringify(validated.legacyState); readyResolve(); }
     else { cancelDrag(); store.load(validated); restoreLegacy(); window.VisualInitialViews?.restore(); }
@@ -398,7 +398,7 @@
   updateButtons();
   window.addEventListener('resize', updateButtons);
   (async () => {
-    try { install(await files.restore() || await loadDefault()); }
+    try { await window.presentationDataReady;install(await files.restore() || await loadDefault()); }
     catch (error) { report('設定未載入。請用 localhost 開啟，或匯入 layout/presentation-layout.json。' + error.message, true); ui.querySelector('.vl-toolbar').hidden = false; ui.querySelector('.vl-recovery').hidden = false; window.presentationStartup?.recover(()=>run('import')); }
   })();
 })();

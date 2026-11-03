@@ -25,7 +25,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
     await view(doc.submoduleFlows[0].stages[1].pageId);await shot('completed-'+doc.id);
   }
   pass('ten completed modules show all three-stage explanations, exact related-article names, independent diagram topics and extension cards');
-  const assets=docs.flatMap(doc=>Object.values(doc.assets));assert.equal(assets.length,79);
+  const assets=docs.flatMap(doc=>Object.values(doc.assets)),sourceAssets=docs.flatMap(doc=>Object.values(JSON.parse(fs.readFileSync(path.join(__dirname,'../data/modules',doc.id+'.json'),'utf8')).assets));assert.deepEqual(assets.map(asset=>asset.file).sort(),sourceAssets.map(asset=>asset.file).sort());
   for(let offset=0;offset<assets.length;offset+=6){
     const results=await evaluate('(async()=>{const results=[];for(const asset of '+JSON.stringify(assets.slice(offset,offset+6))+'){const response=await fetch(asset.file),image=new Image(),url=URL.createObjectURL(await response.blob());image.src=url;try{await image.decode();results.push({file:asset.file,ok:response.ok,width:image.naturalWidth,height:image.naturalHeight});}catch(error){results.push({file:asset.file,error:error.message});}finally{image.src="";URL.revokeObjectURL(url);}}return results})()');
     assert(results.every(image=>image.ok&&image.width>0&&image.height>0),JSON.stringify(results));
@@ -42,7 +42,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   }
   await view('m302-crossing-reference');assert.equal(await evaluate('document.querySelectorAll(".module-map-card,.module-applications").length'),0);await click('[data-module-route="m302-lane-diagram/topic-crossing"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m302-lane-diagram');assert.equal(await evaluate('window.PresentationModules.displayContext().topic.id'),'crossing');
   await view('m303-lane-reference');await click('.module-referral-links button');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m101-lanes-extensions');
-  pass('all seventy-nine active Typst figures decode; rotations match source orientation and both reference-only sections open the specified module');
+  pass('all active figures and photos match the source inventory and decode; rotations and reference-only module links are preserved');
   await view('m203-signals-diagram');await click('[data-module-topic="visibility"]');await click('.edit-toggle');await click('[data-content-action="add-point"]');
   const note=await evaluate('window.PresentationContent.current.model.points.at(-1)'),selector='.module-explain-points>li[data-content-item-id="'+note.id+'"]';await editText(selector+' p','號誌可視模板的補充說明。');await click('.edit-toggle');
   fs.writeFileSync(previewConfigPath,await evaluate('window.visualLayoutEditor.store.serialize()'));await navigate(base+'/presentation-demo/#m203-signals-diagram/topic-visibility');assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector+' p')+').textContent'),'號誌可視模板的補充說明。');

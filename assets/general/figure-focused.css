@@ -1,0 +1,11 @@
+/* Standalone copy: keep article text and give the drawing more space. */
+@media(min-width:621px){
+  body[data-presentation-variant="figure-focused"] .map-slide:has(.metric-row) .map-layout,
+  body[data-presentation-variant="figure-focused"] .map-slide:has(.locate-number) .map-layout{grid-template-columns:minmax(0,72fr) minmax(0,28fr);gap:18px}
+}
+body[data-presentation-variant="figure-focused"] .map-slide .metric-row{background:transparent;border:0;border-radius:0;box-shadow:none;padding:2px 0 12px;margin-bottom:15px;gap:12px}
+body[data-presentation-variant="figure-focused"] .map-slide .metric-label{min-width:0;max-width:150px;color:var(--muted)}
+body[data-presentation-variant="figure-focused"] .map-slide .explain-topline{flex-wrap:wrap;align-items:flex-start;gap:8px}
+body[data-presentation-variant="figure-focused"] .map-slide .explain-index{margin-left:auto;line-height:1.6}
+body[data-presentation-variant="figure-focused"] .map-slide .explanation{padding-left:2px}
+@media(max-width:620px){body[data-presentation-variant="figure-focused"] .map-slide .metric-row{padding:0 0 11px;margin-bottom:12px}}

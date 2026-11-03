@@ -3,6 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const vm=require('node:vm');
 const assert=require('node:assert/strict');
+const {inlineHtml,imageBytes,dataFromHtml}=require('../tools/presentation-source.cjs');
 const root=path.resolve(__dirname,'..');
 const site=path.join(root,'_site');
 const files=new Map([
@@ -57,7 +58,7 @@ function parseScripts(html,label,folder=site){
   const json=new Map();
   for(const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)){
     const attrs=attributes(match[1]);
-    if(attrs.type==='application/json')json.set(attrs.id||String(json.size),attrs['data-source']?JSON.parse(fs.readFileSync(path.join(folder,attrs['data-source']),'utf8')).legacyState:JSON.parse(match[2]));
+    if(attrs.type==='application/json')json.set(attrs.id||String(json.size),attrs.id==='presentation-data'?dataFromHtml(html,{root:folder}):attrs['data-source']?JSON.parse(fs.readFileSync(path.join(folder,attrs['data-source']),'utf8')).legacyState:JSON.parse(match[2]));
     else {new vm.Script(match[2],{filename:label+':'+(attrs.id||scripts)});scripts++;}
   }
   assert(!/\/\*\s*(?:STYLES|DATA|SCRIPT|[A-Z_]+_(?:SCRIPT|STYLES))\s*\*\//.test(html),label+' contains an unresolved build placeholder');
@@ -72,7 +73,7 @@ for(const [name,source]of files){
   assert(bytes.equals(fs.readFileSync(path.join(root,source))),'Release changed source bytes: '+name);
   if(name.endsWith('.js')){new vm.Script(bytes.toString('utf8'),{filename:name});scripts++;}
   if(name==='layout/presentation-layout.json')require('../assets/visual-editor-core.js').parse(bytes.toString('utf8'));
-  if(name.endsWith('.svg'))validateResources(bytes.toString('utf8'),name);
+  if(name.endsWith('.svg')||name.endsWith('.css'))validateResources(bytes.toString('utf8'),name);
   if(!name.endsWith('.html'))continue;
   const html=bytes.toString('utf8');validateResources(html,name);
   const json=parseScripts(html,name);
@@ -99,9 +100,11 @@ function imageUrl(key,visited=new Set()){
 }
 for(const key of Object.keys(data.embeddedAssets)){
   const url=imageUrl(key);
-  assert(typeof url==='string'&&/^data:image\/(?:svg\+xml|png|jpeg|webp|gif);base64,/i.test(url),'Image is not embedded: '+key);
-  const bytes=Buffer.from(url.slice(url.indexOf(',')+1),'base64');assert(bytes.length>0,'Empty embedded image: '+key);
-  if(url.startsWith('data:image/svg+xml;')){validateResources(bytes.toString('utf8'),'SVG '+key);svgImages++;}
+  assert(typeof url==='string'&&!url.startsWith('data:'),'Image must use an external project file: '+key);
+  resource(url,'Image '+key);
+  const bytes=imageBytes(site,url);assert(bytes.length>0,'Empty external image: '+key);
+  assert(bytes.equals(imageBytes(root,url)),'Image bytes changed in the release: '+key);
+  if(url.endsWith('.svg')){validateResources(bytes.toString('utf8'),'SVG '+key);svgImages++;}
 }
 const originalImages=[...new Set(Object.values(data.assetMeta).map(meta=>meta.sourceFile).filter(Boolean))].sort();
 assert.deepEqual(originalImages,['image1.png','image13.png','image14.png','image15.png','image16.png','image2.jpeg','image3.jpeg','image8.png','image9.png'],'Wrong PPTX images were included');
@@ -112,9 +115,10 @@ const sourceIndex=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const sourceJson=parseScripts(sourceIndex,'source index',root);
 assert.deepEqual(indexJson.get('editor-saved-data'),sourceJson.get('editor-saved-data'),'Saved editor settings changed during publishing');
 assert(indexJson.get('editor-saved-data'),'Editor saved data is missing');
-assert(/<style\b[^>]*>[\s\S]+?<\/style>/.test(indexHtml),'Embedded presentation CSS is missing');
+assert(indexHtml.includes('href="assets/general/presentation.css"'),'External presentation CSS is missing');
 assert(indexHtml.includes('id="general-editor"')&&indexHtml.includes('id="general-current-conditions"'),'Embedded editor or comparison script is missing');
-assert(/@keyframes\s+appear\b/.test(indexHtml)&&indexHtml.includes('requestAnimationFrame')&&/\btransition\s*:/.test(indexHtml),'Existing presentation animation is missing');
+const resolvedIndex=inlineHtml(indexHtml,site,{inlineImages:false});
+assert(/@keyframes\s+appear\b/.test(resolvedIndex)&&resolvedIndex.includes('requestAnimationFrame')&&/\btransition\s*:/.test(resolvedIndex),'Existing presentation animation is missing');
 // Local artifact checks can run without a deployment workflow in the checkout.
 const artifactsOnly=process.argv.includes('--artifacts-only');
 if(!artifactsOnly) {
@@ -128,4 +132,4 @@ if(!artifactsOnly) {
   assert(/node\s+tests\/verify-github-pages\.cjs/.test(workflow),'Workflow skips release checks');
   assert(/uses:\s*actions\/deploy-pages@/.test(workflow)&&/pages:\s*write/.test(workflow)&&/id-token:\s*write/.test(workflow),'Pages deployment or permissions missing');
 }
-console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and external JSON settings; 5 chapters, 4 scenarios, 26 explanations; 28 embedded images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));
+console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and external JSON settings; 5 chapters, 4 scenarios, 26 explanations; 28 external images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));

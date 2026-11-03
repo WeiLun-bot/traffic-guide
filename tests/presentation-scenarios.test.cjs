@@ -7,7 +7,7 @@ test('PDF directories have eighteen general and eighteen complex scenarios in th
   for(const mutate of [value=>value.scenarios.push({...value.scenarios[0]}),value=>value.scenarios[0].group='C1',value=>value.groups[0].deck='complex',value=>value.scenarios[0].sourcePage=0]){const invalid=structuredClone(catalog);mutate(invalid);assert.throws(()=>Scenarios.validate(invalid));}
 });
 test('unbuilt scenarios get blank pages while the four existing scenario IDs and data stay intact',async()=>{
-  const data=JSON.parse(fs.readFileSync(path.join(root,'index.html'),'utf8').match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
+  const data=require('../tools/presentation-source.cjs').dataFromHtml(fs.readFileSync(path.join(root,'index.html'),'utf8'));
   const before=JSON.stringify(data),sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/'},fetch:async()=>({ok:true,json:async()=>structuredClone(catalog)})};
   const directory=structuredClone(catalog);delete directory.details;sandbox.fetch=async()=>({ok:true,json:async()=>directory});
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-scenarios.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();assert.equal(api.error,'');
@@ -16,7 +16,7 @@ test('unbuilt scenarios get blank pages while the four existing scenario IDs and
 });
 
 test('all supplied cases prepare eighteen scenarios and 131 explanations without changing the original cases',async()=>{
-  const data=JSON.parse(fs.readFileSync(path.join(root,'index.html'),'utf8').match(/<script id="presentation-data" type="application\/json">([\s\S]*?)<\/script>/)[1]),before=JSON.stringify({scenes:data.scenarios,articles:data.articles}),sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/'},fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,new URL(url).pathname),'utf8'))})};
+  const data=require('../tools/presentation-source.cjs').dataFromHtml(fs.readFileSync(path.join(root,'index.html'),'utf8')),before=JSON.stringify({scenes:data.scenarios,articles:data.articles}),sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/'},fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,new URL(url).pathname),'utf8'))})};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-scenarios.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();assert.equal(api.error,'');api.prepare(data);
   assert.equal(data.scenarios.length,18);assert.equal(data.articles.length,131);assert.equal(JSON.stringify({scenes:data.scenarios.slice(0,4),articles:data.articles.slice(0,26)}),before);
   const once=JSON.stringify(data);api.prepare(data);assert.equal(JSON.stringify(data),once,'Preparing twice must not duplicate cases');

@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g1-03",
+    "code": "G1-03",
+    "chapter": "g1",
+    "name": "無號誌市區匯入型巷道路口",
+    "short": "市區匯入",
+    "setting": "市區",
+    "geometry": "匯入型巷道",
+    "rotation": 0,
+    "overall": "g103-overall",
+    "figure": "G1-03 整體配置圖",
+    "contextId": "g103-context",
+    "overviewId": "g103-overview",
+    "reviewId": "g103-review",
+    "source": {
+      "typst": "04-1-03-unsignalized-urban-merge-t.typ",
+      "note": "依提供之 G1-03 情境稿及原始 SVG 整理，保留原稿設置條件與建議。現況圖與問題照片已補入，來源為 G1.pptx。"
+    },
+    "sourceLine": "資料：G1-03 情境稿 / 路口現況與交通設施設置建議",
+    "summary": "住宅區巷道銜接中央實體分隔的主要道路，以右進右出為前提，整合轉彎動線、行人穿越與路側停車空間。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "24",
+        "description": "中央實體分隔；往東 3 車道、往西 2 車道",
+        "speed": "50"
+      },
+      {
+        "title": "巷道 / 現況",
+        "width": "8",
+        "description": "雙向無分隔，配置 1 車道",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "明示右進右出的通行方向",
+        "以中央實體分隔與方向標誌，交代巷道匯入主要道路時的轉向限制。"
+      ],
+      [
+        "整合轉彎與行人穿越空間",
+        "配合人行道路緣外擴，檢視右轉半徑、行穿線位置與行人可見度。"
+      ],
+      [
+        "整理路側停車與公車空間",
+        "整合嵌入式停車格、巷道斜角機車位及路側公車彎，減少動線干擾。"
+      ]
+    ],
+    "condition": "本例以中央實體分隔、巷道右進右出為配置前提；人行道路緣外擴與停車空間調整，需連同車輛轉彎及行人通行一起檢核。",
+    "overviewIntro": "以右進右出的匯入動線為主軸，串接共用車道指向線、道路遵行方向與禁止左轉標誌，並整合人行與路側空間。",
+    "overviewRows": [
+      [
+        "urban-merge-arrows",
+        "01　交代直行與右轉共用車道",
+        "§188"
+      ],
+      [
+        "urban-merge-direction",
+        "02　在遠端提示道路遵行方向",
+        "§61"
+      ],
+      [
+        "urban-merge-no-left",
+        "03　在巷道明示禁止左轉",
+        "§74"
+      ]
+    ],
+    "recapTitle": "右進右出，\n方向與空間一起說清楚。",
+    "recapIntro": "先確認中央分隔與匯入限制，再用指向線及標誌交代走法，並將行人、停車與公車停靠一併納入空間配置。",
+    "recapRows": [
+      [
+        "從車道寬度決定箭頭形式",
+        "本例維持外側直行與右轉共用，依車道寬度選擇指向線形式。",
+        "§188"
+      ],
+      [
+        "在遠端交代可行方向",
+        "道路遵行方向標誌設於容易辨識的位置，讓駕駛理解前方可行方向。",
+        "§61"
+      ],
+      [
+        "在支道明示轉向限制",
+        "禁止左轉標誌與中央分隔配合，清楚交代右進右出的通行方式。",
+        "§74"
+      ]
+    ],
+    "modules": [
+      "M1-01 路口動線導引",
+      "M1-03 路側停車",
+      "M2-01 停、讓管制",
+      "M2-04 路口行向管制",
+      "M3-04 公車",
+      "M4-01 危險警示"
+    ],
+    "assets": {
+      "g103-overall": "G1-03_無號誌市區匯入型巷道路口交通設施整體設置圖例.svg",
+      "g103-arrows": "G1-03_指向線圖例.svg",
+      "g103-signs": "G1-03_道路遵行方向標誌、進行方向標誌.svg"
+    },
+    "assetRotations": {
+      "g103-overall": 0,
+      "g103-arrows": 0,
+      "g103-signs": 0
+    },
+    "assetLabels": {
+      "g103-overall": "G1-03 市區匯入型巷道路口完整配置圖",
+      "g103-arrows": "G1-03 直行與右轉共用車道指向線圖例",
+      "g103-signs": "G1-03 道路遵行方向與禁止左轉標誌圖例"
+    },
+    "originalTypst": "// 04-1-03-unsignalized-urban-merge-t.typ\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\n// 第四章「一般道路情境」—無號誌三叉路口／無號誌市區匯入型巷道路口設置圖例與運用解說\n#import \"../../components/scenario-common.typ\": *\n#pagebreak(weak: true)\n=== #text(weight: 500, fill: rgb(\"666666\"))[G1-03] 無號誌市區匯入型巷道路口設置圖例與運用解說 <section:unsignalized_urban_merge_t>\n\n==== 路口現況與議題 <paragraph:unsignalized_urban_merge_t_current_situation_and_issues>\n\n+ #guide-item[道路條件與交通設施][\n\n  在一般常見的無號誌市區匯入型巷道路口，通常周邊多為住宅林立。而由巷道匯入主要道路時，因主要道路交通量較大或路寬較寬，以致車輛無法穿越，故形成只能右進右出方式之匯入型巷道路口。本示例以一個原本主要道路路寬約24~m，採中央實體分隔的主要道路為例，現況這類型的道路是一個往東配置3車道，往西配置2車道，道路北側設置停車格及人行道，道路南側比鄰河道防汛牆，路段速限為50~km/h。原本的巷道路寬約8~m，雙向無分隔且配置1車道，道路兩側無停車管制，行人利用住宅退縮區域通行，路段速限為30~km/h。\n\n  ]\n\n+ #guide-item[路型議題分析][\n\n  此類路口一般在現況交通設施配置上，大多會存在以下問題，分述說明如下：\n\n  + #guide-item[主、次道路管制明示性不足][\n\n    主要道路鄰近巷道處無設置相關警示設施，用以提醒用路人注意巷道匯入車輛。\n\n    ]\n\n  + #guide-item[速度限制不明確][\n\n    因為主要道路無標字、標誌表示速限以致速度較快，巷道僅標字表示速限、無設置標誌，造成巷道進入、匯入困難或易發生危險。\n\n    ]\n\n  + #guide-item[路口無右轉空間配置][\n\n    由於匯入型的巷道路口採右進右出方式，主要道路速率達50~km/h，且一般巷道的路寬較為狹小，所以會有右轉車輛轉彎半徑的問題，特別是右轉數量較多時，皆會對於效率及安全帶來影響。\n\n    ]\n\n  因此，在本示例中應處理的議題包括：\n\n  - 如何透過標線、速限標誌，並加設叉路警示標誌，來提高巷道匯入口的自明性；\n  - 在市區，此一巷道口必會有行人穿越的需求，故應如何透過標誌及標線來提高行人穿越道的安全，提高自明性；\n  - 對於進出巷道之右轉車輛，透過人行道路口處的外緣外擴，來增加轉彎半徑及提高注意到行人穿越道及行人；\n  - 對於路側的停車空間應加以明確繪設，於停車帶範圍使用嵌入式停車位，並注意車輛停車進出的安全；\n  - 對於巷道內的機車位使用斜角停車設置方式，提高機車停放進出的方便度及安全等。\n\n  ]\n\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_urban_merge_t_suggestions_and_overall_diagram>\n\n有關無號誌市區匯入型巷道路口的交通設施建議設置如 @fig:unsignalized_urban_merge_t_20 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\n\n+ 因為是在市區的匯入型巷道路口，故皆將原路側的路肩及太寬的最外側車道，加以調整成可以設置人行道的空間，以供未來可以設置實體人行道；\n+ 車行道空間部分在主要道路為雙向較大的道路，速限50~km/h，故在車輛轉入次要道路時，可以透過人行道路緣外擴，做出較好的轉彎半徑線及銜接人行道；\n+ 配合將路邊停車格設置成嵌入型停車格；在巷道則因路寬足夠繪設路邊機車停車格，故將近路口處進行車行道彎曲，達成減速接近路口及提高路口明視性的效果；對於路側的機車停車格則採斜角停車格，以提高機車進出車位的方便度及安全；\n+ 針對匯入口設置網狀線，以避免為車輛占用，同時提高路口位置的警示效果；\n+ 由於此處在路口遠端有路邊公車停靠站，故在符合《設置規則》之下，本示例配合人行道外擴，形成嵌入式的公車彎，故於此示範一種路側公車停車彎的標線繪設方式。\n\n本情境涉及之相關模組及《設置規則》條文彙整如下。\n#scenario-index-box(\n  (\"M1-01\", \"M1-03\", \"M2-01\", \"M2-04\", \"M3-04\", \"M4-01\"),\n  [#scenario-reg-link(\"61\", [道路遵行方向標誌「遵8」])],\n  [#scenario-reg-link(\"74\", [禁止左轉標誌「禁18」])],\n  [#scenario-reg-link(\"188\", [指向線])],\n) <scenario-index-g1-03>\n\n#scenario-fullpage(\n  image(\n    \"../../media/04-general-scenarios/G1-03/G1-03_無號誌市區匯入型巷道路口交通設施整體設置圖例.svg\",\n    width: 235mm,\n    fit: \"contain\",\n  ),\n  rotate-image: true,\n  caption: [無號誌市區匯入型巷道路口交通設施整體設置圖例],\n  label-name: \"fig:unsignalized_urban_merge_t_20\",\n)\n\n\n\n// #figure(\n//   [#image(\"../../media/04-general-scenarios/G1-03/G1-03_無號誌市區匯入型巷道路口交通設施整體設置圖例.png\", width: 95.6%, height: 93.93mm, fit: \"contain\")],\n//   kind: image,\n//   caption: [無號誌市區匯入型巷道路口交通設施整體設置圖例],\n// ) <fig:unsignalized_urban_merge_t_20>\n\n\n==== 標線設置圖例運用解說 <paragraph:unsignalized_urban_merge_t_marking_diagram_explanation>\n\n+ #guide-item[指向線，《設置規則》第188條][\n\n  本示例中混合車道寬度小於3.5~m，因此維持外側車道直行與右轉共用，如 @fig:unsignalized_urban_merge_t_21 所示。如轉向與直行共用車道寬度為3.5~m以上時，得於鄰近路口處設置直線與弧形箭頭分離且並列之分流式指向線。\n\n  #figure(\n    // 原圖 50 px 的指向線在 SVG 中長 12 單位；依 10 mm 換算整圖寬度。\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_指向線圖例.svg\", width: 60%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [指向線圖例],\n  ) <fig:unsignalized_urban_merge_t_21>\n\n  ]\n\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_merge_t_signage_diagram_explanation>\n\n+ #guide-item[道路遵行方向標誌「遵8」，《設置規則》第61條][\n\n  當路口前方道路行駛方向有所限制，為提醒駕駛人可行進的道路方向，建議設置道路遵行方向標誌。\n\n  《設置規則》僅說明道路遵行方向標誌設於交岔路口附近顯明之處，而無明確規範確切設置位置。本示例建議「遵8」設於路口遠端，行車方向的中心為原則，設置圖例如 @fig:unsignalized_urban_merge_t_22 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_道路遵行方向標誌、進行方向標誌.svg\", width: 60%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [道路遵行方向、禁行方向標誌設置圖例],\n  ) <fig:unsignalized_urban_merge_t_22>\n\n  - #guide-item[替選方案：][\n\n    路口前方有方向限制時，除可設置道路遵行方向標誌外，在鄉區或有中央分隔島處，於不影響行人通行狀況下，亦可選用安全方向導引標誌「輔2」，以提醒駕駛人安全行駛方向，設置圖例如 @fig:unsignalized_urban_merge_t_23 所示。\n\n    #figure(\n      [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_T字路口安全方向導引標誌設置圖例.png\", width: 60.7%, height: 68.79mm, fit: \"contain\"), kind: \"general\")],\n      kind: image,\n      caption: [T字路口安全方向導引標誌設置圖例],\n    ) <fig:unsignalized_urban_merge_t_23>\n\n    ]\n\n  ]\n\n+ #guide-item[禁止左轉標誌「禁18」，《設置規則》第74條][\n\n  路口前方道路行駛方向有所限制時，建議設置禁行方向標誌。原則上禁止左轉設於車行道的左側，禁止右轉設於車行道的右側為宜。必要時，可以增設於兩側。亦即，禁止右轉設於鄰近路口處或路口右側轉角處，禁止左轉設於鄰近路口處、路口遠端左側轉角處、分向島上。本標誌可輔以附牌說明禁止時段或例外時段或車種。如有需要，可於遠端再加設一面禁行方向標誌。設置圖例如 @fig:unsignalized_urban_merge_t_22 所示。\n\n  // #figure(\n  //   [\n  //     #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_禁行方向標誌設置圖例.png\", width: 60.0%, height: 78.92mm, fit: \"contain\"), kind: \"general\")\n  //   ],\n  //   kind: image,\n  //   caption: [禁行方向標誌設置圖例],\n  // ) <fig:unsignalized_urban_merge_t_24>\n\n  ]\n",
+    "width": 1291,
+    "height": 712,
+    "articleIds": [
+      "urban-merge-arrows",
+      "urban-merge-direction",
+      "urban-merge-no-left"
+    ],
+    "currentConditions": {
+      "pageId": "g103-conditions",
+      "beforeOffsetY": 45,
+      "before": "g103-before",
+      "after": "g103-overall",
+      "textKey": "g103-conditions:G1",
+      "photos": [
+        {
+          "image": "g103-photo-1",
+          "kind": "photo",
+          "title": "匯入方向、速限與臨停管制",
+          "alt": "市區巷道接近主要道路的行穿線、地面速限與停車再開現況",
+          "points": [
+            "主要道路未設道路遵行方向或禁行方向標誌。",
+            "主要道路未設「岔路」標誌。",
+            "次要道路僅有地面速限標字，未設「最高速限」標誌。",
+            "次要道路禁止臨時停車標線處，未搭配「禁止臨時停車」標誌。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖、照片與問題摘自 G1.pptx 第13–14頁（原稿日期2025/8/27）；改善示意沿用本簡報原始指引圖。",
+      "takeaway": "從方向管制、路口預告與速限提示，說明市區巷道右進右出的佈設考量。"
+    }
+  },
+  "articles": [
+    {
+      "id": "urban-merge-arrows",
+      "reg": "188",
+      "name": "指向線",
+      "category": "標線",
+      "asset": "g103-arrows",
+      "headline": "先確認車道寬度，\n再交代直行與右轉。",
+      "locate": "看主要道路外側直行與右轉共用車道的指向線。",
+      "box": [
+        711,
+        488,
+        80,
+        35
+      ],
+      "crop": [
+        510,
+        380,
+        455,
+        260
+      ],
+      "metric": "3.5",
+      "unit": "m",
+      "metricLabel": "提供稿比較指向線形式的車道寬度",
+      "points": [
+        "本示例混合車道寬度小於 3.5 m，維持外側車道直行與右轉共用。",
+        "轉向與直行共用車道寬度為 3.5 m 以上時，原稿說明得使用直線與弧形箭頭分離、並列的分流式指向線。",
+        "說明時一併對照巷道入口、人行穿越與共用車道的位置，交代右轉車的動線。"
+      ],
+      "takeaway": "先看車道寬度，再選擇共用車道的箭頭形式。",
+      "scenario": "g1-03",
+      "sourceRaw": "+ #guide-item[指向線，《設置規則》第188條][\n\n  本示例中混合車道寬度小於3.5~m，因此維持外側車道直行與右轉共用，如 @fig:unsignalized_urban_merge_t_21 所示。如轉向與直行共用車道寬度為3.5~m以上時，得於鄰近路口處設置直線與弧形箭頭分離且並列之分流式指向線。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_指向線圖例.svg\", width: 60%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [指向線圖例],\n  ) <fig:unsignalized_urban_merge_t_21>\n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "本示例中混合車道寬度小於3.5 m，因此維持外側車道直行與右轉共用，如 （見原稿圖例或章節） 所示。如轉向與直行共用車道寬度為3.5 m以上時，得於鄰近路口處設置直線與弧形箭頭分離且並列之分流式指向線。"
+      ]
+    },
+    {
+      "id": "urban-merge-direction",
+      "reg": "61",
+      "name": "道路遵行方向標誌",
+      "sign": "遵8",
+      "category": "標誌",
+      "asset": "g103-signs",
+      "headline": "在路口遠端，\n提示可行進的方向。",
+      "locate": "看主要道路對側、巷道行車方向遠端的道路遵行方向標誌。",
+      "box": [
+        613,
+        674,
+        34,
+        35
+      ],
+      "crop": [
+        495,
+        423,
+        330,
+        288
+      ],
+      "metric": "遠端",
+      "unit": "",
+      "metricLabel": "提供稿建議的道路遵行方向標誌位置",
+      "points": [
+        "前方道路行駛方向有所限制時，原稿建議設置道路遵行方向標誌，提示駕駛可行進的方向。",
+        "本例建議遵8設於路口遠端，以行車方向的中心為原則，並保持顯明可辨識。",
+        "原稿另列安全方向導引標誌「輔2」的替選方式，適用於鄉區或有中央分隔島、且不影響行人通行的條件。"
+      ],
+      "takeaway": "標誌位置要讓巷道駕駛清楚辨識前方可行方向。",
+      "scenario": "g1-03",
+      "sourceRaw": "+ #guide-item[道路遵行方向標誌「遵8」，《設置規則》第61條][\n\n  當路口前方道路行駛方向有所限制，為提醒駕駛人可行進的道路方向，建議設置道路遵行方向標誌。\n\n  《設置規則》僅說明道路遵行方向標誌設於交岔路口附近顯明之處，而無明確規範確切設置位置。本示例建議「遵8」設於路口遠端，行車方向的中心為原則，設置圖例如 @fig:unsignalized_urban_merge_t_22 所示。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_道路遵行方向標誌、進行方向標誌.svg\", width: 60%, fit: \"contain\"), kind: \"general\")],\n    kind: image,\n    caption: [道路遵行方向、禁行方向標誌設置圖例],\n  ) <fig:unsignalized_urban_merge_t_22>\n\n  - #guide-item[替選方案：][\n\n    路口前方有方向限制時，除可設置道路遵行方向標誌外，在鄉區或有中央分隔島處，於不影響行人通行狀況下，亦可選用安全方向導引標誌「輔2」，以提醒駕駛人安全行駛方向，設置圖例如 @fig:unsignalized_urban_merge_t_23 所示。\n\n    #figure(\n      [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-03/G1-03_T字路口安全方向導引標誌設置圖例.png\", width: 60.7%, height: 68.79mm, fit: \"contain\"), kind: \"general\")],\n      kind: image,\n      caption: [T字路口安全方向導引標誌設置圖例],\n    ) <fig:unsignalized_urban_merge_t_23>\n\n    ]\n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "當路口前方道路行駛方向有所限制，為提醒駕駛人可行進的道路方向，建議設置道路遵行方向標誌。",
+        "《設置規則》僅說明道路遵行方向標誌設於交岔路口附近顯明之處，而無明確規範確切設置位置。本示例建議「遵8」設於路口遠端，行車方向的中心為原則，設置圖例如 （見原稿圖例或章節） 所示。",
+        "路口前方有方向限制時，除可設置道路遵行方向標誌外，在鄉區或有中央分隔島處，於不影響行人通行狀況下，亦可選用安全方向導引標誌「輔2」，以提醒駕駛人安全行駛方向，設置圖例如 （見原稿圖例或章節） 所示。"
+      ]
+    },
+    {
+      "id": "urban-merge-no-left",
+      "reg": "74",
+      "name": "禁止左轉標誌",
+      "sign": "禁18",
+      "category": "標誌",
+      "asset": "g103-signs",
+      "headline": "把禁止左轉，\n明示在駕駛看得見的位置。",
+      "locate": "看巷道進入主要道路前、左側的禁止左轉標誌。",
+      "box": [
+        541,
+        379,
+        40,
+        36
+      ],
+      "crop": [
+        480,
+        310,
+        285,
+        290
+      ],
+      "metric": "右進右出",
+      "unit": "",
+      "metricLabel": "本例中央分隔與轉向限制的通行前提",
+      "points": [
+        "路口前方行駛方向受限制時，原稿建議以禁行方向標誌明示；本例以禁止左轉配合右進右出。",
+        "禁止左轉原則設於車行道左側，可在鄰近路口、遠端左側轉角或分向島等位置，必要時增設於兩側。",
+        "有時段、例外時段或車種限制時，可輔以附牌說明；需要時可在遠端再增設一面。"
+      ],
+      "takeaway": "以清楚可見的標誌，將右進右出的限制交代完整。",
+      "scenario": "g1-03",
+      "sourceRaw": "+ #guide-item[禁止左轉標誌「禁18」，《設置規則》第74條][\n\n  路口前方道路行駛方向有所限制時，建議設置禁行方向標誌。原則上禁止左轉設於車行道的左側，禁止右轉設於車行道的右側為宜。必要時，可以增設於兩側。亦即，禁止右轉設於鄰近路口處或路口右側轉角處，禁止左轉設於鄰近路口處、路口遠端左側轉角處、分向島上。本標誌可輔以附牌說明禁止時段或例外時段或車種。如有需要，可於遠端再加設一面禁行方向標誌。設置圖例如 @fig:unsignalized_urban_merge_t_22 所示。\n\n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "路口前方道路行駛方向有所限制時，建議設置禁行方向標誌。原則上禁止左轉設於車行道的左側，禁止右轉設於車行道的右側為宜。必要時，可以增設於兩側。亦即，禁止右轉設於鄰近路口處或路口右側轉角處，禁止左轉設於鄰近路口處、路口遠端左側轉角處、分向島上。本標誌可輔以附牌說明禁止時段或例外時段或車種。如有需要，可於遠端再加設一面禁行方向標誌。設置圖例如 （見原稿圖例或章節） 所示。"
+      ]
+    }
+  ],
+  "embeddedAssets": {
+    "g103-overall": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-03/G1-03_%E7%84%A1%E8%99%9F%E8%AA%8C%E5%B8%82%E5%8D%80%E5%8C%AF%E5%85%A5%E5%9E%8B%E5%B7%B7%E9%81%93%E8%B7%AF%E5%8F%A3%E4%BA%A4%E9%80%9A%E8%A8%AD%E6%96%BD%E6%95%B4%E9%AB%94%E8%A8%AD%E7%BD%AE%E5%9C%96%E4%BE%8B.svg",
+      "width": 1291,
+      "height": 712
+    },
+    "g103-arrows": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-03/G1-03_%E6%8C%87%E5%90%91%E7%B7%9A%E5%9C%96%E4%BE%8B.svg",
+      "width": 389,
+      "height": 171
+    },
+    "g103-signs": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-03/G1-03_%E9%81%93%E8%B7%AF%E9%81%B5%E8%A1%8C%E6%96%B9%E5%90%91%E6%A8%99%E8%AA%8C%E3%80%81%E9%80%B2%E8%A1%8C%E6%96%B9%E5%90%91%E6%A8%99%E8%AA%8C.svg",
+      "width": 389,
+      "height": 400
+    },
+    "g103-before": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1-03/G1-03_%E7%8F%BE%E6%B3%81%E5%9C%96_01.png",
+      "width": 3463,
+      "height": 2225
+    },
+    "g103-photo-1": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1/image14.png",
+      "width": 928,
+      "height": 580
+    }
+  },
+  "assetMeta": {
+    "g103-overall": {
+      "scenario": "g1-03",
+      "rotation": 0,
+      "label": "G1-03 市區匯入型巷道路口完整配置圖"
+    },
+    "g103-arrows": {
+      "scenario": "g1-03",
+      "rotation": 0,
+      "label": "G1-03 直行與右轉共用車道指向線圖例"
+    },
+    "g103-signs": {
+      "scenario": "g1-03",
+      "rotation": 0,
+      "label": "G1-03 道路遵行方向與禁止左轉標誌圖例"
+    },
+    "g103-before": {
+      "scenario": "g1-03",
+      "rotation": 0,
+      "label": "G1-03 市區匯入型巷道路口現況圖",
+      "sourceFile": "image13.png",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 13
+    },
+    "g103-photo-1": {
+      "scenario": "g1-03",
+      "rotation": 0,
+      "label": "G1-03 市區巷道匯入主要道路現況照片",
+      "sourceFile": "image14.png",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 14
+    }
+  },
+  "assetNames": {
+    "g103-overall": "G1-03_無號誌市區匯入型巷道路口交通設施整體設置圖例.svg",
+    "g103-arrows": "G1-03_指向線圖例.svg",
+    "g103-signs": "G1-03_道路遵行方向標誌、進行方向標誌.svg",
+    "g103-before": "G1-03 市區匯入型巷道路口現況圖",
+    "g103-photo-1": "G1-03 市區巷道匯入主要道路現況照片"
+  }
+}

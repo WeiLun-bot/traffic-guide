@@ -1,0 +1,5 @@
+.presentation-load-status{position:fixed;z-index:75;top:calc(var(--header) + 12px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;max-width:calc(100vw - 32px);padding:12px 18px;border:1px solid #c5d4bb;border-radius:6px;background:#f8fbf3;color:#254b3b;box-shadow:0 4px 18px #233e3618;font:13px/1.6 "Microsoft JhengHei",sans-serif}
+.presentation-load-status[hidden]{display:none}
+.presentation-load-status button{border:1px solid #b7c9ad;border-radius:4px;background:white;color:#426c58;padding:5px 10px;white-space:nowrap;font:inherit}
+.presentation-load-status.is-error{border-color:#c5a374}
+@media print{.presentation-load-status{display:none!important}}

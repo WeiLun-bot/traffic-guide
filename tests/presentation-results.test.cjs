@@ -32,8 +32,8 @@ test('extracted current conditions cover every scenario, retain G1-01 strategy a
 test('archived original files match source checksums and current-condition validation rejects cross-case images or unsafe paths',()=>{
   const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),conditions=require('../data/results/current-conditions.json');
   for(const asset of Object.values(conditions.assets)){const file=path.resolve(__dirname,'..',asset.file);assert(fs.statSync(file).isFile());assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),asset.sha256);}
-  const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8'),data=JSON.parse(html.match(/<script[^>]+id="presentation-data"[^>]*>([\s\S]*?)<\/script>/)[1]);
-  assert.equal(crypto.createHash('sha256').update(Buffer.from(data.embeddedAssets['g101-before'].url.split(',')[1],'base64')).digest('hex'),conditions.assets['g101-before'].sha256,'Reusing the G1-01 camera key requires identical source image bytes');
+  const html=fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8'),data=require('../tools/presentation-source.cjs').dataFromHtml(html);
+  assert.equal(crypto.createHash('sha256').update(require('../tools/presentation-source.cjs').imageBytes(path.resolve(__dirname,'..'),data.embeddedAssets['g101-before'].url)).digest('hex'),conditions.assets['g101-before'].sha256,'Reusing the G1-01 camera key requires identical source image bytes');
   const unsafe=structuredClone(conditions);Object.values(unsafe.assets)[0].file='../../private.png';assert.throws(()=>Results.validateConditions(unsafe));
   const foreign=structuredClone(conditions);foreign.scenarios['C1-01'].issue.images[0].key=conditions.scenarios['G1-02'].issue.images[0].key;assert.throws(()=>Results.validateConditions(foreign));
 });

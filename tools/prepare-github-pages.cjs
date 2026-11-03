@@ -7,7 +7,8 @@ if(quiet)console.log('Refreshing source images...');
 // Material files can be replaced between preview sessions. Refresh only image
 // bytes and dimensions before copying the current presentation into _site.
 require('./refresh-general-scenario-images.cjs').refresh({root});
-const files=[
+if(fs.existsSync(path.join(root,'data/scenarios/presentation.json')))require('./prepare-presentation-registry.cjs').build({root});
+const files=Array.from(new Map([
   ['index.html','index.html'],
   ['index.html','一般道路情境-圖面放大版.html'],
   ['路口管制.html','路口管制.html'],
@@ -20,7 +21,7 @@ const files=[
   ['layout/presentation-layout.json','layout/presentation-layout.json'],
   ['.nojekyll','.nojekyll'],
   ...require('./module-release-files.cjs').map(name=>[name,name])
-];
+].map(pair=>[pair[1],pair])).values());
 // Copy a strict allowlist: source inventories, backups and test logs stay local.
 fs.mkdirSync(output,{recursive:true});
 if(fs.lstatSync(output).isSymbolicLink())throw new Error('_site must be a regular directory');

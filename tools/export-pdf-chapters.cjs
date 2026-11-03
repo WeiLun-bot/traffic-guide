@@ -3,7 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {spawn}=require('node:child_process');
 const {createServer}=require('./serve-github-pages.cjs');
-const root=path.resolve(__dirname,'..'),output=path.join(root,'exports','PDF-M1-01-G1-01');
+const root=path.resolve(__dirname,'..'),output=process.env.TRAFFIC_GUIDE_PDF_OUTPUT?path.resolve(process.env.TRAFFIC_GUIDE_PDF_OUTPUT):path.join(root,'exports','PDF-M1-01-G1-01');
 const width=1600,height=900,delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 class CDP{
  constructor(url){this.seq=0;this.pending=new Map();this.listeners=new Map();this.socket=new WebSocket(url);this.ready=new Promise((resolve,reject)=>{this.socket.addEventListener('open',resolve);this.socket.addEventListener('error',reject);});this.socket.addEventListener('message',event=>{const message=JSON.parse(event.data);if(message.id){const request=this.pending.get(message.id);if(!request)return;clearTimeout(request.timer);this.pending.delete(message.id);message.error?request.reject(new Error(JSON.stringify(message.error))):request.resolve(message.result);}else for(const callback of this.listeners.get(message.method)||[])callback(message.params);});}
@@ -49,7 +49,7 @@ async function main(){
   for(const doc of documents){
    const folder=path.join(output,doc.id);fs.mkdirSync(folder,{recursive:true});const sheets=[];
    for(const sheet of doc.sheets){
-    await cdp.evaluate(`(()=>{document.body.classList.remove('pdf-hide-controls');const api=window.generalRoadPresentation;api.goPage(${JSON.stringify(sheet.id)},${sheet.phase||0},{force:true});${sheet.topic?`api.goPage(window.PresentationModules.resolvePage(${JSON.stringify(sheet.id)},${JSON.stringify('topic-'+sheet.topic)}),0,{force:true});`:''}})()`);
+    await cdp.evaluate(`(async()=>{document.body.classList.remove('pdf-hide-controls');const api=window.generalRoadPresentation;await api.goPage(${JSON.stringify(sheet.id)},${sheet.phase||0},{force:true});${sheet.topic?`await api.goPage(window.PresentationModules.resolvePage(${JSON.stringify(sheet.id)},${JSON.stringify('topic-'+sheet.topic)}),0,{force:true});`:''}})()`);
     await cdp.evaluate(`(async()=>{await document.fonts.ready;await Promise.all([...document.querySelectorAll('main img,main svg image')].map(node=>{const src=node.currentSrc||node.src||node.getAttribute('href');if(!src)return;const image=new Image();image.src=src;return image.decode();}));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));})()`);
     await delay(500);
     const metadata=await cdp.evaluate(`(()=>{

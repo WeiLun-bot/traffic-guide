@@ -35,9 +35,19 @@ test('invalid or missing SVG aborts before modifying either presentation or meta
   }
   fs.unlinkSync(path.join(f.root,f.file));assert.throws(()=>refresh({root:f.root}));assert.equal(fs.readFileSync(path.join(f.root,'index.html'),'utf8'),f.html);
 });
-test('external case diagrams refresh their dimensions and default focus without rewriting saved cameras',t=>{
+test('external SVG refresh keeps URLs external, updates sizes and leaves saved settings untouched',t=>{
+  const f=fixture(t);f.data.embeddedAssets.overall.url=encodeURI(f.file);
+  fs.writeFileSync(path.join(f.root,'index.html'),f.html.replace(/type="application\/json">[\s\S]*?<\/script>/,'type="application/json">'+JSON.stringify(f.data)+'</script>'));
+  const first=refresh({root:f.root});assert.equal(first.embeddedImages,1);
+  const text=fs.readFileSync(path.join(f.root,'index.html'),'utf8'),data=JSON.parse(text.match(/type="application\/json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(data.embeddedAssets.overall.url,encodeURI(f.file));assert.equal(data.embeddedAssets.overall.width,240);assert.equal(data.embeddedAssets.overall.height,120);
+  assert(!text.includes('data:image/svg+xml;'));assert.equal(refresh({root:f.root}).embeddedImages,0);
+  assert.equal(fs.readFileSync(path.join(f.root,'layout/presentation-layout.json'),'utf8'),'saved camera and content');
+});
+for(const [code,folder]of [['G1-01','04-一般道路情境'],['C1-01','05-複雜道路情境']])test(code+' external diagrams refresh dimensions and default focus without rewriting saved cameras',t=>{
   const f=fixture(t);fs.mkdirSync(path.join(f.root,'data/scenarios'));
-  fs.writeFileSync(path.join(f.root,'data/scenarios/catalog.json'),JSON.stringify({details:['data/scenarios/G1-01.json']}));
-  const file=path.join(f.root,'data/scenarios/G1-01.json');fs.writeFileSync(file,JSON.stringify({scenario:{overall:'overall',width:100,height:80},assets:{overall:{file:f.file,width:100,height:80,sha256:'old'}},articles:[{mapAsset:'overall',box:[10,8,30,16],crop:[0,0,100,80]}]}));
+  const image='materials/'+folder+'/'+code+'/'+code+'_full.svg';fs.mkdirSync(path.dirname(path.join(f.root,image)),{recursive:true});fs.writeFileSync(path.join(f.root,image),f.svg);
+  fs.writeFileSync(path.join(f.root,'data/scenarios/catalog.json'),JSON.stringify({details:['data/scenarios/'+code+'.json']}));
+  const file=path.join(f.root,'data/scenarios/'+code+'.json');fs.writeFileSync(file,JSON.stringify({scenario:{overall:'overall',width:100,height:80},assets:{overall:{file:image,width:100,height:80,sha256:'old'}},articles:[{mapAsset:'overall',box:[10,8,30,16],crop:[0,0,100,80]}]}));
   assert.equal(refresh({root:f.root}).detailFiles,1);const doc=JSON.parse(fs.readFileSync(file,'utf8'));assert.deepEqual(doc.articles[0].box,[24,12,72,24]);assert.deepEqual(doc.articles[0].crop,[0,0,240,120]);assert.equal(doc.scenario.width,240);assert.equal(refresh({root:f.root}).detailFiles,0);assert.equal(fs.readFileSync(path.join(f.root,'layout/presentation-layout.json'),'utf8'),'saved camera and content');
 });

@@ -11,7 +11,8 @@ const Core = require('../assets/visual-editor-core.js');
 const root = path.resolve(__dirname, '..'), artifacts = process.env.VISUAL_EDITOR_ARTIFACTS || path.join(__dirname, 'artifacts/visual-editor');
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const configPath = path.join(root, 'layout/presentation-layout.json');
-const baselinePath = path.join(artifacts, 'baseline.html');
+const baselineRoot=process.env.VISUAL_EDITOR_BASELINE_ROOT||null;
+const baselinePath = baselineRoot?path.join(baselineRoot,'index.html'):path.join(artifacts, 'baseline.html');
 const initialConfigText = fs.readFileSync(configPath, 'utf8');
 const initialConfig = Core.parse(initialConfigText);
 // Keep visual interaction tests independent of the user's saved camera choices.
@@ -54,11 +55,13 @@ async function main() {
   const heldStartupRequests=[];
   const setStartupHold=value=>{startupHold=value;if(!value)for(const release of heldStartupRequests.splice(0))release();};
   const published = createServer(undefined,{configFile:previewConfigPath});
+  const baselineServer=baselineRoot?createServer(baselineRoot,{configFile:previewConfigPath}):null;
   const server = http.createServer((request, response) => {
     const pathname = new URL(request.url, 'http://localhost').pathname;
-    if (pathname === '/baseline.html' && fs.existsSync(baselinePath)) {response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});fs.createReadStream(baselinePath).pipe(response);return;}
+    if (pathname === '/baseline.html' && fs.existsSync(baselinePath)) {response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});if(baselineRoot)response.end(fs.readFileSync(baselinePath,'utf8').replace('<head>','<head><base href="/__baseline/">'));else fs.createReadStream(baselinePath).pipe(response);return;}
+    if(baselineServer&&pathname.startsWith('/__baseline/')){request.url=request.url.replace('/__baseline/','/');(pathname.startsWith('/__baseline/materials/')?published:baselineServer).emit('request',request,response);return;}
     if(startupHold&&pathname.endsWith(startupHold)){heldStartupRequests.push(()=>published.emit('request',request,response));return;}
-    if(failStartupScript&&pathname.endsWith('/assets/presentation-structure.js')){response.writeHead(404);response.end();return;}
+    if(failStartupScript&&pathname.endsWith(typeof failStartupScript==='string'?failStartupScript:'/assets/presentation-structure.js')){response.writeHead(404);response.end();return;}
     if (pathname.endsWith('/layout/presentation-layout.json') && failConfig) {response.writeHead(404);response.end();return;}
     if(failModules&&pathname.endsWith('/data/modules/M2-01.json')){response.writeHead(404);response.end();return;}
     if (pathname.endsWith('/layout/presentation-layout.json') && override) {response.writeHead(200, {'Content-Type': 'application/json'});response.end(override);return;}
@@ -94,6 +97,7 @@ async function main() {
       const destination = new URL(url); destination.searchParams.set('test-document', String(Date.now()));
       await cdp.send('Page.navigate', {url: destination.href});
       await wait('Boolean(!window.__previousTestDocument && window.generalRoadPresentation && document.querySelector("main>.slide"))', 'New presentation document did not load',30000);
+      if(!process.argv.includes('--loading-only'))await evaluate('(async()=>{if(window.PresentationRepository){const loaded=await window.PresentationRepository.loadAll();if(loaded.every(item=>item.status==="fulfilled"))await window.generalRoadPresentation.refresh();}})()');
       await delay(420);
     }
     async function view(id, phase = 0) {
@@ -101,7 +105,7 @@ async function main() {
       await evaluate(`(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));await Promise.all(document.getAnimations().filter(a=>a.effect.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{})))})()`);
       await delay(80);
     }
-    async function click(selector) {await evaluate(`(()=>{const node=document.querySelector(${JSON.stringify(selector)}),menu=node?.closest('.vl-files');if(menu&&!menu.open)menu.querySelector('summary').click();if(node?.closest('.presentation-picker-menu')?.hidden)document.getElementById('presentation-picker-toggle').click();node.click()})()`);await delay(20);}
+    async function click(selector) {await evaluate(`(async()=>{const node=document.querySelector(${JSON.stringify(selector)}),menu=node?.closest('.vl-files');if(menu&&!menu.open)menu.querySelector('summary').click();if(node?.closest('.presentation-picker-menu')?.hidden)document.getElementById('presentation-picker-toggle').click();node.click();await window.generalRoadPresentation?.whenIdle?.();})()`);await delay(20);}
     async function mouse(type, x, y, extra = {}) {return cdp.send('Input.dispatchMouseEvent', {type, x, y, ...extra});}
     async function dragFrom(x, y, dx, dy) {
       await mouse('mouseMoved', x, y);await mouse('mousePressed', x, y, {button: 'left', buttons: 1, clickCount: 1});
@@ -114,6 +118,7 @@ async function main() {
     if(process.argv.includes('--completion-only')){await navigate(base+'/presentation-demo/#cover');await completionCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' completed-module browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--library-only')){await navigate(base+'/presentation-demo/#cover');await libraryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module library browser regression groups; no uncaught JavaScript exceptions.');return;}
     const structureCheck=async()=>require('./presentation-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
+    if(process.argv.includes('--loading-only')){await require('./presentation-loading-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' on-demand loading browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--article-image-highlights-only')){await require('./article-image-highlights-browser.cjs')({evaluate,view,click,navigate,wait,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' article image highlight browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--general-details-only')){await require('./general-scenario-details-browser.cjs')({evaluate,view,click,navigate,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' detailed scenario browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--results-content-only')){await require('./results-content-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario explanation browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -125,6 +130,20 @@ async function main() {
     const directoryCheck=async()=>require('./presentation-directories-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
     const fullscreenCheck=async()=>require('./fullscreen-module-topics-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});
     const startupCheck=async()=>require('./presentation-startup-browser.cjs')({evaluate,click,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});
+    async function configurationRecoveryCheck(){
+      const validImport=path.join(artifacts,'recovery-import-layout.json');fs.writeFileSync(validImport,JSON.stringify(initialConfig));
+      try{
+        failConfig=true;override=null;await cdp.send('Page.navigate',{url:base+'/presentation-demo/?missing-config=1#cover'});
+        await wait('Boolean(document.querySelector(".vl-recovery:not([hidden])"))');assert.equal(await evaluate('Boolean(window.generalRoadPresentation)'),false);
+        assert.equal(await evaluate('document.documentElement.dataset.presentationState'),'recovery');
+        assert(await evaluate('document.getElementById("presentation-startup-import").checkVisibility()'));
+        assert.equal(await evaluate('getComputedStyle(document.querySelector(".header")).visibility'),'hidden');
+        await importFile(validImport);await wait('Boolean(window.generalRoadPresentation && document.querySelector("main>.slide"))');
+        assert.equal(await evaluate('document.documentElement.dataset.presentationState'),'ready');
+        pass('missing/blocked JSON shows recovery and importing the project JSON starts the presentation');
+      }finally{failConfig=false;}
+    }
+    if(process.argv.includes('--final-integration-only')){await navigate(base+'/presentation-demo/#cover');await completionCheck();await fullscreenCheck();await startupCheck();await configurationRecoveryCheck();assert.deepEqual(exceptions,[]);fs.writeFileSync(path.join(artifacts,'browser-results.json'),JSON.stringify({checks,uncaughtExceptions:exceptions},null,2)+'\n');console.log('PASS: '+checks.length+' final integration browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--startup-only')){await startupCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' startup browser regression groups; no uncaught JavaScript exceptions.');return;}
     const viewportCheck=async()=>require('./viewport-behavior-browser.cjs')({evaluate,view,navigate,click,cdp,base,pass});
     if(process.argv.includes('--extension-removal-only')){await require('./module-extension-removal-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' extension removal browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -560,15 +579,7 @@ async function main() {
     override=null;await evaluate('window.visualLayoutEditor.files.disconnect()');
     await structureCheck();await pickerCheck();await directoryCheck();await moduleCheck();await libraryCheck();await completionCheck();await fullscreenCheck();await startupCheck();
     // Failed automatic JSON loading must expose recovery instead of silently resetting the layout.
-    failConfig = true;override = null;await cdp.send('Page.navigate',{url:base+'/presentation-demo/?missing-config=1#cover'});
-    await wait('Boolean(document.querySelector(".vl-recovery:not([hidden])"))');assert.equal(await evaluate('Boolean(window.generalRoadPresentation)'),false);
-    assert.equal(await evaluate('document.documentElement.dataset.presentationState'),'recovery');
-    assert(await evaluate('document.getElementById("presentation-startup-import").checkVisibility()'));
-    assert.equal(await evaluate('getComputedStyle(document.querySelector(".header")).visibility'),'hidden');
-    await importFile(validImport);await wait('Boolean(window.generalRoadPresentation && document.querySelector("main>.slide"))');
-    assert.equal(await evaluate('document.documentElement.dataset.presentationState'),'ready');
-    failConfig = false;
-    pass('missing/blocked JSON shows recovery and importing the project JSON starts the presentation');
+    await configurationRecoveryCheck();
     if (process.argv.includes('--catalog')) {
       await navigate(base+'/presentation-demo/?catalog=1#cover');
       const seen = await evaluate(`(async()=>{const seen=new Set();window.generalRoadEditor.setEditing(true);const api=window.generalRoadPresentation;for(let i=0;i<api.stops.length;i++){api.navigate(i,{force:true});for(const id of window.visualLayoutEditor.items.keys())seen.add(id);await new Promise(r=>requestAnimationFrame(r));}window.generalRoadEditor.setEditing(false);return [...seen]})()`);

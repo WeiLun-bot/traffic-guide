@@ -64,6 +64,20 @@
     return validate({...content,assets:{...content.assets,...strategies.assets},scenarioExamples:examples});
   }
   async function load(){try{
+    if(typeof window==='object'&&window.PresentationRepository){
+      const repository=window.PresentationRepository;await repository.ready;outline=JSON.parse(JSON.stringify(repository.registry.results));
+      const hydrate=(resource,value)=>{
+        if(resource.type==='results-common'){
+          validate(value);for(const page of value.pages){const target=outline.pages.find(item=>item.id===page.id);if(target)Object.assign(target,JSON.parse(JSON.stringify(page)));}
+        }else if(resource.type==='results-scenario'){
+          const target=outline.scenarioExamples[resource.id];if(!target)throw new Error('成果情境不存在');
+          for(const [key,stage]of Object.entries(value.example)){if(stage?.images&&target[key])Object.assign(target[key],JSON.parse(JSON.stringify(stage)));else target[key]=JSON.parse(JSON.stringify(stage));}
+          Object.assign(outline.assets,value.assets);
+        }
+      };
+      repository.subscribe(hydrate);for(const [key,resource]of Object.entries(repository.registry.resources))if(repository.get(key))hydrate(resource,repository.get(key));
+      return;
+    }
     const read=async file=>{const response=await fetch(new URL(file,document.baseURI),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.json();};
     const content=validate(await read('data/results/outline.json'));
     let merged=content.currentConditions?mergeConditions(content,await read(content.currentConditions)):content;

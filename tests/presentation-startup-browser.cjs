@@ -4,7 +4,7 @@ module.exports=async function({evaluate,click,wait,cdp,base,artifacts,pass,setSt
   const loading='!window.__previousTestDocument && document.readyState==="complete" && document.documentElement.dataset.presentationState==="loading"';
   const ready='!window.__previousTestDocument && document.documentElement.dataset.presentationState==="ready"';
   async function begin(hash,reload=false){
-    setStartupHold('/data/presentations.json');
+    setStartupHold('/data/presentation-registry.json');
     await evaluate('window.__previousTestDocument=true');
     if(reload)await cdp.send('Page.reload',{ignoreCache:true});
     else await cdp.send('Page.navigate',{url:base+'/presentation-demo/?startup-check='+Date.now()+hash});
@@ -42,5 +42,15 @@ module.exports=async function({evaluate,click,wait,cdp,base,artifacts,pass,setSt
     await wait(ready,'Reload button must recover the requested slide');
     assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m201-stop-layout');
     pass('failed initialization keeps incomplete chrome hidden and offers a working reload button');
+    for(const resource of ['/assets/general/presentation.js','/assets/general/presentation.css','/data/presentation-registry.json']){
+      setScriptFailure(resource);await evaluate('window.__previousTestDocument=true');
+      await cdp.send('Page.navigate',{url:base+'/presentation-demo/?external-resource-failure='+Date.now()+'#overview'});
+      await wait('!window.__previousTestDocument && document.documentElement.dataset.presentationState==="error" && document.readyState==="complete"','Missing extracted resource must expose recovery: '+resource);
+      assert(await evaluate('document.getElementById("presentation-startup-reload").checkVisibility()'));
+      setScriptFailure(false);await evaluate('window.__previousTestDocument=true');await click('#presentation-startup-reload');
+      await wait(ready,'Reload must recover the extracted resource: '+resource);
+      assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'overview');
+    }
+    pass('missing JavaScript, CSS or the shared registry shows recovery and reload restores the requested slide');
   }finally{setStartupHold(null);setScriptFailure(false);}
 };

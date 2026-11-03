@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g1-02",
+    "code": "G1-02",
+    "chapter": "g1",
+    "name": "無號誌鄉區正交三岔路口",
+    "short": "鄉區正交",
+    "setting": "鄉區",
+    "rotation": 0,
+    "overall": "g102-overall",
+    "figure": "圖 4.8",
+    "contextId": "g102-context",
+    "overviewId": "g102-overview",
+    "reviewId": "g102-review",
+    "comparisonId": "g102-comparison",
+    "source": {
+      "pdf": "output_1027.pdf",
+      "pages": "120–125",
+      "typst": "04-1-02-unsignalized-rural-orthogonal-t.typ",
+      "note": "解說依提供的 G1-02 指引稿及原始 SVG 整理；各數值保留原稿的建議與適用條件。"
+    },
+    "summary": "農田、工廠與農舍周邊的狹窄道路，從路口預告、停車再開與轉彎空間建立清楚的主次道路關係。",
+    "facts": [
+      {
+        "title": "主要道路 / 現況",
+        "width": "6",
+        "description": "雙向無分隔，配置 1 車道",
+        "speed": "50"
+      },
+      {
+        "title": "次要道路 / 現況",
+        "width": "4.5",
+        "description": "雙向無分隔，配置 1 車道",
+        "speed": "30"
+      }
+    ],
+    "issues": [
+      [
+        "讓路口提早被辨識",
+        "鄉區視野開闊，仍需透過岔路與速限提示，讓駕駛預先察覺前方路口。"
+      ],
+      [
+        "明確停車再開的位置",
+        "次要道路以立桿標誌為主、停標字為輔，清楚交代停等與觀察的位置。"
+      ],
+      [
+        "保留大型車轉彎空間",
+        "狹窄支道的停止線應配合轉向軌跡檢核，行穿線則依人行環境及需求評估。"
+      ]
+    ],
+    "condition": "本示例建議主要道路速限由現況 50 km/h 調整為 40 km/h，配合視覺化減速標線、岔路標誌與路口行車導引線，提高路口自明性。",
+    "modules": [
+      "M1-01 路口動線導引",
+      "M2-01 停、讓管制",
+      "M2-04 路口行向管制",
+      "M4-01 危險警示"
+    ],
+    "assets": {
+      "g102-overall": "G1-02_無號誌鄉區正交三叉路口-高雄甲典街.svg",
+      "g102-stopword": "G1-02_停標字圖例.svg",
+      "g102-crosswalk": "G1-02_無號誌鄉區正交三叉路口設置行穿線圖例.svg",
+      "g102-no-crosswalk": "G1-02_無號誌鄉區正交三叉路口不設置行穿線圖例.svg",
+      "g102-signs": "G1-02-停標誌與岔路標誌.svg"
+    },
+    "assetRotations": {
+      "g102-overall": 0,
+      "g102-stopword": 90,
+      "g102-crosswalk": 90,
+      "g102-no-crosswalk": 90,
+      "g102-signs": 0
+    },
+    "assetLabels": {
+      "g102-overall": "G1-02 完整情境圖",
+      "g102-stopword": "停止線、行穿線與停標字圖例",
+      "g102-crosswalk": "設置行穿線圖例",
+      "g102-no-crosswalk": "不設置行穿線圖例",
+      "g102-signs": "停車再開與岔路標誌設置圖例"
+    },
+    "originalTypst": "// 04-1-02-unsignalized-rural-orthogonal-t.typ\r\n// 放置於 chapters/04-general-scenarios/；由全書 guide 模板套用樣式。\r\n// 第四章「一般道路情境」—無號誌三叉路口／無號誌鄉區正交三叉路口設置圖例與運用解說\r\n#import \"../../components/scenario-common.typ\": *\r\n#import \"../../template/guide.typ\": guide-style\r\n#pagebreak(weak: true)\r\n=== #text(weight: 500, fill: rgb(\"666666\"))[G1-02] 無號誌鄉區正交三叉路口設置圖例與運用解說 <section:unsignalized_rural_orthogonal_t>\r\n\r\n==== 路口現況與議題 <paragraph:unsignalized_rural_orthogonal_t_current_situation_and_issues>\r\n\r\n+ #guide-item[道路條件與交通設施][\r\n\r\n  在一個典型的無號誌鄉區正交三叉路口，通常周邊的土地使用多為農田或有少數的工廠或農舍。由於道路路幅通常不寬，故一般不會考慮到行人通行需求。本示例之主要道路路寬約6~m，雙向無分隔且配置1車道，道路兩側無停車管制，無人行設施，現況路段速限為50~km/h。橫交之次要道路路寬約4.5~m，雙向無分隔且配置1車道，道路兩側無停車管制，無人行設施，路段速限為30~km/h。\r\n\r\n  ]\r\n\r\n+ #guide-item[路型議題分析][\r\n\r\n  此類路口一般在現況交通設施配置上，大多會存在以下問題，分述說明如下：\r\n\r\n  + #guide-item[缺少主、次道路管制][\r\n\r\n    由於鄉區道路通常視野較開闊，因此不易辨識前方有路口存在，若缺少主、次道路之管制設施時，恐導致路口車輛疏於停讓。\r\n\r\n    ]\r\n\r\n  + #guide-item[速度限制不明確][\r\n\r\n    在鄉區的道路上，基本上主、次要道路通常皆無設置最高速限之標誌及標字，來告知用路人該路段之行車速限。\r\n\r\n    ]\r\n\r\n  + #guide-item[停、讓管制原則不明確][使用停車再開管制或讓管制沒有一定的規則，駕駛人無法事先且清楚的進行停讓的行為。]\r\n\r\n  因此，在本示例中應處理的議題包括：\r\n\r\n  - 如何透過標誌、標線來明確化次要道路停讓管制；\r\n  - 如何透過標誌及標線來提高路口的自明性，增設岔路標誌及速限標誌，幫助駕駛人在鄉區行駛時，預先察覺前方的路口；\r\n  - 明確化停車再開或讓的標誌，並輔以路面的標字，提升路口的辨識度；\r\n  - 對於道路的寬度與路肩之間的空間能明確的確認，且滿足車輛轉彎的需求；\r\n  - 為避免車輛於路寬較寬之主要道路有超速行為，增加警示及減低速度的標誌與標線等。\r\n\r\n  ]\r\n\r\n==== 交通設施設置建議與整體設置圖例 <paragraph:unsignalized_rural_orthogonal_t_suggestions_and_overall_diagram>\r\n\r\n有關無號誌鄉區正交三叉路口的交通設施設置如 @fig:unsignalized_rural_orthogonal_t_15 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\r\n\r\n+ 主要道路應明確區分車道，並避免因直線路段而致車速太快，故將速限訂為40~km/h，並劃設視覺化減速標線及設置岔路標誌，以提高警示效果及安全性；\r\n+ 次要道路部分則明確設置停車再開標誌及停標字，雖目前《設置規則》規定標誌與標字可擇一設置，但因為標誌較具預告性，可提高路口的自明性，故本示例的示範示例建議設置標誌；\r\n+ 於路口處皆設置速限標誌，以明確速限；\r\n+ 在主要道路劃設路口行車導引線，以明確車行道範圍，以使用路人明確知道可能衝突的空間範圍，提高行車安全。\r\n\r\n本情境涉及之相關模組及《設置規則》條文彙整如下。\r\n#scenario-index-box(\r\n  (\"M1-01\", \"M2-01\", \"M2-04\", \"M4-01\"),\r\n  [#scenario-reg-link(\"30\", [岔路標誌])],\r\n  [#scenario-reg-link(\"58\", [停車再開標誌])],  \r\n  [#scenario-reg-link(\"170\", [停止線])],\r\n  [#scenario-reg-link(\"177\", [「停」標字])],\r\n  [#scenario-reg-link(\"185\", [枕木紋行人穿越道線])],\r\n) <scenario-index-g1-02>\r\n\r\n#scenario-fullpage(\r\n  image(\r\n    \"../../media/04-general-scenarios/G1-02/G1-02_無號誌鄉區正交三叉路口-高雄甲典街.svg\",\r\n    width: 235mm,\r\n  ),\r\n  rotate-image: true,\r\n  caption: [無號誌鄉區正交三叉路口交通設施整體設置圖例],\r\n  label-name: \"fig:unsignalized_rural_orthogonal_t_15\",\r\n)\r\n\r\n\r\n\r\n\r\n// #figure(\r\n//   [#image(\"../../media/04-general-scenarios/G1-02/G1-02_無號誌鄉區正交三叉路口交通設施整體設置圖例.png\", width: 94.2%, height: 89.25mm, fit: \"contain\")],\r\n//   kind: image,\r\n//   caption: [無號誌鄉區正交三叉路口交通設施整體設置圖例],\r\n// ) <fig:unsignalized_rural_orthogonal_t_15>\r\n\r\n\r\n==== 標線設置圖例運用解說 <paragraph:unsignalized_rural_orthogonal_t_marking_diagram_explanation>\r\n\r\n// + #guide-item[視覺化減速標線，《設置規則》第 159-1條][\r\n\r\n//   視覺化減速標線主要佈設於臨近路口、彎道或陡坡兩側，距離距車道兩側標線5 至 10~cm，可使駕駛人出現動態視覺效應（視覺達到車道縮減之效用），達到汽機車駕駛減速的目的，如 @fig:unsignalized_rural_orthogonal_t_16 所示。\r\n\r\n//   ]\r\n\r\n+ #guide-item[停止線，《設置規則》第170條][\r\n\r\n  依據《設置規則》第170條，停止線應設置於「停車再開」標誌、「停」標字或號誌管制之交岔路口等指定位置，與行人穿越道線同時設置時，兩者淨距原則為2至3~m，不得小於1~m以提供穿越道路之行人與停等車輛間適當的緩衝空間，如@fig:unsignalized_rural_orthogonal_t_16 所示。\r\n\r\n  本示例因次要道路路幅較狹窄，大型車由主要道路轉入次要道路時，可能需要使用部分對向車道空間。因此，應依大型車轉向軌跡檢核結果，適度退縮次要道路之停止線，避免停等車輛占用大型車轉向所需空間。\r\n\r\n\r\n  // 雖《設置規則》訂定停止線與行穿線兩者之距離以1 至 3~m為原則，為增加行人通行之安全感，參考瑞典、英國、新加坡與韓國之規定均為2~m以上，故\r\n  \r\n\r\n  // 若為增加穿越道路行人與停等車輛之緩衝空間，可將停止線與行穿線間隔設為2 至 3~m。本示例次要道路因路幅較狹窄，需考量大型車轉向需求，故退縮停止線位置，以符合大型車最小轉彎半徑。\r\n\r\n  #figure(\r\n    [#scenario-explanation-image(\r\n      rotate(90deg, reflow: true,\r\n        image(\"../../media/04-general-scenarios/G1-02/G1-02_停標字圖例.svg\", width: 50mm, fit: \"contain\"),\r\n      ),\r\n      kind: \"local\",\r\n    )],\r\n    kind: image,\r\n    caption: [停止線與枕木紋行人穿越道線及「停」標字圖例],\r\n  ) <fig:unsignalized_rural_orthogonal_t_16>\r\n\r\n  // #block(width: 100%, above: 14.4pt, below: 14.4pt, breakable: false)[\r\n  //   #set block(above: 0pt, below: 0pt)\r\n  //   #figure(\r\n  //     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-02/G1-02_枕木紋行人穿越道線與停止線間距佈設圖例.svg\", width: 154 / 50 * 10mm), kind: \"local\")],\r\n  //     kind: image,\r\n  //     caption: [枕木紋行人穿越道線與停止線間距佈設圖例],\r\n  //   ) <fig:unsignalized_urban_orthogonal_t_crosswalk_stop_line_spacing>\r\n\r\n  //   #block(width: 100%, above: guide-style.source-gap, below: 0pt)[\r\n  //     #set align(left)\r\n  //     #set text(font: guide-style.sans-font, size: guide-style.source-size, weight: 400, fill: guide-style.source-fill)\r\n  //     #set par(first-line-indent: 0pt, justify: false, leading: 0.45em, spacing: 0pt)\r\n  //     註：為增加行人通行之安全感，建議2 至 3~m（《設置規則》規定1 至 3~m為原則）\r\n  //   ]\r\n  ]\r\n\r\n  \r\n\r\n+ #guide-item[「停」標字，《設置規則》第177條][\r\n\r\n  「停」標字設於停止線上游2~m以上之位置，助於駕駛人提前得知前方停車再開的位置，如 @fig:unsignalized_rural_orthogonal_t_16 所示。本指引建議應設立桿「停車再開」標誌為主，地面停標字為輔。\r\n\r\n  // #figure(\r\n  //   [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-02/G1-02_停標字圖例.svg\", width: 80mm), kind: \"local\")],\r\n  //   kind: image,\r\n  //   caption: [「停」標字圖例],\r\n  // ) <fig:unsignalized_rural_orthogonal_t_16>\r\n\r\n   ]\r\n\r\n+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\r\n\r\n  如次要道路需提供行人穿越道路之環境時，於次要道路口佈設行穿線，停止線及「停」標字，如 @fig:unsignalized_rural_orthogonal_t_17 所示。如次要道路路側無人行道且評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_orthogonal_t_18 所示。此示例之次要道路因路幅較狹窄，考量大型車轉向需求而退縮停止線位置，以符合大型車最小轉彎半徑，不因無行穿線而將停止線移至下游。\r\n\r\n  #block(width: 100%, breakable: false)[\r\n    #layout(size => {\r\n      let left-path = \"../../media/04-general-scenarios/G1-02/G1-02_無號誌鄉區正交三叉路口設置行穿線圖例.svg\"\r\n      let right-path = \"../../media/04-general-scenarios/G1-02/G1-02_無號誌鄉區正交三叉路口不設置行穿線圖例.svg\"\r\n      let left-size = measure(image(left-path, width: 1mm, fit: \"contain\"), width: 1mm)\r\n      let right-size = measure(image(right-path, width: 1mm, fit: \"contain\"), width: 1mm)\r\n      // 旋轉後寬高互換；依實際圖檔比例計算共同高度，讓兩圖完整並排。\r\n      let left-ratio = left-size.height / left-size.width\r\n      let right-ratio = right-size.height / right-size.width\r\n      let limits = scenario-explanation-image-limits.general\r\n      let image-height = calc.min(\r\n        (size.width - 8pt) / (left-ratio + right-ratio),\r\n        45mm,\r\n        limits.height,\r\n        limits.width / calc.max(left-ratio, right-ratio),\r\n      )\r\n      grid(\r\n        columns: (left-ratio * 1fr, right-ratio * 1fr),\r\n        column-gutter: 8pt,\r\n        align: center + top,\r\n        [\r\n          #figure(\r\n            rotate(90deg, reflow: true,\r\n              image(left-path, width: image-height, height: image-height * left-ratio, fit: \"contain\"),\r\n            ),\r\n            kind: image,\r\n            caption: [無號誌鄉區正交三叉路口#box[設置行穿線圖例]],\r\n          ) <fig:unsignalized_rural_orthogonal_t_17>\r\n        ],\r\n        [\r\n          #figure(\r\n            rotate(90deg, reflow: true,\r\n              image(right-path, width: image-height, height: image-height * right-ratio, fit: \"contain\"),\r\n            ),\r\n            kind: image,\r\n            caption: [無號誌鄉區正交三叉路口#box[不設置行穿線圖例]],\r\n          ) <fig:unsignalized_rural_orthogonal_t_18>\r\n        ],\r\n      )\r\n    })\r\n  ]\r\n\r\n  ]\r\n\r\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_rural_orthogonal_t_signage_diagram_explanation>\r\n\r\n+ #guide-item[停車再開標誌「遵1」，《設置規則》第58條][\r\n\r\n  停車再開標誌「遵1」設置在無號誌路口，當次要道路之安全停車視距不足時，設在臨近路口處。故當次要道路路口駕駛人視界三角受建築物、公共設施與障礙物遮蔽之處宜設置「遵1」。\r\n\r\n  有關視距之判別方式請參閱《交工規範》解說第C6.3節規定，另市區道路之視距標準依《市區道路及附屬工程設計規範》之規定，省道公路之視距標準依《公路路線設計規範》第3.3節之規定。\r\n\r\n  本示例於次要道路路口設置停車再開標誌「遵1」，由於「遵1」係為提醒駕駛人通過此無號誌路口時，應先停車觀察橫交道路車流動向，確認安全後再行通過，故建議宜設置於與停止線平齊或附近之處。若路側空間有所限制，則參考《設置規則》第59條，讓路標誌應設於距路口5~m以內，故該標誌建議不宜設置距離停止線超過5~m，如@fig:stop-and-intersection-warning。停管制路口之設置可參考@sec-mod-m2-01-1[]。本標誌設置於路口處時，建議可與其他標誌共桿設置。\r\n\r\n  // #figure(\r\n  //   [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_停車再開標誌設置圖例.png\", width: 80mm), kind: \"general\")],\r\n  //   kind: image,\r\n  //   caption: [停車再開標誌設置圖例],\r\n  // ) <fig:unsignalized_urban_orthogonal_t_stop_sign>\r\n  #figure(\r\n      [\r\n        #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-02/G1-02-停標誌與岔路標誌.svg\", width: 60%, fit: \"contain\"), kind: \"general\")\r\n      ],\r\n      kind: image,\r\n      caption: [停車再開與岔路標誌設置圖例],\r\n    ) <fig:stop-and-intersection-warning>\r\n  - #guide-item[替選方案：][\r\n\r\n    次要道路之安全停車視距不足時，應以設置「遵1」標誌為主，路面繪設「停」標字為輔。惟若經確認現地無適當空間可立桿設置「遵1」時，可調整改於路面上繪設「停」標字（《設置規則》第177條）。]\r\n\r\n  ]\r\n+ #guide-item[岔路標誌「警11」，《設置規則》第30條][\r\n\r\n  當主要道路上無設置慢行標誌「警49」或當心行人標誌「警34」時，建議可設置岔路標誌，提醒駕駛人注意。\r\n\r\n  設置位置參考道路交通安全規則第102條，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，因此，建議本標誌宜設置於距離路口前約30~m處，並依行車速限及最短安全視距增加，並可加設「前方30~m」附牌，以預告駕駛人前方岔路之距離，減速慢行；另外，亦可於鄰近路口處再增設一面岔路標誌，提醒駕駛人注意路口其他車輛與行人動向，設置圖例如@fig:stop-and-intersection-warning 所示。\r\n\r\n  \r\n\r\n  ]\r\n// + #guide-item[道路遵行方向標誌「遵10」，《設置規則》第61條][\r\n\r\n//   當路口前方道路行駛方向僅能向左及向右行駛時，建議設置道路遵行方向標誌「遵10」。該標誌建議設置於鄰近路口右側近端處，若受路側空間影響，建議設置位置距離路口不超過20~m。此外，除可設置道路遵行方向標誌外，在鄉區道路或道路有中央分隔島處，於不影響行人通行狀況下，亦可增加安全方向導引標誌「輔2」，以提醒駕駛人安全行駛方向，設置圖例如 @fig:unsignalized_rural_orthogonal_t_19 所示。\r\n\r\n//   #figure(\r\n//     [\r\n//       #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-02/G1-02_遵行方向標誌設置圖例.png\", width: 105mm), kind: \"general\")\r\n//     ],\r\n//     kind: image,\r\n//     caption: [遵行方向標誌設置圖例],\r\n//   ) <fig:unsignalized_rural_orthogonal_t_19>\r\n\r\n//   ]\r\n",
+    "width": 699,
+    "height": 414,
+    "articleIds": [
+      "rural-stopline",
+      "rural-stopword",
+      "rural-crosswalk",
+      "rural-stop-sign",
+      "rural-warning"
+    ],
+    "currentConditions": {
+      "pageId": "g102-conditions",
+      "beforeOffsetY": -15,
+      "before": "g102-before",
+      "after": "g102-overall",
+      "textKey": "g102-conditions:G1",
+      "photos": [
+        {
+          "image": "g102-photo-1",
+          "kind": "photo",
+          "title": "路口預告、速限與停讓提示",
+          "alt": "鄉區支道銜接主要道路及遠端安全方向導引標誌的現況",
+          "points": [
+            "主要道路未設「岔路」標誌，路口預告不足。",
+            "主要與次要道路均未設「最高速限」標誌。",
+            "遠端已有「輔2」提示方向限制，近端尚未設「道路遵行方向」標誌。",
+            "次要道路未設「停車再開」標誌。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖、照片與問題摘自 G1.pptx 第8–9頁（原稿日期2025/8/27）；改善示意沿用本簡報原始指引圖。",
+      "takeaway": "由路口預告、停讓與方向提示，對照鄉區路口的改善配置。"
+    }
+  },
+  "articles": [
+    {
+      "id": "rural-stopline",
+      "reg": "170",
+      "name": "停止線",
+      "category": "標線",
+      "page": "123",
+      "asset": "g102-stopword",
+      "headline": "停等位置，\n也要留給轉彎車空間。",
+      "locate": "看次要道路退縮的停止線，以及它與行穿線及主要道路之間的位置。",
+      "box": [
+        366,
+        143,
+        28,
+        16
+      ],
+      "crop": [
+        309,
+        95,
+        154,
+        141
+      ],
+      "metric": "2–3",
+      "unit": "m",
+      "metricLabel": "提供稿件所列停止線與行穿線的原則淨距",
+      "points": [
+        "提供稿件說明：與行穿線同時設置時，淨距原則為 2 至 3 m，不得小於 1 m，保留行人與停等車輛之間的緩衝。",
+        "停止線用於停車再開標誌、停標字或號誌管制等指定位置，需與其他設施一起檢視。",
+        "本例次要道路狹窄，大型車轉入時可能使用部分對向車道，應依轉向軌跡檢核適度退縮停止線。"
+      ],
+      "takeaway": "先檢核大型車轉彎空間，再確定停止線的位置。",
+      "scenario": "g1-02",
+      "sourceRaw": "+ #guide-item[停止線，《設置規則》第170條][\n\n  依據《設置規則》第170條，停止線應設置於「停車再開」標誌、「停」標字或號誌管制之交岔路口等指定位置，與行人穿越道線同時設置時，兩者淨距原則為2至3~m，不得小於1~m以提供穿越道路之行人與停等車輛間適當的緩衝空間，如@fig:unsignalized_rural_orthogonal_t_16 所示。\n\n  本示例因次要道路路幅較狹窄，大型車由主要道路轉入次要道路時，可能需要使用部分對向車道空間。因此，應依大型車轉向軌跡檢核結果，適度退縮次要道路之停止線，避免停等車輛占用大型車轉向所需空間。\n\n\n  \n\n\n  #figure(\n    [#scenario-explanation-image(\n      rotate(90deg, reflow: true,\n        image(\"../../media/04-general-scenarios/G1-02/G1-02_停標字圖例.svg\", width: 50mm, fit: \"contain\"),\n      ),\n      kind: \"local\",\n    )],\n    kind: image,\n    caption: [停止線與枕木紋行人穿越道線及「停」標字圖例],\n  ) <fig:unsignalized_rural_orthogonal_t_16>\n\n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "依據《設置規則》第170條，停止線應設置於「停車再開」標誌、「停」標字或號誌管制之交岔路口等指定位置，與行人穿越道線同時設置時，兩者淨距原則為2至3 m，不得小於1 m以提供穿越道路之行人與停等車輛間適當的緩衝空間，如（見原稿圖例或章節） 所示。",
+        "本示例因次要道路路幅較狹窄，大型車由主要道路轉入次要道路時，可能需要使用部分對向車道空間。因此，應依大型車轉向軌跡檢核結果，適度退縮次要道路之停止線，避免停等車輛占用大型車轉向所需空間。"
+      ]
+    },
+    {
+      "id": "rural-stopword",
+      "reg": "177",
+      "name": "「停」標字",
+      "category": "標線",
+      "page": "123",
+      "asset": "g102-stopword",
+      "headline": "用路面標字，\n提前提示停車再開。",
+      "locate": "看支道停止線上游的白色停標字，對照標字與停止線的前後關係。",
+      "box": [
+        383,
+        99,
+        23,
+        29
+      ],
+      "crop": [
+        330,
+        70,
+        135,
+        132
+      ],
+      "metric": "≥ 2",
+      "unit": "m",
+      "metricLabel": "停標字設於停止線上游的位置",
+      "points": [
+        "提供稿件將停標字設在停止線上游 2 m 以上，讓駕駛提前知道停車再開的位置。",
+        "本指引建議以立桿的停車再開標誌為主，地面停標字為輔。",
+        "說明時可同步對照停止線、停標字及標誌，將停等位置與預告資訊串在一起。"
+      ],
+      "takeaway": "立桿標誌為主、路面標字為輔，清楚交代停車再開的位置。",
+      "scenario": "g1-02",
+      "sourceRaw": "+ #guide-item[「停」標字，《設置規則》第177條][\n\n  「停」標字設於停止線上游2~m以上之位置，助於駕駛人提前得知前方停車再開的位置，如 @fig:unsignalized_rural_orthogonal_t_16 所示。本指引建議應設立桿「停車再開」標誌為主，地面停標字為輔。\n\n\n   ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "「停」標字設於停止線上游2 m以上之位置，助於駕駛人提前得知前方停車再開的位置，如 （見原稿圖例或章節） 所示。本指引建議應設立桿「停車再開」標誌為主，地面停標字為輔。"
+      ]
+    },
+    {
+      "id": "rural-crosswalk",
+      "reg": "185",
+      "name": "枕木紋行人穿越道線",
+      "category": "標線",
+      "page": "123–124",
+      "asset": "g102-crosswalk",
+      "headline": "先看行人需求，\n再決定是否設行穿線。",
+      "locate": "看次要道路入口的行穿線；接著以兩張圖例比較有、無行穿線的配置。",
+      "box": [
+        354,
+        180,
+        46,
+        34
+      ],
+      "crop": [
+        315,
+        127,
+        146,
+        124
+      ],
+      "metric": "需求",
+      "unit": "",
+      "metricLabel": "依路側人行環境及行人通行需求評估",
+      "points": [
+        "次要道路需提供行人穿越環境時，於路口配置行穿線、停止線及停標字。",
+        "路側無人行道且評估行人通行需求較低時，原稿示範不設置行穿線的配置。",
+        "本例仍需保留大型車轉向所需空間，不因沒有行穿線，就把退縮的停止線移至下游。"
+      ],
+      "takeaway": "有、無行穿線兩個方案，都要檢查停止線與大型車轉彎空間。",
+      "scenario": "g1-02",
+      "sourceRaw": "+ #guide-item[枕木紋行人穿越道線，《設置規則》第185條][\n\n  如次要道路需提供行人穿越道路之環境時，於次要道路口佈設行穿線，停止線及「停」標字，如 @fig:unsignalized_rural_orthogonal_t_17 所示。如次要道路路側無人行道且評估行人通行需求較低，則路口採不設置行穿線，如 @fig:unsignalized_rural_orthogonal_t_18 所示。此示例之次要道路因路幅較狹窄，考量大型車轉向需求而退縮停止線位置，以符合大型車最小轉彎半徑，不因無行穿線而將停止線移至下游。\n\n  #block(width: 100%, breakable: false)[\n    #layout(size => {\n      let left-path = \"../../media/04-general-scenarios/G1-02/G1-02_無號誌鄉區正交三叉路口設置行穿線圖例.svg\"\n      let right-path = \"../../media/04-general-scenarios/G1-02/G1-02_無號誌鄉區正交三叉路口不設置行穿線圖例.svg\"\n      let left-size = measure(image(left-path, width: 1mm, fit: \"contain\"), width: 1mm)\n      let right-size = measure(image(right-path, width: 1mm, fit: \"contain\"), width: 1mm)\n      let left-ratio = left-size.height / left-size.width\n      let right-ratio = right-size.height / right-size.width\n      let limits = scenario-explanation-image-limits.general\n      let image-height = calc.min(\n        (size.width - 8pt) / (left-ratio + right-ratio),\n        45mm,\n        limits.height,\n        limits.width / calc.max(left-ratio, right-ratio),\n      )\n      grid(\n        columns: (left-ratio * 1fr, right-ratio * 1fr),\n        column-gutter: 8pt,\n        align: center + top,\n        [\n          #figure(\n            rotate(90deg, reflow: true,\n              image(left-path, width: image-height, height: image-height * left-ratio, fit: \"contain\"),\n            ),\n            kind: image,\n            caption: [無號誌鄉區正交三叉路口#box[設置行穿線圖例]],\n          ) <fig:unsignalized_rural_orthogonal_t_17>\n        ],\n        [\n          #figure(\n            rotate(90deg, reflow: true,\n              image(right-path, width: image-height, height: image-height * right-ratio, fit: \"contain\"),\n            ),\n            kind: image,\n            caption: [無號誌鄉區正交三叉路口#box[不設置行穿線圖例]],\n          ) <fig:unsignalized_rural_orthogonal_t_18>\n        ],\n      )\n    })\n  ]\n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "如次要道路需提供行人穿越道路之環境時，於次要道路口佈設行穿線，停止線及「停」標字，如 （見原稿圖例或章節） 所示。如次要道路路側無人行道且評估行人通行需求較低，則路口採不設置行穿線，如 （見原稿圖例或章節） 所示。此示例之次要道路因路幅較狹窄，考量大型車轉向需求而退縮停止線位置，以符合大型車最小轉彎半徑，不因無行穿線而將停止線移至下游。"
+      ]
+    },
+    {
+      "id": "rural-stop-sign",
+      "reg": "58",
+      "name": "停車再開標誌",
+      "sign": "遵1",
+      "category": "標誌",
+      "page": "125",
+      "asset": "g102-signs",
+      "headline": "用清楚的停管制，\n交代主次道路關係。",
+      "locate": "看次要道路進入路口前的停車再開標誌，及它與停止線的相對位置。",
+      "box": [
+        304,
+        116,
+        54,
+        53
+      ],
+      "crop": [
+        265,
+        90,
+        184,
+        145
+      ],
+      "metric": "≤ 5",
+      "unit": "m",
+      "metricLabel": "原稿對路側受限時，標誌距停止線的建議",
+      "points": [
+        "次要道路安全停車視距不足，或視界三角受建物、公共設施與障礙物遮蔽時，原稿建議設置停車再開標誌。",
+        "建議設於與停止線平齊或附近；路側空間受限時，原稿參考讓路標誌規定，建議距停止線不超過 5 m。",
+        "以遵1標誌為主、停標字為輔；僅在確認沒有適當立桿空間時，原稿列出改以停標字提示的替選方案。"
+      ],
+      "takeaway": "標誌的預告性與停止線的位置，需要一起考量。",
+      "scenario": "g1-02",
+      "sourceRaw": "+ #guide-item[停車再開標誌「遵1」，《設置規則》第58條][\n\n  停車再開標誌「遵1」設置在無號誌路口，當次要道路之安全停車視距不足時，設在臨近路口處。故當次要道路路口駕駛人視界三角受建築物、公共設施與障礙物遮蔽之處宜設置「遵1」。\n\n  有關視距之判別方式請參閱《交工規範》解說第C6.3節規定，另市區道路之視距標準依《市區道路及附屬工程設計規範》之規定，省道公路之視距標準依《公路路線設計規範》第3.3節之規定。\n\n  本示例於次要道路路口設置停車再開標誌「遵1」，由於「遵1」係為提醒駕駛人通過此無號誌路口時，應先停車觀察橫交道路車流動向，確認安全後再行通過，故建議宜設置於與停止線平齊或附近之處。若路側空間有所限制，則參考《設置規則》第59條，讓路標誌應設於距路口5~m以內，故該標誌建議不宜設置距離停止線超過5~m，如@fig:stop-and-intersection-warning。停管制路口之設置可參考@sec-mod-m2-01-1[]。本標誌設置於路口處時，建議可與其他標誌共桿設置。\n\n  #figure(\n      [\n        #scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-02/G1-02-停標誌與岔路標誌.svg\", width: 60%, fit: \"contain\"), kind: \"general\")\n      ],\n      kind: image,\n      caption: [停車再開與岔路標誌設置圖例],\n    ) <fig:stop-and-intersection-warning>\n  - #guide-item[替選方案：][\n\n    次要道路之安全停車視距不足時，應以設置「遵1」標誌為主，路面繪設「停」標字為輔。惟若經確認現地無適當空間可立桿設置「遵1」時，可調整改於路面上繪設「停」標字（《設置規則》第177條）。]\n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "停車再開標誌「遵1」設置在無號誌路口，當次要道路之安全停車視距不足時，設在臨近路口處。故當次要道路路口駕駛人視界三角受建築物、公共設施與障礙物遮蔽之處宜設置「遵1」。",
+        "有關視距之判別方式請參閱《交工規範》解說第C6.3節規定，另市區道路之視距標準依《市區道路及附屬工程設計規範》之規定，省道公路之視距標準依《公路路線設計規範》第3.3節之規定。",
+        "本示例於次要道路路口設置停車再開標誌「遵1」，由於「遵1」係為提醒駕駛人通過此無號誌路口時，應先停車觀察橫交道路車流動向，確認安全後再行通過，故建議宜設置於與停止線平齊或附近之處。若路側空間有所限制，則參考《設置規則》第59條，讓路標誌應設於距路口5 m以內，故該標誌建議不宜設置距離停止線超過5 m，如（見原稿圖例或章節）。停管制路口之設置可參考（見原稿圖例或章節）。本標誌設置於路口處時，建議可與其他標誌共桿設置。",
+        "次要道路之安全停車視距不足時，應以設置「遵1」標誌為主，路面繪設「停」標字為輔。惟若經確認現地無適當空間可立桿設置「遵1」時，可調整改於路面上繪設「停」標字（《設置規則》第177條）。"
+      ]
+    },
+    {
+      "id": "rural-warning",
+      "reg": "30",
+      "name": "岔路標誌",
+      "sign": "警11",
+      "category": "標誌",
+      "page": "125",
+      "asset": "g102-signs",
+      "headline": "在路口之前，\n先讓駕駛知道。",
+      "locate": "看主要道路上游的岔路標誌；本次框選圖面右側的預告位置。",
+      "box": [
+        639,
+        240,
+        50,
+        49
+      ],
+      "crop": [
+        514,
+        187,
+        185,
+        144
+      ],
+      "metric": "≈ 30",
+      "unit": "m",
+      "metricLabel": "原稿建議岔路標誌距路口的上游位置",
+      "points": [
+        "主要道路未設慢行標誌或當心行人標誌時，原稿建議以岔路標誌提醒駕駛注意前方路口。",
+        "建議在距路口前約 30 m 設置，並依行車速限及最短安全視距增加，可加設「前方30 m」附牌。",
+        "鄰近路口處亦可再增設一面，提醒駕駛留意其他車輛與行人動向。"
+      ],
+      "takeaway": "讓駕駛提早察覺路口，是鄉區情境的重要課題。",
+      "scenario": "g1-02",
+      "sourceRaw": "+ #guide-item[岔路標誌「警11」，《設置規則》第30條][\n\n  當主要道路上無設置慢行標誌「警49」或當心行人標誌「警34」時，建議可設置岔路標誌，提醒駕駛人注意。\n\n  設置位置參考道路交通安全規則第102條，「鴐駛人於交叉路口欲轉向時，應於交岔路口30~m前顯示方向燈，並變換車道」，因此，建議本標誌宜設置於距離路口前約30~m處，並依行車速限及最短安全視距增加，並可加設「前方30~m」附牌，以預告駕駛人前方岔路之距離，減速慢行；另外，亦可於鄰近路口處再增設一面岔路標誌，提醒駕駛人注意路口其他車輛與行人動向，設置圖例如@fig:stop-and-intersection-warning 所示。\n\n  \n\n  ]",
+      "sourceAnchor": null,
+      "sourceParagraphs": [
+        "當主要道路上無設置慢行標誌「警49」或當心行人標誌「警34」時，建議可設置岔路標誌，提醒駕駛人注意。",
+        "設置位置參考道路交通安全規則第102條，「鴐駛人於交叉路口欲轉向時，應於交岔路口30 m前顯示方向燈，並變換車道」，因此，建議本標誌宜設置於距離路口前約30 m處，並依行車速限及最短安全視距增加，並可加設「前方30 m」附牌，以預告駕駛人前方岔路之距離，減速慢行；另外，亦可於鄰近路口處再增設一面岔路標誌，提醒駕駛人注意路口其他車輛與行人動向，設置圖例如（見原稿圖例或章節） 所示。"
+      ]
+    }
+  ],
+  "embeddedAssets": {
+    "g102-overall": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-02/G1-02_%E7%84%A1%E8%99%9F%E8%AA%8C%E9%84%89%E5%8D%80%E6%AD%A3%E4%BA%A4%E4%B8%89%E5%8F%89%E8%B7%AF%E5%8F%A3%E8%A8%AD%E6%96%BD%E8%A8%AD%E7%BD%AE%E5%9C%96%E4%BE%8B.svg",
+      "width": 699,
+      "height": 414
+    },
+    "g102-stopword": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-02/G1-02_%E5%81%9C%E6%A8%99%E5%AD%97%E5%9C%96%E4%BE%8B.svg",
+      "width": 97,
+      "height": 139
+    },
+    "g102-crosswalk": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-02/G1-02_%E7%84%A1%E8%99%9F%E8%AA%8C%E9%84%89%E5%8D%80%E6%AD%A3%E4%BA%A4%E4%B8%89%E5%8F%89%E8%B7%AF%E5%8F%A3%E8%A8%AD%E7%BD%AE%E8%A1%8C%E7%A9%BF%E7%B7%9A%E5%9C%96%E4%BE%8B.svg",
+      "width": 97,
+      "height": 139
+    },
+    "g102-no-crosswalk": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-02/G1-02_%E7%84%A1%E8%99%9F%E8%AA%8C%E9%84%89%E5%8D%80%E6%AD%A3%E4%BA%A4%E4%B8%89%E5%8F%89%E8%B7%AF%E5%8F%A3%E4%B8%8D%E8%A8%AD%E7%BD%AE%E8%A1%8C%E7%A9%BF%E7%B7%9A%E5%9C%96%E4%BE%8B.svg",
+      "width": 97,
+      "height": 139
+    },
+    "g102-signs": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-02/G1-02-%E5%81%9C%E6%A8%99%E8%AA%8C%E8%88%87%E5%B2%94%E8%B7%AF%E6%A8%99%E8%AA%8C.svg",
+      "width": 445,
+      "height": 190
+    },
+    "g102-before": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1-02/G1-02_%E7%8F%BE%E6%B3%81%E5%9C%96_01.png",
+      "width": 1872,
+      "height": 1281
+    },
+    "g102-photo-1": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1/image9.png",
+      "width": 860,
+      "height": 537
+    }
+  },
+  "assetMeta": {
+    "g102-overall": {
+      "scenario": "g1-02",
+      "rotation": 0,
+      "label": "G1-02 完整情境圖"
+    },
+    "g102-stopword": {
+      "scenario": "g1-02",
+      "rotation": 90,
+      "label": "停止線、行穿線與停標字圖例"
+    },
+    "g102-crosswalk": {
+      "scenario": "g1-02",
+      "rotation": 90,
+      "label": "設置行穿線圖例"
+    },
+    "g102-no-crosswalk": {
+      "scenario": "g1-02",
+      "rotation": 90,
+      "label": "不設置行穿線圖例"
+    },
+    "g102-signs": {
+      "scenario": "g1-02",
+      "rotation": 0,
+      "label": "停車再開與岔路標誌設置圖例"
+    },
+    "g102-before": {
+      "scenario": "g1-02",
+      "rotation": 0,
+      "label": "G1-02 鄉區正交路口現況圖",
+      "sourceFile": "image8.png",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 8
+    },
+    "g102-photo-1": {
+      "scenario": "g1-02",
+      "rotation": 0,
+      "label": "G1-02 鄉區正交路口停讓與方向提示現況照片",
+      "sourceFile": "image9.png",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 9
+    }
+  },
+  "assetNames": {
+    "g102-overall": "G1-02_無號誌鄉區正交三叉路口設施設置圖例.svg",
+    "g102-stopword": "G1-02_停標字圖例.svg",
+    "g102-crosswalk": "G1-02_無號誌鄉區正交三叉路口設置行穿線圖例.svg",
+    "g102-no-crosswalk": "G1-02_無號誌鄉區正交三叉路口不設置行穿線圖例.svg",
+    "g102-signs": "G1-02-停標誌與岔路標誌.svg",
+    "g102-before": "G1-02 鄉區正交路口現況圖",
+    "g102-photo-1": "G1-02 鄉區正交路口停讓與方向提示現況照片"
+  }
+}

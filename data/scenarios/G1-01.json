@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "id": "g1-01",
+    "code": "G1-01",
+    "chapter": "g1",
+    "name": "無號誌市區正交三岔路口",
+    "short": "市區正交",
+    "setting": "市區",
+    "rotation": 90,
+    "overall": "overall",
+    "figure": "圖 4.1",
+    "contextId": "context",
+    "overviewId": "overview",
+    "reviewId": "review",
+    "source": {
+      "pdf": "output_1027.pdf",
+      "pages": "111–119",
+      "typst": "04-1-01-unsignalized-urban-orthogonal-t.typ",
+      "note": "解說依提供之指引稿整理；數值與建議保留原稿適用條件。PDF 圖片於 Draft 模式略過，圖面採提供之原始 SVG。"
+    },
+    "modules": [
+      "M1-01 路口動線導引",
+      "M1-03 路側停車",
+      "M2-01 停、讓管制",
+      "M2-04 路口行向管制",
+      "M3-01 行人",
+      "M3-04 公車",
+      "M4-01 危險警示"
+    ],
+    "assets": {
+      "overall": "G1-01_無號誌市區正交三岔路口交叉設施設置圖例.svg",
+      "edge": "G1-01_路面邊線圖例.svg",
+      "crosswalk": "G1-01_枕木紋行人穿越道線圖例.svg",
+      "guidance": "G1-01_最右側的路口行車導引線劃設圖例.svg",
+      "taper": "G1-01_漸變段設置圖例.svg",
+      "parking": "G1-01_車輛停放線與路面邊線間距設置圖例.svg",
+      "sign": "G1-01_sign.svg"
+    },
+    "summary": "住宅與商業集結區域，檢視行人穿越、車流動線與路側停車空間。",
+    "assetRotations": {
+      "overall": 90,
+      "edge": 90,
+      "crosswalk": 0,
+      "guidance": 0,
+      "taper": 90,
+      "parking": 90,
+      "sign": 90
+    },
+    "assetLabels": {
+      "overall": "G1-01 完整情境圖",
+      "sign": "當心行人、最高速限、學校標誌設置圖例"
+    },
+    "originalTypst": "// 04-1-01-unsignalized-urban-orthogonal-t.typ\r\n// 檔案位置：chapters/04-general-scenarios/04-1-01-unsignalized-urban-orthogonal-t.typ\r\n// 由章節彙整檔載入，清單與圖表編號沿用 template/guide.typ。\r\n// 第四章「一般道路情境」—無號誌三叉路口／無號誌市區正交三叉路口設置圖例與運用解說\r\n\r\n#import \"../../components/scenario-common.typ\": *\r\n#import \"../../template/guide.typ\": guide-style\r\n// 內文 SVG 以指向線長 10 mm 為縮放基準；整頁總圖另依版心縮放。\r\n#let g1-01-arrow-size = 10mm\r\n\r\n=== #text(weight: 500, fill: rgb(\"666666\"))[G1-01] 無號誌市區正交三叉路口設置圖例與運用解說 <section:unsignalized_urban_orthogonal_t>\r\n\r\n==== 路口現況與議題 <paragraph:unsignalized_urban_orthogonal_t_current_situation_and_issues>\r\n\r\n+ #guide-item[道路條件與交通設施][\r\n\r\n  針對無號誌市區正交三叉路口，選擇位在市區且附近多為住宅及商業集結區域的路口做為案例。本示例之主要道路路寬約28~m，採標線分隔，雙向共佈設6車道(含慢車道)，內側車道禁行機車，道路兩側設有實體人行道及汽、機車停車格位，路段速限為50~km/h。橫交之次要道路路寬約14~m，採標線分隔，雙向共佈設2車道，道路一側設有實體人行道，一側設置騎樓型人行道，並於兩側佈設禁止臨時停車標線，路段速限為30~km/h。\r\n\r\n  ]\r\n\r\n+ #guide-item[路型議題分析][\r\n\r\n  此類位於市區的無號誌正交三叉路口，經常會出現主要道路速限較高之情況，如速限50~km/h。因此雖有行人穿越道路需求，但因路段速限較高，不適合設置無號誌行人穿越道。此類路口一般在現況交通設施配置上，大多會存在以下問題，分述說明如下：\r\n\r\n  + #guide-item[缺少主、次道路之管制][\r\n\r\n    此類路口經常會因為主、次要道路皆無設置警示設施，以致主、次要道路之間的關係不明確，無法適當提醒用路人前方有橫交車輛通行。\r\n\r\n    ]\r\n\r\n  + #guide-item[速度限制不明確][\r\n\r\n    當有速限變化時，此類無號誌路口經常在主、次要道路上無設置速限標誌、標字，以提醒用路人行駛路段之速限。\r\n\r\n    ]\r\n\r\n  + #guide-item[行車空間分隔不明確][\r\n\r\n    由於主要道路之路寬較寬，因此在車道外側以快慢車道分隔線區隔出慢車道，但慢車道空間又同時提供路邊停車與公車停靠站使用，以致路口右轉進入次要道路的車輛易與公車及直行機慢車產生動線上之衝突。\r\n\r\n    ]\r\n\r\n  + #guide-item[路口無左轉空間配置][\r\n\r\n    由主要道路要左彎進入次要道路處，經常會採直行左轉共用車道，無另外設置左轉車道，因而左轉車輛會影響直行車流之續進。\r\n\r\n    ]\r\n\r\n  因此，在本示例中應處理的議題包括：\r\n\r\n  - 如何透過標誌、標線來明確化次要道路停讓管制；\r\n  - 如何透過標誌、標線來提高行人穿越道的安全；\r\n  - 對於在主要道路設置無號誌枕木紋行人穿越道線（以下簡稱行穿線）時，應降低其速限，並提高自明性；\r\n  - 對於路側的停車空間應加以明確繪設，並注意車輛停車進出的安全；\r\n  - 對於無號誌路口的左轉車輛，如何提供停等的空間；\r\n  - 如何明確路段速限規定；\r\n  - 如何透過標線及人行道外擴來提高行人穿越道路之安全等。\r\n\r\n  ]\r\n\r\n==== 交通設施設置建議 <paragraph:unsignalized_urban_orthogonal_t_suggestions_and_overall_diagram>\r\n\r\n有關無號誌市區正交三叉路口的交通設施建議設置如 @fig:unsignalized_urban_orthogonal_t_overall_diagram 所示。此一路口參考實際路口條件，進行路口幾何配置及設置交通工程設施的主要考慮包括：\r\n\r\n+ 主要道路為一速限50~km/h的雙向四車道，原本即無行人穿越道線，不適宜佈設無號誌行人穿越道線；雖有行人穿越需求，但應以鄰近的號誌化路口為主；若要在此設無號誌的行人穿越道線，則應配合將速限降至30~km/h為宜，或改設置成號誌化路口。\r\n// + 原道路一側已有實體人行道，故在另一側示範劃設人行道標線，即設置標線型人行道，次要道路的速限則設定為30~km/h。\r\n+ 為提高次要道路行人穿越的安全，在無號誌行人穿越道線前加設當心行人標誌，以提高行人穿越道之明視性及警示性。\r\n+ 在主要道路部分則考慮左轉需求，設置左彎專用道，來提高左彎待轉之安全性。\r\n\r\n本情境涉及之相關模組及《設置規則》條文彙整如下。\r\n\r\n#scenario-index-box(\r\n  (\"M1-01\", \"M1-03\", \"M2-01\", \"M2-04\", \"M3-01\", \"M3-04\", \"M4-01\"),\r\n  [#scenario-reg-link(\"41\", [當心行人標誌「警34」], target: <g1-01-reg-41>)],\r\n  // [#scenario-reg-link(\"58\", [停車再開標誌「遵1」])],\r\n  [#scenario-reg-link(\"85\", [最高速限標誌「限5」], target: <g1-01-reg-85>)],\r\n  [#scenario-reg-link(\"126\", [學校標誌「指62」], target: <g1-01-reg-126>)],\r\n  // [#scenario-reg-link(\"170\", [停止線])],\r\n  // [#scenario-reg-link(\"174-3\", [人行道標線])],\r\n  [#scenario-reg-link(\"183\", [路面邊線], target: <g1-01-reg-183>)],\r\n  [#scenario-reg-link(\"185\", [枕木紋行人穿越道線], target: <g1-01-reg-185>)],\r\n  [#scenario-reg-link(\"188\", [指向線], target: <g1-01-reg-188>)],\r\n  [#scenario-reg-link(\"189\", [路口行車導引線], target: <g1-01-reg-189>)],\r\n  [#scenario-reg-link(\"189-1\", [穿越虛線], target: <g1-01-reg-189-1>)],\r\n  [#scenario-reg-link(\"190\", [車輛停放線], target: <g1-01-reg-190>)],\r\n) <scenario-index-g1-01>\r\n\r\n#scenario-fullpage(\r\n  image(\r\n    \"../../media/04-general-scenarios/G1-01/G1-01_無號誌市區正交三岔路口交叉設施設置圖例.svg\",\r\n    width: 100%,\r\n    fit: \"contain\",\r\n  ),\r\n  caption: [無號誌市區正交三岔路口交叉設施設置圖例],\r\n  label-name: \"fig:unsignalized_urban_orthogonal_t_overall_diagram\",\r\n)\r\n\r\n\r\n\r\n\r\n// #figure(\r\n//   [#image(\"../../media/04-general-scenarios/G1-01/G1-01_無號誌市區正交三岔路口交叉設施設置圖例.png\", width: 100%, height: 175mm, fit: \"contain\")],\r\n//   kind: image,\r\n//   caption: [無號誌市區正交三叉路口交通設施設置圖例],\r\n// ) <fig:unsignalized_urban_orthogonal_t_overall_diagram>\r\n\r\n\r\n==== 標線設置圖例運用解說 <paragraph:unsignalized_urban_orthogonal_t_marking_diagram_explanation>\r\n\r\n// + #guide-item[停止線，《設置規則》第170條][\r\n\r\n//   停止線於已設有《設置規則》第58條「停車再開」標誌、第177條「停」標字或設有號誌之交岔路口、鐵路平交道或行人穿越道之前方及左彎待轉區之前端。故本示例將停止線設置於行穿線之上游處，且兩者之距離以1 至 3~m為限，如 @fig:unsignalized_urban_orthogonal_t_crosswalk_stop_line_spacing 所示。\r\n\r\n//   雖《設置規則》訂定停止線與行穿線兩者之距離以1 至 3~m為原則，為增加行人通行之安全感，參考瑞典、英國、新加坡與韓國之規定均為2~m以上，故為增加穿越道路行人與停等車輛之緩衝空間，因此建議停止線與行穿線之間隔距離2 至 3~m。\r\n\r\n//   #block(width: 100%, above: 14.4pt, below: 14.4pt, breakable: false)[\r\n//     #set block(above: 0pt, below: 0pt)\r\n//     #figure(\r\n//       [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_枕木紋行人穿越道線與停止線間距佈設圖例.svg\", width: 154 / 50 * g1-01-arrow-size), kind: \"local\")],\r\n//       kind: image,\r\n//       caption: [枕木紋行人穿越道線與停止線間距佈設圖例],\r\n//     ) <fig:unsignalized_urban_orthogonal_t_crosswalk_stop_line_spacing>\r\n\r\n//     #block(width: 100%, above: guide-style.source-gap, below: 0pt)[\r\n//       #set align(left)\r\n//       #set text(font: guide-style.sans-font, size: guide-style.source-size, weight: 400, fill: guide-style.source-fill)\r\n//       #set par(first-line-indent: 0pt, justify: false, leading: 0.45em, spacing: 0pt)\r\n//       註：為增加行人通行之安全感，建議2 至 3~m（《設置規則》規定1 至 3~m為原則）\r\n//     ]\r\n//   ]\r\n\r\n//   ]\r\n\r\n// + #guide-item[人行道標線，《設置規則》第 174-3條][\r\n\r\n//   當道路上無設置實體人行道供行人通行時，可於道路路面劃設人行道標線，如 @fig:unsignalized_urban_orthogonal_t_sidewalk_marking 所示。\r\n\r\n//   本示例於次要道路北側佈設人行道標線，並於人行道鋪面鋪上綠色。交叉口的人行道應彼此連接，提供行人不間斷的行走動線，故本設置圖例之次要道路的人行道標線連接主要道路的實體人行道，其連接處應設置無障礙斜坡。\r\n\r\n//   路口處之標線線形曲率需符合設計車種與轉彎軌跡，轉彎軌跡設計屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第一章設計車種與轉向軌跡之規定；如屬於省道公路範疇者，須符合《公路路線設計規範》第1.5節之規定。\r\n\r\n//   #figure(\r\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_人行道標線圖例.png\", width: 110mm), kind: \"general\")],\r\n//     kind: image,\r\n//     caption: [人行道標線圖例],\r\n//   ) <fig:unsignalized_urban_orthogonal_t_sidewalk_marking>\r\n\r\n//   ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-183>)[路面邊線，《設置規則》第183條][\r\n\r\n  路面邊線為15~cm寬白實線，主要用於最右側車道的行車導引，以及做為行車道右側的邊界，並區分路側其他服務功能或設施；本示例將路肩空間佈設車輛停放線，建議將車輛停放線與路面邊線保留約30~cm的緩衝空間，如 @fig:unsignalized_urban_orthogonal_t_road_edge_line 所示。\r\n\r\n  路面邊線與快慢車道分隔線（10~cm慢車道線）線形易混淆，劃設時應區分慢車道空間及路肩；本指引建議路段之路面邊線應與路口轉角的路面邊線（車行道邊線）相連接，若路緣轉角處未設人行道標線時，則佈設槽化線（路口停止線起至上游10~m處，路肩劃設槽化線，惟實際長度以滿足路口視距三角淨空為主），引導車輛行駛進入車道。佈設圖可參閱@sec-mod-m2-01-1[]停管制路口@fig:m2-01-stop-corner-channelization。\r\n\r\n\r\n\r\n  #figure(\r\n          [#scenario-explanation-image(\r\n            rotate(90deg, reflow: true)[\r\n              // 新版 SVG 的指向線實測長約 37.7654 個座標單位。\r\n              #image(\"../../media/04-general-scenarios/G1-01/G1-01_路面邊線圖例.svg\",  width: 54 / 12 * g1-01-arrow-size)\r\n            ],\r\n            kind: \"local\",\r\n          )],\r\n          kind: image,\r\n          caption: [路面邊線圖例],\r\n        ) <fig:unsignalized_urban_orthogonal_t_road_edge_line>\r\n  \r\n  ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-185>)[枕木紋行人穿越道線，《設置規則》第185條][\r\n\r\n本示例為無號誌路口且有行人穿越之需求，為提升行人於此穿越的安全性，需依《設置規則》第41條在繪設行穿線處設置當心行人標誌，即配合設置當心行人標誌「警34」，以提高行穿線的明視度，並供駕駛人提早辨識到前方有行穿線。\r\n\r\n// 本指引建議得加附牌「減速慢行暫停讓行人」，以提高安全（標誌之運用解說詳見第 @paragraph:unsignalized_urban_orthogonal_t_signage_diagram_explanation[] 節）。\r\n\r\n// 附帶說明：當路段中有行人穿越之需求時，則需佈設斑馬紋行人穿越道線，並應配合設置行人穿越道號誌（《設置規則》第186條）。\r\n\r\n枕木紋行穿線線形具有導引車行方向的意義，故建議宜平行車流行進方向劃設，除可避免與車行方向斜交，亦可避免與斑馬紋產生混淆不清之狀況。\r\n\r\n行穿線劃設起點，建議自路側實體人行道緣石、標線型人行道邊線、禁止臨時停車線等之邊緣處開始繪設。對於行穿線的位置以可以讓轉彎車看到行穿線及注意到正要穿越的行人為原則；對於較大的主次要道路的交叉口，在右轉車輛停讓行人時，為避免直接阻擋後方車流，可依規定退縮3 至 5~m（以路緣至行穿線上緣處計算），以供車輛停讓使用，如 @fig:unsignalized_urban_orthogonal_t_crosswalk 所示。\r\n\r\n#figure(\r\n  [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_枕木紋行人穿越道線圖例.svg\", width: 60%), kind: \"local\")],\r\n  kind: image,\r\n  caption: [枕木紋行人穿越道線圖例],\r\n) <fig:unsignalized_urban_orthogonal_t_crosswalk>\r\n\r\n]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-188>)[指向線，《設置規則》第188條][\r\n\r\n  本示例外側車道為直右共用的混合車道，車道寬度為3.5~m以下，於鄰近路口處採設置指示直行與轉彎之直線與弧形合併之分岔箭頭指向線。\r\n\r\n  當車道寬度為3.5~m以上時，則於鄰近路口處設置指示直行與轉彎之直線與弧形箭頭分離且並列之分流式指向線。直線與弧形箭頭分離且並列之分流式指向線，用以提醒欲右轉車輛可提早靠右行駛，藉此減少右轉車流影響直行車流之續進。\r\n\r\n  當車道寬度為4.5~m以上時，透過路側劃設路面邊線及槽化線方式，將車道寬度限縮至4.5~m，以避免出現車輛併行之情況。\r\n\r\n  ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-189>)[路口行車導引線，《設置規則》第189條][\r\n\r\n  為引導主要道路之直行車輛順著車道通過路口，並彰顯主要道路之車流行進方向，於主要道路通過次要道路之路口右側繪設，且路口行車導引線與主要道路兩側之路面邊線需相連接，如 @fig:unsignalized_urban_orthogonal_t_intersection_guidance_line 所示。\r\n\r\n  路口右側之路口行車導引線用於標示次要道路車輛進入路口前觀察主要道路車流的位置，提供次要道路進入的車輛判斷，可避免與主要道路車輛衝突。\r\n\r\n  #figure(\r\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_最右側的路口行車導引線劃設圖例.svg\", width: 330 / 50 * g1-01-arrow-size), kind: \"general\")],\r\n    kind: image,\r\n    caption: [最右側的路口行車導引線劃設圖例],\r\n  ) <fig:unsignalized_urban_orthogonal_t_intersection_guidance_line>\r\n\r\n  ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-189-1>)[穿越虛線，《設置規則》第189-1條][\r\n\r\n  本示例北往東呈現主要道路左彎進入次要道路的行車方向，採設置附加車道式的左彎專用道，使路段車道數由1車道（直行）進入下游增加至2車道（直行、左轉），於漸變起始處劃設穿越虛線，提供欲左轉之車輛由直行車道匯出至左彎附加車道。\r\n\r\n  穿越虛線有助於區分直進車流及提示左轉車輛打方向燈進入左彎專用道，有助於導引車流秩序；其穿越虛線長度由漸變區起點到專用車道起點為原則，如 @fig:unsignalized_urban_orthogonal_t_taper 所示。\r\n\r\n  左彎附加車道亦即左彎專用道之漸變長度計算，屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第4.2.6節之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第4.2.10節之規定。\r\n\r\n  #figure(\r\n    [#scenario-explanation-image(\r\n      rotate(90deg, reflow: true)[\r\n        #image(\"../../media/04-general-scenarios/G1-01/G1-01_漸變段設置圖例.svg\", width: 54 / 12 * g1-01-arrow-size)\r\n      ],\r\n      kind: \"local\",\r\n    )],\r\n    kind: image,\r\n    caption: [漸變段設置圖例],\r\n  ) <fig:unsignalized_urban_orthogonal_t_taper>\r\n\r\n  因本示例係屬市區道路範疇，故漸變段長度計算採用《市區道路及附屬工程設計規範》之規定，如 @tab:unsignalized_urban_orthogonal_t_deceleration_lane_taper_ratio 所示。\r\n\r\n  #sourced-figure(\r\n    table(\r\n      columns: (1.8fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),\r\n      table.header(\r\n        [設計速率 #emph[$V_d$] \\\r\n          (km/h)],\r\n        [20], [30], [40], [50], [60], [70], [80], [90],\r\n      ),\r\n      [長寬比例],\r\n      [3 : 1], [4 : 1], [6 : 1], [8 : 1],\r\n      [10 : 1], [12 : 1], [14 : 1], [15 : 1],\r\n    ),\r\n    kind: table,\r\n    caption: [減速車道長度及寬度漸變比例],\r\n    source: [《市區道路及附屬工程設計規範》#cite(<moi-urban-road-design-specifications-2024>)。],\r\n  ) <tab:unsignalized_urban_orthogonal_t_deceleration_lane_taper_ratio>\r\n\r\n\r\n  ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-190>)[車輛停放線，《設置規則》第190條][\r\n\r\n  於道路最外側設置車輛停放線時，建議接近路口處放置大型重型機車以外之機車停放線，再放置大型重型機車、小型車、大型客車之車輛停放線。停放線與路面邊線間隔約30~cm，並佈設於距離橫交道路緣延伸處10~m至30~m以外處。\r\n\r\n  // #let parking-image-height = 201 / 50 * g1-01-arrow-size\r\n  // #figure(\r\n  //   [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_車輛停放線與路口間距設置圖例.svg\", height: parking-image-height), kind: \"local\")],\r\n  //   kind: image,\r\n  //   caption: [車輛停放線與路口間距設置圖例],\r\n  // ) <fig:unsignalized_urban_orthogonal_t_parking_intersection_spacing>\r\n\r\n  車輛停放線與路面邊線間隔約30~cm之計算基準，係以路面邊線線寬之中心點開始，計算至車輛停放線之邊緣止。如 @fig:unsignalized_urban_orthogonal_t_parking_edge_line_spacing 所示。\r\n\r\n  #figure(\r\n    layout(size => scenario-explanation-image(\r\n      rotate(90deg, reflow: true)[\r\n        // 旋轉後的圖寬等於原圖高度；先限制尺寸，避免再次縮放時裁切。\r\n        #image(\r\n          \"../../media/04-general-scenarios/G1-01/G1-01_車輛停放線與路面邊線間距設置圖例.svg\",\r\n          height: calc.min(size.width * 60%, scenario-explanation-image-limits.general.width),\r\n          fit: \"contain\",\r\n        )\r\n      ],\r\n      kind: \"general\",\r\n    )),\r\n    kind: image,\r\n    caption: [車輛停放線與路面邊線間距設置圖例],\r\n  ) <fig:unsignalized_urban_orthogonal_t_parking_edge_line_spacing>\r\n\r\n  ]\r\n\r\n==== 標誌設置圖例運用解說 <paragraph:unsignalized_urban_orthogonal_t_signage_diagram_explanation>\r\n\r\n+ #guide-item(anchor: <g1-01-reg-41>)[當心行人標誌「警34」，《設置規則》第41條][\r\n\r\n  由於此標誌之功用係為提醒駕駛人須留意行穿線上會有行人通行，因此車輛需暫時停止並讓行人先行通過後方能行駛。同時參考《設置規則》第59條，讓路標誌應設於距路口5~m以內，因此建議本標誌設置於距離行穿線臨近停止線端之邊緣處，並距行穿線小於等於5~m處，設置圖例如 @fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign 所示。\r\n\r\n  本標誌設置於路口處時，建議可與其他標誌共桿設置，並可加設「減速慢行暫停讓行人」附牌，使標誌意義更為明確，提醒駕駛人注意，除需留意是否有行人及行人動向外，遇行人欲穿越道路時，應暫時停車禮讓行人先行。此外，亦可於上游處距行穿線約30~m處，再增設一面當心行人標誌「警34」，並加設「前方30~m」附牌，以預告駕駛人前方路口設有行穿線，應小心減速慢行，暫停讓行人，並依行車速限及最短安全視距增加。\r\n\r\n  #figure(\r\n    layout(size => rotate(90deg, reflow: true,\r\n      image(\r\n        \"../../media/04-general-scenarios/G1-01/G1-01_sign.svg\",\r\n        height: size.width * 90%,\r\n        fit: \"contain\",\r\n      ),\r\n    )),\r\n    kind: image,\r\n    caption: [當心行人、最高速限、學校標誌設置圖例],\r\n  ) <fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign>\r\n\r\n  ]\r\n\r\n// + #guide-item[停車再開標誌「遵1」，《設置規則》第58條][\r\n\r\n//   停車再開標誌「遵1」設置在無號誌路口，當次要道路之安全停車視距不足時，設在臨近路口處。故當次要道路路口駕駛人視界三角受建築物、公共設施與障礙物遮蔽之處宜設置「遵1」。\r\n\r\n//   有關視距之判別方式請參閱《交工規範》解說第C6.3節規定，另市區道路之視距標準依《市區道路及附屬工程設計規範》之規定，省道公路之視距標準依《公路路線設計規範》第3.3節之規定。\r\n\r\n//   本示例於次要道路路口設置停車再開標誌「遵1」，由於「遵1」係為提醒駕駛人通過此無號誌路口時，應先停車觀察橫交道路車流動向，確認安全後再行通過，故建議宜設置於與停止線平齊或附近之處。若路側空間有所限制，則參考《設置規則》第59條，讓路標誌應設於距路口5~m以內，故該標誌建議不宜設置超過距離停止線5~m處，設置圖例如 @fig:unsignalized_urban_orthogonal_t_stop_sign 所示。本標誌設置於路口處時，建議可與其他標誌共桿設置。\r\n\r\n//   #figure(\r\n//     [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_停車再開標誌設置圖例.png\", width: 80mm), kind: \"general\")],\r\n//     kind: image,\r\n//     caption: [停車再開標誌設置圖例],\r\n//   ) <fig:unsignalized_urban_orthogonal_t_stop_sign>\r\n\r\n//   - 替選方案：\r\n\r\n//     次要道路之安全停車視距不足時，應以設置「遵1」標誌為主，路面繪設「停」標字為輔。惟若經確認現地無適當空間可立桿設置「遵1」時，可調整改於路面上繪設「停」標字（《設置規則》第177條）。\r\n\r\n//   ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-85>)[最高速限標誌「限5」，《設置規則》第85條][\r\n\r\n  本示例建議宜將最高速限標誌「限5」設置於路口遠端，即下游端，如同《設置規則》定義的路口遠端或路段上游，及速限變更之處。並建議原則上設置於自路面邊緣算起20~m處，設置圖例如 @fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign 所示。若上、下游速限相同，要重複提示時，得與遠端號誌共桿。\r\n\r\n  // #figure(\r\n  //   [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_最高速限標誌設置圖例.png\", width: 95mm), kind: \"general\")],\r\n  //   kind: image,\r\n  //   caption: [最高速限標誌設置圖例],\r\n  // ) <fig:unsignalized_urban_orthogonal_t_speed_limit_sign>\r\n\r\n  ]\r\n\r\n+ #guide-item(anchor: <g1-01-reg-126>)[學校標誌「指62」，《設置規則》第126條][\r\n\r\n  若路口周邊有學校，為提醒駕駛人行經學校區域需噤聲慢行，建議可設置學校標誌「指62」。該標誌宜垂直行車方向設置，並設於駕駛人無法輕易辨識前方為學校附近之處，以達告示駕駛人之效果。此外，考量便於外國人士識別，可加設英文附牌，設置圖例如 @fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign 所示。\r\n\r\n  // #figure(\r\n  //   [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_學校標誌設置圖例.png\", width: 85mm), kind: \"general\")],\r\n  //   kind: image,\r\n  //   caption: [學校標誌設置圖例],\r\n  // ) <fig:unsignalized_urban_orthogonal_t_school_sign>\r\n\r\n  \r\n  ]\r\n",
+    "width": 913,
+    "height": 1402,
+    "articleIds": [
+      "edge",
+      "crosswalk",
+      "arrows",
+      "guidance",
+      "taper",
+      "parking",
+      "pedestrian",
+      "speed",
+      "school"
+    ],
+    "currentConditions": {
+      "pageId": "g101-conditions",
+      "beforeOffsetY": 155,
+      "before": "g101-before",
+      "after": "overall",
+      "photos": [
+        {
+          "image": "g101-photo-1",
+          "kind": "photo",
+          "title": "停讓提示與行人警示",
+          "alt": "次要道路接近行人穿越道的現況街景",
+          "points": [
+            "原稿指出：次要道路僅設「停」標字。",
+            "前方設有行穿線，原稿建議加設「當心行人」。",
+            "路側空間足夠時，搭配「停車再開」標誌。"
+          ]
+        },
+        {
+          "image": "g101-photo-2",
+          "kind": "photo",
+          "title": "檢視標誌是否符合環境",
+          "alt": "國中周邊道路及既有當心兒童、學校標誌",
+          "points": [
+            "原稿指出：周邊學校為國中，「當心兒童」的適用情形應重新檢視。",
+            "原稿另指出次要道路未設「最高速限」標誌。"
+          ]
+        }
+      ],
+      "sourceNote": "現況圖、照片與問題摘自 G1.pptx 第3–4頁（原稿日期2025/8/27）；改善示意沿用本簡報原始指引圖。",
+      "takeaway": "先用照片說明現況問題，再到改善圖與條文解說確認設置位置。"
+    }
+  },
+  "articles": [
+    {
+      "id": "edge",
+      "reg": "183",
+      "name": "路面邊線",
+      "category": "標線",
+      "page": "114",
+      "asset": "edge",
+      "headline": "先把行車空間的\n邊界說清楚。",
+      "locate": "看主要道路外側，行車道與路側停車空間之間的白實線。",
+      "box": [
+        402,
+        170,
+        35,
+        220
+      ],
+      "crop": [
+        305,
+        120,
+        290,
+        320
+      ],
+      "metric": "15",
+      "unit": "cm",
+      "metricLabel": "路面邊線的白實線寬度",
+      "points": [
+        "作為最右側車道的行車導引，界定行車道與路側服務空間。",
+        "本指引建議停放線與路面邊線保留約 30 cm 緩衝，並讓路段邊線接續路口轉角的邊線。",
+        "路面邊線為 15 cm；應與 10 cm 的快慢車道分隔線區分。"
+      ],
+      "takeaway": "辨識線寬，也要辨識它界定的是車道還是路肩。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-183>)[路面邊線，《設置規則》第183條][\n\n  路面邊線為15~cm寬白實線，主要用於最右側車道的行車導引，以及做為行車道右側的邊界，並區分路側其他服務功能或設施；本示例將路肩空間佈設車輛停放線，建議將車輛停放線與路面邊線保留約30~cm的緩衝空間，如 @fig:unsignalized_urban_orthogonal_t_road_edge_line 所示。\n\n  路面邊線與快慢車道分隔線（10~cm慢車道線）線形易混淆，劃設時應區分慢車道空間及路肩；本指引建議路段之路面邊線應與路口轉角的路面邊線（車行道邊線）相連接，若路緣轉角處未設人行道標線時，則佈設槽化線（路口停止線起至上游10~m處，路肩劃設槽化線，惟實際長度以滿足路口視距三角淨空為主），引導車輛行駛進入車道。佈設圖可參閱@sec-mod-m2-01-1[]停管制路口@fig:m2-01-stop-corner-channelization。\n\n\n\n  #figure(\n          [#scenario-explanation-image(\n            rotate(90deg, reflow: true)[\n              #image(\"../../media/04-general-scenarios/G1-01/G1-01_路面邊線圖例.svg\",  width: 54 / 12 * g1-01-arrow-size)\n            ],\n            kind: \"local\",\n          )],\n          kind: image,\n          caption: [路面邊線圖例],\n        ) <fig:unsignalized_urban_orthogonal_t_road_edge_line>\n  \n  ]",
+      "sourceAnchor": "g1-01-reg-183",
+      "sourceParagraphs": [
+        "路面邊線為15 cm寬白實線，主要用於最右側車道的行車導引，以及做為行車道右側的邊界，並區分路側其他服務功能或設施；本示例將路肩空間佈設車輛停放線，建議將車輛停放線與路面邊線保留約30 cm的緩衝空間，如 （見原稿圖例或章節） 所示。",
+        "路面邊線與快慢車道分隔線（10 cm慢車道線）線形易混淆，劃設時應區分慢車道空間及路肩；本指引建議路段之路面邊線應與路口轉角的路面邊線（車行道邊線）相連接，若路緣轉角處未設人行道標線時，則佈設槽化線（路口停止線起至上游10 m處，路肩劃設槽化線，惟實際長度以滿足路口視距三角淨空為主），引導車輛行駛進入車道。佈設圖可參閱（見原稿圖例或章節）停管制路口（見原稿圖例或章節）。"
+      ]
+    },
+    {
+      "id": "crosswalk",
+      "reg": "185",
+      "name": "枕木紋行人穿越道線",
+      "category": "標線",
+      "page": "114–115",
+      "asset": "crosswalk",
+      "headline": "讓轉彎車，\n及早看見行人。",
+      "locate": "看次要道路入口的行穿線，以及它和主要道路路緣之間的退縮空間。",
+      "box": [
+        542,
+        583,
+        82,
+        53
+      ],
+      "crop": [
+        390,
+        485,
+        380,
+        240
+      ],
+      "metric": "3–5",
+      "unit": "m",
+      "metricLabel": "較大主次道路路口的行穿線退縮",
+      "points": [
+        "本示例配合當心行人標誌「警34」，提高無號誌行穿線的明視度。",
+        "指引建議枕木紋平行車流方向劃設，並從人行道或路側邊緣開始繪設。",
+        "較大主次道路交叉口可退縮 3 至 5 m，由路緣量至行穿線上緣，供右轉車停讓。"
+      ],
+      "takeaway": "位置的判斷重點：轉彎車能看見行穿線及正要穿越的行人。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-185>)[枕木紋行人穿越道線，《設置規則》第185條][\n\n本示例為無號誌路口且有行人穿越之需求，為提升行人於此穿越的安全性，需依《設置規則》第41條在繪設行穿線處設置當心行人標誌，即配合設置當心行人標誌「警34」，以提高行穿線的明視度，並供駕駛人提早辨識到前方有行穿線。\n\n\n\n枕木紋行穿線線形具有導引車行方向的意義，故建議宜平行車流行進方向劃設，除可避免與車行方向斜交，亦可避免與斑馬紋產生混淆不清之狀況。\n\n行穿線劃設起點，建議自路側實體人行道緣石、標線型人行道邊線、禁止臨時停車線等之邊緣處開始繪設。對於行穿線的位置以可以讓轉彎車看到行穿線及注意到正要穿越的行人為原則；對於較大的主次要道路的交叉口，在右轉車輛停讓行人時，為避免直接阻擋後方車流，可依規定退縮3 至 5~m（以路緣至行穿線上緣處計算），以供車輛停讓使用，如 @fig:unsignalized_urban_orthogonal_t_crosswalk 所示。\n\n#figure(\n  [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_枕木紋行人穿越道線圖例.svg\", width: 60%), kind: \"local\")],\n  kind: image,\n  caption: [枕木紋行人穿越道線圖例],\n) <fig:unsignalized_urban_orthogonal_t_crosswalk>\n\n]",
+      "sourceAnchor": "g1-01-reg-185",
+      "sourceParagraphs": [
+        "本示例為無號誌路口且有行人穿越之需求，為提升行人於此穿越的安全性，需依《設置規則》第41條在繪設行穿線處設置當心行人標誌，即配合設置當心行人標誌「警34」，以提高行穿線的明視度，並供駕駛人提早辨識到前方有行穿線。",
+        "枕木紋行穿線線形具有導引車行方向的意義，故建議宜平行車流行進方向劃設，除可避免與車行方向斜交，亦可避免與斑馬紋產生混淆不清之狀況。",
+        "行穿線劃設起點，建議自路側實體人行道緣石、標線型人行道邊線、禁止臨時停車線等之邊緣處開始繪設。對於行穿線的位置以可以讓轉彎車看到行穿線及注意到正要穿越的行人為原則；對於較大的主次要道路的交叉口，在右轉車輛停讓行人時，為避免直接阻擋後方車流，可依規定退縮3 至 5 m（以路緣至行穿線上緣處計算），以供車輛停讓使用，如 （見原稿圖例或章節） 所示。"
+      ]
+    },
+    {
+      "id": "arrows",
+      "reg": "188",
+      "name": "指向線",
+      "category": "標線",
+      "page": "115",
+      "asset": null,
+      "headline": "用箭頭，\n預告車道的走法。",
+      "locate": "看主要道路外側的直行、右轉共用車道，以及路口前的指向線。",
+      "box": [
+        485,
+        200,
+        28,
+        70
+      ],
+      "crop": [
+        370,
+        160,
+        240,
+        200
+      ],
+      "metric": "3.5",
+      "unit": "m",
+      "metricLabel": "原稿比較共用車道箭頭形式的車道寬度",
+      "points": [
+        "本示例直右共用混合車道寬度為 3.5 m 以下，使用直線與弧形合併的分岔箭頭。",
+        "原稿另說明，車道寬度為 3.5 m 以上時，使用直線與弧形分離、並列的分流式指向線。",
+        "當車道寬度為 4.5 m 以上時，透過路面邊線及槽化線限縮至 4.5 m，以避免車輛併行。"
+      ],
+      "takeaway": "先確認車道寬度，再選擇對應的箭頭配置。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-188>)[指向線，《設置規則》第188條][\n\n  本示例外側車道為直右共用的混合車道，車道寬度為3.5~m以下，於鄰近路口處採設置指示直行與轉彎之直線與弧形合併之分岔箭頭指向線。\n\n  當車道寬度為3.5~m以上時，則於鄰近路口處設置指示直行與轉彎之直線與弧形箭頭分離且並列之分流式指向線。直線與弧形箭頭分離且並列之分流式指向線，用以提醒欲右轉車輛可提早靠右行駛，藉此減少右轉車流影響直行車流之續進。\n\n  當車道寬度為4.5~m以上時，透過路側劃設路面邊線及槽化線方式，將車道寬度限縮至4.5~m，以避免出現車輛併行之情況。\n\n  ]",
+      "sourceAnchor": "g1-01-reg-188",
+      "sourceParagraphs": [
+        "本示例外側車道為直右共用的混合車道，車道寬度為3.5 m以下，於鄰近路口處採設置指示直行與轉彎之直線與弧形合併之分岔箭頭指向線。",
+        "當車道寬度為3.5 m以上時，則於鄰近路口處設置指示直行與轉彎之直線與弧形箭頭分離且並列之分流式指向線。直線與弧形箭頭分離且並列之分流式指向線，用以提醒欲右轉車輛可提早靠右行駛，藉此減少右轉車流影響直行車流之續進。",
+        "當車道寬度為4.5 m以上時，透過路側劃設路面邊線及槽化線方式，將車道寬度限縮至4.5 m，以避免出現車輛併行之情況。"
+      ]
+    },
+    {
+      "id": "guidance",
+      "reg": "189",
+      "name": "路口行車導引線",
+      "category": "標線",
+      "page": "115",
+      "asset": "guidance",
+      "headline": "穿過路口，\n動線依然連續。",
+      "locate": "看主要道路通過次要道路路口時，最右側的虛線導引。",
+      "box": [
+        505,
+        518,
+        21,
+        190
+      ],
+      "crop": [
+        370,
+        475,
+        355,
+        275
+      ],
+      "metric": "連續",
+      "unit": "",
+      "metricLabel": "銜接主要道路兩端的路面邊線",
+      "points": [
+        "於主要道路通過次要道路的路口右側繪設，彰顯主要道路車流方向。",
+        "路口行車導引線應與主要道路兩端的路面邊線相連接，讓直行動線清楚延續。",
+        "右側導引線也提供次要道路車輛進入路口前觀察主要道路車流的位置。"
+      ],
+      "takeaway": "直行車有路徑可循，支道車也有觀察位置可辨識。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-189>)[路口行車導引線，《設置規則》第189條][\n\n  為引導主要道路之直行車輛順著車道通過路口，並彰顯主要道路之車流行進方向，於主要道路通過次要道路之路口右側繪設，且路口行車導引線與主要道路兩側之路面邊線需相連接，如 @fig:unsignalized_urban_orthogonal_t_intersection_guidance_line 所示。\n\n  路口右側之路口行車導引線用於標示次要道路車輛進入路口前觀察主要道路車流的位置，提供次要道路進入的車輛判斷，可避免與主要道路車輛衝突。\n\n  #figure(\n    [#scenario-explanation-image(image(\"../../media/04-general-scenarios/G1-01/G1-01_最右側的路口行車導引線劃設圖例.svg\", width: 330 / 50 * g1-01-arrow-size), kind: \"general\")],\n    kind: image,\n    caption: [最右側的路口行車導引線劃設圖例],\n  ) <fig:unsignalized_urban_orthogonal_t_intersection_guidance_line>\n\n  ]",
+      "sourceAnchor": "g1-01-reg-189",
+      "sourceParagraphs": [
+        "為引導主要道路之直行車輛順著車道通過路口，並彰顯主要道路之車流行進方向，於主要道路通過次要道路之路口右側繪設，且路口行車導引線與主要道路兩側之路面邊線需相連接，如 （見原稿圖例或章節） 所示。",
+        "路口右側之路口行車導引線用於標示次要道路車輛進入路口前觀察主要道路車流的位置，提供次要道路進入的車輛判斷，可避免與主要道路車輛衝突。"
+      ]
+    },
+    {
+      "id": "taper",
+      "reg": "189-1",
+      "name": "穿越虛線",
+      "category": "標線",
+      "page": "115–116",
+      "asset": "taper",
+      "headline": "在進入左轉車道前，\n先安排分流。",
+      "locate": "看北往東左轉的附加車道，從漸變起點到專用車道起點之間的穿越虛線。",
+      "box": [
+        447,
+        207,
+        40,
+        302
+      ],
+      "crop": [
+        340,
+        155,
+        260,
+        410
+      ],
+      "metric": "1 → 2",
+      "unit": "車道",
+      "metricLabel": "由直行車道分出左彎附加車道",
+      "points": [
+        "由 1 個直行車道增加為直行、左轉共 2 車道，讓左轉車可匯出至專用道。",
+        "穿越虛線原則上由漸變區起點劃至專用車道起點，提示左轉車打方向燈並分流。",
+        "本例屬市區道路，漸變長度依《市區道路及附屬工程設計規範》第 4.2.6 節；省道公路另依《公路路線設計規範》第 4.2.10 節。"
+      ],
+      "takeaway": "透過左彎附加車道，提供左轉停等空間並維持直行續進。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-189-1>)[穿越虛線，《設置規則》第189-1條][\n\n  本示例北往東呈現主要道路左彎進入次要道路的行車方向，採設置附加車道式的左彎專用道，使路段車道數由1車道（直行）進入下游增加至2車道（直行、左轉），於漸變起始處劃設穿越虛線，提供欲左轉之車輛由直行車道匯出至左彎附加車道。\n\n  穿越虛線有助於區分直進車流及提示左轉車輛打方向燈進入左彎專用道，有助於導引車流秩序；其穿越虛線長度由漸變區起點到專用車道起點為原則，如 @fig:unsignalized_urban_orthogonal_t_taper 所示。\n\n  左彎附加車道亦即左彎專用道之漸變長度計算，屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第4.2.6節之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第4.2.10節之規定。\n\n  #figure(\n    [#scenario-explanation-image(\n      rotate(90deg, reflow: true)[\n        #image(\"../../media/04-general-scenarios/G1-01/G1-01_漸變段設置圖例.svg\", width: 54 / 12 * g1-01-arrow-size)\n      ],\n      kind: \"local\",\n    )],\n    kind: image,\n    caption: [漸變段設置圖例],\n  ) <fig:unsignalized_urban_orthogonal_t_taper>\n\n  因本示例係屬市區道路範疇，故漸變段長度計算採用《市區道路及附屬工程設計規範》之規定，如 @tab:unsignalized_urban_orthogonal_t_deceleration_lane_taper_ratio 所示。\n\n  #sourced-figure(\n    table(\n      columns: (1.8fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),\n      table.header(\n        [設計速率 #emph[$V_d$] \\\n          (km/h)],\n        [20], [30], [40], [50], [60], [70], [80], [90],\n      ),\n      [長寬比例],\n      [3 : 1], [4 : 1], [6 : 1], [8 : 1],\n      [10 : 1], [12 : 1], [14 : 1], [15 : 1],\n    ),\n    kind: table,\n    caption: [減速車道長度及寬度漸變比例],\n    source: [《市區道路及附屬工程設計規範》#cite(<moi-urban-road-design-specifications-2024>)。],\n  ) <tab:unsignalized_urban_orthogonal_t_deceleration_lane_taper_ratio>\n\n\n  ]",
+      "sourceAnchor": "g1-01-reg-189-1",
+      "sourceParagraphs": [
+        "本示例北往東呈現主要道路左彎進入次要道路的行車方向，採設置附加車道式的左彎專用道，使路段車道數由1車道（直行）進入下游增加至2車道（直行、左轉），於漸變起始處劃設穿越虛線，提供欲左轉之車輛由直行車道匯出至左彎附加車道。",
+        "穿越虛線有助於區分直進車流及提示左轉車輛打方向燈進入左彎專用道，有助於導引車流秩序；其穿越虛線長度由漸變區起點到專用車道起點為原則，如 （見原稿圖例或章節） 所示。",
+        "左彎附加車道亦即左彎專用道之漸變長度計算，屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》第4.2.6節之規定；屬於省道公路範疇者，須符合《公路路線設計規範》第4.2.10節之規定。",
+        "因本示例係屬市區道路範疇，故漸變段長度計算採用《市區道路及附屬工程設計規範》之規定，如 （見原稿圖例或章節） 所示。"
+      ]
+    },
+    {
+      "id": "parking",
+      "reg": "190",
+      "name": "車輛停放線",
+      "category": "標線",
+      "page": "116–117",
+      "asset": "parking",
+      "headline": "停車配置，\n也需要留白。",
+      "locate": "看主要道路路側停車格，以及停放線與路面邊線之間的間隔。",
+      "box": [
+        383,
+        155,
+        51,
+        155
+      ],
+      "crop": [
+        300,
+        110,
+        270,
+        255
+      ],
+      "metric": "≈ 30",
+      "unit": "cm",
+      "metricLabel": "停放線與路面邊線的建議間隔",
+      "points": [
+        "間隔由路面邊線的中心點，量至車輛停放線的邊緣。",
+        "指引建議靠近路口先配置大型重型機車以外的機車停放線，再配置其他車種格位。",
+        "原稿建議停放線佈設於距橫交道路緣延伸處 10 至 30 m 以外，保留路口空間。"
+      ],
+      "takeaway": "同時檢查橫向緩衝間隔與縱向距離路口的位置。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-190>)[車輛停放線，《設置規則》第190條][\n\n  於道路最外側設置車輛停放線時，建議接近路口處放置大型重型機車以外之機車停放線，再放置大型重型機車、小型車、大型客車之車輛停放線。停放線與路面邊線間隔約30~cm，並佈設於距離橫交道路緣延伸處10~m至30~m以外處。\n\n\n  車輛停放線與路面邊線間隔約30~cm之計算基準，係以路面邊線線寬之中心點開始，計算至車輛停放線之邊緣止。如 @fig:unsignalized_urban_orthogonal_t_parking_edge_line_spacing 所示。\n\n  #figure(\n    layout(size => scenario-explanation-image(\n      rotate(90deg, reflow: true)[\n        #image(\n          \"../../media/04-general-scenarios/G1-01/G1-01_車輛停放線與路面邊線間距設置圖例.svg\",\n          height: calc.min(size.width * 60%, scenario-explanation-image-limits.general.width),\n          fit: \"contain\",\n        )\n      ],\n      kind: \"general\",\n    )),\n    kind: image,\n    caption: [車輛停放線與路面邊線間距設置圖例],\n  ) <fig:unsignalized_urban_orthogonal_t_parking_edge_line_spacing>\n\n  ]",
+      "sourceAnchor": "g1-01-reg-190",
+      "sourceParagraphs": [
+        "於道路最外側設置車輛停放線時，建議接近路口處放置大型重型機車以外之機車停放線，再放置大型重型機車、小型車、大型客車之車輛停放線。停放線與路面邊線間隔約30 cm，並佈設於距離橫交道路緣延伸處10 m至30 m以外處。",
+        "車輛停放線與路面邊線間隔約30 cm之計算基準，係以路面邊線線寬之中心點開始，計算至車輛停放線之邊緣止。如 （見原稿圖例或章節） 所示。"
+      ]
+    },
+    {
+      "id": "pedestrian",
+      "reg": "41",
+      "name": "當心行人標誌",
+      "sign": "警34",
+      "category": "標誌",
+      "page": "117–118",
+      "asset": "sign",
+      "headline": "在行穿線前，\n把提醒送到位。",
+      "locate": "看主要道路行穿線旁的當心行人標誌，及上游預告標誌的配置。",
+      "box": [
+        520,
+        730,
+        60,
+        61
+      ],
+      "crop": [
+        380,
+        655,
+        370,
+        220
+      ],
+      "metric": "≤ 5",
+      "unit": "m",
+      "metricLabel": "指引建議標誌距行穿線的位置",
+      "points": [
+        "指引參考第 59 條讓路標誌的位置規定，建議警34設於距行穿線小於等於 5 m 處。",
+        "可與其他標誌共桿，並加設「減速慢行暫停讓行人」附牌。",
+        "亦可於上游距行穿線約 30 m 再增設一面，附「前方30 m」，並依行車速限與最短安全視距增加。"
+      ],
+      "takeaway": "用近端提醒與上游預告，讓駕駛提早辨識行人穿越需求。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-41>)[當心行人標誌「警34」，《設置規則》第41條][\n\n  由於此標誌之功用係為提醒駕駛人須留意行穿線上會有行人通行，因此車輛需暫時停止並讓行人先行通過後方能行駛。同時參考《設置規則》第59條，讓路標誌應設於距路口5~m以內，因此建議本標誌設置於距離行穿線臨近停止線端之邊緣處，並距行穿線小於等於5~m處，設置圖例如 @fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign 所示。\n\n  本標誌設置於路口處時，建議可與其他標誌共桿設置，並可加設「減速慢行暫停讓行人」附牌，使標誌意義更為明確，提醒駕駛人注意，除需留意是否有行人及行人動向外，遇行人欲穿越道路時，應暫時停車禮讓行人先行。此外，亦可於上游處距行穿線約30~m處，再增設一面當心行人標誌「警34」，並加設「前方30~m」附牌，以預告駕駛人前方路口設有行穿線，應小心減速慢行，暫停讓行人，並依行車速限及最短安全視距增加。\n\n  #figure(\n    layout(size => rotate(90deg, reflow: true,\n      image(\n        \"../../media/04-general-scenarios/G1-01/G1-01_sign.svg\",\n        height: size.width * 90%,\n        fit: \"contain\",\n      ),\n    )),\n    kind: image,\n    caption: [當心行人、最高速限、學校標誌設置圖例],\n  ) <fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign>\n\n  ]",
+      "sourceAnchor": "g1-01-reg-41",
+      "sourceParagraphs": [
+        "由於此標誌之功用係為提醒駕駛人須留意行穿線上會有行人通行，因此車輛需暫時停止並讓行人先行通過後方能行駛。同時參考《設置規則》第59條，讓路標誌應設於距路口5 m以內，因此建議本標誌設置於距離行穿線臨近停止線端之邊緣處，並距行穿線小於等於5 m處，設置圖例如 （見原稿圖例或章節） 所示。",
+        "本標誌設置於路口處時，建議可與其他標誌共桿設置，並可加設「減速慢行暫停讓行人」附牌，使標誌意義更為明確，提醒駕駛人注意，除需留意是否有行人及行人動向外，遇行人欲穿越道路時，應暫時停車禮讓行人先行。此外，亦可於上游處距行穿線約30 m處，再增設一面當心行人標誌「警34」，並加設「前方30 m」附牌，以預告駕駛人前方路口設有行穿線，應小心減速慢行，暫停讓行人，並依行車速限及最短安全視距增加。"
+      ]
+    },
+    {
+      "id": "speed",
+      "reg": "85",
+      "name": "最高速限標誌",
+      "sign": "限5",
+      "category": "標誌",
+      "page": "118–119",
+      "asset": "sign",
+      "headline": "通過路口後，\n再次確認速限。",
+      "locate": "看路口下游的最高速限標誌，對照行車方向與路緣的位置。",
+      "box": [
+        533,
+        1232,
+        35,
+        42
+      ],
+      "crop": [
+        365,
+        1120,
+        345,
+        230
+      ],
+      "metric": "20",
+      "unit": "m",
+      "metricLabel": "指引建議自路面邊緣算起的位置",
+      "points": [
+        "本示例建議設於路口遠端，也就是下游端；速限變更處應能清楚辨識。",
+        "指引建議原則上設於自路面邊緣算起 20 m 處，搭配原圖檢視位置。",
+        "若上、下游速限相同，重複提示時得與遠端號誌共桿。"
+      ],
+      "takeaway": "數值提示與設置位置一起說明，讓速限資訊持續清楚。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-85>)[最高速限標誌「限5」，《設置規則》第85條][\n\n  本示例建議宜將最高速限標誌「限5」設置於路口遠端，即下游端，如同《設置規則》定義的路口遠端或路段上游，及速限變更之處。並建議原則上設置於自路面邊緣算起20~m處，設置圖例如 @fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign 所示。若上、下游速限相同，要重複提示時，得與遠端號誌共桿。\n\n\n  ]",
+      "sourceAnchor": "g1-01-reg-85",
+      "sourceParagraphs": [
+        "本示例建議宜將最高速限標誌「限5」設置於路口遠端，即下游端，如同《設置規則》定義的路口遠端或路段上游，及速限變更之處。並建議原則上設置於自路面邊緣算起20 m處，設置圖例如 （見原稿圖例或章節） 所示。若上、下游速限相同，要重複提示時，得與遠端號誌共桿。"
+      ]
+    },
+    {
+      "id": "school",
+      "reg": "126",
+      "name": "學校標誌",
+      "sign": "指62",
+      "category": "標誌",
+      "page": "118–119",
+      "asset": "sign",
+      "headline": "讓學校周邊，\n更容易被辨識。",
+      "locate": "看次要道路南側、學校入口附近的學校標誌與英文附牌。",
+      "box": [
+        700,
+        646,
+        58,
+        52
+      ],
+      "crop": [
+        520,
+        510,
+        380,
+        300
+      ],
+      "metric": "指62",
+      "unit": "",
+      "metricLabel": "學校標誌",
+      "points": [
+        "路口周邊有學校時，指引建議設置學校標誌，提醒駕駛噤聲慢行。",
+        "標誌宜垂直行車方向，設於駕駛不易辨識前方為學校附近之處。",
+        "考量外國人士識別，可加設英文附牌，提高告示效果。"
+      ],
+      "takeaway": "以學校環境的辨識需求，決定標誌位置與面向。",
+      "scenario": "g1-01",
+      "sourceRaw": "+ #guide-item(anchor: <g1-01-reg-126>)[學校標誌「指62」，《設置規則》第126條][\n\n  若路口周邊有學校，為提醒駕駛人行經學校區域需噤聲慢行，建議可設置學校標誌「指62」。該標誌宜垂直行車方向設置，並設於駕駛人無法輕易辨識前方為學校附近之處，以達告示駕駛人之效果。此外，考量便於外國人士識別，可加設英文附牌，設置圖例如 @fig:unsignalized_urban_orthogonal_t_pedestrian_warning_sign 所示。\n\n\n  \n  ]",
+      "sourceAnchor": "g1-01-reg-126",
+      "sourceParagraphs": [
+        "若路口周邊有學校，為提醒駕駛人行經學校區域需噤聲慢行，建議可設置學校標誌「指62」。該標誌宜垂直行車方向設置，並設於駕駛人無法輕易辨識前方為學校附近之處，以達告示駕駛人之效果。此外，考量便於外國人士識別，可加設英文附牌，設置圖例如 （見原稿圖例或章節） 所示。"
+      ]
+    }
+  ],
+  "embeddedAssets": {
+    "overall": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_%E7%84%A1%E8%99%9F%E8%AA%8C%E5%B8%82%E5%8D%80%E6%AD%A3%E4%BA%A4%E4%B8%89%E5%B2%94%E8%B7%AF%E5%8F%A3%E4%BA%A4%E5%8F%89%E8%A8%AD%E6%96%BD%E8%A8%AD%E7%BD%AE%E5%9C%96%E4%BE%8B.svg",
+      "width": 913,
+      "height": 1402
+    },
+    "edge": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_%E8%B7%AF%E9%9D%A2%E9%82%8A%E7%B7%9A%E5%9C%96%E4%BE%8B.svg",
+      "width": 155,
+      "height": 357
+    },
+    "crosswalk": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_%E6%9E%95%E6%9C%A8%E7%B4%8B%E8%A1%8C%E4%BA%BA%E7%A9%BF%E8%B6%8A%E9%81%93%E7%B7%9A%E5%9C%96%E4%BE%8B.svg",
+      "width": 277,
+      "height": 112
+    },
+    "guidance": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_%E6%9C%80%E5%8F%B3%E5%81%B4%E7%9A%84%E8%B7%AF%E5%8F%A3%E8%A1%8C%E8%BB%8A%E5%B0%8E%E5%BC%95%E7%B7%9A%E5%8A%83%E8%A8%AD%E5%9C%96%E4%BE%8B.svg",
+      "width": 330,
+      "height": 304
+    },
+    "taper": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_%E6%BC%B8%E8%AE%8A%E6%AE%B5%E8%A8%AD%E7%BD%AE%E5%9C%96%E4%BE%8B.svg",
+      "width": 155,
+      "height": 357
+    },
+    "parking": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_%E8%BB%8A%E8%BC%9B%E5%81%9C%E6%94%BE%E7%B7%9A%E8%88%87%E8%B7%AF%E9%9D%A2%E9%82%8A%E7%B7%9A%E9%96%93%E8%B7%9D%E8%A8%AD%E7%BD%AE%E5%9C%96%E4%BE%8B.svg",
+      "width": 18,
+      "height": 49
+    },
+    "sign": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/G1-01/G1-01_sign.svg",
+      "width": 528,
+      "height": 691
+    },
+    "g101-before": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1-01/G1-01_%E7%8F%BE%E6%B3%81%E5%9C%96_01.png",
+      "width": 1967,
+      "height": 2454
+    },
+    "g101-photo-1": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1/image2.jpeg",
+      "width": 720,
+      "height": 405
+    },
+    "g101-photo-2": {
+      "url": "materials/04-%E4%B8%80%E8%88%AC%E9%81%93%E8%B7%AF%E6%83%85%E5%A2%83/current-conditions/G1/image3.jpeg",
+      "width": 576,
+      "height": 324
+    }
+  },
+  "assetMeta": {
+    "overall": {
+      "scenario": "g1-01",
+      "rotation": 90,
+      "label": "G1-01 完整情境圖"
+    },
+    "edge": {
+      "scenario": "g1-01",
+      "rotation": 90,
+      "label": "路面邊線圖例"
+    },
+    "crosswalk": {
+      "scenario": "g1-01",
+      "rotation": 0,
+      "label": "枕木紋行人穿越道線圖例"
+    },
+    "guidance": {
+      "scenario": "g1-01",
+      "rotation": 0,
+      "label": "最右側的路口行車導引線劃設圖例"
+    },
+    "taper": {
+      "scenario": "g1-01",
+      "rotation": 90,
+      "label": "漸變段設置圖例"
+    },
+    "parking": {
+      "scenario": "g1-01",
+      "rotation": 90,
+      "label": "車輛停放線與路面邊線間距設置圖例"
+    },
+    "sign": {
+      "scenario": "g1-01",
+      "rotation": 90,
+      "label": "當心行人、最高速限、學校標誌設置圖例"
+    },
+    "g101-before": {
+      "scenario": "g1-01",
+      "rotation": 90,
+      "label": "G1-01 現況圖",
+      "sourceFile": "image1.png",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 3
+    },
+    "g101-photo-1": {
+      "scenario": "g1-01",
+      "rotation": 0,
+      "label": "G1-01 次要道路停讓與行人警示現況照片",
+      "sourceFile": "image2.jpeg",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 4
+    },
+    "g101-photo-2": {
+      "scenario": "g1-01",
+      "rotation": 0,
+      "label": "G1-01 學校周邊標誌現況照片",
+      "sourceFile": "image3.jpeg",
+      "sourcePresentation": "G1.pptx",
+      "sourceSlide": 4
+    }
+  },
+  "assetNames": {
+    "overall": "G1-01_無號誌市區正交三岔路口交叉設施設置圖例.svg",
+    "edge": "G1-01_路面邊線圖例.svg",
+    "crosswalk": "G1-01_枕木紋行人穿越道線圖例.svg",
+    "guidance": "G1-01_最右側的路口行車導引線劃設圖例.svg",
+    "taper": "G1-01_漸變段設置圖例.svg",
+    "parking": "G1-01_車輛停放線與路面邊線間距設置圖例.svg",
+    "sign": "G1-01_sign.svg",
+    "g101-before": "G1-01 現況圖",
+    "g101-photo-1": "G1-01 次要道路停讓與行人警示現況照片",
+    "g101-photo-2": "G1-01 學校周邊標誌現況照片"
+  },
+  "view": {
+    "context": {
+      "summary": "市區住宅與商業集結區域。從現況路型出發，檢視路權、行人穿越與行車空間的配置。",
+      "facts": [
+        {
+          "title": "主要道路 / 現況",
+          "width": "28",
+          "description": "雙向 6 車道（含慢車道）",
+          "speed": "50"
+        },
+        {
+          "title": "次要道路 / 現況",
+          "width": "14",
+          "description": "雙向 2 車道",
+          "speed": "30"
+        }
+      ],
+      "issues": [
+        [
+          "釐清主次路權",
+          "缺少停讓提示時，主要與次要道路的關係不易辨識。"
+        ],
+        [
+          "提高行人可見度",
+          "車速、行穿線位置與預告標誌，需要一起檢視。"
+        ],
+        [
+          "整理車流與路側空間",
+          "左轉停等、直行續進與路側停車，應各有清楚位置。"
+        ]
+      ],
+      "condition": "若在主要道路設置無號誌行人穿越道，指引建議配合將速限降至 <strong>30 km/h</strong>，或改設為號誌化路口。這是本示例改善配置的前提。",
+      "sourceLine": "資料：output_1027.pdf，第 111–112 頁 / G1-01 路口現況與交通設施設置建議",
+      "cropFraction": 0.56
+    },
+    "overview": {
+      "intro": "從路面邊線到標誌配置，將同一個路口的設置考量串成完整的解說。",
+      "rows": [
+        [
+          "edge",
+          "01　界定行車與路側空間",
+          "§ 183 / § 190"
+        ],
+        [
+          "crosswalk",
+          "02　看見行人穿越需求",
+          "§ 185 / § 41"
+        ],
+        [
+          "arrows",
+          "03　引導直行與轉彎動線",
+          "§ 188 / § 189 / § 189-1"
+        ],
+        [
+          "speed",
+          "04　傳達速限與學校環境",
+          "§ 85 / § 126"
+        ]
+      ],
+      "miniNote": "相關模組：路口動線、路側停車、停讓管制、行向管制、行人、公車及危險警示。"
+    },
+    "review": {
+      "title": "回到全圖，\n讓配置連成一體。",
+      "intro": "同一個路口，九項條文。\n從個別設施的設置考量，回到完整動線與使用需求。",
+      "breakIntro": true,
+      "primary": {
+        "page": "overview",
+        "label": "重看情境大圖"
+      },
+      "hideSecondary": true,
+      "sourceLine": "G1-01 的完整示範到此結束。接下來為其餘三類章節開場。",
+      "rows": [
+        [
+          "先整理空間，再安排車流",
+          "路面邊線界定車道與路側服務空間；指向線、導引線及穿越虛線串接直行與轉彎動線。",
+          "§ 183 / § 188 / § 189 / § 189-1"
+        ],
+        [
+          "讓行人被看見，也被預期",
+          "行穿線位置、退縮與當心行人標誌共同配置，並配合本例降速或號誌化的前提。",
+          "§ 185 / § 41"
+        ],
+        [
+          "把路側與環境資訊交代清楚",
+          "停車格位保留間隔與路口空間；速限及學校標誌提供駕駛持續可辨識的訊息。",
+          "§ 190 / § 85 / § 126"
+        ]
+      ]
+    }
+  }
+}

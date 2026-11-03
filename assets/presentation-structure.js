@@ -32,7 +32,7 @@
     }
     return value;
   }
-  async function load(){try{const response=await fetch(new URL('data/presentations.json',document.baseURI),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);manifest=validate(await response.json());}catch(error){loadError=error.message;}}
+  async function load(){try{if(typeof window==='object'&&window.PresentationRepository){await window.PresentationRepository.ready;manifest=validate(window.PresentationRepository.registry.presentations);return;}const response=await fetch(new URL('data/presentations.json',document.baseURI),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);manifest=validate(await response.json());}catch(error){loadError=error.message;}}
   const decks=()=>manifest?.presentations||[];
   const deckFor=page=>decks().find(deck=>deck.chapters.some(chapter=>chapter.id===page.chapter))||null;
   function organize(pages){

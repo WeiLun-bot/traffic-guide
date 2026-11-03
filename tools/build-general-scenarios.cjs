@@ -3,6 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..');
+if(fs.existsSync(path.join(root,'data/scenarios/presentation.json'))){console.log(JSON.stringify(require('./prepare-presentation-registry.cjs').build({root})));process.exit(0);}
 const content=path.join(root,'content','04-general-scenarios');
 const source=path.join(root,'src','general-scenarios');
 const {deck,manifest}=require('./prepare-general-scenario-data.cjs')({root,content});
