@@ -38,13 +38,13 @@ test('archived original files match source checksums and current-condition valid
   const foreign=structuredClone(conditions);foreign.scenarios['C1-01'].issue.images[0].key=conditions.scenarios['G1-02'].issue.images[0].key;assert.throws(()=>Results.validateConditions(foreign));
 });
 
-test('approved C2-02 reuse retains its identity and independent media IDs while tracing the unchanged C4-04 sources',()=>{
+test('approved C2-02 image reuse retains independent text and media identities while tracing the unchanged C4-04 sources',()=>{
   const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),conditions=require('../data/results/current-conditions.json');
   const target=conditions.scenarios['C2-02'],source=conditions.scenarios['C4-04'],reference=target.reuseSource.source;
   assert.equal(target.name,catalog.scenarios.find(scene=>scene.id==='C2-02').name);assert.equal(reference.type,'scenario-reuse');
   const raw=fs.readFileSync(path.resolve(__dirname,'..',target.archive,reference.file));assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),reference.sha256);
   const snapshot=JSON.parse(raw);assert.equal(snapshot.scenario,'C2-02');assert.equal(snapshot.fromScenario,'C4-04');
-  assert.deepEqual(target.issue.items,source.issue.items);assert.equal(target.issue.intro,source.issue.intro);assert.deepEqual(snapshot.issue,target.issue);
+  assert.deepEqual(snapshot.issue.images,target.issue.images);
   assert.equal(target.issue.photoStatus,'available');assert.deepEqual(target.sourceSlides,source.sourceSlides);
   for(const [index,image]of target.issue.images.entries()){
     const asset=conditions.assets[image.key],original=conditions.assets[source.issue.images[index].key];

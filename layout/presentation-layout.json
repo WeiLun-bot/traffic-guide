@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-04T09:30:03.964Z",
+  "updatedAt": "2026-11-04T11:19:11.958Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793773156365,
+    "updatedAt": 1793791150320,
     "texts": {
       "g101-conditions|0|text-4": "次要道路僅設「停」標字。",
       "g101-conditions|0|text-5": "前方設有行穿線，建議加設「當心行人」標誌。",
@@ -409,7 +409,381 @@
       "results-scenario-g4-04-strategy|results|signals-title": "依斜交條件配置號誌與左轉時相",
       "results-scenario-g4-04-strategy|results|signals-text": "於次要道路近端增設柱立式號誌，並檢核其他方向誤窺燈面的問題；依左轉側撞風險評估採機會左轉或保護左轉，配置對應燈面。",
       "results-scenario-c1-01-strategy|results|guidance-title": "提前選擇車道並導引支線道穿越",
-      "results-scenario-c1-02-strategy|results|walking-title": "提供行人庇護"
+      "results-scenario-c1-02-strategy|results|walking-title": "配置中央行人庇護島",
+      "results-scenario-c1-02|results|title": "錯位 T 字路口的車道連續性與號誌辨識問題",
+      "results-scenario-c1-02|results|intro": "兩處號誌化 T 字路口錯距約 55 m，東西向及南北向道路寬度均約 18 m，雙向各有多個車道，路口間的車道銜接與號誌位置須一併考量。",
+      "results-scenario-c1-02|results|lanes-title": "直行車道銜接至左轉專用車道",
+      "results-scenario-c1-02|results|lanes-text": "前一個路口的直行車道，通過路口後卻銜接到左轉專用車道，駕駛容易誤入轉向車道。",
+      "results-scenario-c1-02|results|guidance-title": "支線道穿越動線不明確",
+      "results-scenario-c1-02|results|guidance-text": "兩條支線道相互錯位，缺少上游車道選擇及路口內行車導引，駕駛不易判斷應如何銜接對側道路。",
+      "results-scenario-c1-02|results|visibility-title": "中央街廓號誌可視性不足",
+      "results-scenario-c1-02|results|visibility-text": "兩處路口距離近，但部分遠端燈面位置偏左，最右側車道駕駛可能無法在上游同時辨識兩個燈面。",
+      "results-scenario-c1-02|results|pedestrian-title": "行人穿越缺少中央庇護空間",
+      "results-scenario-c1-02|results|pedestrian-text": "道路車道數多、穿越距離長，缺少行人中途停等及庇護空間。",
+      "results-scenario-c1-02-strategy|results|title": "錯位路口的車道銜接、行車導引及號誌配置",
+      "results-scenario-c1-02-strategy|results|intro": "以車道連續性為優先，從上游車道選擇到中央街廓通行，配置行車導引、行人庇護及近、遠端號誌。",
+      "results-scenario-c1-02-strategy|results|selection-title": "提前提示支線道穿越方向",
+      "results-scenario-c1-02-strategy|results|selection-text": "於路口上游設置車道與方向指示標誌，搭配指向線，引導駕駛提前選擇通往對側支線道的車道。",
+      "results-scenario-c1-02-strategy|results|continuity-title": "維持兩處路口間的車道連續性",
+      "results-scenario-c1-02-strategy|results|continuity-text": "調整中央街廓的車道配置，避免直行車道直接銜接左轉專用車道，並以路口行車導引線標示穿越路徑。",
+      "results-scenario-c1-02-strategy|results|walking-text": "於較寬道路中央設置行人庇護空間，提供行人中途停等位置，縮短單次穿越距離。",
+      "results-scenario-c1-02-strategy|results|visibility-title": "調整中央街廓號誌位置",
+      "results-scenario-c1-02-strategy|results|visibility-text": "檢核各車道駕駛能否辨識近、遠端號誌，必要時增設燈面，並配合行穿線及行人停等位置配置行人號誌。",
+      "results-scenario-c1-03|results|title": "短街廓的左轉車流回堵與相鄰號誌辨識問題",
+      "results-scenario-c1-03|results|intro": "兩處號誌化路口相距較近，沿幹線道形成短街廓。示例周邊為住宅及學校用地，幹線道與支線道均為雙向道路。",
+      "results-scenario-c1-03|results|queue-title": "短街廓儲車空間不足",
+      "results-scenario-c1-03|results|queue-text": "兩處路口距離近，中央街廓可容納的等候車輛有限，車隊可能回堵至上游路口。",
+      "results-scenario-c1-03|results|turn-title": "對向左轉車隊可能互相阻擋",
+      "results-scenario-c1-03|results|turn-text": "短街廓內雙向左轉車流若同時排隊，可能互相阻礙，導致車輛無法完成轉向，形成路口自鎖。",
+      "results-scenario-c1-03|results|decision-title": "駕駛可能誤看下游號誌",
+      "results-scenario-c1-03|results|decision-text": "兩處路口的號誌距離近，駕駛可能將下游燈號誤認為目前路口的管制燈號。",
+      "results-scenario-c1-03|results|coordination-title": "號誌時相不當容易造成急煞或回堵",
+      "results-scenario-c1-03|results|coordination-text": "若上下游號誌同時放行或清道時間不當，車輛可能無法及時停等，亦可能使短街廓內車隊溢流。",
+      "results-scenario-c1-03-strategy|results|title": "正偏移左轉車道與短街廓號誌協調",
+      "results-scenario-c1-03-strategy|results|intro": "配合短街廓有限的儲車空間，調整左轉車道配置，並協調兩處路口號誌時相及燈面位置。",
+      "results-scenario-c1-03-strategy|results|left-turn-title": "採正偏移方式配置左轉車道",
+      "results-scenario-c1-03-strategy|results|left-turn-text": "將短街廓內左轉車道調整為正偏移配置，避免對向左轉車輛互相阻擋，降低車隊自鎖風險。",
+      "results-scenario-c1-03-strategy|results|recognition-title": "提前預告兩處路口與車道方向",
+      "results-scenario-c1-03-strategy|results|recognition-text": "於上游設置方向及車道預告，搭配指向線，讓駕駛在進入短街廓前判斷應選擇的車道。",
+      "results-scenario-c1-03-strategy|results|coordination-title": "協調上下游號誌放行時機",
+      "results-scenario-c1-03-strategy|results|coordination-text": "配合短街廓儲車長度及車流需求調整號誌時相，盡量使車輛順利通過兩處路口，避免車隊溢流。",
+      "results-scenario-c1-03-strategy|results|visibility-title": "區分相鄰路口的號誌燈面",
+      "results-scenario-c1-03-strategy|results|visibility-text": "檢核兩處路口燈面的設置位置與可視範圍，將遠端號誌配置於同一街廓適當位置，並視需要增設縱向排列燈面，降低誤視下游號誌的可能。",
+      "results-scenario-c1-04|results|title": "主要道路多叉路口的行車路徑、標誌資訊及號誌問題",
+      "results-scenario-c1-04|results|intro": "多條主要道路於同一交叉口交會，各分支路幅寬、車道數多，且部分道路斜交，形成面積廣大、轉向選擇較多的號誌化路口。",
+      "results-scenario-c1-04|results|guidance-title": "交叉口過大，行車路徑不明確",
+      "results-scenario-c1-04|results|guidance-text": "各方向車道未直接對齊，且缺少足夠的行車導引，駕駛通過路口時不易判斷應銜接的車道。",
+      "results-scenario-c1-04|results|pedestrian-title": "行人穿越距離長且缺少庇護",
+      "results-scenario-c1-04|results|pedestrian-text": "多條寬廣道路交會，行人須穿越多個車道，現況缺少適當的分隔島及行人庇護空間。",
+      "results-scenario-c1-04|results|information-title": "標誌資訊過多且重複",
+      "results-scenario-c1-04|results|information-text": "路口分支多、方向選擇複雜，若設置過多相似或重複的方向標誌，駕駛難以在短時間內完成判讀。",
+      "results-scenario-c1-04|results|signals-title": "號誌易誤視且人車可能衝突",
+      "results-scenario-c1-04|results|signals-text": "遠端號誌距離過遠，部分燈面可能被其他方向駕駛誤認；現況亦有左轉箭頭綠燈與衝突方向行人綠燈同時放行的問題。",
+      "results-scenario-c1-04-strategy|results|title": "縮小交叉範圍、明確主要車流及號誌管制",
+      "results-scenario-c1-04-strategy|results|intro": "先界定各方向實際行車範圍，再以槽化線、行人庇護島、行車導引線及號誌調整，處理多叉路口的複雜動線。",
+      "results-scenario-c1-04-strategy|results|space-title": "以槽化線縮小交叉口範圍",
+      "results-scenario-c1-04-strategy|results|space-text": "將不必要的鋪面空間劃設為槽化區，明確界定行車範圍，並利用可配置的空間設置行人庇護島。",
+      "results-scenario-c1-04-strategy|results|guidance-title": "優先標示主要車流路徑",
+      "results-scenario-c1-04-strategy|results|guidance-text": "確認各分支的主要通行方向，於容易混淆的轉向及直行路徑劃設路口行車導引線，引導車輛進入正確的下游車道。",
+      "results-scenario-c1-04-strategy|results|information-title": "減少重複的方向標誌",
+      "results-scenario-c1-04-strategy|results|information-text": "以駕駛需要的選道及行向資訊為主，刪減重複或不必要的牌面，並將重要資訊安排於駕駛作出決策前的位置。",
+      "results-scenario-c1-04-strategy|results|signals-title": "檢核號誌可視性與誤視問題",
+      "results-scenario-c1-04-strategy|results|signals-text": "依各分支行車方向檢核近、遠端燈面，避免駕駛誤看其他方向的號誌。",
+      "results-scenario-c1-04-strategy|results|phases-title": "以時相區隔高風險轉向與行人穿越",
+      "results-scenario-c1-04-strategy|results|phases-text": "若轉向車輛行駛路徑接近直行，或可能以較高速度穿越行穿線，應檢討採用人車分離的號誌時相，避免衝突放行。",
+      "results-scenario-c1-05|results|title": "主要道路與街巷道交會的車流導引及行人穿越問題",
+      "results-scenario-c1-05|results|intro": "主要道路與多條街巷道於同一地點交會，各分支道路寬度及交通功能不同，周邊包括住宅、公園及機關用地。",
+      "results-scenario-c1-05|results|guidance-title": "路口範圍過大且缺少行車導引",
+      "results-scenario-c1-05|results|guidance-text": "主要道路與多條街巷道相交，車輛行駛路徑多且不規則，缺少清楚的導引標線。",
+      "results-scenario-c1-05|results|pedestrian-title": "人行空間狹窄且穿越動線不佳",
+      "results-scenario-c1-05|results|pedestrian-text": "路口部分人行道寬度不足，步行空間不連續，行人通過多叉路口時缺少適當的穿越及庇護設施。",
+      "results-scenario-c1-05|results|information-title": "方向標誌過多且設置位置不當",
+      "results-scenario-c1-05|results|information-text": "部分地名方向指示標誌重複，牌面資訊過多，且行動點標誌位置不適當，容易使駕駛誤判行駛方向。",
+      "results-scenario-c1-05|results|signals-title": "遠端號誌不易辨識或遭誤視",
+      "results-scenario-c1-05|results|signals-text": "交叉口範圍過大，部分遠端號誌距離較遠，且多個分支的號誌可能被其他方向駕駛誤認。",
+      "results-scenario-c1-05-strategy|results|title": "主次分支動線整理、行人庇護與右轉島管制",
+      "results-scenario-c1-05-strategy|results|intro": "配合主要道路與街巷道不同的交通功能，縮小不必要的交叉空間，分別處理主要車流、街巷道轉向及行人穿越需求。",
+      "results-scenario-c1-05-strategy|results|space-title": "以槽化線及庇護島縮小路口",
+      "results-scenario-c1-05-strategy|results|space-text": "將不必要的行車鋪面劃設為槽化區，界定各分支的行車範圍，並利用適當空間設置行人庇護島。",
+      "results-scenario-c1-05-strategy|results|guidance-title": "對易混淆的分支劃設導引線",
+      "results-scenario-c1-05-strategy|results|guidance-text": "確認主要道路及街巷道的通行路徑，於轉向與穿越動線容易混淆的位置劃設路口行車導引線。",
+      "results-scenario-c1-05-strategy|results|information-title": "精簡地名方向指示資訊",
+      "results-scenario-c1-05-strategy|results|information-text": "減少重複及過量的方向標誌，依駕駛選道需求調整預告及行動點標誌位置，避免在接近路口時才提供關鍵資訊。",
+      "results-scenario-c1-05-strategy|results|signals-title": "檢核號誌可視性及人車衝突",
+      "results-scenario-c1-05-strategy|results|signals-text": "調整近、遠端號誌位置，防止駕駛誤看其他分支燈號；高速轉向可能與行人穿越衝突時，檢討採時相區隔。",
+      "results-scenario-c1-05-strategy|results|side-road-title": "依街巷道交通量決定右轉島管制",
+      "results-scenario-c1-05-strategy|results|side-road-text": "人車交通量較低的街巷道右轉三角島，可依現地條件採無號誌管制，並保留適當的行人穿越空間。",
+      "results-scenario-c1-06|results|title": "街巷道多叉路口的車速、步行空間與行向辨識問題",
+      "results-scenario-c1-06|results|intro": "五條街巷道交會形成無號誌多叉路口，各分支均為單行道。周邊以住宅及公園用地為主，路側設有停車帶，部分道路設有標線型人行道。",
+      "results-scenario-c1-06-strategy|results|title": "車道縮減、步行空間調整與單行道管制",
+      "results-scenario-c1-06-strategy|results|intro": "利用標線調整車道寬度及路口幾何，減少車輛高速穿越的空間，並配合多叉路型設置方向警示及單行道管制標誌。",
+      "results-scenario-c1-06|results|speed-title": "路口缺少有效的減速設計",
+      "results-scenario-c1-06|results|speed-text": "現況主要以網狀線提示交叉口位置，但路口範圍較寬，車輛仍可能以較高速度通過。",
+      "results-scenario-c1-06|results|pedestrian-title": "行人通行空間不足",
+      "results-scenario-c1-06|results|pedestrian-text": "路側步行空間狹窄且不連續，行人通過多叉路口時，容易與車輛動線交織。",
+      "results-scenario-c1-06|results|direction-title": "多叉路型不易提前辨識",
+      "results-scenario-c1-06|results|direction-text": "路口分支多且交角不規則，缺少對應路型的岔路標誌，駕駛不易提前判斷道路方向。",
+      "results-scenario-c1-06|results|oneway-title": "單行道行向管制不明確",
+      "results-scenario-c1-06|results|oneway-text": "各分支均為單行道，若缺少適當的禁止轉彎及禁止進入標誌，駕駛可能誤入逆向道路。",
+      "results-scenario-c1-07|results|title": "住宅街巷路口的減速、行人穿越與停等視距問題",
+      "results-scenario-c1-07|results|intro": "原為三條道路以約 120° 交角形成的無號誌三岔路口，路寬約 6～7 m、設計速率 30 km/h。周邊以住宅、商店及攤販為主，人車活動頻繁。",
+      "results-scenario-c1-07|results|space-title": "路口範圍過寬，車輛未有效減速",
+      "results-scenario-c1-07|results|space-text": "現況僅以網狀線提醒駕駛注意交叉口，缺少能實際改變行駛路徑的減速設計。",
+      "results-scenario-c1-07|results|pedestrian-title": "行人穿越與步行空間未銜接",
+      "results-scenario-c1-07|results|pedestrian-text": "行穿線兩端缺少適當的人行設施，行人穿越時容易與路口車流產生衝突。",
+      "results-scenario-c1-07|results|visibility-title": "停止線位置不利於觀察來車",
+      "results-scenario-c1-07|results|visibility-text": "部分停止線設置位置視距不足，駕駛停等時不易觀察左側來車及穿越行人。",
+      "results-scenario-c1-07|results|parking-title": "停車範圍及行穿線配置不當",
+      "results-scenario-c1-07|results|parking-text": "部分停車格侵入車行範圍或過於接近路口，行穿線與停止線的距離及繪設方向亦有不當情形。",
+      "results-scenario-c1-07-strategy|results|title": "迷你圓環減速、入口讓路與步行空間配置",
+      "results-scenario-c1-07-strategy|results|intro": "將原三岔路口改為迷你圓環，以入環偏折降低車速，並配合行人通行及緊急車輛需求設置中央島與相關交通設施。",
+      "results-scenario-c1-07-strategy|results|calming-title": "以迷你圓環取代原路口配置",
+      "results-scenario-c1-07-strategy|results|calming-text": "本例採圓環直徑 13 m、中央島直徑 3 m，透過進環路徑偏折，使駕駛降低速度後進入圓環。",
+      "results-scenario-c1-07-strategy|results|emergency-title": "中央島採可跨越式設計",
+      "results-scenario-c1-07-strategy|results|emergency-text": "中央島以鋪面或微凸起方式配置，平時引導車輛繞行，必要時可供消防車、救護車等大型緊急車輛跨越。",
+      "results-scenario-c1-07-strategy|results|priority-title": "配置進環讓路線及行車導引線",
+      "results-scenario-c1-07-strategy|results|priority-text": "於圓環入口設置讓路線，搭配微弧形指向線及環道導引線，指示車輛繞行方向及進環前的讓路位置。",
+      "results-scenario-c1-07-strategy|results|walking-title": "銜接行人穿越與路側步行空間",
+      "results-scenario-c1-07-strategy|results|walking-text": "調整原有車行範圍，將不需供車輛行駛的空間留給行人使用，並配合行穿線銜接周邊步行路徑。",
+      "results-scenario-c1-07-strategy|results|signs-title": "設置圓環與讓路相關標誌",
+      "results-scenario-c1-07-strategy|results|signs-text": "於入口適當位置配置圓環及讓路標誌，提醒駕駛進入圓環前須注意環內車輛，並依規定讓路。",
+      "results-scenario-c1-06-strategy|results|alignment-title": "調整路型及縮減車道寬度",
+      "results-scenario-c1-06-strategy|results|alignment-text": "以標線修整不規則的行車範圍，配合車道縮減及轉角調整，使駕駛減速通過多叉路口。",
+      "results-scenario-c1-06-strategy|results|walking-title": "擴大路側步行空間",
+      "results-scenario-c1-06-strategy|results|walking-text": "調整車道及停車帶配置，將部分路側空間留供行人通行，並配合斜交路型設置梯形行穿線。",
+      "results-scenario-c1-06-strategy|results|warning-title": "依實際路型設計岔路標誌",
+      "results-scenario-c1-06-strategy|results|warning-text": "本例路口無法對應既有岔路標誌圖案，因此示範依實際分支形狀繪製岔路警示圖案，協助駕駛辨識前方路型。",
+      "results-scenario-c1-06-strategy|results|oneway-title": "配置單行道與禁止進入標誌",
+      "results-scenario-c1-06-strategy|results|oneway-text": "依各分支行車方向設置單行道、禁止進入及禁止轉彎標誌，明確告知駕駛允許通行的方向。",
+      "results-scenario-c1-06-strategy|results|signs-title": "依狹窄街巷條件調整標誌設置",
+      "results-scenario-c1-06-strategy|results|signs-text": "優先採用符合規定的縮小型警告及禁制標誌；立桿空間不足時，應另行檢討附掛位置，避免占用人行道淨寬。",
+      "results-scenario-c1-08|results|title": "多車道圓環的入口選道、環內交織及行人空間問題",
+      "results-scenario-c1-08|results|intro": "四條道路交會形成無號誌圓環，東西向道路寬約 15～16 m、南北向約 7 m，環內配置雙車道，周邊以商業活動為主。",
+      "results-scenario-c1-08|results|lanes-title": "進環前缺少車道選擇指示",
+      "results-scenario-c1-08|results|lanes-text": "入口未設置足夠的指向線及方向標誌，駕駛不易在進入圓環前選擇通往目的地的車道。",
+      "results-scenario-c1-08|results|weaving-title": "環內車道交織衝突較多",
+      "results-scenario-c1-08|results|weaving-text": "環內不同車道的行駛方向及出口對應不明確，駕駛可能在圓環內頻繁變換車道。",
+      "results-scenario-c1-08|results|signs-title": "圓環相關標誌配置不足",
+      "results-scenario-c1-08|results|signs-text": "入口缺少完整的讓路及圓環遵行方向標誌，駕駛不易判斷進環讓路關係與行駛方向。",
+      "results-scenario-c1-08|results|pedestrian-title": "圓環周邊步行空間不足",
+      "results-scenario-c1-08|results|pedestrian-text": "路側人行空間狹窄，進出環車輛轉向時，可能影響行人通行及穿越空間。",
+      "results-scenario-c1-08-strategy|results|title": "進環前選道、螺旋車道及入口讓路配置",
+      "results-scenario-c1-08-strategy|results|intro": "採渦輪圓環的螺旋式車道配置，讓駕駛進環前選定車道，再沿指定路徑駛離，減少環內變換車道及交織衝突。",
+      "results-scenario-c1-08-strategy|results|selection-title": "進環前以指向線及標誌引導選道",
+      "results-scenario-c1-08-strategy|results|selection-text": "於上游配置指向線及圖形化地名方向指示標誌，協助駕駛在進環前選擇正確車道及出口方向。",
+      "results-scenario-c1-08-strategy|results|spiral-title": "以螺旋車道及實體分隔減少交織",
+      "results-scenario-c1-08-strategy|results|spiral-text": "環內採螺旋式車道導引，配合導向角及實體分隔，讓車輛依預定路徑駛離圓環，避免任意變換車道。",
+      "results-scenario-c1-08-strategy|results|lane-lines-title": "依進環動線配置禁止變換車道線",
+      "results-scenario-c1-08-strategy|results|lane-lines-text": "環內以雙白實線限制變換車道；需讓入口車輛匯入內側車道的位置，則採單邊禁止變換車道線。",
+      "results-scenario-c1-08-strategy|results|signs-title": "配置入口讓路及圓環方向標誌",
+      "results-scenario-c1-08-strategy|results|signs-text": "於圓環入口設置讓路線、讓路標誌及圓環遵行方向標誌，中心島則可視需要配置安全方向導引標誌。",
+      "results-scenario-c1-08-strategy|results|markings-title": "整理進出口行車與行人空間",
+      "results-scenario-c1-08-strategy|results|markings-text": "配合入口偏折、出口導引線及行穿線配置，並於車行道與人行空間之間保留適當緩衝，考量大型車轉向軌跡。",
+      "results-scenario-c1-09|results|title": "號誌化圓環的環內交織、標誌資訊及號誌辨識問題",
+      "results-scenario-c1-09|results|intro": "位於市中心的號誌化大型圓環，東西向道路寬約 50 m、南北向約 56 m，環內設有多車道及快慢車道分隔，進出環車流交織關係複雜。",
+      "results-scenario-c1-09|results|lanes-title": "進出環車道導引不連續",
+      "results-scenario-c1-09|results|lanes-text": "入口缺少明確的車道導引，環內部分標線無法連續對應出口車道，使車輛容易在環內變換車道。",
+      "results-scenario-c1-09|results|weaving-title": "快慢車道交織關係複雜",
+      "results-scenario-c1-09|results|weaving-text": "進環車輛須依快慢車道分隔進入不同環道，並於環內持續匯流及分流，駕駛不易判斷正確的行駛路徑。",
+      "results-scenario-c1-09|results|signs-title": "圓環標誌過多且設置不當",
+      "results-scenario-c1-09|results|signs-text": "部分圓環遵行方向標誌牌面及角度不適當，特殊管制告示牌文字過多，增加駕駛的判讀負擔。",
+      "results-scenario-c1-09|results|signal-title": "號誌距離過遠且可能誤視",
+      "results-scenario-c1-09|results|signal-text": "部分外環遠端號誌距離較遠，號誌燈面朝向不當，可能使駕駛誤看其他方向的管制燈號。",
+      "results-scenario-c1-09|results|turn-title": "右轉車輛與行人燈號不易判讀",
+      "results-scenario-c1-09|results|turn-text": "右轉專用車道有獨立放行需求，駕駛可能不易辨識不同時相的燈號變換，增加與行人穿越的衝突風險。",
+      "results-scenario-c1-09-strategy|results|title": "圓環車道導引、進環選道與號誌時相配置",
+      "results-scenario-c1-09-strategy|results|intro": "配合快慢車道及號誌化管制，從入口選道、停止線後的環道導引到出口標誌與號誌，建立連續的通行路徑。",
+      "results-scenario-c1-09-strategy|results|continuity-title": "延續停止線後的環道導引",
+      "results-scenario-c1-09-strategy|results|continuity-text": "在圓環入口停止線後繼續劃設路口行車導引線，標示環內車行範圍及車道銜接位置，避免進環車流相互混淆。",
+      "results-scenario-c1-09-strategy|results|selection-title": "進環前選道並限制環內變換車道",
+      "results-scenario-c1-09-strategy|results|selection-text": "於進環前配置左轉及直行專用車道，搭配穿越虛線、車道線及禁止變換車道線，引導車輛沿指定環道行駛及駛離。",
+      "results-scenario-c1-09-strategy|results|signs-title": "以圖形化標誌提示出口方向",
+      "results-scenario-c1-09-strategy|results|signs-text": "於上游配置圖形化地名方向指示標誌，並於各出口前設置路名標誌，協助駕駛提前辨識出口及確認行駛方向。",
+      "results-scenario-c1-09-strategy|results|phases-title": "配合內環疏解安排號誌時相",
+      "results-scenario-c1-09-strategy|results|phases-text": "本例採南北向與東西向交替放行，並穿插內環車流疏解時相；慢車道右轉車流採四燈式號誌，配合獨立放行需求配置右轉箭頭綠燈。",
+      "results-scenario-c1-09-strategy|results|signals-title": "檢核近遠端號誌及防誤視措施",
+      "results-scenario-c1-09-strategy|results|signals-text": "依不同進環車道及停止線位置，配置近、遠端號誌；必要時增設柱立式燈面或調整罩簷，確保駕駛辨識自身方向的燈號，並避免誤看其他行向號誌。",
+      "results-scenario-c2-01|results|title": "交流道進出車道、匯入空間及行人穿越問題",
+      "results-scenario-c2-01|results|intro": "部分苜蓿葉型交流道包含環狀與對角匝道，銜接設有中央分隔的主要道路。平面道路雙向共 7 車道，下匝道 3 車道、上匝道 2 車道。",
+      "results-scenario-c2-01|results|lanes-title": "車道連續性與左轉銜接不佳",
+      "results-scenario-c2-01|results|lanes-text": "平面道路往高速公路的左轉車道銜接不順，且部分車道進出路口的動線缺少明確導引。",
+      "results-scenario-c2-01|results|merge-title": "匝道匯入距離與視距不足",
+      "results-scenario-c2-01|results|merge-text": "部分右轉匯入匝道的漸變長度不足，駕駛不易在匯入前完成觀察及判斷，增加與主線車流的衝突風險。",
+      "results-scenario-c2-01|results|restrictions-title": "高速公路入口車種管制不明確",
+      "results-scenario-c2-01|results|restrictions-text": "交流道附近的方向標誌與車種管制資訊不足，駕駛不易提前選擇正確車道，機車亦可能誤入高速公路匝道。",
+      "results-scenario-c2-01|results|pedestrian-title": "行人穿越缺少適當的保護設施",
+      "results-scenario-c2-01|results|pedestrian-text": "平面道路人行道寬度不足，部分橫向穿越動線不完整，且須面對速度較高的匝道轉向車流。",
+      "results-scenario-c2-01|results|signals-title": "右轉槽化島號誌不易辨識",
+      "results-scenario-c2-01|results|signals-text": "右轉車道呈彎曲線形，若號誌位置未配合駕駛視線配置，可能造成號誌辨識不足或誤看其他車道燈號。",
+      "results-scenario-c2-01-strategy|results|title": "匝道選道導引、匯入讓路及人車分離號誌",
+      "results-scenario-c2-01-strategy|results|intro": "從平面道路上游選道、匝道進出口導引到行人穿越與右轉號誌，配置完整的交流道銜接設施。",
+      "results-scenario-c2-01-strategy|results|selection-title": "提前預告高速公路入口及車道方向",
+      "results-scenario-c2-01-strategy|results|selection-text": "於平面道路上游設置圖形化方向指示標誌，搭配高速公路方向標字及四輪以上汽車專用車道標誌，引導車輛提前選道，避免機車誤入。",
+      "results-scenario-c2-01-strategy|results|wrong-way-title": "以槽化島及導引線區分匝道進出口",
+      "results-scenario-c2-01-strategy|results|wrong-way-text": "配合槽化島、指向線及路口行車導引線，明確區分上、下匝道車流，並於出口匝道增設禁止進入標誌，防止車輛逆向誤入。",
+      "results-scenario-c2-01-strategy|results|merge-title": "匯入距離不足時採讓路管制",
+      "results-scenario-c2-01-strategy|results|merge-text": "本例平面道路右轉匯入高速公路時，因漸變長度及視距不足，於匯入點設置讓路線，並搭配附加車道提供匯入後的加速空間。",
+      "results-scenario-c2-01-strategy|results|walking-title": "以行人庇護島及時相區隔轉向車流",
+      "results-scenario-c2-01-strategy|results|walking-text": "拓寬路側人行道，利用實體槽化島提供行人中途庇護空間，並以人車分離號誌時相避免較高速的轉向車輛與行人同時通行。",
+      "results-scenario-c2-01-strategy|results|signals-title": "右轉三角槽化島採雙柱立式號誌",
+      "results-scenario-c2-01-strategy|results|signals-text": "於右轉彎道兩側設置柱立式號誌，使駕駛沿彎道接近時仍能辨識燈號，並避免其他車道駕駛誤看。",
+      "results-scenario-c2-02|results|title": "交流道旁迴轉道的車道分流與匯入問題",
+      "results-scenario-c2-02|results|intro": "平行匝道型交流道鄰近中央分隔迴轉道，車輛可經不同車道前往高速公路、平面道路或迴轉道。部分迴轉動線須穿越高架橋下方。",
+      "results-scenario-c2-02|results|merge-title": "迴轉道與主線銜接空間不足",
+      "results-scenario-c2-02|results|merge-text": "車輛進出迴轉道時，缺少足夠的漸變及匯入空間，容易與主線車輛產生衝突。",
+      "results-scenario-c2-02|results|signs-title": "不同目的地的車道選擇不明確",
+      "results-scenario-c2-02|results|signs-text": "同一區域同時提供高速公路入口、平面道路與迴轉動線，部分方向標誌混用不同牌面型式，駕駛不易判斷應行駛的車道。",
+      "results-scenario-c2-02|results|height-title": "迴轉道位於高架橋下方",
+      "results-scenario-c2-02|results|height-text": "迴轉道通過高架橋下方，須考量橋梁淨高限制，避免超高車輛進入後無法通行。",
+      "results-scenario-c2-02|results|direction-title": "鄰近支線道行向管制不易辨識",
+      "results-scenario-c2-02|results|direction-text": "交流道附近另有地方道路交會，部分支線道採右進右出管制，若缺少明確的行向標誌，可能發生錯誤轉向。",
+      "results-scenario-c2-02-strategy|results|title": "迴轉入口分流、附加車道與匝道方向預告",
+      "results-scenario-c2-02-strategy|results|intro": "配合高速公路、平面道路與迴轉道的不同通行方向，安排上游選道、迴轉入口漸變及出口匯入設施。",
+      "results-scenario-c2-02-strategy|results|selection-title": "以方向標誌預告各車道目的地",
+      "results-scenario-c2-02-strategy|results|selection-text": "在上游設置對應車道的地名方向指示標誌，分別指示迴轉道、不同方向高速公路匝道及平面道路，箭頭對準各自車道。",
+      "results-scenario-c2-02-strategy|results|arrows-title": "利用分流式指向線引導進入迴轉道",
+      "results-scenario-c2-02-strategy|results|arrows-text": "於迴轉道入口配置直行與迴轉分流式指向線，搭配迴轉道標誌，讓駕駛在進入前確認行駛方向。",
+      "results-scenario-c2-02-strategy|results|transition-title": "配置漸變段及附加車道",
+      "results-scenario-c2-02-strategy|results|transition-text": "於迴轉道進出口提供適當的漸變與附加車道，並搭配穿越虛線，引導車輛逐步分流或匯入主線。",
+      "results-scenario-c2-02-strategy|results|exit-title": "依匯入長度決定出口管制方式",
+      "results-scenario-c2-02-strategy|results|exit-text": "迴轉道出口如有足夠匯入長度，可採匯流設計；空間不足時，則配置讓路線，要求車輛確認主線來車後再匯入。",
+      "results-scenario-c2-02-strategy|results|restrictions-title": "提前提示限高及支線道行向",
+      "results-scenario-c2-02-strategy|results|restrictions-text": "迴轉道通過高架橋下方，於上游設置車輛高度限制標誌；鄰近右進右出支線道則搭配讓路及僅准右轉標誌，明確告知通行規則。",
+      "results-scenario-c3-01|results|title": "鐵路平交道的車流滯留、路口導引及警示問題",
+      "results-scenario-c3-01|results|intro": "鐵路平交道鄰近道路交叉口，主要道路寬約 8 m、支線道約 6～7 m。周邊包含住宅及工業用地，須同時考量車輛、行人與列車通行。",
+      "results-scenario-c3-01|results|guidance-title": "大面積網狀線缺少明確行車導引",
+      "results-scenario-c3-01|results|guidance-text": "現況以大面積網狀線提醒駕駛保持淨空，但未清楚界定車道及轉向路徑，駕駛不易判斷應行駛的位置。",
+      "results-scenario-c3-01|results|queue-title": "鄰近路口車隊可能占用平交道",
+      "results-scenario-c3-01|results|queue-text": "平交道與道路交叉口距離近，若下游路口排隊回堵，車輛可能滯留於鐵路淨空範圍。",
+      "results-scenario-c3-01|results|signs-title": "平交道與路口標誌容易混淆",
+      "results-scenario-c3-01|results|signs-text": "平交道警示、道路行向及路口管制標誌集中設置，駕駛可能無法在接近時迅速辨識重要資訊。",
+      "results-scenario-c3-01|results|pedestrian-title": "行人穿越與庇護空間不足",
+      "results-scenario-c3-01|results|pedestrian-text": "路口缺少完整的行人穿越設施，步行空間與車行動線未妥善區隔，行人通行條件不足。",
+      "results-scenario-c3-01-strategy|results|title": "平交道預告、鐵路淨空與鄰近路口管制",
+      "results-scenario-c3-01-strategy|results|intro": "從上游警示、停止位置到平交道淨空範圍，配置鐵路平交道標誌標線，並檢討鄰近交叉口的車流管制與行人通行。",
+      "results-scenario-c3-01-strategy|results|warning-title": "設置近鐵路平交道線與警告標誌",
+      "results-scenario-c3-01-strategy|results|warning-text": "於平交道上游劃設近鐵路平交道線，並設置有柵門鐵路平交道警告標誌；本例採雙線以上電化鐵路平交道標誌，設於接近鐵軌處。",
+      "results-scenario-c3-01-strategy|results|clearance-title": "以網狀線界定鐵路淨空範圍",
+      "results-scenario-c3-01-strategy|results|clearance-text": "依鐵路動態包絡範圍配置網狀線，明確標示不得停等的區域，避免車輛排隊占用鐵道。",
+      "results-scenario-c3-01-strategy|results|junction-title": "以槽化線及讓路設施整理鄰近路口",
+      "results-scenario-c3-01-strategy|results|junction-text": "利用槽化線界定車行範圍，並於鄰近支線道配置讓路線及讓路標誌；本例支線道採右進右出，搭配僅准右轉標誌。",
+      "results-scenario-c3-01-strategy|results|walking-title": "補充行人穿越與庇護空間",
+      "results-scenario-c3-01-strategy|results|walking-text": "於適當位置配置行人穿越道及路側庇護空間，使行人通行路徑明確，並減少與轉向車流的交織。",
+      "results-scenario-c3-01-strategy|results|coordination-title": "鄰近號誌路口須與平交道協調",
+      "results-scenario-c3-01-strategy|results|coordination-text": "若平交道鄰近號誌化路口，應檢討車隊回堵情形；必要時採用車隊偵測、清道時相或平交道前置號誌，避免車輛滯留於鐵道範圍。",
+      "results-scenario-c4-01|results|title": "快慢分隔道路的右轉交織、停車空間與號誌配置問題",
+      "results-scenario-c4-01|results|intro": "主要道路寬約 49 m，雙向共 8～9 車道，採實體快慢分隔；快、慢車道速限分別為 60、40 km/h。周邊以商業及住宅活動為主。",
+      "results-scenario-c4-01|results|turn-title": "右轉車輛缺少提前切入慢車道的空間",
+      "results-scenario-c4-01|results|turn-text": "快慢車道間設有實體分隔島，車輛無法任意變換車道。若未在路段中預留缺口，右轉車輛容易集中於路口附近變換車道，增加交織衝突。",
+      "results-scenario-c4-01|results|space-title": "慢車道與路邊停車空間未明確區分",
+      "results-scenario-c4-01|results|space-text": "部分慢車道寬度過大，且兼有汽、機車停車需求，停車與行車空間缺少適當分隔。",
+      "results-scenario-c4-01|results|signs-title": "快慢車道轉向規則不易辨識",
+      "results-scenario-c4-01|results|signs-text": "路口標誌數量多且設置方式不一致，缺少引導快車道右轉車提前進入慢車道的標誌及標線。",
+      "results-scenario-c4-01|results|signals-title": "行人庇護與號誌設置不足",
+      "results-scenario-c4-01|results|signals-text": "快慢分隔道路路幅寬廣，行人穿越距離長，分隔島未妥善提供庇護空間；遠端號誌亦可能距離停止線過遠。",
+      "results-scenario-c4-01-strategy|results|title": "路段中快慢車道變換、轉向附加車道及分隔島配置",
+      "results-scenario-c4-01-strategy|results|intro": "將快慢車道間的車道變換安排在路段中，減少路口附近的轉向交織，並調整慢車道及分隔島空間。",
+      "results-scenario-c4-01-strategy|results|transfer-title": "於路段中設置快慢車道轉換缺口",
+      "results-scenario-c4-01-strategy|results|transfer-text": "在快慢分隔島適當位置開設車道轉換缺口，搭配漸變及導引標線，讓右轉車輛提前由快車道切入慢車道。",
+      "results-scenario-c4-01-strategy|results|signs-title": "搭配標誌提示提前變換車道",
+      "results-scenario-c4-01-strategy|results|signs-text": "在路段中設置分道行駛或相關導引標誌，提示駕駛須提前進入慢車道，避免接近路口才變換車道。",
+      "results-scenario-c4-01-strategy|results|roadside-title": "區分慢車道與路側停車空間",
+      "results-scenario-c4-01-strategy|results|roadside-text": "調整過寬的慢車道，明確劃分行車及停車範圍，並在停車格與行車空間之間保留適當緩衝。",
+      "results-scenario-c4-01-strategy|results|turning-title": "依轉向需求增設附加車道",
+      "results-scenario-c4-01-strategy|results|turning-text": "於路口前配置轉向附加車道，避免左、右轉車輛減速或停等時影響直行車流。",
+      "results-scenario-c4-01-strategy|results|island-title": "延伸分隔島作為行人庇護島",
+      "results-scenario-c4-01-strategy|results|island-text": "將路口處快慢分隔島延伸至行人穿越位置，提供中途停等空間，並利用分隔島設置遠端號誌，改善號誌辨識距離。",
+      "results-scenario-c4-02|results|title": "調撥車道的路段進出、行向切換與號誌辨識問題",
+      "results-scenario-c4-02|results|intro": "主要道路因雙向交通量具有明顯的時段差異，採時段性調撥車道。道路部分區域設有實體快慢分隔，調撥期間須改變部分車道的通行方向。",
+      "results-scenario-c4-02|results|entry-title": "調撥車道未從路段中開始",
+      "results-scenario-c4-02|results|entry-text": "國內常見調撥車道從路口後開始實施，若未提供適當的路段進出空間，車輛可能須在路口內變換車道。",
+      "results-scenario-c4-02|results|wrong-way-title": "調撥與非調撥期間容易誤入車道",
+      "results-scenario-c4-02|results|wrong-way-text": "相同車道在不同時段供不同方向使用，不熟悉路況的駕駛若未清楚辨識管制，可能誤入對向車道。",
+      "results-scenario-c4-02|results|information-title": "調撥時間與車道位置提示不足",
+      "results-scenario-c4-02|results|information-text": "現況多以文字告示說明調撥方式，若缺少明確的車道對應及起訖點資訊，駕駛不易迅速理解。",
+      "results-scenario-c4-02|results|signals-title": "車道管制號誌可能與路口號誌混淆",
+      "results-scenario-c4-02|results|signals-text": "車道管制號誌與行車管制號誌若距離過近，容易造成誤視；調撥方向切換時也須確保原有車輛已離開調撥車道。",
+      "results-scenario-c4-02-strategy|results|title": "路段調撥、車道管制號誌與時段性行向配置",
+      "results-scenario-c4-02-strategy|results|intro": "以路段型調撥為原則，透過車道線、進出缺口、時段告示及車道管制號誌，明確區分調撥前後的車道使用方式。",
+      "results-scenario-c4-02-strategy|results|entry-title": "於路段中安排調撥車道起訖點",
+      "results-scenario-c4-02-strategy|results|entry-text": "若道路設有中央實體分隔，應配合調撥需求開設適當缺口，使車輛能在路段中進出調撥車道，避免於路口內切換車道。",
+      "results-scenario-c4-02-strategy|results|markings-title": "以調撥車道線及禁止變換車道線導引",
+      "results-scenario-c4-02-strategy|results|markings-text": "調撥車道沿線劃設雙白線，於進出口配合單邊禁止變換車道線，並在起訖點設置分向設施，避免車輛誤入對向車道。",
+      "results-scenario-c4-02-strategy|results|schedule-title": "明確設置調撥時段與行向標誌",
+      "results-scenario-c4-02-strategy|results|schedule-text": "於調撥車道上方設置調撥時間告示，並搭配起終點、車道禁止進入及分向線指示標誌，使雙向駕駛均能辨識車道使用規定。",
+      "results-scenario-c4-02-strategy|results|signals-title": "每車道配置對應的管制號誌",
+      "results-scenario-c4-02-strategy|results|signals-text": "於車道上方採一燈面管制一車道，並與路口行車管制號誌保持適當距離，避免兩種號誌混淆。",
+      "results-scenario-c4-02-strategy|results|clearance-title": "以清道時間完成調撥方向切換",
+      "results-scenario-c4-02-strategy|results|clearance-text": "改變調撥方向前，先以綠箭頭閃光提示車輛駛離，再由雙向同時顯示叉形紅燈，待調撥車道淨空後才開放另一方向使用。",
+      "results-scenario-c4-03|results|title": "多車道單行道的轉向軌跡、禁行方向與號誌配置問題",
+      "results-scenario-c4-03|results|intro": "多車道單行道與設有中央分隔的主要道路交會，周邊以商業活動為主，路側設有汽車停車帶及實體人行道。",
+      "results-scenario-c4-03|results|trajectory-title": "多車道左轉路徑可能與交通島衝突",
+      "results-scenario-c4-03|results|trajectory-text": "單行道具有多個行車車道，車輛左轉時若未檢核各車道轉彎軌跡，可能與主要道路中央分隔島或其他設施碰撞。",
+      "results-scenario-c4-03|results|direction-title": "單行道出入口行向不易辨識",
+      "results-scenario-c4-03|results|direction-text": "單行道與主要道路交會，若禁止進入、禁止轉彎及遵行方向標誌配置不足，駕駛可能誤入逆向道路。",
+      "results-scenario-c4-03|results|cycling-title": "自行車穿越動線不連續",
+      "results-scenario-c4-03|results|cycling-text": "路口的自行車通行空間未與前後路段完整銜接，穿越及轉向時容易與其他車流交織。",
+      "results-scenario-c4-03|results|signals-title": "箭頭綠燈可能與行人通行衝突",
+      "results-scenario-c4-03|results|signals-text": "若以箭頭綠燈表示允許的轉向方向，但同時有行人或其他車流通行，駕駛可能無法從燈號判斷實際衝突情形。",
+      "results-scenario-c4-03-strategy|results|title": "單行道轉向導引、禁止進入標誌與號誌燈面配置",
+      "results-scenario-c4-03-strategy|results|intro": "配合多車道單行道的轉向需求，檢核各車道轉彎軌跡，並透過標誌與號誌搭配，明確表示允許及禁止的通行方向。",
+      "results-scenario-c4-03-strategy|results|trajectory-title": "以轉彎軌跡檢核車道配置",
+      "results-scenario-c4-03-strategy|results|trajectory-text": "檢核各車道左轉時的車輛行駛軌跡，調整行車導引線及車道位置，避免轉向車輛碰觸中央分隔島。",
+      "results-scenario-c4-03-strategy|results|direction-title": "以單行道及禁止進入標誌防止逆向",
+      "results-scenario-c4-03-strategy|results|direction-text": "於單行道入口配置遵行方向標誌，禁止進入的方向則設置禁止進入標誌；主要道路較寬時，可於路口兩側加強提示。",
+      "results-scenario-c4-03-strategy|results|turn-signs-title": "將禁止轉向標誌設置於號誌附近",
+      "results-scenario-c4-03-strategy|results|turn-signs-text": "對於禁止進入逆向單行道的轉向方向，於主要道路號誌桿附近設置禁止轉向標誌，使駕駛能同時辨識燈號及轉向限制。",
+      "results-scenario-c4-03-strategy|results|signals-title": "依人車衝突情形選擇號誌燈面",
+      "results-scenario-c4-03-strategy|results|signals-text": "若允許轉向的車流仍與行人或其他車輛衝突，建議採圓形綠燈搭配禁止轉向標誌；箭頭綠燈則優先用於無衝突的通行方向。",
+      "results-scenario-c4-03-strategy|results|cycling-title": "銜接路口自行車通行空間",
+      "results-scenario-c4-03-strategy|results|cycling-text": "配合人行道外擴及行人、自行車共用空間設計，改善自行車穿越道與路側通行空間的連續性。",
+      "results-scenario-c4-04|results|title": "中央分隔迴轉道的選道、匯入及方向標誌問題",
+      "results-scenario-c4-04|results|intro": "主要道路設有中央實體分隔，迴轉道鄰近平行匝道型交流道。車輛可經由不同車道前往高速公路、平面道路或迴轉道，部分動線須穿越高架橋下方。",
+      "results-scenario-c4-04|results|entry-title": "迴轉道入口缺少提前分流設計",
+      "results-scenario-c4-04|results|entry-text": "迴轉道與主線銜接處缺少足夠的漸變長度及導引標線，駕駛可能在接近入口時才急於變換車道。",
+      "results-scenario-c4-04|results|merge-title": "迴轉道出口匯入空間不足",
+      "results-scenario-c4-04|results|merge-text": "車輛離開迴轉道後須重新匯入主線，若缺少足夠的匯入長度或停讓管制，容易與主線車輛發生衝突。",
+      "results-scenario-c4-04|results|signs-title": "不同目的地的車道資訊混雜",
+      "results-scenario-c4-04|results|signs-text": "同一區域包含迴轉、直行、上國道及平面道路等多種行向，現況部分方向標誌型式混用，駕駛不易判斷各車道對應的目的地。",
+      "results-scenario-c4-04|results|restrictions-title": "高架橋淨高與支線道轉向限制未明確提示",
+      "results-scenario-c4-04|results|restrictions-text": "迴轉道穿越高架橋下方，部分車輛可能受到高度限制；鄰近支線道另有右進右出管制，須提前告知駕駛。",
+      "results-scenario-c4-04-strategy|results|title": "迴轉道入口預告、漸變導引與出口讓路配置",
+      "results-scenario-c4-04-strategy|results|intro": "從路段上游車道選擇、迴轉入口到出口匯入，配置連續的方向指示、漸變標線及必要的停讓設施。",
+      "results-scenario-c4-04-strategy|results|selection-title": "於上游明確指示迴轉車道",
+      "results-scenario-c4-04-strategy|results|selection-text": "使用地名方向指示及車道指示標誌，分別標示國道、平面道路與迴轉道的行向，並以迴轉箭頭對應實際車道。",
+      "results-scenario-c4-04-strategy|results|transition-title": "以分流式指向線及穿越虛線引導入口",
+      "results-scenario-c4-04-strategy|results|transition-text": "於迴轉道上游配置直行與迴轉分流式指向線，搭配穿越虛線及附加車道，使車輛能在適當漸變長度內進入迴轉道。",
+      "results-scenario-c4-04-strategy|results|exit-title": "依出口條件採匯入或讓路管制",
+      "results-scenario-c4-04-strategy|results|exit-text": "迴轉道出口若具有足夠的匯入長度，可採匯入式設計；若匯入空間不足，則設置讓路線及讓路標誌，要求車輛確認主線來車後再進入。",
+      "results-scenario-c4-04-strategy|results|confirmation-title": "區分車道預告與車道確認標誌",
+      "results-scenario-c4-04-strategy|results|confirmation-text": "上游以地名方向指示標誌提供選道資訊，接近分流點再以車道指示標誌確認各車道的目的地，避免兩種牌面設於同一位置。",
+      "results-scenario-c4-04-strategy|results|restrictions-title": "設置限高與支線道行向管制標誌",
+      "results-scenario-c4-04-strategy|results|restrictions-text": "在高架橋下方迴轉道入口前設置車輛高度限制標誌；鄰近支線道則配合右進右出管制，設置僅准右轉及讓路標誌。",
+      "results-scenario-c4-05|results|title": "路段中行人穿越的停車視線、庇護空間及號誌配置問題",
+      "results-scenario-c4-05|results|intro": "住宅及商業區道路設有路段中斑馬紋行人穿越道，路側有汽車及機車停車需求，須考量行人穿越時的可視性與車輛減速條件。",
+      "results-scenario-c4-05|results|visibility-title": "路側停車影響行人與駕駛視線",
+      "results-scenario-c4-05|results|visibility-text": "行穿線鄰近機車及汽車停車空間，停放車輛可能遮蔽行人，影響駕駛提前察覺穿越需求。",
+      "results-scenario-c4-05|results|pedestrian-title": "行人缺少中途庇護及停等空間",
+      "results-scenario-c4-05|results|pedestrian-text": "行人須穿越多個車道，但現況缺少足夠的中央庇護島及路側停等空間。",
+      "results-scenario-c4-05|results|warning-title": "駕駛不易預期路段中行人穿越",
+      "results-scenario-c4-05|results|warning-text": "路段中沒有一般交叉口的轉向及號誌提示，若缺少適當警告標誌，駕駛可能在接近行穿線時才注意到穿越處。",
+      "results-scenario-c4-05|results|control-title": "行穿線與號誌搭配須符合規定",
+      "results-scenario-c4-05|results|control-text": "路段中斑馬紋行穿線應搭配行人穿越道號誌；若改採枕木紋行穿線及一般行車管制號誌，則涉及現行法規對設置位置與型式的限制。",
+      "results-scenario-c4-05-strategy|results|title": "路段中行人穿越、中央庇護島與雙閃黃燈配置",
+      "results-scenario-c4-05-strategy|results|intro": "配合路段中行人穿越需求，利用槽化及庇護島縮減車行範圍，並透過斑馬紋行穿線、警告標誌及行人穿越道號誌提醒駕駛減速讓行。",
+      "results-scenario-c4-05-strategy|results|calming-title": "以槽化線及庇護島縮減車行空間",
+      "results-scenario-c4-05-strategy|results|calming-text": "在接近行穿線的位置調整車道線形，設置中央行人庇護島，使車輛減速接近，並提供行人中途停等空間。",
+      "results-scenario-c4-05-strategy|results|parking-title": "調整路側停車位置，避免遮蔽行人",
+      "results-scenario-c4-05-strategy|results|parking-text": "於路側設置停車彎，並使停車空間與行穿線保持約 10 m 間距，避免停放車輛阻礙駕駛與行人的視線。",
+      "results-scenario-c4-05-strategy|results|crossing-title": "設置斑馬紋行穿線及停止線",
+      "results-scenario-c4-05-strategy|results|crossing-text": "於道路中段設置斑馬紋行人穿越道線，並於上游約 2～3 m 處劃設停止線，標示車輛應暫停讓行人的位置。",
+      "results-scenario-c4-05-strategy|results|warning-title": "以當心行人標誌提前預告穿越位置",
+      "results-scenario-c4-05-strategy|results|warning-text": "在行穿線上游設置當心行人標誌及距離附牌，並配合穿越處附近的警示設施，提醒駕駛注意行人。",
+      "results-scenario-c4-05-strategy|results|consistency-title": "搭配行人穿越道雙閃黃燈號誌",
+      "results-scenario-c4-05-strategy|results|consistency-text": "依本示例採斑馬紋行穿線搭配雙閃黃色行人穿越道號誌，提醒車輛減速慢行；有行人穿越時，須暫停於停止線前讓行人優先通行。",
+      "results-scenario-c4-06|results|title": "山區彎道的線形辨識、視距不足及超車管制問題",
+      "results-scenario-c4-06|results|intro": "道路位於山坡地及保護區，部分路段有連續彎道，採標線分隔雙向車流。山區地形及道路曲率限制駕駛視距，須加強入彎前的警示與行車導引。",
+      "results-scenario-c4-06|results|speed-title": "彎道視距限制駕駛反應時間",
+      "results-scenario-c4-06|results|speed-text": "山區道路受地形及曲率影響，駕駛可能無法提前掌握彎道走向，入彎速度過高時容易偏離車道。",
+      "results-scenario-c4-06|results|guidance-title": "彎道行車範圍與走向不易辨識",
+      "results-scenario-c4-06|results|guidance-text": "路面邊線及中央分向標線若未完整呈現彎道線形，駕駛不易判斷應沿何種路徑通過彎道。",
+      "results-scenario-c4-06|results|warning-title": "連續彎道缺少完整預告與方向導引",
+      "results-scenario-c4-06|results|warning-text": "若彎路標誌及安全方向導引標誌配置不足，駕駛無法提前掌握彎道方向與後續連續彎路的長度。",
+      "results-scenario-c4-06|results|passing-title": "視距不足處仍可能發生超車行為",
+      "results-scenario-c4-06|results|passing-text": "山區彎道可能因超車視距不足而無法安全超越前車，若缺少適當的分向限制線或警告標誌，容易增加對向車輛衝突風險。",
+      "results-scenario-c4-06-strategy|results|title": "彎道標線、連續彎路預告及禁止超車配置",
+      "results-scenario-c4-06-strategy|results|intro": "依彎道曲率及視距條件，配置路面邊線、中央分向標線與安全方向導引標誌，並在視距不足處限制超車。",
+      "results-scenario-c4-06-strategy|results|alignment-title": "以路面邊線完整標示彎道線形",
+      "results-scenario-c4-06-strategy|results|alignment-text": "沿彎道連續劃設路面邊線，使駕駛能辨識道路外側邊界，配合彎道線形提前調整車速。",
+      "results-scenario-c4-06-strategy|results|warning-title": "於入彎前設置連續彎路警告標誌",
+      "results-scenario-c4-06-strategy|results|warning-text": "依第一處彎道方向選擇連續彎路標誌，搭配附牌標示連續彎路長度，並於較長的連續彎道路段補充剩餘里程提示。",
+      "results-scenario-c4-06-strategy|results|guidance-title": "沿彎道設置安全方向導引標誌",
+      "results-scenario-c4-06-strategy|results|guidance-text": "於彎道內側或外側適當位置配置安全方向導引標誌，同一方向至少設置三面，並使駕駛在彎道上能連續辨識後續行駛方向。",
+      "results-scenario-c4-06-strategy|results|passing-title": "依超車視距配置分向限制線",
+      "results-scenario-c4-06-strategy|results|passing-text": "在超車視距不足的路段設置分向限制線，禁止車輛跨越超車；必要時搭配禁止超車標誌，加強管制提示。",
+      "results-scenario-c4-06-strategy|results|buffer-title": "於彎道入口加寬中央槽化空間",
+      "results-scenario-c4-06-strategy|results|buffer-text": "視道路寬度及線形條件，將分向限制線局部加寬為槽化線，提供雙向車流之間的緩衝空間；若超車視距符合要求，則可依條件採不同的分向標線配置。",
+      "chapter-cover-results-intro|shared|title": "研究緣起與前期成果"
     },
     "images": {
       "module:stop-crosswalk": {
@@ -69079,35 +69453,1288 @@
         "points": [
           {
             "id": "selection",
-            "title": "上游先說清楚車道選擇",
+            "title": "提前提示支線道穿越方向",
             "titleKey": "results-scenario-c1-02-strategy|results|selection-title",
-            "text": "搭配標誌與標線，提前指出支線穿越方向，減少駕駛在路口臨時選道。",
+            "text": "於路口上游設置車道與方向指示標誌，搭配指向線，引導駕駛提前選擇通往對側支線道的車道。",
             "textKey": "results-scenario-c1-02-strategy|results|selection-text",
             "moduleId": "M1-02"
           },
           {
             "id": "continuity",
-            "title": "保持前後車道連續",
+            "title": "維持兩處路口間的車道連續性",
             "titleKey": "results-scenario-c1-02-strategy|results|continuity-title",
-            "text": "路口間的行車動線與上游車道連續銜接，以導引線協助辨識穿越路徑。",
+            "text": "調整中央街廓的車道配置，避免直行車道直接銜接左轉專用車道，並以路口行車導引線標示穿越路徑。",
             "textKey": "results-scenario-c1-02-strategy|results|continuity-text",
             "moduleId": "M1-01"
           },
           {
             "id": "walking",
-            "title": "提供行人庇護",
+            "title": "配置中央行人庇護島",
             "titleKey": "results-scenario-c1-02-strategy|results|walking-title",
-            "text": "依多車道穿越需求配置中央庇護空間，縮短行人單次穿越距離。",
+            "text": "於較寬道路中央設置行人庇護空間，提供行人中途停等位置，縮短單次穿越距離。",
             "textKey": "results-scenario-c1-02-strategy|results|walking-text",
             "moduleId": "M3-01"
           },
           {
             "id": "visibility",
-            "title": "兼顧人車號誌可視性",
+            "title": "調整中央街廓號誌位置",
             "titleKey": "results-scenario-c1-02-strategy|results|visibility-title",
-            "text": "調整行車與行人號誌位置，確認駕駛和行人能辨識應遵循的燈面。",
+            "text": "檢核各車道駕駛能否辨識近、遠端號誌，必要時增設燈面，並配合行穿線及行人停等位置配置行人號誌。",
             "textKey": "results-scenario-c1-02-strategy|results|visibility-text",
             "moduleId": "M2-03"
+          }
+        ]
+      },
+      "results-scenario-c1-02": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "直行車道銜接至左轉專用車道",
+            "text": "前一個路口的直行車道，通過路口後卻銜接到左轉專用車道，駕駛容易誤入轉向車道。",
+            "titleKey": "results-scenario-c1-02|results|lanes-title",
+            "textKey": "results-scenario-c1-02|results|lanes-text"
+          },
+          {
+            "id": "guidance",
+            "title": "支線道穿越動線不明確",
+            "text": "兩條支線道相互錯位，缺少上游車道選擇及路口內行車導引，駕駛不易判斷應如何銜接對側道路。",
+            "titleKey": "results-scenario-c1-02|results|guidance-title",
+            "textKey": "results-scenario-c1-02|results|guidance-text"
+          },
+          {
+            "id": "visibility",
+            "title": "中央街廓號誌可視性不足",
+            "text": "兩處路口距離近，但部分遠端燈面位置偏左，最右側車道駕駛可能無法在上游同時辨識兩個燈面。",
+            "titleKey": "results-scenario-c1-02|results|visibility-title",
+            "textKey": "results-scenario-c1-02|results|visibility-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越缺少中央庇護空間",
+            "text": "道路車道數多、穿越距離長，缺少行人中途停等及庇護空間。",
+            "titleKey": "results-scenario-c1-02|results|pedestrian-title",
+            "textKey": "results-scenario-c1-02|results|pedestrian-text"
+          }
+        ]
+      },
+      "results-scenario-c1-03": {
+        "points": [
+          {
+            "id": "queue",
+            "title": "短街廓儲車空間不足",
+            "text": "兩處路口距離近，中央街廓可容納的等候車輛有限，車隊可能回堵至上游路口。",
+            "titleKey": "results-scenario-c1-03|results|queue-title",
+            "textKey": "results-scenario-c1-03|results|queue-text"
+          },
+          {
+            "id": "turn",
+            "title": "對向左轉車隊可能互相阻擋",
+            "text": "短街廓內雙向左轉車流若同時排隊，可能互相阻礙，導致車輛無法完成轉向，形成路口自鎖。",
+            "titleKey": "results-scenario-c1-03|results|turn-title",
+            "textKey": "results-scenario-c1-03|results|turn-text"
+          },
+          {
+            "id": "decision",
+            "title": "駕駛可能誤看下游號誌",
+            "text": "兩處路口的號誌距離近，駕駛可能將下游燈號誤認為目前路口的管制燈號。",
+            "titleKey": "results-scenario-c1-03|results|decision-title",
+            "textKey": "results-scenario-c1-03|results|decision-text"
+          },
+          {
+            "id": "coordination",
+            "title": "號誌時相不當容易造成急煞或回堵",
+            "text": "若上下游號誌同時放行或清道時間不當，車輛可能無法及時停等，亦可能使短街廓內車隊溢流。",
+            "titleKey": "results-scenario-c1-03|results|coordination-title",
+            "textKey": "results-scenario-c1-03|results|coordination-text"
+          }
+        ]
+      },
+      "results-scenario-c1-03-strategy": {
+        "points": [
+          {
+            "id": "left-turn",
+            "title": "採正偏移方式配置左轉車道",
+            "text": "將短街廓內左轉車道調整為正偏移配置，避免對向左轉車輛互相阻擋，降低車隊自鎖風險。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-03-strategy|results|left-turn-title",
+            "textKey": "results-scenario-c1-03-strategy|results|left-turn-text"
+          },
+          {
+            "id": "recognition",
+            "title": "提前預告兩處路口與車道方向",
+            "text": "於上游設置方向及車道預告，搭配指向線，讓駕駛在進入短街廓前判斷應選擇的車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-03-strategy|results|recognition-title",
+            "textKey": "results-scenario-c1-03-strategy|results|recognition-text"
+          },
+          {
+            "id": "coordination",
+            "title": "協調上下游號誌放行時機",
+            "text": "配合短街廓儲車長度及車流需求調整號誌時相，盡量使車輛順利通過兩處路口，避免車隊溢流。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-03-strategy|results|coordination-title",
+            "textKey": "results-scenario-c1-03-strategy|results|coordination-text"
+          },
+          {
+            "id": "visibility",
+            "title": "區分相鄰路口的號誌燈面",
+            "text": "檢核兩處路口燈面的設置位置與可視範圍，將遠端號誌配置於同一街廓適當位置，並視需要增設縱向排列燈面，降低誤視下游號誌的可能。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-03-strategy|results|visibility-title",
+            "textKey": "results-scenario-c1-03-strategy|results|visibility-text"
+          }
+        ]
+      },
+      "results-scenario-c1-04": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "交叉口過大，行車路徑不明確",
+            "text": "各方向車道未直接對齊，且缺少足夠的行車導引，駕駛通過路口時不易判斷應銜接的車道。",
+            "titleKey": "results-scenario-c1-04|results|guidance-title",
+            "textKey": "results-scenario-c1-04|results|guidance-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越距離長且缺少庇護",
+            "text": "多條寬廣道路交會，行人須穿越多個車道，現況缺少適當的分隔島及行人庇護空間。",
+            "titleKey": "results-scenario-c1-04|results|pedestrian-title",
+            "textKey": "results-scenario-c1-04|results|pedestrian-text"
+          },
+          {
+            "id": "information",
+            "title": "標誌資訊過多且重複",
+            "text": "路口分支多、方向選擇複雜，若設置過多相似或重複的方向標誌，駕駛難以在短時間內完成判讀。",
+            "titleKey": "results-scenario-c1-04|results|information-title",
+            "textKey": "results-scenario-c1-04|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "號誌易誤視且人車可能衝突",
+            "text": "遠端號誌距離過遠，部分燈面可能被其他方向駕駛誤認；現況亦有左轉箭頭綠燈與衝突方向行人綠燈同時放行的問題。",
+            "titleKey": "results-scenario-c1-04|results|signals-title",
+            "textKey": "results-scenario-c1-04|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c1-04-strategy": {
+        "points": [
+          {
+            "id": "space",
+            "title": "以槽化線縮小交叉口範圍",
+            "text": "將不必要的鋪面空間劃設為槽化區，明確界定行車範圍，並利用可配置的空間設置行人庇護島。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-04-strategy|results|space-title",
+            "textKey": "results-scenario-c1-04-strategy|results|space-text"
+          },
+          {
+            "id": "guidance",
+            "title": "優先標示主要車流路徑",
+            "text": "確認各分支的主要通行方向，於容易混淆的轉向及直行路徑劃設路口行車導引線，引導車輛進入正確的下游車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-04-strategy|results|guidance-title",
+            "textKey": "results-scenario-c1-04-strategy|results|guidance-text"
+          },
+          {
+            "id": "information",
+            "title": "減少重複的方向標誌",
+            "text": "以駕駛需要的選道及行向資訊為主，刪減重複或不必要的牌面，並將重要資訊安排於駕駛作出決策前的位置。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c1-04-strategy|results|information-title",
+            "textKey": "results-scenario-c1-04-strategy|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "檢核號誌可視性與誤視問題",
+            "text": "依各分支行車方向檢核近、遠端燈面，避免駕駛誤看其他方向的號誌。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-04-strategy|results|signals-title",
+            "textKey": "results-scenario-c1-04-strategy|results|signals-text"
+          },
+          {
+            "id": "phases",
+            "title": "以時相區隔高風險轉向與行人穿越",
+            "text": "若轉向車輛行駛路徑接近直行，或可能以較高速度穿越行穿線，應檢討採用人車分離的號誌時相，避免衝突放行。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-04-strategy|results|phases-title",
+            "textKey": "results-scenario-c1-04-strategy|results|phases-text"
+          }
+        ]
+      },
+      "results-scenario-c1-05": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "路口範圍過大且缺少行車導引",
+            "text": "主要道路與多條街巷道相交，車輛行駛路徑多且不規則，缺少清楚的導引標線。",
+            "titleKey": "results-scenario-c1-05|results|guidance-title",
+            "textKey": "results-scenario-c1-05|results|guidance-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "人行空間狹窄且穿越動線不佳",
+            "text": "路口部分人行道寬度不足，步行空間不連續，行人通過多叉路口時缺少適當的穿越及庇護設施。",
+            "titleKey": "results-scenario-c1-05|results|pedestrian-title",
+            "textKey": "results-scenario-c1-05|results|pedestrian-text"
+          },
+          {
+            "id": "information",
+            "title": "方向標誌過多且設置位置不當",
+            "text": "部分地名方向指示標誌重複，牌面資訊過多，且行動點標誌位置不適當，容易使駕駛誤判行駛方向。",
+            "titleKey": "results-scenario-c1-05|results|information-title",
+            "textKey": "results-scenario-c1-05|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "遠端號誌不易辨識或遭誤視",
+            "text": "交叉口範圍過大，部分遠端號誌距離較遠，且多個分支的號誌可能被其他方向駕駛誤認。",
+            "titleKey": "results-scenario-c1-05|results|signals-title",
+            "textKey": "results-scenario-c1-05|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c1-05-strategy": {
+        "points": [
+          {
+            "id": "space",
+            "title": "以槽化線及庇護島縮小路口",
+            "text": "將不必要的行車鋪面劃設為槽化區，界定各分支的行車範圍，並利用適當空間設置行人庇護島。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c1-05-strategy|results|space-title",
+            "textKey": "results-scenario-c1-05-strategy|results|space-text"
+          },
+          {
+            "id": "guidance",
+            "title": "對易混淆的分支劃設導引線",
+            "text": "確認主要道路及街巷道的通行路徑，於轉向與穿越動線容易混淆的位置劃設路口行車導引線。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-05-strategy|results|guidance-title",
+            "textKey": "results-scenario-c1-05-strategy|results|guidance-text"
+          },
+          {
+            "id": "information",
+            "title": "精簡地名方向指示資訊",
+            "text": "減少重複及過量的方向標誌，依駕駛選道需求調整預告及行動點標誌位置，避免在接近路口時才提供關鍵資訊。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-05-strategy|results|information-title",
+            "textKey": "results-scenario-c1-05-strategy|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "檢核號誌可視性及人車衝突",
+            "text": "調整近、遠端號誌位置，防止駕駛誤看其他分支燈號；高速轉向可能與行人穿越衝突時，檢討採時相區隔。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-05-strategy|results|signals-title",
+            "textKey": "results-scenario-c1-05-strategy|results|signals-text"
+          },
+          {
+            "id": "side-road",
+            "title": "依街巷道交通量決定右轉島管制",
+            "text": "人車交通量較低的街巷道右轉三角島，可依現地條件採無號誌管制，並保留適當的行人穿越空間。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c1-05-strategy|results|side-road-title",
+            "textKey": "results-scenario-c1-05-strategy|results|side-road-text"
+          }
+        ]
+      },
+      "results-scenario-c1-06": {
+        "points": [
+          {
+            "id": "speed",
+            "title": "路口缺少有效的減速設計",
+            "text": "現況主要以網狀線提示交叉口位置，但路口範圍較寬，車輛仍可能以較高速度通過。",
+            "titleKey": "results-scenario-c1-06|results|speed-title",
+            "textKey": "results-scenario-c1-06|results|speed-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人通行空間不足",
+            "text": "路側步行空間狹窄且不連續，行人通過多叉路口時，容易與車輛動線交織。",
+            "titleKey": "results-scenario-c1-06|results|pedestrian-title",
+            "textKey": "results-scenario-c1-06|results|pedestrian-text"
+          },
+          {
+            "id": "direction",
+            "title": "多叉路型不易提前辨識",
+            "text": "路口分支多且交角不規則，缺少對應路型的岔路標誌，駕駛不易提前判斷道路方向。",
+            "titleKey": "results-scenario-c1-06|results|direction-title",
+            "textKey": "results-scenario-c1-06|results|direction-text"
+          },
+          {
+            "id": "oneway",
+            "title": "單行道行向管制不明確",
+            "text": "各分支均為單行道，若缺少適當的禁止轉彎及禁止進入標誌，駕駛可能誤入逆向道路。",
+            "titleKey": "results-scenario-c1-06|results|oneway-title",
+            "textKey": "results-scenario-c1-06|results|oneway-text"
+          }
+        ]
+      },
+      "results-scenario-c1-07": {
+        "points": [
+          {
+            "id": "space",
+            "title": "路口範圍過寬，車輛未有效減速",
+            "text": "現況僅以網狀線提醒駕駛注意交叉口，缺少能實際改變行駛路徑的減速設計。",
+            "titleKey": "results-scenario-c1-07|results|space-title",
+            "textKey": "results-scenario-c1-07|results|space-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越與步行空間未銜接",
+            "text": "行穿線兩端缺少適當的人行設施，行人穿越時容易與路口車流產生衝突。",
+            "titleKey": "results-scenario-c1-07|results|pedestrian-title",
+            "textKey": "results-scenario-c1-07|results|pedestrian-text"
+          },
+          {
+            "id": "visibility",
+            "title": "停止線位置不利於觀察來車",
+            "text": "部分停止線設置位置視距不足，駕駛停等時不易觀察左側來車及穿越行人。",
+            "titleKey": "results-scenario-c1-07|results|visibility-title",
+            "textKey": "results-scenario-c1-07|results|visibility-text"
+          },
+          {
+            "id": "parking",
+            "title": "停車範圍及行穿線配置不當",
+            "text": "部分停車格侵入車行範圍或過於接近路口，行穿線與停止線的距離及繪設方向亦有不當情形。",
+            "titleKey": "results-scenario-c1-07|results|parking-title",
+            "textKey": "results-scenario-c1-07|results|parking-text"
+          }
+        ]
+      },
+      "results-scenario-c1-07-strategy": {
+        "points": [
+          {
+            "id": "calming",
+            "title": "以迷你圓環取代原路口配置",
+            "text": "本例採圓環直徑 13 m、中央島直徑 3 m，透過進環路徑偏折，使駕駛降低速度後進入圓環。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-07-strategy|results|calming-title",
+            "textKey": "results-scenario-c1-07-strategy|results|calming-text"
+          },
+          {
+            "id": "emergency",
+            "title": "中央島採可跨越式設計",
+            "text": "中央島以鋪面或微凸起方式配置，平時引導車輛繞行，必要時可供消防車、救護車等大型緊急車輛跨越。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-07-strategy|results|emergency-title",
+            "textKey": "results-scenario-c1-07-strategy|results|emergency-text"
+          },
+          {
+            "id": "priority",
+            "title": "配置進環讓路線及行車導引線",
+            "text": "於圓環入口設置讓路線，搭配微弧形指向線及環道導引線，指示車輛繞行方向及進環前的讓路位置。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-07-strategy|results|priority-title",
+            "textKey": "results-scenario-c1-07-strategy|results|priority-text"
+          },
+          {
+            "id": "walking",
+            "title": "銜接行人穿越與路側步行空間",
+            "text": "調整原有車行範圍，將不需供車輛行駛的空間留給行人使用，並配合行穿線銜接周邊步行路徑。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c1-07-strategy|results|walking-title",
+            "textKey": "results-scenario-c1-07-strategy|results|walking-text"
+          },
+          {
+            "id": "signs",
+            "title": "設置圓環與讓路相關標誌",
+            "text": "於入口適當位置配置圓環及讓路標誌，提醒駕駛進入圓環前須注意環內車輛，並依規定讓路。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-07-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-07-strategy|results|signs-text"
+          }
+        ]
+      },
+      "results-scenario-c1-06-strategy": {
+        "points": [
+          {
+            "id": "alignment",
+            "title": "調整路型及縮減車道寬度",
+            "text": "以標線修整不規則的行車範圍，配合車道縮減及轉角調整，使駕駛減速通過多叉路口。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-06-strategy|results|alignment-title",
+            "textKey": "results-scenario-c1-06-strategy|results|alignment-text"
+          },
+          {
+            "id": "walking",
+            "title": "擴大路側步行空間",
+            "text": "調整車道及停車帶配置，將部分路側空間留供行人通行，並配合斜交路型設置梯形行穿線。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c1-06-strategy|results|walking-title",
+            "textKey": "results-scenario-c1-06-strategy|results|walking-text"
+          },
+          {
+            "id": "warning",
+            "title": "依實際路型設計岔路標誌",
+            "text": "本例路口無法對應既有岔路標誌圖案，因此示範依實際分支形狀繪製岔路警示圖案，協助駕駛辨識前方路型。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c1-06-strategy|results|warning-title",
+            "textKey": "results-scenario-c1-06-strategy|results|warning-text"
+          },
+          {
+            "id": "oneway",
+            "title": "配置單行道與禁止進入標誌",
+            "text": "依各分支行車方向設置單行道、禁止進入及禁止轉彎標誌，明確告知駕駛允許通行的方向。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c1-06-strategy|results|oneway-title",
+            "textKey": "results-scenario-c1-06-strategy|results|oneway-text"
+          },
+          {
+            "id": "signs",
+            "title": "依狹窄街巷條件調整標誌設置",
+            "text": "優先採用符合規定的縮小型警告及禁制標誌；立桿空間不足時，應另行檢討附掛位置，避免占用人行道淨寬。",
+            "titleKey": "results-scenario-c1-06-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-06-strategy|results|signs-text"
+          }
+        ]
+      },
+      "results-scenario-c1-08": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "進環前缺少車道選擇指示",
+            "text": "入口未設置足夠的指向線及方向標誌，駕駛不易在進入圓環前選擇通往目的地的車道。",
+            "titleKey": "results-scenario-c1-08|results|lanes-title",
+            "textKey": "results-scenario-c1-08|results|lanes-text"
+          },
+          {
+            "id": "weaving",
+            "title": "環內車道交織衝突較多",
+            "text": "環內不同車道的行駛方向及出口對應不明確，駕駛可能在圓環內頻繁變換車道。",
+            "titleKey": "results-scenario-c1-08|results|weaving-title",
+            "textKey": "results-scenario-c1-08|results|weaving-text"
+          },
+          {
+            "id": "signs",
+            "title": "圓環相關標誌配置不足",
+            "text": "入口缺少完整的讓路及圓環遵行方向標誌，駕駛不易判斷進環讓路關係與行駛方向。",
+            "titleKey": "results-scenario-c1-08|results|signs-title",
+            "textKey": "results-scenario-c1-08|results|signs-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "圓環周邊步行空間不足",
+            "text": "路側人行空間狹窄，進出環車輛轉向時，可能影響行人通行及穿越空間。",
+            "titleKey": "results-scenario-c1-08|results|pedestrian-title",
+            "textKey": "results-scenario-c1-08|results|pedestrian-text"
+          }
+        ]
+      },
+      "results-scenario-c1-08-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "進環前以指向線及標誌引導選道",
+            "text": "於上游配置指向線及圖形化地名方向指示標誌，協助駕駛在進環前選擇正確車道及出口方向。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-08-strategy|results|selection-title",
+            "textKey": "results-scenario-c1-08-strategy|results|selection-text"
+          },
+          {
+            "id": "spiral",
+            "title": "以螺旋車道及實體分隔減少交織",
+            "text": "環內採螺旋式車道導引，配合導向角及實體分隔，讓車輛依預定路徑駛離圓環，避免任意變換車道。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-08-strategy|results|spiral-title",
+            "textKey": "results-scenario-c1-08-strategy|results|spiral-text"
+          },
+          {
+            "id": "lane-lines",
+            "title": "依進環動線配置禁止變換車道線",
+            "text": "環內以雙白實線限制變換車道；需讓入口車輛匯入內側車道的位置，則採單邊禁止變換車道線。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-08-strategy|results|lane-lines-title",
+            "textKey": "results-scenario-c1-08-strategy|results|lane-lines-text"
+          },
+          {
+            "id": "signs",
+            "title": "配置入口讓路及圓環方向標誌",
+            "text": "於圓環入口設置讓路線、讓路標誌及圓環遵行方向標誌，中心島則可視需要配置安全方向導引標誌。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-08-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-08-strategy|results|signs-text"
+          },
+          {
+            "id": "markings",
+            "title": "整理進出口行車與行人空間",
+            "text": "配合入口偏折、出口導引線及行穿線配置，並於車行道與人行空間之間保留適當緩衝，考量大型車轉向軌跡。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-08-strategy|results|markings-title",
+            "textKey": "results-scenario-c1-08-strategy|results|markings-text"
+          }
+        ]
+      },
+      "results-scenario-c1-09": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "進出環車道導引不連續",
+            "text": "入口缺少明確的車道導引，環內部分標線無法連續對應出口車道，使車輛容易在環內變換車道。",
+            "titleKey": "results-scenario-c1-09|results|lanes-title",
+            "textKey": "results-scenario-c1-09|results|lanes-text"
+          },
+          {
+            "id": "weaving",
+            "title": "快慢車道交織關係複雜",
+            "text": "進環車輛須依快慢車道分隔進入不同環道，並於環內持續匯流及分流，駕駛不易判斷正確的行駛路徑。",
+            "titleKey": "results-scenario-c1-09|results|weaving-title",
+            "textKey": "results-scenario-c1-09|results|weaving-text"
+          },
+          {
+            "id": "signs",
+            "title": "圓環標誌過多且設置不當",
+            "text": "部分圓環遵行方向標誌牌面及角度不適當，特殊管制告示牌文字過多，增加駕駛的判讀負擔。",
+            "titleKey": "results-scenario-c1-09|results|signs-title",
+            "textKey": "results-scenario-c1-09|results|signs-text"
+          },
+          {
+            "id": "signal",
+            "title": "號誌距離過遠且可能誤視",
+            "text": "部分外環遠端號誌距離較遠，號誌燈面朝向不當，可能使駕駛誤看其他方向的管制燈號。",
+            "titleKey": "results-scenario-c1-09|results|signal-title",
+            "textKey": "results-scenario-c1-09|results|signal-text"
+          },
+          {
+            "id": "turn",
+            "title": "右轉車輛與行人燈號不易判讀",
+            "text": "右轉專用車道有獨立放行需求，駕駛可能不易辨識不同時相的燈號變換，增加與行人穿越的衝突風險。",
+            "titleKey": "results-scenario-c1-09|results|turn-title",
+            "textKey": "results-scenario-c1-09|results|turn-text"
+          }
+        ]
+      },
+      "results-scenario-c1-09-strategy": {
+        "points": [
+          {
+            "id": "continuity",
+            "title": "延續停止線後的環道導引",
+            "text": "在圓環入口停止線後繼續劃設路口行車導引線，標示環內車行範圍及車道銜接位置，避免進環車流相互混淆。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-09-strategy|results|continuity-title",
+            "textKey": "results-scenario-c1-09-strategy|results|continuity-text"
+          },
+          {
+            "id": "selection",
+            "title": "進環前選道並限制環內變換車道",
+            "text": "於進環前配置左轉及直行專用車道，搭配穿越虛線、車道線及禁止變換車道線，引導車輛沿指定環道行駛及駛離。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-09-strategy|results|selection-title",
+            "textKey": "results-scenario-c1-09-strategy|results|selection-text"
+          },
+          {
+            "id": "signs",
+            "title": "以圖形化標誌提示出口方向",
+            "text": "於上游配置圖形化地名方向指示標誌，並於各出口前設置路名標誌，協助駕駛提前辨識出口及確認行駛方向。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-09-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-09-strategy|results|signs-text"
+          },
+          {
+            "id": "phases",
+            "title": "配合內環疏解安排號誌時相",
+            "text": "本例採南北向與東西向交替放行，並穿插內環車流疏解時相；慢車道右轉車流採四燈式號誌，配合獨立放行需求配置右轉箭頭綠燈。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-09-strategy|results|phases-title",
+            "textKey": "results-scenario-c1-09-strategy|results|phases-text"
+          },
+          {
+            "id": "signals",
+            "title": "檢核近遠端號誌及防誤視措施",
+            "text": "依不同進環車道及停止線位置，配置近、遠端號誌；必要時增設柱立式燈面或調整罩簷，確保駕駛辨識自身方向的燈號，並避免誤看其他行向號誌。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-09-strategy|results|signals-title",
+            "textKey": "results-scenario-c1-09-strategy|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c2-01": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "車道連續性與左轉銜接不佳",
+            "text": "平面道路往高速公路的左轉車道銜接不順，且部分車道進出路口的動線缺少明確導引。",
+            "titleKey": "results-scenario-c2-01|results|lanes-title",
+            "textKey": "results-scenario-c2-01|results|lanes-text"
+          },
+          {
+            "id": "merge",
+            "title": "匝道匯入距離與視距不足",
+            "text": "部分右轉匯入匝道的漸變長度不足，駕駛不易在匯入前完成觀察及判斷，增加與主線車流的衝突風險。",
+            "titleKey": "results-scenario-c2-01|results|merge-title",
+            "textKey": "results-scenario-c2-01|results|merge-text"
+          },
+          {
+            "id": "restrictions",
+            "title": "高速公路入口車種管制不明確",
+            "text": "交流道附近的方向標誌與車種管制資訊不足，駕駛不易提前選擇正確車道，機車亦可能誤入高速公路匝道。",
+            "titleKey": "results-scenario-c2-01|results|restrictions-title",
+            "textKey": "results-scenario-c2-01|results|restrictions-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越缺少適當的保護設施",
+            "text": "平面道路人行道寬度不足，部分橫向穿越動線不完整，且須面對速度較高的匝道轉向車流。",
+            "titleKey": "results-scenario-c2-01|results|pedestrian-title",
+            "textKey": "results-scenario-c2-01|results|pedestrian-text"
+          },
+          {
+            "id": "signals",
+            "title": "右轉槽化島號誌不易辨識",
+            "text": "右轉車道呈彎曲線形，若號誌位置未配合駕駛視線配置，可能造成號誌辨識不足或誤看其他車道燈號。",
+            "titleKey": "results-scenario-c2-01|results|signals-title",
+            "textKey": "results-scenario-c2-01|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c2-01-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "提前預告高速公路入口及車道方向",
+            "text": "於平面道路上游設置圖形化方向指示標誌，搭配高速公路方向標字及四輪以上汽車專用車道標誌，引導車輛提前選道，避免機車誤入。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c2-01-strategy|results|selection-title",
+            "textKey": "results-scenario-c2-01-strategy|results|selection-text"
+          },
+          {
+            "id": "wrong-way",
+            "title": "以槽化島及導引線區分匝道進出口",
+            "text": "配合槽化島、指向線及路口行車導引線，明確區分上、下匝道車流，並於出口匝道增設禁止進入標誌，防止車輛逆向誤入。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c2-01-strategy|results|wrong-way-title",
+            "textKey": "results-scenario-c2-01-strategy|results|wrong-way-text"
+          },
+          {
+            "id": "merge",
+            "title": "匯入距離不足時採讓路管制",
+            "text": "本例平面道路右轉匯入高速公路時，因漸變長度及視距不足，於匯入點設置讓路線，並搭配附加車道提供匯入後的加速空間。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c2-01-strategy|results|merge-title",
+            "textKey": "results-scenario-c2-01-strategy|results|merge-text"
+          },
+          {
+            "id": "walking",
+            "title": "以行人庇護島及時相區隔轉向車流",
+            "text": "拓寬路側人行道，利用實體槽化島提供行人中途庇護空間，並以人車分離號誌時相避免較高速的轉向車輛與行人同時通行。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c2-01-strategy|results|walking-title",
+            "textKey": "results-scenario-c2-01-strategy|results|walking-text"
+          },
+          {
+            "id": "signals",
+            "title": "右轉三角槽化島採雙柱立式號誌",
+            "text": "於右轉彎道兩側設置柱立式號誌，使駕駛沿彎道接近時仍能辨識燈號，並避免其他車道駕駛誤看。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c2-01-strategy|results|signals-title",
+            "textKey": "results-scenario-c2-01-strategy|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c2-02": {
+        "points": [
+          {
+            "id": "merge",
+            "title": "迴轉道與主線銜接空間不足",
+            "text": "車輛進出迴轉道時，缺少足夠的漸變及匯入空間，容易與主線車輛產生衝突。",
+            "titleKey": "results-scenario-c2-02|results|merge-title",
+            "textKey": "results-scenario-c2-02|results|merge-text"
+          },
+          {
+            "id": "signs",
+            "title": "不同目的地的車道選擇不明確",
+            "text": "同一區域同時提供高速公路入口、平面道路與迴轉動線，部分方向標誌混用不同牌面型式，駕駛不易判斷應行駛的車道。",
+            "titleKey": "results-scenario-c2-02|results|signs-title",
+            "textKey": "results-scenario-c2-02|results|signs-text"
+          },
+          {
+            "id": "height",
+            "title": "迴轉道位於高架橋下方",
+            "text": "迴轉道通過高架橋下方，須考量橋梁淨高限制，避免超高車輛進入後無法通行。",
+            "titleKey": "results-scenario-c2-02|results|height-title",
+            "textKey": "results-scenario-c2-02|results|height-text"
+          },
+          {
+            "id": "direction",
+            "title": "鄰近支線道行向管制不易辨識",
+            "text": "交流道附近另有地方道路交會，部分支線道採右進右出管制，若缺少明確的行向標誌，可能發生錯誤轉向。",
+            "titleKey": "results-scenario-c2-02|results|direction-title",
+            "textKey": "results-scenario-c2-02|results|direction-text"
+          }
+        ]
+      },
+      "results-scenario-c2-02-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "以方向標誌預告各車道目的地",
+            "text": "在上游設置對應車道的地名方向指示標誌，分別指示迴轉道、不同方向高速公路匝道及平面道路，箭頭對準各自車道。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c2-02-strategy|results|selection-title",
+            "textKey": "results-scenario-c2-02-strategy|results|selection-text"
+          },
+          {
+            "id": "arrows",
+            "title": "利用分流式指向線引導進入迴轉道",
+            "text": "於迴轉道入口配置直行與迴轉分流式指向線，搭配迴轉道標誌，讓駕駛在進入前確認行駛方向。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c2-02-strategy|results|arrows-title",
+            "textKey": "results-scenario-c2-02-strategy|results|arrows-text"
+          },
+          {
+            "id": "transition",
+            "title": "配置漸變段及附加車道",
+            "text": "於迴轉道進出口提供適當的漸變與附加車道，並搭配穿越虛線，引導車輛逐步分流或匯入主線。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c2-02-strategy|results|transition-title",
+            "textKey": "results-scenario-c2-02-strategy|results|transition-text"
+          },
+          {
+            "id": "exit",
+            "title": "依匯入長度決定出口管制方式",
+            "text": "迴轉道出口如有足夠匯入長度，可採匯流設計；空間不足時，則配置讓路線，要求車輛確認主線來車後再匯入。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c2-02-strategy|results|exit-title",
+            "textKey": "results-scenario-c2-02-strategy|results|exit-text"
+          },
+          {
+            "id": "restrictions",
+            "title": "提前提示限高及支線道行向",
+            "text": "迴轉道通過高架橋下方，於上游設置車輛高度限制標誌；鄰近右進右出支線道則搭配讓路及僅准右轉標誌，明確告知通行規則。",
+            "moduleId": "M4-02",
+            "titleKey": "results-scenario-c2-02-strategy|results|restrictions-title",
+            "textKey": "results-scenario-c2-02-strategy|results|restrictions-text"
+          }
+        ]
+      },
+      "results-scenario-c3-01": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "大面積網狀線缺少明確行車導引",
+            "text": "現況以大面積網狀線提醒駕駛保持淨空，但未清楚界定車道及轉向路徑，駕駛不易判斷應行駛的位置。",
+            "titleKey": "results-scenario-c3-01|results|guidance-title",
+            "textKey": "results-scenario-c3-01|results|guidance-text"
+          },
+          {
+            "id": "queue",
+            "title": "鄰近路口車隊可能占用平交道",
+            "text": "平交道與道路交叉口距離近，若下游路口排隊回堵，車輛可能滯留於鐵路淨空範圍。",
+            "titleKey": "results-scenario-c3-01|results|queue-title",
+            "textKey": "results-scenario-c3-01|results|queue-text"
+          },
+          {
+            "id": "signs",
+            "title": "平交道與路口標誌容易混淆",
+            "text": "平交道警示、道路行向及路口管制標誌集中設置，駕駛可能無法在接近時迅速辨識重要資訊。",
+            "titleKey": "results-scenario-c3-01|results|signs-title",
+            "textKey": "results-scenario-c3-01|results|signs-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越與庇護空間不足",
+            "text": "路口缺少完整的行人穿越設施，步行空間與車行動線未妥善區隔，行人通行條件不足。",
+            "titleKey": "results-scenario-c3-01|results|pedestrian-title",
+            "textKey": "results-scenario-c3-01|results|pedestrian-text"
+          }
+        ]
+      },
+      "results-scenario-c3-01-strategy": {
+        "points": [
+          {
+            "id": "warning",
+            "title": "設置近鐵路平交道線與警告標誌",
+            "text": "於平交道上游劃設近鐵路平交道線，並設置有柵門鐵路平交道警告標誌；本例採雙線以上電化鐵路平交道標誌，設於接近鐵軌處。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|warning-title",
+            "textKey": "results-scenario-c3-01-strategy|results|warning-text"
+          },
+          {
+            "id": "clearance",
+            "title": "以網狀線界定鐵路淨空範圍",
+            "text": "依鐵路動態包絡範圍配置網狀線，明確標示不得停等的區域，避免車輛排隊占用鐵道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|clearance-title",
+            "textKey": "results-scenario-c3-01-strategy|results|clearance-text"
+          },
+          {
+            "id": "junction",
+            "title": "以槽化線及讓路設施整理鄰近路口",
+            "text": "利用槽化線界定車行範圍，並於鄰近支線道配置讓路線及讓路標誌；本例支線道採右進右出，搭配僅准右轉標誌。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|junction-title",
+            "textKey": "results-scenario-c3-01-strategy|results|junction-text"
+          },
+          {
+            "id": "walking",
+            "title": "補充行人穿越與庇護空間",
+            "text": "於適當位置配置行人穿越道及路側庇護空間，使行人通行路徑明確，並減少與轉向車流的交織。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|walking-title",
+            "textKey": "results-scenario-c3-01-strategy|results|walking-text"
+          },
+          {
+            "id": "coordination",
+            "title": "鄰近號誌路口須與平交道協調",
+            "text": "若平交道鄰近號誌化路口，應檢討車隊回堵情形；必要時採用車隊偵測、清道時相或平交道前置號誌，避免車輛滯留於鐵道範圍。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c3-01-strategy|results|coordination-title",
+            "textKey": "results-scenario-c3-01-strategy|results|coordination-text"
+          }
+        ]
+      },
+      "results-scenario-c4-01": {
+        "points": [
+          {
+            "id": "turn",
+            "title": "右轉車輛缺少提前切入慢車道的空間",
+            "text": "快慢車道間設有實體分隔島，車輛無法任意變換車道。若未在路段中預留缺口，右轉車輛容易集中於路口附近變換車道，增加交織衝突。",
+            "titleKey": "results-scenario-c4-01|results|turn-title",
+            "textKey": "results-scenario-c4-01|results|turn-text"
+          },
+          {
+            "id": "space",
+            "title": "慢車道與路邊停車空間未明確區分",
+            "text": "部分慢車道寬度過大，且兼有汽、機車停車需求，停車與行車空間缺少適當分隔。",
+            "titleKey": "results-scenario-c4-01|results|space-title",
+            "textKey": "results-scenario-c4-01|results|space-text"
+          },
+          {
+            "id": "signs",
+            "title": "快慢車道轉向規則不易辨識",
+            "text": "路口標誌數量多且設置方式不一致，缺少引導快車道右轉車提前進入慢車道的標誌及標線。",
+            "titleKey": "results-scenario-c4-01|results|signs-title",
+            "textKey": "results-scenario-c4-01|results|signs-text"
+          },
+          {
+            "id": "signals",
+            "title": "行人庇護與號誌設置不足",
+            "text": "快慢分隔道路路幅寬廣，行人穿越距離長，分隔島未妥善提供庇護空間；遠端號誌亦可能距離停止線過遠。",
+            "titleKey": "results-scenario-c4-01|results|signals-title",
+            "textKey": "results-scenario-c4-01|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c4-01-strategy": {
+        "points": [
+          {
+            "id": "transfer",
+            "title": "於路段中設置快慢車道轉換缺口",
+            "text": "在快慢分隔島適當位置開設車道轉換缺口，搭配漸變及導引標線，讓右轉車輛提前由快車道切入慢車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-01-strategy|results|transfer-title",
+            "textKey": "results-scenario-c4-01-strategy|results|transfer-text"
+          },
+          {
+            "id": "signs",
+            "title": "搭配標誌提示提前變換車道",
+            "text": "在路段中設置分道行駛或相關導引標誌，提示駕駛須提前進入慢車道，避免接近路口才變換車道。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c4-01-strategy|results|signs-title",
+            "textKey": "results-scenario-c4-01-strategy|results|signs-text"
+          },
+          {
+            "id": "roadside",
+            "title": "區分慢車道與路側停車空間",
+            "text": "調整過寬的慢車道，明確劃分行車及停車範圍，並在停車格與行車空間之間保留適當緩衝。",
+            "moduleId": "M1-03",
+            "titleKey": "results-scenario-c4-01-strategy|results|roadside-title",
+            "textKey": "results-scenario-c4-01-strategy|results|roadside-text"
+          },
+          {
+            "id": "turning",
+            "title": "依轉向需求增設附加車道",
+            "text": "於路口前配置轉向附加車道，避免左、右轉車輛減速或停等時影響直行車流。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-01-strategy|results|turning-title",
+            "textKey": "results-scenario-c4-01-strategy|results|turning-text"
+          },
+          {
+            "id": "island",
+            "title": "延伸分隔島作為行人庇護島",
+            "text": "將路口處快慢分隔島延伸至行人穿越位置，提供中途停等空間，並利用分隔島設置遠端號誌，改善號誌辨識距離。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c4-01-strategy|results|island-title",
+            "textKey": "results-scenario-c4-01-strategy|results|island-text"
+          }
+        ]
+      },
+      "results-scenario-c4-02": {
+        "points": [
+          {
+            "id": "entry",
+            "title": "調撥車道未從路段中開始",
+            "text": "國內常見調撥車道從路口後開始實施，若未提供適當的路段進出空間，車輛可能須在路口內變換車道。",
+            "titleKey": "results-scenario-c4-02|results|entry-title",
+            "textKey": "results-scenario-c4-02|results|entry-text"
+          },
+          {
+            "id": "wrong-way",
+            "title": "調撥與非調撥期間容易誤入車道",
+            "text": "相同車道在不同時段供不同方向使用，不熟悉路況的駕駛若未清楚辨識管制，可能誤入對向車道。",
+            "titleKey": "results-scenario-c4-02|results|wrong-way-title",
+            "textKey": "results-scenario-c4-02|results|wrong-way-text"
+          },
+          {
+            "id": "information",
+            "title": "調撥時間與車道位置提示不足",
+            "text": "現況多以文字告示說明調撥方式，若缺少明確的車道對應及起訖點資訊，駕駛不易迅速理解。",
+            "titleKey": "results-scenario-c4-02|results|information-title",
+            "textKey": "results-scenario-c4-02|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "車道管制號誌可能與路口號誌混淆",
+            "text": "車道管制號誌與行車管制號誌若距離過近，容易造成誤視；調撥方向切換時也須確保原有車輛已離開調撥車道。",
+            "titleKey": "results-scenario-c4-02|results|signals-title",
+            "textKey": "results-scenario-c4-02|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c4-02-strategy": {
+        "points": [
+          {
+            "id": "entry",
+            "title": "於路段中安排調撥車道起訖點",
+            "text": "若道路設有中央實體分隔，應配合調撥需求開設適當缺口，使車輛能在路段中進出調撥車道，避免於路口內切換車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-02-strategy|results|entry-title",
+            "textKey": "results-scenario-c4-02-strategy|results|entry-text"
+          },
+          {
+            "id": "markings",
+            "title": "以調撥車道線及禁止變換車道線導引",
+            "text": "調撥車道沿線劃設雙白線，於進出口配合單邊禁止變換車道線，並在起訖點設置分向設施，避免車輛誤入對向車道。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-02-strategy|results|markings-title",
+            "textKey": "results-scenario-c4-02-strategy|results|markings-text"
+          },
+          {
+            "id": "schedule",
+            "title": "明確設置調撥時段與行向標誌",
+            "text": "於調撥車道上方設置調撥時間告示，並搭配起終點、車道禁止進入及分向線指示標誌，使雙向駕駛均能辨識車道使用規定。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c4-02-strategy|results|schedule-title",
+            "textKey": "results-scenario-c4-02-strategy|results|schedule-text"
+          },
+          {
+            "id": "signals",
+            "title": "每車道配置對應的管制號誌",
+            "text": "於車道上方採一燈面管制一車道，並與路口行車管制號誌保持適當距離，避免兩種號誌混淆。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-02-strategy|results|signals-title",
+            "textKey": "results-scenario-c4-02-strategy|results|signals-text"
+          },
+          {
+            "id": "clearance",
+            "title": "以清道時間完成調撥方向切換",
+            "text": "改變調撥方向前，先以綠箭頭閃光提示車輛駛離，再由雙向同時顯示叉形紅燈，待調撥車道淨空後才開放另一方向使用。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-02-strategy|results|clearance-title",
+            "textKey": "results-scenario-c4-02-strategy|results|clearance-text"
+          }
+        ]
+      },
+      "results-scenario-c4-03": {
+        "points": [
+          {
+            "id": "trajectory",
+            "title": "多車道左轉路徑可能與交通島衝突",
+            "text": "單行道具有多個行車車道，車輛左轉時若未檢核各車道轉彎軌跡，可能與主要道路中央分隔島或其他設施碰撞。",
+            "titleKey": "results-scenario-c4-03|results|trajectory-title",
+            "textKey": "results-scenario-c4-03|results|trajectory-text"
+          },
+          {
+            "id": "direction",
+            "title": "單行道出入口行向不易辨識",
+            "text": "單行道與主要道路交會，若禁止進入、禁止轉彎及遵行方向標誌配置不足，駕駛可能誤入逆向道路。",
+            "titleKey": "results-scenario-c4-03|results|direction-title",
+            "textKey": "results-scenario-c4-03|results|direction-text"
+          },
+          {
+            "id": "cycling",
+            "title": "自行車穿越動線不連續",
+            "text": "路口的自行車通行空間未與前後路段完整銜接，穿越及轉向時容易與其他車流交織。",
+            "titleKey": "results-scenario-c4-03|results|cycling-title",
+            "textKey": "results-scenario-c4-03|results|cycling-text"
+          },
+          {
+            "id": "signals",
+            "title": "箭頭綠燈可能與行人通行衝突",
+            "text": "若以箭頭綠燈表示允許的轉向方向，但同時有行人或其他車流通行，駕駛可能無法從燈號判斷實際衝突情形。",
+            "titleKey": "results-scenario-c4-03|results|signals-title",
+            "textKey": "results-scenario-c4-03|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c4-03-strategy": {
+        "points": [
+          {
+            "id": "trajectory",
+            "title": "以轉彎軌跡檢核車道配置",
+            "text": "檢核各車道左轉時的車輛行駛軌跡，調整行車導引線及車道位置，避免轉向車輛碰觸中央分隔島。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-03-strategy|results|trajectory-title",
+            "textKey": "results-scenario-c4-03-strategy|results|trajectory-text"
+          },
+          {
+            "id": "direction",
+            "title": "以單行道及禁止進入標誌防止逆向",
+            "text": "於單行道入口配置遵行方向標誌，禁止進入的方向則設置禁止進入標誌；主要道路較寬時，可於路口兩側加強提示。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c4-03-strategy|results|direction-title",
+            "textKey": "results-scenario-c4-03-strategy|results|direction-text"
+          },
+          {
+            "id": "turn-signs",
+            "title": "將禁止轉向標誌設置於號誌附近",
+            "text": "對於禁止進入逆向單行道的轉向方向，於主要道路號誌桿附近設置禁止轉向標誌，使駕駛能同時辨識燈號及轉向限制。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c4-03-strategy|results|turn-signs-title",
+            "textKey": "results-scenario-c4-03-strategy|results|turn-signs-text"
+          },
+          {
+            "id": "signals",
+            "title": "依人車衝突情形選擇號誌燈面",
+            "text": "若允許轉向的車流仍與行人或其他車輛衝突，建議採圓形綠燈搭配禁止轉向標誌；箭頭綠燈則優先用於無衝突的通行方向。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c4-03-strategy|results|signals-title",
+            "textKey": "results-scenario-c4-03-strategy|results|signals-text"
+          },
+          {
+            "id": "cycling",
+            "title": "銜接路口自行車通行空間",
+            "text": "配合人行道外擴及行人、自行車共用空間設計，改善自行車穿越道與路側通行空間的連續性。",
+            "moduleId": "M3-02",
+            "titleKey": "results-scenario-c4-03-strategy|results|cycling-title",
+            "textKey": "results-scenario-c4-03-strategy|results|cycling-text"
+          }
+        ]
+      },
+      "results-scenario-c4-04": {
+        "points": [
+          {
+            "id": "entry",
+            "title": "迴轉道入口缺少提前分流設計",
+            "text": "迴轉道與主線銜接處缺少足夠的漸變長度及導引標線，駕駛可能在接近入口時才急於變換車道。",
+            "titleKey": "results-scenario-c4-04|results|entry-title",
+            "textKey": "results-scenario-c4-04|results|entry-text"
+          },
+          {
+            "id": "merge",
+            "title": "迴轉道出口匯入空間不足",
+            "text": "車輛離開迴轉道後須重新匯入主線，若缺少足夠的匯入長度或停讓管制，容易與主線車輛發生衝突。",
+            "titleKey": "results-scenario-c4-04|results|merge-title",
+            "textKey": "results-scenario-c4-04|results|merge-text"
+          },
+          {
+            "id": "signs",
+            "title": "不同目的地的車道資訊混雜",
+            "text": "同一區域包含迴轉、直行、上國道及平面道路等多種行向，現況部分方向標誌型式混用，駕駛不易判斷各車道對應的目的地。",
+            "titleKey": "results-scenario-c4-04|results|signs-title",
+            "textKey": "results-scenario-c4-04|results|signs-text"
+          },
+          {
+            "id": "restrictions",
+            "title": "高架橋淨高與支線道轉向限制未明確提示",
+            "text": "迴轉道穿越高架橋下方，部分車輛可能受到高度限制；鄰近支線道另有右進右出管制，須提前告知駕駛。",
+            "titleKey": "results-scenario-c4-04|results|restrictions-title",
+            "textKey": "results-scenario-c4-04|results|restrictions-text"
+          }
+        ]
+      },
+      "results-scenario-c4-04-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "於上游明確指示迴轉車道",
+            "text": "使用地名方向指示及車道指示標誌，分別標示國道、平面道路與迴轉道的行向，並以迴轉箭頭對應實際車道。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c4-04-strategy|results|selection-title",
+            "textKey": "results-scenario-c4-04-strategy|results|selection-text"
+          },
+          {
+            "id": "transition",
+            "title": "以分流式指向線及穿越虛線引導入口",
+            "text": "於迴轉道上游配置直行與迴轉分流式指向線，搭配穿越虛線及附加車道，使車輛能在適當漸變長度內進入迴轉道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-04-strategy|results|transition-title",
+            "textKey": "results-scenario-c4-04-strategy|results|transition-text"
+          },
+          {
+            "id": "exit",
+            "title": "依出口條件採匯入或讓路管制",
+            "text": "迴轉道出口若具有足夠的匯入長度，可採匯入式設計；若匯入空間不足，則設置讓路線及讓路標誌，要求車輛確認主線來車後再進入。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c4-04-strategy|results|exit-title",
+            "textKey": "results-scenario-c4-04-strategy|results|exit-text"
+          },
+          {
+            "id": "confirmation",
+            "title": "區分車道預告與車道確認標誌",
+            "text": "上游以地名方向指示標誌提供選道資訊，接近分流點再以車道指示標誌確認各車道的目的地，避免兩種牌面設於同一位置。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c4-04-strategy|results|confirmation-title",
+            "textKey": "results-scenario-c4-04-strategy|results|confirmation-text"
+          },
+          {
+            "id": "restrictions",
+            "title": "設置限高與支線道行向管制標誌",
+            "text": "在高架橋下方迴轉道入口前設置車輛高度限制標誌；鄰近支線道則配合右進右出管制，設置僅准右轉及讓路標誌。",
+            "moduleId": "M4-02",
+            "titleKey": "results-scenario-c4-04-strategy|results|restrictions-title",
+            "textKey": "results-scenario-c4-04-strategy|results|restrictions-text"
+          }
+        ]
+      },
+      "results-scenario-c4-05": {
+        "points": [
+          {
+            "id": "visibility",
+            "title": "路側停車影響行人與駕駛視線",
+            "text": "行穿線鄰近機車及汽車停車空間，停放車輛可能遮蔽行人，影響駕駛提前察覺穿越需求。",
+            "titleKey": "results-scenario-c4-05|results|visibility-title",
+            "textKey": "results-scenario-c4-05|results|visibility-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人缺少中途庇護及停等空間",
+            "text": "行人須穿越多個車道，但現況缺少足夠的中央庇護島及路側停等空間。",
+            "titleKey": "results-scenario-c4-05|results|pedestrian-title",
+            "textKey": "results-scenario-c4-05|results|pedestrian-text"
+          },
+          {
+            "id": "warning",
+            "title": "駕駛不易預期路段中行人穿越",
+            "text": "路段中沒有一般交叉口的轉向及號誌提示，若缺少適當警告標誌，駕駛可能在接近行穿線時才注意到穿越處。",
+            "titleKey": "results-scenario-c4-05|results|warning-title",
+            "textKey": "results-scenario-c4-05|results|warning-text"
+          },
+          {
+            "id": "control",
+            "title": "行穿線與號誌搭配須符合規定",
+            "text": "路段中斑馬紋行穿線應搭配行人穿越道號誌；若改採枕木紋行穿線及一般行車管制號誌，則涉及現行法規對設置位置與型式的限制。",
+            "titleKey": "results-scenario-c4-05|results|control-title",
+            "textKey": "results-scenario-c4-05|results|control-text"
+          }
+        ]
+      },
+      "results-scenario-c4-05-strategy": {
+        "points": [
+          {
+            "id": "calming",
+            "title": "以槽化線及庇護島縮減車行空間",
+            "text": "在接近行穿線的位置調整車道線形，設置中央行人庇護島，使車輛減速接近，並提供行人中途停等空間。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c4-05-strategy|results|calming-title",
+            "textKey": "results-scenario-c4-05-strategy|results|calming-text"
+          },
+          {
+            "id": "parking",
+            "title": "調整路側停車位置，避免遮蔽行人",
+            "text": "於路側設置停車彎，並使停車空間與行穿線保持約 10 m 間距，避免停放車輛阻礙駕駛與行人的視線。",
+            "moduleId": "M1-03",
+            "titleKey": "results-scenario-c4-05-strategy|results|parking-title",
+            "textKey": "results-scenario-c4-05-strategy|results|parking-text"
+          },
+          {
+            "id": "crossing",
+            "title": "設置斑馬紋行穿線及停止線",
+            "text": "於道路中段設置斑馬紋行人穿越道線，並於上游約 2～3 m 處劃設停止線，標示車輛應暫停讓行人的位置。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c4-05-strategy|results|crossing-title",
+            "textKey": "results-scenario-c4-05-strategy|results|crossing-text"
+          },
+          {
+            "id": "warning",
+            "title": "以當心行人標誌提前預告穿越位置",
+            "text": "在行穿線上游設置當心行人標誌及距離附牌，並配合穿越處附近的警示設施，提醒駕駛注意行人。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c4-05-strategy|results|warning-title",
+            "textKey": "results-scenario-c4-05-strategy|results|warning-text"
+          },
+          {
+            "id": "consistency",
+            "title": "搭配行人穿越道雙閃黃燈號誌",
+            "text": "依本示例採斑馬紋行穿線搭配雙閃黃色行人穿越道號誌，提醒車輛減速慢行；有行人穿越時，須暫停於停止線前讓行人優先通行。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c4-05-strategy|results|consistency-title",
+            "textKey": "results-scenario-c4-05-strategy|results|consistency-text"
+          }
+        ]
+      },
+      "results-scenario-c4-06": {
+        "points": [
+          {
+            "id": "speed",
+            "title": "彎道視距限制駕駛反應時間",
+            "text": "山區道路受地形及曲率影響，駕駛可能無法提前掌握彎道走向，入彎速度過高時容易偏離車道。",
+            "titleKey": "results-scenario-c4-06|results|speed-title",
+            "textKey": "results-scenario-c4-06|results|speed-text"
+          },
+          {
+            "id": "guidance",
+            "title": "彎道行車範圍與走向不易辨識",
+            "text": "路面邊線及中央分向標線若未完整呈現彎道線形，駕駛不易判斷應沿何種路徑通過彎道。",
+            "titleKey": "results-scenario-c4-06|results|guidance-title",
+            "textKey": "results-scenario-c4-06|results|guidance-text"
+          },
+          {
+            "id": "warning",
+            "title": "連續彎道缺少完整預告與方向導引",
+            "text": "若彎路標誌及安全方向導引標誌配置不足，駕駛無法提前掌握彎道方向與後續連續彎路的長度。",
+            "titleKey": "results-scenario-c4-06|results|warning-title",
+            "textKey": "results-scenario-c4-06|results|warning-text"
+          },
+          {
+            "id": "passing",
+            "title": "視距不足處仍可能發生超車行為",
+            "text": "山區彎道可能因超車視距不足而無法安全超越前車，若缺少適當的分向限制線或警告標誌，容易增加對向車輛衝突風險。",
+            "titleKey": "results-scenario-c4-06|results|passing-title",
+            "textKey": "results-scenario-c4-06|results|passing-text"
+          }
+        ]
+      },
+      "results-scenario-c4-06-strategy": {
+        "points": [
+          {
+            "id": "alignment",
+            "title": "以路面邊線完整標示彎道線形",
+            "text": "沿彎道連續劃設路面邊線，使駕駛能辨識道路外側邊界，配合彎道線形提前調整車速。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|alignment-title",
+            "textKey": "results-scenario-c4-06-strategy|results|alignment-text"
+          },
+          {
+            "id": "warning",
+            "title": "於入彎前設置連續彎路警告標誌",
+            "text": "依第一處彎道方向選擇連續彎路標誌，搭配附牌標示連續彎路長度，並於較長的連續彎道路段補充剩餘里程提示。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|warning-title",
+            "textKey": "results-scenario-c4-06-strategy|results|warning-text"
+          },
+          {
+            "id": "guidance",
+            "title": "沿彎道設置安全方向導引標誌",
+            "text": "於彎道內側或外側適當位置配置安全方向導引標誌，同一方向至少設置三面，並使駕駛在彎道上能連續辨識後續行駛方向。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|guidance-title",
+            "textKey": "results-scenario-c4-06-strategy|results|guidance-text"
+          },
+          {
+            "id": "passing",
+            "title": "依超車視距配置分向限制線",
+            "text": "在超車視距不足的路段設置分向限制線，禁止車輛跨越超車；必要時搭配禁止超車標誌，加強管制提示。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-06-strategy|results|passing-title",
+            "textKey": "results-scenario-c4-06-strategy|results|passing-text"
+          },
+          {
+            "id": "buffer",
+            "title": "於彎道入口加寬中央槽化空間",
+            "text": "視道路寬度及線形條件，將分向限制線局部加寬為槽化線，提供雙向車流之間的緩衝空間；若超車視距符合要求，則可依條件採不同的分向標線配置。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|buffer-title",
+            "textKey": "results-scenario-c4-06-strategy|results|buffer-text"
           }
         ]
       }

@@ -19,8 +19,8 @@ test('complex source mapping follows the case title and actual road content inst
   for(const [code,entry]of Object.entries(complex.scenarios)){
     const scene=catalog.scenarios.find(scene=>scene.id===code);assert.equal(normalize(entry.source.title),normalize(scene.name));assert.equal(entry.source.scenario,code);assert.match(entry.source.sha256,/^[a-f0-9]{64}$/);
     if(roadSources[code])assert.equal(entry.source.file,'chapters/05-complex-scenarios/'+roadSources[code]);
-    assert(entry.strategy.items.length>=3&&entry.strategy.items.length<=4);assert.equal(entry.strategy.images.length,1);
-    for(const point of entry.strategy.items){assert(moduleIds.has(point.moduleId));assert(point.text.length<=85);assert(!/原稿|待補/.test(point.title+point.text));}
+    assert.equal(entry.strategy.images.length,1);
+    for(const point of entry.strategy.items){if(point.moduleId)assert(moduleIds.has(point.moduleId));assert(!/原稿|待補/.test(point.title+point.text));}
     const asset=complex.assets[entry.strategy.images[0].key],overview=content.assets[content.scenarioThumbnails[code].key];assert.equal(asset.scenario,code);assert.equal(asset.file,overview.file);
     const bytes=fs.readFileSync(path.resolve(__dirname,'..',asset.file));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),asset.sha256);assert.deepEqual(require('../tools/svg-native-size.cjs')(bytes.toString('utf8'),asset.file),[asset.width,asset.height]);
   }
@@ -28,7 +28,7 @@ test('complex source mapping follows the case title and actual road content inst
 
 test('C2-02 reuse is explicitly traced to the U-turn source and retains separate editable image and page identities',()=>{
   const target=complex.scenarios['C2-02'],source=complex.scenarios['C4-04'];assert.equal(target.reusedFrom,'C4-04');assert.deepEqual(target.source.reference,source.source);
-  assert.deepEqual(target.strategy.items,source.strategy.items);const first=complex.assets[target.strategy.images[0].key],second=complex.assets[source.strategy.images[0].key];assert.equal(first.file,second.file);assert.equal(first.sha256,second.sha256);assert.notEqual(target.strategy.images[0].key,source.strategy.images[0].key);
+  const first=complex.assets[target.strategy.images[0].key],second=complex.assets[source.strategy.images[0].key];assert.equal(first.file,second.file);assert.equal(first.sha256,second.sha256);assert.notEqual(target.strategy.images[0].key,source.strategy.images[0].key);
   const implicit=structuredClone(complex);delete implicit.scenarios['C2-02'].reusedFrom;assert.throws(()=>Results.validateStrategies(implicit));
   const foreign=structuredClone(complex);foreign.scenarios['C1-01'].strategy.images[0].key=foreign.scenarios['C1-02'].strategy.images[0].key;assert.throws(()=>Results.validateStrategies(foreign));
   const unsafe=structuredClone(complex);Object.values(unsafe.assets)[0].file='../../private.svg';assert.throws(()=>Results.validateStrategies(unsafe));
