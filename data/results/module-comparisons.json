@@ -1,0 +1,1160 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "section": "第3章 交通管制設施功能模組",
+    "note": "第一場以各模組一組現況照片及代表圖說明核心功能；詳細子模組仍由第二場介紹。"
+  },
+  "aliases": {
+    "results-module-list-2": "results-modules",
+    "results-module-m2-01": "results-module-example"
+  },
+  "assets": {
+    "results:module-m1-01-current-1": {
+      "file": "materials/03-modules/M1-01/M1-01.1_現況議題_路口動線.png",
+      "width": 869,
+      "height": 637,
+      "moduleId": "M1-01",
+      "role": "current",
+      "label": "M1-01 現況問題 1",
+      "sha256": "0b4b83b08d218b68bf5f47aba21a031930f178d6774e0b5192aa795f477b8daa"
+    },
+    "results:module-m1-01-current-2": {
+      "file": "materials/03-modules/M1-01/M1-01.1_現況議題_路段車道.png",
+      "width": 622,
+      "height": 407,
+      "moduleId": "M1-01",
+      "role": "current",
+      "label": "M1-01 現況問題 2",
+      "sha256": "c5f711c3fafa6547625cf14e79bf243b4d6953293b36e802f782745059aa3633"
+    },
+    "results:module-m1-01-diagram": {
+      "file": "materials/03-modules/M1-01/M1-01_路口與路段車道配置代表型.svg",
+      "width": 1560,
+      "height": 822,
+      "moduleId": "M1-01",
+      "role": "module",
+      "label": "M1-01 模組圖",
+      "sha256": "cee65356c8641f983233fb8f8ff7a763ae94603ba8305f1453af9a44433ba833"
+    },
+    "results:module-m1-02-current-1": {
+      "file": "materials/03-modules/M1-02/M1-02.1_現況議題_路徑與地點指示.png",
+      "width": 1414,
+      "height": 710,
+      "moduleId": "M1-02",
+      "role": "current",
+      "label": "M1-02 現況問題 1",
+      "sha256": "f53f4d5df7d03e42b6c16c7c77bb7968b65a5b9408a83a075685ef1ef177549a"
+    },
+    "results:module-m1-02-diagram": {
+      "file": "materials/03-modules/M1-02/M1-02_路徑與地點指示代表型1_錯位T字.svg",
+      "width": 2755,
+      "height": 1702,
+      "moduleId": "M1-02",
+      "role": "module",
+      "label": "M1-02 模組圖",
+      "sha256": "264c99b454162cf5745dfa0d650f616c2bd33595487e22fa2bb3ddd435c2e4c7"
+    },
+    "results:module-m1-03-current-1": {
+      "file": "materials/03-modules/M1-03/M1-03.1_現況議題_路側停車.png",
+      "width": 993,
+      "height": 462,
+      "moduleId": "M1-03",
+      "role": "current",
+      "label": "M1-03 現況問題 1",
+      "sha256": "3cde9a87f0dc166e4594a458da47c70e117aa218c3f323a3db7dc6c9d8e21264"
+    },
+    "results:module-m1-03-current-2": {
+      "file": "materials/03-modules/M1-03/M1-03.1_現況議題_停車格位.png",
+      "width": 1098,
+      "height": 627,
+      "moduleId": "M1-03",
+      "role": "current",
+      "label": "M1-03 現況問題 2",
+      "sha256": "c58fa1630735acbcd248043c21fa211d7b1d07fb0260ae293b873c4ac1d3df72"
+    },
+    "results:module-m1-03-diagram": {
+      "file": "materials/03-modules/M1-03/M1-03_路側停放與裝卸車位配置代表型.svg",
+      "width": 679,
+      "height": 268,
+      "moduleId": "M1-03",
+      "role": "module",
+      "label": "M1-03 模組圖",
+      "sha256": "e7d11f02d36ed9627e0191f033dbed6ae8789317ac243643ff449946ebd38b47"
+    },
+    "results:module-m2-01-current-1": {
+      "file": "materials/03-modules/M2-01/M2-01.1_現況議題_01.png",
+      "width": 1657,
+      "height": 1081,
+      "moduleId": "M2-01",
+      "role": "current",
+      "label": "M2-01 現況問題 1",
+      "sha256": "66c20a52bf899b87167116687dd8714c0023fc3b83780b2c3498a59ed0bd9d96"
+    },
+    "results:module-m2-01-current-2": {
+      "file": "materials/03-modules/M2-01/M2-01.1_現況議題_02.png",
+      "width": 824,
+      "height": 494,
+      "moduleId": "M2-01",
+      "role": "current",
+      "label": "M2-01 現況問題 2",
+      "sha256": "5e1871475d2159984258d2940f22bfcae7a57f4502f0b20699ee2d21bc88bb8f"
+    },
+    "results:module-m2-01-diagram": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口代表型.svg",
+      "width": 321,
+      "height": 139,
+      "moduleId": "M2-01",
+      "role": "module",
+      "label": "M2-01 模組圖",
+      "sha256": "bda66ea2f023703b7e7dad91879d807f0178d22616332296d0ca7856f0d95890"
+    },
+    "results:module-m2-02-current-1": {
+      "file": "materials/03-modules/M2-02/M2-02.1_現況議題_01.png",
+      "width": 1737,
+      "height": 941,
+      "moduleId": "M2-02",
+      "role": "current",
+      "label": "M2-02 現況問題 1",
+      "sha256": "4790a428c287c14ab49bcc849304cb588b5518554dea5d9d43344efe1a625e7c"
+    },
+    "results:module-m2-02-diagram": {
+      "file": "materials/03-modules/M2-02/M2-02_圓環管制路口模組代表型.svg",
+      "width": 684,
+      "height": 773,
+      "moduleId": "M2-02",
+      "role": "module",
+      "label": "M2-02 模組圖",
+      "sha256": "4f9f4f0bbdf563bfe26c0fb55ef7550ffa361ac86feb5e93f9090e01eafcbc4c"
+    },
+    "results:module-m2-03-current-1": {
+      "file": "materials/03-modules/M2-03/M2-03.1_現況議題_01.png",
+      "width": 1492,
+      "height": 840,
+      "moduleId": "M2-03",
+      "role": "current",
+      "label": "M2-03 現況問題 1",
+      "sha256": "f9ccde003617a6c8c39dff059625151b04a4ff98867c724693fa8b22381c4086"
+    },
+    "results:module-m2-03-current-2": {
+      "file": "materials/03-modules/M2-03/M2-03.1_現況議題_02.png",
+      "width": 835,
+      "height": 394,
+      "moduleId": "M2-03",
+      "role": "current",
+      "label": "M2-03 現況問題 2",
+      "sha256": "16d13be0a13dfcbd22933680d9df6578ac3c282e6a0045e1f7df178d57b7af8a"
+    },
+    "results:module-m2-03-diagram": {
+      "file": "materials/03-modules/M2-03/M2-03_號誌化路口基本配置代表型.svg",
+      "width": 661,
+      "height": 829,
+      "moduleId": "M2-03",
+      "role": "module",
+      "label": "M2-03 模組圖",
+      "sha256": "8e1615abb99b23f44d111ebc17649ea0c19efa0adb0404e6dab42b8986f814cc"
+    },
+    "results:module-m2-04-current-1": {
+      "file": "materials/03-modules/M2-04/M2-04.1_現況議題_01.png",
+      "width": 1241,
+      "height": 748,
+      "moduleId": "M2-04",
+      "role": "current",
+      "label": "M2-04 現況問題 1",
+      "sha256": "6be106c197b93d46b1a7686606f69ed36f82bd547a78c6d1c190041f94ba94f1"
+    },
+    "results:module-m2-04-current-2": {
+      "file": "materials/03-modules/M2-04/M2-04.1_現況議題_02.png",
+      "width": 599,
+      "height": 447,
+      "moduleId": "M2-04",
+      "role": "current",
+      "label": "M2-04 現況問題 2",
+      "sha256": "da6ff50471e00a97a02f45abd86cdea7a7558fe496ca776486ca6f2ef0768a77"
+    },
+    "results:module-m2-04-diagram": {
+      "file": "materials/03-modules/M2-04/M2-04_行駛動線遵行與限制代表型1.svg",
+      "width": 422,
+      "height": 365,
+      "moduleId": "M2-04",
+      "role": "module",
+      "label": "M2-04 模組圖",
+      "sha256": "58da630639d24544510d3d4655ec0a861f3f02dab70c743ec55b0b45300e64ff"
+    },
+    "results:module-m3-01-current-1": {
+      "file": "materials/03-modules/M3-01/M3-01.1_現況議題_01.png",
+      "width": 1359,
+      "height": 575,
+      "moduleId": "M3-01",
+      "role": "current",
+      "label": "M3-01 現況問題 1",
+      "sha256": "533e9c36ac89676367422b22e4d08688844f57e52c0dd7351b6bbf1dce7956ff"
+    },
+    "results:module-m3-01-diagram": {
+      "file": "materials/03-modules/M3-01/M3-01_人行道標線代表型1.svg",
+      "width": 207,
+      "height": 156,
+      "moduleId": "M3-01",
+      "role": "module",
+      "label": "M3-01 模組圖",
+      "sha256": "ed22a8d8e5220cba0a3b40c3bac54865864db071a6f6e5c6b056d898c34fc728"
+    },
+    "results:module-m3-02-current-1": {
+      "file": "materials/03-modules/M3-02/M3-02.1_現況議題_01.png",
+      "width": 1102,
+      "height": 899,
+      "moduleId": "M3-02",
+      "role": "current",
+      "label": "M3-02 現況問題 1",
+      "sha256": "f94a81acb74bd7e1807dfecfbf04aedfdcdc89ad56b588a1b4609da6a0b07d9e"
+    },
+    "results:module-m3-02-current-2": {
+      "file": "materials/03-modules/M3-02/M3-02.1_現況議題_02.png",
+      "width": 1079,
+      "height": 799,
+      "moduleId": "M3-02",
+      "role": "current",
+      "label": "M3-02 現況問題 2",
+      "sha256": "949eb1317a7beaaeed7481eb64e74051a5df139c4a844073f74f7baa85d349d4"
+    },
+    "results:module-m3-02-current-3": {
+      "file": "materials/03-modules/M3-02/M3-02.1_現況議題_03.png",
+      "width": 827,
+      "height": 591,
+      "moduleId": "M3-02",
+      "role": "current",
+      "label": "M3-02 現況問題 3",
+      "sha256": "ca48e967663176b626b88ff5979a2c6ef201338779ec47e371240e34bc4098e0"
+    },
+    "results:module-m3-02-diagram": {
+      "file": "materials/03-modules/M3-02/M3-02_自行車道代表型.svg",
+      "width": 2121,
+      "height": 754,
+      "moduleId": "M3-02",
+      "role": "module",
+      "label": "M3-02 模組圖",
+      "sha256": "aefcf2c265678fd41fdc899144078cb0546db37687b4198b76fa141c97a89d00"
+    },
+    "results:module-m3-03-current-1": {
+      "file": "materials/03-modules/M3-03/M3-03.2_現況議題_01.png",
+      "width": 514,
+      "height": 509,
+      "moduleId": "M3-03",
+      "role": "current",
+      "label": "M3-03 現況問題 1",
+      "sha256": "440ef48f61eb8a2c4d0351ab8583d92b4adce00fde040adc868ccfee67577aaf"
+    },
+    "results:module-m3-03-current-2": {
+      "file": "materials/03-modules/M3-03/M3-03.2_現況議題_02.png",
+      "width": 1524,
+      "height": 1025,
+      "moduleId": "M3-03",
+      "role": "current",
+      "label": "M3-03 現況問題 2",
+      "sha256": "cb2cfd72587dc317b6ca0b5e4d0675b43f689429fe19aadc1981f001dcc9f952"
+    },
+    "results:module-m3-03-diagram": {
+      "file": "materials/03-modules/M3-03/M3-03_機車直接左轉代表型.svg",
+      "width": 528,
+      "height": 1318,
+      "moduleId": "M3-03",
+      "role": "module",
+      "label": "M3-03 模組圖",
+      "sha256": "b9017cfc8037bd38b9d264dc2eab50259ecba50bc2f8c22871159ac5f1e6ee7e"
+    },
+    "results:module-m3-04-current-1": {
+      "file": "materials/03-modules/M3-04/M3-04.1_現況議題_01.png",
+      "width": 1130,
+      "height": 497,
+      "moduleId": "M3-04",
+      "role": "current",
+      "label": "M3-04 現況問題 1",
+      "sha256": "6ecb209a4f505d719a94f52aede0d2160a209d942b4a855950a56b10432028ae"
+    },
+    "results:module-m3-04-current-2": {
+      "file": "materials/03-modules/M3-04/M3-04.1_現況議題_02.png",
+      "width": 1531,
+      "height": 969,
+      "moduleId": "M3-04",
+      "role": "current",
+      "label": "M3-04 現況問題 2",
+      "sha256": "411e33075ab6c34b26d1e08b3afcfece2a26c0aeeed1d7fa8f5ee467aa2833f2"
+    },
+    "results:module-m3-04-diagram": {
+      "file": "materials/03-modules/M3-04/M3-04_公車專用道代表型.svg",
+      "width": 892,
+      "height": 1637,
+      "moduleId": "M3-04",
+      "role": "module",
+      "label": "M3-04 模組圖",
+      "sha256": "2a24dd4e3c2bb64c2c7b1df0f057283193c6bc2a2376b5507dd8557c9c79449a"
+    },
+    "results:module-m4-01-current-1": {
+      "file": "materials/03-modules/M4-01/M4-01.1_現況議題_01.png",
+      "width": 1211,
+      "height": 870,
+      "moduleId": "M4-01",
+      "role": "current",
+      "label": "M4-01 現況問題 1",
+      "sha256": "4ce9f8298a1b6e6b3630527b98e01e6edac903cb32dd7cfe984628ab2dc1c970"
+    },
+    "results:module-m4-01-diagram": {
+      "file": "materials/03-modules/M4-01/M4-01_局部危險警示代表型1──隧道標誌.svg",
+      "width": 415,
+      "height": 1217,
+      "moduleId": "M4-01",
+      "role": "module",
+      "label": "M4-01 模組圖",
+      "sha256": "7f523325d2a4340a870a5f232c433947738edea03c64eb0fb954824f3df8568f"
+    },
+    "results:module-m4-02-current-1": {
+      "file": "materials/03-modules/M4-02/M4-02.1_現況議題_01.png",
+      "width": 1824,
+      "height": 1368,
+      "moduleId": "M4-02",
+      "role": "current",
+      "label": "M4-02 現況問題 1",
+      "sha256": "66eea8d762071059b1829845bad73987f424cf991237f07e5b33a3119398e4be"
+    },
+    "results:module-m4-02-diagram": {
+      "file": "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型1──禁止進入與限高.svg",
+      "width": 519,
+      "height": 1027,
+      "moduleId": "M4-02",
+      "role": "module",
+      "label": "M4-02 模組圖",
+      "sha256": "dcef87091b17df3037a77ac316eb4da1c8e79b6bb2f1ae68d9f7b57cab6a8cac"
+    },
+    "results:module-m4-03-current-1": {
+      "file": "materials/03-modules/M4-03/M4-03.1_現況議題_01.png",
+      "width": 1237,
+      "height": 743,
+      "moduleId": "M4-03",
+      "role": "current",
+      "label": "M4-03 現況問題 1",
+      "sha256": "9d0106e902001e175e7376e306a2fcf200210606c1ff6a590f5b75600b2a7778"
+    },
+    "results:module-m4-03-diagram": {
+      "file": "materials/03-modules/M4-03/M4-03_速率管理代表型.svg",
+      "width": 487,
+      "height": 1105,
+      "moduleId": "M4-03",
+      "role": "module",
+      "label": "M4-03 模組圖",
+      "sha256": "8e79f0ba49947b558ccde5a53b2d233e1e74d65e0e7bd2543f72c65f397c94a6"
+    },
+    "results:module-m4-04-current-1": {
+      "file": "materials/03-modules/M4-04/M4-04.1_現況議題_01.png",
+      "width": 1500,
+      "height": 1125,
+      "moduleId": "M4-04",
+      "role": "current",
+      "label": "M4-04 現況問題 1",
+      "sha256": "82d6f9ad5d4f49f60c8167cc91b0a31c3ca3c10a34eb3b51aa2db19ebcc27ec6"
+    },
+    "results:module-m4-04-diagram": {
+      "file": "materials/03-modules/M4-04/M4-04_行人優先區代表型.svg",
+      "width": 1161,
+      "height": 1089,
+      "moduleId": "M4-04",
+      "role": "module",
+      "label": "M4-04 模組圖",
+      "sha256": "e9e28c151aa6a9b3caf46c805c6378fb22033fae0693c23f655c1c3a1518d6a8"
+    }
+  },
+  "modules": {
+    "M1-01": {
+      "title": "路口動線導引",
+      "intro": "從路段車道配置到路口轉向，一起檢查行車動線是否連續。",
+      "items": [
+        {
+          "id": "continuity",
+          "title": "車道用途要前後連續",
+          "text": "依路口轉向需求安排上游車道，避免駕駛到路口前才發現必須換道。"
+        },
+        {
+          "id": "trajectory",
+          "title": "導引線配合實際轉彎軌跡",
+          "text": "檢核車輛軌跡與下游出口，讓車輛能循線轉彎，避免偏向交通島。"
+        },
+        {
+          "id": "advance",
+          "title": "在需要選道前提供提示",
+          "text": "搭配指向線、車道預告標誌及穿越虛線，提前說明行向與車道變化。"
+        },
+        {
+          "id": "transition",
+          "title": "一併安排漸變與儲車空間",
+          "text": "附加車道需兼顧漸變、停等長度及槽化，減少轉向車流干擾直行車流。"
+        }
+      ],
+      "moduleId": "M1-01",
+      "pageId": "results-module-m1-01",
+      "images": [
+        {
+          "key": "results:module-m1-01-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m1-01-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m1-01-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/01-intersection-flow-guidance.typ",
+        "sha256": "f3c85c9fb7a9dd680d11ddde24e2a547639ea15ffa1fea6a28a119030601f062",
+        "title": "路口動線導引",
+        "moduleId": "M1-01",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m101-lanes-issues",
+        "diagramPageId": "m101-lanes-diagram",
+        "representative": "materials/03-modules/M1-01/M1-01_路口與路段車道配置代表型.svg"
+      }
+    },
+    "M1-02": {
+      "title": "行車指示",
+      "intro": "讓方向資訊與實際路型一致，幫助駕駛提前選道並順利駛出。",
+      "items": [
+        {
+          "id": "choice",
+          "title": "在進入複雜路口前預告",
+          "text": "針對錯位路口、圓環等路型，在駕駛需要選道之前提供出口與方向資訊。"
+        },
+        {
+          "id": "geometry",
+          "title": "圖形化標誌對照真實動線",
+          "text": "以箭頭起始端、方向角及延伸箭身，說清楚車道、路徑與出口的關係。"
+        },
+        {
+          "id": "clarity",
+          "title": "資訊簡潔，位置易於判讀",
+          "text": "依路型複雜度選擇適當箭頭與牌面，檢查預告位置，減少多餘及重複資訊。"
+        }
+      ],
+      "moduleId": "M1-02",
+      "pageId": "results-module-m1-02",
+      "images": [
+        {
+          "key": "results:module-m1-02-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m1-02-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/02-route-guidance.typ",
+        "sha256": "edd018f9a4ce755584eb6fe88c600d240274754aea103b72215b098f732bf054",
+        "title": "行車指示",
+        "moduleId": "M1-02",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m102-route-issues",
+        "diagramPageId": "m102-route-diagram",
+        "representative": "materials/03-modules/M1-02/M1-02_路徑與地點指示代表型1_錯位T字.svg"
+      }
+    },
+    "M1-03": {
+      "title": "路側停車",
+      "intro": "讓停車帶的起終點、進出操作空間與標誌資訊互相配合。",
+      "items": [
+        {
+          "id": "boundary",
+          "title": "清楚區分停車與禁停範圍",
+          "text": "標誌位置與停車帶起終點一致，讓用路人容易搜尋、判讀及遵循。"
+        },
+        {
+          "id": "clearance",
+          "title": "保留進出端及轉角淨空",
+          "text": "在漸變段、出入口與路口轉角保留必要空間，避免停車妨礙行車與視線。"
+        },
+        {
+          "id": "operation",
+          "title": "停放角度配合操作空間",
+          "text": "依場地選擇停放角度，一起檢查可設車位數、進出軌跡與所需通道。"
+        },
+        {
+          "id": "information",
+          "title": "用標誌與附牌說明使用條件",
+          "text": "整理停車用途、專用對象與限制資訊，避免牌面內容和現場格位不一致。"
+        }
+      ],
+      "moduleId": "M1-03",
+      "pageId": "results-module-m1-03",
+      "images": [
+        {
+          "key": "results:module-m1-03-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m1-03-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m1-03-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/03-roadside-parking.typ",
+        "sha256": "6d6ffa7aba2eaf147298cd70756b7b3000838e4d40c5374d3faa078c8027c63a",
+        "title": "路側停車",
+        "moduleId": "M1-03",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m103-parking-issues",
+        "diagramPageId": "m103-parking-diagram",
+        "representative": "materials/03-modules/M1-03/M1-03_路側停放與裝卸車位配置代表型.svg"
+      }
+    },
+    "M2-01": {
+      "title": "停、讓管制",
+      "intro": "先分清優先關係，再安排停等、觀察來車及行人穿越的位置。",
+      "items": [
+        {
+          "id": "issue",
+          "title": "讓駕駛明確知道誰先通行",
+          "text": "由停車再開或讓路標誌預告管制，接近路口時再以標字與標線提示。"
+        },
+        {
+          "id": "diagram",
+          "title": "停等位置要能觀察主要道路",
+          "text": "依視距與來車動線檢查停止線、讓路線位置，兼顧行人穿越及觀察需求。"
+        },
+        {
+          "id": "extension",
+          "title": "標誌、標線與幾何空間一起檢視",
+          "text": "配合路口導引線、行穿線、庇護空間及路緣修飾，形成一致的停讓配置。"
+        }
+      ],
+      "moduleId": "M2-01",
+      "pageId": "results-module-example",
+      "images": [
+        {
+          "key": "results:module-m2-01-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-01-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-01-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/04-stop-yield-control.typ",
+        "sha256": "53ece53db8ea83cb4c58fbebd5a006fdc7f56dcbd7eb3e0a6e5be481bbbe36e9",
+        "title": "停、讓管制",
+        "moduleId": "M2-01",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m201-stop-issues",
+        "diagramPageId": "m201-stop-layout",
+        "representative": "materials/03-modules/M2-01/M2-01_停管制路口代表型.svg"
+      }
+    },
+    "M2-02": {
+      "title": "圓環管制",
+      "intro": "把環內優先、入口減速與環內導引，用一組一致的設施表達。",
+      "items": [
+        {
+          "id": "priority",
+          "title": "明確提示環內優先",
+          "text": "以讓路標誌及讓路線提示進環車輛讓行，減少環內、環外車輛爭道。"
+        },
+        {
+          "id": "entry",
+          "title": "入口線型引導減速與偏移",
+          "text": "分隔島、槽化與標線配合行車軌跡，讓駕駛提前辨識入口及偏移方向。"
+        },
+        {
+          "id": "continuity",
+          "title": "維持環內至出口的導引連續",
+          "text": "串接環內車道與出口路徑，減少臨時換道、切入出口或不必要的減速。"
+        },
+        {
+          "id": "walking",
+          "title": "一起安排入口與出口的行人穿越",
+          "text": "檢視行穿線、庇護空間與讓路位置，避免車流停等遮擋行人。"
+        }
+      ],
+      "moduleId": "M2-02",
+      "pageId": "results-module-m2-02",
+      "images": [
+        {
+          "key": "results:module-m2-02-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-02-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/05-roundabout-control.typ",
+        "sha256": "e34fe91f478cb7c73edea27512d9c64b05d22abadd5f61e121a6b0a9baf0dac4",
+        "title": "圓環管制",
+        "moduleId": "M2-02",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m202-roundabout-issues",
+        "diagramPageId": "m202-roundabout-diagram",
+        "representative": "materials/03-modules/M2-02/M2-02_圓環管制路口模組代表型.svg"
+      }
+    },
+    "M2-03": {
+      "title": "號誌化管制",
+      "intro": "從來車、停等與起步的位置，確認駕駛能看清正確的號誌。",
+      "items": [
+        {
+          "id": "visibility",
+          "title": "在接近路口時看得見燈面",
+          "text": "檢查上游來車視線與辨識距離，避免燈面過遠或偏離行車視軸。"
+        },
+        {
+          "id": "layout",
+          "title": "近、遠端配置互相配合",
+          "text": "整理燈面左右位置及近遠端對應，減少駕駛誤看其他方向的號誌。"
+        },
+        {
+          "id": "starting",
+          "title": "停等與待轉位置也要看得清楚",
+          "text": "從停止線與待轉區檢查起步時的視角，必要時調整燈面與輔助配置。"
+        },
+        {
+          "id": "clearance",
+          "title": "一併檢查遮蔽與通行淨空",
+          "text": "檢視日照、招牌、植栽等背景干擾，以及燈桿、燈箱和通行空間的淨距。"
+        }
+      ],
+      "moduleId": "M2-03",
+      "pageId": "results-module-m2-03",
+      "images": [
+        {
+          "key": "results:module-m2-03-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-03-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-03-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/06-signalized-control.typ",
+        "sha256": "e170dfcfdd5d56c5fe37f777fc1d66d39b373292a0fb324094fee9d9d57ab6a6",
+        "title": "號誌化管制",
+        "moduleId": "M2-03",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m203-signals-issues",
+        "diagramPageId": "m203-signals-diagram",
+        "representative": "materials/03-modules/M2-03/M2-03_號誌化路口基本配置代表型.svg"
+      }
+    },
+    "M2-04": {
+      "title": "路口行向管制",
+      "intro": "讓可行與禁止的方向容易辨認，並與駕駛實際行車動線一致。",
+      "items": [
+        {
+          "id": "consistency",
+          "title": "遵行與禁行資訊選用一致",
+          "text": "依管制目的選擇遵行方向或禁止轉向標誌，避免不同方式混用造成誤判。"
+        },
+        {
+          "id": "placement",
+          "title": "標誌位置配合辨識與決策",
+          "text": "檢查近端、遠端及車道指向線的搭配，讓駕駛有足夠時間理解行向規則。"
+        },
+        {
+          "id": "entry",
+          "title": "處理分隔島與單行道出口",
+          "text": "在島頭、分道處與單行道出口整合方向、禁入及警告資訊，避免逆向誤入。"
+        }
+      ],
+      "moduleId": "M2-04",
+      "pageId": "results-module-m2-04",
+      "images": [
+        {
+          "key": "results:module-m2-04-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-04-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-04-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/07-intersection-movement-control.typ",
+        "sha256": "c55e348f490ee8c80f64449df5691a28e72847d16395d9ad40864839d8976019",
+        "title": "路口行向管制",
+        "moduleId": "M2-04",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m204-movement-issues",
+        "diagramPageId": "m204-movement-diagram",
+        "representative": "materials/03-modules/M2-04/M2-04_行駛動線遵行與限制代表型1.svg"
+      }
+    },
+    "M3-01": {
+      "title": "行人",
+      "intro": "以連續步行路徑為出發點，串接路段、轉角與行人穿越空間。",
+      "items": [
+        {
+          "id": "continuity",
+          "title": "人行動線不能只處理局部",
+          "text": "一起檢查前後路段及路口轉角，避免中斷、偏移或寬度不足迫使行人進入車道。"
+        },
+        {
+          "id": "protection",
+          "title": "分隔方式配合道路風險",
+          "text": "人行道標線不具實體防護，應檢視速度與衝突條件，必要時採實體人行道或分隔。"
+        },
+        {
+          "id": "crossing",
+          "title": "穿越位置與庇護空間一起安排",
+          "text": "整合行穿線、庇護島及必要的錯開配置，減少行人單次穿越的負擔。"
+        },
+        {
+          "id": "signals",
+          "title": "讓行人能辨識並使用號誌",
+          "text": "檢查燈面、觸動設備與通行時相，並配合不同使用者的辨識與操作需求。"
+        }
+      ],
+      "moduleId": "M3-01",
+      "pageId": "results-module-m3-01",
+      "images": [
+        {
+          "key": "results:module-m3-01-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-01-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/08-pedestrian.typ",
+        "sha256": "484fe32436e753223409b28b75f252d295361efdea6cc69763273cbf08be47d4",
+        "title": "行人",
+        "moduleId": "M3-01",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m301-sidewalk-issues",
+        "diagramPageId": "m301-sidewalk-diagram",
+        "representative": "materials/03-modules/M3-01/M3-01_人行道標線代表型1.svg"
+      }
+    },
+    "M3-02": {
+      "title": "自行車",
+      "intro": "把自行車路網的中斷與轉換處，整理成清楚、連續的通行空間。",
+      "items": [
+        {
+          "id": "network",
+          "title": "維持不同設施之間的連續性",
+          "text": "一起檢查路口、公車站及斷面變化處，清楚銜接人車共道與分道空間。"
+        },
+        {
+          "id": "crossing",
+          "title": "穿越道配合寬度與轉入軌跡",
+          "text": "檢視自行車穿越道的位置、寬度與轉向路徑，避免轉入空間不足。"
+        },
+        {
+          "id": "merge",
+          "title": "清楚導引匯入與匯出",
+          "text": "自行車道銜接一般車行道時，配置適當漸變與導引，減少臨時改變行駛空間。"
+        }
+      ],
+      "moduleId": "M3-02",
+      "pageId": "results-module-m3-02",
+      "images": [
+        {
+          "key": "results:module-m3-02-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-02-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-02-current-3",
+          "role": "current",
+          "label": "現況問題 3",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-02-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/09-bicycle.typ",
+        "sha256": "711a4fbc8132b9b6ccd5ba5fd129483991d523ff8c32817e72e29c77d1f78c8a",
+        "title": "自行車",
+        "moduleId": "M3-02",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m302-lane-issues",
+        "diagramPageId": "m302-lane-diagram",
+        "representative": "materials/03-modules/M3-02/M3-02_自行車道代表型.svg"
+      }
+    },
+    "M3-03": {
+      "title": "機車",
+      "intro": "提前說明左轉方式，並把停等、待轉與行車路徑清楚分開。",
+      "items": [
+        {
+          "id": "information",
+          "title": "及早辨識適用的左轉方式",
+          "text": "以明確的上游預告、標誌及標線，提示直接左轉或兩段式左轉的行駛方式。"
+        },
+        {
+          "id": "waiting",
+          "title": "停等與待轉空間要足夠",
+          "text": "檢查機慢車停等區及待轉區的範圍，避免等候車輛阻擋其他通行動線。"
+        },
+        {
+          "id": "coordination",
+          "title": "讓路徑、標誌與號誌互相對應",
+          "text": "依左轉方式整理導引資訊與燈面位置，讓駕駛看清應停等及續進的位置。"
+        }
+      ],
+      "moduleId": "M3-03",
+      "pageId": "results-module-m3-03",
+      "images": [
+        {
+          "key": "results:module-m3-03-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-03-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-03-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 90
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/10-motorcycle.typ",
+        "sha256": "6115ecee360d0dab408fbf2ff326ad854403c2f31a025afd112a69074bad95f1",
+        "title": "機車",
+        "moduleId": "M3-03",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m303-turning-issues",
+        "diagramPageId": "m303-turning-diagram",
+        "representative": "materials/03-modules/M3-03/M3-03_機車直接左轉代表型.svg"
+      }
+    },
+    "M3-04": {
+      "title": "公車",
+      "intro": "一起檢視專用道、進出端與站位，維持公車動線的連續與可辨識性。",
+      "items": [
+        {
+          "id": "continuity",
+          "title": "專用道與進出端連續銜接",
+          "text": "整合路段、路口及站位周邊的導引，減少一般車流與路邊停車干擾。"
+        },
+        {
+          "id": "trajectory",
+          "title": "幾何配置配合公車軌跡",
+          "text": "檢核島頭、槽化與進出端線型，避免公車偏移或輾壓交通島。"
+        },
+        {
+          "id": "markings",
+          "title": "用設施表達專用與進出規則",
+          "text": "搭配專用道標誌、禁止變換車道線及導引線，清楚安排車流進出及轉向。"
+        },
+        {
+          "id": "stops",
+          "title": "保留停靠與上下車操作空間",
+          "text": "檢查站位前後淨空、漸變與導引，也把行人及自行車銜接一起納入。"
+        }
+      ],
+      "moduleId": "M3-04",
+      "pageId": "results-module-m3-04",
+      "images": [
+        {
+          "key": "results:module-m3-04-current-1",
+          "role": "current",
+          "label": "現況問題 1",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-04-current-2",
+          "role": "current",
+          "label": "現況問題 2",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-04-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 90
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/11-bus.typ",
+        "sha256": "84d738415338014d4afbb24bc1b056c9c23ce1e37891968220be87f2e9f72ead",
+        "title": "公車",
+        "moduleId": "M3-04",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m304-lane-issues",
+        "diagramPageId": "m304-lane-diagram",
+        "representative": "materials/03-modules/M3-04/M3-04_公車專用道代表型.svg"
+      }
+    },
+    "M4-01": {
+      "title": "危險警示",
+      "intro": "在駕駛仍來得及反應的位置，提供能對照實際路況的危險提示。",
+      "items": [
+        {
+          "id": "distance",
+          "title": "預告距離配合接近速率",
+          "text": "避免警告標誌太近而來不及反應，或過遠卻無法辨識危險處所的位置。"
+        },
+        {
+          "id": "visibility",
+          "title": "檢查線形、遮蔽與背景",
+          "text": "確認駕駛看得到標誌，並與危險處所的導引及管制設施互相配合。"
+        },
+        {
+          "id": "direction",
+          "title": "彎道與轉折保持導引連續",
+          "text": "依路段線形安排彎路、連續彎路與安全方向導引標誌，提前提示行駛方向。"
+        }
+      ],
+      "moduleId": "M4-01",
+      "pageId": "results-module-m4-01",
+      "images": [
+        {
+          "key": "results:module-m4-01-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m4-01-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/12-hazard-warning.typ",
+        "sha256": "4bd6c7438ff993394b802594b1d568e30ad6ce7076b6e5a371881b99897e667b",
+        "title": "危險警示",
+        "moduleId": "M4-01",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m401-local-issues",
+        "diagramPageId": "m401-local-diagram",
+        "representative": "materials/03-modules/M4-01/M4-01_局部危險警示代表型1──隧道標誌.svg"
+      }
+    },
+    "M4-02": {
+      "title": "通行限制",
+      "intro": "先讓受限車輛有機會改道，再清楚表達限制起點與實際條件。",
+      "items": [
+        {
+          "id": "advance",
+          "title": "在能安全退出的位置預告",
+          "text": "上游提供改道資訊，避免受限車輛到達橋涵、隧道或瓶頸前才發現無法通行。"
+        },
+        {
+          "id": "boundary",
+          "title": "區分預告與管制起點",
+          "text": "清楚說明受限對象及適用範圍，兼顧沿線目的地的通達需求。"
+        },
+        {
+          "id": "dimensions",
+          "title": "限制數值對應可通行空間",
+          "text": "依實際結構尺寸及安全餘裕檢視限高、限寬、限重等資訊，避免標示與現況不符。"
+        }
+      ],
+      "moduleId": "M4-02",
+      "pageId": "results-module-m4-02",
+      "images": [
+        {
+          "key": "results:module-m4-02-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m4-02-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/13-access-restriction.typ",
+        "sha256": "9b7409d45d448d67cb7f7f0ed88c484f5b4fb5b9974e90557135d618437b2355",
+        "title": "通行限制",
+        "moduleId": "M4-02",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m402-restriction-issues",
+        "diagramPageId": "m402-restriction-diagram",
+        "representative": "materials/03-modules/M4-02/M4-02_車種與通行條件限制代表型1──禁止進入與限高.svg"
+      }
+    },
+    "M4-03": {
+      "title": "路段行為管制",
+      "intro": "讓速率、超車與會車的管制資訊，和道路環境及可用空間一致。",
+      "items": [
+        {
+          "id": "speed",
+          "title": "速限資訊清楚且位置一致",
+          "text": "整合最高速限標誌與速度限制標字，讓駕駛進入路段時能及時確認要求。"
+        },
+        {
+          "id": "environment",
+          "title": "減速提示對應道路環境",
+          "text": "配合路型及危險處所安排視覺化減速提示，減少道路外觀與速限的落差。"
+        },
+        {
+          "id": "passing",
+          "title": "依視距條件處理超車管制",
+          "text": "在彎道、近路口或對向視線受限處，檢視禁止超車標誌與標線的搭配。"
+        },
+        {
+          "id": "meeting",
+          "title": "狹窄路段明確安排會車",
+          "text": "確認先行方向與可停等位置，避免車輛在瓶頸內對峙或逼退已進入的車輛。"
+        }
+      ],
+      "moduleId": "M4-03",
+      "pageId": "results-module-m4-03",
+      "images": [
+        {
+          "key": "results:module-m4-03-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m4-03-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/14-roadway-behavior-control.typ",
+        "sha256": "d7a0b9061e7fc6db22a82e9ccfc03ac943bbfd247c75d36cc3e94679fe0edc08",
+        "title": "路段行為管制",
+        "moduleId": "M4-03",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m403-speed-issues",
+        "diagramPageId": "m403-speed-diagram",
+        "representative": "materials/03-modules/M4-03/M4-03_速率管理代表型.svg"
+      }
+    },
+    "M4-04": {
+      "title": "區域管制",
+      "intro": "把區域邊界、速限及道路環境一起規劃，讓通行要求清楚且連續。",
+      "items": [
+        {
+          "id": "boundary",
+          "title": "各方向入口與出口完整標示",
+          "text": "以一致的起終點資訊界定範圍，讓由不同方向進入的人都能理解適用要求。"
+        },
+        {
+          "id": "environment",
+          "title": "道路環境支持行人優先",
+          "text": "同步檢查出入口、車行空間與停車配置，避免只增設標誌而環境仍像一般道路。"
+        },
+        {
+          "id": "school",
+          "title": "通學區配合實際路徑與時段",
+          "text": "從住宅、公共運輸站點到學校檢視需求，讓範圍、速限及時段資訊彼此配合。"
+        }
+      ],
+      "moduleId": "M4-04",
+      "pageId": "results-module-m4-04",
+      "images": [
+        {
+          "key": "results:module-m4-04-current-1",
+          "role": "current",
+          "label": "現況問題",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m4-04-diagram",
+          "role": "module",
+          "label": "模組圖",
+          "rotation": 0
+        }
+      ],
+      "source": {
+        "file": "chapters/03-modules/15-area-control.typ",
+        "sha256": "d7b8908e7888831331bbea0f0de116649c3071b9899b0481f491609e2893c30c",
+        "title": "區域管制",
+        "moduleId": "M4-04",
+        "section": "現況與議題、圖例說明及延伸應用",
+        "issuePageId": "m404-pedestrian-issues",
+        "diagramPageId": "m404-pedestrian-diagram",
+        "representative": "materials/03-modules/M4-04/M4-04_行人優先區代表型.svg"
+      }
+    }
+  }
+}

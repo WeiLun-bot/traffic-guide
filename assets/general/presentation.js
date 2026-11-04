@@ -25,6 +25,24 @@
   const scenarioArticles = (value=scene()) => scenarioUI.articles(value);
   const displayBounds = bounds => window.PresentationScenarios.bounds(bounds,scene());
   const sourceBounds = bounds => window.PresentationScenarios.bounds(bounds,scene(),true);
+  function pageTitle(page){
+    if(page.kind==='results')return window.PresentationResults.pageTitle(page);
+    if(page.kind==='module')return window.PresentationModules.pageTitle(page);
+    if(page.kind==='presentations-home')return window.PresentationStructure.manifest.title;
+    if(page.kind==='cover')return '一般道路情境解說';
+    if(page.kind==='contents')return '從路口型態，找到對應情境。';
+    if(page.kind==='scenario-directory')return '全部情境總覽';
+    if(page.kind==='chapter-scenarios')return '無號誌三岔路口從正交，到匯入。';
+    if(page.kind==='current-conditions')return '現況問題';
+    if(page.kind==='scenario-comparison')return '有、無行穿線，怎麼選？';
+    if(page.kind==='map')return !page.article?'整體佈設策略':page.article.category==='標線'?'標線條文運用解說':page.article.category==='道路設施'?'道路設施':(page.article.category||'交通設施')+'條文';
+    if(['context','review'].includes(page.kind)){
+      const value=window.PresentationScenarios.sceneFor(page,data);
+      return page.kind==='context'?value.name:value.presentation?.review?.title||value.recapTitle||'同一章節，不同的設置重點。';
+    }
+    if(page.kind==='custom')return {cover:'在這裡寫下你的章節標題',image:'情境與設置議題',closing:'回到情境，整理設置重點。',compare:'左右圖例比較',steps:'情境圖面逐步解說'}[page.type]||page.name;
+    return page.name;
+  }
   const pages = [
     {id:'presentations',chapter:'presentations',kind:'presentations-home',name:'四場簡報總覽'},
     ...(window.PresentationStructure?.placeholders()||[]),
@@ -38,11 +56,12 @@
     ...data.chapters.slice(2).map(chapter => ({id:chapter.id, chapter:chapter.id, kind:'opening', name:chapter.name}))
   ];
   window.PresentationScenarios?.extendPages(pages,data);
+  window.PresentationStructure?.addChapterCovers(pages);
   editor?.restorePages(pages);
   window.PresentationModules?.syncPages(pages);
   window.PresentationStructure?.organize(pages);
   window.PresentationOrder?.organize(pages,data,window.visualLayoutEditor?.store.config);
-  const makeStops = () => pages.flatMap((page,index) => Array.from({length:page.article?2:page.kind==='module'?page.stepCount||1:page.kind==='custom'&&['steps','compare'].includes(page.type)?page.steps.length:1},(_,phase)=>({page:index,phase})));
+  const makeStops = () => pages.flatMap((page,index) => Array.from({length:page.article?2:page.kind==='results'?window.PresentationResults.stepCount(page):page.kind==='module'?page.stepCount||1:page.kind==='custom'&&['steps','compare'].includes(page.type)?page.steps.length:1},(_,phase)=>({page:index,phase})));
   const stops = makeStops();
   let position = -1;
   let fullPeek = false;
@@ -92,7 +111,7 @@
   $('chapters').innerHTML = data.chapters.map(chapterButton).join('');
   function updateContents() {
     $('page-total').textContent = String(pages.length).padStart(2,'0');
-    $('toc-content').innerHTML = window.PresentationStructure?.toc(pages,scenarioUI)||scenarioUI.toc(pages);
+    if(window.PresentationStructure)window.PresentationStructure.refreshToc(pages,scenarioUI);else $('toc-content').innerHTML=scenarioUI.toc(pages);
   }
   updateContents();
 
@@ -176,10 +195,7 @@
     const articleView = Boolean(article && phase === 1 && !editor?.adjusting && !editor?.needsAlignment(article.id));
     const zoomed = articleView && !fullPeek;
     $('map-eyebrow').textContent = article ? `${currentScene.code} / ${article.category==='標線'?'MARKING':article.category==='標誌'?'SIGNAGE':article.category==='號誌'?'SIGNAL':'ROAD FACILITY'} APPLICATION` : `${currentScene.code} / SCENARIO OVERVIEW`;
-    const articleTitle = !article ? '整體佈設策略'
-      : article.category==='標線' ? '標線條文運用解說'
-      : article.category==='道路設施' ? '道路設施'
-      : `${article.category||'交通設施'}條文`;
+    const articleTitle = pageTitle(page);
     $('slide-title').textContent = articleTitle;
     $('figure-name').textContent = `${currentScene.code} / ${article?article.name:'情境整體配置圖'}`;
     document.querySelector('.case-code').textContent=`${currentScene.code} / ${currentScene.setting}・${currentScene.geometry||'正交'}`;
@@ -278,7 +294,7 @@
       $('presentation').innerHTML=window.PresentationResults.render(page,data);
     } else if(page.kind==='scenario-directory') {
       $('presentation').innerHTML=window.PresentationScenarios.render(page,data);
-    } else if(['presentations-home','presentation-empty'].includes(page.kind)) {
+    } else if(['presentations-home','presentation-empty','chapter-cover'].includes(page.kind)) {
       $('presentation').innerHTML=window.PresentationStructure.render(page);
     } else if(page.kind==='module') {
       $('presentation').innerHTML=window.PresentationModules.render(page);
@@ -305,12 +321,10 @@
     $('page-number').textContent=String(current().page+1).padStart(2,'0');
     $('phase-label').textContent=page.article?(editor?.editing?`${current().phase+1} / 2 ${current().phase?'放大解說':'框選定位'}`:'放大解說'):page.kind==='custom'&&page.steps?`${current().phase+1} / ${page.steps.length} 解說`:'';
     $('previous').disabled=position===0;
-    $('next-label').textContent=position===stops.length-1?'回到封面':page.article&&current().phase===0?'放大並解說':page.id==='cover'?'開始簡報':page.id===currentScene.contextId?'看情境大圖':page.id===currentScene.overviewId?'開始條文解說':page.id==='review'?'下一個情境 G1-02':pages[current().page+1]?.kind==='scenario-comparison'?'比較行穿線配置':page.article&&scenarioArticles().indexOf(page.article)<scenarioArticles().length-1?'下一項條文':page.article?'情境回顧':'繼續';
-    if(currentScene.currentConditions&&page.id===currentScene.contextId)$('next-label').textContent='現況問題';
-    if(page.kind==='current-conditions')$('next-label').textContent='整體佈設策略';
+    $('next-label').textContent=window.PresentationStructure.navigationLabel();
     $('next').setAttribute('aria-label',$('next-label').textContent);
     $('announcer').textContent=`第 ${current().page+1} 頁，共 ${pages.length} 頁。${page.name}${page.article?'，'+(current().phase?'放大解說':'框選定位'):''}`;
-    if(!['module','results','presentations-home','presentation-empty','scenario-directory'].includes(page.kind))scenarioUI.decorate(page);
+    if(!['module','results','presentations-home','presentation-empty','scenario-directory','chapter-cover'].includes(page.kind))scenarioUI.decorate(page);
     window.PresentationScenarios?.decorate(page,data);
     window.PresentationModules?.decorate(page);
     editor?.decorate();
@@ -324,15 +338,17 @@
     window.PresentationModules?.afterRender();
     document.title=`${page.name}｜${page.kind==='module'?'交通設施功能模組':'一般道路情境簡報（圖面放大版）'}`;
     window.PresentationStructure?.decorate(page);
+    window.PresentationResults?.afterRender();
     window.PresentationOrder?.mount(window.generalRoadPresentation);
     window.PresentationImageOrder?.mount(window.generalRoadPresentation);
     if(options.hash!==false) {
-      const hash=page.kind==='module'?window.PresentationModules.hashFor(page):`#${page.id}${page.article&&current().phase?'/zoom':page.kind==='custom'&&current().phase?'/step-'+current().phase:''}`;
+      const hash=page.kind==='module'?window.PresentationModules.hashFor(page):`#${page.id}${page.article&&current().phase?'/zoom':['custom','results'].includes(page.kind)&&current().phase?'/step-'+current().phase:''}`;
       try {history.replaceState(null,'',hash);} catch {location.hash=hash;}
     }
   }
+  function resolvePageId(id,phase){const mapped=window.PresentationResults?.resolvePage(id)||id;return window.PresentationModules?.resolvePage(mapped,phase)||mapped;}
   function goPage(id,phase=0,options={}) {
-    const resolved=window.PresentationModules?.resolvePage(id)||id;
+    const resolved=resolvePageId(id);
     if(resolved!==id)options={...options,force:true};
     id=resolved;
     const page=pages.findIndex(item=>item.id===id);
@@ -382,9 +398,10 @@
     let hash=location.hash.slice(1);
     try {hash=decodeURIComponent(hash);} catch {hash='cover';}
     const [requestedId,phase]=hash.split('/');
-    const id=window.PresentationModules?.resolvePage(requestedId,phase)||requestedId;
+    const id=resolvePageId(requestedId,phase);
     const page=pages.findIndex(item=>item.id===id);
-    const requestedPhase=phase==='zoom'?1:/^step-\d+$/.test(phase||'')?Number(phase.slice(5)):0;
+    const rawPhase=phase==='zoom'?1:/^step-\d+$/.test(phase||'')?Number(phase.slice(5)):0;
+    const requestedPhase=pages[page]?.resultType==='comparison'?Math.min(rawPhase,window.PresentationResults.stepCount(pages[page])-1):rawPhase;
     const index=stops.findIndex(stop=>stop.page===page&&stop.phase===requestedPhase);
     return navigate(index>=0?index:0,{hash:false,force:pages[page]?.kind==='module'});
   }
@@ -442,7 +459,8 @@
     window.PresentationModules?.syncPages(pages);
     window.PresentationStructure?.organize(pages);
     window.PresentationOrder?.organize(pages,data,window.visualLayoutEditor?.store.config);
-    id=window.PresentationModules?.resolvePage(id)||id;
+    id=resolvePageId(id);
+    const comparison=pages.find(page=>page.id===id&&page.resultType==='comparison');if(comparison)phase=Math.min(phase,window.PresentationResults.stepCount(comparison)-1);
     stops.splice(0,stops.length,...makeStops());
     updateContents();
     let index=stops.findIndex(stop=>pages[stop.page].id===id&&stop.phase===phase);
@@ -452,6 +470,7 @@
   }
   function editorFrames() {
     const page=currentPage();
+    if(page.kind==='results')return window.PresentationResults?.frames()||[];
     if(page.kind==='module')return window.PresentationModules?.frames()||[];
     if(page.article&&$('main-map')) return [{key:'article:'+page.id,label:page.article.name,element:$('main-map'),width:fullView[2],height:fullView[3],imageKey:scene().overall,articleId:page.id,getBox:()=>displayBounds(page.article.box),getCrop:()=>displayBounds(page.article.crop),toSource:sourceBounds,fromSource:displayBounds,setBounds:(kind,bounds)=>{const raw=sourceBounds(bounds);page.article[kind]=raw;return raw;}}];
     if(page.kind!=='custom') return [];
@@ -462,7 +481,7 @@
       return {key,label:side==='left'?'左圖':side==='right'?'右圖':'情境圖',element,width:1000,height:640,imageKey:element.dataset.editorImageKey,getBox:()=>editor.bounds(key,'box',fallback),toSource:bounds=>bounds,fromSource:bounds=>bounds,setBounds:(_kind,bounds)=>bounds,defaults:{box:fallback}};
     });
   }
-  window.generalRoadPresentation={data,pages,stops,fullView,displayBounds,goPage,navigate,updateContents,editorFrames,refresh:()=>navigate(position,{force:true}),refreshStructure,showAsset,whenIdle:()=>pendingNavigation,get page(){return currentPage();},get position(){return position;},get state(){return {page:currentPage().id,phase:current().phase,fullPeek};}};
+  window.generalRoadPresentation={data,pages,stops,fullView,displayBounds,pageTitle,goPage,navigate,updateContents,editorFrames,refresh:()=>navigate(position,{force:true}),refreshStructure,showAsset,whenIdle:()=>pendingNavigation,get page(){return currentPage();},get position(){return position;},get state(){return {page:currentPage().id,phase:current().phase,fullPeek};}};
   editor?.connect(window.generalRoadPresentation);
   window.visualLayoutEditor?.connect(window.generalRoadPresentation);
   window.PresentationModules?.connect(window.generalRoadPresentation);

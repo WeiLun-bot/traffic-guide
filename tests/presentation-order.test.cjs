@@ -10,6 +10,13 @@ test('ordering uses stable identities, appends new items and ignores removed ent
   assert.deepEqual(Order.moved(['a','b','c'],'b','b'),['a','b','c']);
   assert.deepEqual(Order.forKey(items,'module:one',{navigationOrders:{'module:two':['c','b','a']}}),items);
 });
+
+test('TOC page moves retain page identities and leave all other chapters and presentations in place',()=>{
+  const pages=[{id:'home',chapter:'intro'},{id:'a',chapter:'review',content:{title:'A'}},{id:'b',chapter:'review',content:{title:'B'}},{id:'module',chapter:'modules-M1'}],before=structuredClone(pages);
+  const next=Order.reorderedPages(pages,['a','b'],['b','a']);assert.deepEqual(next.map(page=>page.id),['home','b','a','module']);assert.equal(next[1],pages[2]);assert.equal(next[2],pages[1]);assert.deepEqual(pages,before);
+  for(const invalid of [['a','a'],['a','missing'],['b','a','a']])assert.throws(()=>Order.reorderedPages(pages,['a','b'],invalid));
+  const store=new Core.Store(original()),snapshot=store.snapshot();snapshot.legacyState.pageOrder=next.map(page=>page.id);store.commit(snapshot);assert.deepEqual(Core.parse(store.serialize()).legacyState.pageOrder,next.map(page=>page.id));assert(store.undo());assert(store.redo());assert.deepEqual(store.config.legacyState.pageOrder,next.map(page=>page.id));
+});
 test('navigation settings are backward compatible, validated and participate in JSON, dirty state and undo/redo',()=>{
   const config=original();delete config.navigationOrders;const store=new Core.Store(config);assert.deepEqual(store.config.navigationOrders,{});
   const next=store.snapshot();next.navigationOrders['module:m101-lanes-diagram']=['waiting','arrows'];next.navigationOrders['scenario:c1-01']=['second','first'];

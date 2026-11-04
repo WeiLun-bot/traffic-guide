@@ -152,8 +152,8 @@
       const phase=presentation.state.phase,next=document.getElementById('next'),stage=formation.stages[phase],following=formation.stages[phase+1];
       document.getElementById('phase-label').textContent=`${phase+1} / ${formation.stages.length} 階段`;
       const spec=formationHighlightSpec(phase),canZoom=spec?.enabled&&!window.generalRoadEditor.editing&&!formationCamera?.focused;
-      document.getElementById('next-label').textContent=canZoom?'放大打亮框':following?'下一階段：'+following.label:presentation.pages[presentation.stops[presentation.position+1]?.page]?.name||'繼續';
-      next.setAttribute('aria-label',document.getElementById('next-label').textContent);document.getElementById('previous').setAttribute('aria-label',formationCamera?.focused?'回到全圖':phase?'上一階段':'上一頁');
+      document.getElementById('next-label').textContent=canZoom?'放大打亮框':following?'下一階段：'+following.label:window.PresentationStructure.navigationLabel();
+      next.setAttribute('aria-label',document.getElementById('next-label').textContent);next.title=document.getElementById('next-label').textContent;document.getElementById('previous').setAttribute('aria-label',formationCamera?.focused?'回到全圖':phase?'上一階段':'上一頁');
       const focus=document.querySelector('[data-formation-focus="toggle"]');if(focus){focus.disabled=!spec?.enabled||window.generalRoadEditor.editing;focus.textContent=formationCamera?.focused?'回到全圖':'放大打亮框';focus.title=spec?.enabled?'放大打亮處或回到全圖':'按「編輯內容 → 調整打亮」新增打亮框';focus.setAttribute('aria-pressed',String(Boolean(formationCamera?.focused)));}
       document.getElementById('announcer').textContent=formation.title+`，第 ${phase+1} 階段，共 ${formation.stages.length} 階段。`+stage.label;
       return;
@@ -167,7 +167,7 @@
     pager.querySelector('[data-module-extension-step="-1"]').disabled=group===0;pager.querySelector('[data-module-extension-step="1"]').disabled=group===total-1;
     pager.querySelector('[data-extension-range]').textContent=(group*2+1)+'–'+Math.min(stage.topics.length,group*2+2)+' / '+stage.topics.length;
     if(paging&&group<total-1)next.textContent='下一組延伸應用';else if(extensionFooter?.pageId===stage.pageId)next.textContent=extensionFooter.next;
-    document.getElementById('next').setAttribute('aria-label',next.textContent);previous.setAttribute('aria-label',paging&&group>0?'上一組延伸應用':'上一頁');
+    document.getElementById('next').setAttribute('aria-label',next.textContent);document.getElementById('next').title=next.textContent;previous.setAttribute('aria-label',paging&&group>0?'上一組延伸應用':'上一頁');
     if(changed)window.visualLayoutEditor?.render();
   }
   function moveExtensionGroup(direction){
@@ -353,6 +353,15 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     }).join('');
     return `<section class="slide module-slide module-detail module-extension-slide" data-module-id="${content.id}" data-module-stage="extensions">${switcher(page)}${extensionPageActions(page)}${heading(sub.id+' / '+(content.id==='M2-01'?(sub.id.endsWith('.1')?'STOP CONTROL':'YIELD CONTROL'):'FUNCTIONAL MODULE')+' · '+stageProgress(stageContext(page.id).flow,stage),sub.name+'｜'+stage.title,stage.intro||'依行人穿越、路口空間與車速，調整停讓配置。',true)}<div class="module-extension-grid" style="--module-extension-rows:${Math.ceil(stage.topics.length/2)}">${cards}</div><div class="module-extension-footer"><button class="text-button module-extension-source" data-module-source>資料來源 ↗</button><nav class="module-extension-pager" aria-label="延伸應用分組" data-editor-ui="extension-pager" hidden><button type="button" data-module-extension-step="-1">← 上一組</button><span data-extension-range role="status" aria-live="polite"></span><button type="button" data-module-extension-step="1">下一組 →</button></nav></div></section>`;
   }
+  function pageTitle(page){
+    if(page.id==='modules-structure')return '從設施搭配，走到完整路口。';
+    if(page.id==='modules-formation')return formation?.title||'模組形成示範尚未載入';
+    if(page.id==='modules-index')return '全部模組總覽';
+    if(page.theme)return catalog?.themes.find(theme=>theme.id===page.theme)?.name||page.name;
+    const {source,stage,flow}=displayContext(page.id),content=moduleFor(page.id);
+    const sub=flow&&catalog?.modules.find(entry=>entry.id===content?.id)?.submodules.find(sub=>sub.id===flow.submoduleId);
+    return stage&&sub?sub.name+'｜'+stage.title:source?.title||page.name;
+  }
   function render(page){
     const content=moduleFor(page.id);
     if(loadError||!catalog||moduleErrors.has(page.moduleId))return `<section class="slide module-slide">${heading('MODULES','模組內容尚未載入','請使用本機預覽網址開啟，並確認 data/modules 中的 JSON 檔案可讀取。')}<p>${esc(moduleErrors.get(page.moduleId)||loadError)}</p><button class="primary-button" data-module-reload>重新載入頁面</button></section>`;
@@ -360,7 +369,7 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     if(page.theme)return index(page.theme);
     const {source,stage,topic,flow}=displayContext(page.id);if(!source)return '';
     const item=visualPage(topic?.assets?{...source,assets:topic.assets}:source);
-    const sub=flow&&catalog.modules.find(entry=>entry.id===content.id).submodules.find(sub=>sub.id===flow.submoduleId),title=stage?sub.name+'｜'+stage.title:item.title;
+    const sub=flow&&catalog.modules.find(entry=>entry.id===content.id).submodules.find(sub=>sub.id===flow.submoduleId),title=pageTitle(page);
     if(stage?.id==='extensions')return extensionSlide(page,stage,sub);
     if(item.links)return `<section class="slide module-slide module-detail module-referral" data-module-id="${content.id}" data-module-source-page="${item.id}">${switcher(page)}${heading(item.submoduleId+' / MODULE REFERENCE',title,item.intro,true)}<div class="module-referral-content">${pointList(item)}<nav class="module-referral-links" aria-label="相關配置說明">${item.links.map(link=>`<button type="button" class="primary-button" data-module-route="${link.pageId}${link.topicId?'/topic-'+link.topicId:''}">${esc(link.label)} ↗</button>`).join('')}</nav></div></section>`;
     const intro=item.intro;
@@ -538,5 +547,5 @@ function showSource(reg){
       if(direction&&(moveFormationFocus(direction)||moveExtensionGroup(direction))){event.preventDefault();event.stopImmediatePropagation();}
     },true);
   }
-  return {validateCatalog,validateModule,validateFormation,load,prepare,pages,toc,render,switcher,subnavigation,connect,decorate,afterRender,frames,noteReplacement,highlightSpec,formationHighlightSpec,extensionLayout,resolvePage,hashFor,displayContext,overviewGroups,overviewPoints,directoryAssets,pointVisible,syncExtensionControls,syncPages,visibleStages,extensionRemoved,get catalog(){return catalog;},get formation(){return formation;},get content(){return moduleFor(presentation?.page.id)||contents.get('M2-01')||null;},get contents(){return [...contents.values()];},get moduleErrors(){return Object.fromEntries(moduleErrors);},get error(){return loadError;}};
+  return {validateCatalog,validateModule,validateFormation,load,prepare,pages,toc,render,pageTitle,switcher,subnavigation,connect,decorate,afterRender,frames,noteReplacement,highlightSpec,formationHighlightSpec,extensionLayout,resolvePage,hashFor,displayContext,overviewGroups,overviewPoints,directoryAssets,pointVisible,syncExtensionControls,syncPages,visibleStages,extensionRemoved,get catalog(){return catalog;},get formation(){return formation;},get content(){return moduleFor(presentation?.page.id)||contents.get('M2-01')||null;},get contents(){return [...contents.values()];},get moduleErrors(){return Object.fromEntries(moduleErrors);},get error(){return loadError;}};
 });

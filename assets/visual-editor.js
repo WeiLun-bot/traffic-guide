@@ -47,7 +47,7 @@
       <button type="button" data-vl-action="reset">還原此元素版面</button>
       <small>位移以原版面為起點，單位為 CSS px。清空寬高或字級欄位可沿用原設定。</small>
     </aside>
-    <div class="vl-status" role="status" aria-live="polite">正在載入版面設定…</div>
+    <div class="vl-status" role="status" aria-live="polite" hidden></div>
     <input type="file" accept="application/json,.json" data-vl-import hidden>
     <div class="vl-outline" hidden>
       <button type="button" class="vl-move" data-vl-handle="move" aria-label="拖曳移動選取元素" title="拖曳移動">✥</button>
@@ -57,10 +57,10 @@
   document.body.append(ui);
   const panel = ui.querySelector('.vl-panel'), outline = ui.querySelector('.vl-outline');
   const status = ui.querySelector('.vl-status'), chooser = ui.querySelector('[data-vl-elements]');
-  status.id = 'visual-layout-status'; status.dataset.editorUi='visual-status'; document.body.append(status);
+  status.id = 'visual-layout-status'; status.dataset.editorUi='visual-status'; (document.querySelector('.playbar')||document.body).append(status);
   const action = name => ui.querySelector(`[data-vl-action="${name}"]`);
   const round = number => Math.round(number * 100) / 100;
-  function report(message, error = false) { status.textContent = message; status.classList.toggle('vl-error', error); }
+  function report(message, error = false) { status.textContent = message; status.title = message; status.hidden = !message; status.classList.toggle('vl-error', error); window.PresentationOrder?.updateTocActions(message,error); }
   function current() { return items.get(selectedId); }
   function updateButtons() {
     action('undo').disabled = !store?.past.length || busy;
@@ -80,6 +80,7 @@
       if (editing) panel.style.top = Math.max(90, Math.min(toolbar.getBoundingClientRect().bottom + 10, innerHeight - 220)) + 'px';
     }
     window.VisualInitialViews?.update();
+    window.PresentationOrder?.updateTocActions();
   }
   function restoreStyles() {
     for (const [element, properties] of originalStyles) {
@@ -151,6 +152,7 @@
     for (const {element, settings} of items.values()) apply(element, settings);
     window.VisualInitialViews?.mount(root, {
       pageId: api.state.page, getConfig: () => store.config, isBusy: () => busy, report,
+      overviewAssetKey: api.page.resultsModule?api.page.content.images.find(image=>image.role==='module')?.key:null,
       prepare() {if(editing)setMode(false);if(window.generalRoadEditor?.editing)window.generalRoadEditor.setEditing(false);},
       setView(value) {const next=store.snapshot();next.imageViews[value.id]=value;store.commit(next);render();report('初始畫面已更新，請儲存設定。');},
       save: () => run('save')
@@ -226,6 +228,7 @@
     const editor = window.generalRoadEditor;
     if (!editor || !api) return;
     const previousState=api.state;
+    const orderViews=preserveComparison&&JSON.stringify(editor.state.pageOrder)!==JSON.stringify(store.config.legacyState.pageOrder)?window.PresentationImageOrder?.captureViews(api):null;
     const captured=preserveComparison?captureComparison():null;
     if (JSON.stringify(editor.state) === JSON.stringify(store.config.legacyState)) { window.PresentationOrder?window.PresentationOrder.refresh(api):api.refresh();restoreComparison(captured);return; }
     restoreStyles();
@@ -236,6 +239,7 @@
     window.PresentationScenarios?.prepare(api.data); window.generalRoadConditions?.prepare(api.data); window.PresentationModules?.prepare(api.data); window.PresentationResults?.prepare(api.data); editor.prepare(api.data);
     api.pages.splice(0, api.pages.length, ...legacyPages.map(page => ({...page, ...(page.article ? {article: api.data.articles.find(article => article.id === page.article.id)} : {})})));
     editor.restorePages(api.pages); api.refreshStructure(previousState.page, previousState.phase);restoreComparison(captured);
+    if(orderViews&&api.state.page===previousState.page)window.PresentationImageOrder.restoreViews(orderViews,api);
   }
   function change(patch) {
     if (!current()) return;
@@ -386,9 +390,9 @@
     return Core.parse(await response.text());
   }
   window.visualLayoutEditor = {
-    connect(presentation) { api = presentation; legacyPages = api.pages.filter(page => page.kind !== 'custom').map(page => ({...page})); document.querySelector('#editor-toolbar .editor-actions').prepend(ui); ui.querySelector('.vl-toolbar').hidden = false; window.PresentationContent?.configureTools(ui); const legacySave = document.querySelector('.editor-download'); if (legacySave) { legacySave.textContent = '儲存 JSON 設定'; legacySave.title = '將內容與版面存入連結的 JSON 設定檔'; } updateButtons(); report(files.handle ? '已載入連結的 ' + files.handle.name : '版面已載入，按「編輯內容」開始。'); },
-    sessionChanged() {updateButtons();if(!editing)report(window.generalRoadEditor?.editing ? '文字編輯：點文字修改，使用圖片旁的按鈕更換圖片。' : '預覽模式：可正常切頁、放大圖片與操作圖面。' + (store?.dirty ? '（有修改尚未儲存）' : ''));},
-    beforeRender() { cancelDrag(); restoreStyles(); }, render, setMode, select,transact,report,refresh:refreshPresentation,
+    connect(presentation) { api = presentation; legacyPages = api.pages.filter(page => page.kind !== 'custom').map(page => ({...page})); document.querySelector('#editor-toolbar .editor-actions').prepend(ui); ui.querySelector('.vl-toolbar').hidden = false; window.PresentationContent?.configureTools(ui); const legacySave = document.querySelector('.editor-download'); if (legacySave) { legacySave.textContent = '儲存 JSON 設定'; legacySave.title = '將內容與版面存入連結的 JSON 設定檔'; } updateButtons(); report(''); },
+    sessionChanged() {updateButtons();if(!editing)report(window.generalRoadEditor?.editing ? '文字編輯：點文字修改，使用圖片旁的按鈕更換圖片。' : '');},
+    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); restoreStyles(); }, render, setMode, select,transact,report,refresh:refreshPresentation,
     legacyChanged(){transact(()=>{},false);},
     formatChanged(element,property){const key={fontSize:'fontSize',fontWeight:'fontWeight',fontFamily:'fontFamily',lineHeight:'lineHeight'}[property];transact(next=>{if(key&&next.elements[element.dataset.layoutId])next.elements[element.dataset.layoutId][key]=null;},false);refreshPresentation();},
     resetTextStyle(element){transact(next=>{const item=next.elements[element.dataset.layoutId];if(item)for(const key of ['fontSize','fontFamily','fontWeight','lineHeight'])item[key]=null;},false);refreshPresentation();},

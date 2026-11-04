@@ -27,10 +27,31 @@ function refresh({root=path.resolve(__dirname,'..')}={}){
     if(asset.url!==url||asset.width!==image.width||asset.height!==image.height){Object.assign(asset,{url,width:image.width,height:image.height});updates.push(key);}
   }
   for(const scenario of data.scenarios){const image=data.embeddedAssets[scenario.overall];if(image){scenario.width=image.width;scenario.height=image.height;}}
-  const manifestFile=path.join(root,'data/results/general-strategies.json'),manifestText=fs.readFileSync(manifestFile,'utf8'),manifest=JSON.parse(manifestText),strategies=[];
-  for(const [key,asset]of Object.entries(manifest.assets)){
+  const strategies=[],strategyWrites=[];
+  for(const relative of ['data/results/general-strategies.json','data/results/complex-strategies.json']){
+    const file=path.join(root,relative);if(relative.includes('/complex-')&&!fs.existsSync(file))continue;
+    const manifest=JSON.parse(fs.readFileSync(file,'utf8'));let changed=false;
+    for(const [key,asset]of Object.entries(manifest.assets)){
+      const image=inspect(asset.file);
+      if(asset.width!==image.width||asset.height!==image.height||asset.sha256!==image.sha256){Object.assign(asset,{width:image.width,height:image.height,sha256:image.sha256});strategies.push(key);changed=true;}
+    }
+    if(changed)strategyWrites.push([file,JSON.stringify(manifest,null,2)+'\n']);
+  }
+  const overviewFile=path.join(root,'data/results/outline.json'),overview=fs.existsSync(overviewFile)?JSON.parse(fs.readFileSync(overviewFile,'utf8')):null,layouts=[];
+  for(const [key,asset]of Object.entries(overview?.assets||{}))if(asset.role==='layout'){
     const image=inspect(asset.file);
-    if(asset.width!==image.width||asset.height!==image.height||asset.sha256!==image.sha256){Object.assign(asset,{width:image.width,height:image.height,sha256:image.sha256});strategies.push(key);}
+    if(asset.width!==image.width||asset.height!==image.height||asset.sha256!==image.sha256){Object.assign(asset,{width:image.width,height:image.height,sha256:image.sha256});layouts.push(key);}
+  }
+  const comparisons=[];
+  for(const page of overview?.pages||[])if(page.type==='comparison')for(const entry of page.images){
+    const asset=overview.assets[entry.key];
+    if(!/^materials\/(?:04-一般道路情境\/G|05-複雜道路情境\/C)[1-4]-\d{2}\/[^/\\]+\.(?:png|svg)$/.test(asset.file))throw new Error('Invalid comparison image path: '+asset.file);
+    const file=path.join(root,asset.file),bytes=fs.readFileSync(file),[width,height]=asset.file.endsWith('.svg')?(()=>{const image=inspect(asset.file);return [image.width,image.height];})():require('./typst-module-source.cjs').imageSize(file),sha256=digest(bytes);
+    if(asset.width!==width||asset.height!==height||asset.sha256!==sha256){
+      const sx=width/asset.width,sy=height/asset.height;
+      for(const point of page.items){const focus=point.focus?.[entry.key];if(focus)for(const name of ['rect','crop'])if(focus[name])focus[name]=focus[name].map((value,index)=>value*(index%2?sy:sx));}
+      Object.assign(asset,{width,height,sha256});comparisons.push(entry.key);
+    }
   }
   const catalogFile=path.join(root,'data/scenarios/catalog.json'),detailWrites=[];
   if(fs.existsSync(catalogFile))for(const relative of JSON.parse(fs.readFileSync(catalogFile,'utf8')).details||[]){
@@ -48,9 +69,10 @@ function refresh({root=path.resolve(__dirname,'..')}={}){
   // scripts, styles, aliases and saved layout settings.
   const replacement=JSON.stringify(data).replace(/</g,'\\u003c');
   if(updates.length){if(separated)require('./presentation-source.cjs').writeData(root,data);else{const offset=match.index+match[0].indexOf(match[2]);fs.writeFileSync(index,original.slice(0,offset)+replacement+original.slice(offset+match[2].length),'utf8');}}
-  if(strategies.length)fs.writeFileSync(manifestFile,JSON.stringify(manifest,null,2)+'\n','utf8');
+  for(const [file,text]of strategyWrites)fs.writeFileSync(file,text,'utf8');
+  if(layouts.length||comparisons.length)fs.writeFileSync(overviewFile,JSON.stringify(overview,null,2)+'\n','utf8');
   for(const [file,text]of detailWrites)fs.writeFileSync(file,text,'utf8');
-  return {embeddedImages:updates.length,strategyImages:strategies.length,detailFiles:detailWrites.length,embeddedKeys:updates,strategyKeys:strategies};
+  return {embeddedImages:updates.length,strategyImages:strategies.length,layoutImages:layouts.length,comparisonImages:comparisons.length,detailFiles:detailWrites.length,embeddedKeys:updates,strategyKeys:strategies};
 }
 module.exports={refresh};
 if(require.main===module)console.log(JSON.stringify(refresh()));

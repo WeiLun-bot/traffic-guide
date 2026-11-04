@@ -24,6 +24,10 @@ body>#visual-layout-editor .vl-toolbar{position:fixed;top:88px;right:18px;paddin
 #visual-layout-editor .vl-selected{color:#697e62;overflow-wrap:anywhere}
 #visual-layout-status{position:fixed;bottom:87px;right:18px;max-width:min(680px,calc(100vw - 36px));background:#f9fcf4f0;padding:6px 10px;border:1px solid #d0ddc5;border-radius:5px;font:10px/1.5 "Microsoft JhengHei",system-ui,sans-serif;color:#233e36;z-index:84}
 #visual-layout-status.vl-error{background:#fff3e3;border-color:#d3a774;color:#7b4c22}
+#visual-layout-status[hidden]{display:none!important}
+.playbar:has(>#visual-layout-status:not([hidden])){display:grid;grid-template-columns:auto auto auto;grid-template-rows:minmax(0,1fr) auto;row-gap:0;padding-bottom:4px}
+.playbar>#visual-layout-status{position:static;grid-column:1/-1;min-width:0;max-width:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:0;border-radius:0;background:none;padding:0;font-size:9px;line-height:1.4;color:#6c7e72;z-index:auto}
+.playbar>#visual-layout-status.vl-error{color:#7b4c22}
 #visual-layout-editor .vl-outline{position:fixed;border:2px solid #b97a31;pointer-events:none;z-index:81;box-sizing:border-box}
 #visual-layout-editor .vl-outline button{position:absolute;pointer-events:auto;padding:0;width:12px;height:12px;border:1px solid #8f5d27;background:#fff;border-radius:2px;touch-action:none}
 #visual-layout-editor [data-vl-handle="nw"]{left:-7px;top:-7px;cursor:nwse-resize}
@@ -38,6 +42,7 @@ body.is-visual-dragging{user-select:none}
 @media print{#visual-layout-editor,#visual-layout-status{display:none!important}}
 .iv-panel{position:fixed;z-index:85;box-sizing:border-box;padding:15px;border:1px solid #c5d4bb;border-radius:7px;background:#f9fcf5;box-shadow:0 7px 25px #233e3626;color:#233e36;font:12px/1.6 "Microsoft JhengHei",system-ui,sans-serif;overflow:auto}
 .iv-panel[hidden]{display:none!important}
+body:not(.is-editing):not(.is-visual-editing) .iv-trigger{display:none}
 .iv-panel .iv-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .iv-panel .iv-heading strong{font-size:14px}
 .iv-panel p{font-size:11px;line-height:1.7;margin:10px 0}

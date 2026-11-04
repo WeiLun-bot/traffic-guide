@@ -49,9 +49,9 @@
     element.setAttribute('draggable','false');
     element.setAttribute('title','滾輪連續縮放；按住滑鼠左鍵拖曳平移');
     if(!vector)element.style.transformOrigin='0 0';
-    const tools=document.createElement('div');tools.className='viewport-tools';tools.dataset.editorUi='viewport-controls';
-    const percentage=document.createElement('span');percentage.className='viewport-percentage';percentage.textContent='100%';percentage.setAttribute('aria-label','目前縮放比例');
-    const reset=document.createElement('button');reset.type='button';reset.textContent='重設視圖';reset.title='回到本步驟的原始視圖';tools.append(percentage,reset);container.append(tools);
+    const tools=document.createElement('div');tools.className='viewport-tools viewport-tools-compact';tools.dataset.editorUi='viewport-controls';
+    const percentage=document.createElement('span');percentage.className='viewport-percentage';percentage.textContent='100%';percentage.hidden=true;percentage.setAttribute('aria-label','目前縮放比例');
+    const reset=document.createElement('button');reset.type='button';reset.textContent='↺';reset.setAttribute('aria-label','重設視圖');tools.append(percentage,reset);container.append(tools);
     const toolbar=container.closest('.map-card')?.querySelector('.map-toolbar .map-tools');
     let status,returnToFull;
     if(toolbar) {
@@ -61,7 +61,6 @@
       if(!returnToFull){returnToFull=document.createElement('button');returnToFull.type='button';returnToFull.dataset.viewportFull='';toolbar.append(returnToFull);}
       returnToFull.textContent='回看全圖 ↙';returnToFull.hidden=true;
       returnToFull.addEventListener('click',event=>{event.stopPropagation();controller.showFull();});
-      reset.title='回到全圖預設比例與位置';
     }
     controller={
       element,
@@ -77,11 +76,11 @@
         settings={...settings,...next};
         if(next.home)home=[...next.home];
         if(next.resetView)settings.resetView=[...next.resetView];
-        reset.title=settings.resetView?'回到本步驟的預設視角':'回到全圖預設比例與位置';
         controller.sync();
       },
       sync() {
         percentage.textContent=(controller.zoom*100).toLocaleString('en-US',{maximumFractionDigits:1})+'%';
+        reset.title='重設視圖（'+percentage.textContent+'）—'+(settings.resetView?'回到本步驟的預設視角':'回到全圖預設比例與位置');
         if(status){status.lastElementChild.textContent=controller.zoom>1+1e-6?'局部放大':controller.zoom<1?'縮小檢視':controller.partial?'位置已偏移':settings.fullLabel||'完整圖面';returnToFull.hidden=!controller.partial;}
         settings.onSync?.();
       },

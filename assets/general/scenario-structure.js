@@ -24,12 +24,12 @@
       return result;
     }
     function toc(allPages) {
-      const buttons=values=>values.map(page=>`<button data-page="${esc(page.id)}">${page.article?'§ '+esc(page.article.reg)+' ':page.scenarioCode?esc(page.scenarioCode)+' ':''}${esc(page.name)}</button>`).join('');
+      const buttons=values=>values.map(page=>`<button data-page="${esc(page.id)}">${page.article?'§ '+esc(page.article.reg)+' ':page.scenarioCode?esc(page.scenarioCode)+' ':''}${esc(page.kind==='chapter-cover'?window.PresentationStructure?.chapterName(page.chapter)||page.name:page.name)}${page.kind==='chapter-cover'?'｜章節頁':''}</button>`).join('');
       return data.chapters.map(chapter=>{
         const chapterPages=allPages.filter(page=>page.chapter===chapter.id);
         const scenes=data.scenarios.filter(scene=>scene.chapter===chapter.id);
         const content=scenes.length?`<div class="toc-chapter-overview">${buttons(chapterPages.filter(page=>!page.scenario))}</div>${scenes.map(scene=>`<section class="toc-scenario" data-toc-scenario="${scene.id}"><button class="toc-scenario-title" data-page="${scene.contextId}"><strong>${scene.code}</strong><span>${scene.name}</span></button><div class="toc-pages">${buttons(chapterPages.filter(page=>page.scenario===scene.id))}</div></section>`).join('')}`:`<div class="toc-pages">${buttons(chapterPages)}${['g2','g3','g4'].includes(chapter.id)?'<small>章節開場已建立，情境圖面與解說待加入。</small>':''}</div>`;
-        return `<section class="toc-group"><button class="toc-chapter" data-chapter="${chapter.id}"><span>${chapter.code}</span>${chapter.name}</button><div class="toc-chapter-content">${content}</div></section>`;
+        return `<section class="toc-group"><button class="toc-chapter" data-chapter="${chapter.id}"><span>${chapter.code}</span>${esc(window.PresentationStructure?.chapterName(chapter)||chapter.name)}</button><div class="toc-chapter-content">${content}</div></section>`;
       }).join('');
     }
     function chapter() {

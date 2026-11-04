@@ -216,6 +216,7 @@
     await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>img.naturalWidth&&img.naturalHeight?resolve():reject(new Error('圖片沒有有效尺寸'));img.onerror=()=>reject(new Error('無法讀取這張圖片'));img.src=src;});
     state.images[key]={src,alt};
     window.PresentationModules?.noteReplacement(key);
+    window.PresentationResults?.noteReplacement(key);
     if(data.embeddedAssets[key])data.embeddedAssets[key].url=src;
     const overallScenario=data.scenarios.find(value=>value.overall===key);
     if(overallScenario)data.articles.filter(article=>article.scenario===overallScenario.id).forEach(article=>state.disabledHighlights['article:'+article.id]=true);

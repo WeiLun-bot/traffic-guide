@@ -35,15 +35,17 @@
         if(resource.type==='module')check(value.id===resource.id,'模組內容歸屬不符');
         if(resource.type==='scenario')check(value.scenario?.code===resource.id,'情境內容歸屬不符');
         if(resource.type==='results-scenario')check(value.code===resource.id,'成果情境歸屬不符');
+        if(resource.type==='results-module')check(value.moduleId===resource.id,'模組成果歸屬不符');
         for(const listener of this.listeners)listener(resource,value);
         this.cache.set(key,value);this.revision++;return value;
       }).finally(()=>this.pending.delete(key));
       this.pending.set(key,pending);return pending;
     }
     requirements(page){
+      if(page.kind==='chapter-cover')return [];
       if(page.id==='modules-formation')return ['modules:formation'];
       if(page.kind==='module'&&page.moduleId)return ['module:'+page.moduleId];
-      if(page.kind==='results')return [page.resultsScenario?'results:'+page.resultsScenario:'results:common'];
+      if(page.kind==='results')return [page.resultsModule?'results-module:'+page.resultsModule:page.resultsScenario?'results:'+page.resultsScenario:'results:common'];
       const result=[];
       if(page.deckId==='general'||page.scenario?.startsWith('g')||['cover','contents'].includes(page.kind))result.push('scenario:shared');
       if(page.scenario&&this.registry.resources['scenario:'+page.scenario.toUpperCase()])result.push('scenario:'+page.scenario.toUpperCase());

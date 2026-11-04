@@ -49,6 +49,9 @@
     if (result.extensionLayouts === undefined) result.extensionLayouts = {};
     assert(record(result.extensionLayouts) && Object.keys(result.extensionLayouts).length <= 2000, '延伸應用版型設定無效');
     for (const [key, layout] of Object.entries(result.extensionLayouts)) assert(/^[\w-]{1,160}\/[\w-]{1,160}$/.test(key) && ['horizontal','vertical'].includes(layout), '延伸應用圖文排列無效');
+    if (result.tableColumns === undefined) result.tableColumns = {};
+    assert(record(result.tableColumns) && Object.keys(result.tableColumns).length <= 2000, '表格欄寬設定無效');
+    for (const [key, columns] of Object.entries(result.tableColumns)) assert(/^[\w-]{1,160}\/[\w-]{1,160}$/.test(key) && Array.isArray(columns) && columns.length === 3 && columns.every(width=>Number.isFinite(width)&&width>=8&&width<=84) && Math.abs(columns.reduce((sum,width)=>sum+width,0)-100)<.001, '表格欄寬比例無效');
     if (result.removedModuleExtensions === undefined) result.removedModuleExtensions = [];
     assert(Array.isArray(result.removedModuleExtensions) && result.removedModuleExtensions.length <= 500 && result.removedModuleExtensions.every(id=>typeof id==='string'&&/^[\w-]{1,160}$/.test(id)) && new Set(result.removedModuleExtensions).size===result.removedModuleExtensions.length, '已移除的延伸應用頁設定無效');
     result.imageViews = result.imageViews || {};
@@ -109,8 +112,9 @@
       for(const point of entry.points)assert(text(point.title)&&key(point.titleKey)&&(point.topicId===undefined||id(point.topicId)),'模組說明標題或主題無效');
     }
     for(const [page,entry] of Object.entries(content.results)){
-      assert(/^results-scenario-[gc][1-4]-\d{2}(?:-strategy)?$/.test(page)&&record(entry),'情境說明所屬頁面無效');points(entry.points);
+      assert(/^results-(?:scenario-[gc][1-4]-\d{2}(?:-strategy)?|module-m[1-4]-\d{2}|module-example|review(?:-[gc][1-4]-\d{2})?)$/.test(page)&&record(entry),'成果說明所屬頁面無效');points(entry.points);
       for(const point of entry.points)assert(text(point.title)&&key(point.titleKey)&&(point.moduleId===undefined||typeof point.moduleId==='string'&&/^M[1-4]-\d{2}$/.test(point.moduleId)),'情境說明標題或關聯模組無效');
+      for(const point of entry.points)assert(point.descriptionHidden===undefined||/^results-review(?:-[gc][1-4]-\d{2})?$/.test(page)&&typeof point.descriptionHidden==='boolean','差異說明欄位顯示設定無效');
     }
     for(const [page,entry] of Object.entries(content.overviews)) {
       assert(id(page)&&record(entry)&&Array.isArray(entry.items)&&entry.items.length<=200,'佈設策略清單無效');
@@ -209,7 +213,7 @@
   }
   function signature(config) {
     const views = config.imageViews || {};
-    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
   }
   class Store {
     constructor(config) {

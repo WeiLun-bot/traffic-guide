@@ -36,30 +36,57 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await view('results-general');await evaluate('document.querySelector(\'[data-results-scenario="G4-04"]\').focus()');
   assert.equal(await evaluate('document.activeElement.dataset.resultsScenario'),'G4-04');
   await cdp.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13,text:'\r',unmodifiedText:'\r'});await cdp.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13});await wait('window.generalRoadPresentation.page.id==="results-scenario-g4-04"');
-  await view('results-complex');assert.equal(await evaluate('document.querySelectorAll(".results-scenario-list>[data-results-scenario]").length'),18);assert.equal(await evaluate('getComputedStyle(document.querySelector(".results-slide")).display'),'flex');assert.equal(await evaluate('document.querySelectorAll(".results-scenario-thumb").length'),0);
-  pass('mouse and keyboard entry, issue-to-strategy playback and chapter return work; the complex overview retains its text list');
+  await view('results-complex');assert.equal(await evaluate('document.querySelectorAll(".results-scenario-list>[data-results-scenario]").length'),18);assert.equal(await evaluate('document.querySelectorAll(".results-scenario-thumb").length'),18);
+  assert.equal(await evaluate('document.getElementById("slide-title").textContent'),'複雜道路情境｜整體佈設圖總覽');assert.equal(await evaluate('document.querySelectorAll(".results-heading>p").length'),0);
+  assert.equal(await evaluate('document.querySelectorAll(".results-scenario-thumb-pending").length'),0);
+  const complexImages=await evaluate(`(async()=>Promise.all([...document.querySelectorAll('[data-results-thumbnail-key]')].map(async node=>{const image=new Image(),code=node.closest('[data-results-scenario]').dataset.resultsScenario;image.src=node.querySelector('image').getAttribute('href');await image.decode();return {code,key:node.dataset.resultsThumbnailKey,pageId:node.dataset.thumbnailPage,file:decodeURIComponent(image.src),width:image.naturalWidth,height:image.naturalHeight,fit:node.querySelector('svg').getAttribute('preserveAspectRatio')};})))()`);
+  assert.equal(complexImages.length,18);assert(complexImages.every(image=>{const owner=image.code==='C2-02'?'C4-04':image.code;return image.file.includes('/materials/05-複雜道路情境/'+owner+'/'+owner+'_')&&image.width>0&&image.height>0&&image.fit==='xMidYMid meet';}));assert.equal(complexImages.find(image=>image.code==='C2-02').file,complexImages.find(image=>image.code==='C4-04').file);
+  assert.equal(new Set(complexImages.map(image=>image.pageId)).size,18);assert.equal(new Set(complexImages.map(image=>image.key)).size,18);
+  for(const image of complexImages)assert.equal(image.pageId,'results-scenario-'+image.code.toLowerCase()+'-strategy');
+  for(const [width,height,columns]of [[1366,768,6],[1920,1080,6],[768,1024,3],[390,844,2]]){
+    await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await view('results-complex');
+    assert.equal(await evaluate('getComputedStyle(document.querySelector(".results-thumbnail-grid")).gridTemplateColumns.split(" ").length'),columns);
+    assert(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'));
+    if(width>900)assert(await evaluate('(()=>{const main=document.querySelector("main"),bounds=main.getBoundingClientRect();return main.scrollHeight<=main.clientHeight+2&&[...document.querySelectorAll("[data-results-scenario]")].every(card=>card.getBoundingClientRect().bottom<=bounds.bottom+1)})()'));
+    await shot('results-complex-overview-'+width);
+  }
+  await click('[data-results-scenario="C1-01"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-scenario-c1-01');
+  await click('#lecture-chapters [data-chapter="results-complex"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-complex');
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  pass('both overviews retain scenario navigation; all 18 complex cards show layouts, with C2-02 sharing the C4-04 SVG in the responsive grid');
   const sourceFrame=()=>evaluate(`(()=>{const svg=document.querySelector('.results-diagram');return {view:svg.getAttribute('viewBox'),rotation:svg.querySelector('[data-initial-view-rotation]')?.getAttribute('transform')||null,native:svg.querySelector('image').parentElement.getAttribute('transform')};})()`);
   const thumbnails=()=>evaluate(`Object.fromEntries([...document.querySelectorAll('[data-results-scenario]')].map(card=>{const svg=card.querySelector('svg'),rotation=svg.querySelector('[data-results-thumbnail-rotation]').getAttribute('transform');return [card.dataset.resultsScenario,{view:svg.getAttribute('viewBox'),rotation:rotation.startsWith('rotate(0 ')?null:rotation,native:svg.querySelector('image').parentElement.getAttribute('transform')}];}))`);
   const sources={};
-  for(const asset of assets){await view('results-scenario-'+asset.code.toLowerCase()+'-strategy');sources[asset.code]=await sourceFrame();}
-  await view('results-general');assert.deepEqual(await thumbnails(),sources);
-  pass('all 18 thumbnails match the actual strategy pages’ saved viewport, rotation and native image orientation');
+  for(const [directory,entries]of [['results-general',assets],['results-complex',complexImages]]){
+    const frames={};for(const asset of entries){await view('results-scenario-'+asset.code.toLowerCase()+'-strategy');sources[asset.code]=frames[asset.code]=await sourceFrame();}
+    await view(directory);assert.deepEqual(await thumbnails(),frames);
+  }
+  pass('all 36 general and complex thumbnails match their strategy pages’ saved viewport, rotation and native image orientation');
   const revised={};
-  for(const [code,rotation]of [['G1-01',37],['G1-06',90],['G4-04',-90]]){
+  for(const [code,rotation]of [['G1-01',37],['G1-06',90],['G4-04',-90],['C1-01',37],['C4-02',90],['C4-06',-90],['C2-02',-37],['C4-04',90]]){
     await view('results-scenario-'+code.toLowerCase()+'-strategy');await click('.iv-trigger');
+    assert(await evaluate('document.querySelector(".iv-panel:not([hidden]) .iv-note").textContent.includes("情境總覽縮圖")'));
     for(const [field,value]of [['zoom',145],['x',7],['y',-12],['rotation',rotation]])await evaluate(`(()=>{const node=document.querySelector('.iv-panel:not([hidden]) [data-iv-field="${field}"]');node.value=${value};node.dispatchEvent(new Event('change',{bubbles:true}));})()`);
+    if(code==='C1-01'){
+      const before=await sourceFrame();await evaluate(`(()=>{const controller=window.generalRoadViewport.get(document.querySelector('.results-diagram')),box=controller.read();controller.write([box[0]+40,box[1]-30,box[2]*.8,box[3]*.8],false);})()`);
+      await click('.iv-panel:not([hidden]) [data-iv-action="capture"]');assert.notDeepEqual(await sourceFrame(),before);
+    }
     revised[code]=await sourceFrame();await click('.iv-panel:not([hidden]) [data-iv-action="close"]');
     await evaluate(`(()=>{const controller=window.generalRoadViewport.get(document.querySelector('.results-diagram')),view=controller.read();controller.write([view[0]+100,view[1]-50,view[2]/2,view[3]/2],false);})()`);
-    await view('results-general');assert.deepEqual((await thumbnails())[code],revised[code],'Thumbnail must follow applied initial settings, independent of temporary panning: '+code);
+    await view(code[0]==='G'?'results-general':'results-complex');const frames=await thumbnails();assert.deepEqual(frames[code],revised[code],'Thumbnail must follow applied initial settings, independent of temporary panning: '+code);
+    if(code==='C2-02')assert.deepEqual(frames['C4-04'],sources['C4-04'],'A shared SVG must retain independent case views');
+    if(code==='C4-04')assert.deepEqual(frames['C2-02'],revised['C2-02']);
   }
   fs.writeFileSync(previewConfigPath,await evaluate('window.visualLayoutEditor.store.serialize()'));
-  await navigate(base+'/presentation-demo/#results-general');
-  for(const [code,frame]of Object.entries(revised))assert.deepEqual((await thumbnails())[code],frame,'Saved thumbnail frame did not reload: '+code);
-  await view('results-scenario-g1-01-strategy');await click('.iv-trigger');
+  for(const directory of ['results-general','results-complex']){
+    await navigate(base+'/presentation-demo/#'+directory);const frames=await thumbnails();
+    for(const [code,frame]of Object.entries(revised).filter(([code])=>code[0]===(directory==='results-general'?'G':'C')))assert.deepEqual(frames[code],frame,'Saved thumbnail frame did not reload: '+code);
+  }
+  await view('results-scenario-c1-01-strategy');await click('.iv-trigger');
   await evaluate(`(()=>{const node=document.querySelector('.iv-panel:not([hidden]) [data-iv-field="x"]');node.value=18;node.dispatchEvent(new Event('change',{bubbles:true}));})()`);const redoFrame=await sourceFrame();
-  await click('.iv-panel:not([hidden]) [data-iv-action="close"]');await click('[data-vl-action="undo"]');await view('results-general');assert.deepEqual((await thumbnails())['G1-01'],revised['G1-01']);
-  await click('[data-vl-action="redo"]');await view('results-general');assert.deepEqual((await thumbnails())['G1-01'],redoFrame);
-  pass('initial-view edits synchronize on return; zoom, position and positive/negative/arbitrary rotation survive JSON reload and undo/redo, while temporary panning stays local');
+  await click('.iv-panel:not([hidden]) [data-iv-action="close"]');await click('[data-vl-action="undo"]');await view('results-complex');assert.deepEqual((await thumbnails())['C1-01'],revised['C1-01']);
+  await click('[data-vl-action="redo"]');await view('results-complex');assert.deepEqual((await thumbnails())['C1-01'],redoFrame);
+  pass('general and complex initial-view edits and captured pan/zoom synchronize on return, survive JSON reload and undo/redo, and keep reused-image case views independent');
   for(const [width,columns]of [[760,3],[390,2]]){
     await cdp.send('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:false});await view('results-general');
     assert.equal(await evaluate('new Set([...document.querySelectorAll("[data-results-scenario]")].map(node=>Math.round(node.getBoundingClientRect().left))).size'),columns);

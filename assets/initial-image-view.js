@@ -71,13 +71,16 @@
     const panel = document.createElement('section');
     panel.className = 'iv-panel'; panel.dataset.editorUi = 'initial-image-view'; panel.dataset.imageViewId = id;
     panel.setAttribute('aria-label', '圖面初始畫面設定'); panel.hidden = !opened.has(id);
+    const note = /^results-scenario-[gc][1-4]-\d{2}-strategy$/.test(pageId)||context.overviewAssetKey===assetKey
+      ? `此設定會同步到${context.overviewAssetKey===assetKey?'模組':'情境'}總覽縮圖；儲存設定後，重新開啟也會保留。`
+      : '儲存後，切頁、重新開啟及重設視圖會使用這個初始畫面。';
     panel.innerHTML = `<div class="iv-heading"><strong>設定初始畫面</strong><button type="button" data-iv-action="close" aria-label="關閉初始畫面設定">×</button></div>
       <p>可調整旋轉角度，再在圖上縮放、拖曳並套用目前畫面，也可直接調整下方數值。</p>
       <div class="iv-fields"><label>初始縮放（%）<input type="number" data-iv-field="zoom" min="2" max="20000" step="1"></label><label>左右位置（%）<input type="number" data-iv-field="x" min="-1000" max="1000" step="0.1"></label><label>上下位置（%）<input type="number" data-iv-field="y" min="-1000" max="1000" step="0.1"></label></div>
       <div class="iv-fields iv-rotation"><label>旋轉角度（°）<input type="number" data-iv-field="rotation" min="-360" max="360" step="1"></label><button type="button" data-iv-action="rotate-left">左轉 90°</button><button type="button" data-iv-action="rotate-right">右轉 90°</button></div>
       <small>左右正值向右、上下正值向下；角度正值順時針。各頁與各圖分別保存。</small>
       <div class="iv-actions"><button type="button" data-iv-action="capture">套用目前畫面</button><button type="button" data-iv-action="reset">回到原始畫面</button><button type="button" data-iv-action="save">儲存設定</button></div>
-      <p class="iv-note">儲存後，切頁、重新開啟及重設視圖會使用這個初始畫面。</p>`;
+      <p class="iv-note">${note}</p>`;
     toolbar.append(button); document.body.append(panel);
     const record = {id, pageId, assetKey, svg, figure, button, panel, controller, context, home: controller.read(), signature: null};
     records.set(svg, record); active.set(id, record);

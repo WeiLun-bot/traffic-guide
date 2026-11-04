@@ -14,6 +14,8 @@
 | 模組內容 | `data/modules/catalog.json`、各模組 JSON 與 `formation.json` |
 | 第一場共通內容 | `data/results/outline.json` |
 | 第一場各案例的現況／成果 | `data/results/current-conditions.json`、`general-strategies.json` |
+| 第一場複雜情境的佈設成果 | `data/results/complex-strategies.json`，按原稿實際情境對應，保留來源及引用關係 |
+| 第一場模組成果總覽與現況／圖例對照 | `data/results/module-comparisons.json`，每模組的重點、原稿來源與圖片對應 |
 | 文字、排版、照片替換、視角及打亮等使用者設定 | `layout/presentation-layout.json` |
 
 G1-01 原本寫在程式中的開場、策略及回顧文字，放在該案例 JSON 的 `view`。這些是預設呈現內容；網頁編輯後的個別覆寫仍寫入正式設定檔。
@@ -35,6 +37,7 @@ G1-01 原本寫在程式中的開場、策略及回顧文字，放在該案例 J
 - `data/presentation-registry.json`
 - `data/results/presentation.json`
 - `data/results/scenarios/*.json`
+- `data/results/modules/*.json`
 - `_site/` 全部內容
 
 照常雙擊 `start-editor.cmd` 即可完成準備及啟動。`tools/build-general-scenarios.cjs` 在目前架構中更新資料目錄，保留舊專案格式的相容分支。

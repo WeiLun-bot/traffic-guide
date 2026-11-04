@@ -7,6 +7,7 @@ if(quiet)console.log('Refreshing source images...');
 // Material files can be replaced between preview sessions. Refresh only image
 // bytes and dimensions before copying the current presentation into _site.
 require('./refresh-general-scenario-images.cjs').refresh({root});
+require('./refresh-module-comparison-images.cjs').refresh({root});
 if(fs.existsSync(path.join(root,'data/scenarios/presentation.json')))require('./prepare-presentation-registry.cjs').build({root});
 const files=Array.from(new Map([
   ['index.html','index.html'],

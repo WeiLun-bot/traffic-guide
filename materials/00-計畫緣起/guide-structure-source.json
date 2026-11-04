@@ -1,0 +1,185 @@
+{
+  "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
+  "sha256": "a44c3f4fc18938135f85b5645aa290159f7a72ba253b8d0e242a949cf4f034e8",
+  "slide": 6,
+  "part": "ppt/slides/slide6.xml",
+  "partSha256": "0f397fd283272a6d016f6587654923d123ea81a30ef621724a04d54f07c83fc9",
+  "slideCount": 7,
+  "title": "新版指引編排架構",
+  "intro": "指引由「原則—情境」轉為「原則—模組—情境」的三層次說明架構",
+  "sections": [
+    {
+      "id": "logic",
+      "title": "新版編排邏輯",
+      "paragraphs": [
+        {
+          "id": "source-s6-shape12-p1",
+          "text": "01",
+          "shapeId": "12"
+        },
+        {
+          "id": "source-s6-shape14-p1",
+          "text": "基本原則",
+          "shapeId": "14"
+        },
+        {
+          "id": "source-s6-shape16-p1",
+          "text": "標線｜標誌｜號誌",
+          "shapeId": "16"
+        },
+        {
+          "id": "source-s6-shape16-p2",
+          "text": "建立各類設施之基本設置原則",
+          "shapeId": "16"
+        },
+        {
+          "id": "source-s6-shape22-p1",
+          "text": "02",
+          "shapeId": "22"
+        },
+        {
+          "id": "source-s6-shape24-p1",
+          "text": "交通管制設施模組",
+          "shapeId": "24"
+        },
+        {
+          "id": "source-s6-shape26-p1",
+          "text": "車道配置與動線導引｜ 路口管制",
+          "shapeId": "26"
+        },
+        {
+          "id": "source-s6-shape26-p2",
+          "text": "行人、自行車、機車、公車｜",
+          "shapeId": "26"
+        },
+        {
+          "id": "source-s6-shape26-p3",
+          "text": "危險警示與通行管制",
+          "shapeId": "26"
+        },
+        {
+          "id": "source-s6-shape32-p1",
+          "text": "03",
+          "shapeId": "32"
+        },
+        {
+          "id": "source-s6-shape34-p1",
+          "text": "道路情境應用",
+          "shapeId": "34"
+        },
+        {
+          "id": "source-s6-shape36-p1",
+          "text": "一般道路情境｜複雜道路情境",
+          "shapeId": "36"
+        },
+        {
+          "id": "source-s6-shape36-p2",
+          "text": "將模組原則套用至不同幾何與交通條件",
+          "shapeId": "36"
+        },
+        {
+          "id": "source-s6-shape48-p1",
+          "text": "共同內容",
+          "shapeId": "48"
+        },
+        {
+          "id": "source-s6-shape48-p2",
+          "text": "整合",
+          "shapeId": "48"
+        }
+      ]
+    },
+    {
+      "id": "chapters",
+      "title": "新版章節配置",
+      "paragraphs": [
+        {
+          "id": "source-s6-shape56-p1",
+          "text": "第 1 章",
+          "shapeId": "56"
+        },
+        {
+          "id": "source-s6-shape58-p1",
+          "text": "緒論",
+          "shapeId": "58"
+        },
+        {
+          "id": "source-s6-shape60-p1",
+          "text": "指引定位｜架構｜使用方式",
+          "shapeId": "60"
+        },
+        {
+          "id": "source-s6-shape64-p1",
+          "text": "第 2 章",
+          "shapeId": "64"
+        },
+        {
+          "id": "source-s6-shape66-p1",
+          "text": "設施配置原則",
+          "shapeId": "66"
+        },
+        {
+          "id": "source-s6-shape68-p1",
+          "text": "標線｜標誌｜號誌",
+          "shapeId": "68"
+        },
+        {
+          "id": "source-s6-shape72-p1",
+          "text": "第 3 章",
+          "shapeId": "72"
+        },
+        {
+          "id": "source-s6-shape74-p1",
+          "text": "交通管制設施功能模組",
+          "shapeId": "74"
+        },
+        {
+          "id": "source-s6-shape76-p1",
+          "text": "本期新增",
+          "shapeId": "76"
+        },
+        {
+          "id": "source-s6-shape80-p1",
+          "text": "第 4 章",
+          "shapeId": "80"
+        },
+        {
+          "id": "source-s6-shape82-p1",
+          "text": "一般道路情境",
+          "shapeId": "82"
+        },
+        {
+          "id": "source-s6-shape84-p1",
+          "text": "三叉、四叉 × 號誌、無號誌",
+          "shapeId": "84",
+          "sourceVariant": "AlternateContent Choice with Office Math"
+        },
+        {
+          "id": "source-s6-shape88-p1",
+          "text": "第 5 章",
+          "shapeId": "88"
+        },
+        {
+          "id": "source-s6-shape90-p1",
+          "text": "複雜道路情境",
+          "shapeId": "90"
+        },
+        {
+          "id": "source-s6-shape92-p1",
+          "text": "平面交叉、交流道、公路與軌道系統交叉、路段",
+          "shapeId": "92"
+        },
+        {
+          "id": "source-s6-shape96-p1",
+          "text": "附錄／索引",
+          "shapeId": "96"
+        },
+        {
+          "id": "source-s6-shape98-p1",
+          "text": "專題補充與檢索功能",
+          "shapeId": "98"
+        }
+      ]
+    }
+  ]
+}

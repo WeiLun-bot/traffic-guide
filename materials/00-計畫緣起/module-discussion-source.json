@@ -1,0 +1,101 @@
+{
+  "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
+  "sha256": "a44c3f4fc18938135f85b5645aa290159f7a72ba253b8d0e242a949cf4f034e8",
+  "slide": 7,
+  "part": "ppt/slides/slide7.xml",
+  "partSha256": "434401d44fef00496809c8362de69b46aa4866ecf1e560482cdf3a7cd308903a",
+  "diagramPart": "ppt/diagrams/data1.xml",
+  "diagramSha256": "10ab3f08c83cceb33cdd09fcab8a5b9bff0a9ed07692e7bd7ba13e54c57e3258",
+  "drawingPart": "ppt/diagrams/drawing1.xml",
+  "drawingSha256": "a667e3037fb908ddcf16421ac61e96addb4fb4c686f3c8a7e3548125b8025612",
+  "title": "功能模組圖例討論過程",
+  "steps": [
+    {
+      "number": 1,
+      "text": "1. 定義模組架構與型式",
+      "modelId": "{E29CF4E5-6080-4F09-A928-DFF7538E4334}"
+    },
+    {
+      "number": 2,
+      "text": "2. 分析現況常見設置問題",
+      "modelId": "{2EA9AF95-BA27-469C-9E70-D63F5EDD448B}"
+    },
+    {
+      "number": 3,
+      "text": "3. 產生整體配置構想，進行標線、標誌及號誌配置。進行模組配置與組合的條文解說。",
+      "modelId": "{BF9210D6-01B5-4942-89C5-C1E02335B987}"
+    },
+    {
+      "number": 4,
+      "text": "4. 召開標線標誌、號誌工作小組會議蒐集意見並調整圖例。",
+      "modelId": "{914C6D7D-20EA-4647-8C65-D02D7C456455}"
+    },
+    {
+      "number": 5,
+      "text": "5. 完成整體參考指引之模組圖例設置。",
+      "modelId": "{851FA427-B660-4845-BDF7-860223F2F99D}"
+    }
+  ],
+  "items": [
+    {
+      "id": "source-s7-step1",
+      "title": "定義模組架構與型式",
+      "text": ""
+    },
+    {
+      "id": "source-s7-step2",
+      "title": "分析現況常見設置問題",
+      "text": ""
+    },
+    {
+      "id": "source-s7-step3",
+      "title": "產生整體配置構想，進行標線、標誌及號誌配置。進行模組配置與組合的條文解說。",
+      "text": ""
+    },
+    {
+      "id": "source-s7-step4",
+      "title": "召開標線標誌、號誌工作小組會議蒐集意見並調整圖例。",
+      "text": ""
+    },
+    {
+      "id": "source-s7-step5",
+      "title": "完成整體參考指引之模組圖例設置。",
+      "text": ""
+    }
+  ],
+  "images": {
+    "results:module-discussion-image-1": {
+      "file": "materials/00-計畫緣起/功能模組圖例討論過程_圖例示意01.png",
+      "width": 1048,
+      "height": 542,
+      "label": "圖例示意（一）",
+      "role": "background",
+      "sha256": "c8f55ab8070d74373e6fabe3d941d3b7cd09920a4b9f8c9d5ada138c0b3d1626",
+      "sourcePart": "ppt/media/image6.png",
+      "shapeId": "7",
+      "sourceRelationship": "rId8"
+    },
+    "results:module-discussion-image-2": {
+      "file": "materials/00-計畫緣起/功能模組圖例討論過程_圖例示意02.png",
+      "width": 978,
+      "height": 471,
+      "label": "圖例示意（二）",
+      "role": "background",
+      "sha256": "2a2404c160e1e31e91c9e139264b89e919714036947c18efce1f81089a5745ab",
+      "sourcePart": "ppt/media/image7.png",
+      "shapeId": "14",
+      "sourceRelationship": "rId9"
+    },
+    "results:module-discussion-image-3": {
+      "file": "materials/00-計畫緣起/功能模組圖例討論過程_工作小組會議.jpeg",
+      "width": 1907,
+      "height": 858,
+      "label": "工作小組會議",
+      "role": "background",
+      "sha256": "9bd45a435e18dd3adea8110f86bde4e8634cf9684ca066c113e00c858a890d1e",
+      "sourcePart": "ppt/media/image5.jpeg",
+      "shapeId": "12",
+      "sourceRelationship": "rId7"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
+  "sha256": "39dcf3648b289bce584fb156da810f1f91af6733e6f51364505d708f9c9303fa",
+  "slide": 1,
+  "part": "ppt/slides/slide1.xml",
+  "title": "計畫緣起與問題背景",
+  "lead": [
+    "我國交通控制設施（traffic control devices）規則／規範主要有：",
+    "《道路交通標誌標線號誌設置規則》由交通部、內政部合頒，內容僅有單一標誌、標線、號誌之圖例",
+    "《交通工程規範》由交通部頒訂，偏向設置原則"
+  ],
+  "body": [
+    "兩者較缺乏組合式設置案例及詳細運用解說，易產生設置錯誤、設置方式不一致、自明性不足等現行問題。",
+    "因此有必要建立一致性之《道路交通標誌標線號誌設置參考指引》，藉此加強第一線顧問公司、相關公協會人員等設置標誌標線號誌的專業技能。",
+    "本研究欲研擬的參考指引屬於參考性質之運用解說的形態。"
+  ],
+  "image": {
+    "file": "materials/00-計畫緣起/計畫緣起與問題背景_法令規範與指引關係.svg",
+    "width": 717,
+    "height": 464,
+    "label": "法令、規範與參考指引關係圖",
+    "role": "background",
+    "sha256": "65b546071e071584f2e744d99ca3cea5b035bcea9e0e029b9b44ecad9fd1d4ba",
+    "sourcePart": "ppt/media/image1.svg",
+    "sourceRelationship": "rId2",
+    "shapeId": "43"
+  },
+  "previousSourceRevisions": [
+    {
+      "sha256": "1fc9c7a892bfddc1f85ecad665ad431e6d25f8a0440dfb575540631e015eb36f",
+      "slideCount": 1
+    }
+  ],
+  "slideCount": 5
+}

@@ -1,0 +1,112 @@
+{
+  "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
+  "sha256": "a44c3f4fc18938135f85b5645aa290159f7a72ba253b8d0e242a949cf4f034e8",
+  "slide": 4,
+  "part": "ppt/slides/slide4.xml",
+  "partSha256": "13b8cce2d2919cb81cf29a5fc03d1f7f490bdff4d6368216234405e1676ea47e",
+  "slideCount": 7,
+  "title": "第三期主軸－模組化",
+  "sections": [
+    {
+      "id": "issues",
+      "title": "現況課題",
+      "paragraphs": [
+        {
+          "id": "source-s4-shape19-p1",
+          "text": "設施佈設位置是否合理？",
+          "shapeId": "19"
+        },
+        {
+          "id": "source-s4-shape19-p2",
+          "text": "停止線符合設置規定，但視距不足",
+          "shapeId": "19"
+        },
+        {
+          "id": "source-s4-shape22-p1",
+          "text": "各個設施的作用是否清楚？",
+          "shapeId": "22"
+        },
+        {
+          "id": "source-s4-shape22-p2",
+          "text": "我國以「停」標字為主的停管制設計方式是否適當？",
+          "shapeId": "22"
+        }
+      ]
+    },
+    {
+      "id": "cause",
+      "title": "問題根源",
+      "paragraphs": [
+        {
+          "id": "source-s4-shape26-p1",
+          "text": "現行規範偏向規定「設施如何設」，較少說明「哪些設施應共同運作、各自扮演什麼功能」。",
+          "shapeId": "26"
+        }
+      ]
+    },
+    {
+      "id": "goals",
+      "title": "模組化目標",
+      "paragraphs": [
+        {
+          "id": "source-s4-shape37-p1",
+          "text": "功能分工",
+          "shapeId": "37"
+        },
+        {
+          "id": "source-s4-shape39-p1",
+          "text": "各設施負責什麼",
+          "shapeId": "39"
+        },
+        {
+          "id": "source-s4-shape41-p1",
+          "text": "＋",
+          "shapeId": "41"
+        },
+        {
+          "id": "source-s4-shape45-p1",
+          "text": "組合關係",
+          "shapeId": "45"
+        },
+        {
+          "id": "source-s4-shape47-p1",
+          "text": "為何如此搭配",
+          "shapeId": "47"
+        },
+        {
+          "id": "source-s4-shape49-p1",
+          "text": "由「單一設施」轉向\n「完整管制功能」設計",
+          "shapeId": "49"
+        }
+      ]
+    }
+  ],
+  "images": {
+    "results:modular-rationale-photo-1": {
+      "file": "materials/00-計畫緣起/第三期主軸模組化_現況視距.png",
+      "width": 1213,
+      "height": 823,
+      "label": "停止線設置與視距",
+      "role": "background",
+      "sha256": "56b5de062a0bb4fe221d8d111db1f973babafb4fe5adb3ffc1750d6ed4353d69",
+      "sourcePart": "ppt/media/image3.png",
+      "sourceRelationship": "rId3",
+      "shapeId": "6",
+      "sourceCrop": {
+        "t": 12179
+      }
+    },
+    "results:modular-rationale-photo-2": {
+      "file": "materials/00-計畫緣起/第三期主軸模組化_停管制現況.png",
+      "width": 889,
+      "height": 428,
+      "label": "停管制設施作用",
+      "role": "background",
+      "sha256": "7d51e5cb337944ab9d169b071214216fb672af664de991e9aae4de288c53f660",
+      "sourcePart": "ppt/media/image4.png",
+      "sourceRelationship": "rId4",
+      "shapeId": "17",
+      "sourceCrop": {}
+    }
+  }
+}

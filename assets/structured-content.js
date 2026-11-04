@@ -153,6 +153,7 @@
       });
       if(editing()){const add=action('＋新增說明項目','add-point');add.dataset.editorUi='content-add';host.after(add);}
     } else if(type==='results') {
+      const comparison=context.api.page.resultType==='comparison';
       const templates=new Map([...host.children].map(node=>[node.dataset.resultsPoint,node]));host.replaceChildren();
       model.points.forEach((point,index)=>{
         const row=templates.get(point.id)||element('li');row.dataset.resultsPoint=point.id;row.dataset.contentItemId=point.id;
@@ -163,10 +164,20 @@
         if(!title){title=element('h3');body.prepend(title);}if(!text){text=element('p');title.after(text);}
         textNode(title,point.titleKey,point.title,context,['results',pageId,'points',point.id,'title']);
         textNode(text,point.textKey,point.text,context,['results',pageId,'points',point.id,'text']);
+        text.hidden=comparison&&point.descriptionHidden===true;
+        row.classList.toggle('is-description-hidden',text.hidden);
         body.querySelector('.content-item-actions')?.remove();
-        if(editing())body.append(actions('point',point.id,index,model.points.length));host.append(row);
+        if(editing()){
+          const bar=actions('point',point.id,index,model.points.length);
+          if(comparison){
+            const remove=bar.querySelector('[data-content-action="remove"]'),toggle=action(text.hidden?'＋新增差異說明':'刪除差異說明','toggle-description',{itemId:point.id});
+            toggle.setAttribute('aria-label',(text.hidden?'新增':'刪除')+'比較重點 '+(index+1)+' 的差異說明');
+            remove.textContent='刪除重點';remove.setAttribute('aria-label','刪除此比較重點');bar.insertBefore(toggle,remove);
+          }
+          body.append(bar);
+        }host.append(row);
       });
-      if(editing()){const add=action(context.api.page.stage==='issue'?'＋新增現況議題':'＋新增佈設說明','add-point');add.dataset.editorUi='content-add';host.after(add);}
+      if(editing()){const add=action(context.api.page.resultType==='comparison'?'＋新增比較重點':context.api.page.stage==='issue'?'＋新增現況議題':'＋新增佈設說明','add-point');add.dataset.editorUi='content-add';host.after(add);}
     } else renderOverview(context);
   }
   function renderOverview(context) {
@@ -261,8 +272,12 @@
       const issue=current.type==='conditions'?model.issues.find(value=>value.id===issueId):null;
       const list=kind==='strategy'?model.items:kind==='issue'?model.issues:issue?issue.points:model.points;
       if(!list)return;
-      if(operation==='add-point'){const id=uid('point'),point={id,text:'在此輸入說明。',textKey:current.pageId+'|content|'+(issueId||current.type)+'|'+id};if(current.type==='modules')Object.assign(point,{title:'補充說明',titleKey:current.pageId+'|content|'+id+'|title',...(current.moduleTopic?{topicId:current.moduleTopic}:{})});if(current.type==='results')Object.assign(point,{title:current.context.api.page.stage==='issue'?'新增現況議題':'新增佈設說明',titleKey:current.pageId+'|results|'+id+'-title',textKey:current.pageId+'|results|'+id+'-text'});list.push(point);return id;}
+      if(operation==='add-point'){const id=uid('point'),point={id,text:'在此輸入說明。',textKey:current.pageId+'|content|'+(issueId||current.type)+'|'+id};if(current.type==='modules')Object.assign(point,{title:'補充說明',titleKey:current.pageId+'|content|'+id+'|title',...(current.moduleTopic?{topicId:current.moduleTopic}:{})});if(current.type==='results')Object.assign(point,{title:current.context.api.page.stage==='issue'?'新增現況議題':'新增佈設說明',titleKey:current.pageId+'|results|'+id+'-title',textKey:current.pageId+'|results|'+id+'-text'});if(current.context.api.page.resultType==='comparison')Object.assign(point,{title:'',text:''});list.push(point);return id;}
       const index=list.findIndex(value=>value.id===itemId);if(index<0)return;
+      if(operation==='toggle-description'&&current.type==='results'&&current.context.api.page.resultType==='comparison'){
+        if(list[index].descriptionHidden)delete list[index].descriptionHidden;else list[index].descriptionHidden=true;
+        return itemId;
+      }
       if(operation==='remove'){list.splice(index,1);return;}
       const candidates=current.type==='modules'?list.filter(point=>window.PresentationModules?.pointVisible(current.pageId,point,current.moduleTopic)!==false):list;
       const target=candidates[candidates.findIndex(value=>value.id===itemId)+(operation==='up'?-1:1)],to=list.indexOf(target);if(to>=0)[list[index],list[to]]=[list[to],list[index]];

@@ -24,15 +24,24 @@ function build({root=path.resolve(__dirname,'..')}={}){
   let outline=read('data/results/outline.json');
   if(outline.currentConditions)outline=Results.mergeConditions(outline,read(outline.currentConditions));
   if(outline.strategies)outline=Results.mergeStrategies(outline,read(outline.strategies));
-  const common={...clone(outline),assets:{},scenarioExamples:{}};delete common.currentConditions;delete common.strategies;
+  if(outline.complexStrategies)outline=Results.mergeStrategies(outline,read(outline.complexStrategies));
+  if(outline.moduleComparisons)outline=Results.mergeModuleComparisons(outline,read(outline.moduleComparisons));
+  const thumbnailAssets=Object.fromEntries(Object.values(outline.scenarioThumbnails||{}).map(image=>[image.key,outline.assets[image.key]]));
+  for(const page of outline.pages)for(const image of page.images||[])thumbnailAssets[image.key]=outline.assets[image.key];
+  const common={...clone(outline),assets:thumbnailAssets,scenarioExamples:{},moduleExamples:{}};delete common.currentConditions;delete common.strategies;delete common.complexStrategies;delete common.moduleComparisons;
   save('data/results/presentation.json',common);resource('results:common','data/results/presentation.json','results-common','results');
   for(const [code,example]of Object.entries(outline.scenarioExamples)){
     const keys=new Set(Object.values(example).flatMap(stage=>stage?.images?.map(image=>image.key)||[]));
     const doc={schemaVersion:1,code,example,assets:Object.fromEntries([...keys].map(key=>[key,outline.assets[key]]).filter(([,asset])=>asset))};
     const file='data/results/scenarios/'+code+'.json';save(file,doc);resource('results:'+code,file,'results-scenario',code);
   }
+  for(const [moduleId,example]of Object.entries(outline.moduleExamples||{})){
+    const doc={schemaVersion:1,moduleId,example,assets:Object.fromEntries(example.images.map(image=>[image.key,outline.assets[image.key]]))};
+    const file='data/results/modules/'+moduleId+'.json';save(file,doc);resource('results-module:'+moduleId,file,'results-module',moduleId);
+  }
   const slimItems=items=>(items||[]).map(item=>({...pick(item,['id','title','moduleId']),text:''}));
-  const slimResults={...common,assets:outline.assets,pages:common.pages.map(page=>({...pick(page,['id','chapter','type','title','deck']),...(page.items?{items:slimItems(page.items)}:{})})),scenarioExamples:Object.fromEntries(Object.entries(outline.scenarioExamples).map(([code,example])=>[code,Object.fromEntries(Object.entries(example).map(([key,value])=>[key,value?.images?{...pick(value,['title','images','sourceMissing']),items:slimItems(value.items)}:value]))]))};
+  const slimResults={...common,assets:outline.assets,pages:common.pages.map(page=>({...pick(page,['id','chapter','type','title','deck','images','density','framework','meeting']),...(page.items?{items:slimItems(page.items)}:{}),...(page.lead?{lead:page.lead.map(paragraph=>({...paragraph,text:''}))}:{}),...(page.sections?{sections:page.sections.map(section=>({...section,paragraphs:section.paragraphs.map(paragraph=>({...paragraph,text:''}))}))}:{})})),scenarioExamples:Object.fromEntries(Object.entries(outline.scenarioExamples).map(([code,example])=>[code,Object.fromEntries(Object.entries(example).map(([key,value])=>[key,value?.images?{...pick(value,['title','images','sourceMissing']),items:slimItems(value.items)}:value]))]))};
+  slimResults.moduleExamples=Object.fromEntries(Object.entries(outline.moduleExamples||{}).map(([code,example])=>[code,{...pick(example,['moduleId','pageId','title','images']),items:slimItems(example.items)}]));
   const registry={schemaVersion:1,presentations:read('data/presentations.json'),base,scenarios:{catalog,details:detailDocs.map(slimDetail)},modules:{catalog:moduleCatalog,formation:read('data/modules/formation.json'),contents:moduleDocs.map(slimModule)},results:slimResults,resources};
   const bytes=save('data/presentation-registry.json',registry);
   return {bytes:bytes.length,resources:Object.keys(resources).length};

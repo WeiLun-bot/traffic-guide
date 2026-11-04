@@ -34,9 +34,9 @@ test('original content and unaffected presentation blocks remain unchanged while
     const id = match[2].match(/id="([^"]+)"/)?.[1] || 'anonymous';
     // Startup visibility is new and exercised with delayed loads in the browser.
     if (['presentation-startup-styles','presentation-startup-script'].includes(id)) continue;
-    // Shared panning and equal-height pairing were intentionally extended after
-    // this fixture; viewport and scenario-content browser regressions cover them.
-    if (['paired-image-layout-styles','general-image-viewport'].includes(id)) continue;
+    // Shared panning, compact reset controls and equal-height pairing were
+    // intentionally extended after this fixture; browser regressions cover them.
+    if (['paired-image-layout-styles','general-image-viewport','general-viewport-styles'].includes(id)) continue;
     // These blocks intentionally change comparison placement, article headings,
     // and the shared content/visual editing controls.
     if (match[1] === 'script' && ['general-editor', 'general-formatting', 'general-current-conditions', 'general-scenario-structure', 'anonymous'].includes(id)) continue;
@@ -239,16 +239,18 @@ test('UTF-8 limits apply before saving as well as loading', async () => {
 test('the existing figure-version tool reads external JSON and writes a separate configuration', () => {
   fs.mkdirSync(path.join(__dirname, 'artifacts'), {recursive: true});
   const fixture = fs.mkdtempSync(path.join(__dirname, 'artifacts', 'variant-'));
+  const sourceLayout=fs.readFileSync(configPathForTest());
   try {
     for (const directory of ['tools', 'assets', 'layout']) fs.mkdirSync(path.join(fixture, directory));
-    for (const file of ['index.html', 'tools/create-general-scenarios-figure-version.cjs','tools/presentation-source.cjs','data/scenarios/presentation.json',...require('../data/scenarios/presentation.json').caseFiles, 'assets/visual-editor-core.js', 'layout/presentation-layout.json']) {fs.mkdirSync(path.dirname(path.join(fixture,file)),{recursive:true});fs.copyFileSync(path.join(root, file), path.join(fixture, file));}
+    for (const file of ['index.html', 'tools/create-general-scenarios-figure-version.cjs','tools/presentation-source.cjs','data/scenarios/presentation.json',...require('../data/scenarios/presentation.json').caseFiles, 'assets/visual-editor-core.js', 'layout/presentation-layout.json']) {fs.mkdirSync(path.dirname(path.join(fixture,file)),{recursive:true});if(file==='layout/presentation-layout.json')fs.writeFileSync(path.join(fixture,file),sourceLayout);else fs.copyFileSync(path.join(root, file), path.join(fixture, file));}
     const result = spawnSync(process.execPath, [path.join(fixture, 'tools/create-general-scenarios-figure-version.cjs')], {encoding: 'utf8', env: {...process.env, ELECTRON_RUN_AS_NODE: '1'}, windowsHide: true});
     assert.equal(result.status, 0, result.stderr);
     const manifest = JSON.parse(result.stdout), variant = fs.readFileSync(path.join(fixture, manifest.output), 'utf8');
     assert.match(variant, /id="editor-saved-data"[^>]+data-source="[^"]+\.layout.json"><\/script>/);
     assert.equal((variant.match(/<(?:style|link) id="figure-focused-styles"(?:>|\s)/g) || []).length, 1);
     Core.parse(fs.readFileSync(path.join(fixture, manifest.layout), 'utf8'));
-    assert.equal(fs.readFileSync(path.join(fixture, 'layout/presentation-layout.json'), 'utf8'), fs.readFileSync(configPathForTest(), 'utf8'));
+    // The user can save the live project while this child process runs.
+    assert(fs.readFileSync(path.join(fixture,'layout/presentation-layout.json')).equals(sourceLayout),'The copied source settings must remain unchanged');
     assert.equal(hash(fs.readFileSync(path.join(fixture, 'index.html'))), hash(fs.readFileSync(path.join(root, 'index.html'))));
   } finally { assert(path.resolve(fixture).startsWith(path.join(__dirname, 'artifacts', 'variant-'))); fs.rmSync(fixture, {recursive: true, force: true,maxRetries:5,retryDelay:200}); }
 });

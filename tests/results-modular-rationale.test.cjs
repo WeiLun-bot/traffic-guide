@@ -1,0 +1,14 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const Results=require('../assets/presentation-results.js'),outline=require('../data/results/outline.json'),catalog=require('../data/scenarios/catalog.json'),source=require('../materials/00-計畫緣起/modular-rationale-source.json');
+test('the supplied modularization rationale follows both scenario tables and precedes the module table, preserving original text and photos',()=>{
+  Results.validate(outline);const pages=Results.buildPages(outline,catalog),index=pages.findIndex(page=>page.id==='results-modular-rationale'),page=pages[index].content;
+  assert.deepEqual(pages.slice(index-2,index+7).map(page=>page.id),['results-three-years','results-phase-two','results-modular-rationale','results-module-definition','results-module-classification','results-module-hierarchy','results-phase-three','results-guide-structure','results-principles']);assert.equal(page.chapter,'results-modular');assert.equal(page.title,'第三期主軸－模組化');assert.equal(page.title,source.title);assert.deepEqual(page.sections,source.sections);assert.equal(page.source.slide,4);assert.equal(page.source.sha256,source.sha256);
+  const themes=pages.find(page=>page.id==='results-module-classification').content,hierarchy=pages.find(page=>page.id==='results-module-hierarchy').content,modules=require('../data/modules/catalog.json');
+  assert.equal(themes.items.length,modules.themes.length);for(const theme of modules.themes)assert(themes.items.some(item=>item.title===theme.id+'｜'+theme.name));assert(themes.takeaway.includes('同時組合'));
+  assert(hierarchy.intro.includes(modules.modules.length+' 個功能模組'));assert(hierarchy.intro.includes(modules.modules.flatMap(module=>module.submodules).length+' 個子模組'));
+  assert.equal(pages.find(page=>page.id==='results-module-discussion').chapter,'results-modules');assert.equal(pages[pages.findIndex(page=>page.id==='results-module-discussion')+1].id,'results-modules');assert(!pages.some(page=>['results-modular','results-formation'].includes(page.id)));assert.equal(outline.pageAliases['results-formation'],'results-module-discussion');
+  assert.deepEqual(page.sections.map(section=>section.title),['現況課題','問題根源','模組化目標']);assert(page.sections[1].paragraphs[0].text.includes('哪些設施應共同運作、各自扮演什麼功能'));assert.equal(page.sections[2].paragraphs[2].text,'＋');
+  for(const image of page.images){const asset=outline.assets[image.key],bytes=fs.readFileSync(path.resolve(__dirname,'..',asset.file));assert.deepEqual(asset,source.images[image.key]);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),asset.sha256);assert.deepEqual([bytes.readUInt32BE(16),bytes.readUInt32BE(20)],[asset.width,asset.height]);}
+  const unsafe=structuredClone(outline);unsafe.assets[page.images[0].key].file='../../private.png';assert.throws(()=>Results.validate(unsafe));
+});

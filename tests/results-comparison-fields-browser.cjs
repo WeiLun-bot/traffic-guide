@@ -1,0 +1,23 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+module.exports=async function({evaluate,view,navigate,click,cdp,base,artifacts,pass,previewConfigPath,editText}){
+  const baseline=fs.readFileSync(previewConfigPath,'utf8'),run=fn=>evaluate('('+fn.toString()+')()');
+  const fields=()=>run(()=>({count:window.PresentationContent.current.model.points.length,title:document.querySelector('.results-points li h3').textContent,text:document.querySelector('.results-points li p').textContent,hidden:document.querySelector('.results-points li p').hidden,visible:document.querySelector('.results-points li p').getClientRects().length>0,frames:window.generalRoadPresentation.editorFrames().map(frame=>({key:frame.key,box:frame.getBox(),crop:frame.getCrop()}))}));
+  const shot=async name=>{const result=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(result.data,'base64'));};
+  try{
+    await navigate(base+'/presentation-demo/#results-review');await click('.edit-toggle');
+    if(await run(()=>document.querySelector('.results-points li p').hidden))await click('.results-points li:first-child [data-content-action="toggle-description"]');
+    await editText('.results-points li:first-child p','測試保留的差異說明。');const before=await fields();
+    await click('.results-points li:first-child [data-content-action="toggle-description"]');const removed=await fields();assert(removed.hidden&&!removed.visible);assert.equal(removed.text,before.text);assert.equal(removed.title,before.title);assert.equal(removed.count,before.count);assert.deepEqual(removed.frames,before.frames);
+    assert.equal(await run(()=>document.querySelector('.results-points li:first-child [data-content-action="remove"]').textContent),'刪除重點');assert.equal(await run(()=>document.querySelector('.results-points li:first-child [data-content-action="toggle-description"]').textContent),'＋新增差異說明');
+    await click('[data-vl-action="undo"]');assert(!(await fields()).hidden);await click('[data-vl-action="redo"]');assert((await fields()).hidden);
+    await click('.results-comparison-switcher [data-results-comparison-step="1"]');assert(await run(()=>[...document.querySelectorAll('.results-points li p')].slice(1).every(p=>!p.hidden)));await click('.results-comparison-switcher [data-results-comparison-step="0"]');
+    await shot('description-removed-editing');await click('.edit-toggle');assert((await fields()).hidden);assert.equal(await run(()=>document.querySelectorAll('[data-content-action="toggle-description"]').length),0);await shot('description-removed-preview');
+    fs.writeFileSync(previewConfigPath,await run(()=>window.visualLayoutEditor.store.serialize()));await navigate(base+'/presentation-demo/#results-review');const restored=await fields();assert(restored.hidden&&!restored.visible);assert.equal(restored.text,before.text);assert.equal(restored.title,before.title);assert.equal(restored.count,before.count);assert.deepEqual(restored.frames,before.frames);
+    await click('.edit-toggle');await click('.results-points li:first-child [data-content-action="toggle-description"]');const added=await fields();assert(!added.hidden&&added.visible);assert.equal(added.text,before.text);assert.deepEqual(added.frames,before.frames);
+    await click('.results-points li:first-child [data-content-action="remove"]');assert.equal((await fields()).count,before.count-1);await click('[data-vl-action="undo"]');assert.equal((await fields()).count,before.count);assert.equal((await fields()).title,before.title);
+    await cdp.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});await view('results-review');await click('.results-points li:first-child [data-content-action="toggle-description"]');assert((await fields()).hidden);assert(await run(()=>document.documentElement.scrollWidth<=innerWidth+1));await run(()=>document.querySelector('.results-points').scrollIntoView({block:'center'}));await shot('description-removed-mobile');
+    await view('results-scenario-g1-01');assert.equal(await run(()=>document.querySelectorAll('[data-content-action="toggle-description"]').length),0);assert(await run(()=>[...document.querySelectorAll('.results-points p')].every(p=>!p.hidden)));
+    pass('each difference description can be removed and restored independently while retaining its text, title, navigation count and highlight boxes; undo/redo and JSON reload preserve the choice, with separate whole-point deletion and unaffected scenario descriptions');
+  }finally{fs.writeFileSync(previewConfigPath,baseline);}
+};

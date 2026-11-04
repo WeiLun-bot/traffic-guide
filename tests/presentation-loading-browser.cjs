@@ -15,6 +15,15 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await view('context');assert.equal((await files()).filter(file=>file==='data/scenarios/G1-01.json').length,1);
   await view('results-scenario-g1-01');requests=await files();assert(requests.includes('data/results/scenarios/G1-01.json'));assert(!requests.includes('data/results/scenarios/G1-02.json'));
   pass('individual scenarios, modules and result cases load on first entry and reuse the cached source on return');
+  await navigate(base+'/presentation-demo/#results-scenario-c4-02-strategy');
+  assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-scenario-c4-02-strategy');assert.equal(await evaluate('document.querySelectorAll(".results-points>li").length'),4);
+  requests=await files();assert(requests.includes('data/results/scenarios/C4-02.json'));assert(!requests.some(file=>/data\/results\/scenarios\/(?:G|C4-03)/.test(file)));
+  await view('results-scenario-c4-02');await view('results-scenario-c4-02-strategy');assert.equal((await files()).filter(file=>file==='data/results/scenarios/C4-02.json').length,1);
+  pass('a complex strategy deep link loads only its owning case and reuses that document for issue and strategy navigation');
+  await navigate(base+'/presentation-demo/#results-module-m1-01');assert.equal(await evaluate('window.generalRoadPresentation.page.resultsModule'),'M1-01');assert.equal(await evaluate('document.querySelectorAll(".results-map-card").length'),2);
+  requests=await files();assert(requests.includes('data/results/modules/M1-01.json'));assert(!requests.some(file=>/^data\/modules\/M|^data\/results\/modules\/M2-/.test(file)));
+  await view('results-modules');await view('results-module-m1-01');assert.equal((await files()).filter(file=>file==='data/results/modules/M1-01.json').length,1);
+  pass('module results load only their own comparison document and reuse the cache without fetching second-deck module details');
   await navigate(base+'/presentation-demo/#edge/zoom');
   assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'edge');assert.equal(await evaluate('document.querySelectorAll(".explain-points li").length'),3);
   assert(!(await files()).some(file=>file.startsWith('data/modules/M')));

@@ -1,0 +1,970 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "section": "第5章 複雜道路情境：交通設施設置建議與整體設置圖例",
+    "note": "依各原稿的情境標題及實際內容對應現行簡報編號；路段檔名跳號不作為情境編號。C2-02依原稿交叉引用沿用C4-04的圖例及解說。"
+  },
+  "assets": {
+    "results:c1-01-strategy": {
+      "file": "materials/05-複雜道路情境/C1-01/C1-01_號誌化左或右錯位T字路口交通設施設置圖例.svg",
+      "width": 3018,
+      "height": 2153,
+      "label": "C1-01 整體佈設圖",
+      "scenario": "C1-01",
+      "role": "strategy",
+      "sha256": "ab00e4684e72a097180f652b6abc3a60286d3c59e4af32eeff6fc0df250c894a"
+    },
+    "results:c1-02-strategy": {
+      "file": "materials/05-複雜道路情境/C1-02/C1-02_號誌化右或左錯位T字路口交通設施設置圖例.svg",
+      "width": 2755,
+      "height": 1702,
+      "label": "C1-02 整體佈設圖",
+      "scenario": "C1-02",
+      "role": "strategy",
+      "sha256": "f54e765cdb65c6231896def78ed025a8a17c36cf39244736d541d83e875ded9f"
+    },
+    "results:c1-03-strategy": {
+      "file": "materials/05-複雜道路情境/C1-03/C1-03_號誌化短街廓路口交通設施設置圖例.svg",
+      "width": 2126,
+      "height": 2157,
+      "label": "C1-03 整體佈設圖",
+      "scenario": "C1-03",
+      "role": "strategy",
+      "sha256": "196ad7679093aed0638804988a6a8454d3e04e929bc7761850f17eb8a14dec86"
+    },
+    "results:c1-04-strategy": {
+      "file": "materials/05-複雜道路情境/C1-04/C1-04_主要道路多叉路口交通設施設置圖例.svg",
+      "width": 2500,
+      "height": 2251,
+      "label": "C1-04 整體佈設圖",
+      "scenario": "C1-04",
+      "role": "strategy",
+      "sha256": "fbb9f82cb7ff1d8a383d7325fb97e5709c8ce3351aec813e9a84607c547af06e"
+    },
+    "results:c1-05-strategy": {
+      "file": "materials/05-複雜道路情境/C1-05/C1-05_主要道路與街巷道多叉路口交通設施設置圖例.svg",
+      "width": 1662,
+      "height": 1701,
+      "label": "C1-05 整體佈設圖",
+      "scenario": "C1-05",
+      "role": "strategy",
+      "sha256": "1e79c43f293bc7727f574e7de8d56ed9cba5aeb0bd0b6e8b7052a1ce11a0bb7d"
+    },
+    "results:c1-06-strategy": {
+      "file": "materials/05-複雜道路情境/C1-06/C1-06_街巷道多叉路口交通設施設置圖例.svg",
+      "width": 724,
+      "height": 546,
+      "label": "C1-06 整體佈設圖",
+      "scenario": "C1-06",
+      "role": "strategy",
+      "sha256": "d64a87dedf11ed7def37d9bdffa876026d228e853371dfe2bbe317719106d1b4"
+    },
+    "results:c1-07-strategy": {
+      "file": "materials/05-複雜道路情境/C1-07/C1-07_迷你圓環交通設施設置圖例.svg",
+      "width": 900,
+      "height": 700,
+      "label": "C1-07 整體佈設圖",
+      "scenario": "C1-07",
+      "role": "strategy",
+      "sha256": "c0af4e85ac0d276df52abdc28b8efa9d1856b74b0df85c017b2c4632386aebe1"
+    },
+    "results:c1-08-strategy": {
+      "file": "materials/05-複雜道路情境/C1-08/C1-08_渦輪圓環交通設施設置圖例.svg",
+      "width": 2275,
+      "height": 1924,
+      "label": "C1-08 整體佈設圖",
+      "scenario": "C1-08",
+      "role": "strategy",
+      "sha256": "2421bccd0e79cfee974da07696177c11301accce0fc416cbbef87840c4bc5917"
+    },
+    "results:c1-09-strategy": {
+      "file": "materials/05-複雜道路情境/C1-09/C1-09_號誌化圓環交通設施設置圖例.svg",
+      "width": 3226,
+      "height": 3288,
+      "label": "C1-09 整體佈設圖",
+      "scenario": "C1-09",
+      "role": "strategy",
+      "sha256": "ff29a258bc79cd554df363fa0549c881c7fe504147322a03163b9720f98b6a1a"
+    },
+    "results:c2-01-strategy": {
+      "file": "materials/05-複雜道路情境/C2-01/C2-01_部分苜蓿葉型交流道交通設施設置圖例.svg",
+      "width": 3008,
+      "height": 2286,
+      "label": "C2-01 整體佈設圖",
+      "scenario": "C2-01",
+      "role": "strategy",
+      "sha256": "8ecf88ac404d582c66e3a0fdd17a8ace29bf392a582f02751c3fbff4c591d49a"
+    },
+    "results:c2-02-strategy": {
+      "file": "materials/05-複雜道路情境/C4-04/C4-04_路段中央分隔迴轉道交通設施設置圖例.svg",
+      "width": 2500,
+      "height": 3240,
+      "label": "C2-02 整體佈設圖",
+      "scenario": "C2-02",
+      "role": "strategy",
+      "sha256": "b1009790ce96279a4cf51ceda0252c793f47b802a73e65d9ac0a3bce52c5ac2e",
+      "reusedFrom": "C4-04"
+    },
+    "results:c3-01-strategy": {
+      "file": "materials/05-複雜道路情境/C3-01/C3-01_鐵路平交道交通設施設置圖例.svg",
+      "width": 1401,
+      "height": 1979,
+      "label": "C3-01 整體佈設圖",
+      "scenario": "C3-01",
+      "role": "strategy",
+      "sha256": "cac12dbac3736d95fc21cd211e31299869709178e1bf6d85f3ab578eebb49e43"
+    },
+    "results:c4-01-strategy": {
+      "file": "materials/05-複雜道路情境/C4-01/C4-01_快慢分隔型交通設施設置圖例.svg",
+      "width": 2677,
+      "height": 2942,
+      "label": "C4-01 整體佈設圖",
+      "scenario": "C4-01",
+      "role": "strategy",
+      "sha256": "0320f956d6d2165f26b4785b667d32f219e818adf91152437cb21c8157b40b34"
+    },
+    "results:c4-02-strategy": {
+      "file": "materials/05-複雜道路情境/C4-02/C4-02_調撥車道路型交通設施設置圖例——北端.svg",
+      "width": 1500,
+      "height": 1750,
+      "label": "C4-02 整體佈設圖",
+      "scenario": "C4-02",
+      "role": "strategy",
+      "sha256": "0e7bf5a34cb9d0cb5062ddd95bc7fe9403cc8eb593b1ffc466bdc6abca89a103"
+    },
+    "results:c4-03-strategy": {
+      "file": "materials/05-複雜道路情境/C4-03/C4-03_單行道交通設施設置圖例.svg",
+      "width": 2150,
+      "height": 1246,
+      "label": "C4-03 整體佈設圖",
+      "scenario": "C4-03",
+      "role": "strategy",
+      "sha256": "c4b337e142337e844ffd64dd00578d0646f0b6431757b31aef4a88114265a5e8"
+    },
+    "results:c4-04-strategy": {
+      "file": "materials/05-複雜道路情境/C4-04/C4-04_路段中央分隔迴轉道交通設施設置圖例.svg",
+      "width": 2500,
+      "height": 3240,
+      "label": "C4-04 整體佈設圖",
+      "scenario": "C4-04",
+      "role": "strategy",
+      "sha256": "b1009790ce96279a4cf51ceda0252c793f47b802a73e65d9ac0a3bce52c5ac2e"
+    },
+    "results:c4-05-strategy": {
+      "file": "materials/05-複雜道路情境/C4-05/C4-05_斑馬紋行人穿越道型交通設施設置圖例——當心行人標誌_01.svg",
+      "width": 975,
+      "height": 770,
+      "label": "C4-05 整體佈設圖",
+      "scenario": "C4-05",
+      "role": "strategy",
+      "sha256": "d8617b1150388848b4d20a78369c18ed2009824d9374a6c9dbb0fce7fb153fd8"
+    },
+    "results:c4-06-strategy": {
+      "file": "materials/05-複雜道路情境/C4-06/C4-06_山區彎道路型（入彎前可變換車道）交通設施設置圖例_01.svg",
+      "width": 1393,
+      "height": 1535,
+      "label": "C4-06 整體佈設圖",
+      "scenario": "C4-06",
+      "role": "strategy",
+      "sha256": "951cc355fe0b852fc197d2708764855b4a48d4ab08cbb1957581abaca0a6d76e"
+    }
+  },
+  "scenarios": {
+    "C1-01": {
+      "strategy": {
+        "title": "分段導引錯位路口，兼顧行人穿越",
+        "intro": "從上游選道、中央停等到行人庇護，整理錯位路口的通行順序。",
+        "images": [
+          {
+            "key": "results:c1-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "guidance",
+            "title": "提前選道與穿越導引",
+            "text": "以標誌、指向線及路口導引線，讓駕駛在上游選對車道，銜接下游支路。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "stopping",
+            "title": "安排中央分段停等",
+            "text": "本例在路口中央增設兩組停止線，搭配相應號誌，分段導引穿越車流。",
+            "moduleId": "M2-03"
+          },
+          {
+            "id": "walking",
+            "title": "縮短行人單次穿越",
+            "text": "運用中央分隔島與行人庇護空間，將多車道穿越分段處理。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "visibility",
+            "title": "看清應遵循的號誌",
+            "text": "檢視行車與行人號誌的位置及遠端燈面可視性，讓停等與放行資訊清楚。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-01-signalized-left-right-offset-t.typ",
+        "sha256": "1d7457a811e5610d5306ca80d51cb17c5016f94dfad3cc4dab1c07cefdd586c5",
+        "scenario": "C1-01",
+        "title": "號誌化左／右錯位T字路口",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-02": {
+      "strategy": {
+        "title": "維持錯位路口前後的動線連續",
+        "intro": "以連續車道導引、行人庇護與清晰燈面，串接兩個錯位路口。",
+        "images": [
+          {
+            "key": "results:c1-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "selection",
+            "title": "上游先說清楚車道選擇",
+            "text": "搭配標誌與標線，提前指出支線穿越方向，減少駕駛在路口臨時選道。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "continuity",
+            "title": "保持前後車道連續",
+            "text": "路口間的行車動線與上游車道連續銜接，以導引線協助辨識穿越路徑。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "walking",
+            "title": "提供中央行人庇護",
+            "text": "依多車道穿越需求配置中央庇護空間，縮短行人單次穿越距離。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "visibility",
+            "title": "兼顧人車號誌可視性",
+            "text": "調整行車與行人號誌位置，確認駕駛和行人能辨識應遵循的燈面。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-02-signalized-right-left-offset-t.typ",
+        "sha256": "92bfcf84db7690854943dbc75c359a5f23afaf949db4c207f5c07afdeb110b68",
+        "scenario": "C1-02",
+        "title": "號誌化右／左錯位T字路口",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-03": {
+      "strategy": {
+        "title": "讓短街廓車流續進，避免自鎖",
+        "intro": "一起調整左轉配置、上下游時相與燈面位置，減少短街廓回堵。",
+        "images": [
+          {
+            "key": "results:c1-03-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "left-turn",
+            "title": "正偏移配置左轉車道",
+            "text": "將左轉車道配置為正偏移形式，減少等候車隊擋住對向左轉動線的自鎖情形。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "recognition",
+            "title": "提前辨識短街廓路型",
+            "text": "以標誌、標線及車道預告，協助駕駛及早判斷行車方向與選道。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "coordination",
+            "title": "以時相銜接避免溢流",
+            "text": "協調上下游放行時機，盡量讓車輛通過短街廓，避免儲車空間用盡。",
+            "moduleId": "M2-03"
+          },
+          {
+            "id": "visibility",
+            "title": "減少鄰近號誌誤視",
+            "text": "檢視燈面距離與朝向，必要時補設輔助燈面，讓駕駛看清本路口號誌。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-03-signalized-short-block.typ",
+        "sha256": "5e5a798bec82edad62893ab8587d38641dc17b6526248ffa01db05a571e5200d",
+        "scenario": "C1-03",
+        "title": "號誌化短街廓",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-04": {
+      "strategy": {
+        "title": "縮小多叉路口，明確主動線",
+        "intro": "以槽化、人行庇護和清楚的行向資訊，整理主要道路多叉路口。",
+        "images": [
+          {
+            "key": "results:c1-04-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "space",
+            "title": "縮小行車與衝突範圍",
+            "text": "以槽化線整理多餘鋪面，配合行人庇護島，界定實際行車空間。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "guidance",
+            "title": "標明主要通行路徑",
+            "text": "明確標示主要車流方向，對容易混淆的轉向動線補設路口導引線。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "information",
+            "title": "精簡標誌資訊",
+            "text": "保留選道與行向所需資訊，減少多餘牌面，讓駕駛能及早判讀。",
+            "moduleId": "M2-04"
+          },
+          {
+            "id": "signals",
+            "title": "管控誤視與人車衝突",
+            "text": "確保本方向燈面清楚；轉向近似直行或穿越速度較高時，以時相區隔人車。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-04-major-road-multi-leg-intersection.typ",
+        "sha256": "9a0862b53ed32ee762d7848b2089f77235d10c2e1ee6be7e23259b2072466432",
+        "scenario": "C1-04",
+        "title": "主要道路多叉路口",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-05": {
+      "strategy": {
+        "title": "整理主要道路與街巷道的交會空間",
+        "intro": "把槽化、行人穿越和支路通行一起安排，減少多叉路口的混淆。",
+        "images": [
+          {
+            "key": "results:c1-05-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "space",
+            "title": "以槽化與庇護島縮小路口",
+            "text": "整理多餘鋪面並配置行人庇護島，清楚界定車流與行人使用的空間。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "guidance",
+            "title": "導引容易混淆的動線",
+            "text": "以路口行車導引線串接各分支，標誌資訊以必要的方向與選道提示為主。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "signals",
+            "title": "讓號誌與穿越安排一致",
+            "text": "避免誤看其他方向燈面；高速轉向可能與行人衝突時，採時相區隔。",
+            "moduleId": "M2-03"
+          },
+          {
+            "id": "side-road",
+            "title": "依支路條件處理右轉島",
+            "text": "街巷道人車量較低的右轉三角島，可依條件採無號誌設計並保留行人穿越空間。",
+            "moduleId": "M3-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-05-major-road-and-alleys-multi-leg-intersection.typ",
+        "sha256": "1dacd5c207742867edd0a571d44b62b759b0d2932f23dd90051b8b0dc157c5e4",
+        "scenario": "C1-05",
+        "title": "主要道路與街巷道多叉路口",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-06": {
+      "strategy": {
+        "title": "以路型調整降低街巷道車速",
+        "intro": "縮減過寬的行車空間，讓多叉街巷道的路型與減速需求更清楚。",
+        "images": [
+          {
+            "key": "results:c1-06-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "alignment",
+            "title": "調整線型與車道寬度",
+            "text": "以標線修整道路線型、車道寬度及交角，減少車輛快速穿越路口的空間。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "warning",
+            "title": "提前提示多叉路型",
+            "text": "在上游設置岔路標誌，讓駕駛及早辨識前方路口並調整行駛方式。",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "calming",
+            "title": "逐步形成交通寧靜環境",
+            "text": "以整體配置建立低速街巷道意象，長期可配合實體設施引導駕駛減速。",
+            "moduleId": "M4-04"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-06-alleys-multi-leg-intersection.typ",
+        "sha256": "fe72ea02926e76f88420e81e77579c25cb469879a34f95ba797e3a00a24183d9",
+        "scenario": "C1-06",
+        "title": "街巷道多叉路口",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-07": {
+      "strategy": {
+        "title": "以迷你圓環串接低速巷道與人行空間",
+        "intro": "讓進出環動線、行人步行系統與緊急車輛通行一起被考量。",
+        "images": [
+          {
+            "key": "results:c1-07-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "calming",
+            "title": "以圓環路型引導減速",
+            "text": "用迷你圓環調整交會線型，作為街巷道交通寧靜與減速措施。",
+            "moduleId": "M2-02"
+          },
+          {
+            "id": "walking",
+            "title": "串聯行人步行空間",
+            "text": "把修整後行車道以外的空間界定為行人空間，銜接周邊步行路徑。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "emergency",
+            "title": "保留緊急車輛路徑",
+            "text": "檢核救護車及消防車通行，避免中央島過高或減速設施妨礙救災動線。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "priority",
+            "title": "標明進出環與讓行位置",
+            "text": "搭配指向線、讓路線、出口導引線及圓環標誌，清楚表達行車方向與路權。",
+            "moduleId": "M2-02"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-07-mini-roundabout.typ",
+        "sha256": "302364950a8d62ec30bc796a0a23531949155dac4f6dc20fd261cb4938b23bb0",
+        "scenario": "C1-07",
+        "title": "迷你圓環",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-08": {
+      "strategy": {
+        "title": "進環前選道，沿螺旋車道駛離",
+        "intro": "以預先選道、螺旋導引與分隔設計，減少圓環內的變換車道。",
+        "images": [
+          {
+            "key": "results:c1-08-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "selection",
+            "title": "進環前先選對車道",
+            "text": "搭配指向線與方向標誌，讓駕駛在進入圓環前減速並選擇正確車道。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "spiral",
+            "title": "以螺旋車道減少交織",
+            "text": "沿螺旋路徑與實體分隔導引至出口，減少在環內變換車道的需求。",
+            "moduleId": "M2-02"
+          },
+          {
+            "id": "markings",
+            "title": "整理入口、出口與穿越線",
+            "text": "清楚安排入口讓路線、出口導引線、車道分隔及行人穿越位置。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "signs",
+            "title": "讓標誌與環內路徑一致",
+            "text": "配置讓路、圓環遵行及安全方向導引標誌，對應進環選道與行駛方向。",
+            "moduleId": "M2-02"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-08-turbo-roundabout.typ",
+        "sha256": "fe948fcb88fc1e805854a96a53c070d7e858a15a36717be1a9f45a9da89c6a9c",
+        "scenario": "C1-08",
+        "title": "渦輪圓環",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C1-09": {
+      "strategy": {
+        "title": "讓號誌管制與圓環車道導引一致",
+        "intro": "延續停止線後的車道範圍，搭配螺旋導引與清楚可辨的號誌。",
+        "images": [
+          {
+            "key": "results:c1-09-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "continuity",
+            "title": "停止線後持續導引",
+            "text": "以路口行車導引線延續環內行車範圍，避免進出環車流在交會區混淆。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "selection",
+            "title": "以螺旋線型與標誌選道",
+            "text": "進環前決定車道，配合圖形化方向標誌與螺旋路徑，減少環內換道。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "signals",
+            "title": "看清本方向的管制燈面",
+            "text": "檢視號誌位置及朝向，兼顧明視性並避免駕駛誤看其他行向的燈號。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-1-09-signalized-roundabout.typ",
+        "sha256": "11ebf6cd0345fd83add93d7d4870431df59976c1817f4eedc2170ed20cab51a2",
+        "scenario": "C1-09",
+        "title": "號誌化圓環",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C2-01": {
+      "strategy": {
+        "title": "明確交流道進出動線，分開高速車流與行人",
+        "intro": "以選道預告、槽化及號誌配置，整理平面道路與匝道交會處。",
+        "images": [
+          {
+            "key": "results:c2-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "selection",
+            "title": "提前引導正確入口車道",
+            "text": "以高速公路標字及圖形化指示標誌，從預告點到行動點導引選道並避免機車誤入。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "wrong-way",
+            "title": "防止逆向駛入出口匝道",
+            "text": "搭配槽化島與清楚的導引線型，區分進入與離開交流道的車流路徑。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "walking",
+            "title": "保護行人分段穿越",
+            "text": "配置行人庇護島，搭配人車分離號誌，減少高速車流與行人交會。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "signals",
+            "title": "看清右轉車道號誌",
+            "text": "右轉三角槽化島採兩柱立式號誌，增加可視性並避免其他車道駕駛誤視。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-2-01-partial-cloverleaf-interchange.typ",
+        "sha256": "905d83b07ca19281d74b42b18b263607a26cf733b66c6d838e7ecfe75dc12f3a",
+        "scenario": "C2-01",
+        "title": "部分苜蓿葉型交流道",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C2-02": {
+      "reusedFrom": "C4-04",
+      "strategy": {
+        "title": "提前分流進入迴轉道，清楚銜接主線",
+        "intro": "把入口預告、漸變與出口匯入安排成連續的行駛路徑。",
+        "images": [
+          {
+            "key": "results:c2-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "selection",
+            "title": "在上游預告迴轉分流",
+            "text": "以標誌及標線提前提示迴轉入口，搭配迴轉與直行的分流式指向線。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "transition",
+            "title": "預留漸變與附加車道",
+            "text": "入口保留足夠漸變距離，主線銜接處配置附加車道，讓車輛逐步進入。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "exit",
+            "title": "明確安排出口匯入或讓行",
+            "text": "離開迴轉道時，依銜接條件採匯入或讓路型式進入主線，清楚表達路權。",
+            "moduleId": "M2-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-2-02-parallel-ramp-interchange.typ",
+        "sha256": "7b389f9497fec08a4dd0e52e6f7be4ec5209e884e94bdab9b5a0b8fc1cbc4c62",
+        "scenario": "C2-02",
+        "title": "平行匝道型交流道",
+        "section": "C4-04 路段中央分隔迴轉道交叉引用",
+        "reference": {
+          "file": "chapters/05-complex-scenarios/05-4-05-midblock-median-u-turn.typ",
+          "sha256": "e33abc4c8ca7cef79d7a7e10b731fdc245288be05284882ed0129b94c2feeb3e",
+          "scenario": "C4-04",
+          "title": "路段中央分隔迴轉道",
+          "section": "交通設施設置建議與整體設置圖例"
+        }
+      }
+    },
+    "C3-01": {
+      "strategy": {
+        "title": "提前提示平交道，維持鐵路淨空",
+        "intro": "從進入前的警示、穿越範圍到鄰近號誌協調，避免車輛滯留。",
+        "images": [
+          {
+            "key": "results:c3-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "warning",
+            "title": "提前辨識鐵路平交道",
+            "text": "搭配近鐵路平交道線、有柵門警告標誌及電化鐵路遵行標誌，提醒前方穿越處。",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "clearance",
+            "title": "清楚界定必須淨空的範圍",
+            "text": "以網狀線標示鐵路的動態包絡區域，避免車輛排隊停留在鐵道上。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "coordination",
+            "title": "協調鄰近路口號誌",
+            "text": "當號誌路口距離平交道較近時，一起檢視放行與回堵，避免車流相互影響。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-3-01-railway-level-crossing.typ",
+        "sha256": "e0b9355c39eee03d3cff0b26147de9b1b785559b50ce4789d6bf0aa4b01f26e3",
+        "scenario": "C3-01",
+        "title": "鐵路平交道",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C4-01": {
+      "strategy": {
+        "title": "把快慢車道變換移到路段處理",
+        "intro": "以漸變、附加車道與分隔島配置，減少近路口的交織及衝突。",
+        "images": [
+          {
+            "key": "results:c4-01-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "transfer",
+            "title": "在路段中安排車道變換",
+            "text": "以路段變換取代路口變換，預留漸變與缺口導引，並搭配繞道或分道標誌。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "roadside",
+            "title": "區分慢車道與停放空間",
+            "text": "避免慢車道過寬，停車格位與行車空間之間保留適當緩衝。",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "turning",
+            "title": "提前安排轉向附加車道",
+            "text": "依轉向需求規劃附加車道，減少轉向車與直行車在近路口處交織或追撞。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "island",
+            "title": "讓分隔島兼顧行人與燈面",
+            "text": "延伸分隔島作為行人庇護空間，也可調整遠端號誌位置，改善距離過遠的問題。",
+            "moduleId": "M3-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-4-01-fast-slow-lane-separation.typ",
+        "sha256": "04d87a3550fb89bd7b2398dec84757af89ed309fb3ac0c6a4603628e7f64faa7",
+        "scenario": "C4-01",
+        "title": "快慢分隔型",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C4-02": {
+      "strategy": {
+        "title": "在路段中清楚開始與結束調撥",
+        "intro": "將調撥入口、車道線、時間告示與燈號切換整合為一致的指引。",
+        "images": [
+          {
+            "key": "results:c4-02-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "entry",
+            "title": "在路段安排調撥入口",
+            "text": "中央有實體分隔時，開設適當缺口，讓車輛在道路中段切入調撥車道。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "markings",
+            "title": "標明調撥範圍與出入口",
+            "text": "沿線配置雙白線，出入口搭配單邊禁止變換車道線，清楚表達可進出的位置。",
+            "moduleId": "M4-03"
+          },
+          {
+            "id": "schedule",
+            "title": "說明調撥車道與施行時間",
+            "text": "在車道上方配置相應標誌，讓駕駛能及早辨認車道用途及調撥時段。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "signals",
+            "title": "讓車道燈號切換清楚可辨",
+            "text": "各車道配置管制燈號並清楚提示轉換過程，與路口號誌保持適當間隔以免誤視。",
+            "moduleId": "M4-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-4-03-reversible-lane.typ",
+        "sha256": "f5eb7a5dd6e37c0f00838ca294c02df886e047ef73ee32af912c6ee5d77dcebb",
+        "scenario": "C4-02",
+        "title": "調撥車道",
+        "section": "交通設施設置建議與整體設置圖例",
+        "figureNote": "採用北端代表圖，與總覽一致。"
+      }
+    },
+    "C4-03": {
+      "strategy": {
+        "title": "清楚表達單行方向，檢核轉彎路徑",
+        "intro": "把單行與禁入提示、轉向軌跡及號誌設計一起檢視。",
+        "images": [
+          {
+            "key": "results:c4-03-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "trajectory",
+            "title": "確認多車道左轉軌跡",
+            "text": "檢核各車道轉彎路徑，避免左轉車輛與左側交通島碰撞。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "direction",
+            "title": "防止誤入單行道",
+            "text": "搭配指向線、單行道遵行標誌及禁止進入標誌，清楚表達可通行方向。",
+            "moduleId": "M2-04"
+          },
+          {
+            "id": "signals",
+            "title": "以號誌與禁轉標誌配合",
+            "text": "人車仍有衝突時，運用圓形綠燈搭配禁止轉向標誌，減少箭頭綠燈的衝突情形。",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-4-04-one-way-street.typ",
+        "sha256": "dde4d7804ca6769f230af59a93b0a0d38cf82cd3d9cbc314b818bc4449174ff5",
+        "scenario": "C4-03",
+        "title": "單行道",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C4-04": {
+      "strategy": {
+        "title": "提前分流進入迴轉道，清楚銜接主線",
+        "intro": "把入口預告、漸變與出口匯入安排成連續的行駛路徑。",
+        "images": [
+          {
+            "key": "results:c4-04-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "selection",
+            "title": "在上游預告迴轉分流",
+            "text": "以標誌及標線提前提示迴轉入口，搭配迴轉與直行的分流式指向線。",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "transition",
+            "title": "預留漸變與附加車道",
+            "text": "入口保留足夠漸變距離，主線銜接處配置附加車道，讓車輛逐步進入。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "exit",
+            "title": "明確安排出口匯入或讓行",
+            "text": "離開迴轉道時，依銜接條件採匯入或讓路型式進入主線，清楚表達路權。",
+            "moduleId": "M2-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-4-05-midblock-median-u-turn.typ",
+        "sha256": "e33abc4c8ca7cef79d7a7e10b731fdc245288be05284882ed0129b94c2feeb3e",
+        "scenario": "C4-04",
+        "title": "路段中央分隔迴轉道",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C4-05": {
+      "strategy": {
+        "title": "讓車輛提前減速，清楚辨識行人穿越",
+        "intro": "結合路型調整、庇護島與穿越提示，整理道路中段的行人穿越處。",
+        "images": [
+          {
+            "key": "results:c4-05-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "calming",
+            "title": "以線型與庇護島引導減速",
+            "text": "利用道路線型及行人庇護島配置，讓駕駛在接近行穿線前降低車速。",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "warning",
+            "title": "提前提示行人穿越位置",
+            "text": "搭配當心行人標誌與行人穿越道號誌，讓駕駛及早辨識道路中段的穿越處。",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "consistency",
+            "title": "讓斑馬線與號誌搭配一致",
+            "text": "檢視斑馬紋行人穿越道線與行人穿越道號誌的配置，清楚傳達減速與穿越資訊。",
+            "moduleId": "M3-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-4-06-zebra-crossing.typ",
+        "sha256": "22cbef058d919d63cf932c49ed828a6176b9e8e137157e096776ba0ed79bae09",
+        "scenario": "C4-05",
+        "title": "斑馬紋行人穿越道",
+        "section": "交通設施設置建議與整體設置圖例"
+      }
+    },
+    "C4-06": {
+      "strategy": {
+        "title": "看清彎道線型，提前減速與判斷",
+        "intro": "以連續標線、彎道警示與視距條件，安排山區彎道的行車提示。",
+        "images": [
+          {
+            "key": "results:c4-06-strategy",
+            "label": "整體佈設圖",
+            "rotation": 0
+          }
+        ],
+        "items": [
+          {
+            "id": "alignment",
+            "title": "完整標示彎道行車範圍",
+            "text": "以路面邊線清楚勾勒彎道線型，配合標線配置引導車輛在入彎前逐步減速。",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "warning",
+            "title": "提前預告彎道走向",
+            "text": "依曲率與連續彎道形態配置警告及方向導引標誌，協助駕駛及早調整車速。",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "passing",
+            "title": "依視距條件管制超車",
+            "text": "視距不足的彎道區段，搭配禁止超車標誌與適當中央分向線，維持雙向行車秩序。",
+            "moduleId": "M4-03"
+          },
+          {
+            "id": "buffer",
+            "title": "保留彎道操作緩衝",
+            "text": "以加寬的分向槽化空間提供轉向緩衝，增加過彎時的操作餘裕。",
+            "moduleId": "M1-01"
+          }
+        ]
+      },
+      "source": {
+        "file": "chapters/05-complex-scenarios/05-4-07-mountain-road-curve.typ",
+        "sha256": "a5283bd7d5835e70dc48f1e203bb8a231117078885c88213c658ce9a55bc8c6b",
+        "scenario": "C4-06",
+        "title": "山區彎道",
+        "section": "交通設施設置建議與整體設置圖例",
+        "figureNote": "採用入彎前可變換車道的_01代表圖，與總覽一致；管制超車說明以視距不足為前提。"
+      }
+    }
+  }
+}
