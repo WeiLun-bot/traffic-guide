@@ -80,6 +80,7 @@
       if (editing) panel.style.top = Math.max(90, Math.min(toolbar.getBoundingClientRect().bottom + 10, innerHeight - 220)) + 'px';
     }
     window.VisualInitialViews?.update();
+    window.CoverArtEditor?.update();
     window.PresentationOrder?.updateTocActions();
   }
   function restoreStyles() {
@@ -392,7 +393,7 @@
   window.visualLayoutEditor = {
     connect(presentation) { api = presentation; legacyPages = api.pages.filter(page => page.kind !== 'custom').map(page => ({...page})); document.querySelector('#editor-toolbar .editor-actions').prepend(ui); ui.querySelector('.vl-toolbar').hidden = false; window.PresentationContent?.configureTools(ui); const legacySave = document.querySelector('.editor-download'); if (legacySave) { legacySave.textContent = '儲存 JSON 設定'; legacySave.title = '將內容與版面存入連結的 JSON 設定檔'; } updateButtons(); report(''); },
     sessionChanged() {updateButtons();if(!editing)report(window.generalRoadEditor?.editing ? '文字編輯：點文字修改，使用圖片旁的按鈕更換圖片。' : '');},
-    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); restoreStyles(); }, render, setMode, select,transact,report,refresh:refreshPresentation,
+    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); window.CoverArtEditor?.cleanup(); restoreStyles(); }, render, setMode, select,transact,report,refresh:refreshPresentation,
     legacyChanged(){transact(()=>{},false);},
     formatChanged(element,property){const key={fontSize:'fontSize',fontWeight:'fontWeight',fontFamily:'fontFamily',lineHeight:'lineHeight'}[property];transact(next=>{if(key&&next.elements[element.dataset.layoutId])next.elements[element.dataset.layoutId][key]=null;},false);refreshPresentation();},
     resetTextStyle(element){transact(next=>{const item=next.elements[element.dataset.layoutId];if(item)for(const key of ['fontSize','fontFamily','fontWeight','lineHeight'])item[key]=null;},false);refreshPresentation();},

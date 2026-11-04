@@ -20,6 +20,7 @@ module.exports=Array.from(new Set([
   'assets/presentation-order.js','assets/presentation-order.css',
   'assets/presentation-image-order.js','assets/presentation-image-order.css',
   'assets/table-column-editor.js','assets/table-column-editor.css',
+  'assets/cover-art-editor.js','assets/cover-art-editor.css',
   'assets/presentation-scenarios.js','assets/presentation-scenarios.css','data/scenarios/catalog.json',
   ...new Set(scenarioFiles),
   'assets/presentation-structure.js','assets/presentation-structure.css','data/presentations.json',

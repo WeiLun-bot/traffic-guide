@@ -15,6 +15,14 @@
   const clone = value => JSON.parse(JSON.stringify(value));
   const record = value => Boolean(value && typeof value === 'object' && !Array.isArray(value));
   function assert(condition, message) { if (!condition) throw new Error(message); }
+  const coverArtDefaults=Object.freeze({rotation:-52,tilt:52,scale:1,x:0,y:0});
+  const coverArtLimits=Object.freeze({rotation:[-85,85],tilt:[15,70],scale:[.7,1.4],x:[-25,25],y:[-25,25]});
+  function coverArtSettings(value={}){
+    assert(record(value)&&Object.keys(value).every(key=>Object.hasOwn(coverArtDefaults,key)),'封面圖設定無效');
+    const settings={...coverArtDefaults,...value};
+    for(const [key,[min,max]]of Object.entries(coverArtLimits))assert(Number.isFinite(settings[key])&&settings[key]>=min&&settings[key]<=max,'封面圖的 '+key+' 超出範圍');
+    return settings;
+  }
   function inspect(value, depth = 0) {
     assert(depth < 40, '設定層級過深');
     if (typeof value === 'number') assert(Number.isFinite(value), '設定包含無效數值');
@@ -52,6 +60,9 @@
     if (result.tableColumns === undefined) result.tableColumns = {};
     assert(record(result.tableColumns) && Object.keys(result.tableColumns).length <= 2000, '表格欄寬設定無效');
     for (const [key, columns] of Object.entries(result.tableColumns)) assert(/^[\w-]{1,160}\/[\w-]{1,160}$/.test(key) && Array.isArray(columns) && columns.length === 3 && columns.every(width=>Number.isFinite(width)&&width>=8&&width<=84) && Math.abs(columns.reduce((sum,width)=>sum+width,0)-100)<.001, '表格欄寬比例無效');
+    if(result.coverArt===undefined)result.coverArt={};
+    assert(record(result.coverArt)&&Object.keys(result.coverArt).length<=100,'封面圖清單無效');
+    for(const [id,settings]of Object.entries(result.coverArt)){assert(/^[\w-]{1,160}$/.test(id),'封面圖頁面 ID 無效');result.coverArt[id]=coverArtSettings(settings);}
     if (result.removedModuleExtensions === undefined) result.removedModuleExtensions = [];
     assert(Array.isArray(result.removedModuleExtensions) && result.removedModuleExtensions.length <= 500 && result.removedModuleExtensions.every(id=>typeof id==='string'&&/^[\w-]{1,160}$/.test(id)) && new Set(result.removedModuleExtensions).size===result.removedModuleExtensions.length, '已移除的延伸應用頁設定無效');
     result.imageViews = result.imageViews || {};
@@ -213,7 +224,7 @@
   }
   function signature(config) {
     const views = config.imageViews || {};
-    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
   }
   class Store {
     constructor(config) {
@@ -245,5 +256,5 @@
     markSaved(snapshot) { this.saved = signature(snapshot); }
     serialize(snapshot = this.config) { return checkSize(JSON.stringify(validate(snapshot), null, 2) + '\n'); }
   }
-  return {DOCUMENT_ID, fonts, limits, clone, validate, validateOverviewReferences, parse, checkSize, element, overrides, imageView, viewBoxFor, settingsForView, highlightAngle, highlightCorners, highlightBounds, highlightTransform, fitHighlight, resizeHighlight, signature, Store};
+  return {DOCUMENT_ID, fonts, limits, coverArtDefaults,coverArtLimits,coverArtSettings,clone, validate, validateOverviewReferences, parse, checkSize, element, overrides, imageView, viewBoxFor, settingsForView, highlightAngle, highlightCorners, highlightBounds, highlightTransform, fitHighlight, resizeHighlight, signature, Store};
 });

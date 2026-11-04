@@ -314,7 +314,27 @@
       return {key:spec().key,label:image.label+'｜比較重點 '+String(app.state.phase+1).padStart(2,'0'),element:svg,coordinateElement:svg.querySelector('[data-results-artwork]'),width:asset.width,height:asset.height,imageKey:image.key,allowDelete:true,hasBox:true,getBox:()=>spec().box,getCrop:()=>spec().crop,toSource:bounds=>[...bounds],fromSource:bounds=>[...bounds],setBounds:(_kind,bounds)=>[...bounds],defaults:{box:spec().defaultBox,crop:spec().crop}};
     }).filter(Boolean);
   }
+  let rationaleResize=null;
+  function fitRationalePhotos(){
+    const group=document.querySelector('.rationale-examples');if(!group)return;const photos=[...group.querySelectorAll('.rationale-photo')];
+    const fit=()=>{
+      if(!group.isConnected)return;
+      const width=Math.min(...photos.map(photo=>{
+        const style=getComputedStyle(photo),view=photo.viewBox.baseVal,paddingX=parseFloat(style.paddingLeft)+parseFloat(style.paddingRight),paddingY=parseFloat(style.paddingTop)+parseFloat(style.paddingBottom);
+        const height=photo.getBoundingClientRect().height-paddingY-parseFloat(style.borderTopWidth)-parseFloat(style.borderBottomWidth);
+        return Math.min(photo.parentElement.clientWidth,Math.max(0,height)*view.width/view.height+paddingX);
+      }));
+      if(width<=0||!Number.isFinite(width))return;
+      const value=(Math.floor(width*100)/100)+'px';
+      if(group.style.getPropertyValue('--rationale-photo-width')!==value)group.style.setProperty('--rationale-photo-width',value);
+    };
+    fit();rationaleResize=new ResizeObserver(fit);
+    for(const node of [group,...photos,...group.querySelectorAll('figcaption')])rationaleResize.observe(node);
+  }
   function afterRender(){
+    window.CoverArtEditor?.mount(app);
+    rationaleResize?.disconnect();rationaleResize=null;
+    if(app?.page.resultType==='modular-rationale'){fitRationalePhotos();return;}
     if(app?.page.resultType==='framework'){window.TableColumnEditor?.mount(document.getElementById('presentation'));return;}
     if(app?.page.resultType==='principles'){
       if(!window.generalRoadEditor.editing)for(const node of document.querySelectorAll('[data-principle-format]'))node.innerHTML=principleMarkup(node.textContent,node.dataset.principleFormat);

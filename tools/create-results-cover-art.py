@@ -26,7 +26,8 @@ ET.SubElement(art, f"{{{SVG}}}desc").text = (
     + ". Original road and marking geometry retained; annotations omitted."
 )
 projection = ET.SubElement(art, f"{{{SVG}}}g", {
-    "transform": "matrix(0.95 -0.35 0.55 0.46 -500 820)"
+    # Keep the road plane undistorted; the cover applies camera perspective in CSS.
+    "transform": "matrix(0.72 0 0 0.72 550 70)"
 })
 linework = copy.deepcopy(markings)
 
