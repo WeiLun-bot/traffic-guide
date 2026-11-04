@@ -1,6 +1,36 @@
 # 四場簡報的內容與共用架構
 
-四場簡報保留同一個 `index.html` 入口。入口只提供外殼、控制項與啟動復原程式，內容由資料層載入。正式版面設定仍為同一份 `layout/presentation-layout.json`，既有頁面、圖片、條文及初始視角 ID 沿用。
+四場簡報保留同一個 `index.html` 入口。入口提供外殼、控制項與啟動復原程式，內容由資料層載入。內容、導覽、共用 CSS 與個別版面設定分開存放；既有頁面、圖片、條文及初始視角 ID 沿用。
+
+## 編輯內容與版面的分工
+
+`layout/presentation-layout.json` 現為 `kind: "presentation-layout"`，只保存個別元素的尺寸／位移／字型、欄位比例、圖片視角、打亮框、比較圖對齊與封面構圖。`legacyState` 中只保留舊編輯器相容的視覺設定，沒有文字、圖片替換、清單或頁面順序。`elements` 與 `imageViews` 只寫入非預設值；共用樣式與響應式版型仍由 `assets/*.css`、`assets/general/*.css` 負責。
+
+網頁編輯後的正式內容按歸屬存放：
+
+| 內容範圍 | 檔案 |
+|---|---|
+| 共用頁與新增頁面 | `data/content/shared.json` |
+| 一般道路案例 | `data/content/scenarios/G1-01.json` 等 |
+| 功能模組 | `data/content/modules/M1-01.json` 等 |
+| 第一場共通頁 | `data/content/results/common.json` |
+| 第一場案例 | `data/content/results/scenarios/G1-01.json`、`C1-01.json` 等 |
+| 第一場模組成果 | `data/content/results/modules/M1-01.json` 等，首次編輯時建立 |
+| 內容清單與固定 ID 的歸屬 | `data/content/catalog.json` |
+| 頁面／圖像／主題順序及移除的延伸頁 | `data/presentation-navigation.json` |
+| 使用者替換圖片的原始位元組 | `materials/edited/<SHA-256>.<副檔名>` |
+
+下表原有 `data/scenarios/`、`data/modules/`、`data/results/` 資料保留為原稿匯入的預設內容及來源依據。`data/content/` 是簡報編輯的正式版本，不是建置產物；更新匯入工具時不覆蓋它。修改已編輯的簡報，應修改所屬內容檔或使用網頁編輯器。結構化清單內的文字只保存一份；舊文字鍵的相容鏡像在記憶體中重建，不重複存檔。
+
+`assets/presentation-document.js` 負責分組及重建，編輯器內部仍使用相容的合併狀態，以保留復原／重做與既有互動。內容的存放邊界和下載時機分開：輕量編輯內容於啟動時並行讀取，原稿的完整案例／模組仍維持按需讀取。
+
+## 儲存、備份與協作
+
+雙擊 `start-editor.cmd` 後，按「儲存」會透過僅供同源本機預覽使用的 API，把內容、導覽和版面寫回各自檔案，不必逐一選檔。未變更的檔案不重寫。每次修改前在 `exports/project-backups/` 保留原檔；寫檔失敗時回復已寫入的檔案。若其他程式改過任一編輯來源，舊畫面的儲存會被拒絕，保留未儲存編輯，應先匯出再重新載入合併。
+
+靜態發布站沒有寫入 API。「匯出 JSON」下載 `presentation-project.json`，包含編輯內容、導覽和版面；圖片仍引用專案素材，並非整個網站的獨立封裝。可在本機編輯器匯入後按「儲存」套用。舊版整包設定仍可匯入；單獨的新版純版面檔不可當成完整專案匯入。
+
+`tools/presentation-project-store.cjs` 可獨立執行遷移；啟動準備也會偵測舊格式，先備份再分檔。已遷移的專案不會在啟動時重寫編輯來源。替換圖片從 JSON 的 Base64 移到素材檔，並沿用原始位元組。
 
 ## 正式來源
 
@@ -16,9 +46,10 @@
 | 第一場各案例的現況／成果 | `data/results/current-conditions.json`、`general-strategies.json` |
 | 第一場複雜情境的佈設成果 | `data/results/complex-strategies.json`，按原稿實際情境對應，保留來源及引用關係 |
 | 第一場模組成果總覽與現況／圖例對照 | `data/results/module-comparisons.json`，每模組的重點、原稿來源與圖片對應 |
-| 文字、排版、照片替換、視角及打亮等使用者設定 | `layout/presentation-layout.json` |
+| 網頁編輯的文字、清單、照片引用及新增頁面 | `data/content/` 下所屬案例／模組檔 |
+| 個別排版、視角、打亮及封面構圖 | `layout/presentation-layout.json` |
 
-G1-01 原本寫在程式中的開場、策略及回顧文字，放在該案例 JSON 的 `view`。這些是預設呈現內容；網頁編輯後的個別覆寫仍寫入正式設定檔。
+G1-01 原本寫在程式中的開場、策略及回顧文字，放在該案例 JSON 的 `view`。這些是預設呈現內容；網頁編輯後的正式版本寫入 `data/content/scenarios/G1-01.json`。
 
 ## 載入與共用功能
 
@@ -40,9 +71,9 @@ G1-01 原本寫在程式中的開場、策略及回顧文字，放在該案例 J
 - `data/results/modules/*.json`
 - `_site/` 全部內容
 
-照常雙擊 `start-editor.cmd` 即可完成準備及啟動。`tools/build-general-scenarios.cjs` 在目前架構中更新資料目錄，保留舊專案格式的相容分支。
+照常雙擊 `start-editor.cmd` 即可完成準備及啟動；`start-viewer.cmd` 使用相同資料提供純瀏覽模式。啟動器會辨識舊預覽服務，僅重啟該連接埠上的本專案服務以支援新的儲存流程。`stop-editor.cmd` 可關閉本專案服務，`stop-editor.cmd -Port 4173` 可指定連接埠。PowerShell 腳本維持 ASCII 並支援 32／64 位元 Windows PowerShell 5.1。
 
-PDF 匯出仍使用相同頁面與正式設定快照，逐頁等待內容與圖片載入，再以既有的 16:9 版面列印。移交或發布時使用完整 `_site` 資料夾。
+PDF 匯出將全部已儲存的內容、導覽及版面重建成固定快照，逐頁等待內容與圖片載入，再以既有版面列印。移交或發布時使用完整 `_site` 資料夾；它包含內容清單、各內容檔、導覽、純版面檔及替換圖片，不包含本機寫入 API 或備份。
 
 `tools/presentation-source.cjs` 提供正式資料讀寫及舊格式重建，讓來源比對與原有工具可讀取分檔內容；瀏覽器不使用重建的內嵌版本。
 

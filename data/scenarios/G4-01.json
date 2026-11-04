@@ -186,7 +186,7 @@
       "rotation": 0,
       "scenario": "G4-01",
       "label": "號誌化市區正交四叉路口交通設施整體設置圖例",
-      "sha256": "fcc2b941b44e5f365a718fc1ed92b0d4561879d435750c97569c198d3ad5dd13"
+      "sha256": "56075b46a088be1aca0c914cb98144b2a4dcbceb5781bc8bb11644cab7a32604"
     },
     "g401-signals": {
       "file": "materials/04-一般道路情境/G4-01/G4-01_號誌化市區正交四叉路口號誌平面設置圖例.svg",
@@ -195,7 +195,7 @@
       "rotation": 0,
       "scenario": "G4-01",
       "label": "號誌化市區正交四叉路口號誌平面設置圖例",
-      "sha256": "ae8fc8546d3935f3a10781e935cb3622fa143c038dfd4679558c99819089da8c"
+      "sha256": "efa5b43bec8b98eea8fe6cdc9294c698ba23d9635820b212d97797de2b2a08a1"
     },
     "g401-visibility": {
       "file": "materials/04-一般道路情境/G4-01/G4-01_號誌化市區正交四叉路口之可視模板.svg",
@@ -204,7 +204,7 @@
       "rotation": 0,
       "scenario": "G4-01",
       "label": "號誌化市區正交四叉路口之可視模板",
-      "sha256": "81e1aa697c96c2560f77ffaea0e2a98db69286636aa669c5ffb373a39f9711c0"
+      "sha256": "06eb96f1ba8bd45817437a1ebbf703e602c082fe769f5e2e718f38baa8bf8d96"
     },
     "g401-signal-position": {
       "file": "materials/04-一般道路情境/G4-01/G4-01_號誌設置位置檢視圖1.png",

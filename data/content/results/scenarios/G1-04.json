@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G1-04",
+  "texts": {
+    "results-scenario-g1-04|results|title": "鄉區巷道匯入口的右轉交織與行向管制問題",
+    "results-scenario-g1-04|results|intro": "主要道路寬約 20 m、速限 60 km/h，設有中央分隔及快慢車道；巷道寬約 4 m、速限 30 km/h，採右進右出管制。",
+    "results-scenario-g1-04-strategy|results|title": "巷道匯入口導引、路肩槽化及讓路管制",
+    "results-scenario-g1-04-strategy|results|intro": "在主要道路速限較高、設有中央分隔及慢車道的條件下，配置右轉導引、路肩槽化與巷道讓路設施。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g1-04": {
+        "points": [
+          {
+            "id": "warning",
+            "title": "主要道路缺少巷道匯入口提示",
+            "titleKey": "results-scenario-g1-04|results|warning-title",
+            "text": "巷道交通量較少，主要道路容易忽略設置路口警示，駕駛不易提前注意巷道位置。",
+            "textKey": "results-scenario-g1-04|results|warning-text"
+          },
+          {
+            "id": "turn",
+            "title": "右轉車輛需跨越慢車道",
+            "titleKey": "results-scenario-g1-04|results|turn-title",
+            "text": "主要道路右轉進入巷道時，須跨越慢車道，容易與直行機慢車產生交織。",
+            "textKey": "results-scenario-g1-04|results|turn-text"
+          },
+          {
+            "id": "direction",
+            "title": "巷道出口行向與讓路提示不足",
+            "titleKey": "results-scenario-g1-04|results|direction-title",
+            "text": "巷道受中央分隔限制，僅能右轉進入主要道路，但出口缺少明確的行向及讓路管制設施。",
+            "textKey": "results-scenario-g1-04|results|direction-text"
+          }
+        ]
+      },
+      "results-scenario-g1-04-strategy": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "劃設巷道匯入口行車導引線",
+            "titleKey": "results-scenario-g1-04-strategy|results|guidance-title",
+            "text": "於主要道路匯入口劃設路口行車導引線，標示車輛轉入巷道的行駛路徑。",
+            "textKey": "results-scenario-g1-04-strategy|results|guidance-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "space",
+            "title": "利用槽化線區分路肩與車道",
+            "titleKey": "results-scenario-g1-04-strategy|results|space-title",
+            "text": "在主要道路較寬的路肩劃設槽化線，界定可行駛範圍，避免駕駛誤將路肩視為車道。",
+            "textKey": "results-scenario-g1-04-strategy|results|space-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "yield",
+            "title": "設置次要道路讓管制",
+            "titleKey": "results-scenario-g1-04-strategy|results|yield-title",
+            "text": "於巷道出口設置讓路標誌與讓路線，提醒駕駛先確認主要道路來車，再進入路口。",
+            "textKey": "results-scenario-g1-04-strategy|results|yield-text",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "direction",
+            "title": "配合中央分隔限制行向",
+            "text": "利用中央實體分隔維持右進右出的通行方式，並搭配行向標誌提示車輛遵行方向。",
+            "titleKey": "results-scenario-g1-04-strategy|results|direction-title",
+            "textKey": "results-scenario-g1-04-strategy|results|direction-text"
+          }
+        ]
+      }
+    }
+  }
+}

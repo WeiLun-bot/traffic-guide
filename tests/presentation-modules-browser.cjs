@@ -3,6 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure}){
   const shot=async name=>{await evaluate('(async()=>{await document.fonts.ready;await Promise.all(document.getAnimations().filter(a=>a.effect.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{})))})()');const image=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(image.data,'base64'));};
   await evaluate('window.generalRoadEditor.setEditing(false)');await view('overview');await click('[data-module-entry]');
+  if(await evaluate('window.generalRoadPresentation.page.kind==="chapter-cover"'))await click('#next');
   assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'modules-structure');
   assert.equal(await evaluate('document.querySelectorAll(".module-theme").length'),4);assert.equal(await evaluate('document.querySelectorAll(".module-feature").length'),0);assert(await evaluate('(()=>{const grid=document.querySelector(".module-structure-grid");return grid.children.length===1&&Math.abs(grid.firstElementChild.getBoundingClientRect().width-grid.getBoundingClientRect().width)<1})()'));await shot('modules-structure');
   await click('[data-module-category="M2"]');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card").length'),4);

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G4-03",
+  "texts": {
+    "results-scenario-g4-03|results|title": "市區斜交路口的行人穿越、車道偏移與公車停靠問題",
+    "results-scenario-g4-03|results|intro": "主要道路寬約 20 m、次要道路寬約 15 m，速限均為 50 km/h。周邊以商業活動為主，鄰近醫療院所，並有路側停車及公車停靠需求。",
+    "results-scenario-g4-03-strategy|results|title": "錯開式行穿線、偏移車道導引及公車停靠彎配置",
+    "results-scenario-g4-03-strategy|results|intro": "配合斜交路口的車道偏移及路側使用需求，設置行人庇護島、調整車道銜接，並明確配置公車停靠範圍。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g4-03": {
+        "points": [
+          {
+            "id": "pedestrian",
+            "title": "行人穿越距離長且缺少庇護島",
+            "text": "路口較為寬廣，行人穿越多個車道時缺少中央庇護空間，無法提供中途安全停等位置。",
+            "titleKey": "results-scenario-g4-03|results|pedestrian-title",
+            "textKey": "results-scenario-g4-03|results|pedestrian-text"
+          },
+          {
+            "id": "lanes",
+            "title": "次要道路上下游車道數不一致",
+            "text": "次要道路南側與北側車道配置不同，直行車道有明顯橫向偏移，駕駛不易判斷通過路口後的車道位置。",
+            "titleKey": "results-scenario-g4-03|results|lanes-title",
+            "textKey": "results-scenario-g4-03|results|lanes-text"
+          },
+          {
+            "id": "bus",
+            "title": "公車停靠範圍不明確",
+            "text": "路側公車站缺少明確的停靠區標線，其他車輛不易辨識公車進出站位置，容易與公車產生交織。",
+            "titleKey": "results-scenario-g4-03|results|bus-title",
+            "textKey": "results-scenario-g4-03|results|bus-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限與路側停車資訊不足",
+            "text": "市區道路停車及路側活動頻繁，若缺少速限與停車管制提示，駕駛不易判斷相關管制範圍。",
+            "titleKey": "results-scenario-g4-03|results|speed-title",
+            "textKey": "results-scenario-g4-03|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g4-03-strategy": {
+        "points": [
+          {
+            "id": "walking",
+            "title": "設置庇護島及錯開式行穿線",
+            "text": "於主要道路配置中央行人庇護島，採錯開式行穿線，提供中途停等空間，並增加右轉車輛停讓行人的空間。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g4-03-strategy|results|walking-title",
+            "textKey": "results-scenario-g4-03-strategy|results|walking-text"
+          },
+          {
+            "id": "lanes",
+            "title": "以路口行車導引線銜接偏移車道",
+            "text": "重新調整次要道路上、下游車道配置，利用路口行車導引線，引導直行車輛沿正確路徑通過路口。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g4-03-strategy|results|lanes-title",
+            "textKey": "results-scenario-g4-03-strategy|results|lanes-text"
+          },
+          {
+            "id": "bus",
+            "title": "配合人行道外擴設置公車停靠彎",
+            "text": "於主要道路公車站位置調整人行道路緣，延伸路面邊線並劃設公車停靠區標線，明確區分公車停靠與一般行車空間。",
+            "moduleId": "M3-04",
+            "titleKey": "results-scenario-g4-03-strategy|results|bus-title",
+            "textKey": "results-scenario-g4-03-strategy|results|bus-text"
+          },
+          {
+            "id": "accessibility",
+            "title": "配合斜交穿越需求設置引導標線",
+            "text": "如有視覺功能障礙者通行需求，可於斜交行穿線配置引導標線，並銜接人行道上的定位磚。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g4-03-strategy|results|accessibility-title",
+            "textKey": "results-scenario-g4-03-strategy|results|accessibility-text"
+          },
+          {
+            "id": "signals",
+            "title": "檢核號誌燈面及機車待轉區",
+            "text": "依斜交路口各方向的可視性配置近、遠端號誌，並配合停止線、行穿線及車道位置，檢核機車兩段式左轉待轉區。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g4-03-strategy|results|signals-title",
+            "textKey": "results-scenario-g4-03-strategy|results|signals-text"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-01",
+  "texts": {},
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-01-strategy": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "提前選擇車道並導引支線道穿越",
+            "titleKey": "results-scenario-c1-01-strategy|results|guidance-title",
+            "text": "於上游設置方向及車道指示標誌，搭配指向線與路口行車導引線，引導車輛銜接下游支線道。",
+            "textKey": "results-scenario-c1-01-strategy|results|guidance-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "stopping",
+            "title": "路口中央增設兩組停止線及號誌",
+            "titleKey": "results-scenario-c1-01-strategy|results|stopping-title",
+            "text": "利用錯位路口間可提供的儲車空間，增設兩組停止線與相應號誌，將支線道穿越幹線道的車流分段管制。",
+            "textKey": "results-scenario-c1-01-strategy|results|stopping-text",
+            "moduleId": "M2-03"
+          },
+          {
+            "id": "walking",
+            "title": "中央分隔島兼作行人庇護島",
+            "titleKey": "results-scenario-c1-01-strategy|results|walking-title",
+            "text": "配合多車道道路的穿越需求，設置中央行人庇護空間，縮短行人單次穿越距離。",
+            "textKey": "results-scenario-c1-01-strategy|results|walking-text",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "visibility",
+            "title": "檢核各停等位置的號誌可視性",
+            "titleKey": "results-scenario-c1-01-strategy|results|visibility-title",
+            "text": "配合中央停止線與車流動線，檢核行車及行人號誌設置位置、遠端燈面可視性，使駕駛能辨識應遵循的號誌。",
+            "textKey": "results-scenario-c1-01-strategy|results|visibility-text",
+            "moduleId": "M2-03"
+          }
+        ]
+      }
+    }
+  }
+}

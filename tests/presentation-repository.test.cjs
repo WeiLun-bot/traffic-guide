@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {Repository}=require('../assets/presentation-repository.js');
 const root=path.resolve(__dirname,'..');
-const read=file=>JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
+const read=file=>file==='layout/presentation-layout.json'?require('./read-project-config.cjs')():JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
 test('metadata alone validates saved overview links and resolves every case and module without fetching details',async()=>{
   const files=[],repository=new Repository({read:async file=>{files.push(file);return read(file);}});await repository.ready;
   assert.deepEqual(files,['data/presentation-registry.json']);const data=repository.fresh();

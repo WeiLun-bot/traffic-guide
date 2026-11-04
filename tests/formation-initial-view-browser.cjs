@@ -7,7 +7,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,mouse,dragFrom,
  const near=(actual,expected,label)=>actual.forEach((value,index)=>assert(Math.abs(value-expected[index])<.01,label+': '+JSON.stringify({actual,expected})));
  const field=(name,value)=>run((name,value)=>{const node=document.querySelector('.iv-panel:not([hidden]) [data-iv-field="'+name+'"]');node.value=String(value);node.dispatchEvent(new Event('change',{bubbles:true}));},name,value);
  const save=async()=>{await click('.iv-panel:not([hidden]) [data-iv-action="save"]');await wait('!window.visualLayoutEditor.busy','Initial-view save did not finish');};
- const disk=()=>run(async()=>{const directory=await navigator.storage.getDirectory(),handle=await directory.getFileHandle('formation-initial-view.json');return JSON.parse(await(await handle.getFile()).text());});
+ const disk=()=>run(async()=>{const directory=await navigator.storage.getDirectory(),handle=await directory.getFileHandle('formation-initial-view.json');return window.PresentationDocument.parse(await(await handle.getFile()).text());});
  const id='modules-formation/module%3Aformation-base';
  try{
   await navigate(base+'/presentation-demo/#modules-formation');await cdp.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});

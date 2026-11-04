@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M2-01",
+  "texts": {},
+  "images": {
+    "module:stop-crosswalk": {
+      "src": "materials/edited/8f7fa22bafa65a44fe05bc8cfa63168199efeba66207cb36a34898a25f9ec4e4.svg",
+      "alt": "M2-01_停管制路口_搭配行穿線.svg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {}
+  }
+}

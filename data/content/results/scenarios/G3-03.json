@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G3-03",
+  "texts": {
+    "results-scenario-g3-03|results|title": "斜交路口的主次道路辨識與人行空間連續性問題",
+    "results-scenario-g3-03|results|intro": "主要道路寬約 15 m、次要道路寬約 8 m，速限均為 30 km/h。周邊以住宅區為主，主要道路兩側設有停車格及實體人行道。",
+    "results-scenario-g3-03-strategy|results|title": "連續人行道、次要道路停管制及路側空間配置",
+    "results-scenario-g3-03-strategy|results|intro": "利用主要道路連續人行道，表達主次道路關係，並以抬升鋪面及停管制要求次要道路車輛減速、停車再開。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g3-03": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "主次道路路權不易辨識",
+            "text": "路口缺少完整的停讓管制設施，駕駛不易判斷主要道路與次要道路的先行關係。",
+            "titleKey": "results-scenario-g3-03|results|priority-title",
+            "textKey": "results-scenario-g3-03|results|priority-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "次要道路中斷主要道路人行空間",
+            "text": "主要道路雖設有實體人行道，但在次要道路交會處中斷，缺少連續的人行動線與明確的穿越空間。",
+            "titleKey": "results-scenario-g3-03|results|pedestrian-title",
+            "textKey": "results-scenario-g3-03|results|pedestrian-text"
+          },
+          {
+            "id": "space",
+            "title": "路側停車與行車範圍不明確",
+            "text": "主要道路外側設有路邊停車格，但未明確區分停車與行車空間，容易影響車輛行駛及進出車位。",
+            "titleKey": "results-scenario-g3-03|results|space-title",
+            "textKey": "results-scenario-g3-03|results|space-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "住宅區道路街廓較短，速限標誌與標字設置不完整，低速管制資訊不易持續辨識。",
+            "titleKey": "results-scenario-g3-03|results|speed-title",
+            "textKey": "results-scenario-g3-03|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g3-03-strategy": {
+        "points": [
+          {
+            "id": "walking",
+            "title": "將主要道路人行道連續通過巷口",
+            "text": "於次要道路交會處延續主要道路實體人行道，採不同鋪面材質區分人行與車行空間，維持步行動線連續。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g3-03-strategy|results|walking-title",
+            "textKey": "results-scenario-g3-03-strategy|results|walking-text"
+          },
+          {
+            "id": "raised",
+            "title": "以抬升鋪面要求次要道路減速",
+            "text": "次要道路車輛須穿越連續人行道，利用鋪面高差形成減速平台，並於上游設置路面高突標誌預告。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g3-03-strategy|results|raised-title",
+            "textKey": "results-scenario-g3-03-strategy|results|raised-text"
+          },
+          {
+            "id": "priority",
+            "title": "明確設置次要道路停管制",
+            "text": "配合連續人行道及停止線位置，要求次要道路車輛停車確認行人與主要道路來車後再通行。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-g3-03-strategy|results|priority-title",
+            "textKey": "results-scenario-g3-03-strategy|results|priority-text"
+          },
+          {
+            "id": "parking",
+            "title": "區分路側停車與行車空間",
+            "text": "以路面邊線及停車管制設施界定路側停車範圍，並於主要道路配置路口行車導引線及 30 km/h 速限提示。",
+            "moduleId": "M1-03",
+            "titleKey": "results-scenario-g3-03-strategy|results|parking-title",
+            "textKey": "results-scenario-g3-03-strategy|results|parking-text"
+          }
+        ]
+      }
+    }
+  }
+}

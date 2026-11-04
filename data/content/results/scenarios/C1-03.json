@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-03",
+  "texts": {
+    "results-scenario-c1-03|results|title": "短街廓的左轉車流回堵與相鄰號誌辨識問題",
+    "results-scenario-c1-03|results|intro": "兩處號誌化路口相距較近，沿幹線道形成短街廓。示例周邊為住宅及學校用地，幹線道與支線道均為雙向道路。",
+    "results-scenario-c1-03-strategy|results|title": "正偏移左轉車道與短街廓號誌協調",
+    "results-scenario-c1-03-strategy|results|intro": "配合短街廓有限的儲車空間，調整左轉車道配置，並協調兩處路口號誌時相及燈面位置。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-03": {
+        "points": [
+          {
+            "id": "queue",
+            "title": "短街廓儲車空間不足",
+            "text": "兩處路口距離近，中央街廓可容納的等候車輛有限，車隊可能回堵至上游路口。",
+            "titleKey": "results-scenario-c1-03|results|queue-title",
+            "textKey": "results-scenario-c1-03|results|queue-text"
+          },
+          {
+            "id": "turn",
+            "title": "對向左轉車隊可能互相阻擋",
+            "text": "短街廓內雙向左轉車流若同時排隊，可能互相阻礙，導致車輛無法完成轉向，形成路口自鎖。",
+            "titleKey": "results-scenario-c1-03|results|turn-title",
+            "textKey": "results-scenario-c1-03|results|turn-text"
+          },
+          {
+            "id": "decision",
+            "title": "駕駛可能誤看下游號誌",
+            "text": "兩處路口的號誌距離近，駕駛可能將下游燈號誤認為目前路口的管制燈號。",
+            "titleKey": "results-scenario-c1-03|results|decision-title",
+            "textKey": "results-scenario-c1-03|results|decision-text"
+          },
+          {
+            "id": "coordination",
+            "title": "號誌時相不當容易造成急煞或回堵",
+            "text": "若上下游號誌同時放行或清道時間不當，車輛可能無法及時停等，亦可能使短街廓內車隊溢流。",
+            "titleKey": "results-scenario-c1-03|results|coordination-title",
+            "textKey": "results-scenario-c1-03|results|coordination-text"
+          }
+        ]
+      },
+      "results-scenario-c1-03-strategy": {
+        "points": [
+          {
+            "id": "left-turn",
+            "title": "採正偏移方式配置左轉車道",
+            "text": "將短街廓內左轉車道調整為正偏移配置，避免對向左轉車輛互相阻擋，降低車隊自鎖風險。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-03-strategy|results|left-turn-title",
+            "textKey": "results-scenario-c1-03-strategy|results|left-turn-text"
+          },
+          {
+            "id": "recognition",
+            "title": "提前預告兩處路口與車道方向",
+            "text": "於上游設置方向及車道預告，搭配指向線，讓駕駛在進入短街廓前判斷應選擇的車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-03-strategy|results|recognition-title",
+            "textKey": "results-scenario-c1-03-strategy|results|recognition-text"
+          },
+          {
+            "id": "coordination",
+            "title": "協調上下游號誌放行時機",
+            "text": "配合短街廓儲車長度及車流需求調整號誌時相，盡量使車輛順利通過兩處路口，避免車隊溢流。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-03-strategy|results|coordination-title",
+            "textKey": "results-scenario-c1-03-strategy|results|coordination-text"
+          },
+          {
+            "id": "visibility",
+            "title": "區分相鄰路口的號誌燈面",
+            "text": "檢核兩處路口燈面的設置位置與可視範圍，將遠端號誌配置於同一街廓適當位置，並視需要增設縱向排列燈面，降低誤視下游號誌的可能。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-03-strategy|results|visibility-title",
+            "textKey": "results-scenario-c1-03-strategy|results|visibility-text"
+          }
+        ]
+      }
+    }
+  }
+}

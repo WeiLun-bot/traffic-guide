@@ -186,7 +186,7 @@
       "rotation": 0,
       "scenario": "G2-04",
       "label": "號誌化鄉區斜交三叉路口交通設施整體設置圖例",
-      "sha256": "9f5ef39b04c1bbde48f056f8834f1678e8a13ed27292e761bcffd9548e30415f"
+      "sha256": "835b9b5bf8f0ca15334fdcd0b594b1b353a3552895bafd4c679991eef591ec46"
     },
     "g204-trajectory": {
       "file": "materials/04-一般道路情境/G2-04/G2-04軌跡圖.svg",
@@ -204,7 +204,7 @@
       "rotation": 0,
       "scenario": "G2-04",
       "label": "號誌化鄉區斜交三叉路口號誌平面設置圖例",
-      "sha256": "4de80047c22aef6f4263dffb366a9d1b6aceff901201f693462fb273cf8f3754"
+      "sha256": "bbd437bdef99111fd831b5695ddf40f75e2ab62a6734bc3abc5d4836d740835a"
     },
     "g204-curve-option-1": {
       "file": "materials/04-一般道路情境/G2-04/option1.svg",
@@ -213,7 +213,7 @@
       "rotation": 0,
       "scenario": "G2-04",
       "label": "option1",
-      "sha256": "86ed80274418b41e1b12fb617a7a9a5b0c52aca669d5a8c52fab5ba99de2e467"
+      "sha256": "70da792d1bf86c9a81891783a2f6775a0688e1ccf2557508fcc59421883d6873"
     },
     "g204-curve-option-2": {
       "file": "materials/04-一般道路情境/G2-04/option2.svg",
@@ -222,7 +222,7 @@
       "rotation": 0,
       "scenario": "G2-04",
       "label": "option2",
-      "sha256": "627605bc14e12accbf59f0ee487990635c12ba993983d839cb748037ca3341f1"
+      "sha256": "5c6d0b779ed4873f8f51a0e2da523ddd7bf7aa36963e4aae5e289236f213f6ca"
     },
     "g204-curve-option-3": {
       "file": "materials/04-一般道路情境/G2-04/option3.svg",
@@ -231,7 +231,7 @@
       "rotation": 0,
       "scenario": "G2-04",
       "label": "option3",
-      "sha256": "39f721eb597b8f88548b53e820fd952369eaf6261d8140340ce2414843548124"
+      "sha256": "22723457a19bbaeac581d1e966d7cfaf248330390be4bc79bb26c8722cc38738"
     },
     "g204-near-alternative": {
       "file": "materials/04-一般道路情境/G2-04/G2-04_號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2.svg",
@@ -240,7 +240,7 @@
       "rotation": 0,
       "scenario": "G2-04",
       "label": "號誌化鄉區斜交三叉路口號誌平面設置圖例替選方案2",
-      "sha256": "8be12981e29a04dc11407afa49e83f380f829a06572b4e4b358d661e303045a0"
+      "sha256": "a7548d6124d53437b5ecbf5664d63d062fc56808b81c6c33bf33ba3352bc9f22"
     },
     "g204-near-simulation": {
       "file": "materials/04-一般道路情境/G2-04/G2-04_替選方案2近端懸臂式號誌模擬示意圖.png",

@@ -1,8 +1,9 @@
 (() => {
   'use strict';
+  const readOnly = Boolean(window.PresentationMode?.readOnly);
   const Core = window.VisualLayoutCore;
   const configURL = new URL(document.getElementById('editor-saved-data').dataset.source || 'layout/presentation-layout.json', document.baseURI);
-  const files = new window.VisualLayoutIO.Files(window, configURL.pathname);
+  const files = new window.VisualLayoutIO.ProjectFiles(window, configURL.pathname);
   const root = document.getElementById('presentation');
   const originalStyles = new Map();
   const owned = ['translate', 'width', 'height', 'min-width', 'min-height', 'max-width', 'max-height', 'font-family', 'font-size', 'font-weight', 'line-height', 'display'];
@@ -182,6 +183,7 @@
   }
   function tick() { updateOutline(); if (editing) loop = requestAnimationFrame(tick); }
   function setMode(value) {
+    if (readOnly) return;
     if (!api || busy) return;
     if (editing === Boolean(value)) return;
     cancelDrag();
@@ -216,6 +218,7 @@
   }
   function refreshPresentation() {const captured=captureComparison();api.refresh();restoreComparison(captured);}
   function transact(mutator,refresh=true) {
+    if(readOnly)return false;
     if(!store||busy&&refresh)return false;
     try {
       const next=store.snapshot();next.legacyState=Core.clone(window.generalRoadEditor.state);
@@ -333,38 +336,42 @@
     if (!field && !event.target.closest('button,a') && [' ', 'PageUp', 'PageDown', 'Home', 'End', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) { event.preventDefault(); event.stopImmediatePropagation(); }
   }, true);
   function download(config) {
-    const url = URL.createObjectURL(new Blob([store.serialize(config)], {type: 'application/json'}));
-    const link = document.createElement('a'); link.href = url; link.download = 'presentation-layout.json'; link.dataset.editorUi = 'layout-download'; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1500);
+    if (readOnly) return;
+    const url = URL.createObjectURL(new Blob([files.serialize(config)], {type: 'application/json'}));
+    const link = document.createElement('a'); link.href = url; link.download = 'presentation-project.json'; link.dataset.editorUi = 'layout-download'; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1500);
   }
   function install(config, saved = true) {
+    const previousSaved=store?.saved;
     const validated = Core.validate(config);
     if(Object.keys(validated.content.overviews).length)Core.validateOverviewReferences(validated,api?.data||window.PresentationRepository?.fresh()||JSON.parse(document.getElementById('presentation-data').textContent));
     if (window.generalRoadTemplates && !validated.legacyState.pages.every(window.generalRoadTemplates.validPage)) throw new Error('設定包含無效的自訂頁面');
     if (!store) { store = new Core.Store(validated); document.getElementById('editor-saved-data').textContent = JSON.stringify(validated.legacyState); readyResolve(); }
     else { cancelDrag(); store.load(validated); restoreLegacy(); window.VisualInitialViews?.restore(); }
     if (saved) store.markSaved(validated);
+    else if(previousSaved!==undefined)store.saved=previousSaved;
     ui.querySelector('.vl-recovery').hidden = true; updateButtons();
   }
   async function run(name) {
+    if (readOnly) return;
     if (busy) return;
     if (name === 'mode') { setMode(!editing); return; }
     if (name === 'panel') { panel.hidden = !panel.hidden; action('panel').setAttribute('aria-expanded', String(!panel.hidden)); return; }
     if (name === 'import') { if (store?.dirty && !confirm('匯入會取代目前版面，未儲存的修改可用復原取回。是否繼續？')) return; ui.querySelector('[data-vl-import]').value = ''; ui.querySelector('[data-vl-import]').click(); return; }
     if (name === 'reset') { if (current()) { const item = store.config.elements[selectedId]; change(Core.element(item.pageId, item.phase, item.kind, item.target)); } return; }
     if (name === 'undo' || name === 'redo') { cancelDrag(); if (store?.[name]()) { restoreLegacy(true); updateButtons(); report(name === 'undo' ? '已復原。' : '已重做。'); } return; }
-    if (name === 'export') { if (store) { syncLegacy(); download(store.snapshot()); report('已匯出 JSON 副本；如需更新專案檔，請連結設定檔後儲存。'); } return; }
+    if (name === 'export') { if (store) { syncLegacy(); download(store.snapshot()); report('已匯出內容、導覽與版面備份；圖片素材仍使用專案檔案。'); } return; }
     if (['open', 'reconnect', 'reload'].includes(name) && store?.dirty && !confirm('載入會取代目前版面，未儲存的修改可用復原取回。是否繼續？')) return;
     busy = true; updateButtons();
     try {
       if (name === 'save') {
         syncLegacy(); const snapshot = store.snapshot(); snapshot.updatedAt = new Date().toISOString();
         const result = await files.save(snapshot);
-        if (result.download) { download(snapshot); report('瀏覽器不支援直接寫檔，已匯出 JSON；請將檔案放回專案的 layout 資料夾。'); }
+        if (result.download) { download(snapshot); report('已匯出完整專案 JSON；用 start-editor.cmd 開啟後匯入，再按儲存寫回專案。'); }
         else { store.markSaved(snapshot); report('已寫入 ' + result.name + (store.dirty ? '；另有較新的修改尚未儲存。' : '。')); }
       } else if (name === 'open' || name === 'reconnect') {
         const config = name === 'reconnect' ? await files.reconnect() : await files.open(); install(config); report('已連結 ' + files.handle.name + '，後續儲存會寫回此檔案。');
       } else if (name === 'reload') {
-        const config = files.handle ? await files.read(files.handle, true) : await loadDefault(); install(config); report('已重新載入設定。');
+        const config = files.local ? await files.connectLocal() : files.handle ? await files.read(files.handle, true) : await loadDefault(); install(config); report('已重新載入專案。');
       }
     } catch (error) { if (error.name !== 'AbortError') report(error.message || '檔案操作失敗，修改仍保留。', true); }
     finally { busy = false; updateButtons(); refreshFields(); }
@@ -380,15 +387,16 @@
   ui.querySelector('[data-vl-import]').addEventListener('change', async event => {
     const file = event.target.files?.[0]; if (!file) return;
     busy = true; updateButtons();
-    try { if (file.size > 25 * 1024 * 1024) throw new Error('設定檔上限為 25 MB'); const config = Core.parse(await file.text()); install(config); files.disconnect(); report('已匯入 ' + file.name + '；可連結專案檔後直接儲存。'); }
+    try { if (file.size > 25 * 1024 * 1024) throw new Error('設定檔上限為 25 MB'); const config = files.parse(await file.text()); install(config,false); if(!files.local)files.disconnect(); report('已匯入 ' + file.name + '；請按儲存寫入專案。'); }
     catch (error) { report(error.message, true); }
     finally { busy = false; updateButtons(); refreshFields(); }
   });
-  window.addEventListener('beforeunload', event => { syncLegacy(); if (store?.dirty) { event.preventDefault(); event.returnValue = ''; } });
+  window.addEventListener('beforeunload', event => { if(readOnly)return;syncLegacy(); if (store?.dirty) { event.preventDefault(); event.returnValue = ''; } });
   async function loadDefault() {
     const response = await fetch(configURL, {cache: 'no-store'});
     if (!response.ok) throw new Error('無法讀取版面設定（HTTP ' + response.status + '）');
-    return Core.parse(await response.text());
+    const read=async file=>{const result=await fetch(new URL(file,document.baseURI),{cache:'no-store'});if(!result.ok)throw new Error('無法讀取 '+file+'（HTTP '+result.status+'）');return result.json();};
+    const result=await window.PresentationDocument.load(read,await response.json());files.owners=result.owners;return result.config;
   }
   window.visualLayoutEditor = {
     connect(presentation) { api = presentation; legacyPages = api.pages.filter(page => page.kind !== 'custom').map(page => ({...page})); document.querySelector('#editor-toolbar .editor-actions').prepend(ui); ui.querySelector('.vl-toolbar').hidden = false; window.PresentationContent?.configureTools(ui); const legacySave = document.querySelector('.editor-download'); if (legacySave) { legacySave.textContent = '儲存 JSON 設定'; legacySave.title = '將內容與版面存入連結的 JSON 設定檔'; } updateButtons(); report(''); },
@@ -403,7 +411,12 @@
   updateButtons();
   window.addEventListener('resize', updateButtons);
   (async () => {
-    try { await window.presentationDataReady;install(await files.restore() || await loadDefault()); }
+    try {
+      await window.presentationDataReady;
+      const local=!readOnly&&configURL.pathname.endsWith('/layout/presentation-layout.json')?await files.connectLocal():null;
+      if(local)install(local);
+      else{const defaults=await loadDefault();install(readOnly?defaults:await files.restore()||defaults);}
+    }
     catch (error) { report('設定未載入。請用 localhost 開啟，或匯入 layout/presentation-layout.json。' + error.message, true); ui.querySelector('.vl-toolbar').hidden = false; ui.querySelector('.vl-recovery').hidden = false; window.presentationStartup?.recover(()=>run('import')); }
   })();
 })();

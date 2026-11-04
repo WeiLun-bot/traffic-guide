@@ -13,10 +13,10 @@ class CDP{
  close(){this.socket.close();}
 }
 async function main(){
- const configFile=path.join(root,'layout/presentation-layout.json'),config=fs.readFileSync(configFile);
+ const snapshot=require('./presentation-project-store.cjs').read(root),config=Buffer.from(JSON.stringify(snapshot.config));
  const executable=process.env.VISUAL_EDITOR_BROWSER||['C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','C:/Program Files/Google/Chrome/Application/chrome.exe'].find(file=>fs.existsSync(file));
  assert(executable,'Chrome or Edge is required.');fs.mkdirSync(output,{recursive:true});
- const published=createServer(),server=require('node:http').createServer((req,res)=>{if(new URL(req.url,'http://localhost').pathname.endsWith('/layout/presentation-layout.json')){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(config);}else published.emit('request',req,res);});
+ const published=createServer(undefined,{configFile:null}),server=require('node:http').createServer((req,res)=>{if(new URL(req.url,'http://localhost').pathname.endsWith('/layout/presentation-layout.json')){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(config);}else published.emit('request',req,res);});
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const base='http://127.0.0.1:'+server.address().port+'/presentation-demo/';
  const profile=fs.mkdtempSync(path.join(os.tmpdir(),'traffic-guide-pdf-'));
@@ -79,7 +79,7 @@ async function main(){
    manifest.documents.push({...doc,sheets});
   }
   assert.deepEqual(errors,[],'Uncaught presentation errors');
-  assert(fs.readFileSync(configFile).equals(config),'Saved presentation settings changed during export');
+  assert.equal(require('./presentation-project-store.cjs').read(root).revision,snapshot.revision,'Presentation project changed during export');
   fs.writeFileSync(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log('PDF sheets ready: '+output);
  }finally{if(cdp)await cdp.send('Browser.close').catch(()=>{});cdp?.close();if(browser.exitCode===null)browser.kill();await Promise.race([exited,delay(1500)]);await new Promise(resolve=>server.close(resolve));}
 }

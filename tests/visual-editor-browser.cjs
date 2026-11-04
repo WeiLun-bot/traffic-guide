@@ -14,7 +14,7 @@ const configPath = path.join(root, 'layout/presentation-layout.json');
 const baselineRoot=process.env.VISUAL_EDITOR_BASELINE_ROOT||null;
 const baselinePath = baselineRoot?path.join(baselineRoot,'index.html'):path.join(artifacts, 'baseline.html');
 const initialConfigText = fs.readFileSync(configPath, 'utf8');
-const initialConfig = Core.parse(initialConfigText);
+const initialConfig = require('./read-project-config.cjs')();
 // Keep visual interaction tests independent of the user's saved camera choices.
 // The fixture is served through the same live-source route as the real project.
 for(const [id,view] of Object.entries(initialConfig.imageViews))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
@@ -54,7 +54,12 @@ async function main() {
   let override = null, failConfig = false,failModules=false,failStartupScript=false,startupHold=null;
   const heldStartupRequests=[];
   const setStartupHold=value=>{startupHold=value;if(!value)for(const release of heldStartupRequests.splice(0))release();};
-  const published = createServer(undefined,{configFile:previewConfigPath});
+  let projectFixture=null;
+  if(process.argv.includes('--project-storage-only')){
+    projectFixture=fs.mkdtempSync(path.join(artifacts,'project-storage-'));
+    for(const file of require('../tools/presentation-project-store.cjs').releaseFiles(root)){const target=path.join(projectFixture,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,file),target);}
+  }
+  const published = createServer(undefined,projectFixture?{configFile:path.join(projectFixture,'layout/presentation-layout.json'),projectRoot:projectFixture}:{configFile:previewConfigPath});
   const baselineServer=baselineRoot?createServer(baselineRoot,{configFile:previewConfigPath}):null;
   const server = http.createServer((request, response) => {
     const pathname = new URL(request.url, 'http://localhost').pathname;
@@ -113,11 +118,13 @@ async function main() {
       await mouse('mouseReleased', x + dx, y + dy, {button: 'left', buttons: 0, clickCount: 1});await delay(60);
     }
     const moduleCheck=async()=>require('./presentation-modules-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure:value=>{failModules=value;}});
+    if(process.argv.includes('--viewer-only')){await require('./viewer-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,setConfigFailure:value=>{failConfig=value;}});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' viewer browser regression groups; no uncaught JavaScript exceptions.');return;}
     const libraryCheck=async()=>require('./module-library-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText});
     const completionCheck=async()=>require('./module-completion-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText});
     if(process.argv.includes('--completion-only')){await navigate(base+'/presentation-demo/#cover');await completionCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' completed-module browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--library-only')){await navigate(base+'/presentation-demo/#cover');await libraryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module library browser regression groups; no uncaught JavaScript exceptions.');return;}
     const structureCheck=async()=>require('./presentation-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
+    if(process.argv.includes('--project-storage-only')){await require('./project-storage-browser.cjs')({evaluate,view,click,navigate,wait,base,pass,projectFixture});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' project storage browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--loading-only')){await require('./presentation-loading-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' on-demand loading browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--article-image-highlights-only')){await require('./article-image-highlights-browser.cjs')({evaluate,view,click,navigate,wait,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' article image highlight browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--general-details-only')){await require('./general-scenario-details-browser.cjs')({evaluate,view,click,navigate,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' detailed scenario browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -194,6 +201,7 @@ async function main() {
     }
     await navigate(base + '/presentation-demo/#cover');
     assert(await evaluate('Boolean(window.visualLayoutEditor && window.visualLayoutEditor.store)'), 'Visual editor did not start');
+    const initialCoverTitleFont=await evaluate('getComputedStyle(document.getElementById("slide-title")).fontSize');
     for (const id of compared) {
       await view(id, id === 'edge' ? 1 : 0);
       const actual = await evaluate(metricsExpression);
@@ -534,17 +542,17 @@ async function main() {
     await evaluate(`(async()=>{const directory=await navigator.storage.getDirectory();const handle=await directory.getFileHandle('layout-api-test.json',{create:true});const writable=await handle.createWritable();await writable.write(JSON.stringify(window.visualLayoutEditor.store.snapshot()));await writable.close();window.__nativeHandle=handle;window.visualLayoutEditor.files.env={isSecureContext:true,indexedDB:window.indexedDB,showOpenFilePicker:async()=>[handle],showSaveFilePicker:async()=>handle}})()`);
     await click('[data-vl-action="open"]');await wait('!window.visualLayoutEditor.busy');
     await evaluate('window.visualLayoutEditor.select(' + JSON.stringify(titleId) + ')');await field('x',37);await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');
-    assert.equal(await evaluate('(async()=>JSON.parse(await (await __nativeHandle.getFile()).text()).elements['+JSON.stringify(titleId)+'].x)()'),37);
+    assert.equal(await evaluate('(async()=>window.PresentationDocument.parse(await (await __nativeHandle.getFile()).text()).elements['+JSON.stringify(titleId)+'].x)()'),37);
     await navigate(base+'/presentation-demo/#cover');
     assert.equal(await evaluate('window.visualLayoutEditor.files.handle.name'),'layout-api-test.json');
     assert.equal(await evaluate('window.visualLayoutEditor.store.config.elements['+JSON.stringify(titleId)+'].x'),37);
     await view('context');await click('.iv-trigger');await initialField('zoom',145);await initialField('x',11);await initialField('y',-6);
     await click('.iv-panel:not([hidden]) [data-iv-action="save"]');await wait('!window.visualLayoutEditor.busy');
-    assert.equal(await evaluate('(async()=>JSON.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(contextViewId)+'].zoom)()'),1.45);
+    assert.equal(await evaluate('(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(contextViewId)+'].zoom)()'),1.45);
     await view('g101-conditions');await click('.iv-trigger');await initialField('x',-3);await initialField('y',7);
     await evaluate('(()=>{const input=document.querySelector(".iv-panel:not([hidden]) [data-iv-field=zoom]");input.focus();input.value="174"})()');
     await cdp.send('Input.dispatchKeyEvent',{type:'keyDown',key:'s',code:'KeyS',modifiers:2});await cdp.send('Input.dispatchKeyEvent',{type:'keyUp',key:'s',code:'KeyS',modifiers:2});await wait('!window.visualLayoutEditor.busy');
-    assert.equal(await evaluate('(async()=>JSON.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(conditionViewId)+'].zoom)()'),1.74);
+    assert.equal(await evaluate('(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(conditionViewId)+'].zoom)()'),1.74);
     await navigate(base+'/presentation-demo/#context');nearView(await readInitialView(),Core.viewBoxFor(contextHome,{zoom:1.45,x:11,y:-6}));
     await view('g101-conditions');nearView(await readInitialView(),Core.viewBoxFor(conditionHome,{zoom:1.74,x:-3,y:7}));
     pass('initial view save button and Ctrl+S write real file handles and restore independent views after reload');
@@ -552,7 +560,7 @@ async function main() {
     await click('.edit-toggle');
     const legacyKey = await evaluate(`(()=>{const e=document.querySelector('.cover-intro');e.textContent='內容編輯器 JSON 往返測試';e.dispatchEvent(new Event('input',{bubbles:true}));return e.dataset.editKey})()`);
     await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');
-    assert.equal(await evaluate(`(async()=>JSON.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).legacyState.texts[${JSON.stringify(legacyKey)}])()`),'內容編輯器 JSON 往返測試');
+    assert.equal(await evaluate(`(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).legacyState.texts[${JSON.stringify(legacyKey)}])()`),'內容編輯器 JSON 往返測試');
     await navigate(base+'/presentation-demo/#cover');assert.equal(await evaluate('document.querySelector(".cover-intro").textContent'),'內容編輯器 JSON 往返測試');
     pass('the existing content editor saves through the same JSON file and restores its text after reload');
     await evaluate(`new Promise((resolve,reject)=>{const r=indexedDB.deleteDatabase('road-visual-layout-files');r.onsuccess=resolve;r.onerror=()=>reject(r.error)})`);
@@ -561,12 +569,12 @@ async function main() {
     await click('.edit-toggle');await click('[data-vl-action="mode"]');await evaluate('window.visualLayoutEditor.files.env={isSecureContext:true};window.visualLayoutEditor.setMode(true)');
     await click('[data-vl-action="export"]');
     for(let i=0;i<100&&!fs.readdirSync(downloads).some(name=>name.endsWith('.json'));i++)await delay(30);
-    const exported = fs.readdirSync(downloads).find(name=>name.endsWith('.json'));assert(exported, 'Fallback JSON export did not download');Core.parse(fs.readFileSync(path.join(downloads, exported), 'utf8'));
+    const exported = fs.readdirSync(downloads).find(name=>name.endsWith('.json'));assert(exported, 'Fallback JSON export did not download');require('../assets/presentation-document.js').parse(fs.readFileSync(path.join(downloads, exported), 'utf8'));
     const validImport = path.join(artifacts, 'import-layout.json'), invalidImport = path.join(artifacts, 'invalid-layout.json');
     fs.writeFileSync(validImport, JSON.stringify(initialConfig));fs.writeFileSync(invalidImport, '{broken');
     async function importFile(filename) {const {root: documentNode}=await cdp.send('DOM.getDocument');const {nodeId}=await cdp.send('DOM.querySelector',{nodeId:documentNode.nodeId,selector:'[data-vl-import]'});await cdp.send('DOM.setFileInputFiles',{nodeId,files:[filename]});await delay(100);await wait('!window.visualLayoutEditor.busy');}
     await importFile(invalidImport);assert.equal(await evaluate('window.visualLayoutEditor.store.config.elements[' + JSON.stringify(titleId) + '].x'),31);
-    await importFile(validImport);assert.equal(await evaluate('getComputedStyle(document.getElementById("slide-title")).fontSize'), baseline.cover?.find(item=>item.tag==='h1')?.fontSize || '80.64px');
+    await importFile(validImport);assert.equal(await evaluate('getComputedStyle(document.getElementById("slide-title")).fontSize'), baseline.cover?.find(item=>item.tag==='h1')?.fontSize || initialCoverTitleFont);
     pass('fallback export downloads valid JSON; valid import restores layout and invalid import leaves it intact');
     await click('.edit-toggle');await view('rural-merge-island',1);
     const facilityTopicShot=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,'facility-article-topic.png'),Buffer.from(facilityTopicShot.data,'base64'));
@@ -601,10 +609,8 @@ async function main() {
       const registered = await evaluate('window.visualLayoutEditor.store.config.elements');
       const elements = Object.fromEntries(Object.entries(registered).filter(([id,item])=>seen.includes(id)||Core.overrides(item)));
       assert(Object.keys(elements).length>100,'Incomplete element catalogue');
-      assert(Object.values(elements).every(item=>!Core.overrides(item)),'Catalogue must not contain test edits');
-      const next=Core.parse(initialConfigText);next.elements=Object.fromEntries(Object.entries(elements).sort(([a],[b])=>a.localeCompare(b)));Core.validate(next);
       assert.equal(fs.readFileSync(configPath,'utf8'),initialConfigText,'Configuration changed during the test; refusing to overwrite user edits');
-      fs.writeFileSync(configPath,JSON.stringify(next,null,2)+'\n');pass('catalogued '+Object.keys(elements).length+' stable element IDs with no layout overrides');
+      fs.writeFileSync(path.join(artifacts,'element-catalog.json'),JSON.stringify(Object.values(elements).map(({id,pageId,phase,kind,target})=>({id,pageId,phase,kind,target})),null,2)+'\n');pass('catalogued '+Object.keys(elements).length+' stable element IDs without changing project settings');
     }
     assert.deepEqual(exceptions, [], 'Uncaught browser exceptions');
     fs.writeFileSync(path.join(artifacts,'browser-results.json'),JSON.stringify({browser:executable,checks,uncaughtExceptions:exceptions,baselineCompared:fs.existsSync(baselinePath),nativeFilePicker:'Actual createWritable/IndexedDB tested with an origin-private native handle; permission/conflict flows use mocks. OS picker and project-file permission UI require manual user authorization.'},null,2)+'\n');

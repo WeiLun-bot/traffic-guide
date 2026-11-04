@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-02",
+  "texts": {
+    "results-scenario-c1-02|results|title": "錯位 T 字路口的車道連續性與號誌辨識問題",
+    "results-scenario-c1-02|results|intro": "兩處號誌化 T 字路口錯距約 55 m，東西向及南北向道路寬度均約 18 m，雙向各有多個車道，路口間的車道銜接與號誌位置須一併考量。",
+    "results-scenario-c1-02-strategy|results|title": "錯位路口的車道銜接、行車導引及號誌配置",
+    "results-scenario-c1-02-strategy|results|intro": "以車道連續性為優先，從上游車道選擇到中央街廓通行，配置行車導引、行人庇護及近、遠端號誌。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-02-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "提前提示支線道穿越方向",
+            "titleKey": "results-scenario-c1-02-strategy|results|selection-title",
+            "text": "於路口上游設置車道與方向指示標誌，搭配指向線，引導駕駛提前選擇通往對側支線道的車道。",
+            "textKey": "results-scenario-c1-02-strategy|results|selection-text",
+            "moduleId": "M1-02"
+          },
+          {
+            "id": "continuity",
+            "title": "維持兩處路口間的車道連續性",
+            "titleKey": "results-scenario-c1-02-strategy|results|continuity-title",
+            "text": "調整中央街廓的車道配置，避免直行車道直接銜接左轉專用車道，並以路口行車導引線標示穿越路徑。",
+            "textKey": "results-scenario-c1-02-strategy|results|continuity-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "walking",
+            "title": "配置中央行人庇護島",
+            "titleKey": "results-scenario-c1-02-strategy|results|walking-title",
+            "text": "於較寬道路中央設置行人庇護空間，提供行人中途停等位置，縮短單次穿越距離。",
+            "textKey": "results-scenario-c1-02-strategy|results|walking-text",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "visibility",
+            "title": "調整中央街廓號誌位置",
+            "titleKey": "results-scenario-c1-02-strategy|results|visibility-title",
+            "text": "檢核各車道駕駛能否辨識近、遠端號誌，必要時增設燈面，並配合行穿線及行人停等位置配置行人號誌。",
+            "textKey": "results-scenario-c1-02-strategy|results|visibility-text",
+            "moduleId": "M2-03"
+          }
+        ]
+      },
+      "results-scenario-c1-02": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "直行車道銜接至左轉專用車道",
+            "text": "前一個路口的直行車道，通過路口後卻銜接到左轉專用車道，駕駛容易誤入轉向車道。",
+            "titleKey": "results-scenario-c1-02|results|lanes-title",
+            "textKey": "results-scenario-c1-02|results|lanes-text"
+          },
+          {
+            "id": "guidance",
+            "title": "支線道穿越動線不明確",
+            "text": "兩條支線道相互錯位，缺少上游車道選擇及路口內行車導引，駕駛不易判斷應如何銜接對側道路。",
+            "titleKey": "results-scenario-c1-02|results|guidance-title",
+            "textKey": "results-scenario-c1-02|results|guidance-text"
+          },
+          {
+            "id": "visibility",
+            "title": "中央街廓號誌可視性不足",
+            "text": "兩處路口距離近，但部分遠端燈面位置偏左，最右側車道駕駛可能無法在上游同時辨識兩個燈面。",
+            "titleKey": "results-scenario-c1-02|results|visibility-title",
+            "textKey": "results-scenario-c1-02|results|visibility-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越缺少中央庇護空間",
+            "text": "道路車道數多、穿越距離長，缺少行人中途停等及庇護空間。",
+            "titleKey": "results-scenario-c1-02|results|pedestrian-title",
+            "textKey": "results-scenario-c1-02|results|pedestrian-text"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G3-04",
+  "texts": {
+    "results-scenario-g3-04|results|title": "鄉區斜交路口的停讓管制與路口位置辨識問題",
+    "results-scenario-g3-04|results|intro": "主要道路寬約 8 m、速限 50 km/h；次要道路寬約 6 m、速限 30 km/h。周邊多為未開發土地及零散聚落，兩側均未設人行設施。",
+    "results-scenario-g3-04-strategy|results|title": "次要道路槽化、停車再開與橋梁限重預告",
+    "results-scenario-g3-04-strategy|results|intro": "透過次要道路類滴狀島槽化線及停管制，凸顯斜交路口位置，並配合路側空間及前方橋梁限重安排相關設施。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g3-04": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "主次道路先行關係不明確",
+            "text": "主要道路與次要道路寬度差異不大，若缺少停讓標誌及標線，駕駛不易判斷應先行或停車。",
+            "titleKey": "results-scenario-g3-04|results|priority-title",
+            "textKey": "results-scenario-g3-04|results|priority-text"
+          },
+          {
+            "id": "guidance",
+            "title": "斜交路口缺少明確導引",
+            "text": "路口為斜交型式，且次要道路兩側車道配置不同，缺少清楚的車行範圍及路口導引。",
+            "titleKey": "results-scenario-g3-04|results|guidance-title",
+            "textKey": "results-scenario-g3-04|results|guidance-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限標誌與標字不足",
+            "text": "鄉區道路交通量較少，現況缺少完整的速限提示，駕駛不易辨識路段速限。",
+            "titleKey": "results-scenario-g3-04|results|speed-title",
+            "textKey": "results-scenario-g3-04|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g3-04-strategy": {
+        "points": [
+          {
+            "id": "channelization",
+            "title": "於次要道路設置類滴狀島槽化線",
+            "text": "在次要道路接近路口處劃設類滴狀島槽化線，區分對向車流並引導車輛接近路口。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g3-04-strategy|results|channelization-title",
+            "textKey": "results-scenario-g3-04-strategy|results|channelization-text"
+          },
+          {
+            "id": "priority",
+            "title": "設置停止線及「停」標字",
+            "text": "於次要道路配置停止線與「停」標字，明確標示停車位置；斜交路口的停止線原則上與橫交道路平行。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-g3-04-strategy|results|priority-title",
+            "textKey": "results-scenario-g3-04-strategy|results|priority-text"
+          },
+          {
+            "id": "boundaries",
+            "title": "以路面邊線界定路肩及轉角空間",
+            "text": "於路口劃設路面邊線，並配合轉角槽化線及設計車種轉彎軌跡，界定可行駛範圍。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g3-04-strategy|results|boundaries-title",
+            "textKey": "results-scenario-g3-04-strategy|results|boundaries-text"
+          },
+          {
+            "id": "bridge",
+            "title": "提前預告前方橋梁限重",
+            "text": "本例西往東通過路口後即為限重橋梁，於路口上游設置車輛總重限制標誌，搭配「前方橋梁限重」附牌，使超重車輛可提前選擇繞道。",
+            "moduleId": "M4-02",
+            "titleKey": "results-scenario-g3-04-strategy|results|bridge-title",
+            "textKey": "results-scenario-g3-04-strategy|results|bridge-text"
+          }
+        ]
+      }
+    }
+  }
+}

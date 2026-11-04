@@ -28,7 +28,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifa
 
   await evaluate('(async()=>{const directory=await navigator.storage.getDirectory(),handle=await directory.getFileHandle("module-extension-removal.json",{create:true}),writable=await handle.createWritable();await writable.write(window.visualLayoutEditor.store.serialize());await writable.close();window.visualLayoutEditor.files.env={isSecureContext:true,indexedDB:window.indexedDB,showOpenFilePicker:async()=>[handle],showSaveFilePicker:async()=>handle}})()');
   await click('.edit-toggle');await click('[data-vl-action="open"]');await wait('!window.visualLayoutEditor.busy');await click(button('m101-lanes-extensions'));assert.equal(await current(),'m101-lanes-extensions');await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');
-  assert(!await evaluate('(async()=>JSON.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).removedModuleExtensions.includes("m101-lanes-extensions"))()'));
+  assert(!await evaluate('(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).removedModuleExtensions.includes("m101-lanes-extensions"))()'));
   await click(button('m101-lanes-extensions'));await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');
   await navigate(base+'/presentation-demo/#m101-lanes-extensions');assert.equal(await current(),'m101-lanes-diagram');assert(!await exists('m101-lanes-extensions'));assert(!await exists(extension));
   await click('.edit-toggle');assert.equal(await evaluate('document.querySelector('+JSON.stringify(button('m101-lanes-extensions'))+').textContent'),'恢復延伸應用頁');

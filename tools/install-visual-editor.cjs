@@ -10,7 +10,7 @@ function integrate(html) {
   replace('</head>', '<link rel="stylesheet" href="assets/visual-editor.css">\n</head>');
   const saved = /<script id="editor-saved-data" type="application\/json">([\s\S]*?)<\/script>/;
   assert(saved.test(html), 'Missing editor-saved-data');
-  html = html.replace(saved, '<script id="editor-saved-data" type="application/json" data-source="layout/presentation-layout.json"></script>\n<script src="assets/visual-editor-core.js"></script>\n<script src="assets/visual-editor-io.js"></script>\n<script src="assets/visual-editor.js"></script>\n<script src="assets/initial-image-view.js"></script>');
+  html = html.replace(saved, '<script id="editor-saved-data" type="application/json" data-source="layout/presentation-layout.json"></script>\n<script src="assets/visual-editor-core.js"></script>\n<script src="assets/presentation-document.js"></script>\n<script src="assets/visual-editor-io.js"></script>\n<script src="assets/visual-editor.js"></script>\n<script src="assets/initial-image-view.js"></script>');
   replace('<script id="general-editor">\n(() => {\n  \'use strict\';', '<script id="general-editor">\n(async () => {\n  \'use strict\';\n  await window.visualLayoutReady;');
   replace('try{draft=parse(localStorage.getItem(storageKey));}catch{}', 'try{if(!$(\'editor-saved-data\').dataset.source)draft=parse(localStorage.getItem(storageKey));}catch{}');
   replace('<script>\n\'use strict\';\n(() => {', '<script>\n\'use strict\';\n(async () => {\n  await window.visualLayoutReady;');

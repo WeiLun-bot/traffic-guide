@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Core=require('../assets/visual-editor-core.js');
-const original=()=>JSON.parse(fs.readFileSync(path.join(__dirname,'../layout/presentation-layout.json'),'utf8'));
+const original=()=>require('./read-project-config.cjs')();
 test('cover art settings remain optional in older files and reject invalid fields, ranges and page IDs',()=>{
   const raw=original();delete raw.coverArt;const config=Core.validate(raw);assert.deepEqual(config.coverArt,{});assert.equal(raw.coverArt,undefined);
   assert.deepEqual(Core.coverArtSettings(),{rotation:-52,tilt:52,scale:1,x:0,y:0});assert.deepEqual(Core.coverArtSettings({rotation:-30}),{rotation:-30,tilt:52,scale:1,x:0,y:0});

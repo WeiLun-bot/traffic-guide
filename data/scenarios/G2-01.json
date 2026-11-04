@@ -186,7 +186,7 @@
       "rotation": 0,
       "scenario": "G2-01",
       "label": "號誌化市區正交三叉路口交通設施整體設置圖例",
-      "sha256": "154ec10a1220f91eaa2c0520e68bcf26782f7332406cea6cd9d9d899c7f9668c"
+      "sha256": "688975c46cf5381c68eb5b1b841bcb8e718c38ae17cd860a05a7e15c8ca02f3b"
     },
     "g201-signal-1": {
       "file": "materials/04-一般道路情境/G2-01/sig1.svg",
@@ -195,7 +195,7 @@
       "rotation": 0,
       "scenario": "G2-01",
       "label": "機會左轉號誌配置",
-      "sha256": "5d9695135decca8487ad3056859c769877ee55f6fc736bb7b0234513a701a2ed"
+      "sha256": "5f36989f365c56c96f1b101772a1e76e0334cc4882d4c608234d74b4809e3a04"
     },
     "g201-signal-2": {
       "file": "materials/04-一般道路情境/G2-01/sig2.svg",
@@ -204,7 +204,7 @@
       "rotation": 0,
       "scenario": "G2-01",
       "label": "保護左轉號誌配置",
-      "sha256": "76e5ea925f8d9075924687aede345c59e382bc28a1cec2423ab94b724ad123c8"
+      "sha256": "39d23a1e424c07d72728177df8e50cce571edfca3c12800b9425dba3affc4fa6"
     },
     "g201-visibility": {
       "file": "materials/04-一般道路情境/G2-01/visibility template.svg",
@@ -213,7 +213,7 @@
       "rotation": 90,
       "scenario": "G2-01",
       "label": "上游號誌可視模板",
-      "sha256": "e1cb638e7d96032435a7ede05a785efc36da24587eae4e275cfa98142e73a247"
+      "sha256": "caa321e84a22dc8977b6bc76c4f57a83ae0801894b90695632a192523c105832"
     },
     "g201-left-offset": {
       "file": "materials/04-一般道路情境/G2-01/G2-01_遠端號誌燈桿立於車行道左方之向左錯距示意圖.png",

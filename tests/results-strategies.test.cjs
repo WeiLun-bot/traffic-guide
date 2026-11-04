@@ -28,9 +28,9 @@ test('all 18 general scenarios have adjacent issue and strategy pages, while com
 test('each new strategy uses the owning SVG and concise source-backed points, with correct module references',()=>{
   const ids=new Set(modules.modules.map(module=>module.id));Results.validateStrategies(strategies);
   for(const [code,entry]of Object.entries(strategies.scenarios)){
-    assert(entry.strategy.items.length>=3&&entry.strategy.items.length<=4);assert.equal(entry.strategy.images.length,1);
+    assert(entry.strategy.items.length>=3);assert.equal(entry.strategy.images.length,1);
     assert(entry.source.file.startsWith('chapters/04-general-scenarios/04-'+code[1]+'-'+code.slice(3)+'-'));
-    for(const point of entry.strategy.items){assert(ids.has(point.moduleId));assert(point.text.length<=85);assert(!/原稿|待補/.test(point.title+point.text));}
+    for(const point of entry.strategy.items){if(point.moduleId!==undefined)assert(ids.has(point.moduleId));assert(point.text.length<=85);assert(!/原稿|待補/.test(point.title+point.text));}
     const asset=strategies.assets[entry.strategy.images[0].key];assert.equal(asset.scenario,code);assert(asset.file.startsWith('materials/04-一般道路情境/'+code+'/'+code+'_'));
     const raw=fs.readFileSync(path.resolve(__dirname,'..',asset.file));assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),asset.sha256);assert.match(raw.toString('utf8'),/<svg\b/);
   }

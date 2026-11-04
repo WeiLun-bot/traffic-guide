@@ -26,7 +26,7 @@ const data=require('./presentation-source.cjs').dataFromHtml(html,{root});
 const configSource=stateMatch[1].match(/data-source="([^"]+)"/)?.[1];
 const configPath=configSource?path.resolve(root,configSource):null;
 if(configPath&&!configPath.startsWith(root+path.sep))throw new Error('Layout configuration must stay inside the project');
-const config=configPath?require('../assets/visual-editor-core.js').parse(fs.readFileSync(configPath,'utf8')):null;
+const config=configPath?require('./presentation-project-store.cjs').read(root).config:null;
 const state=config?config.legacyState:JSON.parse(stateMatch[2]);
 const outputPath=unique(root,'一般道路情境-圖面放大版','.html');
 const outputConfigPath=config?outputPath.replace(/\.html$/,'.layout.json'):null;

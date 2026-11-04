@@ -12,7 +12,7 @@
       "label": "C1-01 整體佈設圖",
       "scenario": "C1-01",
       "role": "strategy",
-      "sha256": "ab00e4684e72a097180f652b6abc3a60286d3c59e4af32eeff6fc0df250c894a"
+      "sha256": "fb20c984e0c15b99d0ac2bb9358ffd2a5a50ef66dbbc92cdbb1e75cc6736b975"
     },
     "results:c1-02-strategy": {
       "file": "materials/05-複雜道路情境/C1-02/C1-02_號誌化右或左錯位T字路口交通設施設置圖例.svg",
@@ -21,7 +21,7 @@
       "label": "C1-02 整體佈設圖",
       "scenario": "C1-02",
       "role": "strategy",
-      "sha256": "f54e765cdb65c6231896def78ed025a8a17c36cf39244736d541d83e875ded9f"
+      "sha256": "6e5a4bd9842777d3861d2512c9a4e9b2bee57df63dff7b56ae866266fccb9015"
     },
     "results:c1-03-strategy": {
       "file": "materials/05-複雜道路情境/C1-03/C1-03_號誌化短街廓路口交通設施設置圖例.svg",
@@ -30,7 +30,7 @@
       "label": "C1-03 整體佈設圖",
       "scenario": "C1-03",
       "role": "strategy",
-      "sha256": "196ad7679093aed0638804988a6a8454d3e04e929bc7761850f17eb8a14dec86"
+      "sha256": "37b60fc92eb166a6702242aed9f7d30549170fce8fd58eec6934e20a8e9ee89c"
     },
     "results:c1-04-strategy": {
       "file": "materials/05-複雜道路情境/C1-04/C1-04_主要道路多叉路口交通設施設置圖例.svg",
@@ -39,7 +39,7 @@
       "label": "C1-04 整體佈設圖",
       "scenario": "C1-04",
       "role": "strategy",
-      "sha256": "fbb9f82cb7ff1d8a383d7325fb97e5709c8ce3351aec813e9a84607c547af06e"
+      "sha256": "56ca4ea025a435fdd934f9247ebcaedcac0c5bac42c66196fad390719f862b3e"
     },
     "results:c1-05-strategy": {
       "file": "materials/05-複雜道路情境/C1-05/C1-05_主要道路與街巷道多叉路口交通設施設置圖例.svg",
@@ -48,7 +48,7 @@
       "label": "C1-05 整體佈設圖",
       "scenario": "C1-05",
       "role": "strategy",
-      "sha256": "1e79c43f293bc7727f574e7de8d56ed9cba5aeb0bd0b6e8b7052a1ce11a0bb7d"
+      "sha256": "75aeabb3aed90247e40cc13fa79ca9a5fb30f07346b489ac0d6da4838f148cec"
     },
     "results:c1-06-strategy": {
       "file": "materials/05-複雜道路情境/C1-06/C1-06_街巷道多叉路口交通設施設置圖例.svg",
@@ -57,7 +57,7 @@
       "label": "C1-06 整體佈設圖",
       "scenario": "C1-06",
       "role": "strategy",
-      "sha256": "d64a87dedf11ed7def37d9bdffa876026d228e853371dfe2bbe317719106d1b4"
+      "sha256": "7c476d1ce9ab4a1b91f57ad943c93623cc461fed192bd59a214845f3ff36520b"
     },
     "results:c1-07-strategy": {
       "file": "materials/05-複雜道路情境/C1-07/C1-07_迷你圓環交通設施設置圖例.svg",
@@ -66,7 +66,7 @@
       "label": "C1-07 整體佈設圖",
       "scenario": "C1-07",
       "role": "strategy",
-      "sha256": "c0af4e85ac0d276df52abdc28b8efa9d1856b74b0df85c017b2c4632386aebe1"
+      "sha256": "489edce8cdfb76897a9aaf6d7b2d1b6c56a57e297f51d52659b323827f49b1a0"
     },
     "results:c1-08-strategy": {
       "file": "materials/05-複雜道路情境/C1-08/C1-08_渦輪圓環交通設施設置圖例.svg",
@@ -75,7 +75,7 @@
       "label": "C1-08 整體佈設圖",
       "scenario": "C1-08",
       "role": "strategy",
-      "sha256": "2421bccd0e79cfee974da07696177c11301accce0fc416cbbef87840c4bc5917"
+      "sha256": "b9cc5213056b0af9bbe6b1037bbfac7fad6492b9371d0c4691a2f3b11f959504"
     },
     "results:c1-09-strategy": {
       "file": "materials/05-複雜道路情境/C1-09/C1-09_號誌化圓環交通設施設置圖例.svg",
@@ -84,7 +84,7 @@
       "label": "C1-09 整體佈設圖",
       "scenario": "C1-09",
       "role": "strategy",
-      "sha256": "ff29a258bc79cd554df363fa0549c881c7fe504147322a03163b9720f98b6a1a"
+      "sha256": "ffbcaef6004e9df2cbc34a8e19aeacf16dba15253c459f12b813a99b6553e49f"
     },
     "results:c2-01-strategy": {
       "file": "materials/05-複雜道路情境/C2-01/C2-01_部分苜蓿葉型交流道交通設施設置圖例.svg",
@@ -93,7 +93,7 @@
       "label": "C2-01 整體佈設圖",
       "scenario": "C2-01",
       "role": "strategy",
-      "sha256": "8ecf88ac404d582c66e3a0fdd17a8ace29bf392a582f02751c3fbff4c591d49a"
+      "sha256": "029b3c8dcf517f85011ffb803df0495f07aa4fc0fe50b78ec61b058fa10eefd3"
     },
     "results:c2-02-strategy": {
       "file": "materials/05-複雜道路情境/C4-04/C4-04_路段中央分隔迴轉道交通設施設置圖例.svg",
@@ -102,7 +102,7 @@
       "label": "C2-02 整體佈設圖",
       "scenario": "C2-02",
       "role": "strategy",
-      "sha256": "b1009790ce96279a4cf51ceda0252c793f47b802a73e65d9ac0a3bce52c5ac2e",
+      "sha256": "98f2e6a63f8a21decccde181a366a897e6d23ba068f65f043a1bfbf300891fd7",
       "reusedFrom": "C4-04"
     },
     "results:c3-01-strategy": {
@@ -112,7 +112,7 @@
       "label": "C3-01 整體佈設圖",
       "scenario": "C3-01",
       "role": "strategy",
-      "sha256": "cac12dbac3736d95fc21cd211e31299869709178e1bf6d85f3ab578eebb49e43"
+      "sha256": "6bf189a465c3cccf239e691ee67c7f497e53c3284f409b62369ed970a171e0ca"
     },
     "results:c4-01-strategy": {
       "file": "materials/05-複雜道路情境/C4-01/C4-01_快慢分隔型交通設施設置圖例.svg",
@@ -121,7 +121,7 @@
       "label": "C4-01 整體佈設圖",
       "scenario": "C4-01",
       "role": "strategy",
-      "sha256": "0320f956d6d2165f26b4785b667d32f219e818adf91152437cb21c8157b40b34"
+      "sha256": "d553ea1825aeb5568ef0f024f632a3c8fa15f1bd01ace57b16e417f8263b3340"
     },
     "results:c4-02-strategy": {
       "file": "materials/05-複雜道路情境/C4-02/C4-02_調撥車道路型交通設施設置圖例——北端.svg",
@@ -130,7 +130,7 @@
       "label": "C4-02 整體佈設圖",
       "scenario": "C4-02",
       "role": "strategy",
-      "sha256": "0e7bf5a34cb9d0cb5062ddd95bc7fe9403cc8eb593b1ffc466bdc6abca89a103"
+      "sha256": "9f98269fd147978eb0587e7ff53acc909569cb0e66bd0b7ea59b5fd742182539"
     },
     "results:c4-03-strategy": {
       "file": "materials/05-複雜道路情境/C4-03/C4-03_單行道交通設施設置圖例.svg",
@@ -139,7 +139,7 @@
       "label": "C4-03 整體佈設圖",
       "scenario": "C4-03",
       "role": "strategy",
-      "sha256": "c4b337e142337e844ffd64dd00578d0646f0b6431757b31aef4a88114265a5e8"
+      "sha256": "d923caf5527eefad6c475328e37d0ca611788a308fbfdb739b5167c76773379a"
     },
     "results:c4-04-strategy": {
       "file": "materials/05-複雜道路情境/C4-04/C4-04_路段中央分隔迴轉道交通設施設置圖例.svg",
@@ -148,7 +148,7 @@
       "label": "C4-04 整體佈設圖",
       "scenario": "C4-04",
       "role": "strategy",
-      "sha256": "b1009790ce96279a4cf51ceda0252c793f47b802a73e65d9ac0a3bce52c5ac2e"
+      "sha256": "98f2e6a63f8a21decccde181a366a897e6d23ba068f65f043a1bfbf300891fd7"
     },
     "results:c4-05-strategy": {
       "file": "materials/05-複雜道路情境/C4-05/C4-05_斑馬紋行人穿越道型交通設施設置圖例——當心行人標誌_01.svg",
@@ -157,7 +157,7 @@
       "label": "C4-05 整體佈設圖",
       "scenario": "C4-05",
       "role": "strategy",
-      "sha256": "d8617b1150388848b4d20a78369c18ed2009824d9374a6c9dbb0fce7fb153fd8"
+      "sha256": "d5eac4ea3afaeb97875b780cd8dc44b89f186ab8b543da23977c979f5b216873"
     },
     "results:c4-06-strategy": {
       "file": "materials/05-複雜道路情境/C4-06/C4-06_山區彎道路型（入彎前可變換車道）交通設施設置圖例_01.svg",
@@ -166,7 +166,7 @@
       "label": "C4-06 整體佈設圖",
       "scenario": "C4-06",
       "role": "strategy",
-      "sha256": "951cc355fe0b852fc197d2708764855b4a48d4ab08cbb1957581abaca0a6d76e"
+      "sha256": "08cfa1bf5ec492c9f73ceca39aeab32edc3bff0f502ca6562a828e8e112912ab"
     }
   },
   "scenarios": {

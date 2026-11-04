@@ -1,0 +1,42 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const Project=require('../tools/presentation-project-store.cjs');
+module.exports=async function({evaluate,view,click,navigate,wait,base,pass,projectFixture}){
+  await navigate(base+'/presentation-demo/#results-scenario-g1-01');
+  assert(await evaluate('Boolean(window.visualLayoutEditor.files.local)'));
+  const before=Project.read(projectFixture),moduleFile=path.join(projectFixture,'data/content/modules/M1-01.json'),moduleBytes=fs.readFileSync(moduleFile);
+  await evaluate(`(()=>{
+    const editor=window.visualLayoutEditor,Core=window.VisualLayoutCore;
+    editor.transact(next=>{
+      const point=next.content.results['results-scenario-g1-01'].points[0];point.title='分檔儲存測試';next.legacyState.texts[point.titleKey]=point.title;
+      next.legacyState.texts['context|shared|title']='案例內容已獨立儲存';
+      const item=Core.element('context',0,'text',{type:'edit-key',value:'context|shared|title'});next.elements[item.id]={...item,x:12,fontSize:35};
+      const view=Core.imageView('context','g101-before');next.imageViews[view.id]={...view,zoom:1.37,x:8,y:-3,rotation:90};
+      next.coverArt['results-intro']={rotation:-38,tilt:50,scale:1.1,x:2,y:1};
+    });
+  })()`);
+  await click('.edit-toggle');await click('[data-vl-action="save"]');
+  await wait('!window.visualLayoutEditor.busy&&!window.visualLayoutEditor.store.dirty','Project save must finish without a file picker');
+  const saved=Project.read(projectFixture),layout=JSON.parse(fs.readFileSync(path.join(projectFixture,'layout/presentation-layout.json'),'utf8'));
+  assert.notEqual(saved.revision,before.revision);assert(!layout.content&&!layout.legacyState.texts&&!layout.legacyState.images&&!layout.legacyState.pageOrder);
+  assert.equal(saved.config.content.results['results-scenario-g1-01'].points[0].title,'分檔儲存測試');
+  assert.equal(saved.config.legacyState.texts['context|shared|title'],'案例內容已獨立儲存');assert(fs.readFileSync(moduleFile).equals(moduleBytes));
+  assert(Object.values(layout.elements).every(require('../assets/visual-editor-core.js').overrides));
+  pass('the actual Save button writes content to its owning cases, keeps layout sparse, preserves unrelated modules and creates a source backup');
+  await navigate(base+'/presentation-demo/#results-scenario-g1-01');
+  assert.equal(await evaluate('document.querySelector(".results-points li h3").textContent'),'分檔儲存測試');
+  assert.equal(await evaluate('window.visualLayoutEditor.store.config.imageViews["context/g101-before"].zoom'),1.37);
+  assert.equal(await evaluate('window.visualLayoutEditor.store.config.coverArt["results-intro"].rotation'),-38);
+  await navigate(base+'/presentation-demo/?mode=view#results-scenario-g1-01');
+  assert.equal(await evaluate('window.visualLayoutEditor.files.local'),null);
+  assert.equal(await evaluate('document.querySelector(".results-points li h3").textContent'),'分檔儲存測試');
+  assert.equal(await evaluate('window.visualLayoutEditor.store.config.imageViews["context/g101-before"].rotation'),90);
+  assert.equal(await evaluate('window.visualLayoutEditor.transact(next=>{next.updatedAt="invalid"})'),false);
+  pass('refresh and the viewer reconstruct authored content, image cameras and the collaborator’s cover controls from the separate static files');
+  await navigate(base+'/presentation-demo/#results-scenario-g1-01');
+  const caseFile=path.join(projectFixture,'data/content/results/scenarios/G1-01.json');fs.appendFileSync(caseFile,'\n');const externalRevision=Project.read(projectFixture).revision;
+  await evaluate('window.visualLayoutEditor.transact(next=>{next.content.results["results-scenario-g1-01"].points[0].title="尚未儲存"})');
+  await click('.edit-toggle');await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');
+  assert(await evaluate('window.visualLayoutEditor.store.dirty'));assert.match(await evaluate('document.querySelector(".vl-status").textContent'),/其他程式修改/);assert.equal(Project.read(projectFixture).revision,externalRevision);
+  pass('an external source edit blocks a stale save and leaves both the external file and unsaved browser edits intact');
+};

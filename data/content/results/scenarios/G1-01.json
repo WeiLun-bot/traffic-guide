@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G1-01",
+  "texts": {
+    "results-scenario-g1-01-strategy|results|intro": "配合主要道路的車道數及路側使用需求，調整左轉空間、停車範圍與行人穿越設施。",
+    "results-scenario-g1-01|results|title": "主次道路管制、路側停車與左轉空間問題",
+    "results-scenario-g1-01|results|intro": "主要道路寬約 28 m、速限 50 km/h；次要道路寬約 14 m、速限 30 km/h。周邊以住宅及商業活動為主。",
+    "results-scenario-g1-01-strategy|results|title": "路側空間分隔、左轉車道及行人穿越配置"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g1-01": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "主次道路管制與速限提示不足",
+            "text": "路口缺少明確的主次道路管制及橫交道路警示，兩條道路的速限標誌與標字也不完整。",
+            "titleKey": "results-scenario-g1-01|results|priority-title",
+            "textKey": "results-scenario-g1-01|results|priority-text"
+          },
+          {
+            "id": "space",
+            "title": "慢車道兼供停車與公車停靠",
+            "text": "主要道路慢車道同時供機慢車行駛、路邊停車與公車停靠，右轉車輛容易與其他車流產生衝突。",
+            "titleKey": "results-scenario-g1-01|results|space-title",
+            "textKey": "results-scenario-g1-01|results|space-text"
+          },
+          {
+            "id": "turn",
+            "title": "左轉車輛影響直行車流",
+            "text": "主要道路直行與左轉共用車道，左轉車輛停等時，容易阻礙後方直行車輛。",
+            "titleKey": "results-scenario-g1-01|results|turn-title",
+            "textKey": "results-scenario-g1-01|results|turn-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "主要道路行人穿越條件受限",
+            "text": "主要道路速限為 50 km/h，雖有行人穿越需求，但不宜直接設置無號誌行人穿越道。",
+            "titleKey": "results-scenario-g1-01|results|pedestrian-title",
+            "textKey": "results-scenario-g1-01|results|pedestrian-text"
+          }
+        ]
+      },
+      "results-scenario-g1-01-strategy": {
+        "points": [
+          {
+            "id": "edge",
+            "title": "區分車行與路側停車空間",
+            "text": "以路面邊線及車輛停放線區分行車範圍與停車空間，減少停放車輛對行車動線的干擾。",
+            "articleId": "edge",
+            "moduleId": "M1-03",
+            "titleKey": "results-scenario-g1-01-strategy|results|edge-title",
+            "textKey": "results-scenario-g1-01-strategy|results|edge-text"
+          },
+          {
+            "id": "path",
+            "title": "增設左轉專用車道",
+            "text": "於主要道路配置左轉專用車道，並以指向線、路口行車導引線及穿越虛線，引導車輛進入左轉車道及完成轉向。",
+            "articleId": "taper",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g1-01-strategy|results|path-title",
+            "textKey": "results-scenario-g1-01-strategy|results|path-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "依道路速限配置行人穿越設施",
+            "text": "次要道路設置行人穿越道，並搭配當心行人標誌；主要道路維持 50 km/h 速限時，不宜設置無號誌行人穿越道。",
+            "articleId": "crosswalk",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g1-01-strategy|results|pedestrian-title",
+            "textKey": "results-scenario-g1-01-strategy|results|pedestrian-text"
+          },
+          {
+            "id": "environment",
+            "title": "補充速限與周邊環境提示",
+            "text": "依主要、次要道路速限配置標誌與標字，並視周邊學校及行人活動需求設置警示標誌。",
+            "articleId": "speed",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-g1-01-strategy|results|environment-title",
+            "textKey": "results-scenario-g1-01-strategy|results|environment-text"
+          }
+        ]
+      }
+    }
+  }
+}

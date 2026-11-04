@@ -9,8 +9,12 @@ if(quiet)console.log('Refreshing source images...');
 require('./refresh-general-scenario-images.cjs').refresh({root});
 require('./refresh-module-comparison-images.cjs').refresh({root});
 if(fs.existsSync(path.join(root,'data/scenarios/presentation.json')))require('./prepare-presentation-registry.cjs').build({root});
+const projectStore=require('./presentation-project-store.cjs');
+const migration=projectStore.migrate({root});
+if(migration.migrated)console.log('Separated presentation content and layout; backup: '+migration.backup);
 const files=Array.from(new Map([
   ['index.html','index.html'],
+  ['viewer.html','viewer.html'],
   ['index.html','一般道路情境-圖面放大版.html'],
   ['路口管制.html','路口管制.html'],
   ['assets/visual-editor-core.js','assets/visual-editor-core.js'],
@@ -20,22 +24,13 @@ const files=Array.from(new Map([
   ['assets/structured-content.js','assets/structured-content.js'],
   ['assets/visual-editor.css','assets/visual-editor.css'],
   ['layout/presentation-layout.json','layout/presentation-layout.json'],
+  ...projectStore.releaseFiles(root).map(name=>[name,name]),
   ['.nojekyll','.nojekyll'],
   ...require('./module-release-files.cjs').map(name=>[name,name])
 ].map(pair=>[pair[1],pair])).values());
 // Copy a strict allowlist: source inventories, backups and test logs stay local.
-fs.mkdirSync(output,{recursive:true});
-if(fs.lstatSync(output).isSymbolicLink())throw new Error('_site must be a regular directory');
-const allowed=new Set(files.map(([,name])=>name));
-function inspect(folder,prefix='') {
-  for(const name of fs.readdirSync(folder)) {
-    const relative=prefix+name,entry=path.join(folder,name),info=fs.lstatSync(entry);
-    if(info.isSymbolicLink())throw new Error('Release entries cannot be symbolic links: '+relative);
-    if(info.isDirectory()&&files.some(([,file])=>file.startsWith(relative+'/')))inspect(entry,relative+'/');
-    else if(!info.isFile()||!allowed.has(relative))throw new Error('Unexpected file in _site: '+relative+'. Move it out before preparing the release.');
-  }
-}
-inspect(output);
+const archived=require('./prepare-release-output.cjs')({root,files:files.map(([,name])=>name),archiveStale:process.argv.includes('--archive-stale-preview-files')});
+if(archived)console.log('Backed up '+archived.entries+' obsolete preview entries to '+archived.backup);
 const report=[];
 for(const [source,name]of files){
   const input=path.join(root,source),destination=path.join(output,name);

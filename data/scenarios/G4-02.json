@@ -192,7 +192,7 @@
       "rotation": 90,
       "scenario": "G4-02",
       "label": "號誌化鄉區正交四叉路口交通設施整體設置圖例",
-      "sha256": "84e64b34c378883426a3532a5edbb19e78c370f5d83acf76c71c43abdca05fcf"
+      "sha256": "aabe89bdc5c39c82c98c48fbd0c97ad14158c9cc01f42878be727490d80eb903"
     },
     "g402-signals": {
       "file": "materials/04-一般道路情境/G4-02/G4-02_號誌化鄉區正交四叉路口號誌平面設置圖例.svg",
@@ -201,7 +201,7 @@
       "rotation": 0,
       "scenario": "G4-02",
       "label": "號誌化鄉區正交四叉路口號誌平面設置圖例",
-      "sha256": "bc1b807d5f0cf36dbd6d14d521a3122ca41f79c63e622f95acdfe1e6a099323f"
+      "sha256": "0311df85b725bac945718a65ade586937daea5cdafcf02e541cf9e2ad789f4c5"
     },
     "g402-elevation": {
       "file": "materials/04-一般道路情境/G4-02/G4-02_號誌化鄉區正交四叉路口號誌立面設置圖例.svg",
@@ -219,7 +219,7 @@
       "rotation": 0,
       "scenario": "G4-02",
       "label": "號誌化鄉區正交四叉路口之可視模板1",
-      "sha256": "5ed304a960842d06216b128ade50f5fb20cff3f2187587a34255d7d2638d4b34"
+      "sha256": "5f27083a6bd7c9d5a35518864480c2ffe95ff99341f9c84915c8fcd62844d631"
     },
     "g402-visibility-2": {
       "file": "materials/04-一般道路情境/G4-02/G4-02_號誌化鄉區正交四叉路口之可視模板2.svg",
@@ -228,7 +228,7 @@
       "rotation": 0,
       "scenario": "G4-02",
       "label": "號誌化鄉區正交四叉路口之可視模板2",
-      "sha256": "3e7f719f8fe55261fb928f4a5d9183c87b4cc1f180d7756fd091868b82b7a5f3"
+      "sha256": "0a110e9c53f497ceacff724f66f4d272ea0064c46540c058f05edb3aacf9f2aa"
     },
     "g402-before": {
       "file": "materials/04-一般道路情境/current-conditions/G4-02/G4-02_現況圖_01.png",

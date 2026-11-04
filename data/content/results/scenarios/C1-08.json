@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-08",
+  "texts": {
+    "results-scenario-c1-08|results|title": "多車道圓環的入口選道、環內交織及行人空間問題",
+    "results-scenario-c1-08|results|intro": "四條道路交會形成無號誌圓環，東西向道路寬約 15～16 m、南北向約 7 m，環內配置雙車道，周邊以商業活動為主。",
+    "results-scenario-c1-08-strategy|results|title": "進環前選道、螺旋車道及入口讓路配置",
+    "results-scenario-c1-08-strategy|results|intro": "採渦輪圓環的螺旋式車道配置，讓駕駛進環前選定車道，再沿指定路徑駛離，減少環內變換車道及交織衝突。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-08": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "進環前缺少車道選擇指示",
+            "text": "入口未設置足夠的指向線及方向標誌，駕駛不易在進入圓環前選擇通往目的地的車道。",
+            "titleKey": "results-scenario-c1-08|results|lanes-title",
+            "textKey": "results-scenario-c1-08|results|lanes-text"
+          },
+          {
+            "id": "weaving",
+            "title": "環內車道交織衝突較多",
+            "text": "環內不同車道的行駛方向及出口對應不明確，駕駛可能在圓環內頻繁變換車道。",
+            "titleKey": "results-scenario-c1-08|results|weaving-title",
+            "textKey": "results-scenario-c1-08|results|weaving-text"
+          },
+          {
+            "id": "signs",
+            "title": "圓環相關標誌配置不足",
+            "text": "入口缺少完整的讓路及圓環遵行方向標誌，駕駛不易判斷進環讓路關係與行駛方向。",
+            "titleKey": "results-scenario-c1-08|results|signs-title",
+            "textKey": "results-scenario-c1-08|results|signs-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "圓環周邊步行空間不足",
+            "text": "路側人行空間狹窄，進出環車輛轉向時，可能影響行人通行及穿越空間。",
+            "titleKey": "results-scenario-c1-08|results|pedestrian-title",
+            "textKey": "results-scenario-c1-08|results|pedestrian-text"
+          }
+        ]
+      },
+      "results-scenario-c1-08-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "進環前以指向線及標誌引導選道",
+            "text": "於上游配置指向線及圖形化地名方向指示標誌，協助駕駛在進環前選擇正確車道及出口方向。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-08-strategy|results|selection-title",
+            "textKey": "results-scenario-c1-08-strategy|results|selection-text"
+          },
+          {
+            "id": "spiral",
+            "title": "以螺旋車道及實體分隔減少交織",
+            "text": "環內採螺旋式車道導引，配合導向角及實體分隔，讓車輛依預定路徑駛離圓環，避免任意變換車道。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-08-strategy|results|spiral-title",
+            "textKey": "results-scenario-c1-08-strategy|results|spiral-text"
+          },
+          {
+            "id": "lane-lines",
+            "title": "依進環動線配置禁止變換車道線",
+            "text": "環內以雙白實線限制變換車道；需讓入口車輛匯入內側車道的位置，則採單邊禁止變換車道線。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-08-strategy|results|lane-lines-title",
+            "textKey": "results-scenario-c1-08-strategy|results|lane-lines-text"
+          },
+          {
+            "id": "signs",
+            "title": "配置入口讓路及圓環方向標誌",
+            "text": "於圓環入口設置讓路線、讓路標誌及圓環遵行方向標誌，中心島則可視需要配置安全方向導引標誌。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-08-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-08-strategy|results|signs-text"
+          },
+          {
+            "id": "markings",
+            "title": "整理進出口行車與行人空間",
+            "text": "配合入口偏折、出口導引線及行穿線配置，並於車行道與人行空間之間保留適當緩衝，考量大型車轉向軌跡。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-08-strategy|results|markings-title",
+            "textKey": "results-scenario-c1-08-strategy|results|markings-text"
+          }
+        ]
+      }
+    }
+  }
+}

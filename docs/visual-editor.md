@@ -2,6 +2,8 @@
 
 第一場「三年成果與模組化整體架構」的大綱、來源與 G1-01 試作使用方式，請見 [第一場簡報說明](results-presentation.md)。
 
+內容與版面現已分檔：網頁修改的文字、清單與圖片引用存入 `data/content/` 下所屬案例／模組，導覽存入 `data/presentation-navigation.json`，個別視覺設定才存入 `layout/presentation-layout.json`。按一次「儲存」會更新相關檔案並先備份。檔案分工、舊設定遷移與協作衝突處理見 [簡報架構](presentation-architecture.md)。以下 `legacyState`、`content` 等合併路徑若未明示檔名，均指編輯器的記憶體資料模型。
+
 ## 架構與實作階段
 
 整份教材最上層是四場簡報，載入時先顯示「四場簡報總覽」。頂部平常只顯示目前簡報名稱，例如「02 交通管制設施模組設計 ▾」，旁邊保留 00–04 章節，整合成同一列導覽。四場簡報收在名稱選單內；原有目錄仍可按簡報分組展開。前後頁、Home／End、頁碼及進度各自以當場簡報為範圍；第一頁按上一頁回總覽，最後一頁按下一頁回本場開頭。點左上品牌或名稱選單中的「四場簡報總覽」也可回總覽。
@@ -28,13 +30,13 @@ G1-06、G3-02、G3-04 保留有、無行穿線比較；G2-01、G4-04 比較機�
 
 現有 `index.html` 由 `generalRoadPresentation.navigate()` 動態渲染頁面，條文頁另有定位與放大階段。`generalRoadEditor`、`generalRoadFormatting`、`generalRoadViewport` 與 `generalRoadConditions` 分別管理內容、排版、SVG 縮放與現況對照。不可把滑鼠編輯事件直接綁在每次會被替換的元素上，也不可覆寫 SVG 的 transform 或動畫。
 
-1. **設定與相容層**：把原 `editor-saved-data` 完整移至 `layout/presentation-layout.json` 的 `legacyState`。既有編輯器和主程式等待設定載入完成後啟動，保留原設定值、內容、動畫與 CSS。
+1. **設定與相容層**：舊版將 `editor-saved-data` 整包放在 layout；現由 `presentation-document.js` 從分開的內容、導覽及版面重建相容狀態，保留原設定值、內容、動畫與 CSS。
 2. **獨立編輯層**：`assets/visual-editor-core.js` 管理設定驗證、唯一 ID、復原／重做與未儲存狀態；`assets/visual-editor-io.js` 管理檔案；`assets/visual-editor.js` 與 `.css` 提供「編輯內容」內的視覺編輯工具列、選取框、拖曳、四角縮放、字體／字級與座標面板。
 3. **整合與測試**：切頁完成時重新辨識元素並套用設定；更新發布清單與預覽伺服器；以單元測試及 Edge 的真實瀏覽器測試驗證。`路口管制.html` 不在這次變更範圍。
 
 ## 設定格式
 
-`schemaVersion: 1`、`documentId: "general-road-scenarios"`、`units: "css-px"`。`legacyState` 保留既有內容與排版；`elements` 以穩定 ID 為鍵。ID 由頁面 ID、渲染階段與原編輯鍵／圖片鍵／DOM 結構路徑組成，不使用畫面文字、隨機數或當下座標。
+`schemaVersion: 1`、`documentId: "general-road-scenarios"`、`units: "css-px"`。磁碟上的純版面檔另以 `kind: "presentation-layout"` 識別；其中 `legacyState` 只保留視覺設定，`elements` 只保存有調整的元素。ID 由頁面 ID、渲染階段與原編輯鍵／圖片鍵／DOM 結構路徑組成，不使用畫面文字、隨機數或當下座標。
 
 每個元素記錄 `id`、`pageId`、`phase`、`kind`、`target`、`x`、`y`、`width`、`height`、`fontFamily`、`fontSize`、`fontWeight`、`lineHeight`。`x/y` 是相對原位置的 CSS px 位移；其他數值為 `null` 表示沿用原簡報。寬高明確設定後使用 CSS px，不將整張投影片改成絕對定位。圖片縮放改外框，原 SVG 的 viewBox、內部旋轉、發光和放大運算仍由原程式管理。
 
@@ -58,7 +60,7 @@ G1-06、G3-02、G3-04 保留有、無行穿線比較；G2-01、G4-04 比較機�
 
 在「編輯內容」模式按策略旁的「關聯條文」，可複選本情境的條文，並選擇「點整列時前往」的主要條文，也可選「不連結」。按「套用」才會記錄變更；取消或 Esc 不影響原設定。右側條號依選取的條文資料自動產生，不需手動輸入。
 
-編輯模式點策略文字會修改內容，完成編輯後則恢復導覽：點整列會開啟主要條文，每個條號也能分別開啟對應條文。未選任何關聯條文的策略為純文字列點。設定會和其他內容一起儲存到同一份 JSON，包含 `id`、`title`、`titleKey`、`articleIds`、`targetId`；載入時會檢查條文存在且屬於正確情境。修改策略、排序、復原及調整文字樣式會保留左側比較圖當下的縮放視角與比較中線位置。
+編輯模式點策略文字會修改內容，完成編輯後則恢復導覽：點整列會開啟主要條文，每個條號也能分別開啟對應條文。未選任何關聯條文的策略為純文字列點。設定會和其他內容一起儲存到所屬案例的內容 JSON，包含 `id`、`title`、`titleKey`、`articleIds`、`targetId`；載入時會檢查條文存在且屬於正確情境。修改策略、排序、復原及調整文字樣式會保留左側比較圖當下的縮放視角與比較中線位置。
 
 四個情境的「現況問題」頁採雙欄呈現：桌面左側約 55% 為可縮放、平移的現況圖，右側每組現況照片與問題條列採左右並排，不顯示原本的 ON SITE 標頭。左圖等比例放大填滿圖片框，超出範圍裁切；重設視圖後也會恢復填滿，可拖曳查看被裁切的部分。可拖曳的現況／配置圖對照位於各情境的「整體佈設策略」左側，右側保留策略解說。圖面對齊仍沿用原 `comparisonTransforms` 設定鍵，因此原先的位置、尺寸與旋轉不會因為移頁而遺失。
 
@@ -76,7 +78,7 @@ G1-06、G3-02、G3-04 保留有、無行穿線比較；G2-01、G4-04 比較機�
 
 後續依 `05`–`15` 的 Typst 章節核對圓環並補齊其餘 10 個模組，新增 64 個主頁、79 張實際引用圖。人行穿越、號誌、機車、公車及 M4 各類管制保留條文與適用條件，文字整理為簡報用語；現況議題的新照片待提供後再加入。`M3-02.2 自行車穿越道` 連回自行車道圖例的穿越道項目，`M3-03.1 機車道` 連回慢車道銜接路口示例。
 
-圖片只採 Typst 實際使用的 `image()` 呼叫；註解掉的圖及資料夾額外檔案不會加入。`rotation` 記錄 Typst 的旋轉方向，圖例、延伸縮圖與原圖視窗依相同方向呈現。原始圖片檔保留原樣，新增內容及既有網頁編輯覆寫仍分別存在模組 JSON 與 `layout/presentation-layout.json`。
+圖片只採 Typst 實際使用的 `image()` 呼叫；註解掉的圖及資料夾額外檔案不會加入。`rotation` 記錄 Typst 的旋轉方向，圖例、延伸縮圖與原圖視窗依相同方向呈現。原始圖片檔保留原樣，原稿匯入資料在模組 JSON，網頁編輯內容在 `data/content/modules/`，個別視覺設定在 `layout/presentation-layout.json`。
 
 `tools/typst-module-source.cjs` 以資料方式讀取 Typst，不執行匯入或程式碼。`tools/complete-module-presentations.cjs <Typst章節資料夾> --write` 搭配 `remaining-module-content.cjs` 產生上述 10 個模組的基本內容；不帶 `--write` 時只驗證並產出檢查紀錄。`source.imageFiles` 與 `source.sha256` 保留用圖清單及來源識別，檢查結果位於 `tests/artifacts/module-completion/`。
 
@@ -132,7 +134,7 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 
 - 圖例說明與現況圖可滾輪縮放、拖曳，按「原圖」查看完整素材；延伸應用的附圖可點選放大。
 - 現況圖及圖例說明的「設定初始畫面」每頁、每圖分別儲存。延伸應用改用附圖縮圖，原有視角設定仍保留於 JSON。
-- 按「編輯內容」可修改解說標題及內文，新增、排序、刪除說明，調整文字樣式、更換圖片與調整打亮。儲存仍使用同一份 `layout/presentation-layout.json`，不必另外儲存每個模組。
+- 按「編輯內容」可修改解說標題及內文，新增、排序、刪除說明，調整文字樣式、更換圖片與調整打亮。按一次「儲存」就會更新所屬模組的內容檔與版面設定，不必另外儲存每個模組。
 - 各情境「整體佈設策略」的 M2-01 標籤可開啟模組。「情境應用」中已製作的案例可前往整體佈設策略，再按「返回 M2-01」。
 
 ### 模組圖例的打亮框
@@ -199,9 +201,21 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 
 內容依提供的 `output_1027.pdf` 正文第 3–5、46–51 頁整理。圖例保留原圖；讓管制搭配行穿線的提供圖屬下游空間不足的配置，頁面有單獨說明。讓管制的庇護與路緣頁借用停管制圖說明空間概念，並明確註記。每頁「資料來源」可查看引用範圍及視距檢核依據。
 
-在專案資料夾雙擊 `start-editor.cmd`，再用 Chrome／Edge 開啟視窗顯示的 localhost 網址。使用期間保持該視窗開啟；結束時按 Ctrl+C 停止預覽。啟動檔會自行定位專案，不必先在 PowerShell 切換資料夾。
+只需播放與查閱時，雙擊 `start-viewer.cmd`，或在 PowerShell 執行 `.\start-viewer.ps1`。這個入口會開啟 `http://127.0.0.1:4173/presentation-demo/viewer.html`，自動轉入 `index.html?mode=view`，並保留指定頁面的網址片段。畫面標示「純瀏覽模式」，保留四場簡報總覽、章節導覽、翻頁、全螢幕及圖面縮放／重設；停用編輯、換圖、排序、初始畫面設定、匯入／匯出及儲存操作，操作說明也不顯示編輯內容。純瀏覽直接讀取專案正式版面設定，不恢復瀏覽器記住的編輯檔案授權；設定載入失敗時只提供重新載入。`viewer.html` 亦包含在完整 `_site` 發布資料夾中。
 
-啟動後會立即顯示提示，依序列出三個階段：啟動工具、更新圖片與預覽檔、檢查伺服器。已有同專案的預覽執行時，會更新檔案並顯示原網址，不會重複啟動；回到瀏覽器按 Ctrl+Shift+R 即可。完成或失敗時視窗會保留訊息，按任意鍵關閉。若連接埠由其他程式使用，會顯示明確錯誤，不會停止其他程式。啟動檔會優先使用 64 位元 PowerShell，亦可從 32 位元終端啟動。
+需要編輯時，在專案資料夾雙擊 `start-editor.cmd`，預覽伺服器就緒後會自動以系統預設瀏覽器開啟簡報（建議使用 Chrome／Edge）。兩種入口共用同一個本機伺服器與正式設定，使用期間保持原啟動視窗開啟；結束時按 Ctrl+C，或使用 `stop-editor.cmd` 停止。啟動檔會自行定位專案，不必先在 PowerShell 切換資料夾。
+
+偏好 PowerShell 時，可在專案根目錄執行 `.\start-editor.ps1`；若執行原則擋住，使用 `powershell -NoProfile -ExecutionPolicy Bypass -File .\start-editor.ps1`，只對本次程序套用。`.ps1` 適合從終端執行，Windows 預設雙擊可能以文字編輯器開啟，因此仍保留 `.cmd` 作為雙擊入口。兩者共用相同的啟動流程。只啟動預覽而不開瀏覽器時，執行 `.\start-editor.ps1 -NoBrowser`；也可設定環境變數 `TRAFFIC_GUIDE_NO_BROWSER=1`。
+
+結束前先儲存編輯內容。停止預覽可在原啟動視窗按 Ctrl+C，或直接關閉原啟動視窗；新版伺服器會偵測啟動程序是否仍存在，若啟動程序被強制關閉，會在約 1–3 秒內退出並釋放連接埠。只關閉瀏覽器分頁不會停止伺服器。重複啟動時使用既有伺服器，第二個視窗會說明原視窗仍是啟動來源；關閉第二個視窗不會停止原伺服器。
+
+若原視窗已找不到，雙擊 `stop-editor.cmd` 即可停止本專案的所有預覽伺服器（包括不同連接埠及舊版程序），並顯示 PID、連接埠與釋放結果。新版透過本機命名管道通知伺服器正常退出；舊版或未回應的程序則在再次核對完整專案腳本路徑及程序建立時間後直接停止，不會按連接埠任意終止其他程式。重複執行會顯示本專案已無預覽執行。PowerShell 也可執行 `.\stop-editor.ps1`；僅查詢而不停止時，執行 `.\stop-editor.ps1 -Status`，或從終端執行 `.\stop-editor.cmd -Status`。
+
+目前 `index.html` 會按需讀取外部 JSON（簡報目錄、各頁內容及版面設定），直接雙擊會使用 `file://`，受瀏覽器的本機檔案讀取限制，無法完整啟動。請經由啟動檔提供的 `http://127.0.0.1:4173/presentation-demo/` 開啟；這是本機預覽，不會上傳或發布網站。
+
+素材改名或替換後，`_site` 可能殘留舊版檔案。啟動檔會將不在目前發布清單內的舊檔移到 `exports/preview-backups/` 下的獨立備份資料夾，顯示備份位置，再繼續更新預覽。來源素材與正式版面設定不會因這個備份步驟被移動。直接執行 `node tools/prepare-github-pages.cjs` 的正式發布流程仍會拒絕清單外的檔案。
+
+啟動後會立即顯示提示，依序列出三個階段：啟動工具、更新圖片與預覽檔、檢查伺服器。已有同專案的預覽執行時，會更新檔案並重新開啟原網址，不會重複啟動伺服器；已開啟的分頁也可按 Ctrl+Shift+R 更新。若自動開啟瀏覽器失敗，仍可手動開啟視窗顯示的網址。從 `.cmd` 啟動時，完成或失敗後視窗會保留訊息，按任意鍵關閉。若連接埠由其他程式使用，會顯示明確錯誤，不會停止其他程式。啟動檔會優先使用 64 位元 PowerShell，亦可從 32 位元終端啟動。
 
 替換 `materials/04-一般道路情境` 裡已使用的 SVG 時，保留原資料夾與檔名。先在預覽視窗按 Ctrl+C，再重新雙擊 `start-editor.cmd`，最後重新整理瀏覽器。啟動時會同步圖面尺寸、來源紀錄及 `_site` 的圖片副本，保留原圖片 ID、說明、版面與初始畫面設定。圖片以原檔路徑引用，不再重新內嵌回 HTML。執行中的預覽不會自動監看素材變動；新增或更改檔名仍需更新圖片對應。只需同步檔案而不重啟伺服器時，也可在專案根目錄執行 `node tools/prepare-github-pages.cjs` 後重新整理。
 
@@ -209,11 +223,11 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 
 `tools/presentation-release-files.cjs` 會把入口依賴的程式、樣式與圖片加入發布清單。發布或移交時，須提供產生的完整 `_site` 資料夾。`tools/externalize-presentation.cjs` 可在舊匯入流程重新產生內嵌版本後執行，並核對拆出後能重建原始內容；一般修改直接編輯 `assets/general/` 與素材即可。`tools/presentation-source.cjs` 供來源比對工具重建舊格式，瀏覽器使用外部檔案。
 
-也可以在專案根目錄的 PowerShell 執行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\preview-editor.ps1`。啟動腳本採用 ASCII，避免 Windows PowerShell 5.1（含 x86）誤讀無 BOM 的 UTF-8 中文字串。本機伺服器的 HTML／資源來自 `_site`，但 `layout/presentation-layout.json` 每次都讀取專案根目錄的正式設定，不使用 `_site/layout` 的舊副本。因此儲存正式 JSON 後，重新整理就能讀回最新設定，不需要重建預覽或依賴瀏覽器保留的檔案授權。JSON 寫入仍透過瀏覽器授權，伺服器只接受讀取。
+原有 `tools/preview-editor.ps1` 仍可直接執行，與根目錄入口共用實作。啟動腳本採用 ASCII，避免 Windows PowerShell 5.1（含 x86）誤讀無 BOM 的 UTF-8 中文字串。本機伺服器的 HTML／程式來自 `_site`，內容、導覽、版面及替換圖片則讀取專案正式來源。因此儲存後重新整理就能看到最新內容，不需要重建預覽。寫入 API 僅限本機、同源及有效的編輯工作階段；靜態發布沒有這個 API。
 
-請儲存至 `traffic-guide/layout/presentation-layout.json`，而非 `_site/layout/presentation-layout.json`。更新預覽伺服器程式後，需關閉原先的預覽視窗，再重新雙擊 `start-editor.cmd` 一次。對外發布仍須重新產生 `_site` 並上傳，才會包含最新 JSON。
+本機編輯器會自動寫回專案來源，不應手動把整包設定存進 layout 或修改 `_site`。啟動時會辨識不支援新儲存流程的舊服務，僅重啟該連接埠上的本專案服務。對外發布仍須重新產生 `_site` 並上傳，才會包含最新內容與設定。
 
-點右上角「編輯內容」，再開啟「設定檔 → 連結設定檔」，選擇本機 Git 專案的 `layout/presentation-layout.json`。之後「儲存」或 Ctrl/Cmd+S 會寫回同一個檔案，不會每次下載。瀏覽器可能在重新開啟後要求再次授權；檔案控制代碼保存在該瀏覽器的 IndexedDB，不會放進公開設定。File System Access API 需要安全來源（localhost 或 HTTPS）和使用者操作。
+點右上角「編輯內容」，修改後直接按「儲存」或 Ctrl/Cmd+S；本機預覽不需連結單一 layout 檔。靜態站可用「匯出 JSON」備份成 `presentation-project.json`，或用「連結設定檔」連結這種專案備份檔；支援的瀏覽器使用 File System Access API 與 IndexedDB 記住檔案授權。要套用回 Git 專案，使用本機入口匯入備份，再按「儲存」。純版面 JSON 不包含完整編輯內容。
 
 ### 排列照片與多張代表型
 
@@ -231,7 +245,7 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 
 設定位於 `imageViews`，以頁面與素材 ID 識別，保存 `zoom`、`x`、`y`、`rotation`（度）；100% 縮放代表旋轉後的原始視角範圍，左右／上下位移分別以目前縮放視窗的寬／高為百分比基準。各頁、各圖的設定彼此獨立，舊版沒有 `imageViews` 或 `rotation` 的 JSON 仍可匯入；未設定旋轉時使用 0°，保留圖檔本身的方向。一般預覽時的縮放、拖曳不會自動覆寫初始設定。
 
-其他瀏覽器使用「匯入 JSON」與「匯出 JSON」。以檔案網址直接開啟 HTML 時，瀏覽器可能封鎖 JSON 的 fetch；此時畫面會提示匯入設定後啟動，不會悄悄套用空白設定。設定讀取、驗證、權限或寫入失敗時均保留目前未儲存內容。
+其他瀏覽器使用「匯入 JSON」與「匯出 JSON」。匯入版面設定不會解除瀏覽器對其他簡報 JSON 的本機讀取限制，仍須從本機預覽網址開啟。設定讀取、驗證、權限或寫入失敗時均保留目前未儲存內容。
 
 儲存前會重新讀取已連結檔案，若外部編輯器／Git 改過內容就停止寫入，請先匯出自己的版本，再重新載入合併。拖曳結束才產生一筆復原紀錄；Esc／pointercancel 取消拖曳。Ctrl/Cmd+Z 復原，Ctrl/Cmd+Shift+Z 或 Ctrl+Y 重做，方向鍵移動選取元素（Shift 為 10 px）。
 
@@ -247,6 +261,8 @@ M2-01 呈現為 8 個主頁：總覽及情境應用各一頁，停管制與讓�
 - `assets/initial-image-view.js`：兩頁現況圖的初始視角控制與還原。
 - `assets/structured-content.js`：現況問題、問題條列、條文條列的結構化編輯及共用工具介面。
 - `tools/prepare-github-pages.cjs`、`serve-github-pages.cjs`、`preview-editor.ps1`：發布與本機預覽。
+- `start-editor.cmd`、`start-editor.ps1`：啟動入口；`stop-editor.cmd`、`stop-editor.ps1`、`tools/stop-preview.ps1`：查詢、停止及連接埠釋放確認。
+- `start-viewer.cmd`、`start-viewer.ps1`、`viewer.html`、`assets/presentation-mode.js`：純瀏覽入口與編輯功能停用。
 - `tests/verify-github-pages.cjs`、`visual-editor.test.cjs`、`visual-editor-browser.cjs`：發布、狀態／檔案與瀏覽器回歸驗證。
 
 API 依據：[Chrome File System Access](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)、[MDN createWritable](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createWritable)。
@@ -271,6 +287,10 @@ node tests/visual-editor-browser.cjs
 ```
 
 只有 VS Code 時，`tools/preview-editor.ps1` 已包含 Node 執行環境的替代方式。瀏覽器測試需要已安裝的 Edge／Chrome，可用 `VISUAL_EDITOR_BROWSER` 指定執行檔。測試會使用獨立且隱藏的瀏覽器設定目錄，結束後關閉；測試結果和截圖位於 `tests/artifacts/visual-editor/`，不會發佈。
+
+Windows 啟動流程可用 `node tests/verify-preview-launcher.cjs` 驗證；停止與自動清理可用 `node tests/verify-preview-lifecycle.cjs` 驗證。生命週期測試會操作本專案的停止入口，請先儲存並結束正在使用的本專案預覽，再執行該測試。
+
+純瀏覽模式可用 `node tests/visual-editor-browser.cjs --viewer-only` 驗證介面、停用編輯與檔案操作、導覽及圖面控制；`node tests/verify-preview-launcher.cjs --viewer-only` 驗證雙擊、32 位元 PowerShell、開啟純瀏覽網址與重用伺服器。瀏覽器測試也會確認原編輯入口仍能編輯文字與版面。
 
 單元測試檢查狀態、輸入驗證、檔案衝突、舊工具相容性、初始圖面視角與對照功能移頁。Edge 測試涵蓋真實滑鼠與鍵盤、保存與重新載入、舊內容編輯器、兩頁獨立的初始圖面、四個情境的拖曳對照，以及桌面與手機版面。未調整頁面的版面比對使用安裝前的 `baseline.html` 暫存副本；若副本不存在，測試報告會明確註記未執行幾何比對，原程式區塊的雜湊驗證仍可由單元測試執行。
 

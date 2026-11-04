@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G1-02",
+  "texts": {
+    "g102-context|0|text-11": "鄉區視野開闊，透過岔路與速限提示，讓駕駛預先察覺前方路口。",
+    "g102-context|0|text-13": "次要道路停管制以標誌為主、停標字為輔，以停止線做為停等與觀察位置。",
+    "g102-context|0|text-15": "行穿線依人行環境及需求評估是否設置。",
+    "g102-context|0|text-14": "行穿線設置"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {}
+  }
+}

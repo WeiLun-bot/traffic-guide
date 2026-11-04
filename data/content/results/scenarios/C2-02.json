@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C2-02",
+  "texts": {
+    "results-scenario-c2-02|results|title": "交流道旁迴轉道的車道分流與匯入問題",
+    "results-scenario-c2-02|results|intro": "平行匝道型交流道鄰近中央分隔迴轉道，車輛可經不同車道前往高速公路、平面道路或迴轉道。部分迴轉動線須穿越高架橋下方。",
+    "results-scenario-c2-02-strategy|results|title": "迴轉入口分流、附加車道與匝道方向預告",
+    "results-scenario-c2-02-strategy|results|intro": "配合高速公路、平面道路與迴轉道的不同通行方向，安排上游選道、迴轉入口漸變及出口匯入設施。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c2-02": {
+        "points": [
+          {
+            "id": "merge",
+            "title": "迴轉道與主線銜接空間不足",
+            "text": "車輛進出迴轉道時，缺少足夠的漸變及匯入空間，容易與主線車輛產生衝突。",
+            "titleKey": "results-scenario-c2-02|results|merge-title",
+            "textKey": "results-scenario-c2-02|results|merge-text"
+          },
+          {
+            "id": "signs",
+            "title": "不同目的地的車道選擇不明確",
+            "text": "同一區域同時提供高速公路入口、平面道路與迴轉動線，部分方向標誌混用不同牌面型式，駕駛不易判斷應行駛的車道。",
+            "titleKey": "results-scenario-c2-02|results|signs-title",
+            "textKey": "results-scenario-c2-02|results|signs-text"
+          },
+          {
+            "id": "height",
+            "title": "迴轉道位於高架橋下方",
+            "text": "迴轉道通過高架橋下方，須考量橋梁淨高限制，避免超高車輛進入後無法通行。",
+            "titleKey": "results-scenario-c2-02|results|height-title",
+            "textKey": "results-scenario-c2-02|results|height-text"
+          },
+          {
+            "id": "direction",
+            "title": "鄰近支線道行向管制不易辨識",
+            "text": "交流道附近另有地方道路交會，部分支線道採右進右出管制，若缺少明確的行向標誌，可能發生錯誤轉向。",
+            "titleKey": "results-scenario-c2-02|results|direction-title",
+            "textKey": "results-scenario-c2-02|results|direction-text"
+          }
+        ]
+      },
+      "results-scenario-c2-02-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "以方向標誌預告各車道目的地",
+            "text": "在上游設置對應車道的地名方向指示標誌，分別指示迴轉道、不同方向高速公路匝道及平面道路，箭頭對準各自車道。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c2-02-strategy|results|selection-title",
+            "textKey": "results-scenario-c2-02-strategy|results|selection-text"
+          },
+          {
+            "id": "arrows",
+            "title": "利用分流式指向線引導進入迴轉道",
+            "text": "於迴轉道入口配置直行與迴轉分流式指向線，搭配迴轉道標誌，讓駕駛在進入前確認行駛方向。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c2-02-strategy|results|arrows-title",
+            "textKey": "results-scenario-c2-02-strategy|results|arrows-text"
+          },
+          {
+            "id": "transition",
+            "title": "配置漸變段及附加車道",
+            "text": "於迴轉道進出口提供適當的漸變與附加車道，並搭配穿越虛線，引導車輛逐步分流或匯入主線。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c2-02-strategy|results|transition-title",
+            "textKey": "results-scenario-c2-02-strategy|results|transition-text"
+          },
+          {
+            "id": "exit",
+            "title": "依匯入長度決定出口管制方式",
+            "text": "迴轉道出口如有足夠匯入長度，可採匯流設計；空間不足時，則配置讓路線，要求車輛確認主線來車後再匯入。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c2-02-strategy|results|exit-title",
+            "textKey": "results-scenario-c2-02-strategy|results|exit-text"
+          },
+          {
+            "id": "restrictions",
+            "title": "提前提示限高及支線道行向",
+            "text": "迴轉道通過高架橋下方，於上游設置車輛高度限制標誌；鄰近右進右出支線道則搭配讓路及僅准右轉標誌，明確告知通行規則。",
+            "moduleId": "M4-02",
+            "titleKey": "results-scenario-c2-02-strategy|results|restrictions-title",
+            "textKey": "results-scenario-c2-02-strategy|results|restrictions-text"
+          }
+        ]
+      }
+    }
+  }
+}

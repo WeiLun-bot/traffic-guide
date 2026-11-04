@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/common",
+  "texts": {
+    "results-background|results|source-p5-text": "有必要建立一致性之《道路交通標誌標線號誌設置參考指引》，藉此加強第一線顧問公司、相關公協會人員等設置標誌標線號誌的專業技能。",
+    "results-background|results|source-p6-text": "本研究研擬的參考指引屬於參考性質之運用解說的形態。",
+    "results-principles|results|source-title": "標線設置基本原則（依交通工程規範）",
+    "results-principles-markings-requirements|results|source-title": "標線設置基本要求（依交通工程規範解說）",
+    "results-principles-signs|results|source-title": "標誌設置基本原則（依交通工程規範）",
+    "results-principles-signs-continued|results|source-title": "標誌設置基本原則（依交通工程規範）",
+    "results-principles-signs-requirements|results|source-title": "標誌設置的基本要求（依交通工程規範解說）",
+    "results-principles-signals|results|source-title": "號誌設置基本原則（依交通工程規範）",
+    "results-principles-signals-requirements|results|source-title": "號誌設置基本要求（依交通工程規範解說）",
+    "results-three-years|results|framework-heading-0-0": "分類",
+    "results-three-years|results|framework-heading-1-0": "分類",
+    "results-phase-two|results|framework-heading-0-0": "分類",
+    "results-phase-two|results|framework-heading-1-0": "分類",
+    "results-review|results|title": "依模組討論檢討情境圖設計",
+    "results-modular-rationale|results|cause-heading": "問題探討",
+    "results-review-g1-01|results|title": "依模組討論檢討情境圖設計",
+    "results-guide-structure|results|source-s6-shape92-p1": "平面交叉、交流道銜接部分、公路與軌道系統交叉、路段",
+    "results-module-discussion|results|title": "模組與情境圖例討論過程",
+    "results-module-discussion|results|source-s7-step1-title": "定義模組、情境架構與型式",
+    "results-module-discussion|results|source-s7-step3-title": "產生整體配置構想，進行標線、標誌及號誌配置。進行設施配置與組合的條文解說。",
+    "results-module-discussion|results|source-s7-step5-title": "完成整體參考指引之圖例設置。",
+    "results-guide-structure|results|intro": "由「原則—情境」轉為「原則—模組—情境」的三層次說明架構",
+    "results-outline|results|title": "簡報大綱",
+    "results-outline|results|intro": "\n",
+    "results-intro|results|cover-project": "研擬道路交通標誌標線號誌設置參考指引",
+    "chapter-cover-results-review|shared|title": "情境圖例調整",
+    "chapter-cover-results-intro|shared|title": "研究緣起與前期成果"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-review": {
+        "points": [
+          {
+            "id": "difference-1",
+            "title": "自行車道由磚紅色改為深灰色",
+            "titleKey": "results-review|results|difference-1-title",
+            "text": "避免自行車專用道爭議",
+            "textKey": "results-review|results|difference-1-text",
+            "descriptionHidden": true
+          },
+          {
+            "id": "difference-2",
+            "title": "人行道上自行車道增加行穿線",
+            "titleKey": "results-review|results|difference-2-title",
+            "text": "",
+            "textKey": "results-review|results|difference-2-text",
+            "descriptionHidden": true
+          },
+          {
+            "id": "point-a11b4056-1030-471e-a346-f85799069063",
+            "text": "",
+            "textKey": "results-review|results|point-a11b4056-1030-471e-a346-f85799069063-text",
+            "title": "自行車道行穿線前增設停止線",
+            "titleKey": "results-review|results|point-a11b4056-1030-471e-a346-f85799069063-title",
+            "descriptionHidden": true
+          }
+        ]
+      },
+      "results-review-g1-01": {
+        "points": [
+          {
+            "id": "point-9999634b-0bfb-4c6e-9c1a-436832a15973",
+            "text": "如：當速限無差異時不需增設速限標誌；僅在有警告必要時才增設警告標誌",
+            "textKey": "results-review-g1-01|results|point-9999634b-0bfb-4c6e-9c1a-436832a15973-text",
+            "title": "依標誌精簡原則調整部分標誌為選用",
+            "titleKey": "results-review-g1-01|results|point-9999634b-0bfb-4c6e-9c1a-436832a15973-title"
+          },
+          {
+            "id": "point-d3589502-7ce0-48d1-92e1-bb64f341ce29",
+            "text": "",
+            "textKey": "results-review-g1-01|results|point-d3589502-7ce0-48d1-92e1-bb64f341ce29-text",
+            "title": "警告標誌回歸上游警示原則",
+            "titleKey": "results-review-g1-01|results|point-d3589502-7ce0-48d1-92e1-bb64f341ce29-title",
+            "descriptionHidden": true
+          },
+          {
+            "id": "difference-1",
+            "title": "禁止臨時停車線遇行穿線斷線",
+            "titleKey": "results-review-g1-01|results|difference-1-title",
+            "text": "",
+            "textKey": "results-review-g1-01|results|difference-1-text",
+            "descriptionHidden": true
+          }
+        ]
+      }
+    }
+  }
+}

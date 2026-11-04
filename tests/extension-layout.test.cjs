@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const Core=require('../assets/visual-editor-core.js'),Modules=require('../assets/presentation-modules.js');
-const read=name=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',name),'utf8'));
+const read=name=>name==='layout/presentation-layout.json'?require('./read-project-config.cjs')():JSON.parse(fs.readFileSync(path.join(__dirname,'..',name),'utf8'));
 test('extension defaults stack flat figures using their displayed orientation and retain horizontal layout for other figures',()=>{
   const doc=read('data/modules/M1-01.json'),stage=doc.submoduleFlows[0].stages.find(stage=>stage.id==='extensions');
   for(const topic of stage.topics)assert.equal(Modules.extensionLayout(doc,stage,topic).layout,'vertical');

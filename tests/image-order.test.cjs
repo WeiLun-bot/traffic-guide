@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const Core=require('../assets/visual-editor-core.js'),Order=require('../assets/presentation-image-order.js');
-const original=()=>Core.parse(fs.readFileSync(path.join(__dirname,'../layout/presentation-layout.json'),'utf8'));
+const original=()=>require('./read-project-config.cjs')();
 test('image ordering tolerates old settings, missing assets and new photos without changing identities',()=>{
   const items=[{id:'a'},{id:'b'},{id:'c'}],key='results:results-scenario-g1-02/photo';
   assert.deepEqual(Order.ordered(items,key,undefined,{}),items);

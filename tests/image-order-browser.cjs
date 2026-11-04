@@ -74,7 +74,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,mouse,cdp,base,
   await evaluate('(async()=>{const directory=await navigator.storage.getDirectory(),handle=await directory.getFileHandle("image-order.json",{create:true}),writer=await handle.createWritable();await writer.write(window.visualLayoutEditor.store.serialize());await writer.close();window.visualLayoutEditor.files.env={isSecureContext:true,indexedDB:window.indexedDB,showOpenFilePicker:async()=>[handle],showSaveFilePicker:async()=>handle}})()');
   await click('[data-vl-action="open"]');await wait('!window.visualLayoutEditor.busy');await click('[data-image-order-open]');
   const native=await rows();await click(row(native[1])+' [data-image-order-step="-1"]');const nativeOrder=await order();
-  await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');assert.deepEqual(await evaluate('(async()=>JSON.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageOrders)()'),nativeOrder);
+  await click('[data-vl-action="save"]');await wait('!window.visualLayoutEditor.busy');assert.deepEqual(await evaluate('(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageOrders)()'),nativeOrder);
   await navigate(base+'/presentation-demo/#m101-lanes-issues');assert.deepEqual(await order(),nativeOrder);
   await click('.edit-toggle');await click('[data-image-order-open]');await cdp.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});
   assert(await evaluate('(()=>{const r=document.querySelector(".image-order-panel").getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight})()'));

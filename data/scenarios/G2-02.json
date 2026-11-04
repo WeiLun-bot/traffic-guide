@@ -164,7 +164,7 @@
       "rotation": 0,
       "scenario": "G2-02",
       "label": "號誌化鄉區正交三叉路口交通設施整體設置圖例",
-      "sha256": "d56c54644effbe08da79cfaafb2b6ac6967c055691b5b6c2f413e454678b9d83"
+      "sha256": "00c0a038f5264bb40820ef9e7c13916495bd23dc04f218714a75e1784a26d05a"
     },
     "g202-signals": {
       "file": "materials/04-一般道路情境/G2-02/G2-02_號誌化鄉區正交三叉路口號誌平面設置圖例.svg",
@@ -173,7 +173,7 @@
       "rotation": 0,
       "scenario": "G2-02",
       "label": "號誌化鄉區正交三叉路口號誌平面設置圖例",
-      "sha256": "425f0a8b77b19b88fd32fb2a5b2507d0587a5aba1cc229a5e62b0182b3c9359c"
+      "sha256": "e33194c576e9ef3ec3a37ddbd8caf1332f94e71a0bee6723942887dfc2b6390e"
     },
     "g202-glare": {
       "file": "materials/04-一般道路情境/G2-02/G2-02_柱立式與懸臂式號誌共存之設置圖例.png",

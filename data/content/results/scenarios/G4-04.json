@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G4-04",
+  "texts": {
+    "results-scenario-g4-04|results|title": "鄉區斜交路口的車道銜接、銳角右轉與號誌辨識問題",
+    "results-scenario-g4-04|results|intro": "主要道路寬約 20 m、現況速限 50 km/h，北側銜接橋梁；次要道路寬約 6 m、速限 30 km/h，周邊以未開發土地及零散聚落為主。",
+    "results-scenario-g4-04-strategy|results|title": "車道槽化、銳角右轉導引及斜交號誌配置",
+    "results-scenario-g4-04-strategy|results|intro": "透過槽化及車道縮減調整主要道路車流動線，並配合斜交路口的視線條件、行人庇護需求與左轉管制方式配置號誌。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g4-04": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "主要道路進出車道數不一致",
+            "text": "主要道路路口兩側的車道數不同，缺少適當槽化與車道導引時，駕駛不易判斷下游車道位置。",
+            "titleKey": "results-scenario-g4-04|results|lanes-title",
+            "textKey": "results-scenario-g4-04|results|lanes-text"
+          },
+          {
+            "id": "turn",
+            "title": "銳角右轉缺少適當車道配置",
+            "text": "北往西右轉角度較小，且轉角路緣空間不足，容易出現車輛未從最右側車道右轉的情形。",
+            "titleKey": "results-scenario-g4-04|results|turn-title",
+            "textKey": "results-scenario-g4-04|results|turn-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "主要道路行人穿越缺少庇護",
+            "text": "主要道路較寬且車速較高，雖然鄉區行人量較少，仍須考量行人無法一次完成穿越時的中途停等空間。",
+            "titleKey": "results-scenario-g4-04|results|pedestrian-title",
+            "textKey": "results-scenario-g4-04|results|pedestrian-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限與號誌辨識條件不足",
+            "text": "速限標誌及標字未完整配置；次要道路兩側錯位距離較大，駕駛接近路口時可能無法同時辨識近、遠端號誌。",
+            "titleKey": "results-scenario-g4-04|results|speed-title",
+            "textKey": "results-scenario-g4-04|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g4-04-strategy": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "以槽化線調整車道及左轉空間",
+            "text": "於主要道路利用槽化線調整進出路口車道數，並配置左轉專用車道，減少左轉停等對直行車流的干擾。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g4-04-strategy|results|lanes-title",
+            "textKey": "results-scenario-g4-04-strategy|results|lanes-text"
+          },
+          {
+            "id": "turn",
+            "title": "右轉前縮減車道並預告",
+            "text": "北往西為銳角右轉，於上游以車道縮減標線，將接近路口處調整為單一直右車道，並搭配右側車道縮減標誌提前預告。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g4-04-strategy|results|turn-title",
+            "textKey": "results-scenario-g4-04-strategy|results|turn-text"
+          },
+          {
+            "id": "guidance",
+            "title": "引導次要道路穿越斜交路口",
+            "text": "因次要道路與主要道路斜交，於路口劃設行車導引線，引導車輛通過交叉口並銜接對側車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g4-04-strategy|results|guidance-title",
+            "textKey": "results-scenario-g4-04-strategy|results|guidance-text"
+          },
+          {
+            "id": "walking",
+            "title": "配置行人庇護島",
+            "text": "於主要道路設置中央行人庇護島，提供行人穿越多車道道路時的中途停等空間。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g4-04-strategy|results|walking-title",
+            "textKey": "results-scenario-g4-04-strategy|results|walking-text"
+          },
+          {
+            "id": "signals",
+            "title": "依斜交條件配置號誌與左轉時相",
+            "text": "於次要道路近端增設柱立式號誌，並檢核其他方向誤窺燈面的問題；依左轉側撞風險評估採機會左轉或保護左轉，配置對應燈面。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g4-04-strategy|results|signals-title",
+            "textKey": "results-scenario-g4-04-strategy|results|signals-text"
+          }
+        ]
+      }
+    }
+  }
+}

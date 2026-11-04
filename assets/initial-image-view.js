@@ -46,6 +46,7 @@
     opened.delete(record.id); record.panel.hidden = true; record.button.setAttribute('aria-expanded', 'false');
   }
   function open(record) {
+    if(window.PresentationMode?.readOnly)return;
     opened.add(record.id);
     record.context.prepare();
     const current = active.get(record.id);
@@ -53,6 +54,7 @@
     current.panel.hidden = false; current.button.setAttribute('aria-expanded', 'true'); fields(current); place(current);
   }
   function commit(record, patch) {
+    if(window.PresentationMode?.readOnly)return false;
     if (record.context.isBusy()) return false;
     try {
       record.context.setView({...setting(record), ...patch});

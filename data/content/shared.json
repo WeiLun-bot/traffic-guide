@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "owner": "shared",
+  "texts": {
+    "modules-formation|shared|title": "模組的組成架構"
+  },
+  "images": {
+    "results:module-m3-03-diagram": {
+      "src": "materials/edited/29b29406e5bf98d8bc3f5880d00d784fb34f2d3b97c2eed78476c8035ee7808d.svg",
+      "alt": "M3-03_機車兩段式左轉代表型1.svg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {}
+  }
+}

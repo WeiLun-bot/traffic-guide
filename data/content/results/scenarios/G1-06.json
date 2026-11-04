@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G1-06",
+  "texts": {
+    "results-scenario-g1-06|results|title": "斜交角度過小與主要道路轉向空間問題",
+    "results-scenario-g1-06|results|intro": "主要道路寬約 20 m、速限 60 km/h，設有快慢車道及中央分隔；次要道路寬約 6 m、速限 30 km/h。",
+    "results-scenario-g1-06-strategy|results|title": "斜交路口正交化與左、右轉車道配置",
+    "results-scenario-g1-06-strategy|results|intro": "透過調整次要道路交角及主要道路車道配置，改善來車觀察條件，並提供轉向車輛適當的行駛空間。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g1-06": {
+        "points": [
+          {
+            "id": "visibility",
+            "title": "斜交角度過小，來車觀察困難",
+            "titleKey": "results-scenario-g1-06|results|visibility-title",
+            "text": "次要道路與主要道路交角過小，車輛停等時不易觀察主要道路來車，可能產生視線死角。",
+            "textKey": "results-scenario-g1-06|results|visibility-text"
+          },
+          {
+            "id": "turn",
+            "title": "主要道路缺少左、右轉空間",
+            "titleKey": "results-scenario-g1-06|results|turn-title",
+            "text": "主要道路未妥善配置轉向車道，左轉車輛停等可能影響直行，右轉車輛則須跨越慢車道。",
+            "textKey": "results-scenario-g1-06|results|turn-text"
+          },
+          {
+            "id": "priority",
+            "title": "路口位置與轉向警示不足",
+            "titleKey": "results-scenario-g1-06|results|priority-title",
+            "text": "次要道路交通量較少，主要道路缺少明確的岔路警示，駕駛不易提前注意轉向車輛。",
+            "textKey": "results-scenario-g1-06|results|priority-text"
+          }
+        ]
+      },
+      "results-scenario-g1-06-strategy": {
+        "points": [
+          {
+            "id": "angle",
+            "title": "調整次要道路交角",
+            "titleKey": "results-scenario-g1-06-strategy|results|angle-title",
+            "text": "將次要道路接近路口的線形調整為近 90 度銜接，使車輛能以接近垂直主要道路的方向停等及觀察來車。",
+            "textKey": "results-scenario-g1-06-strategy|results|angle-text",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "turn",
+            "title": "配置左轉及直右車道",
+            "titleKey": "results-scenario-g1-06-strategy|results|turn-title",
+            "text": "主要道路依行車方向配置左轉車道與直右車道，減少左轉停等對直行車流的干擾。",
+            "textKey": "results-scenario-g1-06-strategy|results|turn-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "continuity",
+            "title": "調整路口前快慢車道分隔",
+            "titleKey": "results-scenario-g1-06-strategy|results|continuity-title",
+            "text": "於路口前約 30～60 m 調整快慢車道分隔，改以混合車道及車道線配置，配合指向線引導直行與右轉車流。",
+            "textKey": "results-scenario-g1-06-strategy|results|continuity-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "yield",
+            "title": "設置次要道路讓路設施",
+            "text": "於次要道路設置讓路線及讓路標誌。若讓路線位於曲線段，讓路標誌可往上游移至較易辨識的位置。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-g1-06-strategy|results|yield-title",
+            "textKey": "results-scenario-g1-06-strategy|results|yield-text"
+          }
+        ]
+      }
+    }
+  }
+}
