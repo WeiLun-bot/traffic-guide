@@ -4,7 +4,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifa
   const baseline=fs.readFileSync(previewConfigPath,'utf8');
   const shot=async name=>{const result=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(result.data,'base64'));};
   await navigate(base+'/presentation-demo/#results-general');
-  assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),120);
+  assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),122);
   const pages=await evaluate('window.generalRoadPresentation.pages.filter(page=>page.deckId==="results"&&page.stage==="strategy").map(page=>({id:page.id,code:page.resultsScenario,key:page.content.images[0].key,count:page.content.items.length}))');assert.equal(pages.length,36);
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false});
   for(const entry of pages){

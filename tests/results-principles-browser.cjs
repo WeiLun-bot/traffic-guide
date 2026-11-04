@@ -7,7 +7,7 @@ module.exports=async function({evaluate,view,navigate,click,cdp,base,artifacts,p
   try{
     await navigate(base+'/presentation-demo/#results-principles');
     const pages=await run(()=>window.generalRoadPresentation.pages.filter(page=>page.resultType==='principles').map(page=>({id:page.id,title:page.name})));
-    assert.equal(pages.length,7);assert.equal(await run(()=>Number(document.getElementById('page-total').textContent)),120);
+    assert.equal(pages.length,7);assert.equal(await run(()=>Number(document.getElementById('page-total').textContent)),122);
     for(const [width,height]of [[1366,768],[1280,720],[1920,1080]]){
       await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
       for(const [index,page]of pages.entries()){

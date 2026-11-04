@@ -13,7 +13,7 @@ module.exports=async function({evaluate,view,navigate,click,cdp,base,artifacts,p
         const members=await evaluate('window.generalRoadPresentation.pages.filter(p=>p.chapter==='+JSON.stringify(chapter.id)+').map(p=>p.id)');assert.equal(members[0],'chapter-cover-'+chapter.id);assert(members.length>1);await click('#next');assert.equal(await run(()=>window.generalRoadPresentation.page.id),members[1]);await click('#previous');assert.equal(await run(()=>window.generalRoadPresentation.page.id),members[0]);
       }
     }
-    assert.equal(await run(()=>window.generalRoadPresentation.pages.filter(page=>page.deckId==='results').length),120);
+    assert.equal(await run(()=>window.generalRoadPresentation.pages.filter(page=>page.deckId==='results').length),122);
     pass('all four presentations have 23 unique chapter covers; chapter tabs, deck entries and next/previous navigation lead into preserved content without detail requests');
     for(const [width,height]of [[1366,768],[1920,1080],[390,844]]){
       await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});for(const id of ['results-principles','modules-M3','g2','complex-c3']){

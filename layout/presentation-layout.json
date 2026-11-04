@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-04T11:19:11.958Z",
+  "updatedAt": "2026-11-04T12:34:49.279Z",
   "legacyState": {
     "version": 1,
     "updatedAt": 1793791150320,
@@ -783,7 +783,97 @@
       "results-scenario-c4-06-strategy|results|passing-text": "在超車視距不足的路段設置分向限制線，禁止車輛跨越超車；必要時搭配禁止超車標誌，加強管制提示。",
       "results-scenario-c4-06-strategy|results|buffer-title": "於彎道入口加寬中央槽化空間",
       "results-scenario-c4-06-strategy|results|buffer-text": "視道路寬度及線形條件，將分向限制線局部加寬為槽化線，提供雙向車流之間的緩衝空間；若超車視距符合要求，則可依條件採不同的分向標線配置。",
-      "chapter-cover-results-intro|shared|title": "研究緣起與前期成果"
+      "chapter-cover-results-intro|shared|title": "研究緣起與前期成果",
+      "results-three-years|results|source-title": "第一期｜建立一般道路情境的設置圖例",
+      "results-three-years|results|intro": "第一期以常見路口型式及管制方式為基礎，建立不同道路條件下的交通設施設置圖例。",
+      "results-three-years|results|takeaway": "以 18 個一般道路情境，建立常見路口的整體設置參考。",
+      "results-three-years|results|framework-types-text": "依三岔、四岔路口及號誌、無號誌管制，建立四大情境類別。",
+      "results-three-years|results|framework-conditions-text": "進一步區分市區、鄉區及正交、斜交等道路條件。",
+      "results-three-years|results|framework-integration-text": "整合標誌、標線、號誌，呈現完整路口的配置方式。",
+      "results-phase-two|results|source-title": "第二期｜擴展至複雜道路與特殊交通條件",
+      "results-phase-two|results|intro": "第二期延續整體情境的編寫方式，針對一般路口分類較難涵蓋的特殊路型及交通運作需求，提出設置圖例。",
+      "results-phase-two|results|takeaway": "兩期合計完成 36 個道路情境，涵蓋常見及特殊道路條件下的整體設施配置。",
+      "results-phase-two|results|framework-intersections-title": "平面交叉：",
+      "results-phase-two|results|framework-intersections-text": "錯位路口、短街廓、多叉路口及圓環。",
+      "results-phase-two|results|framework-connections-title": "交流道與軌道交叉：",
+      "results-phase-two|results|framework-connections-text": "匝道銜接及鐵路平交道。",
+      "results-phase-two|results|framework-segments-title": "路段：",
+      "results-phase-two|results|framework-segments-text": "快慢分隔、調撥車道、單行道、迴轉道、行人穿越及山區彎道。",
+      "results-common-design-issues|results|title": "完整的道路情境之外，還有哪些設置問題需要說明？",
+      "results-common-design-issues|results|intro": "前兩期以整個路口或路段為單位，說明不同道路條件下如何配置交通設施。但實際運用時，仍有一些跨情境共通的設計問題需要進一步整理。",
+      "results-common-design-issues|results|takeaway": "除了完整道路情境，也需要集中說明各項交通功能的設施分工、配置關係及適用條件。",
+      "results-common-design-issues|results|shared-functions-title": "相同的交通功能，分散在不同情境",
+      "results-common-design-issues|results|shared-functions-text": "例如停管制可能出現在不同的三岔、四岔路口，但停止線、停車再開標誌與「停」標字的配置原則具有共通性。",
+      "results-common-design-issues|results|facility-roles-title": "完整配置圖不易凸顯個別設施的作用",
+      "results-common-design-issues|results|facility-roles-text": "一張路口圖包含許多交通設施，使用者能看到整體配置，卻未必能直接理解各項設施為什麼設在該位置，以及彼此如何配合。",
+      "results-common-design-issues|results|changing-conditions-title": "設置條件改變時，需要知道哪些設施應調整",
+      "results-common-design-issues|results|changing-conditions-text": "例如停管制路口增設行穿線後，停止線與觀察主要道路來車的位置可能不同，不能直接套用原本圖例。",
+      "results-phase-three-functions|results|title": "第三期｜將跨情境共通的設置方法整理為功能模組",
+      "results-phase-three-functions|results|intro": "第三期延續前兩期的道路情境成果，改以交通功能或管制目的為單位，整理標誌、標線、號誌及相關設施的配置方式。",
+      "results-phase-three-functions|results|takeaway": "第三期不是取代原有情境，而是在完整配置圖例之外，增加以交通功能查找及檢討設置方法的途徑。",
+      "results-phase-three-functions|results|extract-functions-title": "從不同情境中整理共通的交通功能",
+      "results-phase-three-functions|results|extract-functions-text": "例如停讓管制、車道導引、行人穿越及危險警示等，均可能出現在不同道路條件下。",
+      "results-phase-three-functions|results|combine-facilities-title": "集中說明設施的分工與組合關係",
+      "results-phase-three-functions|results|combine-facilities-text": "不只列出設施種類與尺寸，也說明各項設施負責的作用、相對位置及設置時應注意的條件。",
+      "results-phase-three-functions|results|reusable-examples-title": "建立可跨情境參考的設置圖例",
+      "results-phase-three-functions|results|reusable-examples-text": "以代表型呈現基本配置，再依視距、道路幾何、行人需求等條件，說明延伸應用方式。",
+      "results-phase-three-functions|results|cross-reference-title": "與前兩期道路情境相互參照",
+      "results-phase-three-functions|results|cross-reference-text": "功能模組提供個別交通功能的設計方法，道路情境則呈現多個模組在同一路口或路段的整體配置。",
+      "chapter-cover-results-modular|shared|title": "模組化架構與使用方式",
+      "results-module-definition|results|title": "功能模組｜以交通功能為單位整理設置方法",
+      "results-module-definition|results|intro": "為達成特定交通功能或管制目的，將相關標誌、標線、號誌及其他交通設施，整理成可在不同道路情境中參考運用的設計單元。",
+      "results-module-definition|results|takeaway": "模組不是可直接複製的固定設計圖，而是提供特定交通功能的基本設置方法。",
+      "results-module-definition|results|purpose-title": "以交通功能為分類基礎",
+      "results-module-definition|results|purpose-text": "不以個別標誌、標線、號誌作為分類，而是依照要達成的交通功能，整理需要共同配置的設施。",
+      "results-module-definition|results|devices-title": "說明設施的分工與配置關係",
+      "results-module-definition|results|devices-text": "除了介紹設施本身，也說明各設施的作用、相對位置及搭配方式。",
+      "results-module-definition|results|conditions-title": "依不同道路條件調整配置",
+      "results-module-definition|results|conditions-text": "同一個模組可以應用於不同道路情境，但仍須依現地視距、道路幾何及用路需求調整。",
+      "results-module-definition|results|stop-example-title": "簡單舉例｜停管制模組",
+      "results-module-definition|results|stop-example-text": "將停車再開標誌、「停」標字、停止線與相關導引標線放在同一模組中，說明其作用及配置關係，而不是分別查閱各項設施。",
+      "results-module-classification|results|title": "依交通功能與用路需求，建立四大模組主題",
+      "results-module-classification|results|intro": "由道路空間及行車動線出發，進一步處理路口管制、特定用路人需求，以及道路危險與通行限制。",
+      "results-module-classification|results|takeaway": "四大主題提供不同交通功能的查找入口，一個道路情境可能同時使用多個主題的模組。",
+      "results-module-classification|results|space-title": "M1｜車道配置與動線導引",
+      "results-module-classification|results|space-text": "說明車道如何配置、車輛如何選道及銜接行駛路徑，並處理路側停車空間。",
+      "results-module-classification|results|space-includes": "包含：路口動線導引、行車指示、路側停車。",
+      "results-module-classification|results|priority-title": "M2｜路口管制",
+      "results-module-classification|results|priority-text": "依路口通行優先關係及允許行向，配置停讓、圓環、號誌及行向管制設施。",
+      "results-module-classification|results|priority-includes": "包含：停、讓管制、圓環管制、號誌化管制、路口行向管制。",
+      "results-module-classification|results|users-title": "M3｜行人、自行車、機車、公車",
+      "results-module-classification|results|users-text": "依不同用路人的通行、穿越、轉向及停靠需求，配置相關交通設施。",
+      "results-module-classification|results|users-includes": "包含：行人、自行車、機車、公車。",
+      "results-module-classification|results|risk-title": "M4｜危險警示與通行管制",
+      "results-module-classification|results|risk-text": "依道路危險、車種限制、速率、超車及特定區域需求，配置警告、禁制與指示設施。",
+      "results-module-classification|results|risk-includes": "包含：危險警示、通行限制、路段行為管制、區域管制。",
+      "results-submodule-contents|results|title": "從現況議題、代表型到延伸應用",
+      "results-submodule-contents|results|intro": "子模組不只是提供設置圖例，也整理設置問題、基本配置方法及不同條件下的調整方式。",
+      "results-submodule-contents|results|takeaway": "代表型說明基本配置，延伸應用說明條件改變時如何調整；相關條文與情境則提供進一步查閱的依據。",
+      "results-submodule-contents|results|issues-title": "現況與議題",
+      "results-submodule-contents|results|issues-text": "指出現行設置常見的問題，說明需要檢討的設施設計及配置關係。",
+      "results-submodule-contents|results|representative-title": "代表型圖例",
+      "results-submodule-contents|results|representative-text": "以具有代表性的道路條件，呈現該項交通功能的基本設施組合及配置位置。",
+      "results-submodule-contents|results|regulations-title": "圖例與相關條文說明",
+      "results-submodule-contents|results|regulations-text": "說明組成設施的功能、設置位置及搭配方式，並對照《設置規則》相關條文。",
+      "results-submodule-contents|results|extensions-title": "延伸應用",
+      "results-submodule-contents|results|extensions-text": "針對道路幾何、視距、行人穿越或其他條件差異，提出替選或調整配置方式。",
+      "results-submodule-contents|results|scenarios-title": "適用道路情境",
+      "results-submodule-contents|results|scenarios-text": "列出相關道路情境，讓使用者可以進一步參考模組在完整路口或路段中的應用方式。",
+      "results-guide-usage|results|title": "由基本原則、功能模組到完整道路情境",
+      "results-guide-usage|results|intro": "第三期將前兩期道路情境與新增的功能模組整合，形成「基本配置原則—功能模組—道路情境」的指引架構。",
+      "results-guide-usage|results|takeaway": "不論從道路情境或交通功能出發，都可以透過模組與情境的對照，找到相關的設置方法。",
+      "results-guide-usage|results|callouts-heading": "兩種查閱方式",
+      "results-guide-usage|results|principles-title": "基本配置原則：瞭解各類設施的共同要求",
+      "results-guide-usage|results|principles-text": "第 2 章依標線、標誌、號誌分類，說明設施的功能、基本設置原則及相關條文。",
+      "results-guide-usage|results|functions-title": "功能模組：查找特定交通功能的設置方法",
+      "results-guide-usage|results|functions-text": "第 3 章依交通功能分類，說明相關設施的組合、基本配置及延伸應用。",
+      "results-guide-usage|results|situations-title": "道路情境：檢視整個路口或路段的配置",
+      "results-guide-usage|results|situations-text": "第 4、5 章透過一般及複雜道路情境，呈現多個功能模組在不同道路條件下的組合方式。",
+      "results-guide-usage|results|lookup-scenario-title": "已有特定道路情境：",
+      "results-guide-usage|results|lookup-scenario-text": "先查找相似的整體配置圖例，再依需要參考相關模組及基本原則。",
+      "results-guide-usage|results|lookup-problem-title": "需要處理特定設置問題：",
+      "results-guide-usage|results|lookup-problem-text": "先查找對應功能模組，再參考其適用情境及相關條文。",
+      "results-module-hierarchy|results|source-title": "4 個主題、15 個模組、27 個子模組"
     },
     "images": {
       "module:stop-crosswalk": {
@@ -1730,6 +1820,63 @@
       },
       "results-phase-three|results|source-title": {
         "fontSize": 36
+      },
+      "results-module-hierarchy|results|framework-M1-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M2-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M1-01-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M1-02-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M1-03-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M2-01-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M2-02-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M2-03-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M2-04-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M3-01-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M3-02-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M3-03-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M3-04-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M4-01-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M4-02-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M4-03-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M4-04-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M4-name": {
+        "fontSize": 18
+      },
+      "results-module-hierarchy|results|framework-M3-name": {
+        "fontSize": 18
       }
     },
     "frames": {
@@ -2008,12 +2155,14 @@
       "results-background",
       "results-three-years",
       "results-phase-two",
+      "results-common-design-issues",
+      "results-phase-three-functions",
       "chapter-cover-results-modular",
-      "results-modular-rationale",
       "results-module-definition",
       "results-module-classification",
       "results-module-hierarchy",
-      "results-phase-three",
+      "results-submodule-contents",
+      "results-guide-usage",
       "results-guide-structure",
       "chapter-cover-results-principles",
       "results-principles",
@@ -67200,6 +67349,2076 @@
       "fontSize": null,
       "fontWeight": null,
       "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Cspace-includes": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Cspace-includes",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|space-includes"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m1-01-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m1-01-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m1-01-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m1-03-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m1-03-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m1-03-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Cpriority-includes": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Cpriority-includes",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|priority-includes"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m2-01-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m2-01-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m2-01-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m2-03-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m2-03-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m2-03-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Cusers-includes": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Cusers-includes",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|users-includes"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m3-01-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m3-01-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m3-01-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m3-02-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m3-02-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m3-02-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Crisk-includes": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Crisk-includes",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|risk-includes"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m4-01-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m4-01-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m4-01-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m4-03-diagram": {
+      "id": "results-module-classification/0/text/edit-key/results-module-classification%7Cresults%7Ctopic-image-results%3Amodule-m4-03-diagram",
+      "pageId": "results-module-classification",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-classification|results|topic-image-results:module-m4-03-diagram"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-definition/0/text/edit-key/results-module-definition%7Cresults%7Cstop-example-title": {
+      "id": "results-module-definition/0/text/edit-key/results-module-definition%7Cresults%7Cstop-example-title",
+      "pageId": "results-module-definition",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-definition|results|stop-example-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-definition/0/text/edit-key/results-module-definition%7Cresults%7Cstop-example-text": {
+      "id": "results-module-definition/0/text/edit-key/results-module-definition%7Cresults%7Cstop-example-text",
+      "pageId": "results-module-definition",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-definition|results|stop-example-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Csource-title": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Csource-title",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|source-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-0-0": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-0-0",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-heading-0-0"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-0-1": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-0-1",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-heading-0-1"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-0-2": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-0-2",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-heading-0-2"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-01-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-01-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-01.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-01.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-01.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-02-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-02-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-02-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-02-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-02-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-02-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-02.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-02.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-02.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-03-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-03-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-03-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-03-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-03-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-03-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-03.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M1-03.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M1-03.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-01-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-01-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-01.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-01.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-01.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-02-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-02-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-02-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-02-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-02-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-02-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-02.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-02.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-02.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-03-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-03-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-03-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-03-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-03-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-03-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-03.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-03.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-03.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-04-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-04-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-04.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-04.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04.3-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M2-04.3-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M2-04.3-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-1-0": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-1-0",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-heading-1-0"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-1-1": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-1-1",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-heading-1-1"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-1-2": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-heading-1-2",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-heading-1-2"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-01-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-01-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-01.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-01.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01.3-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-01.3-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-01.3-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-02-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-02-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-02.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-02.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-02.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-03-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-03-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-03.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-03.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-03.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-04-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-04-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-04.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M3-04.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M3-04.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-01-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-01-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-01.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-01.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-01.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-02-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-02-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-02-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-02-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-02-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-02-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-02.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-02.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-02.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-03-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-03-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-03.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-03.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-03.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04-code": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04-code",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-04-code"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-04-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04.1-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04.1-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-04.1-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04.2-name": {
+      "id": "results-module-hierarchy/0/text/edit-key/results-module-hierarchy%7Cresults%7Cframework-M4-04.2-name",
+      "pageId": "results-module-hierarchy",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-module-hierarchy|results|framework-M4-04.2-name"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/path/section%3A0%3Eheader%3A0%3Espan%3A0": {
+      "id": "results-submodule-contents/0/text/path/section%3A0%3Eheader%3A0%3Espan%3A0",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "path",
+        "value": "section:0>header:0>span:0"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Ctitle": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Ctitle",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cintro": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cintro",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|intro"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cissues-title": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cissues-title",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|issues-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cissues-text": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cissues-text",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|issues-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Crepresentative-title": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Crepresentative-title",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|representative-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Crepresentative-text": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Crepresentative-text",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|representative-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cregulations-title": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cregulations-title",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|regulations-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cregulations-text": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cregulations-text",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|regulations-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cextensions-title": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cextensions-title",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|extensions-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cextensions-text": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cextensions-text",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|extensions-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cscenarios-title": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cscenarios-title",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|scenarios-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cscenarios-text": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Cscenarios-text",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|scenarios-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Ctakeaway": {
+      "id": "results-submodule-contents/0/text/edit-key/results-submodule-contents%7Cresults%7Ctakeaway",
+      "pageId": "results-submodule-contents",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-submodule-contents|results|takeaway"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/path/section%3A0%3Eheader%3A0%3Espan%3A0": {
+      "id": "results-guide-usage/0/text/path/section%3A0%3Eheader%3A0%3Espan%3A0",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "path",
+        "value": "section:0>header:0>span:0"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Ctitle": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Ctitle",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cintro": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cintro",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|intro"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cprinciples-title": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cprinciples-title",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|principles-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cprinciples-text": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cprinciples-text",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|principles-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cfunctions-title": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cfunctions-title",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|functions-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cfunctions-text": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Cfunctions-text",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|functions-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Csituations-title": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Csituations-title",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|situations-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Csituations-text": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Csituations-text",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|situations-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Ccallouts-heading": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Ccallouts-heading",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|callouts-heading"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-scenario-title": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-scenario-title",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|lookup-scenario-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-scenario-text": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-scenario-text",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|lookup-scenario-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-problem-title": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-problem-title",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|lookup-problem-title"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-problem-text": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Clookup-problem-text",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|lookup-problem-text"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
+    },
+    "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Ctakeaway": {
+      "id": "results-guide-usage/0/text/edit-key/results-guide-usage%7Cresults%7Ctakeaway",
+      "pageId": "results-guide-usage",
+      "phase": 0,
+      "kind": "text",
+      "target": {
+        "type": "edit-key",
+        "value": "results-guide-usage|results|takeaway"
+      },
+      "x": 0,
+      "y": 0,
+      "width": null,
+      "height": null,
+      "fontFamily": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "lineHeight": null
     }
   },
   "imageViews": {
@@ -67878,9 +70097,9 @@
       "pageId": "results-module-m3-02",
       "assetKey": "results:module-m3-02-diagram",
       "units": "percent",
-      "zoom": 2.8576511316895075,
-      "x": -5.7998955961448155,
-      "y": -22.057567199543048,
+      "zoom": 2.117000023823135,
+      "x": -3.596629554124565,
+      "y": 0.6500132117264957,
       "rotation": 0
     },
     "results-module-m3-04/results%3Amodule-m3-04-current-1": {
@@ -67952,6 +70171,126 @@
       "x": -1.6168995753840751,
       "y": -1.6064973652777612,
       "rotation": -85
+    },
+    "results-module-m2-03/results%3Amodule-m2-03-diagram": {
+      "id": "results-module-m2-03/results%3Amodule-m2-03-diagram",
+      "pageId": "results-module-m2-03",
+      "assetKey": "results:module-m2-03-diagram",
+      "units": "percent",
+      "zoom": 2.4596031212097795,
+      "x": 0.6547723643836855,
+      "y": -2.354640631891915,
+      "rotation": 90
+    },
+    "results-module-m3-01/results%3Amodule-m3-01-diagram": {
+      "id": "results-module-m3-01/results%3Amodule-m3-01-diagram",
+      "pageId": "results-module-m3-01",
+      "assetKey": "results:module-m3-01-diagram",
+      "units": "percent",
+      "zoom": 1.3498588094150397,
+      "x": -12.786240849394625,
+      "y": -4.502590720538064,
+      "rotation": 0
+    },
+    "results-module-m4-01/results%3Amodule-m4-01-diagram": {
+      "id": "results-module-m4-01/results%3Amodule-m4-01-diagram",
+      "pageId": "results-module-m4-01",
+      "assetKey": "results:module-m4-01-diagram",
+      "units": "percent",
+      "zoom": 1.3498588094150397,
+      "x": 20.439043304217776,
+      "y": -18.746393729608517,
+      "rotation": 90
+    },
+    "results-module-m4-03/results%3Amodule-m4-03-diagram": {
+      "id": "results-module-m4-03/results%3Amodule-m4-03-diagram",
+      "pageId": "results-module-m4-03",
+      "assetKey": "results:module-m4-03-diagram",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m1-01-diagram": {
+      "id": "results-module-classification/results%3Amodule-m1-01-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m1-01-diagram",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m1-03-diagram": {
+      "id": "results-module-classification/results%3Amodule-m1-03-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m1-03-diagram",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m2-01-diagram": {
+      "id": "results-module-classification/results%3Amodule-m2-01-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m2-01-diagram",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m2-03-diagram": {
+      "id": "results-module-classification/results%3Amodule-m2-03-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m2-03-diagram",
+      "units": "percent",
+      "zoom": 2.4596031212097795,
+      "x": 0.6547723643836855,
+      "y": -2.354640631891915,
+      "rotation": 90
+    },
+    "results-module-classification/results%3Amodule-m3-01-diagram": {
+      "id": "results-module-classification/results%3Amodule-m3-01-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m3-01-diagram",
+      "units": "percent",
+      "zoom": 1.3498588094150397,
+      "x": -12.786240849394625,
+      "y": -4.502590720538064,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m3-02-diagram": {
+      "id": "results-module-classification/results%3Amodule-m3-02-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m3-02-diagram",
+      "units": "percent",
+      "zoom": 2.117000023823135,
+      "x": -3.596629554124565,
+      "y": 0.6500132117264957,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m4-01-diagram": {
+      "id": "results-module-classification/results%3Amodule-m4-01-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m4-01-diagram",
+      "units": "percent",
+      "zoom": 1.3498588094150397,
+      "x": 20.439043304217776,
+      "y": -18.746393729608517,
+      "rotation": 90
+    },
+    "results-module-classification/results%3Amodule-m4-03-diagram": {
+      "id": "results-module-classification/results%3Amodule-m4-03-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m4-03-diagram",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 0
     }
   },
   "content": {

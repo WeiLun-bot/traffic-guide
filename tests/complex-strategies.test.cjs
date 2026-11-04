@@ -4,7 +4,7 @@ const Results=require('../assets/presentation-results.js'),content=require('../d
 const merged=()=>Results.mergeModuleComparisons(Results.mergeStrategies(Results.mergeStrategies(Results.mergeConditions(content,conditions),general),complex),require('../data/results/module-comparisons.json'));
 
 test('all 36 scenarios retain their issue content and adjacent strategy pages alongside all module comparisons',()=>{
-  const data=merged(),pages=Results.buildPages(data,catalog);assert.equal(pages.length,112);assert.equal(new Set(pages.map(page=>page.id)).size,112);
+  const data=merged(),pages=Results.buildPages(data,catalog);assert.equal(pages.length,114);assert.equal(new Set(pages.map(page=>page.id)).size,114);
   for(const scene of catalog.scenarios){
     const pair=pages.filter(page=>page.resultsScenario===scene.id);assert.deepEqual(pair.map(page=>page.stage),['issue','strategy']);assert.equal(pages.indexOf(pair[1]),pages.indexOf(pair[0])+1);
     assert.equal(pair[1].id,Results.scenarioPageId(scene.id)+'-strategy');assert.equal(pair[1].sceneName,scene.name);assert.deepEqual(data.scenarioExamples[scene.id].issue,conditions.scenarios[scene.id].issue);

@@ -19,8 +19,8 @@
         {
           "id": "results-modular",
           "code": "01",
-          "name": "模組化架構",
-          "entry": "results-modular-rationale"
+          "name": "模組化架構與使用方式",
+          "entry": "results-module-definition"
         },
         {
           "id": "results-principles",

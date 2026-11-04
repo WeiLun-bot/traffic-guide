@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath,editText}){
   const baseline=fs.readFileSync(previewConfigPath,'utf8'),shot=async name=>{const result=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(result.data,'base64'));};
-  await navigate(base+'/presentation-demo/#results-modules');assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),120);
+  await navigate(base+'/presentation-demo/#results-modules');assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),122);
   const modules=await evaluate('window.generalRoadPresentation.pages.filter(page=>page.resultsModule).map(page=>({id:page.id,code:page.resultsModule,images:page.content.images,count:page.content.items.length}))');assert.equal(modules.length,15);
   assert.equal(await evaluate('document.querySelectorAll("[data-results-module]").length'),15);assert.equal(await evaluate('document.querySelectorAll(".results-heading>p").length'),0);
   for(const [width,height,columns]of [[1366,768,5],[1920,1080,5],[768,1024,3],[390,844,2]]){
@@ -26,6 +26,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifa
   await view(modules[0].id);await click('#previous');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-modules');await view(modules.at(-1).id);await click('#next');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'chapter-cover-results-review');
   pass('all 15 module thumbnails and photo/diagram comparisons decode, retain equal frames and fit desktop, tablet and phone layouts');
   const first=modules[0],diagram=first.images.find(image=>image.role==='module').key;
+  await view('results-module-classification');const topicCamera=await evaluate('document.querySelector(\'[data-topic-module="M1-01"] svg\').getAttribute("viewBox")');
   await view(first.id);await click('[data-asset="'+diagram+'"]');assert(await evaluate('document.getElementById("asset-dialog").open'));await evaluate('document.getElementById("asset-dialog").close()');
   await click('.results-map-card:last-child .iv-trigger');assert(await evaluate('document.querySelector(".iv-panel:not([hidden]) .iv-note").textContent.includes("模組總覽縮圖")'));
   for(const [field,value]of [['zoom',130],['x',5],['y',-4],['rotation',37]])await evaluate('(()=>{const input=document.querySelector(\'.iv-panel:not([hidden]) [data-iv-field="'+field+'"]\');input.value='+value+';input.dispatchEvent(new Event("change",{bubbles:true}));})()');
@@ -34,6 +35,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifa
   await click('.edit-toggle');await click('[data-content-action="add-point"]');const added=await evaluate('window.PresentationContent.current.model.points.at(-1)'),selector='.results-points>li[data-content-item-id="'+added.id+'"] p';await editText(selector,'模組對照新增說明');await click('[data-vl-action="undo"]');await click('[data-vl-action="redo"]');await click('.edit-toggle');
   fs.writeFileSync(previewConfigPath,await evaluate('window.visualLayoutEditor.store.serialize()'));await navigate(base+'/presentation-demo/#'+first.id);assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector)+').textContent'),'模組對照新增說明');assert.equal(await evaluate('document.querySelector(".results-map-card:last-child .results-diagram").getAttribute("viewBox")'),camera);
   await view('results-modules');assert.equal(await evaluate('document.querySelector(\'[data-results-module="M1-01"] svg\').getAttribute("viewBox")'),camera);
+  await view('results-module-classification');assert.equal(await evaluate('document.querySelector(\'[data-topic-module="M1-01"] svg\').getAttribute("viewBox")'),topicCamera);
   await navigate(base+'/presentation-demo/#results-module-list-2');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-modules');await navigate(base+'/presentation-demo/#results-module-m2-01');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-module-example');assert.equal(await evaluate('window.generalRoadPresentation.page.resultsModule'),'M2-01');
   pass('photo selection, enlargement, editable notes, undo/redo, saved independent cameras, thumbnail synchronization and old module links work');
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});for(const module of modules){await view(module.id);assert(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),module.code);}

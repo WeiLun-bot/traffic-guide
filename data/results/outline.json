@@ -2,8 +2,10 @@
   "schemaVersion": 1,
   "pageAliases": {
     "results-facilities": "results-principles",
-    "results-modular": "results-modular-rationale",
-    "results-formation": "results-module-discussion"
+    "results-modular": "results-module-definition",
+    "results-formation": "results-module-discussion",
+    "results-modular-rationale": "results-module-definition",
+    "results-phase-three": "results-module-hierarchy"
   },
   "currentConditions": "data/results/current-conditions.json",
   "strategies": "data/results/general-strategies.json",
@@ -369,6 +371,78 @@
       "sha256": "fc64dd5b5b6555f5b31b0a34d3e43eb4d82b7ef981ff9019327870d130bb791d",
       "sourceFile": "materials/05-複雜道路情境/C1-01/C1-01_號誌化左或右錯位T字路口交通設施設置圖例.svg",
       "sourceSha256": "ab00e4684e72a097180f652b6abc3a60286d3c59e4af32eeff6fc0df250c894a"
+    },
+    "results:module-m1-01-diagram": {
+      "file": "materials/03-modules/M1-01/M1-01_路口與路段車道配置代表型.svg",
+      "width": 1560,
+      "height": 822,
+      "moduleId": "M1-01",
+      "role": "module",
+      "label": "M1-01 模組圖",
+      "sha256": "cee65356c8641f983233fb8f8ff7a763ae94603ba8305f1453af9a44433ba833"
+    },
+    "results:module-m1-03-diagram": {
+      "file": "materials/03-modules/M1-03/M1-03_路側停放與裝卸車位配置代表型.svg",
+      "width": 679,
+      "height": 268,
+      "moduleId": "M1-03",
+      "role": "module",
+      "label": "M1-03 模組圖",
+      "sha256": "e7d11f02d36ed9627e0191f033dbed6ae8789317ac243643ff449946ebd38b47"
+    },
+    "results:module-m2-01-diagram": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口代表型.svg",
+      "width": 321,
+      "height": 139,
+      "moduleId": "M2-01",
+      "role": "module",
+      "label": "M2-01 模組圖",
+      "sha256": "bda66ea2f023703b7e7dad91879d807f0178d22616332296d0ca7856f0d95890"
+    },
+    "results:module-m2-03-diagram": {
+      "file": "materials/03-modules/M2-03/M2-03_號誌化路口基本配置代表型.svg",
+      "width": 661,
+      "height": 829,
+      "moduleId": "M2-03",
+      "role": "module",
+      "label": "M2-03 模組圖",
+      "sha256": "8e1615abb99b23f44d111ebc17649ea0c19efa0adb0404e6dab42b8986f814cc"
+    },
+    "results:module-m3-01-diagram": {
+      "file": "materials/03-modules/M3-01/M3-01_人行道標線代表型1.svg",
+      "width": 207,
+      "height": 156,
+      "moduleId": "M3-01",
+      "role": "module",
+      "label": "M3-01 模組圖",
+      "sha256": "ed22a8d8e5220cba0a3b40c3bac54865864db071a6f6e5c6b056d898c34fc728"
+    },
+    "results:module-m3-02-diagram": {
+      "file": "materials/03-modules/M3-02/M3-02_自行車道代表型.svg",
+      "width": 2121,
+      "height": 754,
+      "moduleId": "M3-02",
+      "role": "module",
+      "label": "M3-02 模組圖",
+      "sha256": "aefcf2c265678fd41fdc899144078cb0546db37687b4198b76fa141c97a89d00"
+    },
+    "results:module-m4-01-diagram": {
+      "file": "materials/03-modules/M4-01/M4-01_局部危險警示代表型1──隧道標誌.svg",
+      "width": 415,
+      "height": 1217,
+      "moduleId": "M4-01",
+      "role": "module",
+      "label": "M4-01 模組圖",
+      "sha256": "7f523325d2a4340a870a5f232c433947738edea03c64eb0fb954824f3df8568f"
+    },
+    "results:module-m4-03-diagram": {
+      "file": "materials/03-modules/M4-03/M4-03_速率管理代表型.svg",
+      "width": 487,
+      "height": 1105,
+      "moduleId": "M4-03",
+      "role": "module",
+      "label": "M4-03 模組圖",
+      "sha256": "8e79f0ba49947b558ccde5a53b2d233e1e74d65e0e7bd2543f72c65f397c94a6"
     }
   },
   "source": {
@@ -478,229 +552,334 @@
       "chapter": "results-intro",
       "type": "framework",
       "framework": "general",
-      "title": "第一期｜一般道路情境架構表",
+      "title": "第一期｜建立一般道路情境的設置圖例",
       "source": {
         "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
         "sha256": "39dcf3648b289bce584fb156da810f1f91af6733e6f51364505d708f9c9303fa",
         "slide": 2,
         "authority": "data/scenarios/catalog.json"
-      }
+      },
+      "intro": "第一期以常見路口型式及管制方式為基礎，建立不同道路條件下的交通設施設置圖例。",
+      "items": [
+        {
+          "id": "framework-types",
+          "title": "",
+          "text": "依三岔、四岔路口及號誌、無號誌管制，建立四大情境類別。"
+        },
+        {
+          "id": "framework-conditions",
+          "title": "",
+          "text": "進一步區分市區、鄉區及正交、斜交等道路條件。"
+        },
+        {
+          "id": "framework-integration",
+          "title": "",
+          "text": "整合標誌、標線、號誌，呈現完整路口的配置方式。"
+        }
+      ],
+      "takeaway": "以 18 個一般道路情境，建立常見路口的整體設置參考。"
     },
     {
       "id": "results-phase-two",
       "chapter": "results-intro",
       "type": "framework",
       "framework": "complex",
-      "title": "第二期｜複雜道路情境架構表",
+      "title": "第二期｜擴展至複雜道路與特殊交通條件",
       "source": {
         "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
         "sha256": "39dcf3648b289bce584fb156da810f1f91af6733e6f51364505d708f9c9303fa",
         "slide": 3,
         "authority": "data/scenarios/catalog.json"
-      }
+      },
+      "intro": "第二期延續整體情境的編寫方式，針對一般路口分類較難涵蓋的特殊路型及交通運作需求，提出設置圖例。",
+      "items": [
+        {
+          "id": "framework-intersections",
+          "title": "平面交叉：",
+          "text": "錯位路口、短街廓、多叉路口及圓環。"
+        },
+        {
+          "id": "framework-connections",
+          "title": "交流道與軌道交叉：",
+          "text": "匝道銜接及鐵路平交道。"
+        },
+        {
+          "id": "framework-segments",
+          "title": "路段：",
+          "text": "快慢分隔、調撥車道、單行道、迴轉道、行人穿越及山區彎道。"
+        }
+      ],
+      "takeaway": "兩期合計完成 36 個道路情境，涵蓋常見及特殊道路條件下的整體設施配置。"
     },
     {
-      "id": "results-modular-rationale",
-      "chapter": "results-modular",
-      "type": "modular-rationale",
-      "title": "第三期主軸－模組化",
-      "sections": [
+      "id": "results-common-design-issues",
+      "chapter": "results-intro",
+      "type": "cards",
+      "title": "完整的道路情境之外，還有哪些設置問題需要說明？",
+      "intro": "前兩期以整個路口或路段為單位，說明不同道路條件下如何配置交通設施。但實際運用時，仍有一些跨情境共通的設計問題需要進一步整理。",
+      "items": [
         {
-          "id": "issues",
-          "title": "現況課題",
-          "paragraphs": [
-            {
-              "id": "source-s4-shape19-p1",
-              "text": "設施佈設位置是否合理？",
-              "shapeId": "19"
-            },
-            {
-              "id": "source-s4-shape19-p2",
-              "text": "停止線符合設置規定，但視距不足",
-              "shapeId": "19"
-            },
-            {
-              "id": "source-s4-shape22-p1",
-              "text": "各個設施的作用是否清楚？",
-              "shapeId": "22"
-            },
-            {
-              "id": "source-s4-shape22-p2",
-              "text": "我國以「停」標字為主的停管制設計方式是否適當？",
-              "shapeId": "22"
-            }
-          ]
+          "id": "shared-functions",
+          "title": "相同的交通功能，分散在不同情境",
+          "text": "例如停管制可能出現在不同的三岔、四岔路口，但停止線、停車再開標誌與「停」標字的配置原則具有共通性。"
         },
         {
-          "id": "cause",
-          "title": "問題根源",
-          "paragraphs": [
-            {
-              "id": "source-s4-shape26-p1",
-              "text": "現行規範偏向規定「設施如何設」，較少說明「哪些設施應共同運作、各自扮演什麼功能」。",
-              "shapeId": "26"
-            }
-          ]
+          "id": "facility-roles",
+          "title": "完整配置圖不易凸顯個別設施的作用",
+          "text": "一張路口圖包含許多交通設施，使用者能看到整體配置，卻未必能直接理解各項設施為什麼設在該位置，以及彼此如何配合。"
         },
         {
-          "id": "goals",
-          "title": "模組化目標",
-          "paragraphs": [
-            {
-              "id": "source-s4-shape37-p1",
-              "text": "功能分工",
-              "shapeId": "37"
-            },
-            {
-              "id": "source-s4-shape39-p1",
-              "text": "各設施負責什麼",
-              "shapeId": "39"
-            },
-            {
-              "id": "source-s4-shape41-p1",
-              "text": "＋",
-              "shapeId": "41"
-            },
-            {
-              "id": "source-s4-shape45-p1",
-              "text": "組合關係",
-              "shapeId": "45"
-            },
-            {
-              "id": "source-s4-shape47-p1",
-              "text": "為何如此搭配",
-              "shapeId": "47"
-            },
-            {
-              "id": "source-s4-shape49-p1",
-              "text": "由「單一設施」轉向\n「完整管制功能」設計",
-              "shapeId": "49"
-            }
-          ]
+          "id": "changing-conditions",
+          "title": "設置條件改變時，需要知道哪些設施應調整",
+          "text": "例如停管制路口增設行穿線後，停止線與觀察主要道路來車的位置可能不同，不能直接套用原本圖例。"
         }
       ],
-      "images": [
+      "takeaway": "除了完整道路情境，也需要集中說明各項交通功能的設施分工、配置關係及適用條件。"
+    },
+    {
+      "id": "results-phase-three-functions",
+      "chapter": "results-intro",
+      "type": "cards",
+      "title": "第三期｜將跨情境共通的設置方法整理為功能模組",
+      "intro": "第三期延續前兩期的道路情境成果，改以交通功能或管制目的為單位，整理標誌、標線、號誌及相關設施的配置方式。",
+      "items": [
         {
-          "key": "results:modular-rationale-photo-1",
-          "label": "停止線設置與視距",
-          "crop": [
-            0,
-            100.23317,
-            1213,
-            722.76683
-          ]
+          "id": "extract-functions",
+          "title": "從不同情境中整理共通的交通功能",
+          "text": "例如停讓管制、車道導引、行人穿越及危險警示等，均可能出現在不同道路條件下。"
         },
         {
-          "key": "results:modular-rationale-photo-2",
-          "label": "停管制設施作用"
+          "id": "combine-facilities",
+          "title": "集中說明設施的分工與組合關係",
+          "text": "不只列出設施種類與尺寸，也說明各項設施負責的作用、相對位置及設置時應注意的條件。"
+        },
+        {
+          "id": "reusable-examples",
+          "title": "建立可跨情境參考的設置圖例",
+          "text": "以代表型呈現基本配置，再依視距、道路幾何、行人需求等條件，說明延伸應用方式。"
+        },
+        {
+          "id": "cross-reference",
+          "title": "與前兩期道路情境相互參照",
+          "text": "功能模組提供個別交通功能的設計方法，道路情境則呈現多個模組在同一路口或路段的整體配置。"
         }
       ],
-      "source": {
-        "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
-        "sha256": "a44c3f4fc18938135f85b5645aa290159f7a72ba253b8d0e242a949cf4f034e8",
-        "slide": 4,
-        "part": "ppt/slides/slide4.xml",
-        "partSha256": "13b8cce2d2919cb81cf29a5fc03d1f7f490bdff4d6368216234405e1676ea47e",
-        "slideCount": 7
-      }
+      "takeaway": "第三期不是取代原有情境，而是在完整配置圖例之外，增加以交通功能查找及檢討設置方法的途徑。"
     },
     {
       "id": "results-module-definition",
       "chapter": "results-modular",
-      "type": "steps",
-      "title": "什麼是功能模組？",
-      "intro": "把能共同完成管制目的的設施，整理成可重複運用的設計單元。",
+      "type": "cards",
+      "layout": "lesson",
+      "title": "功能模組｜以交通功能為單位整理設置方法",
+      "intro": "為達成特定交通功能或管制目的，將相關標誌、標線、號誌及其他交通設施，整理成可在不同道路情境中參考運用的設計單元。",
       "items": [
         {
           "id": "purpose",
-          "title": "管制目的",
-          "text": "先確認要解決的問題與用路需求。"
+          "title": "以交通功能為分類基礎",
+          "text": "不以個別標誌、標線、號誌作為分類，而是依照要達成的交通功能，整理需要共同配置的設施。"
         },
         {
           "id": "devices",
-          "title": "設施組合",
-          "text": "說明各設施的分工、位置與搭配關係。"
+          "title": "說明設施的分工與配置關係",
+          "text": "除了介紹設施本身，也說明各設施的作用、相對位置及搭配方式。"
         },
         {
           "id": "conditions",
-          "title": "適用條件",
-          "text": "依道路幾何、視距與交通條件調整。"
+          "title": "依不同道路條件調整配置",
+          "text": "同一個模組可以應用於不同道路情境，但仍須依現地視距、道路幾何及用路需求調整。"
         }
       ],
-      "takeaway": "查找更直接，也能跨情境延伸運用。"
+      "callouts": [
+        {
+          "id": "stop-example",
+          "title": "簡單舉例｜停管制模組",
+          "text": "將停車再開標誌、「停」標字、停止線與相關導引標線放在同一模組中，說明其作用及配置關係，而不是分別查閱各項設施。"
+        }
+      ],
+      "takeaway": "模組不是可直接複製的固定設計圖，而是提供特定交通功能的基本設置方法。"
     },
     {
       "id": "results-module-classification",
       "chapter": "results-modular",
       "type": "cards",
-      "title": "依管制需求，建立四個模組主題",
-      "intro": "以需要共同完成的管制功能整理設施，讓相同功能能運用於不同道路情境。",
+      "layout": "lesson",
+      "numbered": false,
+      "title": "依交通功能與用路需求，建立四大模組主題",
+      "intro": "由道路空間及行車動線出發，進一步處理路口管制、特定用路人需求，以及道路危險與通行限制。",
       "items": [
         {
           "id": "space",
           "title": "M1｜車道配置與動線導引",
-          "text": "空間如何分配？用路人如何辨識行進路徑？\n整理車道配置、行車指示與路側停車。"
+          "text": "說明車道如何配置、車輛如何選道及銜接行駛路徑，並處理路側停車空間。",
+          "includes": "包含：路口動線導引、行車指示、路側停車。"
         },
         {
           "id": "priority",
           "title": "M2｜路口管制",
-          "text": "誰先走？哪些方向可以通行？\n整理停讓、圓環、號誌及路口行向管制。"
+          "text": "依路口通行優先關係及允許行向，配置停讓、圓環、號誌及行向管制設施。",
+          "includes": "包含：停、讓管制、圓環管制、號誌化管制、路口行向管制。"
         },
         {
           "id": "users",
           "title": "M3｜行人、自行車、機車、公車",
-          "text": "不同用路人的需求如何處理？\n依通行、穿越、轉向與停靠需求，配置對應設施。"
+          "text": "依不同用路人的通行、穿越、轉向及停靠需求，配置相關交通設施。",
+          "includes": "包含：行人、自行車、機車、公車。"
         },
         {
           "id": "risk",
           "title": "M4｜危險警示與通行管制",
-          "text": "有哪些危險、限制與區域管理需求？\n整理危險警示、通行限制、路段行為與區域管制。"
+          "text": "依道路危險、車種限制、速率、超車及特定區域需求，配置警告、禁制與指示設施。",
+          "includes": "包含：危險警示、通行限制、路段行為管制、區域管制。"
         }
       ],
-      "takeaway": "四個主題提供查找與設計檢討的入口；同一個道路情境可同時組合多個主題的模組。"
+      "takeaway": "四大主題提供不同交通功能的查找入口，一個道路情境可能同時使用多個主題的模組。",
+      "images": [
+        {
+          "key": "results:module-m1-01-diagram",
+          "moduleId": "M1-01",
+          "topic": "space",
+          "label": "M1-01 路口動線導引",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m1-03-diagram",
+          "moduleId": "M1-03",
+          "topic": "space",
+          "label": "M1-03 路側停車",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-01-diagram",
+          "moduleId": "M2-01",
+          "topic": "priority",
+          "label": "M2-01 停管制",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-03-diagram",
+          "moduleId": "M2-03",
+          "topic": "priority",
+          "label": "M2-03 號誌化管制",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-01-diagram",
+          "moduleId": "M3-01",
+          "topic": "users",
+          "label": "M3-01 行人通行",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m3-02-diagram",
+          "moduleId": "M3-02",
+          "topic": "users",
+          "label": "M3-02 自行車道",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m4-01-diagram",
+          "moduleId": "M4-01",
+          "topic": "risk",
+          "label": "M4-01 危險警示",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m4-03-diagram",
+          "moduleId": "M4-03",
+          "topic": "risk",
+          "label": "M4-03 速率管理",
+          "rotation": 0
+        }
+      ]
     },
     {
       "id": "results-module-hierarchy",
       "chapter": "results-modular",
-      "type": "cards",
-      "title": "從主題到子模組，再回到道路情境",
-      "intro": "4 個主題 → 15 個功能模組 → 27 個子模組 → 道路情境組合應用",
-      "items": [
-        {
-          "id": "theme",
-          "title": "主題｜提供查找方向",
-          "text": "依空間與動線、路口管制、用路人需求、危險與通行管制，建立四個查找入口。"
-        },
-        {
-          "id": "module",
-          "title": "功能模組｜界定管制目的",
-          "text": "以一項可辨識的管制目的為單元，說明哪些設施需要共同運作，以及彼此的分工與組合關係。"
-        },
-        {
-          "id": "variant",
-          "title": "子模組｜區分具體型式",
-          "text": "依設置型式與適用條件，進一步說明配置差異；例如停、讓管制分為停管制與讓管制。"
-        },
-        {
-          "id": "application",
-          "title": "道路情境｜檢視整體搭配",
-          "text": "依道路幾何與交通條件選用多個模組，檢查上下游銜接、人車動線與整體一致性。"
-        }
-      ],
-      "takeaway": "例如：M2 路口管制 → M2-01 停、讓管制 → 停管制／讓管制，再與動線導引、行人穿越等模組組合。"
-    },
-    {
-      "id": "results-phase-three",
-      "chapter": "results-modular",
       "type": "framework",
       "framework": "modules",
-      "title": "第三期｜功能模組架構表",
+      "title": "4 個主題、15 個模組、27 個子模組",
       "source": {
         "file": "materials/00-計畫緣起/計畫緣起與問題背景.pptx",
         "sha256": "39dcf3648b289bce584fb156da810f1f91af6733e6f51364505d708f9c9303fa",
         "slide": 5,
         "authority": "data/modules/catalog.json"
       }
+    },
+    {
+      "id": "results-submodule-contents",
+      "chapter": "results-modular",
+      "type": "cards",
+      "layout": "lesson",
+      "title": "從現況議題、代表型到延伸應用",
+      "intro": "子模組不只是提供設置圖例，也整理設置問題、基本配置方法及不同條件下的調整方式。",
+      "items": [
+        {
+          "id": "issues",
+          "title": "現況與議題",
+          "text": "指出現行設置常見的問題，說明需要檢討的設施設計及配置關係。"
+        },
+        {
+          "id": "representative",
+          "title": "代表型圖例",
+          "text": "以具有代表性的道路條件，呈現該項交通功能的基本設施組合及配置位置。"
+        },
+        {
+          "id": "regulations",
+          "title": "圖例與相關條文說明",
+          "text": "說明組成設施的功能、設置位置及搭配方式，並對照《設置規則》相關條文。"
+        },
+        {
+          "id": "extensions",
+          "title": "延伸應用",
+          "text": "針對道路幾何、視距、行人穿越或其他條件差異，提出替選或調整配置方式。"
+        },
+        {
+          "id": "scenarios",
+          "title": "適用道路情境",
+          "text": "列出相關道路情境，讓使用者可以進一步參考模組在完整路口或路段中的應用方式。"
+        }
+      ],
+      "takeaway": "代表型說明基本配置，延伸應用說明條件改變時如何調整；相關條文與情境則提供進一步查閱的依據。"
+    },
+    {
+      "id": "results-guide-usage",
+      "chapter": "results-modular",
+      "type": "cards",
+      "layout": "lesson",
+      "title": "由基本原則、功能模組到完整道路情境",
+      "intro": "第三期將前兩期道路情境與新增的功能模組整合，形成「基本配置原則—功能模組—道路情境」的指引架構。",
+      "items": [
+        {
+          "id": "principles",
+          "title": "基本配置原則：瞭解各類設施的共同要求",
+          "text": "第 2 章依標線、標誌、號誌分類，說明設施的功能、基本設置原則及相關條文。"
+        },
+        {
+          "id": "functions",
+          "title": "功能模組：查找特定交通功能的設置方法",
+          "text": "第 3 章依交通功能分類，說明相關設施的組合、基本配置及延伸應用。"
+        },
+        {
+          "id": "situations",
+          "title": "道路情境：檢視整個路口或路段的配置",
+          "text": "第 4、5 章透過一般及複雜道路情境，呈現多個功能模組在不同道路條件下的組合方式。"
+        }
+      ],
+      "calloutsTitle": "兩種查閱方式",
+      "callouts": [
+        {
+          "id": "lookup-scenario",
+          "title": "已有特定道路情境：",
+          "text": "先查找相似的整體配置圖例，再依需要參考相關模組及基本原則。"
+        },
+        {
+          "id": "lookup-problem",
+          "title": "需要處理特定設置問題：",
+          "text": "先查找對應功能模組，再參考其適用情境及相關條文。"
+        }
+      ],
+      "takeaway": "不論從道路情境或交通功能出發，都可以透過模組與情境的對照，找到相關的設置方法。"
     },
     {
       "id": "results-guide-structure",
