@@ -11,7 +11,7 @@ const {Files} = require('../assets/visual-editor-io.js');
 const {createServer} = require('../tools/serve-github-pages.cjs');
 const {readHtml} = require('../tools/presentation-source.cjs');
 const root = path.resolve(__dirname, '..');
-const original = () => Core.parse(fs.readFileSync(path.join(root, 'layout/presentation-layout.json'), 'utf8'));
+const original = () => require('./read-project-config.cjs')();
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 test('original content and unaffected presentation blocks remain unchanged while source SVGs can be refreshed', () => {
   const baseline = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/presentation-baseline.json'), 'utf8'));
@@ -242,7 +242,7 @@ test('the existing figure-version tool reads external JSON and writes a separate
   const sourceLayout=fs.readFileSync(configPathForTest());
   try {
     for (const directory of ['tools', 'assets', 'layout']) fs.mkdirSync(path.join(fixture, directory));
-    for (const file of ['index.html', 'tools/create-general-scenarios-figure-version.cjs','tools/presentation-source.cjs','data/scenarios/presentation.json',...require('../data/scenarios/presentation.json').caseFiles, 'assets/visual-editor-core.js', 'layout/presentation-layout.json']) {fs.mkdirSync(path.dirname(path.join(fixture,file)),{recursive:true});if(file==='layout/presentation-layout.json')fs.writeFileSync(path.join(fixture,file),sourceLayout);else fs.copyFileSync(path.join(root, file), path.join(fixture, file));}
+    for (const file of ['index.html', 'tools/create-general-scenarios-figure-version.cjs','tools/presentation-source.cjs','tools/presentation-project-store.cjs','tools/write-verified-file.cjs','data/scenarios/presentation.json',...require('../data/scenarios/presentation.json').caseFiles, 'assets/visual-editor-core.js','assets/presentation-document.js',...require('../tools/presentation-project-store.cjs').releaseFiles(root)]) {fs.mkdirSync(path.dirname(path.join(fixture,file)),{recursive:true});if(file==='layout/presentation-layout.json')fs.writeFileSync(path.join(fixture,file),sourceLayout);else fs.copyFileSync(path.join(root, file), path.join(fixture, file));}
     const result = spawnSync(process.execPath, [path.join(fixture, 'tools/create-general-scenarios-figure-version.cjs')], {encoding: 'utf8', env: {...process.env, ELECTRON_RUN_AS_NODE: '1'}, windowsHide: true});
     assert.equal(result.status, 0, result.stderr);
     const manifest = JSON.parse(result.stdout), variant = fs.readFileSync(path.join(fixture, manifest.output), 'utf8');
@@ -259,7 +259,7 @@ test('preview server serves nested JSON and JavaScript with MIME types and block
   const server = createServer(); await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   try {
     const base = 'http://127.0.0.1:' + server.address().port + '/presentation-demo/';
-    const json = await fetch(base + 'layout/presentation-layout.json'); assert.equal(json.status, 200); assert.match(json.headers.get('content-type'), /application\/json/); Core.validate(await json.json());
+    const json = await fetch(base + 'layout/presentation-layout.json'); assert.equal(json.status, 200); assert.match(json.headers.get('content-type'), /application\/json/); assert.equal((await json.json()).kind,'presentation-layout');
     const script = await fetch(base + 'assets/visual-editor.js'); assert.equal(script.status, 200); assert.match(script.headers.get('content-type'), /text\/javascript/);
     assert.equal((await fetch(base + '..%2Findex.html')).status, 404);
     assert.equal((await fetch(base + '.git/config')).status, 404);

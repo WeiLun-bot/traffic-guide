@@ -13,7 +13,7 @@ test('each note owns two independent highlights, and changing the number or orde
   const image=page.content.images[0],asset=outline.assets[image.key],point=page.content.items[0],spec=specs[0],box=[100,200,500,400],state={highlights:{[spec.key]:{box,rotation:23,crop:[0,0,1600,1400],imageKey:image.key}}};
   assert.deepEqual(Results.comparisonSpec(page,point,image,asset,state).box,box);assert.equal(Results.comparisonSpec(page,point,image,asset,state).rotation,23);assert.deepEqual(Results.comparisonSpec(page,page.content.items[1],image,asset,state).box,specs[2].box);
   state.disabledHighlights={[spec.key]:true};assert(!Results.comparisonSpec(page,point,image,asset,state).enabled);
-  const config=Core.parse(fs.readFileSync(path.resolve(__dirname,'../layout/presentation-layout.json'),'utf8'));config.content.results[page.id]={points:page.content.items.map(point=>({id:point.id,title:'',text:'',titleKey:page.id+'|results|'+point.id+'-title',textKey:page.id+'|results|'+point.id+'-text'}))};
+  const config=require('./read-project-config.cjs')();config.content.results[page.id]={points:page.content.items.map(point=>({id:point.id,title:'',text:'',titleKey:page.id+'|results|'+point.id+'-title',textKey:page.id+'|results|'+point.id+'-text'}))};
   config.content.results[page.id].points.push({id:'added',title:'',text:'',titleKey:page.id+'|results|added-title',textKey:page.id+'|results|added-text'});assert.equal(Results.stepCount(page,Core.parse(JSON.stringify(config))),3);
   config.content.results[page.id].points.reverse();assert.equal(Results.comparisonSpec(page,point,image,asset,state).key,spec.key);config.content.results[page.id].points=[];assert.equal(Results.stepCount(page,config),1);
 });
@@ -29,7 +29,7 @@ test('the additional G1-01 comparison retains its requested originals and saves 
   assert.equal(after.file,'materials/04-一般道路情境/G1-01/G1-01_無號誌市區正交三岔路口交叉設施設置圖例.svg');
   assert.deepEqual([before.width,before.height,after.width,after.height],[1361,1743,913,1402]);
   for(const asset of [before,after]){assert.equal(asset.scenario,'G1-01');assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.resolve(__dirname,'..',asset.file))).digest('hex'),asset.sha256);}
-  const config=Core.parse(fs.readFileSync(path.resolve(__dirname,'../layout/presentation-layout.json'),'utf8')),existing=structuredClone(config),point=added.content.items[0];
+  const config=require('./read-project-config.cjs')(),existing=structuredClone(config),point=added.content.items[0];
   config.content.results[added.id]={points:[{id:point.id,title:'路口比較',text:'差異說明',descriptionHidden:true,titleKey:added.id+'|results|'+point.id+'-title',textKey:added.id+'|results|'+point.id+'-text'}]};
   const image=added.content.images[0],spec=Results.comparisonSpec(added,point,image,before),oldSpec=Results.comparisonSpec(page,page.content.items[0],page.content.images[0],outline.assets[page.content.images[0].key]);
   assert.notEqual(spec.key,oldSpec.key);config.legacyState.highlights[spec.key]={box:[100,200,300,400],crop:[0,0,1361,1743],imageKey:image.key};

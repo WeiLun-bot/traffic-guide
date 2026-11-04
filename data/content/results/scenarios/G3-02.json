@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G3-02",
+  "texts": {
+    "results-scenario-g3-02|results|title": "鄉區無號誌路口的交叉來車警示與車道銜接問題",
+    "results-scenario-g3-02|results|intro": "主要道路寬約 10 m、速限 50 km/h；次要道路寬約 5 m、速限 30 km/h。周邊以農田為主，次要道路西側另設有自行車道。",
+    "results-scenario-g3-02-strategy|results|title": "主要道路槽化、路肩界定及岔路預告配置",
+    "results-scenario-g3-02-strategy|results|intro": "在主要道路速限 50 km/h 的條件下，以類滴狀島槽化線凸顯交叉口位置，並透過分向線、路面邊線及岔路標誌提示駕駛。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g3-02": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "缺少交叉路口警示",
+            "text": "鄉區道路兩側多為農田，且主要道路速限達 50 km/h，若缺少岔路標誌，駕駛可能未提前注意橫向來車。",
+            "titleKey": "results-scenario-g3-02|results|priority-title",
+            "textKey": "results-scenario-g3-02|results|priority-text"
+          },
+          {
+            "id": "lanes",
+            "title": "路口兩側車道配置不一致",
+            "text": "次要道路東側為混合車道，西側另有自行車道，路口兩端的車道數及寬度不同，需檢視穿越與銜接動線。",
+            "titleKey": "results-scenario-g3-02|results|lanes-title",
+            "textKey": "results-scenario-g3-02|results|lanes-text"
+          },
+          {
+            "id": "speed",
+            "title": "主次道路速限提示不足",
+            "text": "主要道路與次要道路缺少完整的速限標誌及標字，駕駛不易確認路段速限。",
+            "titleKey": "results-scenario-g3-02|results|speed-title",
+            "textKey": "results-scenario-g3-02|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g3-02-strategy": {
+        "points": [
+          {
+            "id": "channelization",
+            "title": "於主要道路設置類滴狀島槽化線",
+            "text": "在南北向主要道路接近路口處劃設類滴狀島槽化線，引導車輛依指定路徑通行，並提醒駕駛注意前方交叉口。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g3-02-strategy|results|channelization-title",
+            "textKey": "results-scenario-g3-02-strategy|results|channelization-text"
+          },
+          {
+            "id": "boundaries",
+            "title": "以分向線及路面邊線界定車行空間",
+            "text": "依道路中心線及車道寬度配置行車分向線、路面邊線，區分雙向車流與路肩範圍。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g3-02-strategy|results|boundaries-title",
+            "textKey": "results-scenario-g3-02-strategy|results|boundaries-text"
+          },
+          {
+            "id": "priority",
+            "title": "增設岔路標誌預告交叉來車",
+            "text": "於主要道路上游適當位置設置岔路標誌，提醒駕駛前方有橫交道路，必要時搭配距離附牌。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-g3-02-strategy|results|priority-title",
+            "textKey": "results-scenario-g3-02-strategy|results|priority-text"
+          },
+          {
+            "id": "crossing",
+            "title": "依行人穿越需求配置行穿線",
+            "text": "次要道路若有行人穿越需求，可設置行穿線；需求較低而不設行穿線時，則以讓路線及路口行車導引線配置次要道路入口。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g3-02-strategy|results|crossing-title",
+            "textKey": "results-scenario-g3-02-strategy|results|crossing-text"
+          }
+        ]
+      }
+    }
+  }
+}

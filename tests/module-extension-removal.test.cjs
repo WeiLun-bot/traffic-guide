@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const Core=require('../assets/visual-editor-core.js'),root=path.resolve(__dirname,'..');
-const read=file=>JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
+const read=file=>file==='layout/presentation-layout.json'?require('./read-project-config.cjs')():JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
 async function modules(config){const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},window:{visualLayoutEditor:{store:{config}},addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();return api;}
 test('removed extension settings are backward compatible, validated and persist through JSON and history',()=>{
   const config=read('layout/presentation-layout.json');delete config.removedModuleExtensions;const store=new Core.Store(config);assert.deepEqual(store.config.removedModuleExtensions,[]);

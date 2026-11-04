@@ -59,7 +59,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,mouse,dragFrom,
   await evaluate('(async()=>{const directory=await navigator.storage.getDirectory(),handle=await directory.getFileHandle("rotation-test.json",{create:true});const writable=await handle.createWritable();await writable.write(window.visualLayoutEditor.store.serialize());await writable.close();window.visualLayoutEditor.files.env={isSecureContext:true,indexedDB:window.indexedDB,showOpenFilePicker:async()=>[handle],showSaveFilePicker:async()=>handle}})()');
   await click('[data-vl-action="open"]');await wait('!window.visualLayoutEditor.busy');
   await field('rotation',-90);await action('save');await wait('!window.visualLayoutEditor.busy');
-  assert.equal(await evaluate('(async()=>JSON.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(id)+'].rotation)()'),-90);
+  assert.equal(await evaluate('(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(id)+'].rotation)()'),-90);
   await navigate(base+'/presentation-demo/#context');assert.equal(await angle(),-90);assert.equal((await camera(id)).rotation,-90);
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});await click('.iv-trigger');
   assert(await evaluate('(()=>{const r=document.querySelector(".iv-panel:not([hidden])").getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight})()'));

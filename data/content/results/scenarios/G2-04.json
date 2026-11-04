@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G2-04",
+  "texts": {
+    "results-scenario-g2-04|results|title": "鄉區彎道號誌辨識與行人停等空間問題",
+    "results-scenario-g2-04|results|intro": "主要道路與次要道路寬度均約 10 m，速限分別為 40 km/h、30 km/h。路口鄰近住宅聚落，路側未設人行設施。",
+    "results-scenario-g2-04-strategy|results|title": "標線型人行道、彎道預告及號誌設置",
+    "results-scenario-g2-04-strategy|results|intro": "配合住宅聚落的行人活動需求，調整路側空間及速限，並依彎道視距與路口轉向條件配置號誌及停止線。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g2-04": {
+        "points": [
+          {
+            "id": "signal",
+            "title": "彎道路段影響號誌辨識",
+            "text": "路口鄰近彎道，駕駛接近時可能受到道路線形限制，無法提前看見號誌燈面。",
+            "titleKey": "results-scenario-g2-04|results|signal-title",
+            "textKey": "results-scenario-g2-04|results|signal-text"
+          },
+          {
+            "id": "buildings",
+            "title": "路側建物限制號誌設置位置",
+            "text": "路口兩側鄰近民房，可供立桿的空間有限，號誌位置可能受到建物及道路空間限制。",
+            "titleKey": "results-scenario-g2-04|results|buildings-title",
+            "textKey": "results-scenario-g2-04|results|buildings-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "缺少行人通行及停等空間",
+            "text": "鄰近住宅聚落有步行與穿越需求，但路側缺少人行設施，路口亦未妥善安排行人停等位置。",
+            "titleKey": "results-scenario-g2-04|results|pedestrian-title",
+            "textKey": "results-scenario-g2-04|results|pedestrian-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限標誌設置不足",
+            "text": "現況道路雖設有速限標字，但缺少對應的速限標誌，駕駛不易辨識路段速限。",
+            "titleKey": "results-scenario-g2-04|results|speed-title",
+            "textKey": "results-scenario-g2-04|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g2-04-strategy": {
+        "points": [
+          {
+            "id": "walking",
+            "title": "設置標線型人行道並降低速限",
+            "text": "於路側劃設人行道標線，提供行人通行及穿越前停等空間；考量無實體人車分隔，將主要道路速限由 40 km/h 降為 30 km/h。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g2-04-strategy|results|walking-title",
+            "textKey": "results-scenario-g2-04-strategy|results|walking-text"
+          },
+          {
+            "id": "warning",
+            "title": "於彎道前設置注意號誌標誌",
+            "text": "路口東側為曲線路段，駕駛不易提前辨識號誌，因此於彎道前適當位置設置注意號誌標誌，必要時搭配彎路標誌。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-g2-04-strategy|results|warning-title",
+            "textKey": "results-scenario-g2-04-strategy|results|warning-text"
+          },
+          {
+            "id": "signals",
+            "title": "依彎道視距檢核號誌位置",
+            "text": "檢查彎道上游的號誌辨認距離，並依現地建物及立桿條件調整近、遠端燈面位置，確保駕駛能在接近路口時看見應遵循的號誌。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g2-04-strategy|results|signals-title",
+            "textKey": "results-scenario-g2-04-strategy|results|signals-text"
+          },
+          {
+            "id": "direction",
+            "title": "配合轉彎軌跡調整停止線",
+            "text": "依設計車種的轉彎軌跡確認停止線位置，避免停等車輛阻礙其他方向轉向，並搭配道路遵行方向標誌提示允許行向。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g2-04-strategy|results|direction-title",
+            "textKey": "results-scenario-g2-04-strategy|results|direction-text"
+          }
+        ]
+      }
+    }
+  }
+}

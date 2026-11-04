@@ -6,6 +6,9 @@
   'use strict';
   class Files {
     constructor(env = globalThis, key = Core.DOCUMENT_ID) { this.env = env; this.key = key; this.handle = null; this.candidate = null; this.lastText = null; }
+    parse(text) { return Core.parse(text); }
+    serialize(config) { return Core.checkSize(JSON.stringify(Core.validate(config), null, 2) + '\n'); }
+    get suggestedName() { return 'presentation-layout.json'; }
     get supported() { return Boolean(this.env.isSecureContext && this.env.showOpenFilePicker && this.env.showSaveFilePicker); }
     options() { return {id: 'road-layout', types: [{description: '簡報版面 JSON', accept: {'application/json': ['.json']}}], excludeAcceptAllOption: true}; }
     async remember(handle) {
@@ -45,7 +48,7 @@
       if (permission && await handle.queryPermission({mode: 'read'}) !== 'granted' && await handle.requestPermission({mode: 'read'}) !== 'granted') throw new Error('尚未授權讀取設定檔');
       const file = await handle.getFile();
       if (file.size > 25 * 1024 * 1024) throw new Error('設定檔上限為 25 MB');
-      const text = await file.text(), config = Core.parse(text);
+      const text = await file.text(), config = this.parse(text);
       this.handle = handle; this.candidate = null; this.lastText = text;
       await this.remember(handle); return config;
     }
@@ -56,11 +59,11 @@
     }
     async reconnect() { return this.read(this.candidate, true); }
     async save(config) {
-      const text = Core.checkSize(JSON.stringify(Core.validate(config), null, 2) + '\n');
+      const text = this.serialize(config);
       if (!this.supported) return {download: true, text};
       let handle = this.handle, newlyChosen = false;
       if (!handle) {
-        handle = await this.env.showSaveFilePicker({...this.options(), suggestedName: 'presentation-layout.json'});
+        handle = await this.env.showSaveFilePicker({...this.options(), suggestedName: this.suggestedName});
         newlyChosen = true;
       }
       if (await handle.queryPermission({mode: 'readwrite'}) !== 'granted' && await handle.requestPermission({mode: 'readwrite'}) !== 'granted') throw new Error('尚未授權寫入；修改仍保留在畫面中');
@@ -77,5 +80,29 @@
     }
     disconnect() { this.handle = null; this.candidate = null; this.lastText = null; }
   }
-  return {Files};
+  class ProjectFiles extends Files {
+    constructor(env=globalThis,key=Core.DOCUMENT_ID){super(env,key);this.local=null;this.owners={};}
+    document(){return this.env.PresentationDocument||globalThis.PresentationDocument;}
+    parse(text){return this.document().parse(text);}
+    serialize(config){return Core.checkSize(JSON.stringify(this.document().bundle(config,this.owners),null,2)+'\n');}
+    get suggestedName(){return 'presentation-project.json';}
+    options(){return {...super.options(),types:[{description:'簡報專案 JSON',accept:{'application/json':['.json']}}]};}
+    async connectLocal(){
+      const url=new URL('__project',this.env.document.baseURI);
+      if(url.protocol!=='http:'||!['127.0.0.1','localhost'].includes(url.hostname))return null;
+      const response=await this.env.fetch(url,{cache:'no-store'});
+      if(response.status===404||response.status===405)return null;
+      if(!response.ok)throw new Error('無法連結本機專案（HTTP '+response.status+'）');
+      const value=await response.json();this.local={url,token:value.token,revision:value.revision};this.owners=value.owners;return Core.validate(value.config);
+    }
+    async save(config){
+      if(!this.local)return super.save(config);
+      const response=await this.env.fetch(this.local.url,{method:'POST',headers:{'Content-Type':'application/json','X-Project-Token':this.local.token},body:JSON.stringify({revision:this.local.revision,config})});
+      const result=await response.json();if(!response.ok){const error=new Error(result.error||'專案儲存失敗');error.name=response.status===409?'ConflictError':'Error';throw error;}
+      this.local.revision=result.revision;return {download:false,name:'專案內容、導覽與版面檔'};
+    }
+    async open(){const config=await super.open();this.local=null;return config;}
+    disconnect(){super.disconnect();this.local=null;}
+  }
+  return {Files,ProjectFiles};
 });

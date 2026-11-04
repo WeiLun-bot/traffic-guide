@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G1-03",
+  "texts": {
+    "results-scenario-g1-03|results|title": "市區巷道右進右出的轉向與路側空間問題",
+    "results-scenario-g1-03|results|intro": "主要道路寬約 24 m、設有中央分隔，速限 50 km/h；巷道寬約 8 m、速限 30 km/h，採右進右出管制。",
+    "results-scenario-g1-03-strategy|results|title": "右轉空間、人行道與路側停車配置",
+    "results-scenario-g1-03-strategy|results|intro": "配合右進右出的路口型式，調整主要道路外側車道、巷道轉角及路側停車空間。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g1-03": {
+        "points": [
+          {
+            "id": "warning",
+            "title": "巷道匯入口缺少警示",
+            "titleKey": "results-scenario-g1-03|results|warning-title",
+            "text": "主要道路未充分提示前方巷道匯入口，駕駛可能未注意巷道匯入車輛。",
+            "textKey": "results-scenario-g1-03|results|warning-text"
+          },
+          {
+            "id": "turn",
+            "title": "路口右轉空間不足",
+            "titleKey": "results-scenario-g1-03|results|turn-title",
+            "text": "主要道路速限較高，巷道寬度較窄，若未妥善配置轉角及右轉空間，車輛轉向容易干擾直行車流。",
+            "textKey": "results-scenario-g1-03|results|turn-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不完整",
+            "titleKey": "results-scenario-g1-03|results|speed-title",
+            "text": "主要道路缺少速限標誌與標字，巷道僅設有速限標字，未搭配速限標誌。",
+            "textKey": "results-scenario-g1-03|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g1-03-strategy": {
+        "points": [
+          {
+            "id": "walking",
+            "title": "調整外側車道及人行空間",
+            "titleKey": "results-scenario-g1-03-strategy|results|walking-title",
+            "text": "利用過寬的外側車道與路肩，預留設置實體人行道的空間，並調整路口轉角的路緣線形。",
+            "textKey": "results-scenario-g1-03-strategy|results|walking-text",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "parking",
+            "title": "配置汽車與機車停車空間",
+            "titleKey": "results-scenario-g1-03-strategy|results|parking-title",
+            "text": "主要道路採嵌入式汽車停車位；巷道配置斜角機車停車格，並透過車道彎曲使車輛減速接近路口。",
+            "textKey": "results-scenario-g1-03-strategy|results|parking-text",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "entry",
+            "title": "於巷道匯入口劃設網狀線",
+            "titleKey": "results-scenario-g1-03-strategy|results|entry-title",
+            "text": "在巷道與主要道路銜接處劃設網狀線，避免車輛占用匯入口，並提示路口位置。",
+            "textKey": "results-scenario-g1-03-strategy|results|entry-text",
+            "moduleId": "M2-04"
+          },
+          {
+            "id": "bus",
+            "title": "設置嵌入式公車停靠彎",
+            "titleKey": "results-scenario-g1-03-strategy|results|bus-title",
+            "text": "配合人行道及路緣配置，於路口遠端安排公車停靠彎及相關標線。",
+            "textKey": "results-scenario-g1-03-strategy|results|bus-text",
+            "moduleId": "M3-04"
+          }
+        ]
+      }
+    }
+  }
+}

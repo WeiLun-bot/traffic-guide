@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G4-02",
+  "texts": {
+    "results-scenario-g4-02|results|title": "鄉區寬廣路口的車道銜接、機車左轉及行人穿越問題",
+    "results-scenario-g4-02|results|intro": "主要道路寬約 35 m，快、慢車道速限分別為 60、40 km/h；次要道路寬約 14 m，東西兩側車道配置不同。",
+    "results-scenario-g4-02-strategy|results|title": "左轉附加車道、機車兩段式左轉及行人分段穿越",
+    "results-scenario-g4-02-strategy|results|intro": "配合主要道路較高的車速，調整進出路口車道，採機車兩段式左轉，並利用路側空間與中央庇護島提供行人通行設施。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g4-02": {
+        "points": [
+          {
+            "id": "pedestrian",
+            "title": "主要道路行人穿越距離過長",
+            "text": "主要道路寬達 35 m，行人需穿越多個車道，但缺少中央行人庇護島，無法提供中途停等空間。",
+            "titleKey": "results-scenario-g4-02|results|pedestrian-title",
+            "textKey": "results-scenario-g4-02|results|pedestrian-text"
+          },
+          {
+            "id": "lanes",
+            "title": "上下游車道數與位置不一致",
+            "text": "主要道路進出路口車道數不同，次要道路兩側亦未完全對齊，缺少適當導引時，直行車輛不易銜接下游車道。",
+            "titleKey": "results-scenario-g4-02|results|lanes-title",
+            "textKey": "results-scenario-g4-02|results|lanes-text"
+          },
+          {
+            "id": "motorcycle",
+            "title": "機車左轉與高速車流衝突",
+            "text": "主要道路快車道速限為 60 km/h，且內側車道可能限制機車行駛，機車直接左轉可能與較高速的汽車車流產生衝突。",
+            "titleKey": "results-scenario-g4-02|results|motorcycle-title",
+            "textKey": "results-scenario-g4-02|results|motorcycle-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限資訊設置不一致",
+            "text": "路口兩側土地使用及路側活動不同，部分路段缺少速限標誌或標字，速限提示不完整。",
+            "titleKey": "results-scenario-g4-02|results|speed-title",
+            "textKey": "results-scenario-g4-02|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g4-02-strategy": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "調整直行車道並增設左轉附加車道",
+            "text": "主要道路南北兩向維持相同的直行車道數，接近路口處增設左轉專用車道；次要道路則以路口行車導引線銜接錯位車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g4-02-strategy|results|lanes-title",
+            "textKey": "results-scenario-g4-02-strategy|results|lanes-text"
+          },
+          {
+            "id": "motorcycle",
+            "title": "配置機車兩段式左轉設施",
+            "text": "本例考量主要道路車速及內側車道禁行機車，採機車兩段式左轉，搭配停等區、待轉區及兩段式左轉標誌。",
+            "moduleId": "M3-03",
+            "titleKey": "results-scenario-g4-02-strategy|results|motorcycle-title",
+            "textKey": "results-scenario-g4-02-strategy|results|motorcycle-text"
+          },
+          {
+            "id": "walking",
+            "title": "四個方向均配置人行空間",
+            "text": "調整路側寬度，於四個方向配置人行空間，並配合中央庇護島設置 Z 字型錯開式行穿線。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g4-02-strategy|results|walking-title",
+            "textKey": "results-scenario-g4-02-strategy|results|walking-text"
+          },
+          {
+            "id": "signals",
+            "title": "依高速行駛條件檢核號誌",
+            "text": "主要道路以 60 km/h 的可視條件檢核號誌；因次要道路兩端距離較遠且略有錯位，於近端增設柱立式號誌，提供足夠的燈面辨識。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g4-02-strategy|results|signals-title",
+            "textKey": "results-scenario-g4-02-strategy|results|signals-text"
+          },
+          {
+            "id": "direction",
+            "title": "配置地名方向與車種管制標誌",
+            "text": "依駕駛接近路口的決策需求配置地名方向指示標誌，並搭配機車兩段式左轉、禁止迴轉等管制設施。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-g4-02-strategy|results|direction-title",
+            "textKey": "results-scenario-g4-02-strategy|results|direction-text"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C2-01",
+  "texts": {
+    "results-scenario-c2-01|results|title": "交流道進出車道、匯入空間及行人穿越問題",
+    "results-scenario-c2-01|results|intro": "部分苜蓿葉型交流道包含環狀與對角匝道，銜接設有中央分隔的主要道路。平面道路雙向共 7 車道，下匝道 3 車道、上匝道 2 車道。",
+    "results-scenario-c2-01-strategy|results|title": "匝道選道導引、匯入讓路及人車分離號誌",
+    "results-scenario-c2-01-strategy|results|intro": "從平面道路上游選道、匝道進出口導引到行人穿越與右轉號誌，配置完整的交流道銜接設施。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c2-01": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "車道連續性與左轉銜接不佳",
+            "text": "平面道路往高速公路的左轉車道銜接不順，且部分車道進出路口的動線缺少明確導引。",
+            "titleKey": "results-scenario-c2-01|results|lanes-title",
+            "textKey": "results-scenario-c2-01|results|lanes-text"
+          },
+          {
+            "id": "merge",
+            "title": "匝道匯入距離與視距不足",
+            "text": "部分右轉匯入匝道的漸變長度不足，駕駛不易在匯入前完成觀察及判斷，增加與主線車流的衝突風險。",
+            "titleKey": "results-scenario-c2-01|results|merge-title",
+            "textKey": "results-scenario-c2-01|results|merge-text"
+          },
+          {
+            "id": "restrictions",
+            "title": "高速公路入口車種管制不明確",
+            "text": "交流道附近的方向標誌與車種管制資訊不足，駕駛不易提前選擇正確車道，機車亦可能誤入高速公路匝道。",
+            "titleKey": "results-scenario-c2-01|results|restrictions-title",
+            "textKey": "results-scenario-c2-01|results|restrictions-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越缺少適當的保護設施",
+            "text": "平面道路人行道寬度不足，部分橫向穿越動線不完整，且須面對速度較高的匝道轉向車流。",
+            "titleKey": "results-scenario-c2-01|results|pedestrian-title",
+            "textKey": "results-scenario-c2-01|results|pedestrian-text"
+          },
+          {
+            "id": "signals",
+            "title": "右轉槽化島號誌不易辨識",
+            "text": "右轉車道呈彎曲線形，若號誌位置未配合駕駛視線配置，可能造成號誌辨識不足或誤看其他車道燈號。",
+            "titleKey": "results-scenario-c2-01|results|signals-title",
+            "textKey": "results-scenario-c2-01|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c2-01-strategy": {
+        "points": [
+          {
+            "id": "selection",
+            "title": "提前預告高速公路入口及車道方向",
+            "text": "於平面道路上游設置圖形化方向指示標誌，搭配高速公路方向標字及四輪以上汽車專用車道標誌，引導車輛提前選道，避免機車誤入。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c2-01-strategy|results|selection-title",
+            "textKey": "results-scenario-c2-01-strategy|results|selection-text"
+          },
+          {
+            "id": "wrong-way",
+            "title": "以槽化島及導引線區分匝道進出口",
+            "text": "配合槽化島、指向線及路口行車導引線，明確區分上、下匝道車流，並於出口匝道增設禁止進入標誌，防止車輛逆向誤入。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c2-01-strategy|results|wrong-way-title",
+            "textKey": "results-scenario-c2-01-strategy|results|wrong-way-text"
+          },
+          {
+            "id": "merge",
+            "title": "匯入距離不足時採讓路管制",
+            "text": "本例平面道路右轉匯入高速公路時，因漸變長度及視距不足，於匯入點設置讓路線，並搭配附加車道提供匯入後的加速空間。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c2-01-strategy|results|merge-title",
+            "textKey": "results-scenario-c2-01-strategy|results|merge-text"
+          },
+          {
+            "id": "walking",
+            "title": "以行人庇護島及時相區隔轉向車流",
+            "text": "拓寬路側人行道，利用實體槽化島提供行人中途庇護空間，並以人車分離號誌時相避免較高速的轉向車輛與行人同時通行。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c2-01-strategy|results|walking-title",
+            "textKey": "results-scenario-c2-01-strategy|results|walking-text"
+          },
+          {
+            "id": "signals",
+            "title": "右轉三角槽化島採雙柱立式號誌",
+            "text": "於右轉彎道兩側設置柱立式號誌，使駕駛沿彎道接近時仍能辨識燈號，並避免其他車道駕駛誤看。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c2-01-strategy|results|signals-title",
+            "textKey": "results-scenario-c2-01-strategy|results|signals-text"
+          }
+        ]
+      }
+    }
+  }
+}

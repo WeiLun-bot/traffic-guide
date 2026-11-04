@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C4-01",
+  "texts": {
+    "results-scenario-c4-01|results|title": "快慢分隔道路的右轉交織、停車空間與號誌配置問題",
+    "results-scenario-c4-01|results|intro": "主要道路寬約 49 m，雙向共 8～9 車道，採實體快慢分隔；快、慢車道速限分別為 60、40 km/h。周邊以商業及住宅活動為主。",
+    "results-scenario-c4-01-strategy|results|title": "路段中快慢車道變換、轉向附加車道及分隔島配置",
+    "results-scenario-c4-01-strategy|results|intro": "將快慢車道間的車道變換安排在路段中，減少路口附近的轉向交織，並調整慢車道及分隔島空間。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c4-01": {
+        "points": [
+          {
+            "id": "turn",
+            "title": "右轉車輛缺少提前切入慢車道的空間",
+            "text": "快慢車道間設有實體分隔島，車輛無法任意變換車道。若未在路段中預留缺口，右轉車輛容易集中於路口附近變換車道，增加交織衝突。",
+            "titleKey": "results-scenario-c4-01|results|turn-title",
+            "textKey": "results-scenario-c4-01|results|turn-text"
+          },
+          {
+            "id": "space",
+            "title": "慢車道與路邊停車空間未明確區分",
+            "text": "部分慢車道寬度過大，且兼有汽、機車停車需求，停車與行車空間缺少適當分隔。",
+            "titleKey": "results-scenario-c4-01|results|space-title",
+            "textKey": "results-scenario-c4-01|results|space-text"
+          },
+          {
+            "id": "signs",
+            "title": "快慢車道轉向規則不易辨識",
+            "text": "路口標誌數量多且設置方式不一致，缺少引導快車道右轉車提前進入慢車道的標誌及標線。",
+            "titleKey": "results-scenario-c4-01|results|signs-title",
+            "textKey": "results-scenario-c4-01|results|signs-text"
+          },
+          {
+            "id": "signals",
+            "title": "行人庇護與號誌設置不足",
+            "text": "快慢分隔道路路幅寬廣，行人穿越距離長，分隔島未妥善提供庇護空間；遠端號誌亦可能距離停止線過遠。",
+            "titleKey": "results-scenario-c4-01|results|signals-title",
+            "textKey": "results-scenario-c4-01|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c4-01-strategy": {
+        "points": [
+          {
+            "id": "transfer",
+            "title": "於路段中設置快慢車道轉換缺口",
+            "text": "在快慢分隔島適當位置開設車道轉換缺口，搭配漸變及導引標線，讓右轉車輛提前由快車道切入慢車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-01-strategy|results|transfer-title",
+            "textKey": "results-scenario-c4-01-strategy|results|transfer-text"
+          },
+          {
+            "id": "signs",
+            "title": "搭配標誌提示提前變換車道",
+            "text": "在路段中設置分道行駛或相關導引標誌，提示駕駛須提前進入慢車道，避免接近路口才變換車道。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c4-01-strategy|results|signs-title",
+            "textKey": "results-scenario-c4-01-strategy|results|signs-text"
+          },
+          {
+            "id": "roadside",
+            "title": "區分慢車道與路側停車空間",
+            "text": "調整過寬的慢車道，明確劃分行車及停車範圍，並在停車格與行車空間之間保留適當緩衝。",
+            "moduleId": "M1-03",
+            "titleKey": "results-scenario-c4-01-strategy|results|roadside-title",
+            "textKey": "results-scenario-c4-01-strategy|results|roadside-text"
+          },
+          {
+            "id": "turning",
+            "title": "依轉向需求增設附加車道",
+            "text": "於路口前配置轉向附加車道，避免左、右轉車輛減速或停等時影響直行車流。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-01-strategy|results|turning-title",
+            "textKey": "results-scenario-c4-01-strategy|results|turning-text"
+          },
+          {
+            "id": "island",
+            "title": "延伸分隔島作為行人庇護島",
+            "text": "將路口處快慢分隔島延伸至行人穿越位置，提供中途停等空間，並利用分隔島設置遠端號誌，改善號誌辨識距離。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c4-01-strategy|results|island-title",
+            "textKey": "results-scenario-c4-01-strategy|results|island-text"
+          }
+        ]
+      }
+    }
+  }
+}

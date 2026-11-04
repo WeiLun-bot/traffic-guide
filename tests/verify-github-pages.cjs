@@ -8,6 +8,7 @@ const root=path.resolve(__dirname,'..');
 const site=path.join(root,'_site');
 const files=new Map([
   ['index.html','index.html'],
+  ['viewer.html','viewer.html'],
   ['一般道路情境-圖面放大版.html','index.html'],
   ['路口管制.html','路口管制.html'],
   ['assets/visual-editor-core.js','assets/visual-editor-core.js'],
@@ -17,6 +18,7 @@ const files=new Map([
   ['assets/structured-content.js','assets/structured-content.js'],
   ['assets/visual-editor.css','assets/visual-editor.css'],
   ['layout/presentation-layout.json','layout/presentation-layout.json'],
+  ...require('../tools/presentation-project-store.cjs').releaseFiles(root).map(name=>[name,name]),
   ['.nojekyll','.nojekyll'],
   ...require('../tools/module-release-files.cjs').map(name=>[name,name])
 ]);
@@ -48,8 +50,9 @@ function validateResources(html,label){
   assert(!/\bfile:\/\//i.test(html),label+' contains a local file URL');
   assert(!/(?:^|[^a-z\d_])[a-z]:[\\/]/im.test(html),label+' contains a Windows drive path');
   for(const match of html.matchAll(/\b(?:src|href|xlink:href|poster)\s*=\s*(["'])([\s\S]*?)\1/gi))resource(match[2],label);
-  for(const match of html.matchAll(/\burl\(\s*(["']?)(.*?)\1\s*\)/gi))resource(match[2],label+' CSS');
-  for(const match of html.matchAll(/@import\s+(["'])(.*?)\1/gi))resource(match[2],label+' CSS import');
+  const styles=html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,'');
+  for(const match of styles.matchAll(/\burl\(\s*(["']?)(.*?)\1\s*\)/gi))resource(match[2],label+' CSS');
+  for(const match of styles.matchAll(/@import\s+(["'])(.*?)\1/gi))resource(match[2],label+' CSS import');
 }
 function attributes(text){
   const result={};for(const match of text.matchAll(/([\w:-]+)\s*=\s*(["'])([\s\S]*?)\2/g))result[match[1].toLowerCase()]=match[3];return result;
@@ -58,7 +61,7 @@ function parseScripts(html,label,folder=site){
   const json=new Map();
   for(const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)){
     const attrs=attributes(match[1]);
-    if(attrs.type==='application/json')json.set(attrs.id||String(json.size),attrs.id==='presentation-data'?dataFromHtml(html,{root:folder}):attrs['data-source']?JSON.parse(fs.readFileSync(path.join(folder,attrs['data-source']),'utf8')).legacyState:JSON.parse(match[2]));
+    if(attrs.type==='application/json')json.set(attrs.id||String(json.size),attrs.id==='presentation-data'?dataFromHtml(html,{root:folder}):attrs['data-source']?require('../tools/presentation-project-store.cjs').read(folder).config.legacyState:JSON.parse(match[2]));
     else {new vm.Script(match[2],{filename:label+':'+(attrs.id||scripts)});scripts++;}
   }
   assert(!/\/\*\s*(?:STYLES|DATA|SCRIPT|[A-Z_]+_(?:SCRIPT|STYLES))\s*\*\//.test(html),label+' contains an unresolved build placeholder');
@@ -72,7 +75,7 @@ for(const [name,source]of files){
   const bytes=fs.readFileSync(output);
   assert(bytes.equals(fs.readFileSync(path.join(root,source))),'Release changed source bytes: '+name);
   if(name.endsWith('.js')){new vm.Script(bytes.toString('utf8'),{filename:name});scripts++;}
-  if(name==='layout/presentation-layout.json')require('../assets/visual-editor-core.js').parse(bytes.toString('utf8'));
+  if(name==='layout/presentation-layout.json')require('../tools/presentation-project-store.cjs').read(site);
   if(name.endsWith('.svg')||name.endsWith('.css'))validateResources(bytes.toString('utf8'),name);
   if(!name.endsWith('.html'))continue;
   const html=bytes.toString('utf8');validateResources(html,name);

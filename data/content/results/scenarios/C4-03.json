@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C4-03",
+  "texts": {
+    "results-scenario-c4-03|results|title": "多車道單行道的轉向軌跡、禁行方向與號誌配置問題",
+    "results-scenario-c4-03|results|intro": "多車道單行道與設有中央分隔的主要道路交會，周邊以商業活動為主，路側設有汽車停車帶及實體人行道。",
+    "results-scenario-c4-03-strategy|results|title": "單行道轉向導引、禁止進入標誌與號誌燈面配置",
+    "results-scenario-c4-03-strategy|results|intro": "配合多車道單行道的轉向需求，檢核各車道轉彎軌跡，並透過標誌與號誌搭配，明確表示允許及禁止的通行方向。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c4-03": {
+        "points": [
+          {
+            "id": "trajectory",
+            "title": "多車道左轉路徑可能與交通島衝突",
+            "text": "單行道具有多個行車車道，車輛左轉時若未檢核各車道轉彎軌跡，可能與主要道路中央分隔島或其他設施碰撞。",
+            "titleKey": "results-scenario-c4-03|results|trajectory-title",
+            "textKey": "results-scenario-c4-03|results|trajectory-text"
+          },
+          {
+            "id": "direction",
+            "title": "單行道出入口行向不易辨識",
+            "text": "單行道與主要道路交會，若禁止進入、禁止轉彎及遵行方向標誌配置不足，駕駛可能誤入逆向道路。",
+            "titleKey": "results-scenario-c4-03|results|direction-title",
+            "textKey": "results-scenario-c4-03|results|direction-text"
+          },
+          {
+            "id": "cycling",
+            "title": "自行車穿越動線不連續",
+            "text": "路口的自行車通行空間未與前後路段完整銜接，穿越及轉向時容易與其他車流交織。",
+            "titleKey": "results-scenario-c4-03|results|cycling-title",
+            "textKey": "results-scenario-c4-03|results|cycling-text"
+          },
+          {
+            "id": "signals",
+            "title": "箭頭綠燈可能與行人通行衝突",
+            "text": "若以箭頭綠燈表示允許的轉向方向，但同時有行人或其他車流通行，駕駛可能無法從燈號判斷實際衝突情形。",
+            "titleKey": "results-scenario-c4-03|results|signals-title",
+            "textKey": "results-scenario-c4-03|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c4-03-strategy": {
+        "points": [
+          {
+            "id": "trajectory",
+            "title": "以轉彎軌跡檢核車道配置",
+            "text": "檢核各車道左轉時的車輛行駛軌跡，調整行車導引線及車道位置，避免轉向車輛碰觸中央分隔島。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-03-strategy|results|trajectory-title",
+            "textKey": "results-scenario-c4-03-strategy|results|trajectory-text"
+          },
+          {
+            "id": "direction",
+            "title": "以單行道及禁止進入標誌防止逆向",
+            "text": "於單行道入口配置遵行方向標誌，禁止進入的方向則設置禁止進入標誌；主要道路較寬時，可於路口兩側加強提示。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c4-03-strategy|results|direction-title",
+            "textKey": "results-scenario-c4-03-strategy|results|direction-text"
+          },
+          {
+            "id": "turn-signs",
+            "title": "將禁止轉向標誌設置於號誌附近",
+            "text": "對於禁止進入逆向單行道的轉向方向，於主要道路號誌桿附近設置禁止轉向標誌，使駕駛能同時辨識燈號及轉向限制。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c4-03-strategy|results|turn-signs-title",
+            "textKey": "results-scenario-c4-03-strategy|results|turn-signs-text"
+          },
+          {
+            "id": "signals",
+            "title": "依人車衝突情形選擇號誌燈面",
+            "text": "若允許轉向的車流仍與行人或其他車輛衝突，建議採圓形綠燈搭配禁止轉向標誌；箭頭綠燈則優先用於無衝突的通行方向。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c4-03-strategy|results|signals-title",
+            "textKey": "results-scenario-c4-03-strategy|results|signals-text"
+          },
+          {
+            "id": "cycling",
+            "title": "銜接路口自行車通行空間",
+            "text": "配合人行道外擴及行人、自行車共用空間設計，改善自行車穿越道與路側通行空間的連續性。",
+            "moduleId": "M3-02",
+            "titleKey": "results-scenario-c4-03-strategy|results|cycling-title",
+            "textKey": "results-scenario-c4-03-strategy|results|cycling-text"
+          }
+        ]
+      }
+    }
+  }
+}

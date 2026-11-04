@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const Order=require('../assets/presentation-order.js'),Core=require('../assets/visual-editor-core.js');
-const original=()=>Core.parse(fs.readFileSync(path.join(__dirname,'../layout/presentation-layout.json'),'utf8'));
+const original=()=>require('./read-project-config.cjs')();
 test('ordering uses stable identities, appends new items and ignores removed entries without mutating source data',()=>{
   const items=['a','b','c'].map(id=>({id,title:id})),ids=['removed','b','b','a'];
   assert.deepEqual(Order.ordered(items,ids).map(item=>item.id),['b','a','c']);assert.deepEqual(items.map(item=>item.id),['a','b','c']);

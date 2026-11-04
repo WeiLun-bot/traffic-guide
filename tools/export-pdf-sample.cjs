@@ -22,12 +22,12 @@ class CDP{
  close(){this.socket.close();}
 }
 async function main(){
- const configPath=path.join(root,'layout/presentation-layout.json'),config=fs.readFileSync(configPath),fingerprint=crypto.createHash('sha256').update(config).digest('hex');
+ const snapshot=require('./presentation-project-store.cjs').read(root),config=Buffer.from(JSON.stringify(snapshot.config)),fingerprint=crypto.createHash('sha256').update(config).digest('hex');
  const executable=process.env.VISUAL_EDITOR_BROWSER||['C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','C:/Program Files/Google/Chrome/Application/chrome.exe'].find(file=>fs.existsSync(file));
  if(!executable)throw new Error('Chrome or Edge is required.');
  fs.mkdirSync(output,{recursive:true});
  // A private immutable snapshot ensures all exported sheets use one saved revision.
- const published=createServer(),http=require('node:http');
+ const published=createServer(undefined,{configFile:null}),http=require('node:http');
  const server=http.createServer((req,res)=>{if(new URL(req.url,'http://localhost').pathname.endsWith('/layout/presentation-layout.json')){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(config);}else published.emit('request',req,res);});
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const base='http://127.0.0.1:'+server.address().port+'/presentation-demo/';
@@ -60,7 +60,7 @@ async function main(){
   if(errors.length)throw new Error(errors.join('\n'));
   fs.writeFileSync(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
   console.log('PDF sheets: '+output);
-  console.log(fs.readFileSync(configPath).equals(config)?'Saved presentation JSON is unchanged.':'Saved JSON changed outside the export; sheets use the revision recorded in manifest.json.');
+  console.log(require('./presentation-project-store.cjs').read(root).revision===snapshot.revision?'Saved presentation project is unchanged.':'Project changed outside the export; sheets use the revision recorded in manifest.json.');
  }finally{if(cdp)await cdp.send('Browser.close').catch(()=>{});cdp?.close();if(browser.exitCode===null)browser.kill();await Promise.race([exited,delay(1500)]);await new Promise(resolve=>server.close(resolve));}
 }
 main().catch(error=>{console.error(error.stack||error);process.exitCode=1;});

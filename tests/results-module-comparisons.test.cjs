@@ -23,6 +23,6 @@ test('each comparison uses its own supplied photos and an original SVG, plus con
 test('comparison input rejects cross-module photos and unsafe paths, and its editable points and cameras persist through history',()=>{
   const foreign=structuredClone(comparisons);foreign.modules['M1-01'].images[0].key=foreign.modules['M1-02'].images[0].key;assert.throws(()=>Results.validateModuleComparisons(foreign));
   const unsafe=structuredClone(comparisons);Object.values(unsafe.assets)[0].file='../../private.png';assert.throws(()=>Results.validateModuleComparisons(unsafe));
-  const store=new Core.Store(JSON.parse(fs.readFileSync(path.resolve(__dirname,'../layout/presentation-layout.json'),'utf8'))),example=comparisons.modules['M1-01'],next=store.snapshot(),point=example.items[0];
+  const store=new Core.Store(require('./read-project-config.cjs')()),example=comparisons.modules['M1-01'],next=store.snapshot(),point=example.items[0];
   next.content.results[example.pageId]={points:[{...point,titleKey:example.pageId+'|results|'+point.id+'-title',textKey:example.pageId+'|results|'+point.id+'-text'}]};const view=Core.imageView(example.pageId,example.images.find(image=>image.role==='module').key);next.imageViews[view.id]={...view,zoom:1.3,rotation:37};store.commit(next);const saved=store.serialize();assert(store.undo());assert(store.redo());assert.equal(store.serialize(),saved);assert(Core.parse(saved).content.results[example.pageId]);
 });

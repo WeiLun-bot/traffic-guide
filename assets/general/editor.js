@@ -1,12 +1,13 @@
 
 (async () => {
   'use strict';
+  const readOnly=Boolean(window.PresentationMode?.readOnly);
   await window.visualLayoutReady;
   const $=id=>document.getElementById(id);
   const escape=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const copy=value=>JSON.parse(JSON.stringify(value));
   const record=value=>value&&typeof value==='object'&&!Array.isArray(value);
-  const safeImage=value=>typeof value==='string'&&/^data:image\/(png|jpeg|webp|gif|svg\+xml);base64,[a-z\d+/=\s]+$/i.test(value);
+  const safeImage=value=>typeof value==='string'&&(/^(?:data:image\/(png|jpeg|webp|gif|svg\+xml);base64,[a-z\d+/=\s]+)$/i.test(value)||/^materials\/edited\/[a-f0-9]{64}\.(?:png|jpeg|webp|gif|svg)$/.test(value));
   const empty=()=>({version:1,updatedAt:0,texts:{},images:{},highlights:{},disabledHighlights:{},styles:{},frames:{},layouts:{},blocks:{},comparisonTransforms:{},templateMigrations:{},pages:[],pageOrder:[]});
   function parse(text) {
     try {
@@ -43,10 +44,12 @@
   const bounds=(key,kind,fallback)=>validBounds(state.highlights[key]?.[kind],1000,640)?[...state.highlights[key][kind]]:[...fallback];
   function report(message) {const status=document.querySelector('.editor-status');if(status)status.textContent=message;if(/上限|無法|格式|失敗|請選擇/.test(message))window.visualLayoutEditor?.report(message,true);}
   function saveDraft() {
+    if(readOnly)return false;
     try {localStorage.setItem(storageKey,JSON.stringify(state));report(dirty?'草稿已暫存；請儲存 JSON 設定':'已儲存');return true;}
     catch {report('瀏覽器無法暫存；請按儲存寫入 JSON 設定');return false;}
   }
   function changed(commit=true) {
+    if(readOnly)return;
     state.updatedAt=Date.now();
     dirty=true;
     if(commit)window.visualLayoutEditor?.legacyChanged();
@@ -62,6 +65,7 @@
     return result;
   }
   function setComparisonTransform(pageId,side,patch) {
+    if(readOnly)return;
     if(!['before','after'].includes(side)||!api?.pages.some(page=>page.id===pageId&&page.kind==='current-conditions'))return;
     if(patch===null){
       if(state.comparisonTransforms[pageId]){delete state.comparisonTransforms[pageId][side];if(!Object.keys(state.comparisonTransforms[pageId]).length)delete state.comparisonTransforms[pageId];}
@@ -189,6 +193,7 @@
     document.body.style.setProperty('--editor-space',editing?toolbar.offsetHeight+'px':'0px');
   }
   function setEditing(value) {
+    if(readOnly)return;
     if(!value)window.visualLayoutEditor?.setMode(false);
     if(!value)window.generalRoadFormatting?.setActive(false);
     if(!value)setAdjusting(false,false);
@@ -203,6 +208,7 @@
     if(!editing&&dirty){clearTimeout(draftTimer);saveDraft();}
   }
   function setAdjusting(value,refresh=true) {
+    if(readOnly)return;
     if(value)window.generalRoadFormatting?.setActive(false);
     drag=null;adjusting=Boolean(value&&editing);
     document.body.classList.toggle('is-highlighting',adjusting);
@@ -212,6 +218,7 @@
   }
   function chooseImage(key) {imageTarget=key;$('editor-image-file').value='';$('editor-image-file').click();}
   async function replaceImage(key,src,alt='替換圖面') {
+    if(readOnly)return;
     if(!safeImage(src))throw new Error('圖片格式無法使用');
     await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>img.naturalWidth&&img.naturalHeight?resolve():reject(new Error('圖片沒有有效尺寸'));img.onerror=()=>reject(new Error('無法讀取這張圖片'));img.src=src;});
     state.images[key]={src,alt};
@@ -247,6 +254,7 @@
     return '<!doctype html>\n'+clone.outerHTML;
   }
   function download() {
+    if(readOnly)return;
     const serialized=serialize();
     const url=URL.createObjectURL(new Blob([serialized],{type:'text/html;charset=utf-8'}));
     const link=document.createElement('a');link.href=url;link.download='一般道路情境-圖面放大版-可編輯.html';link.dataset.editorUi='download';document.body.append(link);link.click();link.remove();
@@ -254,6 +262,7 @@
   }
   function rememberOrder() {state.pageOrder=api.pages.map(page=>page.id);changed();}
   function addPage(type,afterId=api.page.id) {
+    if(readOnly)return;
     const after=api.pages.findIndex(page=>page.id===afterId);
     const chapter=after>=0?api.pages[after].chapter:'intro';
     const page=window.generalRoadTemplates.create(type,chapter);
@@ -261,6 +270,7 @@
     state.pages.push(page);api.pages.splice(after+1,0,page);rememberOrder();api.refreshStructure(page.id,0);return page;
   }
   function movePage(id,direction) {
+    if(readOnly)return;
     const index=api.pages.findIndex(page=>page.id===id);
     if(index<0||api.pages[index].kind!=='custom')return;
     const destination=Math.max(0,Math.min(api.pages.length-1,index+direction));
@@ -268,6 +278,7 @@
     const [page]=api.pages.splice(index,1);api.pages.splice(destination,0,page);rememberOrder();api.refreshStructure(id,api.state.phase);
   }
   function removePage(id) {
+    if(readOnly)return;
     const index=api.pages.findIndex(page=>page.id===id);
     if(index<0||api.pages[index].kind!=='custom')return;
     const next=api.pages[index-1]?.id||api.pages[index+1]?.id;

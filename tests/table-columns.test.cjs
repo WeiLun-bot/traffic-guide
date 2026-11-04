@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const Columns=require('../assets/table-column-editor.js'),Core=require('../assets/visual-editor-core.js'),original=()=>JSON.parse(fs.readFileSync(path.join(__dirname,'../layout/presentation-layout.json'),'utf8'));
+const Columns=require('../assets/table-column-editor.js'),Core=require('../assets/visual-editor-core.js'),original=()=>require('./read-project-config.cjs')();
 test('resizing a column boundary preserves the total and the other column, and clamps both adjacent columns',()=>{
   const before=[20,27,53];assert.deepEqual(Columns.resizeColumns(before,0,6),[26,21,53]);assert.deepEqual(Columns.resizeColumns(before,1,-10),[20,17,63]);assert.deepEqual(Columns.resizeColumns(before,0,500),[39,8,53]);assert.deepEqual(Columns.resizeColumns(before,1,-500),[20,8,72]);assert.deepEqual(before,[20,27,53]);assert.throws(()=>Columns.resizeColumns(before,2,10));assert.throws(()=>Columns.resizeColumns(before,0,Infinity));
 });

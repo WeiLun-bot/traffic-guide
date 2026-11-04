@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-04",
+  "texts": {
+    "results-scenario-c1-04|results|title": "主要道路多叉路口的行車路徑、標誌資訊及號誌問題",
+    "results-scenario-c1-04|results|intro": "多條主要道路於同一交叉口交會，各分支路幅寬、車道數多，且部分道路斜交，形成面積廣大、轉向選擇較多的號誌化路口。",
+    "results-scenario-c1-04-strategy|results|title": "縮小交叉範圍、明確主要車流及號誌管制",
+    "results-scenario-c1-04-strategy|results|intro": "先界定各方向實際行車範圍，再以槽化線、行人庇護島、行車導引線及號誌調整，處理多叉路口的複雜動線。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-04": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "交叉口過大，行車路徑不明確",
+            "text": "各方向車道未直接對齊，且缺少足夠的行車導引，駕駛通過路口時不易判斷應銜接的車道。",
+            "titleKey": "results-scenario-c1-04|results|guidance-title",
+            "textKey": "results-scenario-c1-04|results|guidance-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越距離長且缺少庇護",
+            "text": "多條寬廣道路交會，行人須穿越多個車道，現況缺少適當的分隔島及行人庇護空間。",
+            "titleKey": "results-scenario-c1-04|results|pedestrian-title",
+            "textKey": "results-scenario-c1-04|results|pedestrian-text"
+          },
+          {
+            "id": "information",
+            "title": "標誌資訊過多且重複",
+            "text": "路口分支多、方向選擇複雜，若設置過多相似或重複的方向標誌，駕駛難以在短時間內完成判讀。",
+            "titleKey": "results-scenario-c1-04|results|information-title",
+            "textKey": "results-scenario-c1-04|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "號誌易誤視且人車可能衝突",
+            "text": "遠端號誌距離過遠，部分燈面可能被其他方向駕駛誤認；現況亦有左轉箭頭綠燈與衝突方向行人綠燈同時放行的問題。",
+            "titleKey": "results-scenario-c1-04|results|signals-title",
+            "textKey": "results-scenario-c1-04|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c1-04-strategy": {
+        "points": [
+          {
+            "id": "space",
+            "title": "以槽化線縮小交叉口範圍",
+            "text": "將不必要的鋪面空間劃設為槽化區，明確界定行車範圍，並利用可配置的空間設置行人庇護島。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-04-strategy|results|space-title",
+            "textKey": "results-scenario-c1-04-strategy|results|space-text"
+          },
+          {
+            "id": "guidance",
+            "title": "優先標示主要車流路徑",
+            "text": "確認各分支的主要通行方向，於容易混淆的轉向及直行路徑劃設路口行車導引線，引導車輛進入正確的下游車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-04-strategy|results|guidance-title",
+            "textKey": "results-scenario-c1-04-strategy|results|guidance-text"
+          },
+          {
+            "id": "information",
+            "title": "減少重複的方向標誌",
+            "text": "以駕駛需要的選道及行向資訊為主，刪減重複或不必要的牌面，並將重要資訊安排於駕駛作出決策前的位置。",
+            "moduleId": "M2-04",
+            "titleKey": "results-scenario-c1-04-strategy|results|information-title",
+            "textKey": "results-scenario-c1-04-strategy|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "檢核號誌可視性與誤視問題",
+            "text": "依各分支行車方向檢核近、遠端燈面，避免駕駛誤看其他方向的號誌。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-04-strategy|results|signals-title",
+            "textKey": "results-scenario-c1-04-strategy|results|signals-text"
+          },
+          {
+            "id": "phases",
+            "title": "以時相區隔高風險轉向與行人穿越",
+            "text": "若轉向車輛行駛路徑接近直行，或可能以較高速度穿越行穿線，應檢討採用人車分離的號誌時相，避免衝突放行。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-04-strategy|results|phases-title",
+            "textKey": "results-scenario-c1-04-strategy|results|phases-text"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C3-01",
+  "texts": {
+    "results-scenario-c3-01|results|title": "鐵路平交道的車流滯留、路口導引及警示問題",
+    "results-scenario-c3-01|results|intro": "鐵路平交道鄰近道路交叉口，主要道路寬約 8 m、支線道約 6～7 m。周邊包含住宅及工業用地，須同時考量車輛、行人與列車通行。",
+    "results-scenario-c3-01-strategy|results|title": "平交道預告、鐵路淨空與鄰近路口管制",
+    "results-scenario-c3-01-strategy|results|intro": "從上游警示、停止位置到平交道淨空範圍，配置鐵路平交道標誌標線，並檢討鄰近交叉口的車流管制與行人通行。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c3-01": {
+        "points": [
+          {
+            "id": "guidance",
+            "title": "大面積網狀線缺少明確行車導引",
+            "text": "現況以大面積網狀線提醒駕駛保持淨空，但未清楚界定車道及轉向路徑，駕駛不易判斷應行駛的位置。",
+            "titleKey": "results-scenario-c3-01|results|guidance-title",
+            "textKey": "results-scenario-c3-01|results|guidance-text"
+          },
+          {
+            "id": "queue",
+            "title": "鄰近路口車隊可能占用平交道",
+            "text": "平交道與道路交叉口距離近，若下游路口排隊回堵，車輛可能滯留於鐵路淨空範圍。",
+            "titleKey": "results-scenario-c3-01|results|queue-title",
+            "textKey": "results-scenario-c3-01|results|queue-text"
+          },
+          {
+            "id": "signs",
+            "title": "平交道與路口標誌容易混淆",
+            "text": "平交道警示、道路行向及路口管制標誌集中設置，駕駛可能無法在接近時迅速辨識重要資訊。",
+            "titleKey": "results-scenario-c3-01|results|signs-title",
+            "textKey": "results-scenario-c3-01|results|signs-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越與庇護空間不足",
+            "text": "路口缺少完整的行人穿越設施，步行空間與車行動線未妥善區隔，行人通行條件不足。",
+            "titleKey": "results-scenario-c3-01|results|pedestrian-title",
+            "textKey": "results-scenario-c3-01|results|pedestrian-text"
+          }
+        ]
+      },
+      "results-scenario-c3-01-strategy": {
+        "points": [
+          {
+            "id": "warning",
+            "title": "設置近鐵路平交道線與警告標誌",
+            "text": "於平交道上游劃設近鐵路平交道線，並設置有柵門鐵路平交道警告標誌；本例採雙線以上電化鐵路平交道標誌，設於接近鐵軌處。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|warning-title",
+            "textKey": "results-scenario-c3-01-strategy|results|warning-text"
+          },
+          {
+            "id": "clearance",
+            "title": "以網狀線界定鐵路淨空範圍",
+            "text": "依鐵路動態包絡範圍配置網狀線，明確標示不得停等的區域，避免車輛排隊占用鐵道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|clearance-title",
+            "textKey": "results-scenario-c3-01-strategy|results|clearance-text"
+          },
+          {
+            "id": "junction",
+            "title": "以槽化線及讓路設施整理鄰近路口",
+            "text": "利用槽化線界定車行範圍，並於鄰近支線道配置讓路線及讓路標誌；本例支線道採右進右出，搭配僅准右轉標誌。",
+            "moduleId": "M2-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|junction-title",
+            "textKey": "results-scenario-c3-01-strategy|results|junction-text"
+          },
+          {
+            "id": "walking",
+            "title": "補充行人穿越與庇護空間",
+            "text": "於適當位置配置行人穿越道及路側庇護空間，使行人通行路徑明確，並減少與轉向車流的交織。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c3-01-strategy|results|walking-title",
+            "textKey": "results-scenario-c3-01-strategy|results|walking-text"
+          },
+          {
+            "id": "coordination",
+            "title": "鄰近號誌路口須與平交道協調",
+            "text": "若平交道鄰近號誌化路口，應檢討車隊回堵情形；必要時採用車隊偵測、清道時相或平交道前置號誌，避免車輛滯留於鐵道範圍。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c3-01-strategy|results|coordination-title",
+            "textKey": "results-scenario-c3-01-strategy|results|coordination-text"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G2-03",
+  "texts": {
+    "results-scenario-g2-03|results|title": "寬廣斜交路口的車道銜接、行人庇護與號誌辨識問題",
+    "results-scenario-g2-03|results|intro": "主要道路寬約 24 m、速限 60 km/h；次要道路寬約 22 m、速限 50 km/h，兩條道路均設有中央實體分隔。",
+    "results-scenario-g2-03-strategy|results|title": "車道槽化、行人庇護及斜交號誌配置",
+    "results-scenario-g2-03-strategy|results|intro": "透過槽化線與交通島調整寬廣斜交路口的車道配置，並針對號誌可視性及誤窺其他方向燈號的問題進行檢核。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g2-03": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "進出路口車道數不一致",
+            "text": "進入與離開路口的車道數不同，車道銜接位置不明確，駕駛不易判斷應行駛的車道。",
+            "titleKey": "results-scenario-g2-03|results|lanes-title",
+            "textKey": "results-scenario-g2-03|results|lanes-text"
+          },
+          {
+            "id": "turn",
+            "title": "斜交路口轉向路徑不明確",
+            "text": "路口範圍寬廣且道路斜交，各方向轉彎路徑較長，缺少明確的槽化及行車導引。",
+            "titleKey": "results-scenario-g2-03|results|turn-title",
+            "textKey": "results-scenario-g2-03|results|turn-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越距離長且缺少庇護島",
+            "text": "主要與次要道路寬度均超過 20 m，現況未設行人庇護島，行人須一次穿越多個車道。",
+            "titleKey": "results-scenario-g2-03|results|pedestrian-title",
+            "textKey": "results-scenario-g2-03|results|pedestrian-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限變化位置不明確",
+            "text": "路面速限標字與速限標誌位置不一致，駕駛不易判斷速限變化的起點。",
+            "titleKey": "results-scenario-g2-03|results|speed-title",
+            "textKey": "results-scenario-g2-03|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g2-03-strategy": {
+        "points": [
+          {
+            "id": "path",
+            "title": "以槽化線調整車道銜接",
+            "text": "利用槽化線區分各方向行車動線，調整進出路口的車道數，並配合行車導引線標示轉彎路徑。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g2-03-strategy|results|path-title",
+            "textKey": "results-scenario-g2-03-strategy|results|path-text"
+          },
+          {
+            "id": "refuge",
+            "title": "配置中央行人庇護島",
+            "text": "於行人穿越位置設置中央庇護島，提供中途停等空間；道路寬度不足以設置實體島的部分，改以槽化線處理。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-g2-03-strategy|results|refuge-title",
+            "textKey": "results-scenario-g2-03-strategy|results|refuge-text"
+          },
+          {
+            "id": "speed",
+            "title": "提前設置速限變化標誌",
+            "text": "本例西側路段速限由 60 km/h 降為 50 km/h，於路口前約 70～100 m 設置速限 50 km/h 標誌，使車輛在進入路口前完成減速。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-g2-03-strategy|results|speed-title",
+            "textKey": "results-scenario-g2-03-strategy|results|speed-text"
+          },
+          {
+            "id": "signals",
+            "title": "增設近端號誌並防止誤窺",
+            "text": "各方向增設近端柱立式號誌；對可能被其他方向駕駛誤認的遠端燈面，採特長筒式罩簷或其他防窺設計。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g2-03-strategy|results|signals-title",
+            "textKey": "results-scenario-g2-03-strategy|results|signals-text"
+          },
+          {
+            "id": "left-turn",
+            "title": "於左轉待轉區增設專用號誌",
+            "text": "西行左轉車輛停等於待轉區時，可能無法看見原有遠端號誌，因此增設左轉專用號誌，並搭配燈面說明標誌。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-g2-03-strategy|results|left-turn-title",
+            "textKey": "results-scenario-g2-03-strategy|results|left-turn-text"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G1-05",
+  "texts": {
+    "results-scenario-g1-05|results|title": "斜交路口的轉向視距、停車及行人空間問題",
+    "results-scenario-g1-05|results|intro": "主要道路寬約 15 m、次要道路寬約 6.5 m，速限均為 30 km/h。周邊以住宅為主，主要道路兩側有路邊停車需求。",
+    "results-scenario-g1-05-strategy|results|title": "路側停車、學校接送臨停及轉角空間配置",
+    "results-scenario-g1-05-strategy|results|intro": "配合住宅區停車需求與鄰近學校的臨時停車需求，區分停放、行車及行人空間。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g1-05": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "斜交轉角影響來車觀察",
+            "titleKey": "results-scenario-g1-05|results|priority-title",
+            "text": "次要道路與主要道路交角較小，且轉角鄰近建物，駕駛進入主要道路時不易觀察橫向來車。",
+            "textKey": "results-scenario-g1-05|results|priority-text"
+          },
+          {
+            "id": "space",
+            "title": "停車與行車空間未明確區分",
+            "titleKey": "results-scenario-g1-05|results|space-title",
+            "text": "主要道路外側同時供行車及路邊停車使用，缺少明確的路面邊線，車行範圍不易辨識。",
+            "textKey": "results-scenario-g1-05|results|space-text"
+          },
+          {
+            "id": "speed",
+            "title": "路口警示與速限提示不足",
+            "titleKey": "results-scenario-g1-05|results|speed-title",
+            "text": "主要道路缺少次要道路來車警示，速限資訊多依賴路面標字，標誌提示不完整。",
+            "textKey": "results-scenario-g1-05|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g1-05-strategy": {
+        "points": [
+          {
+            "id": "parking",
+            "title": "設置嵌入式路邊停車位",
+            "titleKey": "results-scenario-g1-05-strategy|results|parking-title",
+            "text": "將汽車停車格配置於路側停車帶，並以路面邊線區分停車與行車空間。",
+            "textKey": "results-scenario-g1-05-strategy|results|parking-text",
+            "moduleId": "M1-03"
+          },
+          {
+            "id": "pickup",
+            "title": "設置臨時停車彎",
+            "text": "配合鄰近學校的接送需求，局部調整人行道路緣形成臨停彎，並劃設禁止停車線，區分臨停與禁止停車範圍。",
+            "titleKey": "results-scenario-g1-05-strategy|results|pickup-title",
+            "textKey": "results-scenario-g1-05-strategy|results|pickup-text"
+          },
+          {
+            "id": "corner",
+            "title": "調整轉角人行空間",
+            "titleKey": "results-scenario-g1-05-strategy|results|corner-title",
+            "text": "配合人行道路緣外擴調整轉角線形及轉彎半徑，並考量行人穿越位置與轉彎車輛的衝突。",
+            "textKey": "results-scenario-g1-05-strategy|results|corner-text",
+            "moduleId": "M3-01"
+          },
+          {
+            "id": "priority",
+            "title": "補充路口導引與停車管制",
+            "titleKey": "results-scenario-g1-05-strategy|results|priority-title",
+            "text": "於路口劃設行車導引線，並搭配禁止停車、禁止臨時停車標誌及標線，明確標示路側停車管制範圍。",
+            "textKey": "results-scenario-g1-05-strategy|results|priority-text",
+            "moduleId": "M1-03"
+          }
+        ]
+      }
+    }
+  }
+}

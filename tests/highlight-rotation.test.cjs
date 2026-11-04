@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const Core=require('../assets/visual-editor-core.js');
-const original=()=>JSON.parse(fs.readFileSync(path.join(__dirname,'../layout/presentation-layout.json'),'utf8'));
+const original=()=>require('./read-project-config.cjs')();
 const near=(a,b)=>assert(Math.abs(a-b)<1e-6,`${a} != ${b}`);
 const inside=(box,w,h)=>{assert(box[0]>=-1e-6&&box[1]>=-1e-6&&box[0]+box[2]<=w+1e-6&&box[1]+box[3]<=h+1e-6,JSON.stringify(box));};
 test('highlight rotations keep legacy JSON intact and persist independently through history and reload',()=>{

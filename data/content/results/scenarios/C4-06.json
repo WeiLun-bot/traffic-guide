@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C4-06",
+  "texts": {
+    "results-scenario-c4-06|results|title": "山區彎道的線形辨識、視距不足及超車管制問題",
+    "results-scenario-c4-06|results|intro": "道路位於山坡地及保護區，部分路段有連續彎道，採標線分隔雙向車流。山區地形及道路曲率限制駕駛視距，須加強入彎前的警示與行車導引。",
+    "results-scenario-c4-06-strategy|results|title": "彎道標線、連續彎路預告及禁止超車配置",
+    "results-scenario-c4-06-strategy|results|intro": "依彎道曲率及視距條件，配置路面邊線、中央分向標線與安全方向導引標誌，並在視距不足處限制超車。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c4-06": {
+        "points": [
+          {
+            "id": "speed",
+            "title": "彎道視距限制駕駛反應時間",
+            "text": "山區道路受地形及曲率影響，駕駛可能無法提前掌握彎道走向，入彎速度過高時容易偏離車道。",
+            "titleKey": "results-scenario-c4-06|results|speed-title",
+            "textKey": "results-scenario-c4-06|results|speed-text"
+          },
+          {
+            "id": "guidance",
+            "title": "彎道行車範圍與走向不易辨識",
+            "text": "路面邊線及中央分向標線若未完整呈現彎道線形，駕駛不易判斷應沿何種路徑通過彎道。",
+            "titleKey": "results-scenario-c4-06|results|guidance-title",
+            "textKey": "results-scenario-c4-06|results|guidance-text"
+          },
+          {
+            "id": "warning",
+            "title": "連續彎道缺少完整預告與方向導引",
+            "text": "若彎路標誌及安全方向導引標誌配置不足，駕駛無法提前掌握彎道方向與後續連續彎路的長度。",
+            "titleKey": "results-scenario-c4-06|results|warning-title",
+            "textKey": "results-scenario-c4-06|results|warning-text"
+          },
+          {
+            "id": "passing",
+            "title": "視距不足處仍可能發生超車行為",
+            "text": "山區彎道可能因超車視距不足而無法安全超越前車，若缺少適當的分向限制線或警告標誌，容易增加對向車輛衝突風險。",
+            "titleKey": "results-scenario-c4-06|results|passing-title",
+            "textKey": "results-scenario-c4-06|results|passing-text"
+          }
+        ]
+      },
+      "results-scenario-c4-06-strategy": {
+        "points": [
+          {
+            "id": "alignment",
+            "title": "以路面邊線完整標示彎道線形",
+            "text": "沿彎道連續劃設路面邊線，使駕駛能辨識道路外側邊界，配合彎道線形提前調整車速。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|alignment-title",
+            "textKey": "results-scenario-c4-06-strategy|results|alignment-text"
+          },
+          {
+            "id": "warning",
+            "title": "於入彎前設置連續彎路警告標誌",
+            "text": "依第一處彎道方向選擇連續彎路標誌，搭配附牌標示連續彎路長度，並於較長的連續彎道路段補充剩餘里程提示。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|warning-title",
+            "textKey": "results-scenario-c4-06-strategy|results|warning-text"
+          },
+          {
+            "id": "guidance",
+            "title": "沿彎道設置安全方向導引標誌",
+            "text": "於彎道內側或外側適當位置配置安全方向導引標誌，同一方向至少設置三面，並使駕駛在彎道上能連續辨識後續行駛方向。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|guidance-title",
+            "textKey": "results-scenario-c4-06-strategy|results|guidance-text"
+          },
+          {
+            "id": "passing",
+            "title": "依超車視距配置分向限制線",
+            "text": "在超車視距不足的路段設置分向限制線，禁止車輛跨越超車；必要時搭配禁止超車標誌，加強管制提示。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-06-strategy|results|passing-title",
+            "textKey": "results-scenario-c4-06-strategy|results|passing-text"
+          },
+          {
+            "id": "buffer",
+            "title": "於彎道入口加寬中央槽化空間",
+            "text": "視道路寬度及線形條件，將分向限制線局部加寬為槽化線，提供雙向車流之間的緩衝空間；若超車視距符合要求，則可依條件採不同的分向標線配置。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-06-strategy|results|buffer-title",
+            "textKey": "results-scenario-c4-06-strategy|results|buffer-text"
+          }
+        ]
+      }
+    }
+  }
+}

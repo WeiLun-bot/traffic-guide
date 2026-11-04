@@ -28,7 +28,7 @@ py -3 tools/assemble-pdf-chapters.py
 
 成品位於 `exports/G1-01-PDF-sample/G1-01_教材試作_6頁.pdf`；同資料夾的 `G1-01_六頁預覽.png` 可一次比較六頁。
 
-輸出採用專案中**已儲存的** `layout/presentation-layout.json`，保留文字、圖片視角、打亮框與條文放大範圍。瀏覽器尚未儲存的修改不會包含在內。輸出開始時會讀取一份固定設定快照，六頁皆採相同版本；版本雜湊記錄於 `manifest.json`。
+輸出採用專案中**已儲存的** `data/content/`、`data/presentation-navigation.json` 與 `layout/presentation-layout.json`，保留文字、圖片視角、打亮框與條文放大範圍。瀏覽器尚未儲存的修改不會包含在內。輸出開始時會重建一份固定快照，六頁皆採相同版本；版本雜湊記錄於 `manifest.json`。
 
 PDF 沿用簡報圖文配置，移除章節導覽、頁面切換、圖片縮放及編輯按鈕。整體佈設策略呈現改善後圖面，適合靜態閱讀；PDF 文字可選取搜尋，附有六頁書籤。
 

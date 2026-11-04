@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M1-01",
+  "texts": {},
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m101-lanes-issues": {
+        "points": [
+          {
+            "id": "continuity",
+            "title": "車道用途前後不連續",
+            "titleKey": "m101-lanes-issues|module|continuity|title",
+            "text": "例如直行車道變成左轉車道，導致駕駛來不及變換",
+            "textKey": "m101-lanes-issues|module|continuity|text"
+          },
+          {
+            "id": "review",
+            "title": "路口上下游車道數不平衡",
+            "titleKey": "m101-lanes-issues|module|review|title",
+            "text": "上游直行車道數大於下游接收車道數，導致直行搶道",
+            "textKey": "m101-lanes-issues|module|review|text"
+          },
+          {
+            "id": "path",
+            "title": "導引線、路緣轉角未依車輛軌跡設計",
+            "titleKey": "m101-lanes-issues|module|path|title",
+            "text": "轉彎路徑若未檢核，車輛不易沿導引線行駛，甚至可能碰撞交通島。",
+            "textKey": "m101-lanes-issues|module|path|text"
+          }
+        ]
+      },
+      "m101-additional-issues": {
+        "points": [
+          {
+            "id": "recognition",
+            "title": "車道變化不易提早辨識",
+            "titleKey": "m101-additional-issues|module|recognition|title",
+            "text": "標線與預告不完整，駕駛可能到路口前才察覺轉向車道。",
+            "textKey": "m101-additional-issues|module|recognition|text"
+          },
+          {
+            "id": "storage",
+            "title": "漸變或儲車空間不足",
+            "titleKey": "m101-additional-issues|module|storage|title",
+            "text": "轉向車流無法順暢進入，排隊可能外溢並影響主線直行車流。",
+            "textKey": "m101-additional-issues|module|storage|text"
+          }
+        ]
+      }
+    },
+    "results": {}
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G3-01",
+  "texts": {
+    "results-scenario-g3-01|results|title": "住宅區無號誌路口的路權、停車及行人穿越問題",
+    "results-scenario-g3-01|results|intro": "主要道路寬約 15 m、次要道路寬約 8 m，速限均為 30 km/h。周邊以住宅為主，主要道路兩側設有停車格及人行道。",
+    "results-scenario-g3-01-strategy|results|title": "交錯車道、路側停車及低速路口配置",
+    "results-scenario-g3-01-strategy|results|intro": "配合住宅區 30 km/h 速限及停車需求，透過車道橫移與停車格交錯配置，使車輛減速接近無號誌路口。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g3-01": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "主次道路管制不明確",
+            "text": "路口缺少必要的停讓及警示設施，駕駛不易辨識主次道路關係及橫向來車。",
+            "titleKey": "results-scenario-g3-01|results|priority-title",
+            "textKey": "results-scenario-g3-01|results|priority-text"
+          },
+          {
+            "id": "space",
+            "title": "路側停車與行車空間未明確區分",
+            "text": "道路外側設有停車格，但未以路面邊線明確區分停車與行車空間，停放車輛也可能影響駕駛視線。",
+            "titleKey": "results-scenario-g3-01|results|space-title",
+            "textKey": "results-scenario-g3-01|results|space-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越警示不足",
+            "text": "住宅區行人穿越需求較高，現況主要依賴行穿線提示，容易受停放車輛遮蔽。",
+            "titleKey": "results-scenario-g3-01|results|pedestrian-title",
+            "textKey": "results-scenario-g3-01|results|pedestrian-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限提示不足",
+            "text": "市區街廓較短，速限標誌與標字配置不足，難以持續提醒駕駛維持低速。",
+            "titleKey": "results-scenario-g3-01|results|speed-title",
+            "textKey": "results-scenario-g3-01|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g3-01-strategy": {
+        "points": [
+          {
+            "id": "offset",
+            "title": "利用車道橫移降低車速",
+            "text": "於路口前後採交錯車道配置，使車輛通過路口時須配合道路線形調整行駛方向，促使駕駛減速。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g3-01-strategy|results|offset-title",
+            "textKey": "results-scenario-g3-01-strategy|results|offset-text"
+          },
+          {
+            "id": "parking",
+            "title": "配合車道橫移交錯設置停車格",
+            "text": "沿道路兩側交替配置單邊停車格，利用路側停車空間形成車道橫移，並區分停車與行車範圍。",
+            "moduleId": "M1-03",
+            "titleKey": "results-scenario-g3-01-strategy|results|parking-title",
+            "textKey": "results-scenario-g3-01-strategy|results|parking-text"
+          },
+          {
+            "id": "guidance",
+            "title": "以路口行車導引線銜接前後車道",
+            "text": "配合車道橫移位置劃設路口行車導引線，引導車輛沿主要道路通過交叉口。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-g3-01-strategy|results|guidance-title",
+            "textKey": "results-scenario-g3-01-strategy|results|guidance-text"
+          },
+          {
+            "id": "warning",
+            "title": "補充慢行及行人穿越提示",
+            "text": "於主要道路設置慢行標誌及 30 km/h 速限提示，並配合行人穿越道提醒駕駛注意穿越行人。",
+            "moduleId": "M4-01",
+            "titleKey": "results-scenario-g3-01-strategy|results|warning-title",
+            "textKey": "results-scenario-g3-01-strategy|results|warning-text"
+          }
+        ]
+      }
+    }
+  }
+}

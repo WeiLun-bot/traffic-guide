@@ -16,7 +16,8 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await view('results-scenario-g1-01');requests=await files();assert(requests.includes('data/results/scenarios/G1-01.json'));assert(!requests.includes('data/results/scenarios/G1-02.json'));
   pass('individual scenarios, modules and result cases load on first entry and reuse the cached source on return');
   await navigate(base+'/presentation-demo/#results-scenario-c4-02-strategy');
-  assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-scenario-c4-02-strategy');assert.equal(await evaluate('document.querySelectorAll(".results-points>li").length'),4);
+  const expectedPoints=require('./read-project-config.cjs')().content.results['results-scenario-c4-02-strategy']?.points.length??require('../data/results/scenarios/C4-02.json').example.strategy.items.length;
+  assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-scenario-c4-02-strategy');assert.equal(await evaluate('document.querySelectorAll(".results-points>li").length'),expectedPoints);
   requests=await files();assert(requests.includes('data/results/scenarios/C4-02.json'));assert(!requests.some(file=>/data\/results\/scenarios\/(?:G|C4-03)/.test(file)));
   await view('results-scenario-c4-02');await view('results-scenario-c4-02-strategy');assert.equal((await files()).filter(file=>file==='data/results/scenarios/C4-02.json').length,1);
   pass('a complex strategy deep link loads only its owning case and reuses that document for issue and strategy navigation');

@@ -143,7 +143,7 @@
     for(const button of document.querySelectorAll('#chapters [data-deck]')){const active=button.dataset.deck===deck?.id;button.classList.toggle('active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');}
     chapterNav.innerHTML=deck?deck.chapters.map(chapter=>`<button type="button" data-chapter="${chapter.id}" title="${esc(chapterName(chapter))}" ${chapter.id===page.chapter?'class="active" aria-current="step"':''}><span>${chapter.code}</span>${esc(chapterName(chapter))}</button>`).join(''):'<span class="lecture-nav-hint">請選擇簡報主題</span>';
     revealChapter();
-    document.querySelector('.footer-label').textContent=deck?.footer||'ROAD DESIGN PRESENTATIONS';
+    document.querySelector('.footer-label').textContent=window.PresentationMode?.readOnly?'純瀏覽模式':deck?.footer||'ROAD DESIGN PRESENTATIONS';
     const selected=deck?app.pages.filter(item=>item.deckId===deck.id):[page],pageIndex=selected.findIndex(item=>item.id===page.id),positions=app.stops.map((stop,index)=>({stop,index})).filter(item=>selected.includes(app.pages[item.stop.page])),position=positions.findIndex(item=>item.index===app.position);
     document.getElementById('page-number').textContent=String(pageIndex+1).padStart(2,'0');document.getElementById('page-total').textContent=String(selected.length).padStart(2,'0');
     document.getElementById('page-track').style.width=((pageIndex+1)/selected.length*100)+'%';document.getElementById('progress').style.width=(positions.length>1?position/(positions.length-1)*100:0)+'%';

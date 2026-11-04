@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C4-02",
+  "texts": {
+    "results-scenario-c4-02|results|title": "調撥車道的路段進出、行向切換與號誌辨識問題",
+    "results-scenario-c4-02|results|intro": "主要道路因雙向交通量具有明顯的時段差異，採時段性調撥車道。道路部分區域設有實體快慢分隔，調撥期間須改變部分車道的通行方向。",
+    "results-scenario-c4-02-strategy|results|title": "路段調撥、車道管制號誌與時段性行向配置",
+    "results-scenario-c4-02-strategy|results|intro": "以路段型調撥為原則，透過車道線、進出缺口、時段告示及車道管制號誌，明確區分調撥前後的車道使用方式。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c4-02": {
+        "points": [
+          {
+            "id": "entry",
+            "title": "調撥車道未從路段中開始",
+            "text": "國內常見調撥車道從路口後開始實施，若未提供適當的路段進出空間，車輛可能須在路口內變換車道。",
+            "titleKey": "results-scenario-c4-02|results|entry-title",
+            "textKey": "results-scenario-c4-02|results|entry-text"
+          },
+          {
+            "id": "wrong-way",
+            "title": "調撥與非調撥期間容易誤入車道",
+            "text": "相同車道在不同時段供不同方向使用，不熟悉路況的駕駛若未清楚辨識管制，可能誤入對向車道。",
+            "titleKey": "results-scenario-c4-02|results|wrong-way-title",
+            "textKey": "results-scenario-c4-02|results|wrong-way-text"
+          },
+          {
+            "id": "information",
+            "title": "調撥時間與車道位置提示不足",
+            "text": "現況多以文字告示說明調撥方式，若缺少明確的車道對應及起訖點資訊，駕駛不易迅速理解。",
+            "titleKey": "results-scenario-c4-02|results|information-title",
+            "textKey": "results-scenario-c4-02|results|information-text"
+          },
+          {
+            "id": "signals",
+            "title": "車道管制號誌可能與路口號誌混淆",
+            "text": "車道管制號誌與行車管制號誌若距離過近，容易造成誤視；調撥方向切換時也須確保原有車輛已離開調撥車道。",
+            "titleKey": "results-scenario-c4-02|results|signals-title",
+            "textKey": "results-scenario-c4-02|results|signals-text"
+          }
+        ]
+      },
+      "results-scenario-c4-02-strategy": {
+        "points": [
+          {
+            "id": "entry",
+            "title": "於路段中安排調撥車道起訖點",
+            "text": "若道路設有中央實體分隔，應配合調撥需求開設適當缺口，使車輛能在路段中進出調撥車道，避免於路口內切換車道。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c4-02-strategy|results|entry-title",
+            "textKey": "results-scenario-c4-02-strategy|results|entry-text"
+          },
+          {
+            "id": "markings",
+            "title": "以調撥車道線及禁止變換車道線導引",
+            "text": "調撥車道沿線劃設雙白線，於進出口配合單邊禁止變換車道線，並在起訖點設置分向設施，避免車輛誤入對向車道。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-02-strategy|results|markings-title",
+            "textKey": "results-scenario-c4-02-strategy|results|markings-text"
+          },
+          {
+            "id": "schedule",
+            "title": "明確設置調撥時段與行向標誌",
+            "text": "於調撥車道上方設置調撥時間告示，並搭配起終點、車道禁止進入及分向線指示標誌，使雙向駕駛均能辨識車道使用規定。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c4-02-strategy|results|schedule-title",
+            "textKey": "results-scenario-c4-02-strategy|results|schedule-text"
+          },
+          {
+            "id": "signals",
+            "title": "每車道配置對應的管制號誌",
+            "text": "於車道上方採一燈面管制一車道，並與路口行車管制號誌保持適當距離，避免兩種號誌混淆。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-02-strategy|results|signals-title",
+            "textKey": "results-scenario-c4-02-strategy|results|signals-text"
+          },
+          {
+            "id": "clearance",
+            "title": "以清道時間完成調撥方向切換",
+            "text": "改變調撥方向前，先以綠箭頭閃光提示車輛駛離，再由雙向同時顯示叉形紅燈，待調撥車道淨空後才開放另一方向使用。",
+            "moduleId": "M4-03",
+            "titleKey": "results-scenario-c4-02-strategy|results|clearance-title",
+            "textKey": "results-scenario-c4-02-strategy|results|clearance-text"
+          }
+        ]
+      }
+    }
+  }
+}

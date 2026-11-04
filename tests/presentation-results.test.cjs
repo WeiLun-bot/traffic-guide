@@ -97,7 +97,7 @@ test('the new C1-06 photos remain separate from the corrected C1-07 set and both
 
 test('scenario issue and strategy items preserve stable text, module references and cameras through JSON and history',()=>{
   const Core=require('../assets/visual-editor-core.js'),fs=require('node:fs'),path=require('node:path');
-  const old=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../layout/presentation-layout.json'),'utf8'));delete old.content.results;
+  const old=require('./read-project-config.cjs')();delete old.content.results;
   const store=new Core.Store(old);assert.deepEqual(store.config.content.results,{});
   const page='results-scenario-g1-02-strategy',issue='results-scenario-c2-02';
   const point=(id,pageId)=>({id,title:'標題 '+id,titleKey:pageId+'|results|'+id+'-title',text:'說明 '+id,textKey:pageId+'|results|'+id+'-text'});

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-09",
+  "texts": {
+    "results-scenario-c1-09|results|title": "號誌化圓環的環內交織、標誌資訊及號誌辨識問題",
+    "results-scenario-c1-09|results|intro": "位於市中心的號誌化大型圓環，東西向道路寬約 50 m、南北向約 56 m，環內設有多車道及快慢車道分隔，進出環車流交織關係複雜。",
+    "results-scenario-c1-09-strategy|results|title": "圓環車道導引、進環選道與號誌時相配置",
+    "results-scenario-c1-09-strategy|results|intro": "配合快慢車道及號誌化管制，從入口選道、停止線後的環道導引到出口標誌與號誌，建立連續的通行路徑。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-09": {
+        "points": [
+          {
+            "id": "lanes",
+            "title": "進出環車道導引不連續",
+            "text": "入口缺少明確的車道導引，環內部分標線無法連續對應出口車道，使車輛容易在環內變換車道。",
+            "titleKey": "results-scenario-c1-09|results|lanes-title",
+            "textKey": "results-scenario-c1-09|results|lanes-text"
+          },
+          {
+            "id": "weaving",
+            "title": "快慢車道交織關係複雜",
+            "text": "進環車輛須依快慢車道分隔進入不同環道，並於環內持續匯流及分流，駕駛不易判斷正確的行駛路徑。",
+            "titleKey": "results-scenario-c1-09|results|weaving-title",
+            "textKey": "results-scenario-c1-09|results|weaving-text"
+          },
+          {
+            "id": "signs",
+            "title": "圓環標誌過多且設置不當",
+            "text": "部分圓環遵行方向標誌牌面及角度不適當，特殊管制告示牌文字過多，增加駕駛的判讀負擔。",
+            "titleKey": "results-scenario-c1-09|results|signs-title",
+            "textKey": "results-scenario-c1-09|results|signs-text"
+          },
+          {
+            "id": "signal",
+            "title": "號誌距離過遠且可能誤視",
+            "text": "部分外環遠端號誌距離較遠，號誌燈面朝向不當，可能使駕駛誤看其他方向的管制燈號。",
+            "titleKey": "results-scenario-c1-09|results|signal-title",
+            "textKey": "results-scenario-c1-09|results|signal-text"
+          },
+          {
+            "id": "turn",
+            "title": "右轉車輛與行人燈號不易判讀",
+            "text": "右轉專用車道有獨立放行需求，駕駛可能不易辨識不同時相的燈號變換，增加與行人穿越的衝突風險。",
+            "titleKey": "results-scenario-c1-09|results|turn-title",
+            "textKey": "results-scenario-c1-09|results|turn-text"
+          }
+        ]
+      },
+      "results-scenario-c1-09-strategy": {
+        "points": [
+          {
+            "id": "continuity",
+            "title": "延續停止線後的環道導引",
+            "text": "在圓環入口停止線後繼續劃設路口行車導引線，標示環內車行範圍及車道銜接位置，避免進環車流相互混淆。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-09-strategy|results|continuity-title",
+            "textKey": "results-scenario-c1-09-strategy|results|continuity-text"
+          },
+          {
+            "id": "selection",
+            "title": "進環前選道並限制環內變換車道",
+            "text": "於進環前配置左轉及直行專用車道，搭配穿越虛線、車道線及禁止變換車道線，引導車輛沿指定環道行駛及駛離。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-09-strategy|results|selection-title",
+            "textKey": "results-scenario-c1-09-strategy|results|selection-text"
+          },
+          {
+            "id": "signs",
+            "title": "以圖形化標誌提示出口方向",
+            "text": "於上游配置圖形化地名方向指示標誌，並於各出口前設置路名標誌，協助駕駛提前辨識出口及確認行駛方向。",
+            "moduleId": "M1-02",
+            "titleKey": "results-scenario-c1-09-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-09-strategy|results|signs-text"
+          },
+          {
+            "id": "phases",
+            "title": "配合內環疏解安排號誌時相",
+            "text": "本例採南北向與東西向交替放行，並穿插內環車流疏解時相；慢車道右轉車流採四燈式號誌，配合獨立放行需求配置右轉箭頭綠燈。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-09-strategy|results|phases-title",
+            "textKey": "results-scenario-c1-09-strategy|results|phases-text"
+          },
+          {
+            "id": "signals",
+            "title": "檢核近遠端號誌及防誤視措施",
+            "text": "依不同進環車道及停止線位置，配置近、遠端號誌；必要時增設柱立式燈面或調整罩簷，確保駕駛辨識自身方向的燈號，並避免誤看其他行向號誌。",
+            "moduleId": "M2-03",
+            "titleKey": "results-scenario-c1-09-strategy|results|signals-title",
+            "textKey": "results-scenario-c1-09-strategy|results|signals-text"
+          }
+        ]
+      }
+    }
+  }
+}

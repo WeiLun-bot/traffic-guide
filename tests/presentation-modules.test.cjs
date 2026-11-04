@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const Modules=require('../assets/presentation-modules.js'),Core=require('../assets/visual-editor-core.js');
-const root=path.resolve(__dirname,'..'),read=file=>JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
+const root=path.resolve(__dirname,'..'),read=file=>file==='layout/presentation-layout.json'?require('./read-project-config.cjs')():JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const catalog=read('data/modules/catalog.json'),data=read('data/modules/M2-01.json');
 test('module architecture has four themes, fifteen modules and twenty-seven submodules',()=>{
   Modules.validateCatalog(catalog);assert.equal(catalog.themes.length,4);assert.equal(catalog.modules.length,15);

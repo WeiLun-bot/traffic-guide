@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/G1-02",
+  "texts": {
+    "results-scenario-g1-02-strategy|results|intro": "以停車再開標誌、停止線及「停」標字建立次要道路停管制，並配合主要道路速限調整及路口警示設施。",
+    "results-scenario-g1-02|results|title": "鄉區狹窄路口的停讓管制與速限提示問題",
+    "results-scenario-g1-02|results|intro": "主要道路寬約 6 m、速限 50 km/h；次要道路寬約 4.5 m、速限 30 km/h。周邊以農田、農舍及工廠為主，兩側未設人行設施。",
+    "results-scenario-g1-02-strategy|results|title": "停車再開管制、路口預告與車行範圍配置"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-g1-02": {
+        "points": [
+          {
+            "id": "warning",
+            "title": "路口位置不易辨識",
+            "text": "鄉區道路視野較開闊，若缺少岔路警示，駕駛可能未注意前方有橫交道路。",
+            "titleKey": "results-scenario-g1-02|results|warning-title",
+            "textKey": "results-scenario-g1-02|results|warning-text"
+          },
+          {
+            "id": "priority",
+            "title": "次要道路停讓管制不明確",
+            "titleKey": "results-scenario-g1-02|results|priority-title",
+            "text": "路口缺少完整的停讓標誌與標線，駕駛不易辨識主次道路關係及應停車的位置。",
+            "textKey": "results-scenario-g1-02|results|priority-text"
+          },
+          {
+            "id": "speed",
+            "title": "速限標誌與標字不足",
+            "titleKey": "results-scenario-g1-02|results|speed-title",
+            "text": "主要道路及次要道路均缺少足夠的速限提示，駕駛不易確認所在路段的速限。",
+            "textKey": "results-scenario-g1-02|results|speed-text"
+          }
+        ]
+      },
+      "results-scenario-g1-02-strategy": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "明確設置次要道路停管制",
+            "titleKey": "results-scenario-g1-02-strategy|results|priority-title",
+            "text": "於次要道路設置停車再開標誌、停止線及「停」標字，提醒駕駛停車確認主要道路來車後再通行。",
+            "textKey": "results-scenario-g1-02-strategy|results|priority-text",
+            "moduleId": "M2-01"
+          },
+          {
+            "id": "warning",
+            "title": "降低主要道路速限並增加警示",
+            "titleKey": "results-scenario-g1-02-strategy|results|warning-title",
+            "text": "本例將主要道路速限由 50 km/h 調整為 40 km/h，搭配岔路標誌及視覺化減速標線，提醒駕駛接近路口。",
+            "textKey": "results-scenario-g1-02-strategy|results|warning-text",
+            "moduleId": "M4-01"
+          },
+          {
+            "id": "path",
+            "title": "以標線界定車行範圍",
+            "titleKey": "results-scenario-g1-02-strategy|results|path-title",
+            "text": "於主要道路劃設路口行車導引線，配合道路寬度與大型車轉向需求，確認車輛行駛及轉彎空間。",
+            "textKey": "results-scenario-g1-02-strategy|results|path-text",
+            "moduleId": "M1-01"
+          },
+          {
+            "id": "speed",
+            "title": "補充主次道路速限標誌",
+            "text": "於主要道路及次要道路配置最高速限標誌，明確告知駕駛路段速限。",
+            "titleKey": "results-scenario-g1-02-strategy|results|speed-title",
+            "textKey": "results-scenario-g1-02-strategy|results|speed-text"
+          }
+        ]
+      }
+    }
+  }
+}

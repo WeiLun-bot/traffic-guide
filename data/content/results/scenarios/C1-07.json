@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "owner": "results/scenarios/C1-07",
+  "texts": {
+    "results-scenario-c1-07|results|title": "住宅街巷路口的減速、行人穿越與停等視距問題",
+    "results-scenario-c1-07|results|intro": "原為三條道路以約 120° 交角形成的無號誌三岔路口，路寬約 6～7 m、設計速率 30 km/h。周邊以住宅、商店及攤販為主，人車活動頻繁。",
+    "results-scenario-c1-07-strategy|results|title": "迷你圓環減速、入口讓路與步行空間配置",
+    "results-scenario-c1-07-strategy|results|intro": "將原三岔路口改為迷你圓環，以入環偏折降低車速，並配合行人通行及緊急車輛需求設置中央島與相關交通設施。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {
+      "results-scenario-c1-07": {
+        "points": [
+          {
+            "id": "space",
+            "title": "路口範圍過寬，車輛未有效減速",
+            "text": "現況僅以網狀線提醒駕駛注意交叉口，缺少能實際改變行駛路徑的減速設計。",
+            "titleKey": "results-scenario-c1-07|results|space-title",
+            "textKey": "results-scenario-c1-07|results|space-text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "行人穿越與步行空間未銜接",
+            "text": "行穿線兩端缺少適當的人行設施，行人穿越時容易與路口車流產生衝突。",
+            "titleKey": "results-scenario-c1-07|results|pedestrian-title",
+            "textKey": "results-scenario-c1-07|results|pedestrian-text"
+          },
+          {
+            "id": "visibility",
+            "title": "停止線位置不利於觀察來車",
+            "text": "部分停止線設置位置視距不足，駕駛停等時不易觀察左側來車及穿越行人。",
+            "titleKey": "results-scenario-c1-07|results|visibility-title",
+            "textKey": "results-scenario-c1-07|results|visibility-text"
+          },
+          {
+            "id": "parking",
+            "title": "停車範圍及行穿線配置不當",
+            "text": "部分停車格侵入車行範圍或過於接近路口，行穿線與停止線的距離及繪設方向亦有不當情形。",
+            "titleKey": "results-scenario-c1-07|results|parking-title",
+            "textKey": "results-scenario-c1-07|results|parking-text"
+          }
+        ]
+      },
+      "results-scenario-c1-07-strategy": {
+        "points": [
+          {
+            "id": "calming",
+            "title": "以迷你圓環取代原路口配置",
+            "text": "本例採圓環直徑 13 m、中央島直徑 3 m，透過進環路徑偏折，使駕駛降低速度後進入圓環。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-07-strategy|results|calming-title",
+            "textKey": "results-scenario-c1-07-strategy|results|calming-text"
+          },
+          {
+            "id": "emergency",
+            "title": "中央島採可跨越式設計",
+            "text": "中央島以鋪面或微凸起方式配置，平時引導車輛繞行，必要時可供消防車、救護車等大型緊急車輛跨越。",
+            "moduleId": "M1-01",
+            "titleKey": "results-scenario-c1-07-strategy|results|emergency-title",
+            "textKey": "results-scenario-c1-07-strategy|results|emergency-text"
+          },
+          {
+            "id": "priority",
+            "title": "配置進環讓路線及行車導引線",
+            "text": "於圓環入口設置讓路線，搭配微弧形指向線及環道導引線，指示車輛繞行方向及進環前的讓路位置。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-07-strategy|results|priority-title",
+            "textKey": "results-scenario-c1-07-strategy|results|priority-text"
+          },
+          {
+            "id": "walking",
+            "title": "銜接行人穿越與路側步行空間",
+            "text": "調整原有車行範圍，將不需供車輛行駛的空間留給行人使用，並配合行穿線銜接周邊步行路徑。",
+            "moduleId": "M3-01",
+            "titleKey": "results-scenario-c1-07-strategy|results|walking-title",
+            "textKey": "results-scenario-c1-07-strategy|results|walking-text"
+          },
+          {
+            "id": "signs",
+            "title": "設置圓環與讓路相關標誌",
+            "text": "於入口適當位置配置圓環及讓路標誌，提醒駕駛進入圓環前須注意環內車輛，並依規定讓路。",
+            "moduleId": "M2-02",
+            "titleKey": "results-scenario-c1-07-strategy|results|signs-title",
+            "textKey": "results-scenario-c1-07-strategy|results|signs-text"
+          }
+        ]
+      }
+    }
+  }
+}

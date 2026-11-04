@@ -30,7 +30,7 @@ test('each strategy retains its owning SVG, source provenance and valid optional
   for(const [code,entry]of Object.entries(strategies.scenarios)){
     assert.equal(entry.strategy.images.length,1);
     assert(entry.source.file.startsWith('chapters/04-general-scenarios/04-'+code[1]+'-'+code.slice(3)+'-'));
-    for(const point of entry.strategy.items){if(point.moduleId)assert(ids.has(point.moduleId));assert(!/原稿|待補/.test(point.title+point.text));}
+    for(const point of entry.strategy.items){if(point.moduleId!==undefined)assert(ids.has(point.moduleId));assert(!/原稿|待補/.test(point.title+point.text));}
     const asset=strategies.assets[entry.strategy.images[0].key];assert.equal(asset.scenario,code);assert(asset.file.startsWith('materials/04-一般道路情境/'+code+'/'+code+'_'));
     const raw=fs.readFileSync(path.resolve(__dirname,'..',asset.file));assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),asset.sha256);assert.match(raw.toString('utf8'),/<svg\b/);
   }
