@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-04T12:34:49.279Z",
+  "updatedAt": "2026-11-04T13:01:22.772Z",
   "legacyState": {
     "version": 1,
     "updatedAt": 1793791150320,
@@ -1974,9 +1974,19 @@
       "pageId": "results-module-classification",
       "assetKey": "results:module-m4-01-diagram",
       "units": "percent",
-      "zoom": 1.3498588094150397,
-      "x": 20.439043304217776,
-      "y": -18.746393729608517,
+      "zoom": 1.1618342435197198,
+      "x": 19.738350619946186,
+      "y": 2.1743095071900576,
+      "rotation": 90
+    },
+    "results-module-classification/results%3Amodule-m4-03-diagram": {
+      "id": "results-module-classification/results%3Amodule-m4-03-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m4-03-diagram",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
       "rotation": 90
     }
   },

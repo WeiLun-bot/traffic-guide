@@ -293,8 +293,13 @@
       return `<figure><figcaption><strong${key(page,'image-'+image.key)}>${esc(image.label)}</strong><button type="button" data-asset="${esc(image.key)}" aria-label="開啟原圖：${esc(image.label)}">原圖 ↗</button></figcaption><img src="${esc(asset.url)}" alt="${esc(image.label)}" width="${asset.width}" height="${asset.height}"/></figure>`;
     }).join('')}</div></div>`;
   }
+  function moduleThemeFramework(page,data){
+    const headings=['模組編號','模組名稱','子模組編號／名稱'];
+    return `<div class="results-module-theme-grid">${data.groups.map(group=>`<section class="module-theme-card" data-framework-group="${esc(group.id)}" aria-label="${esc(group.id+' '+group.name)}"><header class="module-theme-header">${p(page,'framework-'+group.id+'-code',group.id,'module-theme-code')}<h2${key(page,'framework-'+group.id+'-name')}>${esc(group.name)}</h2></header><table class="results-architecture-table" data-table-columns="${page.id}/theme-${group.id}" aria-label="${esc(group.id+' '+group.name+' 模組架構')}"><colgroup><col class="theme-module-code"><col class="theme-module-name"><col></colgroup><thead><tr>${headings.map((heading,column)=>`<th scope="col">${p(page,'framework-theme-'+group.id+'-heading-'+column,heading)}</th>`).join('')}</tr></thead><tbody>${group.rows.map(row=>`<tr data-framework-row="${esc(row.id)}"><td class="theme-module-identity">${p(page,'framework-'+row.id+'-code',row.id,'framework-code')}</td><td>${p(page,'framework-'+row.id+'-name',row.name,'theme-module-label')}</td><td>${row.submodules.map(child=>`<p data-framework-child="${esc(child.id)}"${key(page,'framework-'+child.id+'-name')}>${esc(child.id+' '+child.name)}</p>`).join('')}</td></tr>`).join('')}</tbody></table></section>`).join('')}</div>`;
+  }
   function framework(page){
     const data=frameworkData(page.content.framework,window.PresentationScenarios.catalog,window.PresentationModules.catalog),modular=data.kind==='modules';
+    if(modular&&page.id==='results-module-hierarchy')return moduleThemeFramework(page,data);
     const headings=modular?['主題分類','模組編號／名稱','子模組編號／名稱']:['上級分類','情境編號','情境名稱'];
     const summary=`<div class="results-framework-summary"><span><b>${data.groups.length}</b> ${modular?'主題':'大分類'}</span><span><b>${data.count}</b> ${modular?'模組':'種情境'}</span>${modular?`<span><b>${data.submoduleCount}</b> 子模組</span>`:''}</div>`;
     const notes=page.content.items?.length?`<ol class="results-framework-notes" aria-label="畫面重點">${page.content.items.map(point=>`<li>${point.title?`<strong${key(page,point.id+'-title')}>${esc(point.title)}</strong>`:''}${p(page,point.id+'-text',point.text)}</li>`).join('')}</ol>`:'';

@@ -26,7 +26,7 @@ test('extracted current conditions cover every scenario, retain G1-01 strategy a
   assert.equal(conditions.scenarios['C2-02'].reuseSource.scenario,'C4-04');assert(!conditions.scenarios['C2-02'].issue.sourceMissing);assert.equal(conditions.scenarios['C2-02'].issue.images.length,2);
   assert.equal(conditions.unmatched[0].id,'legacy-living-side-road');assert(!pages.some(page=>page.resultsScenario==='legacy-living-side-road'));
   for(const scene of catalog.scenarios){const entry=conditions.scenarios[scene.id];assert(entry);if(entry.issue.sourceMissing)continue;assert(entry.issue.images.some(image=>image.role==='diagram'));assert(entry.issue.items.length>=2);if(scene.id[0]==='G')assert(entry.issue.images.some(image=>image.role==='photo'));for(const image of entry.issue.images)assert.equal(conditions.assets[image.key].scenario,scene.id);}
-  assert.equal(pages.length,66);
+  assert.equal(pages.length,65);
 });
 
 test('archived original files match source checksums and current-condition validation rejects cross-case images or unsafe paths',()=>{

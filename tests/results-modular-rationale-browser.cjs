@@ -17,9 +17,9 @@ module.exports=async function({evaluate,view,navigate,click,cdp,base,artifacts,p
    }
   }
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false});
-  for(const [index,selector]of [[0,'.results-callouts aside p'],[1,'.results-card-includes'],[2,'.results-architecture-table thead p'],[3,'.results-cards article p'],[4,'.results-callouts aside p']]){
+  for(const [index,selector]of [[0,'.results-callouts aside p'],[1,'.results-card-includes'],[2,'.results-architecture-table thead p']]){
    const p=lessons[index];await navigate(base+'/presentation-demo/#'+p.id);await view(p.id);await click('.edit-toggle');const original=await evaluate('document.querySelector('+JSON.stringify(selector)+').innerText');await editText(selector,'測試架構與使用方式文字');await click('[data-vl-action="undo"]');assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector)+').innerText'),original);await click('[data-vl-action="redo"]');fs.writeFileSync(previewConfigPath,await run(()=>window.visualLayoutEditor.store.serialize()));await navigate(base+'/presentation-demo/#'+p.id);assert.equal(await evaluate('document.querySelector('+JSON.stringify(selector)+').textContent'),'測試架構與使用方式文字');fs.writeFileSync(previewConfigPath,baseline);
   }
-  pass('module architecture/usage pages retain supplied text, restored hierarchy table, examples, included modules and lookup paths; chapter/aliases/navigation, responsive layouts, text edits, undo/redo and saved reload work');
+  pass('module architecture/usage pages retain supplied text, restored hierarchy table, examples, included modules; chapter/aliases/navigation, responsive layouts, text edits, undo/redo and saved reload work');
  }finally{fs.writeFileSync(previewConfigPath,baseline);}
 };

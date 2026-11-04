@@ -6,7 +6,7 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-intro');
   assert.equal(await evaluate('window.generalRoadPresentation.page.deckId'),'results');
   assert.equal(await evaluate('document.querySelectorAll("#lecture-chapters button").length'),8);
-  assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),122);
+  assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),121);
   assert(await evaluate('window.generalRoadPresentation.pages.filter(page=>page.kind==="results"&&page.stage==="issue").every(page=>document.querySelector(\'#toc-content [data-page="\'+page.id+\'"]\').textContent===page.resultsScenario+" "+page.sceneName+"現況議題")'));
   assert(await evaluate('window.generalRoadPresentation.pages.filter(page=>page.kind==="results"&&page.stage==="strategy").every(page=>document.querySelector(\'#toc-content [data-page="\'+page.id+\'"]\').textContent===page.resultsScenario+" 佈設成果")'));
   await click('#toc-button');await evaluate('document.querySelector(\'#toc-content [data-chapter="results-general"]\').scrollIntoView({block:"start"})');await shot('results-toc-scenario-names');await evaluate('document.getElementById("toc-dialog").close()');
@@ -104,5 +104,5 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await view('results-wrap');await click('#next');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'chapter-cover-results-intro');
   await click('#previous');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'presentations');
   await view('overview');assert.equal(await evaluate('window.generalRoadPresentation.page.deckId'),'general');assert(await evaluate('Boolean(document.querySelector(".compare-stage"))'));
-  pass('all 122 results slides fit a 1366×768 viewport; sample text edits, mobile layout, deep links, deck boundaries and original general presentation remain usable');
+  pass('all 121 results slides fit a 1366×768 viewport; sample text edits, mobile layout, deep links, deck boundaries and original general presentation remain usable');
 };

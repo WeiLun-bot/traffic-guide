@@ -5,7 +5,8 @@
     "results-modular": "results-module-definition",
     "results-formation": "results-module-discussion",
     "results-modular-rationale": "results-module-definition",
-    "results-phase-three": "results-module-hierarchy"
+    "results-phase-three": "results-module-hierarchy",
+    "results-guide-usage": "results-guide-structure"
   },
   "currentConditions": "data/results/current-conditions.json",
   "strategies": "data/results/general-strategies.json",
@@ -807,81 +808,6 @@
       }
     },
     {
-      "id": "results-submodule-contents",
-      "chapter": "results-modular",
-      "type": "cards",
-      "layout": "lesson",
-      "title": "從現況議題、代表型到延伸應用",
-      "intro": "子模組不只是提供設置圖例，也整理設置問題、基本配置方法及不同條件下的調整方式。",
-      "items": [
-        {
-          "id": "issues",
-          "title": "現況與議題",
-          "text": "指出現行設置常見的問題，說明需要檢討的設施設計及配置關係。"
-        },
-        {
-          "id": "representative",
-          "title": "代表型圖例",
-          "text": "以具有代表性的道路條件，呈現該項交通功能的基本設施組合及配置位置。"
-        },
-        {
-          "id": "regulations",
-          "title": "圖例與相關條文說明",
-          "text": "說明組成設施的功能、設置位置及搭配方式，並對照《設置規則》相關條文。"
-        },
-        {
-          "id": "extensions",
-          "title": "延伸應用",
-          "text": "針對道路幾何、視距、行人穿越或其他條件差異，提出替選或調整配置方式。"
-        },
-        {
-          "id": "scenarios",
-          "title": "適用道路情境",
-          "text": "列出相關道路情境，讓使用者可以進一步參考模組在完整路口或路段中的應用方式。"
-        }
-      ],
-      "takeaway": "代表型說明基本配置，延伸應用說明條件改變時如何調整；相關條文與情境則提供進一步查閱的依據。"
-    },
-    {
-      "id": "results-guide-usage",
-      "chapter": "results-modular",
-      "type": "cards",
-      "layout": "lesson",
-      "title": "由基本原則、功能模組到完整道路情境",
-      "intro": "第三期將前兩期道路情境與新增的功能模組整合，形成「基本配置原則—功能模組—道路情境」的指引架構。",
-      "items": [
-        {
-          "id": "principles",
-          "title": "基本配置原則：瞭解各類設施的共同要求",
-          "text": "第 2 章依標線、標誌、號誌分類，說明設施的功能、基本設置原則及相關條文。"
-        },
-        {
-          "id": "functions",
-          "title": "功能模組：查找特定交通功能的設置方法",
-          "text": "第 3 章依交通功能分類，說明相關設施的組合、基本配置及延伸應用。"
-        },
-        {
-          "id": "situations",
-          "title": "道路情境：檢視整個路口或路段的配置",
-          "text": "第 4、5 章透過一般及複雜道路情境，呈現多個功能模組在不同道路條件下的組合方式。"
-        }
-      ],
-      "calloutsTitle": "兩種查閱方式",
-      "callouts": [
-        {
-          "id": "lookup-scenario",
-          "title": "已有特定道路情境：",
-          "text": "先查找相似的整體配置圖例，再依需要參考相關模組及基本原則。"
-        },
-        {
-          "id": "lookup-problem",
-          "title": "需要處理特定設置問題：",
-          "text": "先查找對應功能模組，再參考其適用情境及相關條文。"
-        }
-      ],
-      "takeaway": "不論從道路情境或交通功能出發，都可以透過模組與情境的對照，找到相關的設置方法。"
-    },
-    {
       "id": "results-guide-structure",
       "chapter": "results-modular",
       "type": "guide-structure",
@@ -1516,6 +1442,42 @@
         "drawingPart": "ppt/diagrams/drawing1.xml",
         "drawingSha256": "a667e3037fb908ddcf16421ac61e96addb4fb4c686f3c8a7e3548125b8025612"
       }
+    },
+    {
+      "id": "results-submodule-contents",
+      "chapter": "results-modules",
+      "type": "cards",
+      "layout": "lesson",
+      "title": "從現況議題、代表型到延伸應用",
+      "intro": "子模組不只是提供設置圖例，也整理設置問題、基本配置方法及不同條件下的調整方式。",
+      "items": [
+        {
+          "id": "issues",
+          "title": "現況與議題",
+          "text": "指出現行設置常見的問題，說明需要檢討的設施設計及配置關係。"
+        },
+        {
+          "id": "representative",
+          "title": "代表型圖例",
+          "text": "以具有代表性的道路條件，呈現該項交通功能的基本設施組合及配置位置。"
+        },
+        {
+          "id": "regulations",
+          "title": "圖例與相關條文說明",
+          "text": "說明組成設施的功能、設置位置及搭配方式，並對照《設置規則》相關條文。"
+        },
+        {
+          "id": "extensions",
+          "title": "延伸應用",
+          "text": "針對道路幾何、視距、行人穿越或其他條件差異，提出替選或調整配置方式。"
+        },
+        {
+          "id": "scenarios",
+          "title": "適用道路情境",
+          "text": "列出相關道路情境，讓使用者可以進一步參考模組在完整路口或路段中的應用方式。"
+        }
+      ],
+      "takeaway": "代表型說明基本配置，延伸應用說明條件改變時如何調整；相關條文與情境則提供進一步查閱的依據。"
     },
     {
       "id": "results-modules",

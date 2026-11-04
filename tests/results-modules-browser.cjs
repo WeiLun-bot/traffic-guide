@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 module.exports=async function({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass,previewConfigPath,editText}){
   const baseline=fs.readFileSync(previewConfigPath,'utf8'),shot=async name=>{const result=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(result.data,'base64'));};
-  await navigate(base+'/presentation-demo/#results-modules');assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),122);
+  await navigate(base+'/presentation-demo/#results-modules');assert.equal(await evaluate('Number(document.getElementById("page-total").textContent)'),121);
   const modules=await evaluate('window.generalRoadPresentation.pages.filter(page=>page.resultsModule).map(page=>({id:page.id,code:page.resultsModule,images:page.content.images,count:page.content.items.length}))');assert.equal(modules.length,15);
   assert.equal(await evaluate('document.querySelectorAll("[data-results-module]").length'),15);assert.equal(await evaluate('document.querySelectorAll(".results-heading>p").length'),0);
   for(const [width,height,columns]of [[1366,768,5],[1920,1080,5],[768,1024,3],[390,844,2]]){

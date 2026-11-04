@@ -11,12 +11,12 @@ test('complex overview preserves all 18 case identities and explicitly records t
     assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),asset.sha256);assert.deepEqual(require('../tools/svg-native-size.cjs')(bytes.toString('utf8'),asset.file),[asset.width,asset.height]);
   }
   const complex=content.pages.find(page=>page.id==='results-complex');assert.equal(complex.title,'複雜道路情境｜整體佈設圖總覽');assert(!complex.intro);
-  assert.equal(Results.buildPages(merged(),catalog).length,83);
+  assert.equal(Results.buildPages(merged(),catalog).length,82);
   const foreign=structuredClone(content);foreign.scenarioThumbnails['C1-01']=foreign.scenarioThumbnails['C1-02'];assert.throws(()=>Results.validate(foreign));
   const unsafe=structuredClone(content);Object.values(unsafe.assets)[0].file='../../private.svg';assert.throws(()=>Results.validate(unsafe));
 });
 test('all 18 general scenarios have adjacent issue and strategy pages, while complex cases and G1-01 identities remain intact',()=>{
-  const data=merged(),pages=Results.buildPages(data,catalog);assert.equal(pages.length,83);assert.equal(pages.filter(page=>page.stage==='strategy').length,18);
+  const data=merged(),pages=Results.buildPages(data,catalog);assert.equal(pages.length,82);assert.equal(pages.filter(page=>page.stage==='strategy').length,18);
   for(const scene of catalog.scenarios){
     const entries=pages.filter(page=>page.resultsScenario===scene.id);assert.deepEqual(entries.map(page=>page.stage),scene.id[0]==='G'?['issue','strategy']:['issue']);
     assert.deepEqual(data.scenarioExamples[scene.id].issue,conditions.scenarios[scene.id].issue);
