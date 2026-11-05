@@ -75,7 +75,7 @@
       "label": "C1-08 整體佈設圖",
       "scenario": "C1-08",
       "role": "strategy",
-      "sha256": "2421bccd0e79cfee974da07696177c11301accce0fc416cbbef87840c4bc5917"
+      "sha256": "8049b797847ba3c410c4caeb69173079e137f9c5e32f022456c7234db05a6fca"
     },
     "results:c1-09-strategy": {
       "file": "materials/05-複雜道路情境/C1-09/C1-09_號誌化圓環交通設施設置圖例.svg",

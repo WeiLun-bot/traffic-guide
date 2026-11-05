@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),folder='road_book_3d/';
+const config=JSON.parse(fs.readFileSync(path.join(root,folder,'navigation-config.json'),'utf8'));
+const html=fs.readFileSync(path.join(root,folder,'index.html'),'utf8');
+const embedded=JSON.parse(html.match(/const DATA = (\{[^\n]+\});/)?.[1]||'null');
+if(!embedded||embedded.source_pages!==config.source_pages||embedded.source_pdf_name!==config.source_pdf_name||!Array.isArray(config.spreads)||!config.spreads.length||JSON.stringify(config.spreads)!==JSON.stringify(embedded.spreads))throw new Error('Book page navigation does not match navigation-config.json');
+const pages=new Set([1,...config.spreads.flatMap(spread=>[spread.left,spread.right])]);
+for(const page of pages)if(!Number.isSafeInteger(page)||page<1||page>config.source_pages)throw new Error('Invalid book page: '+page);
+const files=['index.html','presentation.css','navigation-config.json',...[...pages].sort((a,b)=>a-b).map(page=>'pages/p'+page+'.webp')].map(name=>folder+name);
+for(const file of files)if(!fs.lstatSync(path.join(root,file)).isFile())throw new Error('Missing book display file: '+file);
+module.exports=files;

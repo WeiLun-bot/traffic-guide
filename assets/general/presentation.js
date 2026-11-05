@@ -278,6 +278,7 @@
     synchronizeData();
     if(!options.keepLoadStatus)loadStatus.hidden=true;
     if(index===position&&!options.force) return;
+    window.PresentationResults?.beforeNavigate(target,stops[index].phase);
     window.visualLayoutEditor?.beforeRender();
     viewport?.cancel();
     overviewResizeObserver?.disconnect();
@@ -321,6 +322,7 @@
     $('page-number').textContent=String(current().page+1).padStart(2,'0');
     $('phase-label').textContent=page.article?(editor?.editing?`${current().phase+1} / 2 ${current().phase?'放大解說':'框選定位'}`:'放大解說'):page.kind==='custom'&&page.steps?`${current().phase+1} / ${page.steps.length} 解說`:'';
     $('previous').disabled=position===0;
+    $('next').disabled=false;
     $('next-label').textContent=window.PresentationStructure.navigationLabel();
     $('next').setAttribute('aria-label',$('next-label').textContent);
     $('announcer').textContent=`第 ${current().page+1} 頁，共 ${pages.length} 頁。${page.name}${page.article?'，'+(current().phase?'放大解說':'框選定位'):''}`;
@@ -356,6 +358,7 @@
     if(index>=0)return navigate(index,options);
   }
   function move(direction) {
+    if(window.PresentationResults?.move(direction))return;
     if(window.PresentationStructure?.move(direction))return;
     let index=position+direction;
     while(index>=0&&index<stops.length&&!editor?.editing&&pages[stops[index].page].article&&stops[index].phase===0)index+=Math.sign(direction);
@@ -365,7 +368,7 @@
     const page=pages.find(item=>item.chapter===id);
     if(page) goPage(page.id);
   }
-  function openDialog(id) { const dialog=$(id); if(!dialog.open) dialog.showModal(); }
+  function openDialog(id) { if(id==='toc-dialog')updateContents();const dialog=$(id); if(!dialog.open) dialog.showModal(); }
   function showSource() {
     const article=currentPage().article;
     const currentScene=scene();

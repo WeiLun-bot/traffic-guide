@@ -1,6 +1,7 @@
 _site/
 /exports/preview-backups/
 /exports/project-backups/
+/exports/book-page-renders/
 tests/artifacts/
 debug.log
 /materials/output_1103.pdf

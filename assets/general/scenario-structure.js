@@ -24,7 +24,7 @@
       return result;
     }
     function toc(allPages) {
-      const buttons=values=>values.map(page=>`<button data-page="${esc(page.id)}">${page.article?'§ '+esc(page.article.reg)+' ':page.scenarioCode?esc(page.scenarioCode)+' ':''}${esc(page.kind==='chapter-cover'?window.PresentationStructure?.chapterName(page.chapter)||page.name:page.name)}${page.kind==='chapter-cover'?'｜章節頁':''}</button>`).join('');
+      const buttons=values=>values.map(page=>`<button data-page="${esc(page.id)}">${page.article?'§ '+esc(page.article.reg)+' ':''}${esc(window.PresentationStructure?.tocPageLabel(page)||page.name)}</button>`).join('');
       return data.chapters.map(chapter=>{
         const chapterPages=allPages.filter(page=>page.chapter===chapter.id);
         const scenes=data.scenarios.filter(scene=>scene.chapter===chapter.id);

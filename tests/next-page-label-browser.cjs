@@ -11,14 +11,19 @@ module.exports=async function({evaluate,view,navigate,click,editText,base,pass,p
   async function predecessor(id){return evaluate(`(()=>{const p=window.generalRoadPresentation.pages,index=p.findIndex(p=>p.id===${JSON.stringify(id)});return p[index-1].id})()`);}
   try{
     await navigate(base+'/presentation-demo/#results-intro');
-    for(const id of ['results-intro','results-outline','results-principles','results-module-m3-04','cover','contents','context','overview','m201-overview','m201-stop-issues','complex-intro','chapter-cover-results-intro'])await follow(id);
+    for(const id of ['results-intro','results-outline','results-module-definition','results-module-example','cover','contents','context','overview','m201-overview','m201-stop-issues','complex-intro','chapter-cover-results-intro'])await follow(id);
     await follow('crosswalk',1);
     pass('Next buttons match actual destination headings across all four decks, saved source titles, module stages and skipped article preview stops; button widths stay fixed');
     await view('results-outline');await click('.edit-toggle');await editText('#slide-title','測試：修改後的簡報大綱');
     assert.equal((await follow(await predecessor('results-outline'))).title,'測試：修改後的簡報大綱');
     await view('results-phase-two');await editText('#slide-title','測試：修改後的情境架構表');
     assert.equal((await follow(await predecessor('results-phase-two'))).title,'測試：修改後的情境架構表');
-    await click('#toc-button');const selector='#toc-content .toc-order-item:has([data-order-id="results-outline"]) [data-toc-order-move="1"]';
+    await view('chapter-cover-results-wrap');await editText('#slide-title','測試：新版成果章節');
+    await click('#toc-button');
+    assert.equal(await evaluate(`document.querySelector('#toc-content [data-chapter="results-wrap"]').textContent.replace(/^\d{2}/,'')`),'測試：新版成果章節');
+    assert.equal(await evaluate(`document.querySelector('#toc-content [data-page="chapter-cover-results-wrap"]').textContent`),'測試：新版成果章節｜章節頁');
+    assert.equal(await evaluate(`document.querySelector('#toc-content [data-page="results-phase-two"]').textContent`),'測試：修改後的情境架構表');
+    const selector='#toc-content .toc-order-item:has([data-order-id="results-outline"]) [data-toc-order-move="1"]';
     const direction=await evaluate(`document.querySelector(${JSON.stringify(selector)}).disabled?-1:1`);
     await click('#toc-content .toc-order-item:has([data-order-id="results-outline"]) [data-toc-order-move="'+direction+'"]');await click('#toc-dialog [data-close]');
     assert.equal((await follow(await predecessor('results-outline'))).title,'測試：修改後的簡報大綱');
@@ -26,9 +31,13 @@ module.exports=async function({evaluate,view,navigate,click,editText,base,pass,p
     await navigate(base+'/presentation-demo/#results-intro');
     assert.equal((await follow(await predecessor('results-outline'))).title,'測試：修改後的簡報大綱');
     assert.equal((await follow(await predecessor('results-phase-two'))).title,'測試：修改後的情境架構表');
+    await click('#toc-button');
+    assert.equal(await evaluate(`document.querySelector('#toc-content [data-page="chapter-cover-results-wrap"]').textContent`),'測試：新版成果章節｜章節頁');
+    assert.equal(await evaluate(`document.querySelector('#toc-content [data-page="results-phase-two"]').textContent`),'測試：修改後的情境架構表');
+    await click('#toc-dialog [data-close]');
     pass('Edited titles using both results title keys stay synchronized before first visit, after TOC reordering, and after settings reload');
-    await view('results-review-g1-01',0);const first=await label();assert.match(first.text,/下一組差異/);await click('#next');assert.equal(await evaluate('window.generalRoadPresentation.state.phase'),1);
-    const last=await evaluate('window.PresentationResults.stepCount(window.generalRoadPresentation.page)-1');await follow('results-review-g1-01',last);
+    await view('results-review',0);const first=await label();assert.match(first.text,/下一組差異/);await click('#next');assert.equal(await evaluate('window.generalRoadPresentation.state.phase'),1);
+    const last=await evaluate('window.PresentationResults.stepCount(window.generalRoadPresentation.page)-1');await follow('results-review',last);
     await view('overview');const previous=await evaluate('window.generalRoadPresentation.state.page');await click('#next');assert.equal(await evaluate('window.generalRoadPresentation.state.phase'),1);await click('#previous');assert.equal(await evaluate('window.generalRoadPresentation.state.page'),previous);
     pass('Comparison substeps keep their action labels; finishing a comparison and previous/next article navigation reach the matching pages');
   }finally{fs.writeFileSync(previewConfigPath,baseline);}

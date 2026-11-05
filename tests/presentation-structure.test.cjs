@@ -14,6 +14,18 @@ test('chapter labels use saved cover titles across all four decks without changi
   delete window.generalRoadEditor.state.texts[key];assert.equal(api.chapterName(chapter.id),chapter.name);window.generalRoadEditor.state.texts[key]='  ';assert.equal(api.chapterName(chapter),chapter.name);
   assert.equal(JSON.stringify(api.manifest),before);
 });
+test('TOC chips resolve saved results titles before visiting pages and retain chapter and scenario context',async()=>{
+  const {api,window}=await navigationFixture(),texts=window.generalRoadEditor.state.texts;
+  const cover={id:'chapter-cover-results-wrap',kind:'chapter-cover',chapter:'results-wrap',name:'成果與運用'};
+  const page={id:'results-wrap',kind:'results',deckId:'results',chapter:'results-wrap',resultType:'cards',name:'舊標籤',content:{title:'原始頁標題'}};
+  texts[cover.id+'|shared|title']='研究總結與成果展示';texts[window.PresentationResults.titleKey(page)]='新版頁面標題';
+  assert.equal(api.tocPageLabel(cover),'研究總結與成果展示｜章節頁');assert.equal(api.tocPageLabel(page),'新版頁面標題');
+  const html=api.toc([cover,page],{toc:()=>''});assert.match(html,/研究總結與成果展示/);assert.match(html,/新版頁面標題/);assert(!html.includes('舊標籤'));
+  texts[window.PresentationResults.titleKey(page)]='再次修改';assert.equal(api.tocPageLabel(page),'再次修改');
+  const issue={id:'issue',kind:'results',resultsScenario:'G1-01',stage:'issue',sceneName:'市區路口'};assert.equal(api.tocPageLabel(issue),'G1-01 市區路口現況議題');
+  assert.equal(api.tocPageLabel({id:'module',moduleId:'M2-01',name:'停讓管制'}),'M2-01 停讓管制');
+});
+
 test('next labels use the displayed results title and both saved title keys before a page is visited',async()=>{
   const {api,window}=await navigationFixture(),Results=window.PresentationResults;
   const framework={id:'framework',kind:'results',resultType:'framework',name:'原始名稱',content:{title:'情境架構表'}};
@@ -49,12 +61,12 @@ test('grouping preserves page identities and saved ordering inside each chapter'
   assert(pages.filter(page=>page.kind==='presentation-empty').every(page=>['results','complex'].includes(page.deckId)));assert.equal(new Set(pages.map(page=>page.id)).size,pages.length);
 });
 
-test('all 23 chapters receive one stable cover while existing pages and explicit saved cover positions remain intact',async()=>{
+test('all configured chapters receive one stable cover while existing pages and explicit saved cover positions remain intact',async()=>{
   const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async()=>({ok:true,json:async()=>structuredClone(manifest)})};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-structure.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
   const originals=manifest.presentations.flatMap(deck=>deck.chapters.flatMap(chapter=>[{id:chapter.entry,chapter:chapter.id,kind:'content',payload:{text:chapter.name}},{id:chapter.entry+'-extra',chapter:chapter.id,kind:'content'}])),pages=[...originals].reverse();api.addChapterCovers(pages);api.organize(pages);
-  assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,23);assert.equal(new Set(pages.map(page=>page.id)).size,pages.length);for(const original of originals)assert(pages.includes(original));
+  assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,manifest.presentations.reduce((n,deck)=>n+deck.chapters.length,0));assert.equal(new Set(pages.map(page=>page.id)).size,pages.length);for(const original of originals)assert(pages.includes(original));
   for(const deck of manifest.presentations)for(const chapter of deck.chapters){const members=pages.filter(page=>page.chapter===chapter.id);assert.equal(members[0].id,'chapter-cover-'+chapter.id);assert.deepEqual(members.slice(1).map(page=>page.id),[chapter.entry+'-extra',chapter.entry]);}
-  api.addChapterCovers(pages);assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,23);
+  api.addChapterCovers(pages);assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,manifest.presentations.reduce((n,deck)=>n+deck.chapters.length,0));
   const cover=pages.find(page=>page.id==='chapter-cover-results-review'),at=pages.indexOf(cover);pages.splice(at,1);pages.splice(at+1,0,cover);api.organize(pages,{legacyState:{pageOrder:pages.map(page=>page.id)}});assert.equal(pages.filter(page=>page.chapter==='results-review')[1],cover);
   const bad=structuredClone(manifest);bad.presentations[0].chapterCovers='yes';assert.throws(()=>api.validate(bad));
 });

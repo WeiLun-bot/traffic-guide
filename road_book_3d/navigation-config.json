@@ -1,0 +1,427 @@
+{
+  "source_pdf_name": "output_1105.pdf",
+  "source_pages": 541,
+  "page_size": "A4 portrait 210×297 mm",
+  "page_tab_settings_mm": {
+    "width": 10.8,
+    "height": 25,
+    "gap": 6,
+    "top": 54,
+    "safe": 3,
+    "optional_print_bleed": 3
+  },
+  "screen_bleed_enabled": false,
+  "palettes_typst": {
+    "M": [
+      "#81765F",
+      "#968B6F",
+      "#ADA487",
+      "#C5BFA8"
+    ],
+    "G": [
+      "#9A6F56",
+      "#AF8368",
+      "#C39A7F",
+      "#D6B8A3"
+    ],
+    "C": [
+      "#756E82",
+      "#8A8497",
+      "#A39DB3",
+      "#BDB8CB"
+    ]
+  },
+  "palettes_display_after_oklab_adjustment": {
+    "M": [
+      "#81765F",
+      "#93886D",
+      "#A79E82",
+      "#BCB69F"
+    ],
+    "G": [
+      "#9A6F56",
+      "#AC8166",
+      "#BE957A",
+      "#CDB09B"
+    ],
+    "C": [
+      "#756E82",
+      "#878194",
+      "#9D97AD",
+      "#B4AFC2"
+    ]
+  },
+  "sections": [
+    {
+      "code": "M1",
+      "start": 55,
+      "end": 66,
+      "desc": "車道配置與動線導引",
+      "color": "#81765F",
+      "top_mm": 54,
+      "height_mm": 25,
+      "font_color": "#FFFFFF"
+    },
+    {
+      "code": "M2",
+      "start": 67,
+      "end": 92,
+      "desc": "路口管制",
+      "color": "#93886D",
+      "top_mm": 85,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "M3",
+      "start": 93,
+      "end": 115,
+      "desc": "行人、自行車、機車、公車",
+      "color": "#A79E82",
+      "top_mm": 116,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "M4",
+      "start": 116,
+      "end": 132,
+      "desc": "危險警示與通行管制",
+      "color": "#BCB69F",
+      "top_mm": 147,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "G1",
+      "start": 133,
+      "end": 165,
+      "desc": "無號誌三叉路口",
+      "color": "#9A6F56",
+      "top_mm": 54,
+      "height_mm": 25,
+      "font_color": "#FFFFFF"
+    },
+    {
+      "code": "G2",
+      "start": 166,
+      "end": 203,
+      "desc": "號誌化三叉路口",
+      "color": "#AC8166",
+      "top_mm": 85,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "G3",
+      "start": 204,
+      "end": 222,
+      "desc": "無號誌四叉路口",
+      "color": "#BE957A",
+      "top_mm": 116,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "G4",
+      "start": 223,
+      "end": 272,
+      "desc": "號誌化四叉路口",
+      "color": "#CDB09B",
+      "top_mm": 147,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "C1",
+      "start": 273,
+      "end": 375,
+      "desc": "平面交叉",
+      "color": "#756E82",
+      "top_mm": 54,
+      "height_mm": 25,
+      "font_color": "#FFFFFF"
+    },
+    {
+      "code": "C2",
+      "start": 376,
+      "end": 389,
+      "desc": "交流道銜接部分",
+      "color": "#878194",
+      "top_mm": 85,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "C3",
+      "start": 390,
+      "end": 398,
+      "desc": "公路與軌道系統交叉",
+      "color": "#9D97AD",
+      "top_mm": 116,
+      "height_mm": 25,
+      "font_color": "#303030"
+    },
+    {
+      "code": "C4",
+      "start": 399,
+      "end": 470,
+      "desc": "路段",
+      "color": "#B4AFC2",
+      "top_mm": 147,
+      "height_mm": 25,
+      "font_color": "#303030"
+    }
+  ],
+  "spreads": [
+    {
+      "title": "目錄",
+      "topic": "全書架構與章節檢索",
+      "left": 4,
+      "right": 5,
+      "group": ""
+    },
+    {
+      "title": "M3-01.2｜路口穿越",
+      "topic": "行人路口穿越配置",
+      "left": 94,
+      "right": 95,
+      "group": "M3"
+    },
+    {
+      "title": "G1-01｜無號誌市區正交三叉路口",
+      "topic": "交通設施設置建議與整體配置",
+      "left": 134,
+      "right": 135,
+      "group": "G1"
+    },
+    {
+      "title": "G1-02｜無號誌鄉區正交三叉路口",
+      "topic": "整體配置與圖例運用解說",
+      "left": 142,
+      "right": 143,
+      "group": "G1"
+    },
+    {
+      "title": "C1-04｜主要道路多叉路口",
+      "topic": "整體配置與相關模組、條文",
+      "left": 318,
+      "right": 319,
+      "group": "C1"
+    },
+    {
+      "title": "條文索引",
+      "topic": "設置規則、相關模組與適用情境對照",
+      "left": 502,
+      "right": 503,
+      "group": ""
+    },
+    {
+      "title": "模組索引",
+      "topic": "模組、設置規則與適用情境對照",
+      "left": 518,
+      "right": 519,
+      "group": ""
+    },
+    {
+      "title": "情境索引（一）",
+      "topic": "一般道路情境與相關模組、條文對照",
+      "left": 530,
+      "right": 531,
+      "group": ""
+    },
+    {
+      "title": "情境索引（二）",
+      "topic": "一般道路情境與相關模組、條文對照",
+      "left": 532,
+      "right": 533,
+      "group": ""
+    }
+  ],
+  "notes": [
+    "內頁及封面均使用 output_1105.pdf 的實際 PDF 頁序；側邊頁籤直接保留原始頁面。",
+    "展示包含 9 組跨頁（18 個內頁）與封面；依使用者要求移除原第 02 組路側停車、第 04 組路段穿越及第 08 組交流道。",
+    "PDF 第 502、530 頁為空白左頁，依原檔保留。",
+    "書口色帶依本檔 541 頁及各主題的實際頁序重新定位，保留原有配色與尺寸。"
+  ],
+  "source_pdf_sha256": "d1687e91b1612afe5fc0b675817279704b44d9d35465b4110ca3370d6d3f1ee5",
+  "rendering": {
+    "dpi": 200,
+    "webp_quality": 0.92,
+    "pdf_pages": [
+      1,
+      4,
+      5,
+      94,
+      95,
+      134,
+      135,
+      142,
+      143,
+      318,
+      319,
+      502,
+      503,
+      518,
+      519,
+      530,
+      531,
+      532,
+      533
+    ],
+    "pages": [
+      {
+        "pdfPage": 1,
+        "file": "road_book_3d/pages/p1.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 175216,
+        "sha256": "c0eb1d5c4636ef2a25b2d6d3ef2c1353d337b72c7e34b30c8a0b1e7eab0a9c60"
+      },
+      {
+        "pdfPage": 4,
+        "file": "road_book_3d/pages/p4.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 321302,
+        "sha256": "a0eeccced60c9a1d078a2b013acbfc4214b670cc26c6fd2e93169252d2963d52"
+      },
+      {
+        "pdfPage": 5,
+        "file": "road_book_3d/pages/p5.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 370376,
+        "sha256": "6fe58a336c31d570ecbbfd2f8ea7b19736ab84452143bb292ea3f619f0af73b5"
+      },
+      {
+        "pdfPage": 94,
+        "file": "road_book_3d/pages/p94.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 173050,
+        "sha256": "f3bef6362dcabffb7b496849342fddd90583d668baabf2cb1a723db48fd453c9"
+      },
+      {
+        "pdfPage": 95,
+        "file": "road_book_3d/pages/p95.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 141520,
+        "sha256": "1a23d49e219ce89f5ff7441ac9fcdbbfdccfb5419bc5d991ccba1d068f72852a"
+      },
+      {
+        "pdfPage": 134,
+        "file": "road_book_3d/pages/p134.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 232204,
+        "sha256": "02c1ed4a2b7f8469a155bcee12a24dfafa2d42b31e27b1b920dd4c0ccf4413b8"
+      },
+      {
+        "pdfPage": 135,
+        "file": "road_book_3d/pages/p135.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 107308,
+        "sha256": "f3aba393adca4924ee1d516582609fd1b1fbfa0fe0f39ab6f8b0b91bc1eab86e"
+      },
+      {
+        "pdfPage": 142,
+        "file": "road_book_3d/pages/p142.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 127530,
+        "sha256": "397ec30e9cc6305a899a7bf6b5c53dde27e536316a8c17fc5f16eca535bcfc40"
+      },
+      {
+        "pdfPage": 143,
+        "file": "road_book_3d/pages/p143.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 269202,
+        "sha256": "9caef1c527b300eb96f6a845bdd26cb29e50405bd9dacdf7d03dc4c28fd7fdaf"
+      },
+      {
+        "pdfPage": 318,
+        "file": "road_book_3d/pages/p318.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 220232,
+        "sha256": "6b2f58651d3bf10e90cca74fd7a0ce9f2886b9946ef1447863966415d954e313"
+      },
+      {
+        "pdfPage": 319,
+        "file": "road_book_3d/pages/p319.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 295658,
+        "sha256": "c229a2dde143ebeefd5d4b1155b5560e648b75fb0d680d2415768c7f6a8396dd"
+      },
+      {
+        "pdfPage": 502,
+        "file": "road_book_3d/pages/p502.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 7502,
+        "sha256": "7e272db71d61e6664f2e6b68fe6e029f67df6b28b7d80b03ad4005ab0b03ae5f"
+      },
+      {
+        "pdfPage": 503,
+        "file": "road_book_3d/pages/p503.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 188400,
+        "sha256": "42d6d9f964eb89489df108a05955c25282539bad753aa872a72245986107a0e2"
+      },
+      {
+        "pdfPage": 518,
+        "file": "road_book_3d/pages/p518.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 150044,
+        "sha256": "10b8fc084da447953c307a1d90b714039d5c318f3060e762db09805325c53cd8"
+      },
+      {
+        "pdfPage": 519,
+        "file": "road_book_3d/pages/p519.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 132388,
+        "sha256": "85d7883e07992f1172671b089b7308cce8a4b37981c266daa33f0d76d4bcbd93"
+      },
+      {
+        "pdfPage": 530,
+        "file": "road_book_3d/pages/p530.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 7502,
+        "sha256": "7e272db71d61e6664f2e6b68fe6e029f67df6b28b7d80b03ad4005ab0b03ae5f"
+      },
+      {
+        "pdfPage": 531,
+        "file": "road_book_3d/pages/p531.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 159904,
+        "sha256": "89c79df959f0e499042ff3e28af498f2e89274912bda329b57ca82c8756e2802"
+      },
+      {
+        "pdfPage": 532,
+        "file": "road_book_3d/pages/p532.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 215478,
+        "sha256": "9a597ec38802730f85123db7c72ebace5c4d4f06ff7ca14de50c843e6ac94bc6"
+      },
+      {
+        "pdfPage": 533,
+        "file": "road_book_3d/pages/p533.webp",
+        "width": 1654,
+        "height": 2339,
+        "bytes": 236282,
+        "sha256": "4194edf7032645c6348200826fdf9f323a5eb78969fe1ab34a0c489c7c23b4b6"
+      }
+    ]
+  }
+}

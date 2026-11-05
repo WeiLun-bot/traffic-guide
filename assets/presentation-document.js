@@ -6,7 +6,7 @@
   const clone=Core.clone;
   const layoutFile='layout/presentation-layout.json',structureFile='data/presentation-navigation.json',manifestFile='data/content/catalog.json';
   const contentKinds=['conditions','articles','overviews','modules','results'];
-  const layoutKeys=['elements','imageViews','extensionLayouts','tableColumns','coverArt'];
+  const layoutKeys=['elements','imageViews','extensionLayouts','tableColumns','coverArt','roadFlowPaths'];
   const legacyLayoutKeys=['highlights','disabledHighlights','styles','frames','layouts','comparisonTransforms'];
   const contentPath=owner=>'data/content/'+owner+'.json';
   const validOwner=owner=>/^(?:shared|results\/common|(?:results\/)?(?:modules\/M[1-4]-\d{2}|scenarios\/[GC][1-4]-\d{2}))$/.test(owner);

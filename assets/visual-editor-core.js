@@ -45,6 +45,12 @@
     assert(record(value.elements) && Object.keys(value.elements).length <= 20000, '元素清單無效');
     assert(value.imageViews === undefined || record(value.imageViews), '初始圖面設定無效');
     const result = clone(value);
+    if(result.roadFlowPaths===undefined)result.roadFlowPaths={};
+    assert(record(result.roadFlowPaths)&&Object.keys(result.roadFlowPaths).length<=100,'動線路徑清單無效');
+    for(const [page,entry]of Object.entries(result.roadFlowPaths)){
+      assert(/^results-[\w-]{1,150}$/.test(page)&&record(entry)&&typeof entry.assetKey==='string'&&/^[\w:-]{1,200}$/.test(entry.assetKey)&&Array.isArray(entry.routes)&&entry.routes.length<=12,'動線路徑所屬圖面無效');
+      const seen=new Set();for(const route of entry.routes){assert(record(route)&&typeof route.id==='string'&&/^[\w-]{1,100}$/.test(route.id)&&!seen.has(route.id)&&Array.isArray(route.points)&&route.points.length>=2&&route.points.length<=100&&route.points.every(point=>Array.isArray(point)&&point.length===2&&point.every(n=>Number.isFinite(n)&&Math.abs(n)<=10000)),'動線節點無效');seen.add(route.id);}
+    }
     result.content = validateContent(result.content);
     if (result.imageOrders === undefined) result.imageOrders = {};
     assert(record(result.imageOrders) && Object.keys(result.imageOrders).length <= 2000, '圖片排序設定無效');
@@ -224,7 +230,7 @@
   }
   function signature(config) {
     const views = config.imageViews || {};
-    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
   }
   class Store {
     constructor(config) {

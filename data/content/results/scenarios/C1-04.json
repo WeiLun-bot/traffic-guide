@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "owner": "results/scenarios/C1-04",
   "texts": {
-    "results-scenario-c1-04|results|title": "主要道路多叉路口的行車路徑、標誌資訊及號誌問題",
+    "results-scenario-c1-04|results|title": "複雜路情境說明－－以主要道路多叉路口為例",
     "results-scenario-c1-04|results|intro": "多條主要道路於同一交叉口交會，各分支路幅寬、車道數多，且部分道路斜交，形成面積廣大、轉向選擇較多的號誌化路口。",
-    "results-scenario-c1-04-strategy|results|title": "縮小交叉範圍、明確主要車流及號誌管制",
+    "results-scenario-c1-04-strategy|results|title": "主要道路多叉路口整體設置圖例",
     "results-scenario-c1-04-strategy|results|intro": "先界定各方向實際行車範圍，再以槽化線、行人庇護島、行車導引線及號誌調整，處理多叉路口的複雜動線。"
   },
   "images": {},
@@ -52,8 +52,8 @@
         "points": [
           {
             "id": "space",
-            "title": "以槽化線縮小交叉口範圍",
-            "text": "將不必要的鋪面空間劃設為槽化區，明確界定行車範圍，並利用可配置的空間設置行人庇護島。",
+            "title": "縮小交叉口範圍",
+            "text": "將不必要的行車空間轉為實體人行道空間，明確界定行車範圍，並設置行人庇護島。",
             "moduleId": "M1-01",
             "titleKey": "results-scenario-c1-04-strategy|results|space-title",
             "textKey": "results-scenario-c1-04-strategy|results|space-text"
@@ -85,7 +85,7 @@
           {
             "id": "phases",
             "title": "以時相區隔高風險轉向與行人穿越",
-            "text": "若轉向車輛行駛路徑接近直行，或可能以較高速度穿越行穿線，應檢討採用人車分離的號誌時相，避免衝突放行。",
+            "text": "若轉向車輛行駛路徑接近直行，或可能以較高速度穿越行穿線，應檢討採用人車分離的號誌時相，避免衝突人車流動同時開啟。",
             "moduleId": "M2-03",
             "titleKey": "results-scenario-c1-04-strategy|results|phases-title",
             "textKey": "results-scenario-c1-04-strategy|results|phases-text"

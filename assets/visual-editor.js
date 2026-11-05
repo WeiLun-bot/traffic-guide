@@ -316,7 +316,7 @@
     if (suppressClick || event.target.closest('[data-layout-id]') && root.contains(event.target)) { event.preventDefault(); event.stopImmediatePropagation(); }
   }, true);
   document.addEventListener('keydown', event => {
-    if (!editing && !window.generalRoadEditor?.editing && !window.VisualInitialViews?.isOpen) return;
+    if (!editing && !window.generalRoadEditor?.editing && !window.VisualInitialViews?.isOpen && !window.RoadFlowEditor?.isOpen) return;
     const field = event.target.closest('input,textarea,select,[contenteditable]');
     const modifier = event.ctrlKey || event.metaKey;
     if (modifier && event.key.toLowerCase() === 's') { event.preventDefault(); event.stopImmediatePropagation(); const initialField=event.target.closest('[data-iv-field]'); if(initialField&&!initialField.dispatchEvent(new Event('change',{bubbles:true,cancelable:true})))return; if (!busy) run('save'); return; }
@@ -366,14 +366,14 @@
       if (name === 'save') {
         syncLegacy(); const snapshot = store.snapshot(); snapshot.updatedAt = new Date().toISOString();
         const result = await files.save(snapshot);
-        if (result.download) { download(snapshot); report('已匯出完整專案 JSON；用 start-editor.cmd 開啟後匯入，再按儲存寫回專案。'); }
-        else { store.markSaved(snapshot); report('已寫入 ' + result.name + (store.dirty ? '；另有較新的修改尚未儲存。' : '。')); }
+        if (result.download) { download(snapshot); report('已匯出完整專案 JSON；用 start-editor.cmd 開啟後匯入，再按儲存寫回專案。');return {saved:false,download:true}; }
+        else { store.markSaved(snapshot); report('已寫入 ' + result.name + (store.dirty ? '；另有較新的修改尚未儲存。' : '。'));return {saved:true}; }
       } else if (name === 'open' || name === 'reconnect') {
         const config = name === 'reconnect' ? await files.reconnect() : await files.open(); install(config); report('已連結 ' + files.handle.name + '，後續儲存會寫回此檔案。');
       } else if (name === 'reload') {
         const config = files.local ? await files.connectLocal() : files.handle ? await files.read(files.handle, true) : await loadDefault(); install(config); report('已重新載入專案。');
       }
-    } catch (error) { if (error.name !== 'AbortError') report(error.message || '檔案操作失敗，修改仍保留。', true); }
+    } catch (error) { if (error.name !== 'AbortError') report(error.message || '檔案操作失敗，修改仍保留。', true);return {saved:false,error:error.message}; }
     finally { busy = false; updateButtons(); refreshFields(); }
   }
   ui.addEventListener('click', event => { const button = event.target.closest('[data-vl-action]'); if (button) {ui.querySelector('.vl-files').open=false;run(button.dataset.vlAction);} });
@@ -401,7 +401,7 @@
   window.visualLayoutEditor = {
     connect(presentation) { api = presentation; legacyPages = api.pages.filter(page => page.kind !== 'custom').map(page => ({...page})); document.querySelector('#editor-toolbar .editor-actions').prepend(ui); ui.querySelector('.vl-toolbar').hidden = false; window.PresentationContent?.configureTools(ui); const legacySave = document.querySelector('.editor-download'); if (legacySave) { legacySave.textContent = '儲存 JSON 設定'; legacySave.title = '將內容與版面存入連結的 JSON 設定檔'; } updateButtons(); report(''); },
     sessionChanged() {updateButtons();if(!editing)report(window.generalRoadEditor?.editing ? '文字編輯：點文字修改，使用圖片旁的按鈕更換圖片。' : '');},
-    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); window.CoverArtEditor?.cleanup(); restoreStyles(); }, render, setMode, select,transact,report,refresh:refreshPresentation,
+    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); window.CoverArtEditor?.cleanup(); restoreStyles(); }, render, setMode, select,transact,report,save:()=>run('save'),refresh:refreshPresentation,
     legacyChanged(){transact(()=>{},false);},
     formatChanged(element,property){const key={fontSize:'fontSize',fontWeight:'fontWeight',fontFamily:'fontFamily',lineHeight:'lineHeight'}[property];transact(next=>{if(key&&next.elements[element.dataset.layoutId])next.elements[element.dataset.layoutId][key]=null;},false);refreshPresentation();},
     resetTextStyle(element){transact(next=>{const item=next.elements[element.dataset.layoutId];if(item)for(const key of ['fontSize','fontFamily','fontWeight','lineHeight'])item[key]=null;},false);refreshPresentation();},

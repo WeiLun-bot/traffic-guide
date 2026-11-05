@@ -62,7 +62,9 @@ try {
     $currentServer = $false
     try {
       $previewStatus = Invoke-RestMethod -Uri ($serverUrl + '__preview') -TimeoutSec 3
-      $currentServer = $previewStatus.version -eq 1 -and $previewStatus.projectStorage -eq $true
+      $storageFiles = @('tools/serve-github-pages.cjs', 'tools/presentation-project-store.cjs', 'assets/presentation-document.js', 'assets/visual-editor-core.js')
+      $storageSignature = (($storageFiles | ForEach-Object { (Get-FileHash -LiteralPath (Join-Path (Split-Path $PSScriptRoot -Parent) $_) -Algorithm SHA256).Hash.ToLowerInvariant() }) -join ':')
+      $currentServer = $previewStatus.version -eq 1 -and $previewStatus.projectStorage -eq $true -and $previewStatus.storageSignature -eq $storageSignature
     } catch { }
     if ($currentServer) {
       Write-Host 'This project preview is already running. Its files have been updated.'
@@ -73,7 +75,7 @@ try {
       Write-Host 'Return to Chrome/Edge and press Ctrl+Shift+R.'
       return
     }
-    Write-Host 'Restarting this project preview to enable separate content and layout saving...'
+    Write-Host 'Restarting this project preview to load the current project saving format...'
     & (Join-Path $PSScriptRoot 'stop-preview.ps1') -Port $previewPort | Out-Host
     if ($LASTEXITCODE -ne 0) { throw 'Could not restart the outdated project preview.' }
   }

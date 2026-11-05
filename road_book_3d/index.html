@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>道路交通標誌標線號誌設置參考指引｜3D 書本展示</title>
+<style>
+:root { --ink:#16334c; --muted:#627482; --paper:#fff; --pw:min(42vw, 395px, 52vh); --ph:calc(var(--pw) * 1.41416); --depth:clamp(17px,2.7vw,37px); --ry:-16deg; --rx:8deg; font-family: system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif; color:var(--ink) }
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#f4f6f5}
+body{background:radial-gradient(ellipse at 48% 27%,#fff 0%,#edf1f0 55%,#e3e9e8 100%);}
+button,select,input{font:inherit}
+.site-header{padding:24px 20px 10px;text-align:center;}
+.site-header .eyebrow{letter-spacing:.16em;font-weight:750;font-size:10px;color:#7d8d91;}
+h1{font-size:clamp(18px,2.2vw,27px);font-weight:750;letter-spacing:.045em;margin:7px 0 5px;}
+.site-header p{color:#637983;font-size:12px;margin:0;}
+.controls{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;max-width:1120px;margin:15px auto 0;padding:0 15px}
+.controls button,.controls select,.view-tools button{background:#fff;cursor:pointer;border:1px solid #cbd8da;padding:9px 13px;color:#28445a;border-radius:9px;font-size:13px;min-height:37px;box-shadow:0 1px 2px #19364b0c;}
+.controls button:hover,.controls select:hover,.view-tools button:hover{background:#f4faf9;border-color:#8ea8aa}
+.controls button:disabled{opacity:.4;cursor:default}
+.controls button.active{background:#214359;color:white;border-color:#214359}
+.controls select{max-width:min(400px,89vw)}
+.stage{position:relative;height:min(75vh,700px);min-height:390px; perspective:1800px;display:grid;place-items:center;overflow:hidden;touch-action:pan-y;}
+.stage::before{content:"";position:absolute;bottom:8%;width:min(68vw,850px);height:42px;border-radius:50%;background:rgba(16,40,56,.18);filter:blur(29px);pointer-events:none;transform:translateY(1px);}
+.stage::after{content:"";position:absolute;bottom:0;left:18%;right:18%;height:1px;background:linear-gradient(90deg,transparent,#c6d1d160,transparent);pointer-events:none}
+.book{position:relative;width:calc(var(--pw) * 2);height:var(--ph);transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .85s cubic-bezier(.22,.85,.2,1);will-change:transform;user-select:none;}
+.book.closed{transform:translateX(calc(var(--pw) * -.50)) rotateX(8deg) rotateY(-23deg)}
+.hardcover{position:absolute;top:-4px;width:calc(var(--pw) + 7px);height:calc(100% + 11px);border-radius:5px;background:#f6f6f1;border:0;box-shadow:0 13px 24px #23372a26;transform:translateZ(-21px);}
+.hardcover.left{left:-6px;}.hardcover.right{left:var(--pw);}
+.book.closed .hardcover.left{visibility:hidden;}
+.spread-pages{position:absolute;inset:0;transform-style:preserve-3d;opacity:1;transition:opacity .25s;}
+.book.closed .spread-pages{opacity:0;pointer-events:none;}
+.page{position:absolute;top:0;width:var(--pw);height:100%;background:var(--paper);overflow:hidden;transform-style:preserve-3d;border:1px solid #dddeda;cursor:zoom-in;}
+.page img,.flip-face img,.cover-face img{width:100%;height:100%;object-fit:fill;display:block;pointer-events:none;}
+.page.left{left:0;z-index:5;transform:translateZ(12px);border-radius:5px 0 0 4px;box-shadow:inset -8px 0 17px #151f2620;}
+.page.right{left:var(--pw);z-index:5;transform:translateZ(12px);border-radius:0 5px 4px 0;box-shadow:inset 9px 0 17px #151f2620;}
+.page.left::after,.page.right::after{content:"";pointer-events:none;position:absolute;top:0;bottom:0;width:16%;opacity:.8;}
+.page.left::after{right:0;background:linear-gradient(90deg,transparent,#35444e15 72%,#1a2c3a24)}
+.page.right::after{left:0;background:linear-gradient(90deg,#1a2c3a2b,#33435110 30%,transparent)}
+.gutter{position:absolute;left:calc(var(--pw) - 7px);top:0;width:14px;height:100%;pointer-events:none;z-index:19;background:linear-gradient(90deg,#172c3900,#152e4228 33%,#152e423a 48%,#fff9 52%,#152e3909 80%,transparent);transform:translateZ(14px)}
+/* Physical trimmed page edges: ALL ink stays on the side face, never extends past the trim. */
+.edge-face{position:absolute;top:0;height:100%;width:var(--depth);background:repeating-linear-gradient(90deg,#eceae4 0px,#fefdfa 1px,#e2e1dc 2px,#f8f7f2 3px);box-shadow:inset 1px 0 2px #1c2c301f,inset 0 -4px 3px #59677330;backface-visibility:visible;transform-style:preserve-3d;pointer-events:none;}
+.edge-face.right{left:calc(var(--pw) * 2 - 1px);transform-origin:left center;transform:translateZ(12px) rotateY(90deg);}
+.edge-face.left{left:0;transform-origin:left center;transform:translateZ(calc(12px - var(--depth))) rotateY(-90deg);}
+.edge-ink{position:absolute;min-width:.45px;box-shadow:inset 0 .5px #ffffff38,inset 0 -.5px #00000010;}
+.edge-face.left .edge-ink{opacity:.72;}
+.lower-edge{position:absolute;bottom:0;height:var(--depth);width:var(--pw);background:repeating-linear-gradient(to bottom,#ebeae6 0px,#fdfbf8 1px,#e8e6e1 2px,#f7f6f3 3px);transform-origin:top center;transform:translateZ(12px) rotateX(-90deg);box-shadow:inset 0 -2px 6px #4a5b5c22;pointer-events:none;}
+.lower-edge.left{left:0}.lower-edge.right{left:var(--pw)}
+.book.closed .edge-face.left,.book.closed .lower-edge.left,.book.closed .gutter{opacity:0;}
+.cover-leaf{position:absolute;top:0;left:var(--pw);width:var(--pw);height:100%;transform-origin:left center;transform-style:preserve-3d;transform:translateZ(20px) rotateY(0deg);transition:transform 1s cubic-bezier(.16,.78,.22,1),opacity .24s .70s;z-index:50;pointer-events:none;}
+.cover-leaf .cover-face{position:absolute;inset:0;backface-visibility:hidden;background:#fff;overflow:hidden;border-radius:2px;box-shadow:3px 10px 21px #23372a2e;border:0;}
+.cover-leaf .cover-inside{transform:rotateY(180deg);background:linear-gradient(90deg,#e7e9e8,#f8faf8 9%,#f0f2f0);}
+.book:not(.closed) .cover-leaf{transform:translateZ(20px) rotateY(-180deg);opacity:0;}
+.book.closed .cover-leaf{opacity:1;transition:transform 1s cubic-bezier(.16,.78,.22,1),opacity .25s;}
+/* Physical single-leaf flip: front is old right page, reverse is new left page. */
+.flip-sheet{position:absolute;left:var(--pw);top:0;width:var(--pw);height:100%;transform-origin:left center;transform-style:preserve-3d;z-index:30;display:none;pointer-events:none;}
+.flip-face{position:absolute;inset:0;background:#fff;overflow:hidden;backface-visibility:hidden;border:1px solid #d2d5d1;}
+.flip-face.front{box-shadow:3px 4px 20px #132b3b45;}
+.flip-face.back{transform:rotateY(180deg);box-shadow:-3px 4px 20px #132b3b38;}
+.flip-face::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#172d3a24,transparent 18%,transparent 75%,#122d3d0f);}
+.viewer-caption{text-align:center;margin:-7px auto 8px;padding:0 10px;position:relative;z-index:1;font-size:13px;min-height:27px;font-weight:600;}
+.viewer-caption small{display:block;color:#788892;font-weight:400;margin-top:4px;font-size:11px;}
+.view-tools{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:8px auto 15px;color:#526b76;font-size:12px;padding:0 15px;}
+.view-tools label{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.view-tools input[type=range]{width:125px;accent-color:#315c72;cursor:pointer}
+.view-tools button{padding:7px 12px;min-height:32px;font-size:12px}
+.info{width:min(1000px,calc(100% - 32px));margin:9px auto 20px;border-top:1px solid #d3dfde;padding:17px 8px 0;display:flex;gap:18px;align-items:flex-start;justify-content:space-between;color:#506b78;font-size:12px;}
+.info p{margin:0 0 7px;line-height:1.7;}
+.info strong{color:#27445a}
+.legend{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:flex-end;flex:0 0 auto}
+.legend-part{display:flex;gap:3px;align-items:center}
+.legend-part strong{margin-right:5px;font-size:12px}
+.legend-part i{width:11px;height:19px;display:inline-block;border-radius:2px;border:1px solid #0001}
+.lightbox{position:fixed;inset:0;z-index:100;background:#0b1a25ee;display:none;flex-direction:column;align-items:center;justify-content:center;padding:15px 10px;}
+.lightbox.show{display:flex}.lightbar{position:absolute;top:12px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;z-index:2}
+.lightbar button{font-size:13px;cursor:pointer;padding:7px 13px;border-radius:7px;border:1px solid #dee6ec;background:#fff;color:#243c51;}
+.lightbar span{color:white;font-size:12px;}
+.lightbox-viewport{max-width:97vw;max-height:88vh;overflow:auto;margin-top:28px;cursor:zoom-in;}
+.lightbox-viewport img{width:auto;max-width:none;height:min(78vh,1050px);display:block;box-shadow:0 10px 24px #0006;}
+.lightbox-viewport.large img{height:auto;width:min(190vw,1900px);}
+.lightbox-viewport img + img{margin-left:0}
+.lightbox-viewport.double{display:flex;align-items:flex-start;}
+.lightbox-viewport.double img{height:min(73vh,920px)}
+.lightbox-viewport.double.large img{height:auto;width:min(96vw,1280px)}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:680px){:root{--pw:min(44vw,50vh);--depth:17px}.site-header{padding-top:15px}h1{line-height:1.4}.stage{height:54vh;min-height:320px}.controls{gap:6px}.controls button,.controls select{padding:7px 8px;font-size:12px}.viewer-caption{margin-top:0}.info{flex-direction:column;gap:6px}.legend{justify-content:flex-start}.view-tools{gap:7px 10px}.view-tools input[type=range]{width:90px}}
+@media(prefers-reduced-motion:reduce){.cover-leaf,.book{transition:none}}
+</style>
+<link rel="stylesheet" href="presentation.css">
+<script>if(new URLSearchParams(location.search).get("embed")==="1")document.documentElement.classList.add("presentation-embed");</script>
+</head>
+<body>
+<header class="site-header"><div class="eyebrow">INTERACTIVE REFERENCE GUIDE</div><h1>道路交通標誌標線號誌設置參考指引</h1><p>真實 PDF 內頁 × CSS 3D 書本 × 裁切齊平彩色書口</p></header>
+<nav class="controls" aria-label="書本操作"><button type="button" id="coverBtn" aria-label="回到封面" title="回到封面"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h13v16H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 4v16"/></svg></button><button type="button" id="prevBtn" aria-label="上一跨頁" title="上一跨頁"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><label class="visually-hidden" for="jump">選擇展示跨頁</label><select id="jump" aria-label="選擇展示跨頁"><option value="-1">封面</option></select><button type="button" id="nextBtn" aria-label="下一跨頁" title="開啟書本"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button><button type="button" id="zoomSpread" aria-label="放大跨頁" title="放大跨頁"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4M7.5 10.5h6m-3-3v6"/></svg></button><details class="view-settings" id="viewSettings"><summary aria-label="視角設定" title="視角設定"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="#fbfdf8"/><circle cx="15" cy="17" r="2" fill="#fbfdf8"/></svg></summary><div class="view-tools">
+  <label>左右旋轉 <input type="range" id="rotation" min="-32" max="32" step="1" value="-16" aria-label="書本左右旋轉角度"><output id="rotLabel">-16°</output></label>
+  <label>俯視角度 <input type="range" id="tilt" min="0" max="22" step="1" value="8" aria-label="書本俯視角度"><output id="tiltLabel">8°</output></label>
+  <button type="button" id="frontView">正面閱讀</button><button type="button" id="sideView">觀看書口</button>
+</div></details></nav>
+<main>
+<section class="stage" id="stage" aria-label="可拖曳旋轉的三維書本模型">
+  <div class="book closed" id="book">
+    <div class="hardcover left"></div><div class="hardcover right"></div>
+    <div class="lower-edge left"></div><div class="lower-edge right"></div>
+    <div class="edge-face left" id="edgeLeft" aria-hidden="true"></div>
+    <div class="edge-face right" id="edgeRight" aria-hidden="true"></div>
+    <div class="spread-pages" id="spread">
+      <div class="page left" id="pageLeft" role="button" tabindex="0" aria-label="放大左頁"><img id="leftImg" alt="書本左頁"></div>
+      <div class="page right" id="pageRight" role="button" tabindex="0" aria-label="放大右頁"><img id="rightImg" alt="書本右頁"></div>
+      <div class="gutter" aria-hidden="true"></div>
+    </div>
+    <div class="flip-sheet" id="flipSheet">
+      <div class="flip-face front"><img id="flipFront" alt="翻頁正面"></div>
+      <div class="flip-face back"><img id="flipBack" alt="翻頁背面"></div>
+    </div>
+    <div class="cover-leaf" id="coverLeaf">
+      <div class="cover-face"><img src="pages/p1.webp" alt="道路交通標誌標線號誌設置參考指引封面"></div>
+      <div class="cover-face cover-inside"></div>
+    </div>
+  </div>
+  <aside class="book-thanks" id="bookThanks" aria-live="polite" aria-hidden="true"><p>謝謝聆聽</p><p>敬請指教</p></aside>
+</section>
+<div class="viewer-caption" role="status" aria-live="polite"><span id="caption">封面 · 點選「下一跨頁」開啟書本</span><small id="pageInfo">指定 PDF 跨頁，保留原始頁序與左右配置。</small></div>
+
+<section class="info">
+<div><p><strong>頁籤忠於原始設定：</strong>每頁邊緣色塊取自你提供的 PDF，不重新添加凸出頁籤。書本的書口側面依 navigation-style.typ，以 54 mm 起點、25 mm 高度、6 mm 間距及 12 種 M/G/C 色階標示，書口線條和頁緣切齊。</p><p>可拖曳書本調整角度，使用 ← → 翻頁，按「跨頁放大」或點擊單頁閱讀。展示採精選跨頁，切換非連續頁面時以翻頁動畫呈現。</p></div>
+<div class="legend" id="legend" aria-label="頁籤色系圖例"></div>
+</section>
+</main>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="頁面放大檢視">
+  <div class="lightbar"><button type="button" id="closeZoom">關閉 Esc</button><button type="button" id="toggleZoom">放大／縮小</button><span id="zoomTitle"></span></div>
+  <div class="lightbox-viewport" id="zoomViewport"><img id="zoomLeft" alt="放大頁面"><img id="zoomRight" alt="放大頁面"></div>
+</div>
+<script>
+'use strict';
+const DATA = {"source_pdf_name":"output_1105.pdf","source_pages":541,"page_size":"A4 portrait 210×297 mm","page_tab_settings_mm":{"width":10.8,"height":25,"gap":6,"top":54,"safe":3,"optional_print_bleed":3},"screen_bleed_enabled":false,"palettes_typst":{"M":["#81765F","#968B6F","#ADA487","#C5BFA8"],"G":["#9A6F56","#AF8368","#C39A7F","#D6B8A3"],"C":["#756E82","#8A8497","#A39DB3","#BDB8CB"]},"palettes_display_after_oklab_adjustment":{"M":["#81765F","#93886D","#A79E82","#BCB69F"],"G":["#9A6F56","#AC8166","#BE957A","#CDB09B"],"C":["#756E82","#878194","#9D97AD","#B4AFC2"]},"sections":[{"code":"M1","start":55,"end":66,"desc":"車道配置與動線導引","color":"#81765F","top_mm":54,"height_mm":25,"font_color":"#FFFFFF"},{"code":"M2","start":67,"end":92,"desc":"路口管制","color":"#93886D","top_mm":85,"height_mm":25,"font_color":"#303030"},{"code":"M3","start":93,"end":115,"desc":"行人、自行車、機車、公車","color":"#A79E82","top_mm":116,"height_mm":25,"font_color":"#303030"},{"code":"M4","start":116,"end":132,"desc":"危險警示與通行管制","color":"#BCB69F","top_mm":147,"height_mm":25,"font_color":"#303030"},{"code":"G1","start":133,"end":165,"desc":"無號誌三叉路口","color":"#9A6F56","top_mm":54,"height_mm":25,"font_color":"#FFFFFF"},{"code":"G2","start":166,"end":203,"desc":"號誌化三叉路口","color":"#AC8166","top_mm":85,"height_mm":25,"font_color":"#303030"},{"code":"G3","start":204,"end":222,"desc":"無號誌四叉路口","color":"#BE957A","top_mm":116,"height_mm":25,"font_color":"#303030"},{"code":"G4","start":223,"end":272,"desc":"號誌化四叉路口","color":"#CDB09B","top_mm":147,"height_mm":25,"font_color":"#303030"},{"code":"C1","start":273,"end":375,"desc":"平面交叉","color":"#756E82","top_mm":54,"height_mm":25,"font_color":"#FFFFFF"},{"code":"C2","start":376,"end":389,"desc":"交流道銜接部分","color":"#878194","top_mm":85,"height_mm":25,"font_color":"#303030"},{"code":"C3","start":390,"end":398,"desc":"公路與軌道系統交叉","color":"#9D97AD","top_mm":116,"height_mm":25,"font_color":"#303030"},{"code":"C4","start":399,"end":470,"desc":"路段","color":"#B4AFC2","top_mm":147,"height_mm":25,"font_color":"#303030"}],"spreads":[{"title":"目錄","topic":"全書架構與章節檢索","left":4,"right":5,"group":""},{"title":"M3-01.2｜路口穿越","topic":"行人路口穿越配置","left":94,"right":95,"group":"M3"},{"title":"G1-01｜無號誌市區正交三叉路口","topic":"交通設施設置建議與整體配置","left":134,"right":135,"group":"G1"},{"title":"G1-02｜無號誌鄉區正交三叉路口","topic":"整體配置與圖例運用解說","left":142,"right":143,"group":"G1"},{"title":"C1-04｜主要道路多叉路口","topic":"整體配置與相關模組、條文","left":318,"right":319,"group":"C1"},{"title":"條文索引","topic":"設置規則、相關模組與適用情境對照","left":502,"right":503,"group":""},{"title":"模組索引","topic":"模組、設置規則與適用情境對照","left":518,"right":519,"group":""},{"title":"情境索引（一）","topic":"一般道路情境與相關模組、條文對照","left":530,"right":531,"group":""},{"title":"情境索引（二）","topic":"一般道路情境與相關模組、條文對照","left":532,"right":533,"group":""}],"notes":["內頁及封面均使用 output_1105.pdf 的實際 PDF 頁序；側邊頁籤直接保留原始頁面。","展示包含 9 組跨頁（18 個內頁）與封面；依使用者要求移除原第 02 組路側停車、第 04 組路段穿越及第 08 組交流道。","PDF 第 502、530 頁為空白左頁，依原檔保留。","書口色帶依本檔 541 頁及各主題的實際頁序重新定位，保留原有配色與尺寸。"],"source_pdf_sha256":"d1687e91b1612afe5fc0b675817279704b44d9d35465b4110ca3370d6d3f1ee5","rendering":{"dpi":200,"webp_quality":0.92,"pdf_pages":[1,4,5,94,95,134,135,142,143,318,319,502,503,518,519,530,531,532,533],"pages":[{"pdfPage":1,"file":"road_book_3d/pages/p1.webp","width":1654,"height":2339,"bytes":175216,"sha256":"c0eb1d5c4636ef2a25b2d6d3ef2c1353d337b72c7e34b30c8a0b1e7eab0a9c60"},{"pdfPage":4,"file":"road_book_3d/pages/p4.webp","width":1654,"height":2339,"bytes":321302,"sha256":"a0eeccced60c9a1d078a2b013acbfc4214b670cc26c6fd2e93169252d2963d52"},{"pdfPage":5,"file":"road_book_3d/pages/p5.webp","width":1654,"height":2339,"bytes":370376,"sha256":"6fe58a336c31d570ecbbfd2f8ea7b19736ab84452143bb292ea3f619f0af73b5"},{"pdfPage":94,"file":"road_book_3d/pages/p94.webp","width":1654,"height":2339,"bytes":173050,"sha256":"f3bef6362dcabffb7b496849342fddd90583d668baabf2cb1a723db48fd453c9"},{"pdfPage":95,"file":"road_book_3d/pages/p95.webp","width":1654,"height":2339,"bytes":141520,"sha256":"1a23d49e219ce89f5ff7441ac9fcdbbfdccfb5419bc5d991ccba1d068f72852a"},{"pdfPage":134,"file":"road_book_3d/pages/p134.webp","width":1654,"height":2339,"bytes":232204,"sha256":"02c1ed4a2b7f8469a155bcee12a24dfafa2d42b31e27b1b920dd4c0ccf4413b8"},{"pdfPage":135,"file":"road_book_3d/pages/p135.webp","width":1654,"height":2339,"bytes":107308,"sha256":"f3aba393adca4924ee1d516582609fd1b1fbfa0fe0f39ab6f8b0b91bc1eab86e"},{"pdfPage":142,"file":"road_book_3d/pages/p142.webp","width":1654,"height":2339,"bytes":127530,"sha256":"397ec30e9cc6305a899a7bf6b5c53dde27e536316a8c17fc5f16eca535bcfc40"},{"pdfPage":143,"file":"road_book_3d/pages/p143.webp","width":1654,"height":2339,"bytes":269202,"sha256":"9caef1c527b300eb96f6a845bdd26cb29e50405bd9dacdf7d03dc4c28fd7fdaf"},{"pdfPage":318,"file":"road_book_3d/pages/p318.webp","width":1654,"height":2339,"bytes":220232,"sha256":"6b2f58651d3bf10e90cca74fd7a0ce9f2886b9946ef1447863966415d954e313"},{"pdfPage":319,"file":"road_book_3d/pages/p319.webp","width":1654,"height":2339,"bytes":295658,"sha256":"c229a2dde143ebeefd5d4b1155b5560e648b75fb0d680d2415768c7f6a8396dd"},{"pdfPage":502,"file":"road_book_3d/pages/p502.webp","width":1654,"height":2339,"bytes":7502,"sha256":"7e272db71d61e6664f2e6b68fe6e029f67df6b28b7d80b03ad4005ab0b03ae5f"},{"pdfPage":503,"file":"road_book_3d/pages/p503.webp","width":1654,"height":2339,"bytes":188400,"sha256":"42d6d9f964eb89489df108a05955c25282539bad753aa872a72245986107a0e2"},{"pdfPage":518,"file":"road_book_3d/pages/p518.webp","width":1654,"height":2339,"bytes":150044,"sha256":"10b8fc084da447953c307a1d90b714039d5c318f3060e762db09805325c53cd8"},{"pdfPage":519,"file":"road_book_3d/pages/p519.webp","width":1654,"height":2339,"bytes":132388,"sha256":"85d7883e07992f1172671b089b7308cce8a4b37981c266daa33f0d76d4bcbd93"},{"pdfPage":530,"file":"road_book_3d/pages/p530.webp","width":1654,"height":2339,"bytes":7502,"sha256":"7e272db71d61e6664f2e6b68fe6e029f67df6b28b7d80b03ad4005ab0b03ae5f"},{"pdfPage":531,"file":"road_book_3d/pages/p531.webp","width":1654,"height":2339,"bytes":159904,"sha256":"89c79df959f0e499042ff3e28af498f2e89274912bda329b57ca82c8756e2802"},{"pdfPage":532,"file":"road_book_3d/pages/p532.webp","width":1654,"height":2339,"bytes":215478,"sha256":"9a597ec38802730f85123db7c72ebace5c4d4f06ff7ca14de50c843e6ac94bc6"},{"pdfPage":533,"file":"road_book_3d/pages/p533.webp","width":1654,"height":2339,"bytes":236282,"sha256":"4194edf7032645c6348200826fdf9f323a5eb78969fe1ab34a0c489c7c23b4b6"}]}};
+const PAGE_COUNT = DATA.source_pages;
+const tab = DATA.page_tab_settings_mm;
+const path = n => `pages/p${n}.webp`;
+const $ = id => document.getElementById(id);
+const book = $('book'), stage = $('stage');
+let idx = -1, busy = false, lastDrag = 0, ending = false;
+let rot = -16, tilt = 8;
+const spreads = DATA.spreads;
+const makeImg = (el,p) => {el.src=path(p);};
+
+function createForeEdge(id, reversed=false) {
+  const edge=$(id);
+  for (const s of DATA.sections) {
+    const i=document.createElement('span'); i.className='edge-ink';
+    // Across the *thickness* of the entire PDF page stack, no external protrusion.
+    const first=reversed?(PAGE_COUNT-s.end):(s.start-1);
+    i.style.left=(first/PAGE_COUNT*100)+'%';
+    i.style.width=((s.end-s.start+1)/PAGE_COUNT*100)+'%';
+    // Along the trimmed side height, exact A4 coordinates of the original Typst tabs.
+    i.style.top=(s.top_mm/297*100)+'%';
+    i.style.height=(s.height_mm/297*100)+'%';
+    i.style.backgroundColor=s.color;
+    i.title=s.code+' · '+s.desc;
+    edge.appendChild(i);
+  }
+}
+createForeEdge('edgeLeft',true);
+createForeEdge('edgeRight');
+for (const group of ['M','G','C']) {
+  const box=document.createElement('div');box.className='legend-part';
+  const title=document.createElement('strong');title.textContent=group;box.append(title);
+  for (let i=0;i<4;i++) {
+    let swatch=document.createElement('i');
+    swatch.style.background=DATA.palettes_display_after_oklab_adjustment[group][i];
+    swatch.title=group+(i+1);
+    box.append(swatch);
+  }
+  $('legend').append(box);
+}
+spreads.forEach((s,i)=>{
+  const o=document.createElement('option');o.value=i;
+  o.textContent=`${String(i+1).padStart(2,'0')} · ${s.title}`;
+  $('jump').append(o);
+});
+const endingOption=document.createElement('option');endingOption.value=spreads.length;endingOption.textContent='展示結束｜謝謝聆聽';$('jump').append(endingOption);
+function preload(s){if(!s)return;for(const n of [s.left,s.right]){let img=new Image();img.src=path(n)}}
+function updateHUD(){
+  const s=spreads[idx];
+  $('caption').textContent=ending?'謝謝聆聽，敬請指教':s?`${s.title} · ${s.topic}`:'封面 · 點選「下一跨頁」開啟書本';
+  $('pageInfo').textContent=ending?'展示結束':s?'PDF '+s.left+'–'+s.right+' · '+(idx+1)+' / '+spreads.length:'封面 · '+spreads.length+' 組展示跨頁';
+  $('jump').value=String(ending?spreads.length:idx);
+  $('prevBtn').disabled=idx===-1&&!ending || busy;
+  $('nextBtn').disabled=ending || busy;
+  $('nextBtn').title=ending?'展示結束':idx===-1?'開啟書本':idx===spreads.length-1?'闔上書本':'下一跨頁';
+  $('zoomSpread').disabled=idx===-1 || busy;
+  $('coverBtn').classList.toggle('active',idx===-1&&!ending);
+  if(s){preload(spreads[idx+1]);preload(spreads[idx-1]);}
+  if(document.documentElement.classList.contains('presentation-embed'))window.frameElement?.dispatchEvent(new CustomEvent('bookstatechange'));
+}
+function setPages(s){makeImg($('leftImg'),s.left);makeImg($('rightImg'),s.right)}
+function goCover(finish=false){
+  if(busy)return;
+  ending=finish===true;idx=-1;rot=ending?0:-16;tilt=ending?0:8;transformBook();book.classList.add('closed');
+  document.body.classList.toggle('book-finished',ending);$('bookThanks').setAttribute('aria-hidden',String(!ending));
+  $('viewSettings').open=false;
+  if(ending&&!matchMedia('(prefers-reduced-motion: reduce)').matches){busy=true;setTimeout(()=>{busy=false;updateHUD();},1500);}
+  updateHUD();
+}
+function goIndex(n){
+  if(busy)return;
+  n=Math.max(-1,Math.min(spreads.length,n));
+  if(n===spreads.length){goCover(true);return;}
+  if(n===-1){goCover();return;}
+  if(n===idx)return;
+  ending=false;document.body.classList.remove('book-finished');$('bookThanks').setAttribute('aria-hidden','true');
+  rot=0;tilt=0;transformBook();
+  const target=spreads[n];
+  if(idx===-1){setPages(target);idx=n;book.classList.remove('closed');updateHUD();return;}
+  const old=spreads[idx];const forward=n>idx;
+  busy=true;
+  const sheet=$('flipSheet');
+  if(forward){
+    makeImg($('leftImg'),old.left);makeImg($('rightImg'),target.right);
+    makeImg($('flipFront'),old.right);makeImg($('flipBack'),target.left);
+  }else{
+    makeImg($('leftImg'),target.left);makeImg($('rightImg'),old.right);
+    makeImg($('flipFront'),target.right);makeImg($('flipBack'),old.left);
+  }
+  sheet.style.transition='none';
+  sheet.style.display='block';
+  sheet.style.transform=forward?'translateZ(23px) rotateY(0deg)':'translateZ(23px) rotateY(-180deg)';
+  sheet.getBoundingClientRect();
+  const done=()=>{
+    sheet.style.display='none';sheet.style.transition='none';
+    setPages(target);idx=n;busy=false;updateHUD();
+  };
+  requestAnimationFrame(()=>{
+    sheet.style.transition='transform 930ms cubic-bezier(.34,.13,.2,.95)';
+    sheet.style.transform=forward?'translateZ(23px) rotateY(-180deg)':'translateZ(23px) rotateY(0deg)';
+  });
+  const fallback=setTimeout(()=>{sheet.removeEventListener('transitionend',handle);done()},1070);
+  function handle(e){if(e.propertyName!=='transform')return;clearTimeout(fallback);sheet.removeEventListener('transitionend',handle);done()}
+  sheet.addEventListener('transitionend',handle);
+  updateHUD();
+}
+function transformBook(){
+  book.style.setProperty('--ry',rot+'deg');book.style.setProperty('--rx',tilt+'deg');
+  $('rotation').value=rot;$('tilt').value=tilt;
+  $('rotLabel').textContent=rot+'°';$('tiltLabel').textContent=tilt+'°';
+}
+$('rotation').addEventListener('input',e=>{rot=+e.target.value;transformBook()});
+$('tilt').addEventListener('input',e=>{tilt=+e.target.value;transformBook()});
+$('frontView').onclick=()=>{rot=0;tilt=0;transformBook();$('viewSettings').open=false};
+$('sideView').onclick=()=>{rot=-28;tilt=12;transformBook();$('viewSettings').open=false};
+$('coverBtn').onclick=()=>goCover();
+$('prevBtn').onclick=()=>goIndex(ending?spreads.length-1:idx-1);
+$('nextBtn').onclick=()=>goIndex(idx+1);
+$('jump').onchange=e=>goIndex(+e.target.value);
+let pointerStart=null;
+stage.addEventListener('pointerdown',e=>{if(e.button!==0 || e.target.closest('button'))return;pointerStart={x:e.clientX,y:e.clientY,rot,tilt};});
+stage.addEventListener('pointermove',e=>{
+ if(!pointerStart || !(e.buttons&1))return;
+ const dx=e.clientX-pointerStart.x,dy=e.clientY-pointerStart.y;
+ if(Math.abs(dx)+Math.abs(dy)>5){lastDrag=Date.now();rot=Math.max(-32,Math.min(32,Math.round(pointerStart.rot+dx*.16)));tilt=Math.max(0,Math.min(22,Math.round(pointerStart.tilt-dy*.09)));transformBook();}
+});
+stage.addEventListener('pointerup',()=>{pointerStart=null});
+stage.addEventListener('pointercancel',()=>{pointerStart=null});
+function zoom(which='both'){
+ if(idx===-1)return;
+ const s=spreads[idx],v=$('zoomViewport');
+ v.classList.remove('large');v.classList.toggle('double',which==='both');
+ $('zoomLeft').style.display=which==='right'?'none':'block';
+ $('zoomRight').style.display=which==='left'?'none':'block';
+ if(which!=='right')makeImg($('zoomLeft'),s.left);
+ if(which!=='left')makeImg($('zoomRight'),s.right);
+ $('zoomTitle').textContent=s.title+' · '+(which==='both'?'雙頁':(which==='left'?`PDF ${s.left}`:`PDF ${s.right}`));
+ $('lightbox').classList.add('show');document.body.style.overflow='hidden';
+}
+function closeZoom(){$('lightbox').classList.remove('show');document.body.style.overflow=''}
+$('zoomSpread').onclick=()=>zoom('both');
+$('pageLeft').onclick=()=>{if(Date.now()-lastDrag>250)zoom('left')};
+$('pageRight').onclick=()=>{if(Date.now()-lastDrag>250)zoom('right')};
+for(const [id,which] of [['pageLeft','left'],['pageRight','right']]){
+ $(id).addEventListener('keydown',e=>{if(e.key==='Enter' || e.key===' '){e.preventDefault();zoom(which)}})
+}
+$('closeZoom').onclick=closeZoom;
+$('toggleZoom').onclick=()=>$('zoomViewport').classList.toggle('large');
+$('lightbox').addEventListener('click',e=>{if(e.target===$('lightbox'))closeZoom()});
+document.addEventListener('pointerdown',e=>{if($('viewSettings').open&&!$('viewSettings').contains(e.target))$('viewSettings').open=false;});
+document.addEventListener('keydown',e=>{
+ if(e.ctrlKey||e.metaKey||e.altKey||e.target.isContentEditable)return;
+ if($('lightbox').classList.contains('show')){if(e.key==='Escape')closeZoom();return;}
+ if(e.key==='Escape' && $('viewSettings').open){$('viewSettings').open=false;$('viewSettings').querySelector('summary').focus();return;}
+ if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName))return;
+ if(['BUTTON','SUMMARY','A'].includes(e.target.tagName)&&[' ','Enter'].includes(e.key))return;
+ const direction=['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)?1:['ArrowLeft','ArrowUp','PageUp'].includes(e.key)?-1:0;
+ if(direction){
+   e.preventDefault();
+   if(document.documentElement.classList.contains('presentation-embed')&&window.frameElement){window.frameElement.ownerDocument.getElementById(direction>0?'next':'previous').click();}
+   else window.BookPresentation.move(direction);
+ }
+ if(e.key==='Home'){e.preventDefault();goCover()}
+});
+window.BookPresentation=Object.freeze({
+ get state(){return {index:idx,count:spreads.length,busy,ending};},
+ move(direction){
+   if(busy||$('lightbox').classList.contains('show'))return true;
+   if(ending){if(direction<0)goIndex(spreads.length-1);return true;}
+   const target=idx+Math.sign(direction);
+   if(target< -1)return false;
+   goIndex(target);return true;
+ }
+});
+updateHUD();
+</script>
+</body></html>

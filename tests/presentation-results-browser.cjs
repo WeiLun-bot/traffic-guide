@@ -32,8 +32,8 @@ module.exports=async function({evaluate,view,click,navigate,wait,cdp,base,artifa
   await view('results-complex');assert.equal(await evaluate('document.querySelectorAll("[data-results-scenario]").length'),18);
   await click('[data-results-scenario="C1-01"]');assert.equal(await evaluate('window.generalRoadPresentation.page.deckId'),'results');
   await click('#lecture-chapters [data-chapter="results-complex"]');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'chapter-cover-results-complex');
-  await view('results-modules');assert.equal(await evaluate('document.querySelectorAll("[data-results-module]").length'),15);
-  await view('results-module-list-2');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-modules');assert.equal(await evaluate('document.querySelectorAll("[data-results-module]").length'),15);
+  await view('results-modules');assert.equal(await evaluate('document.querySelectorAll("[data-results-module]").length'),5);
+  await view('results-module-list-2');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'results-modules');assert.equal(await evaluate('document.querySelectorAll("[data-results-module]").length'),5);
   await view('results-module-example');assert.equal(await evaluate('document.querySelectorAll(".results-diagram image").length'),2);
   assert(await evaluate('[...document.querySelectorAll(".results-diagram image")].every(node=>Boolean(node.getAttribute("href")))'));
   pass('results deck has eight chapters, all 36 scenario slots, 15 modules and a complete two-page G1-01 example with figures and navigation');

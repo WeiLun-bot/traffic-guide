@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "pageAliases": {
-    "results-facilities": "results-principles",
     "results-modular": "results-module-definition",
     "results-formation": "results-module-discussion",
     "results-modular-rationale": "results-module-definition",
     "results-phase-three": "results-module-hierarchy",
-    "results-guide-usage": "results-guide-structure"
+    "results-guide-usage": "results-guide-structure",
+    "results-guide-experience-5": "results-guide-experience-4",
+    "results-stop-extensions-2": "results-stop-extensions"
   },
   "currentConditions": "data/results/current-conditions.json",
   "strategies": "data/results/general-strategies.json",
@@ -107,15 +108,13 @@
   },
   "assets": {
     "results:module-discussion-image-1": {
-      "file": "materials/00-計畫緣起/功能模組圖例討論過程_圖例示意01.png",
-      "width": 1048,
-      "height": 542,
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口代表型.svg",
+      "width": 321,
+      "height": 139,
       "label": "圖例示意（一）",
-      "role": "background",
-      "sha256": "c8f55ab8070d74373e6fabe3d941d3b7cd09920a4b9f8c9d5ada138c0b3d1626",
-      "sourcePart": "ppt/media/image6.png",
-      "shapeId": "7",
-      "sourceRelationship": "rId8"
+      "role": "module",
+      "moduleId": "M2-01",
+      "sha256": "bda66ea2f023703b7e7dad91879d807f0178d22616332296d0ca7856f0d95890"
     },
     "results:module-discussion-image-2": {
       "file": "materials/00-計畫緣起/功能模組圖例討論過程_圖例示意02.png",
@@ -279,7 +278,7 @@
       "label": "C1-08 整體佈設圖",
       "scenario": "C1-08",
       "role": "layout",
-      "sha256": "2421bccd0e79cfee974da07696177c11301accce0fc416cbbef87840c4bc5917"
+      "sha256": "8049b797847ba3c410c4caeb69173079e137f9c5e32f022456c7234db05a6fca"
     },
     "results:c1-09-layout": {
       "file": "materials/05-複雜道路情境/C1-09/C1-09_號誌化圓環交通設施設置圖例.svg",
@@ -444,6 +443,261 @@
       "role": "module",
       "label": "M4-03 模組圖",
       "sha256": "8e79f0ba49947b558ccde5a53b2d233e1e74d65e0e7bd2543f72c65f397c94a6"
+    },
+    "results:module-m2-01-definition-basic": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口代表型.svg",
+      "width": 321,
+      "height": 139,
+      "sha256": "bda66ea2f023703b7e7dad91879d807f0178d22616332296d0ca7856f0d95890",
+      "moduleId": "M2-01",
+      "role": "module",
+      "label": "停管制路口代表型"
+    },
+    "results:module-m2-01-definition-crosswalk": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口_搭配行穿線.svg",
+      "width": 315,
+      "height": 152,
+      "sha256": "9567e80d11ca8501c7acc32bcce913534be69e7df184313f73db4241615190fa",
+      "moduleId": "M2-01",
+      "role": "module",
+      "label": "搭配行人穿越道"
+    },
+    "results:module-m2-01-definition-refuge": {
+      "file": "materials/03-modules/M2-01/stop-refuge.svg",
+      "width": 355,
+      "height": 190,
+      "sha256": "222ec2af9786bdad63063047c612f46053f2a6fbff4fcf26e046fd5557cfb257",
+      "moduleId": "M2-01",
+      "role": "module",
+      "label": "搭配行人庇護島"
+    },
+    "results:submodule-stop-current": {
+      "file": "materials/03-modules/M2-01/M2-01.1_現況議題_01.png",
+      "width": 1657,
+      "height": 1081,
+      "role": "current",
+      "moduleId": "M2-01",
+      "label": "停管制路口現況",
+      "sha256": "66c20a52bf899b87167116687dd8714c0023fc3b83780b2c3498a59ed0bd9d96"
+    },
+    "results:submodule-stop-basic": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口代表型.svg",
+      "width": 321,
+      "height": 139,
+      "role": "module",
+      "moduleId": "M2-01",
+      "label": "停管制路口代表型",
+      "sha256": "bda66ea2f023703b7e7dad91879d807f0178d22616332296d0ca7856f0d95890"
+    },
+    "results:submodule-stop-crosswalk": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制路口_搭配行穿線.svg",
+      "width": 315,
+      "height": 152,
+      "role": "module",
+      "moduleId": "M2-01",
+      "label": "延伸應用：搭配行穿線",
+      "sha256": "9567e80d11ca8501c7acc32bcce913534be69e7df184313f73db4241615190fa"
+    },
+    "results:submodule-stop-references": {
+      "file": "materials/03-modules/M2-01/M2-01_停管制_適用情境與相關條文.svg",
+      "width": 1470,
+      "height": 610,
+      "role": "module",
+      "moduleId": "M2-01",
+      "label": "適用情境與相關條文",
+      "sha256": "0d3d2d92953c2e014e5366163cf8ceadf998d1a7585d15ffdf898773c1ab388c"
+    },
+    "results:reading-layout-64": {
+      "file": "materials/00-計畫緣起/reading-layout-64.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "排版設計範例：PDF 第 64 頁",
+      "role": "experience",
+      "sha256": "ce6cb9a5adf3342887a6e5cd154898cb4853931caaa5244237b137e3de301c6a",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 64
+      }
+    },
+    "results:reading-layout-65": {
+      "file": "materials/00-計畫緣起/reading-layout-65.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "排版設計範例：PDF 第 65 頁",
+      "role": "experience",
+      "sha256": "dd095791cd66114df4a02b1d30e026d4f19a67e2e96969491c3184366a9499ff",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 65
+      }
+    },
+    "results:reading-bookmarks-168": {
+      "file": "materials/00-計畫緣起/reading-bookmarks-168.png",
+      "width": 1191,
+      "height": 1684,
+      "label": "書籤導覽範例：PDF 第 168 頁",
+      "role": "experience",
+      "sha256": "b345efddec91b043837fc6b7b6d1e01f70b65aad1916a4080d5a45303a957157",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 168
+      }
+    },
+    "results:reading-bookmarks-169": {
+      "file": "materials/00-計畫緣起/reading-bookmarks-169.png",
+      "width": 1191,
+      "height": 1684,
+      "label": "書籤導覽範例：PDF 第 169 頁",
+      "role": "experience",
+      "sha256": "de3999a37ad8088f708af83c058c618c6dec14eac43137e1ecb93049daa90bab",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 169
+      }
+    },
+    "results:reading-index-532": {
+      "file": "materials/00-計畫緣起/reading-index-532.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "情境索引範例：PDF 第 532 頁",
+      "role": "experience",
+      "sha256": "9a597ec38802730f85123db7c72ebace5c4d4f06ff7ca14de50c843e6ac94bc6",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 532
+      }
+    },
+    "results:reading-index-533": {
+      "file": "materials/00-計畫緣起/reading-index-533.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "情境索引範例：PDF 第 533 頁",
+      "role": "experience",
+      "sha256": "4194edf7032645c6348200826fdf9f323a5eb78969fe1ab34a0c489c7c23b4b6",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 533
+      }
+    },
+    "results:reading-vector-g2-01": {
+      "file": "materials/04-一般道路情境/G2-01/G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.svg",
+      "width": 954,
+      "height": 963,
+      "label": "G2-01 號誌化市區正交三叉路口整體設置圖例",
+      "role": "layout",
+      "scenario": "G2-01",
+      "sha256": "154ec10a1220f91eaa2c0520e68bcf26782f7332406cea6cd9d9d899c7f9668c"
+    },
+    "results:reading-layout-170": {
+      "file": "materials/00-計畫緣起/reading-layout-170.png",
+      "width": 1654,
+      "height": 2339,
+      "label": "G2-01 號誌配置圖例",
+      "role": "experience",
+      "sha256": "76e715225a704c033ed87372acc9fe595615bfe1b0881977f6d09568720aca2d",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 170
+      }
+    },
+    "results:reading-layout-225": {
+      "file": "materials/00-計畫緣起/reading-layout-225.png",
+      "width": 1654,
+      "height": 2339,
+      "label": "G4-01 整體設置圖例",
+      "role": "experience",
+      "sha256": "f18504b70eae5f5d1aa56e8d09a05d3ef26b1dd4c7b28dd470647c39e70f0e7d",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 225
+      }
+    },
+    "results:reading-index-503": {
+      "file": "materials/00-計畫緣起/reading-index-503.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "條文索引",
+      "role": "experience",
+      "sha256": "42d6d9f964eb89489df108a05955c25282539bad753aa872a72245986107a0e2",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 503
+      }
+    },
+    "results:reading-index-517": {
+      "file": "materials/00-計畫緣起/reading-index-517.png",
+      "width": 1654,
+      "height": 2339,
+      "label": "模組索引",
+      "role": "experience",
+      "sha256": "71b0644f965e73f9382206c0371f9ac0b710ee852de7d32f1e2701500b7fc3e8",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 517
+      }
+    },
+    "results:reading-index-531": {
+      "file": "materials/00-計畫緣起/reading-index-531.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "情境索引",
+      "role": "experience",
+      "sha256": "89c79df959f0e499042ff3e28af498f2e89274912bda329b57ca82c8756e2802",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 531
+      }
+    },
+    "results:reading-bookmarks-102": {
+      "file": "materials/00-計畫緣起/reading-bookmarks-102.webp",
+      "width": 1654,
+      "height": 2339,
+      "label": "M3-01.3 路段穿越",
+      "role": "experience",
+      "sha256": "bf0503008f9d307ac437528568620bddce30e86a7b4aee10df8a23caabdfbc0f",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 102
+      }
+    },
+    "results:reading-bookmarks-330": {
+      "file": "materials/00-計畫緣起/reading-bookmarks-330.png",
+      "width": 1654,
+      "height": 2339,
+      "label": "C1-05 多叉路口交通設施設置圖例",
+      "role": "experience",
+      "sha256": "7817adc45862586a7d9b5829b84dd83f04cb9c7e1ee0fdef2c1436d7de489dcc",
+      "source": {
+        "file": "output_1105.pdf",
+        "pdfPage": 330
+      }
+    },
+    "results:stop-extension-crosswalk-stop-crosswalk": {
+      "file": "materials/edited/8f7fa22bafa65a44fe05bc8cfa63168199efeba66207cb36a34898a25f9ec4e4.svg",
+      "width": 315,
+      "height": 152,
+      "moduleId": "M2-01",
+      "role": "extension",
+      "label": "停管制搭配行穿線",
+      "sha256": "31d7a0c1f0e4f6f9b8ebab7c59b2abfb966619c7700e24c3fabf42abc97e0345"
+    },
+    "results:stop-extension-refuge-stop-refuge": {
+      "file": "materials/03-modules/M2-01/stop-refuge.svg",
+      "width": 355,
+      "height": 190,
+      "moduleId": "M2-01",
+      "role": "extension",
+      "label": "停管制搭配庇護島",
+      "sha256": "222ec2af9786bdad63063047c612f46053f2a6fbff4fcf26e046fd5557cfb257"
+    },
+    "results:stop-extension-curb-stop-curb": {
+      "file": "materials/03-modules/M2-01/stop-curb.svg",
+      "width": 311,
+      "height": 165,
+      "moduleId": "M2-01",
+      "role": "extension",
+      "label": "停管制路緣修飾",
+      "sha256": "446787bc8f6f0aecf8ca484e40bf92917226b0be72614c9b85bc7622c598bb41"
     }
   },
   "source": {
@@ -561,23 +815,6 @@
         "authority": "data/scenarios/catalog.json"
       },
       "intro": "第一期以常見路口型式及管制方式為基礎，建立不同道路條件下的交通設施設置圖例。",
-      "items": [
-        {
-          "id": "framework-types",
-          "title": "",
-          "text": "依三岔、四岔路口及號誌、無號誌管制，建立四大情境類別。"
-        },
-        {
-          "id": "framework-conditions",
-          "title": "",
-          "text": "進一步區分市區、鄉區及正交、斜交等道路條件。"
-        },
-        {
-          "id": "framework-integration",
-          "title": "",
-          "text": "整合標誌、標線、號誌，呈現完整路口的配置方式。"
-        }
-      ],
       "takeaway": "以 18 個一般道路情境，建立常見路口的整體設置參考。"
     },
     {
@@ -593,23 +830,6 @@
         "authority": "data/scenarios/catalog.json"
       },
       "intro": "第二期延續整體情境的編寫方式，針對一般路口分類較難涵蓋的特殊路型及交通運作需求，提出設置圖例。",
-      "items": [
-        {
-          "id": "framework-intersections",
-          "title": "平面交叉：",
-          "text": "錯位路口、短街廓、多叉路口及圓環。"
-        },
-        {
-          "id": "framework-connections",
-          "title": "交流道與軌道交叉：",
-          "text": "匝道銜接及鐵路平交道。"
-        },
-        {
-          "id": "framework-segments",
-          "title": "路段：",
-          "text": "快慢分隔、調撥車道、單行道、迴轉道、行人穿越及山區彎道。"
-        }
-      ],
       "takeaway": "兩期合計完成 36 個道路情境，涵蓋常見及特殊道路條件下的整體設施配置。"
     },
     {
@@ -691,14 +911,30 @@
           "text": "同一個模組可以應用於不同道路情境，但仍須依現地視距、道路幾何及用路需求調整。"
         }
       ],
-      "callouts": [
+      "imagePlacement": "below-cards",
+      "images": [
         {
-          "id": "stop-example",
-          "title": "簡單舉例｜停管制模組",
-          "text": "將停車再開標誌、「停」標字、停止線與相關導引標線放在同一模組中，說明其作用及配置關係，而不是分別查閱各項設施。"
+          "key": "results:module-m2-01-definition-basic",
+          "moduleId": "M2-01",
+          "topic": "purpose",
+          "label": "停管制路口代表型",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-01-definition-crosswalk",
+          "moduleId": "M2-01",
+          "topic": "devices",
+          "label": "搭配行人穿越道",
+          "rotation": 0
+        },
+        {
+          "key": "results:module-m2-01-definition-refuge",
+          "moduleId": "M2-01",
+          "topic": "conditions",
+          "label": "搭配行人庇護島",
+          "rotation": 0
         }
-      ],
-      "takeaway": "模組不是可直接複製的固定設計圖，而是提供特定交通功能的基本設置方法。"
+      ]
     },
     {
       "id": "results-module-classification",
@@ -998,394 +1234,6 @@
       }
     },
     {
-      "id": "results-principles",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "標線設置基本原則(依交通工程規範)",
-      "sections": [
-        {
-          "id": "source-s1-p1",
-          "title": "基本要求",
-          "paragraphs": [
-            {
-              "id": "source-s1-p2",
-              "text": "標線設置之基本要求有需要性、醒目性、易讀性及一致性。",
-              "numbered": false
-            }
-          ]
-        },
-        {
-          "id": "source-s1-p3",
-          "title": "設置與設計原則",
-          "paragraphs": [
-            {
-              "id": "source-s1-p4",
-              "text": "1. 標線應能正確引導交通、確保人車安全及有效使用道路。",
-              "numbered": true
-            },
-            {
-              "id": "source-s1-p5",
-              "text": "2. 標線宜具反光性及抗滑性，與其他交通工程設施配合使用時，應有相輔相成之效果。",
-              "numbered": true
-            },
-            {
-              "id": "source-s1-p6",
-              "text": "3. 標線除按「道路交通標誌標線號誌設置規則」劃設外，得以其他圖示、文字及線條輔助之。",
-              "numbered": true
-            },
-            {
-              "id": "source-s1-p7",
-              "text": "4. 設有行車管制號誌處，得劃設枕木紋行人穿越道線以利行人通過。",
-              "numbered": true
-            },
-            {
-              "id": "source-s1-p8",
-              "text": "5. 路段中得設斑馬紋行人穿越道線，讓行人優先穿越道路。必要時，得改以枕木紋行人穿越道線輔以行車管制號誌管制車輛，並增設行人觸動號誌，以利行人穿越道路。",
-              "numbered": true
-            }
-          ]
-        }
-      ],
-      "density": "normal",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 1,
-        "part": "ppt/slides/slide1.xml"
-      }
-    },
-    {
-      "id": "results-principles-markings-requirements",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "標線設置基本要求 (依交通工程規範解說)",
-      "sections": [
-        {
-          "id": "source-s2-body",
-          "paragraphs": [
-            {
-              "id": "source-s2-p1",
-              "text": "需要性：標線係提供車輛駕駛人及行人必要的道路使用資訊，以利行旅及行車安全。",
-              "numbered": false
-            },
-            {
-              "id": "source-s2-p2",
-              "text": "醒目性：標線應使車輛駕駛人在規定行車速限下能夠及時辨識，以便有足夠時間採取適當的反應措施。",
-              "numbered": false
-            },
-            {
-              "id": "source-s2-p3",
-              "text": "易讀性：標線之線條、圖形或文字應力求簡潔與一目瞭然，使車輛駕駛人在規定行車速限下，易於及時辨識。",
-              "numbered": false
-            },
-            {
-              "id": "source-s2-p4",
-              "text": "一致性：標線之線條、圖形、字體、顏色等應統一標準化，符合法令規定，其設置位置及尺寸等，均宜一致。",
-              "numbered": false
-            }
-          ]
-        }
-      ],
-      "density": "normal",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 2,
-        "part": "ppt/slides/slide2.xml"
-      }
-    },
-    {
-      "id": "results-principles-signs",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "標誌設置基本原則(依交通工程規範)",
-      "sections": [
-        {
-          "id": "source-s3-p1",
-          "title": "基本要求",
-          "paragraphs": [
-            {
-              "id": "source-s3-p2",
-              "text": "標誌設置之基本要求有需要性、醒目性、易讀性及一致性。",
-              "numbered": false
-            }
-          ]
-        },
-        {
-          "id": "source-s3-p3",
-          "title": "設置與設計原則",
-          "paragraphs": [
-            {
-              "id": "source-s3-p4",
-              "text": "1. 標誌依實際需要設置，禁制與警告標誌應審慎使用。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p5",
-              "text": "2. 標誌設置地點及位置應能提供用路人適當判讀距離及足夠反應時間，且避免其環境條件影響識讀效果。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p6",
-              "text": "3. 標誌設置應有適當縱向間距，以利辨識，同一地點的數量應考慮識讀時間。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p7",
-              "text": "4. 為加強用路人之注意力或避免其視線被大型車輛遮擋，必要時標誌可適當的重複設置。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p8",
-              "text": "5. 需要限制或禁止行車種類之路段得設置行車管制標誌。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p9",
-              "text": "6. 採用可變標誌應注意其資訊之可辨識性、有效性及即時性，並應以交通資訊為限。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p10",
-              "text": "7. 標誌以豎立於行車方向之右側為原則，特殊情況得豎立於行車方向之左側或以懸掛方式設置。",
-              "numbered": true
-            },
-            {
-              "id": "source-s3-p11",
-              "text": "8. 豎立式標誌除依「道路交通標誌標線號誌設置規則」設置外，標誌牌之任何部分以不侵入路面為原則。",
-              "numbered": true
-            }
-          ],
-          "columns": 2
-        }
-      ],
-      "density": "normal",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 3,
-        "part": "ppt/slides/slide3.xml"
-      }
-    },
-    {
-      "id": "results-principles-signs-continued",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "標誌設置基本原則(依交通工程規範)",
-      "sections": [
-        {
-          "id": "source-s4-body",
-          "paragraphs": [
-            {
-              "id": "source-s4-p1",
-              "text": "9. 懸掛式標誌之支架或支柱與路肩邊緣相距以不少於60公分為原則；其標誌垂直淨高，於一般道路不得少於4.6公尺，於高(快)速公路不得少於4.9公尺。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p2",
-              "text": "10. 警告標誌除依「道路交通標誌標線號誌設置規則」設置外，其位置應使駕駛人能有足夠應變之安全距離為原則。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p3",
-              "text": "11. 禁制標誌除依「道路交通標誌標線號誌設置規則」規定外，其設置應使駕駛人能有足夠應變時間為原則，必要時得以其他標誌標線預告。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p4",
-              "text": "12. 指示標誌除依「道路交通標誌標線號誌設置規則」規定外，其設置應有足夠之應變時間，並應考量不同道路銜接之連續性。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p5",
-              "text": "13. 輔助標誌除依「道路交通標誌標線號誌設置規則」規定外，應視其所具有之警告、禁制或指示性質，因地制宜設置於適當地點。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p6",
-              "text": "14. 標誌牌面顏色及體形之使用應依照「道路交通標誌標線號誌設置規則」辦理。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p7",
-              "text": "15. 標誌牌面之大小、內容及位置應考慮行車速限、交通環境與高齡者之需求，使用路人在上游適當距離範圍內能清晰識讀，以便能有足夠反應時間採取應變措施為原則。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p8",
-              "text": "16. 標誌所使用之圖案、文字及符號除另有規定外，應力求簡明，以便用路人能快速辨識其意義。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p9",
-              "text": "17. 標誌牌面除另有規定外，應力求簡潔、清晰，並避免眩光刺眼。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p10",
-              "text": "18. 主標誌牌若無法完全表達設置目的，得設置附牌。",
-              "numbered": true
-            },
-            {
-              "id": "source-s4-p11",
-              "text": "19. 標誌之桿件與牌面所承受之風壓應視當地地形、地區之風力特性考量，但至少應能承受14級瞬間風速之風壓。",
-              "numbered": true
-            }
-          ],
-          "columns": 2
-        }
-      ],
-      "density": "compact",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 4,
-        "part": "ppt/slides/slide4.xml"
-      }
-    },
-    {
-      "id": "results-principles-signs-requirements",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "標誌設置的基本要求(依交通工程規範解說)",
-      "sections": [
-        {
-          "id": "source-s5-body",
-          "paragraphs": [
-            {
-              "id": "source-s5-p1",
-              "text": "需要性：標誌係提供車輛駕駛人及行人必要的路況資料，以利行旅及行車安全。",
-              "numbered": false
-            },
-            {
-              "id": "source-s5-p2",
-              "text": "醒目性：標誌應在其背景環境襯托下有明顯對比，使用路人在規定行車速限下及時辨識，以便有足夠時間採取適當的反應措施。",
-              "numbered": false
-            },
-            {
-              "id": "source-s5-p3",
-              "text": "易讀性：標誌之圖案、文字或符號應力求簡潔與一目瞭然，使車輛駕駛人在規定行車速限下，易於及時辨識。",
-              "numbered": false
-            },
-            {
-              "id": "source-s5-p4",
-              "text": "一致性：標誌之體形、圖案、字體、符號、顏色等應統一標準化，符合法令規定。其設置位置、高度、反光性、文字說明等，均宜一致。",
-              "numbered": false
-            }
-          ]
-        }
-      ],
-      "density": "normal",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 5,
-        "part": "ppt/slides/slide5.xml"
-      }
-    },
-    {
-      "id": "results-principles-signals",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "號誌設置基本原則(依交通工程規範)",
-      "sections": [
-        {
-          "id": "source-s6-p1",
-          "title": "基本要求",
-          "paragraphs": [
-            {
-              "id": "source-s6-p2",
-              "text": "號誌之設置應符合交通需求條件、意義統一、清晰及易懂等基本要求。",
-              "numbered": false
-            }
-          ]
-        },
-        {
-          "id": "source-s6-p3",
-          "title": "設置原則",
-          "paragraphs": [
-            {
-              "id": "source-s6-p4",
-              "text": "號誌之設置除依「道路交通標誌標線號誌設置規則」之規定設置外，應依調查之道路情況與交通資料，規劃設置地點、號誌種類及運作方式。號誌設置後，應適時蒐集現況資料，因應道路情況或交通流量與型態之變更，加以適當調整。",
-              "numbered": false
-            }
-          ]
-        },
-        {
-          "id": "source-s6-p5",
-          "title": "設計原則",
-          "paragraphs": [
-            {
-              "id": "source-s6-p6",
-              "text": "道路交通號誌除依「道路交通標誌標線號誌設置規則」規定設計外，應就各路口及鄰近路段之交通特性擬定時制計畫及連鎖範圍。時制計畫之設計應考量路口延滯與容量、車輛停等次數、有效綠燈寬帶、行人最短綠燈及清道時間等。",
-              "numbered": false
-            }
-          ]
-        }
-      ],
-      "density": "normal",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 6,
-        "part": "ppt/slides/slide6.xml"
-      }
-    },
-    {
-      "id": "results-principles-signals-requirements",
-      "chapter": "results-principles",
-      "type": "principles",
-      "title": "號誌設置基本要求 (依交通工程規範解說)",
-      "sections": [
-        {
-          "id": "source-s7-body",
-          "paragraphs": [
-            {
-              "id": "source-s7-p1",
-              "text": "號誌之設置應符合交通需求條件、意義統一、清晰及易懂等基本要求。",
-              "numbered": false
-            }
-          ]
-        },
-        {
-          "id": "source-s7-p2",
-          "title": "1. 符合需求條件",
-          "paragraphs": [
-            {
-              "id": "source-s7-p3",
-              "text": "交通號誌之設置應符合需要的條件，始能發揮其預期功能。其辦識距離應讓用路人有足夠的反應時間，以配合採取正確的行動。",
-              "numbered": false
-            }
-          ]
-        },
-        {
-          "id": "source-s7-p4",
-          "title": "2. 意義統一、清晰、易懂",
-          "paragraphs": [
-            {
-              "id": "source-s7-p5",
-              "text": "交通號誌係以紅、黃、綠等顏色，配合箭頭及叉形或人像，組合為完整之意義，以傳達明確的訊息，維持交通秩序。",
-              "numbered": false
-            }
-          ]
-        }
-      ],
-      "density": "normal",
-      "source": {
-        "file": "materials/01-佈設原則/標線設置基本原則(依交通.pptx",
-        "sha256": "771cef824b006e25bdefde2842fd5cf729968472cf6841355c102fad5226cc74",
-        "slideCount": 7,
-        "slide": 7,
-        "part": "ppt/slides/slide7.xml"
-      }
-    },
-    {
       "id": "results-module-discussion",
       "chapter": "results-modules",
       "type": "steps",
@@ -1477,7 +1325,38 @@
           "text": "列出相關道路情境，讓使用者可以進一步參考模組在完整路口或路段中的應用方式。"
         }
       ],
-      "takeaway": "代表型說明基本配置，延伸應用說明條件改變時如何調整；相關條文與情境則提供進一步查閱的依據。"
+      "takeaway": "代表型說明基本配置，延伸應用說明條件改變時如何調整；相關條文與情境則提供進一步查閱的依據。",
+      "imagePlacement": "in-cards",
+      "images": [
+        {
+          "key": "results:submodule-stop-current",
+          "moduleId": "M2-01",
+          "topic": "issues",
+          "label": "停管制路口現況",
+          "rotation": 0
+        },
+        {
+          "key": "results:submodule-stop-basic",
+          "moduleId": "M2-01",
+          "topic": "representative",
+          "label": "停管制路口代表型",
+          "rotation": 0
+        },
+        {
+          "key": "results:submodule-stop-crosswalk",
+          "moduleId": "M2-01",
+          "topic": "extensions",
+          "label": "延伸應用：搭配行穿線",
+          "rotation": 0
+        },
+        {
+          "key": "results:submodule-stop-references",
+          "moduleId": "M2-01",
+          "topic": "scenarios",
+          "label": "適用情境與相關條文",
+          "rotation": 0
+        }
+      ]
     },
     {
       "id": "results-modules",
@@ -1489,7 +1368,10 @@
         "M3",
         "M4"
       ],
-      "title": "功能模組｜整體模組圖總覽"
+      "title": "功能模組｜整體模組圖總覽",
+      "includedModules": [
+        "M2-01"
+      ]
     },
     {
       "id": "results-module-list-2",
@@ -1527,71 +1409,91 @@
       ]
     },
     {
-      "id": "results-review-g1-01",
-      "chapter": "results-review",
-      "type": "comparison",
-      "title": "整體情境一起檢討｜G1-01",
-      "images": [
+      "id": "results-stop-extensions",
+      "chapter": "results-modules",
+      "type": "extension-cards",
+      "title": "停管制｜延伸應用",
+      "intro": "依行人穿越、路口空間與車速，調整停讓配置。",
+      "sections": [
         {
-          "key": "results:review-g1-01-before",
-          "label": "舊版圖"
+          "id": "crosswalk",
+          "title": "行人穿越道線",
+          "number": 1,
+          "paragraphs": [
+            {
+              "id": "pedestrian",
+              "title": "先停讓行人",
+              "text": "停止線標示停讓行人的位置，未必能看清幹道來車，可能仍需前移觀察。"
+            },
+            {
+              "id": "second",
+              "title": "保留二次觀察位置",
+              "text": "設有行人或自行車穿越道時，增設路面邊線延伸線，作為再次停車觀察的參考。"
+            },
+            {
+              "id": "sign",
+              "title": "標誌設於行穿線下游",
+              "text": "提醒停讓行人後重新起步的車輛，再次停讓幹道來車。"
+            }
+          ]
         },
         {
-          "key": "results:review-g1-01-after",
-          "label": "新版圖"
+          "id": "refuge",
+          "title": "庇護空間",
+          "number": 2,
+          "paragraphs": [
+            {
+              "id": "refuge",
+              "title": "行人分段穿越",
+              "text": "路口空間充足時，建議增設行人庇護島，讓行人分段穿越，也提醒駕駛注意行人。"
+            }
+          ]
+        },
+        {
+          "id": "curb",
+          "title": "路緣轉角槽化",
+          "number": 3,
+          "paragraphs": [
+            {
+              "id": "curb",
+              "title": "約束轉彎軌跡",
+              "text": "轉角未設實體或標線型人行道時，建議以槽化線引導轉彎，避免偏離車道並維持視距。"
+            },
+            {
+              "id": "vehicle",
+              "title": "配合設計車種",
+              "text": "槽化線的曲率配合設計車種，讓轉彎軌跡維持在既定車道內。"
+            }
+          ]
         }
       ],
-      "items": [
+      "images": [
         {
-          "id": "difference-1",
-          "title": "",
-          "text": "",
-          "focus": {
-            "results:review-g1-01-before": {
-              "rect": [
-                327,
-                523,
-                490,
-                418
-              ],
-              "crop": [
-                0,
-                0,
-                1361,
-                1743
-              ]
-            },
-            "results:review-g1-01-after": {
-              "rect": [
-                219,
-                421,
-                329,
-                336
-              ],
-              "crop": [
-                0,
-                0,
-                913,
-                1402
-              ]
-            }
-          }
+          "key": "results:stop-extension-crosswalk-stop-crosswalk",
+          "label": "停管制搭配行穿線",
+          "topic": "crosswalk",
+          "rotation": 0
+        },
+        {
+          "key": "results:stop-extension-refuge-stop-refuge",
+          "label": "停管制搭配庇護島",
+          "topic": "refuge",
+          "rotation": 0
+        },
+        {
+          "key": "results:stop-extension-curb-stop-curb",
+          "label": "停管制路緣修飾",
+          "topic": "curb",
+          "rotation": 0
         }
       ],
       "source": {
-        "scenario": "G1-01",
-        "files": [
-          {
-            "file": "materials/04-一般道路情境/G1-01/G1-01_無號誌市區正交三岔路口交叉設施設置圖例_舊.png",
-            "sha256": "81b7b80415960110b62d07069ad94640b1eef707f540dc61b08368acacc008e6"
-          },
-          {
-            "file": "materials/04-一般道路情境/G1-01/G1-01_無號誌市區正交三岔路口交叉設施設置圖例.svg",
-            "sha256": "3bc6d4615c4306287b5bce982b850aab1e861bb5b7436a1998bd98cb6c399a78"
-          }
-        ],
-        "note": "使用者指定的新舊圖比較；初始視角、打亮框及文字均獨立保存。"
-      }
+        "type": "independent-copy",
+        "module": "M2-01.1",
+        "file": "data/modules/M2-01.json",
+        "stage": "m201-stop-extensions"
+      },
+      "eyebrow": "M2-01"
     },
     {
       "id": "results-review",
@@ -1686,14 +1588,20 @@
       "chapter": "results-general",
       "type": "scenario-index",
       "deck": "general",
-      "title": "一般道路情境｜整體佈設圖總覽"
+      "title": "一般道路情境｜整體佈設圖總覽",
+      "includedScenarios": [
+        "G4-03"
+      ]
     },
     {
       "id": "results-complex",
       "chapter": "results-complex",
       "type": "scenario-index",
       "deck": "complex",
-      "title": "複雜道路情境｜整體佈設圖總覽"
+      "title": "複雜道路情境｜整體佈設圖總覽",
+      "includedScenarios": [
+        "C1-04"
+      ]
     },
     {
       "id": "results-wrap",
@@ -1703,21 +1611,226 @@
       "items": [
         {
           "id": "principle",
-          "title": "原則｜建立共同要求",
-          "text": "讓設施看得見、讀得懂，並留有反應時間。"
+          "title": "原則｜建立共同設置準則",
+          "text": "以設施可辨識、訊息易理解及充足反應時間為基礎，確立路權關係、動線指引與交通管制的共同設置要求。"
         },
         {
           "id": "module",
-          "title": "模組｜說清功能分工",
-          "text": "以管制目的整合設施，整理可延伸運用的圖例。"
+          "title": "模組｜整合交通功能與設置方法",
+          "text": "依車道導引、路口管制及行人穿越等交通功能，整合標誌、標線與號誌，提出適用條件、配置方法及代表型圖例。"
         },
         {
           "id": "scene",
-          "title": "情境｜檢視整體佈設",
-          "text": "依道路條件組合模組，檢查上下游與人車動線。"
+          "title": "情境｜檢核整體道路佈設",
+          "text": "依道路型式、車道配置及用路人需求組合模組，檢核行駛動線、路權衝突，以及路口上下游設施的連續性。"
         }
       ],
-      "takeaway": "由共同邏輯出發，讓不同地點的佈設更一致。"
+      "takeaway": "以原則建立共同準則，以模組整合設置方法，再透過情境檢核整體佈設。"
+    },
+    {
+      "id": "results-road-clarity",
+      "chapter": "results-wrap",
+      "type": "road-clarity",
+      "title": "讓道路情境，變得容易理解",
+      "intro": "核心主張：道路傳達給用路人的通行訊息應該清楚、明確。",
+      "items": [
+        {
+          "id": "lane-direction",
+          "title": "車道流向的自明性",
+          "text": "透過車道配置與標誌、標線、號誌的整合設置，使駕駛人能直覺辨識各車道的行駛方向及通行限制。"
+        },
+        {
+          "id": "driving-path",
+          "title": "行駛動線的明確性",
+          "text": "明確引導車輛進出路口、轉向及車道銜接，減少模糊、不連貫或相互矛盾的交通訊息。"
+        }
+      ],
+      "takeaway": "透過交通設施的整合設置，降低用路人理解複雜道路環境的負擔。",
+      "images": [
+        {
+          "key": "results:c1-08-layout",
+          "label": "C1-08｜渦輪圓環：車道中央行駛示意",
+          "rotation": 0,
+          "crop": [
+            250,
+            440,
+            1750,
+            1040
+          ]
+        }
+      ],
+      "flowPaths": [
+        {
+          "id": "north-west",
+          "duration": 17,
+          "phase": 0.28,
+          "path": "M 1132 -100 C 1132 100 1128 280 1115 420 L 1107 525 C 1107 608 1075 660 1005 684 C 910 721 853 796 818 875 C 792 937 766 953 700 962 C 500 976 200 989 -100 995"
+        },
+        {
+          "id": "south-east",
+          "duration": 18,
+          "phase": 0.55,
+          "path": "M 1140 2024 C 1140 1800 1148 1650 1152 1490 C 1152 1400 1155 1340 1180 1290 C 1210 1260 1285 1250 1325 1185 C 1368 1115 1400 1080 1450 1047 C 1530 1018 1615 1002 1700 998 L 2375 945"
+        },
+        {
+          "id": "east-west",
+          "duration": 23,
+          "phase": 0.15,
+          "path": "M 2375 860 L 1740 894 C 1610 899 1505 900 1433 925 C 1400 930 1368 906 1352 865 C 1323 788 1285 745 1225 714 C 1140 673 1085 660 1005 684 C 910 721 853 796 818 875 C 792 937 766 953 700 962 C 500 976 200 989 -100 995"
+        }
+      ]
+    },
+    {
+      "id": "results-road-system",
+      "chapter": "results-wrap",
+      "type": "cards",
+      "title": "從單點設置，走向整體道路環境",
+      "items": [
+        {
+          "id": "system",
+          "title": "系統性｜設施之間相互配合",
+          "text": "標誌、標線與號誌應共同構成完整的交通管制系統，避免各自設置而產生重複、矛盾或不完整的通行訊息。"
+        },
+        {
+          "id": "consistency",
+          "title": "一致性｜相似條件採取一致的設置邏輯",
+          "text": "面對相似的道路條件與管制需求，採取一致的設置原則及表達方式，減少用路人因地點不同而重新判讀的負擔。"
+        },
+        {
+          "id": "continuity",
+          "title": "連續性｜從路口延伸至完整道路廊道",
+          "text": "交通設施及行駛動線應考量道路起迄、完整街廓與上下游銜接，避免管制或導引在路口內突然中斷。"
+        }
+      ],
+      "takeaway": "不只檢核單一設施是否正確，更要確認整體道路環境能否形成完整、一致且連續的通行指引。"
+    },
+    {
+      "id": "results-guide-experience-1",
+      "chapter": "results-wrap",
+      "type": "guide-experience",
+      "title": "閱讀體驗｜全新排版設計",
+      "intro": "建立清楚的資訊層次與統一的視覺架構，提升大量圖文的閱讀效率。",
+      "items": [
+        {
+          "id": "layout",
+          "title": "全新排版設計",
+          "text": "建立清楚的資訊層次與統一的視覺架構，提升大量圖文的閱讀效率。"
+        }
+      ],
+      "images": [
+        {
+          "key": "results:reading-layout-64",
+          "topic": "layout",
+          "label": "排版設計範例：PDF 第 64 頁"
+        },
+        {
+          "key": "results:reading-layout-65",
+          "topic": "layout",
+          "label": "排版設計範例：PDF 第 65 頁"
+        },
+        {
+          "key": "results:reading-layout-170",
+          "topic": "layout",
+          "label": "G2-01 號誌配置圖例（書內第 148 頁）"
+        },
+        {
+          "key": "results:reading-layout-225",
+          "topic": "layout",
+          "label": "G4-01 整體設置圖例（書內第 203 頁）"
+        }
+      ]
+    },
+    {
+      "id": "results-guide-experience-2",
+      "chapter": "results-wrap",
+      "type": "guide-experience",
+      "title": "閱讀體驗｜電子書籤導覽",
+      "intro": "依章節與內容層級快速跳轉，減少長篇文件反覆翻找的時間。",
+      "items": [
+        {
+          "id": "bookmarks",
+          "title": "電子書籤導覽",
+          "text": "依章節與內容層級快速跳轉，減少長篇文件反覆翻找的時間。"
+        }
+      ],
+      "images": [
+        {
+          "key": "results:reading-bookmarks-102",
+          "topic": "bookmarks",
+          "label": "M3-01.3 路段穿越（書內第 80 頁）"
+        },
+        {
+          "key": "results:reading-bookmarks-168",
+          "topic": "bookmarks",
+          "label": "書籤導覽範例：PDF 第 168 頁"
+        },
+        {
+          "key": "results:reading-bookmarks-330",
+          "topic": "bookmarks",
+          "label": "C1-05 多叉路口交通設施設置圖例（書內第 308 頁）"
+        }
+      ]
+    },
+    {
+      "id": "results-guide-experience-3",
+      "chapter": "results-wrap",
+      "type": "guide-experience",
+      "title": "閱讀體驗｜多元索引系統",
+      "intro": "可從法規條文、交通功能或道路情境切入，找到對應的設置方法。",
+      "items": [
+        {
+          "id": "index",
+          "title": "多元索引系統",
+          "text": "可從法規條文、交通功能或道路情境切入，找到對應的設置方法。"
+        }
+      ],
+      "images": [
+        {
+          "key": "results:reading-index-503",
+          "topic": "index",
+          "label": "條文索引（書內第 481 頁）"
+        },
+        {
+          "key": "results:reading-index-517",
+          "topic": "index",
+          "label": "模組索引（書內第 495 頁）"
+        },
+        {
+          "key": "results:reading-index-531",
+          "topic": "index",
+          "label": "情境索引（書內第 509 頁）"
+        }
+      ]
+    },
+    {
+      "id": "results-guide-experience-4",
+      "chapter": "results-wrap",
+      "type": "guide-experience",
+      "title": "閱讀體驗｜高解析向量圖例",
+      "intro": "放大檢視仍能保持線條與文字清晰，便於確認各項設施細節。",
+      "items": [
+        {
+          "id": "vector",
+          "title": "高解析向量圖例",
+          "text": "放大檢視仍能保持線條與文字清晰，便於確認各項設施細節。"
+        }
+      ],
+      "images": [
+        {
+          "key": "results:reading-vector-g2-01",
+          "topic": "vector",
+          "label": "G2-01 號誌化市區正交三叉路口整體設置圖例",
+          "rotation": 0
+        }
+      ],
+      "zoomStepPageId": "results-guide-experience-5"
+    },
+    {
+      "id": "results-book-demo",
+      "chapter": "results-wrap",
+      "type": "book-demo",
+      "title": "參考指引｜書籍展示",
+      "book": "road_book_3d/index.html"
     }
   ],
   "scenarioExamples": {

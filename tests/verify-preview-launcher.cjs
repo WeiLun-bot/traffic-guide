@@ -59,7 +59,7 @@ async function check(label, executable, argumentsForScript, browser='disabled', 
     assert.equal(json.status, 200);const layout=await json.json();assert.equal(layout.documentId, 'general-road-scenarios');assert.equal(layout.kind,'presentation-layout');assert(!layout.content&&!layout.legacyState.texts);
     for(const file of ['data/content/catalog.json','data/presentation-navigation.json','assets/presentation-document.js'])assert.equal((await fetch(base+file)).status,200,file);
     const project=await(await fetch(base+'__project')).json();assert(project.token&&project.revision);assert(project.config.content&&project.config.legacyState.texts);
-    assert.deepEqual(await(await fetch(base+'__preview')).json(),{version:1,projectStorage:true});
+    const status=await(await fetch(base+'__preview')).json();assert.equal(status.version,1);assert.equal(status.projectStorage,true);assert.match(status.storageSignature,/^[a-f0-9]{64}(:[a-f0-9]{64}){3}$/);
     const asset = await fetch(base + 'assets/visual-editor.js');assert.equal(asset.status, 200);await asset.text();
     assert(!/ParserError|UnexpectedToken|MissingEndCurlyBrace/.test(run.output), label + ' had a PowerShell parse error');
     console.log('PASS: ' + label + ' starts from a different folder and serves HTML, JSON and editor assets.');

@@ -35,24 +35,25 @@ function inventory(folder,prefix='') {
 assert.deepEqual(inventory(site).sort(),[...files.keys()].sort(),'Published files differ from the release allowlist');
 let scripts=0,resources=0,svgImages=0;
 const namespace='http://www.w3.org/2000/svg';
-function resource(value,label){
+function resource(value,label,folder=site){
   const reference=value.trim();
   if(!reference||reference.includes('${')||reference.startsWith('#')||/^(?:data:|blob:)/i.test(reference)||reference===namespace)return;
   assert(!/^(?:[\\/]|[a-z][a-z\d+.-]*:)/i.test(reference),label+' uses an absolute or external resource: '+reference.slice(0,100));
   const clean=decodeURIComponent(reference.split(/[?#]/)[0]);
   if(!clean)return;
-  const target=path.resolve(site,clean),relative=path.relative(site,target);
+  const target=path.resolve(folder,clean),relative=path.relative(site,target);
   assert(relative!== '..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative),label+' escapes the published folder');
   assert(fs.existsSync(target),label+' references a missing file: '+clean);
   resources++;
 }
 function validateResources(html,label){
+  const folder=label.endsWith('.html')&&files.has(label)?path.dirname(path.join(site,label)):site;
   assert(!/\bfile:\/\//i.test(html),label+' contains a local file URL');
   assert(!/(?:^|[^a-z\d_])[a-z]:[\\/]/im.test(html),label+' contains a Windows drive path');
-  for(const match of html.matchAll(/\b(?:src|href|xlink:href|poster)\s*=\s*(["'])([\s\S]*?)\1/gi))resource(match[2],label);
+  for(const match of html.matchAll(/\b(?:src|href|xlink:href|poster)\s*=\s*(["'])([\s\S]*?)\1/gi))resource(match[2],label,folder);
   const styles=html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,'');
-  for(const match of styles.matchAll(/\burl\(\s*(["']?)(.*?)\1\s*\)/gi))resource(match[2],label+' CSS');
-  for(const match of styles.matchAll(/@import\s+(["'])(.*?)\1/gi))resource(match[2],label+' CSS import');
+  for(const match of styles.matchAll(/\burl\(\s*(["']?)(.*?)\1\s*\)/gi))resource(match[2],label+' CSS',folder);
+  for(const match of styles.matchAll(/@import\s+(["'])(.*?)\1/gi))resource(match[2],label+' CSS import',folder);
 }
 function attributes(text){
   const result={};for(const match of text.matchAll(/([\w:-]+)\s*=\s*(["'])([\s\S]*?)\2/g))result[match[1].toLowerCase()]=match[3];return result;

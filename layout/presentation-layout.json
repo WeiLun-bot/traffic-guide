@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-04T13:01:22.772Z",
+  "updatedAt": "2026-11-05T11:42:05.868Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793791150320,
+    "updatedAt": 1793878661496,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -999,6 +999,15 @@
       },
       "results-module-hierarchy|results|framework-M3-name": {
         "fontSize": 18
+      },
+      "results-stop-extensions|results|crosswalk-title": {
+        "fontSize": 24
+      },
+      "results-stop-extensions|results|refuge-title": {
+        "fontSize": 24
+      },
+      "results-stop-extensions|results|curb-title": {
+        "fontSize": 24
       }
     },
     "frames": {
@@ -1934,10 +1943,10 @@
       "pageId": "results-module-m4-01",
       "assetKey": "results:module-m4-01-diagram",
       "units": "percent",
-      "zoom": 1.3498588094150397,
-      "x": 20.439043304217776,
-      "y": -18.746393729608517,
-      "rotation": 90
+      "zoom": 0.8607079758387474,
+      "x": 2.7824228452123947,
+      "y": 1.3223243518869419,
+      "rotation": 0
     },
     "results-module-classification/results%3Amodule-m2-03-diagram": {
       "id": "results-module-classification/results%3Amodule-m2-03-diagram",
@@ -1988,6 +1997,236 @@
       "x": 0,
       "y": 0,
       "rotation": 90
+    },
+    "results-guide-experience-4/results%3Areading-vector-g2-01": {
+      "id": "results-guide-experience-4/results%3Areading-vector-g2-01",
+      "pageId": "results-guide-experience-4",
+      "assetKey": "results:reading-vector-g2-01",
+      "units": "percent",
+      "zoom": 2.1170000238231332,
+      "x": -11.413596175308902,
+      "y": 2.2826706400057075,
+      "rotation": 0
+    },
+    "results-guide-experience-5/results%3Areading-vector-g2-01": {
+      "id": "results-guide-experience-5/results%3Areading-vector-g2-01",
+      "pageId": "results-guide-experience-5",
+      "assetKey": "results:reading-vector-g2-01",
+      "units": "percent",
+      "zoom": 8.591516779224316,
+      "x": -51.77609247847932,
+      "y": -7.078789436680015,
+      "rotation": 0
+    },
+    "results-representative-m2-03-m203-2f27e58a6a/module%3Am203-2f27e58a6a": {
+      "id": "results-representative-m2-03-m203-2f27e58a6a/module%3Am203-2f27e58a6a",
+      "pageId": "results-representative-m2-03-m203-2f27e58a6a",
+      "assetKey": "module:m203-2f27e58a6a",
+      "units": "percent",
+      "zoom": 2.1170000238231337,
+      "x": 3.870681323439947,
+      "y": -6.428627399966659,
+      "rotation": 90
+    },
+    "results-representative-m2-01-stop-basic/module%3Astop-basic": {
+      "id": "results-representative-m2-01-stop-basic/module%3Astop-basic",
+      "pageId": "results-representative-m2-01-stop-basic",
+      "assetKey": "module:stop-basic",
+      "units": "percent",
+      "zoom": 1.1618342435197198,
+      "x": -1.9443652423677145,
+      "y": 9.955274821863844,
+      "rotation": 0
+    },
+    "results-representative-m2-02-m202-roundabout/module%3Am202-roundabout": {
+      "id": "results-representative-m2-02-m202-roundabout/module%3Am202-roundabout",
+      "pageId": "results-representative-m2-02-m202-roundabout",
+      "assetKey": "module:m202-roundabout",
+      "units": "percent",
+      "zoom": 2.857651131689506,
+      "x": 7.203874085072321,
+      "y": -46.06705031394255,
+      "rotation": 0
+    },
+    "results-representative-m4-01-m401-a614a49c08/module%3Am401-a614a49c08": {
+      "id": "results-representative-m4-01-m401-a614a49c08/module%3Am401-a614a49c08",
+      "pageId": "results-representative-m4-01-m401-a614a49c08",
+      "assetKey": "module:m401-a614a49c08",
+      "units": "percent",
+      "zoom": 1.1618342435197198,
+      "x": 1.2784339948282724,
+      "y": -2.6287760310227606,
+      "rotation": 90
+    },
+    "results-representative-m4-01-m401-cbdb2c7c69/module%3Am401-cbdb2c7c69": {
+      "id": "results-representative-m4-01-m401-cbdb2c7c69/module%3Am401-cbdb2c7c69",
+      "pageId": "results-representative-m4-01-m401-cbdb2c7c69",
+      "assetKey": "module:m401-cbdb2c7c69",
+      "units": "percent",
+      "zoom": 1.3498588094150399,
+      "x": 25.039599891884105,
+      "y": -9.838664749536541,
+      "rotation": 90
+    },
+    "results-representative-m4-01-m401-a6bae42a3b/module%3Am401-a6bae42a3b": {
+      "id": "results-representative-m4-01-m401-a6bae42a3b/module%3Am401-a6bae42a3b",
+      "pageId": "results-representative-m4-01-m401-a6bae42a3b",
+      "assetKey": "module:m401-a6bae42a3b",
+      "units": "percent",
+      "zoom": 1.8221188053553887,
+      "x": -6.198737723208093,
+      "y": 37.99544276267896,
+      "rotation": -90
+    },
+    "results-representative-m4-02-m402-b18c7d1f2f/module%3Am402-b18c7d1f2f": {
+      "id": "results-representative-m4-02-m402-b18c7d1f2f/module%3Am402-b18c7d1f2f",
+      "pageId": "results-representative-m4-02-m402-b18c7d1f2f",
+      "assetKey": "module:m402-b18c7d1f2f",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 90
+    },
+    "results-representative-m4-02-m402-ae32e39564/module%3Am402-ae32e39564": {
+      "id": "results-representative-m4-02-m402-ae32e39564/module%3Am402-ae32e39564",
+      "pageId": "results-representative-m4-02-m402-ae32e39564",
+      "assetKey": "module:m402-ae32e39564",
+      "units": "percent",
+      "zoom": 1.5683121886951528,
+      "x": 0.6115155580750503,
+      "y": 2.0449885723764534,
+      "rotation": 90
+    },
+    "results-representative-m4-03-m403-e43da210bb/module%3Am403-e43da210bb": {
+      "id": "results-representative-m4-03-m403-e43da210bb/module%3Am403-e43da210bb",
+      "pageId": "results-representative-m4-03-m403-e43da210bb",
+      "assetKey": "module:m403-e43da210bb",
+      "units": "percent",
+      "zoom": 1.3498588094150399,
+      "x": 0.05483015525732303,
+      "y": -0.6950581606456949,
+      "rotation": 90
+    },
+    "results-representative-m4-03-m403-79496b3bb6/module%3Am403-79496b3bb6": {
+      "id": "results-representative-m4-03-m403-79496b3bb6/module%3Am403-79496b3bb6",
+      "pageId": "results-representative-m4-03-m403-79496b3bb6",
+      "assetKey": "module:m403-79496b3bb6",
+      "units": "percent",
+      "zoom": 7.0286876428321685,
+      "x": 162.7439520975874,
+      "y": 94.20140257622869,
+      "rotation": -90
+    },
+    "results-representative-m4-04-m404-3762916f50/module%3Am404-3762916f50": {
+      "id": "results-representative-m4-04-m404-3762916f50/module%3Am404-3762916f50",
+      "pageId": "results-representative-m4-04-m404-3762916f50",
+      "assetKey": "module:m404-3762916f50",
+      "units": "percent",
+      "zoom": 4.481689100867148,
+      "x": -36.217069330842385,
+      "y": -70.0376534862756,
+      "rotation": 0
+    },
+    "results-representative-m4-04-m404-8af799c9f9/module%3Am404-8af799c9f9": {
+      "id": "results-representative-m4-04-m404-8af799c9f9/module%3Am404-8af799c9f9",
+      "pageId": "results-representative-m4-04-m404-8af799c9f9",
+      "assetKey": "module:m404-8af799c9f9",
+      "units": "percent",
+      "zoom": 11.023176500784695,
+      "x": -60.71995675673676,
+      "y": -380.4170522296621,
+      "rotation": 0
+    },
+    "results-representative-m3-01-m301-d5772b64b2/module%3Am301-d5772b64b2": {
+      "id": "results-representative-m3-01-m301-d5772b64b2/module%3Am301-d5772b64b2",
+      "pageId": "results-representative-m3-01-m301-d5772b64b2",
+      "assetKey": "module:m301-d5772b64b2",
+      "units": "percent",
+      "zoom": 3.320116940829747,
+      "x": -3.055423663099946,
+      "y": -8.914747280430284,
+      "rotation": 0
+    },
+    "results-representative-m3-03-m101-slow-wide/module%3Am101-slow-wide": {
+      "id": "results-representative-m3-03-m101-slow-wide/module%3Am101-slow-wide",
+      "pageId": "results-representative-m3-03-m101-slow-wide",
+      "assetKey": "module:m101-slow-wide",
+      "units": "percent",
+      "zoom": 2.38,
+      "x": 24.369163212716582,
+      "y": 5.008657948651664,
+      "rotation": 0
+    },
+    "results-representative-m3-03-m101-slow-narrow/module%3Am101-slow-narrow": {
+      "id": "results-representative-m3-03-m101-slow-narrow/module%3Am101-slow-narrow",
+      "pageId": "results-representative-m3-03-m101-slow-narrow",
+      "assetKey": "module:m101-slow-narrow",
+      "units": "percent",
+      "zoom": 1.8221188053553892,
+      "x": -10.735186468416734,
+      "y": 4.395939422793269,
+      "rotation": 0
+    },
+    "results-representative-m3-03-m303-6861b608fc/module%3Am303-6861b608fc": {
+      "id": "results-representative-m3-03-m303-6861b608fc/module%3Am303-6861b608fc",
+      "pageId": "results-representative-m3-03-m303-6861b608fc",
+      "assetKey": "module:m303-6861b608fc",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 90
+    },
+    "results-representative-m3-03-m303-a5220c3ae3/module%3Am303-a5220c3ae3": {
+      "id": "results-representative-m3-03-m303-a5220c3ae3/module%3Am303-a5220c3ae3",
+      "pageId": "results-representative-m3-03-m303-a5220c3ae3",
+      "assetKey": "module:m303-a5220c3ae3",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": 90
+    },
+    "results-representative-m2-04-m204-7592970ada/module%3Am204-7592970ada": {
+      "id": "results-representative-m2-04-m204-7592970ada/module%3Am204-7592970ada",
+      "pageId": "results-representative-m2-04-m204-7592970ada",
+      "assetKey": "module:m204-7592970ada",
+      "units": "percent",
+      "zoom": 2.459603121209779,
+      "x": 12.469469356056127,
+      "y": -6.872949579098638,
+      "rotation": 0
+    },
+    "results-scenario-g4-03/results%3Ag4-03-diagram-1": {
+      "id": "results-scenario-g4-03/results%3Ag4-03-diagram-1",
+      "pageId": "results-scenario-g4-03",
+      "assetKey": "results:g4-03-diagram-1",
+      "units": "percent",
+      "zoom": 1.5683121886951525,
+      "x": -0.9218491720169839,
+      "y": -3.9522233856015854,
+      "rotation": 0
+    },
+    "results-stop-extensions/results%3Astop-extension-refuge-stop-refuge": {
+      "id": "results-stop-extensions/results%3Astop-extension-refuge-stop-refuge",
+      "pageId": "results-stop-extensions",
+      "assetKey": "results:stop-extension-refuge-stop-refuge",
+      "units": "percent",
+      "zoom": 0.8607079758387471,
+      "x": 0.33917542828678915,
+      "y": 1.7260743607208922,
+      "rotation": 0
+    },
+    "results-stop-extensions/results%3Astop-extension-curb-stop-curb": {
+      "id": "results-stop-extensions/results%3Astop-extension-curb-stop-curb",
+      "pageId": "results-stop-extensions",
+      "assetKey": "results:stop-extension-curb-stop-curb",
+      "units": "percent",
+      "zoom": 0.8607079758387471,
+      "x": -5.612661899331683,
+      "y": 0.5703708304974625,
+      "rotation": 0
     }
   },
   "extensionLayouts": {
@@ -2025,6 +2264,216 @@
       "scale": 1.4,
       "x": 3,
       "y": -13
+    }
+  },
+  "roadFlowPaths": {
+    "results-road-clarity": {
+      "assetKey": "results:c1-08-layout",
+      "routes": [
+        {
+          "id": "north-west",
+          "points": [
+            [
+              1132,
+              -100
+            ],
+            [
+              1131.559,
+              8.519
+            ],
+            [
+              1130.016,
+              117.028
+            ],
+            [
+              1126.927,
+              225.503
+            ],
+            [
+              1121.601,
+              333.89
+            ],
+            [
+              1113.317,
+              442.091
+            ],
+            [
+              1105.915,
+              550.339
+            ],
+            [
+              1064.843,
+              648.33
+            ],
+            [
+              970.305,
+              700.031
+            ],
+            [
+              885.823,
+              767.263
+            ],
+            [
+              826.157,
+              857.506
+            ],
+            [
+              757.192,
+              927.288
+            ],
+            [
+              625.638,
+              946.894
+            ],
+            [
+              442.222,
+              993.065
+            ],
+            [
+              236.036,
+              1005.082
+            ],
+            [
+              13.407,
+              1017.099
+            ]
+          ]
+        },
+        {
+          "id": "south-east",
+          "points": [
+            [
+              1140,
+              2024
+            ],
+            [
+              1140.629,
+              1916.628
+            ],
+            [
+              1142.5,
+              1809.271
+            ],
+            [
+              1145.438,
+              1701.937
+            ],
+            [
+              1148.917,
+              1594.62
+            ],
+            [
+              1152.003,
+              1487.291
+            ],
+            [
+              1156.053,
+              1380.043
+            ],
+            [
+              1190.566,
+              1281.319
+            ],
+            [
+              1284.112,
+              1228.916
+            ],
+            [
+              1365.823,
+              1147.649
+            ],
+            [
+              1422.774,
+              1066.631
+            ],
+            [
+              1520.448,
+              1025.104
+            ],
+            [
+              1625.772,
+              1004.586
+            ],
+            [
+              1732.732,
+              995.43
+            ],
+            [
+              1839.776,
+              987.025
+            ],
+            [
+              1946.821,
+              978.62
+            ],
+            [
+              2053.866,
+              970.215
+            ],
+            [
+              2160.911,
+              961.81
+            ],
+            [
+              2267.955,
+              953.405
+            ],
+            [
+              2375,
+              945
+            ]
+          ]
+        },
+        {
+          "id": "east-west",
+          "points": [
+            [
+              2371.862,
+              887.525
+            ],
+            [
+              1797.457,
+              918.32
+            ],
+            [
+              1391.759,
+              931.71
+            ],
+            [
+              1277.949,
+              815.222
+            ],
+            [
+              1119.954,
+              725.513
+            ],
+            [
+              948.57,
+              793.799
+            ],
+            [
+              860.2,
+              995.979
+            ],
+            [
+              920.452,
+              1172.719
+            ],
+            [
+              1057.024,
+              1301.257
+            ],
+            [
+              1106.565,
+              1581.095
+            ],
+            [
+              1109.243,
+              1960.015
+            ]
+          ]
+        }
+      ]
     }
   },
   "blockDecorations": {

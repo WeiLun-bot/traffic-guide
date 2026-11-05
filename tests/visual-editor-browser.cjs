@@ -17,9 +17,10 @@ const initialConfigText = fs.readFileSync(configPath, 'utf8');
 const initialConfig = require('./read-project-config.cjs')();
 // Keep visual interaction tests independent of the user's saved camera choices.
 // The fixture is served through the same live-source route as the real project.
-for(const [id,view] of Object.entries(initialConfig.imageViews))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
+for(const [id,view] of Object.entries(initialConfig.imageViews))if(!(process.argv.includes('--guide-experience-only')&&view.pageId==='results-guide-experience-5'))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
 initialConfig.removedModuleExtensions=[];
 initialConfig.imageOrders={};
+if(process.argv.includes('--road-clarity-only'))initialConfig.roadFlowPaths={};
 const previewConfigPath=path.join(artifacts,'preview-layout.json');
 const previewConfigText=JSON.stringify(initialConfig);
 class CDP {
@@ -55,10 +56,11 @@ async function main() {
   const heldStartupRequests=[];
   const setStartupHold=value=>{startupHold=value;if(!value)for(const release of heldStartupRequests.splice(0))release();};
   let projectFixture=null;
-  if(process.argv.includes('--project-storage-only')){
+  if(process.argv.includes('--project-storage-only')||process.argv.includes('--road-clarity-only')||process.argv.includes('--module-representatives-only')||process.argv.includes('--stop-extension-copy-only')){
     projectFixture=fs.mkdtempSync(path.join(artifacts,'project-storage-'));
     for(const file of require('../tools/presentation-project-store.cjs').releaseFiles(root)){const target=path.join(projectFixture,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,file),target);}
   }
+  if(process.argv.includes('--road-clarity-only')||process.argv.includes('--module-representatives-only')||process.argv.includes('--stop-extension-copy-only'))for(const [file,bytes]of Object.entries(require('../tools/presentation-project-store.cjs').plan(initialConfig,require('../tools/presentation-project-store.cjs').read(root).owners))){const target=path.join(projectFixture,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,bytes);}
   const published = createServer(undefined,projectFixture?{configFile:path.join(projectFixture,'layout/presentation-layout.json'),projectRoot:projectFixture}:{configFile:previewConfigPath});
   const baselineServer=baselineRoot?createServer(baselineRoot,{configFile:previewConfigPath}):null;
   const server = http.createServer((request, response) => {
@@ -102,7 +104,7 @@ async function main() {
       const destination = new URL(url); destination.searchParams.set('test-document', String(Date.now()));
       await cdp.send('Page.navigate', {url: destination.href});
       await wait('Boolean(!window.__previousTestDocument && window.generalRoadPresentation && document.querySelector("main>.slide"))', 'New presentation document did not load',30000);
-      if(!process.argv.includes('--loading-only')&&!process.argv.includes('--next-page-label-only'))await evaluate('(async()=>{if(window.PresentationRepository){const loaded=await window.PresentationRepository.loadAll();if(loaded.every(item=>item.status==="fulfilled"))await window.generalRoadPresentation.refresh();}})()');
+      if(!process.argv.includes('--loading-only')&&!process.argv.includes('--next-page-label-only')&&!process.argv.includes('--results-book-demo-only')&&!process.argv.includes('--guide-experience-only')&&!process.argv.includes('--road-clarity-only'))await evaluate('(async()=>{if(window.PresentationRepository){const loaded=await window.PresentationRepository.loadAll();if(loaded.every(item=>item.status==="fulfilled"))await window.generalRoadPresentation.refresh();}})()');
       await delay(420);
     }
     async function view(id, phase = 0) {
@@ -125,6 +127,9 @@ async function main() {
     if(process.argv.includes('--library-only')){await navigate(base+'/presentation-demo/#cover');await libraryCheck();assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module library browser regression groups; no uncaught JavaScript exceptions.');return;}
     const structureCheck=async()=>require('./presentation-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass});
     if(process.argv.includes('--project-storage-only')){await require('./project-storage-browser.cjs')({evaluate,view,click,navigate,wait,base,pass,projectFixture});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' project storage browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--road-clarity-only')){await require('./road-clarity-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,projectFixture});assert.deepEqual(exceptions,[]);console.log('PASS: road clarity browser checks; no uncaught exceptions.');return;}
+    if(process.argv.includes('--guide-experience-only')){await require('./guide-experience-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: reading experience browser checks; no uncaught exceptions.');return;}
+    if(process.argv.includes('--results-book-demo-only')){await require('./results-book-demo-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' book demonstration browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--loading-only')){await require('./presentation-loading-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,setStartupHold,setScriptFailure:value=>{failStartupScript=value;}});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' on-demand loading browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--article-image-highlights-only')){await require('./article-image-highlights-browser.cjs')({evaluate,view,click,navigate,wait,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' article image highlight browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--general-details-only')){await require('./general-scenario-details-browser.cjs')({evaluate,view,click,navigate,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' detailed scenario browser regression groups; no uncaught JavaScript exceptions.');return;}
@@ -141,6 +146,8 @@ async function main() {
     if(process.argv.includes('--results-background-only')){await require('./results-background-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' results background browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--results-modular-rationale-only')){await require('./results-modular-rationale-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' modular rationale browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--results-guide-structure-only')){await require('./results-guide-structure-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' guide structure browser regression groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--stop-extension-copy-only')){await require('./stop-extension-copy-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,wait,projectFixture});assert.deepEqual(exceptions,[]);console.log('PASS: stop-extension copy browser checks; no uncaught exceptions.');return;}
+    if(process.argv.includes('--module-representatives-only')){await require('./module-representatives-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,wait,projectFixture});assert.deepEqual(exceptions,[]);console.log('PASS: module representative browser checks; no uncaught exceptions.');return;}
     if(process.argv.includes('--results-module-discussion-only')){await require('./results-module-discussion-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' module discussion browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--results-framework-only')){await require('./results-framework-browser.cjs')({evaluate,view,click,navigate,cdp,base,artifacts,pass,previewConfigPath,editText});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' results framework browser regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--image-order-only')){await require('./image-order-browser.cjs')({evaluate,view,click,navigate,wait,mouse,dragFrom,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' image-order browser regression groups; no uncaught JavaScript exceptions.');return;}

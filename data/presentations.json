@@ -23,38 +23,32 @@
           "entry": "results-module-definition"
         },
         {
-          "id": "results-principles",
-          "code": "02",
-          "name": "佈設原則",
-          "entry": "results-principles"
-        },
-        {
           "id": "results-modules",
-          "code": "03",
+          "code": "02",
           "name": "模組成果",
           "entry": "results-module-discussion"
         },
         {
           "id": "results-review",
-          "code": "04",
+          "code": "03",
           "name": "情境整體檢討",
-          "entry": "results-review-g1-01"
+          "entry": "results-review"
         },
         {
           "id": "results-general",
-          "code": "05",
+          "code": "04",
           "name": "一般道路情境",
           "entry": "results-general"
         },
         {
           "id": "results-complex",
-          "code": "06",
+          "code": "05",
           "name": "複雜道路情境",
           "entry": "results-complex"
         },
         {
           "id": "results-wrap",
-          "code": "07",
+          "code": "06",
           "name": "成果與運用",
           "entry": "results-wrap"
         }

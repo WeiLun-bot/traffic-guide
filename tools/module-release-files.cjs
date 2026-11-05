@@ -17,6 +17,7 @@ const Scenarios=require('../assets/presentation-scenarios.js'),scenarios=Scenari
 const scenarioFiles=(scenarios.details||[]).flatMap(file=>{const doc=Scenarios.validateDetail(require(path.join(root,file)),scenarios);return[file,...Object.values(doc.assets).map(asset=>asset.file)];});
 module.exports=Array.from(new Set([
   ...require('./presentation-release-files.cjs'),
+  ...require('./book-release-files.cjs'),
   'assets/presentation-order.js','assets/presentation-order.css',
   'assets/presentation-image-order.js','assets/presentation-image-order.css',
   'assets/table-column-editor.js','assets/table-column-editor.css',
@@ -24,7 +25,7 @@ module.exports=Array.from(new Set([
   'assets/presentation-scenarios.js','assets/presentation-scenarios.css','data/scenarios/catalog.json',
   ...new Set(scenarioFiles),
   'assets/presentation-structure.js','assets/presentation-structure.css','data/presentations.json',
-  'assets/presentation-results.js','assets/presentation-results.css','data/results/outline.json',
+  'assets/road-flow-editor.js','assets/presentation-results.js','assets/presentation-results.css','data/results/outline.json',
   ...Object.values(overview.assets||{}).map(asset=>asset.file),
   'data/results/current-conditions.json',...new Set(Object.values(currentConditions.assets).map(asset=>asset.file)),
   'data/results/general-strategies.json',...new Set(Object.values(strategies.assets).map(asset=>asset.file)),

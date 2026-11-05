@@ -37,7 +37,7 @@
         const [x, y, width, height] = record.home;
         record.rotationLayer.setAttribute('transform', `rotate(${value.rotation ?? 0} ${x + width / 2} ${y + height / 2})`);
       }
-      record.controller.configure({home: view}); record.controller.write(view, false);
+      record.controller.configure(record.svg.closest('[data-zoom-steps]')?{home:record.home,resetView:view}:{home:view}); record.controller.write(view, false);
       record.signature = signature;
     }
     fields(record); place(record);
@@ -67,16 +67,18 @@
     const controller = window.generalRoadViewport?.get(svg);
     if (!figure || !toolbar || !controller) return null;
     const id = Core.imageView(pageId, assetKey).id;
+    const zoomStep=Boolean(svg.closest('[data-zoom-steps]'))&&pageId!==context.pageId;
+    const heading=zoomStep?'設定放大範圍':'設定初始畫面';
     const button = document.createElement('button');
-    button.type = 'button'; button.className = 'iv-trigger'; button.textContent = '設定初始畫面';
+    button.type = 'button'; button.className = 'iv-trigger'; button.textContent = heading;
     button.dataset.editorUi = 'initial-view-toggle'; button.setAttribute('aria-expanded', 'false');
     const panel = document.createElement('section');
     panel.className = 'iv-panel'; panel.dataset.editorUi = 'initial-image-view'; panel.dataset.imageViewId = id;
-    panel.setAttribute('aria-label', '圖面初始畫面設定'); panel.hidden = !opened.has(id);
-    const note = /^results-scenario-[gc][1-4]-\d{2}-strategy$/.test(pageId)||context.overviewAssetKey===assetKey
+    panel.setAttribute('aria-label', heading); panel.hidden = !opened.has(id);
+    const note = pageId.startsWith('results-representative-')?'只調整這張總覽縮圖；不會連動其他圖例或模組詳細頁。儲存後重新開啟也會保留。':/^results-scenario-[gc][1-4]-\d{2}-strategy$/.test(pageId)||context.overviewAssetKey===assetKey
       ? `此設定會同步到${context.overviewAssetKey===assetKey?'模組':'情境'}總覽縮圖；儲存設定後，重新開啟也會保留。`
-      : '儲存後，切頁、重新開啟及重設視圖會使用這個初始畫面。';
-    panel.innerHTML = `<div class="iv-heading"><strong>設定初始畫面</strong><button type="button" data-iv-action="close" aria-label="關閉初始畫面設定">×</button></div>
+      : zoomStep?'儲存後，按「播放局部放大」會平順移到這個範圍。':'儲存後，切頁、重新開啟及重設視圖會使用這個初始畫面。';
+    panel.innerHTML = `<div class="iv-heading"><strong>${heading}</strong><button type="button" data-iv-action="close" aria-label="關閉初始畫面設定">×</button></div>
       <p>可調整旋轉角度，再在圖上縮放、拖曳並套用目前畫面，也可直接調整下方數值。</p>
       <div class="iv-fields"><label>初始縮放（%）<input type="number" data-iv-field="zoom" min="2" max="20000" step="1"></label><label>左右位置（%）<input type="number" data-iv-field="x" min="-1000" max="1000" step="0.1"></label><label>上下位置（%）<input type="number" data-iv-field="y" min="-1000" max="1000" step="0.1"></label></div>
       <div class="iv-fields iv-rotation"><label>旋轉角度（°）<input type="number" data-iv-field="rotation" min="-360" max="360" step="1"></label><button type="button" data-iv-action="rotate-left">左轉 90°</button><button type="button" data-iv-action="rotate-right">右轉 90°</button></div>
@@ -120,7 +122,7 @@
       const assetKey = svg.closest('[data-editor-image-key]')?.dataset.editorImageKey;
       if (!assetKey) continue;
       let record = records.get(svg);
-      if (!record) record = create(svg, context, svg.closest('[data-module-source-page]')?.dataset.moduleSourcePage||context.pageId, assetKey);
+      if (!record) record = create(svg, context, svg.closest('[data-initial-view-page]')?.dataset.initialViewPage||svg.closest('[data-module-source-page]')?.dataset.moduleSourcePage||context.pageId, assetKey);
       if (!record) continue;
       record.context = context; active.set(record.id, record); apply(record);
     }

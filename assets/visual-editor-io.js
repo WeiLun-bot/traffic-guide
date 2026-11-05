@@ -99,7 +99,11 @@
       if(!this.local)return super.save(config);
       const response=await this.env.fetch(this.local.url,{method:'POST',headers:{'Content-Type':'application/json','X-Project-Token':this.local.token},body:JSON.stringify({revision:this.local.revision,config})});
       const result=await response.json();if(!response.ok){const error=new Error(result.error||'專案儲存失敗');error.name=response.status===409?'ConflictError':'Error';throw error;}
-      this.local.revision=result.revision;return {download:false,name:'專案內容、導覽與版面檔'};
+      this.local.revision=result.revision;
+      const verified=await this.env.fetch(this.local.url,{cache:'no-store'});if(!verified.ok)throw new Error('無法確認路線是否已儲存，請稍後再試。');
+      const stored=await verified.json();
+      if(JSON.stringify(stored.config?.roadFlowPaths||{})!==JSON.stringify(config.roadFlowPaths||{}))throw new Error('路線未完整寫入；請關閉並重新啟動 start-editor.cmd，再儲存一次。目前修改仍保留。');
+      return {download:false,name:'專案內容、導覽與版面檔'};
     }
     async open(){const config=await super.open();this.local=null;return config;}
     disconnect(){super.disconnect();this.local=null;}

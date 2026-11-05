@@ -96,6 +96,8 @@
   }
   function tocPageLabel(page){
     if(page.kind==='chapter-cover')return chapterName(page.chapter)+'｜章節頁';
+    const texts=typeof window==='object'?window.generalRoadEditor?.state.texts||{}:{},key=page.kind==='results'&&typeof window==='object'?window.PresentationResults?.titleKey(page):page.id+'|shared|title';
+    if(typeof texts[key]==='string'||page.kind==='results'&&!page.resultsScenario)return pageTitle(page,texts);
     if(page.kind==='results'&&page.stage==='issue'&&page.resultsScenario&&page.sceneName)return page.resultsScenario+' '+page.sceneName+'現況議題';
     return page.moduleId?(page.submoduleId||page.moduleId)+' '+page.name:page.scenarioCode?page.scenarioCode+' '+page.name:page.name;
   }
@@ -160,5 +162,5 @@
   }
   function edge(last=false){const deck=deckFor(app.page),pages=app.pages.filter(page=>page.deckId===deck?.id);app.goPage(last?pages.at(-1)?.id||'presentations':entryFor(deck)||'presentations');}
   if(typeof document==='object')document.addEventListener('click',event=>{const button=event.target.closest('[data-deck]');if(!button||!app)return;const deck=decks().find(deck=>deck.id===button.dataset.deck);if(!deck)return;event.preventDefault();event.stopImmediatePropagation();const fromPicker=menu?.contains(button);closePicker();app.goPage(entryFor(deck));if(fromPicker)pickerButton.focus({preventScroll:true});},true);
-  return {load,validate,addChapterCovers,organize,placeholders,connect,decorate,toc,refreshToc,chapterName,pageTitle,navigationTarget,navigationLabel,move,edge,render:page=>page.kind==='presentations-home'?home():page.kind==='chapter-cover'?chapterCover(page):empty(page),get manifest(){return manifest;},get error(){return loadError;}};
+  return {load,validate,addChapterCovers,organize,placeholders,connect,decorate,toc,refreshToc,tocPageLabel,chapterName,pageTitle,navigationTarget,navigationLabel,move,edge,render:page=>page.kind==='presentations-home'?home():page.kind==='chapter-cover'?chapterCover(page):empty(page),get manifest(){return manifest;},get error(){return loadError;}};
 });

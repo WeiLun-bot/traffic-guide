@@ -63,3 +63,13 @@ test('local save endpoint is authenticated, checks revisions, and static viewers
   assert.equal((await post(initial.token,initial.revision)).status,200);assert.equal((await post(initial.token,initial.revision)).status,409);assert.equal(Project.read(dir).config.legacyState.texts['context|title'],'HTTP 儲存');
   const staticServer=createServer(dir);await new Promise(resolve=>staticServer.listen(0,'127.0.0.1',resolve));t.after(()=>new Promise(resolve=>staticServer.close(resolve)));assert.equal((await fetch('http://127.0.0.1:'+staticServer.address().port+'/__project',{method:'POST'})).status,405);
 });
+
+// An old preview process must never report success after dropping new route fields.
+test('local save verifies that route geometry survived the server round trip',async()=>{
+  const {ProjectFiles}=require('../assets/visual-editor-io.js'),c=config();
+  c.roadFlowPaths={'results-road-clarity':{assetKey:'results:c1-08-layout',routes:[{id:'north-west',points:[[100,200],[300,400]]}]}};
+  const old=structuredClone(c);delete old.roadFlowPaths;
+  const files=new ProjectFiles({PresentationDocument:Document,fetch:async(_url,options)=>({ok:true,json:async()=>options?.method==='POST'?{revision:'new'}:{config:old}})});
+  files.local={url:'http://127.0.0.1:4173/__project',token:'token',revision:'old'};
+  await assert.rejects(files.save(c),/路線未完整寫入/);
+});
