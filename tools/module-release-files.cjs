@@ -32,5 +32,5 @@ module.exports=Array.from(new Set([
   'data/results/complex-strategies.json',...new Set(Object.values(complexStrategies.assets).map(asset=>asset.file)),
   'data/results/module-comparisons.json',...new Set(Object.values(moduleComparisons.assets).map(asset=>asset.file)),
   'assets/presentation-modules.js','assets/presentation-modules.css',
-  'data/modules/catalog.json','data/modules/formation.json',...Object.values(formation.assets).map(asset=>asset.file),...new Set(contentFiles)
+  ...(catalog.cover?[catalog.cover.image.file]:[]),'data/modules/catalog.json','data/modules/formation.json',...Object.values(formation.assets).map(asset=>asset.file),...new Set(contentFiles)
 ]));

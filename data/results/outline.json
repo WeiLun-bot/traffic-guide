@@ -949,7 +949,7 @@
           "id": "space",
           "title": "M1｜車道配置與動線導引",
           "text": "說明車道如何配置、車輛如何選道及銜接行駛路徑，並處理路側停車空間。",
-          "includes": "包含：路口動線導引、行車指示、路側停車。"
+          "includes": "包含：車道動線導引、行車指示、路側停車。"
         },
         {
           "id": "priority",
@@ -976,7 +976,7 @@
           "key": "results:module-m1-01-diagram",
           "moduleId": "M1-01",
           "topic": "space",
-          "label": "M1-01 路口動線導引",
+          "label": "M1-01 車道動線導引",
           "rotation": 0
         },
         {

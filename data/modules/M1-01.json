@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "M1-01",
-  "title": "路口動線導引",
+  "title": "車道動線導引",
   "source": {
     "file": "01-intersection-flow-guidance.typ",
-    "section": "M1-01「路口動線導引」",
+    "section": "M1-01「車道動線導引」",
     "notes": [
       "附加車道漸變長度依《市區道路及附屬工程設計規範》第 4.2.6 節。",
       "慢車道轉向配合《道路交通安全規則》；最外側車道寬度依《市區道路及附屬工程設計規範》。"
@@ -88,7 +88,7 @@
     {
       "id": "m101-overview",
       "section": "module",
-      "title": "M1-01 路口動線導引",
+      "title": "M1-01 車道動線導引",
       "intro": "讓路段車道、路口轉向與下游車道連成清楚的行車路徑。",
       "assets": [
         "m101-lanes",

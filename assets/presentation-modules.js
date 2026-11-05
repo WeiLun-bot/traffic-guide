@@ -9,6 +9,7 @@
   const safePath=value=>str(value)&&!/[\\:#?]/.test(value)&&!value.startsWith('/')&&value.split('/').every(part=>part&&part!=='.'&&part!=='..');
   function validateCatalog(value){
     assert(value?.schemaVersion===1&&Array.isArray(value.themes)&&Array.isArray(value.modules),'模組索引格式無效');
+    if(value.cover){const {title,meeting,image}=value.cover;assert(str(title)&&meeting&&['project','event','presenter','organization','date'].every(k=>str(meeting[k]))&&image&&safePath(image.file)&&image.file.startsWith('materials/')&&image.file.endsWith('.svg')&&Number.isFinite(image.width)&&image.width>0&&Number.isFinite(image.height)&&image.height>0&&str(image.label),'????????');}
     const themes=new Set();for(const theme of value.themes){assert(/^M[1-4]$/.test(theme.id)&&!themes.has(theme.id)&&str(theme.name)&&str(theme.question),'模組主題無效');themes.add(theme.id);}
     const ids=new Set();for(const entry of value.modules){assert(/^M[1-4]-\d{2}$/.test(entry.id)&&!ids.has(entry.id)&&themes.has(entry.theme)&&str(entry.name)&&Array.isArray(entry.submodules),'模組項目無效');ids.add(entry.id);const children=new Set();for(const sub of entry.submodules){assert(/^M[1-4]-\d{2}\.\d+$/.test(sub.id)&&sub.id.startsWith(entry.id+'.')&&!children.has(sub.id)&&str(sub.name),'子模組項目無效');children.add(sub.id);}}
     return value;
@@ -212,7 +213,7 @@
     const single=entry.submodules.length===1?entry.submodules[0]:null;
     return [{id:'module-'+entry.id,chapter,kind:'presentation-empty',name:single?.name||entry.name,moduleId:entry.id,...(single?{submoduleId:single.id}:{})},...(entry.submodules.length>1?entry.submodules.map(sub=>({id:submodulePageId(sub),chapter,kind:'presentation-empty',name:sub.name,moduleId:entry.id,submoduleId:sub.id})):[])];
   }
-  function pages(){return [{id:'modules-structure',chapter:'modules-intro',kind:'module',name:'功能模組架構'},{id:'modules-index',chapter:'modules-intro',kind:'module',name:'全部模組總覽'},{id:'modules-formation',chapter:'modules-intro',kind:'module',name:formation?.title||'模組如何逐步形成',stepCount:formation?.stages.length||1},...(catalog?.themes||['M1','M2','M3','M4'].map(id=>({id,name:id}))).flatMap(theme=>[{id:'modules-'+theme.id,chapter:'modules-'+theme.id,kind:'module',name:theme.name,theme:theme.id},...(catalog?.modules||[]).filter(entry=>entry.theme===theme.id).flatMap(pagesForModule)])];}
+  function pages(){return [...(catalog?.cover?[{id:'modules-cover',chapter:'modules-intro',kind:'module',name:catalog.cover.title},{id:'modules-outline',chapter:'modules-intro',kind:'module',name:'簡報大綱'}]:[]),{id:'modules-structure',chapter:'modules-intro',kind:'module',name:'功能模組架構'},{id:'modules-index',chapter:'modules-intro',kind:'module',name:'全部模組總覽'},{id:'modules-formation',chapter:'modules-intro',kind:'module',name:formation?.title||'模組如何逐步形成',stepCount:formation?.stages.length||1},...(catalog?.themes||['M1','M2','M3','M4'].map(id=>({id,name:id}))).flatMap(theme=>[{id:'modules-'+theme.id,chapter:'modules-'+theme.id,kind:'module',name:theme.name,theme:theme.id},...(catalog?.modules||[]).filter(entry=>entry.theme===theme.id).flatMap(pagesForModule)])];}
   function syncPages(target,config=currentConfig()){
     const extensions=pages().filter(page=>stageContext(page.id)?.stage.id==='extensions'),known=new Set(extensions.map(page=>page.id));
     for(let index=target.length-1;index>=0;index--)if(known.has(target[index].id)&&extensionRemoved(target[index].id,config))target.splice(index,1);
@@ -354,6 +355,8 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     return `<section class="slide module-slide module-detail module-extension-slide" data-module-id="${content.id}" data-module-stage="extensions">${switcher(page)}${extensionPageActions(page)}${heading(sub.id+' / '+(content.id==='M2-01'?(sub.id.endsWith('.1')?'STOP CONTROL':'YIELD CONTROL'):'FUNCTIONAL MODULE')+' · '+stageProgress(stageContext(page.id).flow,stage),sub.name+'｜'+stage.title,stage.intro||'依行人穿越、路口空間與車速，調整停讓配置。',true)}<div class="module-extension-grid" style="--module-extension-rows:${Math.ceil(stage.topics.length/2)}">${cards}</div><div class="module-extension-footer"><button class="text-button module-extension-source" data-module-source>資料來源 ↗</button><nav class="module-extension-pager" aria-label="延伸應用分組" data-editor-ui="extension-pager" hidden><button type="button" data-module-extension-step="-1">← 上一組</button><span data-extension-range role="status" aria-live="polite"></span><button type="button" data-module-extension-step="1">下一組 →</button></nav></div></section>`;
   }
   function pageTitle(page){
+    if(page.id==='modules-cover')return catalog?.cover?.title||page.name;
+    if(page.id==='modules-outline')return '簡報大綱';
     if(page.id==='modules-structure')return '從設施搭配，走到完整路口。';
     if(page.id==='modules-formation')return formation?.title||'模組形成示範尚未載入';
     if(page.id==='modules-index')return '全部模組總覽';
@@ -365,6 +368,8 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
   function render(page){
     const content=moduleFor(page.id);
     if(loadError||!catalog||moduleErrors.has(page.moduleId))return `<section class="slide module-slide">${heading('MODULES','模組內容尚未載入','請使用本機預覽網址開啟，並確認 data/modules 中的 JSON 檔案可讀取。')}<p>${esc(moduleErrors.get(page.moduleId)||loadError)}</p><button class="primary-button" data-module-reload>重新載入頁面</button></section>`;
+    if(page.id==='modules-cover'){const cover=catalog.cover,image=cover.image,key='modules:cover';return window.PresentationResults.render({...page,resultType:'cover',content:{title:cover.title,meeting:cover.meeting,images:[{key,label:image.label}]}},{embeddedAssets:{[key]:{url:encodeURI(image.file),width:image.width,height:image.height}}});}
+    if(page.id==='modules-outline')return window.PresentationResults.render({...page,resultType:'outline',content:{title:'簡報大綱',deck:'modules',eyebrow:'CONTENTS / 02'}},{});
     if(page.id==='modules-structure')return structure();if(page.id==='modules-formation')return formationSlide();if(page.id==='modules-index')return index();
     if(page.theme)return index(page.theme);
     const {source,stage,topic,flow}=displayContext(page.id);if(!source)return '';

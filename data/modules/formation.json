@@ -4,7 +4,7 @@
   "title": "模組如何逐步形成",
   "assets": {
     "formation-base": {"file": "materials/03-modules/00/1.svg", "width": 3018, "height": 2153, "label": "乾淨底圖"},
-    "formation-lanes": {"file": "materials/03-modules/00/2.svg", "width": 3018, "height": 2153, "label": "路口動線導引階段"},
+    "formation-lanes": {"file": "materials/03-modules/00/2.svg", "width": 3018, "height": 2153, "label": "車道動線導引階段"},
     "formation-route": {"file": "materials/03-modules/00/3.svg", "width": 3018, "height": 2153, "label": "行車指示階段"},
     "formation-parking": {"file": "materials/03-modules/00/4.svg", "width": 3018, "height": 2153, "label": "路側停車階段"},
     "formation-signals": {"file": "materials/03-modules/00/5.svg", "width": 3018, "height": 2153, "label": "號誌化管制階段"},
@@ -14,7 +14,7 @@
   },
   "stages": [
     {"id": "base", "label": "乾淨底圖", "asset": "formation-base"},
-    {"id": "lanes", "label": "M1-01 路口動線導引", "asset": "formation-lanes", "moduleId": "M1-01"},
+    {"id": "lanes", "label": "M1-01 車道動線導引", "asset": "formation-lanes", "moduleId": "M1-01"},
     {"id": "route", "label": "M1-02 行車指示", "asset": "formation-route", "moduleId": "M1-02"},
     {"id": "parking", "label": "M1-03 路側停車", "asset": "formation-parking", "moduleId": "M1-03"},
     {"id": "signals", "label": "M2-03 號誌化管制", "asset": "formation-signals", "moduleId": "M2-03"},

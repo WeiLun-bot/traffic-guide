@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-05T11:42:05.868Z",
+  "updatedAt": "2026-11-05T12:42:39.297Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793878661496,
+    "updatedAt": 1793882554235,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -715,7 +715,16 @@
       "module:m201-stop-crosswalk:pedestrian": true,
       "module:m201-stop-crosswalk:second": true,
       "module:m201-stop-crosswalk:sign": true,
-      "module:m201-stop-crosswalk:gap": true
+      "module:m201-stop-crosswalk:gap": true,
+      "module:m201-stop-layout:sign": true,
+      "module:m201-stop-layout:line": true,
+      "module:m201-stop-layout:word": true,
+      "module:m201-stop-layout:guide": true,
+      "module:m201-stop-warning:advance": true,
+      "module:m201-yield-layout:sign": true,
+      "module:m201-yield-layout:triangle": true,
+      "module:m201-yield-layout:pedestrian": true,
+      "module:m201-yield-layout:guide": true
     },
     "styles": {
       "results-background|results|source-p3": {

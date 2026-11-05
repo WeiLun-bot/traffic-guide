@@ -58,7 +58,7 @@
       "id": "modules",
       "code": "02",
       "title": "交通管制設施模組設計",
-      "entry": "modules-structure",
+      "entry": "modules-cover",
       "footer": "TRAFFIC CONTROL FACILITY MODULES",
       "chapterCovers": true,
       "source": {
@@ -70,7 +70,7 @@
           "id": "modules-intro",
           "code": "00",
           "name": "緒論",
-          "entry": "modules-structure"
+          "entry": "modules-cover"
         },
         {
           "id": "modules-M1",

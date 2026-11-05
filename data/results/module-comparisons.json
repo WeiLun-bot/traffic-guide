@@ -363,7 +363,7 @@
   },
   "modules": {
     "M1-01": {
-      "title": "路口動線導引",
+      "title": "車道動線導引",
       "intro": "從路段車道配置到路口轉向，一起檢查行車動線是否連續。",
       "items": [
         {
@@ -412,7 +412,7 @@
       "source": {
         "file": "chapters/03-modules/01-intersection-flow-guidance.typ",
         "sha256": "f3c85c9fb7a9dd680d11ddde24e2a547639ea15ffa1fea6a28a119030601f062",
-        "title": "路口動線導引",
+        "title": "車道動線導引",
         "moduleId": "M1-01",
         "section": "現況與議題、圖例說明及延伸應用",
         "issuePageId": "m101-lanes-issues",

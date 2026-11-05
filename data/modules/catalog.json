@@ -42,7 +42,7 @@
   "modules": [
     {
       "id": "M1-01",
-      "name": "路口動線導引",
+      "name": "車道動線導引",
       "theme": "M1",
       "ready": true,
       "submodules": [
@@ -268,5 +268,21 @@
         }
       ]
     }
-  ]
+  ],
+  "cover": {
+    "title": "交通管制設施模組設計",
+    "meeting": {
+      "project": "研擬道路交通標誌標線號誌設置參考指引",
+      "event": "成果說明會",
+      "presenter": "主講人：蕭唯倫",
+      "organization": "中華民國道路協會",
+      "date": "2026年11月9日"
+    },
+    "image": {
+      "file": "materials/00-計畫緣起/封面_M1-02_渦輪圓環線稿.svg",
+      "width": 2276,
+      "height": 1924,
+      "label": "M1-02 渦輪圓環封面線稿"
+    }
+  }
 }

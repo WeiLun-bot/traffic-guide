@@ -6,6 +6,14 @@
     "module:stop-crosswalk": {
       "src": "materials/edited/8f7fa22bafa65a44fe05bc8cfa63168199efeba66207cb36a34898a25f9ec4e4.svg",
       "alt": "M2-01_停管制路口_搭配行穿線.svg"
+    },
+    "module:stop-basic": {
+      "src": "materials/edited/bda66ea2f023703b7e7dad91879d807f0178d22616332296d0ca7856f0d95890.svg",
+      "alt": "M2-01_停管制路口代表型.svg"
+    },
+    "module:yield-basic": {
+      "src": "materials/edited/64fec3af69b2d073ae340b5a1e9cf4fb2cd3eea9f96e71eac7efa428d040621e.svg",
+      "alt": "M2-01_讓管制路口代表型.svg"
     }
   },
   "blocks": {},
