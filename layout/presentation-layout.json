@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-06T07:25:10.294Z",
+  "updatedAt": "2026-11-06T09:39:13.623Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793949890555,
+    "updatedAt": 1793957953623,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -944,32 +944,12 @@
       "module:m101-lanes-diagram:concept-trajectory-custom-7aabab8d-809f-4d9f-bd07-103ecd3daf03": true
     },
     "styles": {
-      "results-background|results|source-p3": {
-        "fontSize": 20
-      },
-      "results-background|results|source-p2": {
-        "fontSize": 20,
-        "lineHeight": 1
-      },
-      "results-background|results|source-p1": {
-        "fontSize": 20
-      },
       "results-background|results|source-title": {
         "fontSize": 36
       },
-      "results-background|results|source-p4-text": {
-        "fontSize": 20,
-        "lineHeight": 1.2
-      },
       "results-background|results|source-p6-text": {
-        "fontSize": 20,
         "fontWeight": 400,
-        "lineHeight": 1.2,
         "color": "#254b3b"
-      },
-      "results-background|results|source-p5-text": {
-        "fontSize": 20,
-        "lineHeight": 1.2
       },
       "results-three-years|results|source-title": {
         "fontSize": 36
@@ -1226,21 +1206,14 @@
       "results-module-hierarchy|results|framework-M3-name": {
         "fontSize": 18
       },
-      "results-stop-extensions|results|crosswalk-title": {
-        "fontSize": 24
+      "m101-lanes-diagram|shared|title": {
+        "fontSize": 36
       },
-      "results-stop-extensions|results|refuge-title": {
-        "fontSize": 24
+      "m101-lanes-issues|module|continuity|text": {
+        "color": "#6c7e72"
       },
-      "results-stop-extensions|results|curb-title": {
-        "fontSize": 24
-      },
-      "m101-lanes-diagram|module|advance-signs|text": {
-        "fontSize": 18,
-        "lineHeight": 1.4
-      },
-      "m101-lanes-diagram|concept|dotted|title": {
-        "fontSize": 24
+      "m101-lanes-issues|module|continuity|title": {
+        "color": "#000000"
       }
     },
     "frames": {

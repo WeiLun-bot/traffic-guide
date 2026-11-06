@@ -24,7 +24,7 @@ module.exports=Array.from(new Set([
   'assets/cover-art-editor.js','assets/cover-art-editor.css',
   'assets/presentation-scenarios.js','assets/presentation-scenarios.css','data/scenarios/catalog.json',
   ...new Set(scenarioFiles),
-  'assets/presentation-structure.js','assets/presentation-structure.css','data/presentations.json',
+  'assets/presentation-structure.js','assets/presentation-structure.css','assets/presentation-reading.css','data/presentations.json',
   'assets/road-flow-editor.js','assets/presentation-results.js','assets/presentation-results.css','data/results/outline.json',
   ...Object.values(overview.assets||{}).map(asset=>asset.file),
   'data/results/current-conditions.json',...new Set(Object.values(currentConditions.assets).map(asset=>asset.file)),
