@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "owner": "shared",
   "texts": {
-    "modules-formation|shared|title": "模組的組成架構"
+    "modules-formation|shared|title": "模組的組成架構",
+    "modules-M1|0|text-1": "從車道空間分配、行駛路徑指示到路側停車管理，建立明確且連續的車行道使用空間與行駛動線。"
   },
   "images": {
     "results:module-m3-03-diagram": {

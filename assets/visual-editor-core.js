@@ -127,6 +127,13 @@
     for(const [page,entry] of Object.entries(content.modules)){
       assert(id(page)&&record(entry),'模組說明設定無效');points(entry.points);
       for(const point of entry.points)assert(text(point.title)&&key(point.titleKey)&&(point.topicId===undefined||id(point.topicId)),'模組說明標題或主題無效');
+      if(entry.conceptFacilities!==undefined){
+        assert(record(entry.conceptFacilities),'相關設施設定無效');
+        for(const [topic,facilities]of Object.entries(entry.conceptFacilities)){
+          assert(id(topic)&&Array.isArray(facilities)&&facilities.length<=24&&new Set(facilities.map(item=>item?.id)).size===facilities.length,'相關設施清單無效');
+          for(const facility of facilities){assert(record(facility)&&id(facility.id)&&typeof facility.label==='string'&&facility.label.trim().length>0&&facility.label.length<=60&&record(facility.focus)&&id(facility.focus.asset),'相關設施內容無效');if(facility.focus.rect!==undefined)assert(Array.isArray(facility.focus.rect)&&facility.focus.rect.length===4&&facility.focus.rect.every(Number.isFinite)&&facility.focus.rect[0]>=0&&facility.focus.rect[1]>=0&&facility.focus.rect[2]>0&&facility.focus.rect[3]>0,'相關設施框選無效');}
+        }
+      }
     }
     for(const [page,entry] of Object.entries(content.results)){
       assert(/^results-(?:scenario-[gc][1-4]-\d{2}(?:-strategy)?|module-m[1-4]-\d{2}|module-example|review(?:-[gc][1-4]-\d{2})?)$/.test(page)&&record(entry),'成果說明所屬頁面無效');points(entry.points);

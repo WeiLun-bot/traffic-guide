@@ -129,7 +129,8 @@
     "results-module-example|results|intro": "透過停車再開標誌、停止線及路口導引線，建立明確且一致的停管制配置。",
     "results-module-example|results|current-issue-stopline-visibility": "停止線距離路口過遠，駕駛依規定停車後，仍可能因視距受限，無法充分觀察幹線道來車。",
     "results-stop-extensions-2|results|warning-title": "視距不足或車速較高時路口預告標誌",
-    "results-stop-extensions|results|curb-curb-title": "約束轉彎軌跡確保路口視距竟空"
+    "results-stop-extensions|results|curb-curb-title": "約束轉彎軌跡確保路口視距竟空",
+    "results-road-system|results|consistency-title": "一致性｜相似條件採一致的設置邏輯"
   },
   "images": {},
   "blocks": {},

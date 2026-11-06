@@ -127,3 +127,9 @@ body:not(.is-editing):not(.is-visual-editing) .iv-trigger{display:none}
 .editor-rotation-stem{stroke:#426c58;stroke-width:1.5;vector-effect:non-scaling-stroke;pointer-events:none}
 .editor-rotation-handle{fill:#426c58;stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke;cursor:grab;touch-action:none}
 .is-dragging-highlight .editor-rotation-handle{cursor:grabbing}
+
+.iv-panel .iv-drag-handle{display:flex;align-items:center;gap:10px;flex:1;min-width:0;min-height:28px;cursor:grab;touch-action:none;user-select:none}
+.iv-panel .iv-drag-hint{font-size:10px;font-weight:400;color:#839578;white-space:nowrap}
+.iv-panel.is-dragging{user-select:none}
+.iv-panel.is-dragging .iv-drag-handle{cursor:grabbing}
+.iv-panel .iv-drag-handle:focus-visible{outline:2px solid #72965c;outline-offset:3px;border-radius:3px}

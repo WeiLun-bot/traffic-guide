@@ -83,6 +83,7 @@
         reset.title='重設視圖（'+percentage.textContent+'）—'+(settings.resetView?'回到本步驟的預設視角':'回到全圖預設比例與位置');
         if(status){status.lastElementChild.textContent=controller.zoom>1+1e-6?'局部放大':controller.zoom<1?'縮小檢視':controller.partial?'位置已偏移':settings.fullLabel||'完整圖面';returnToFull.hidden=!controller.partial;}
         settings.onSync?.();
+        element.dispatchEvent(new Event('viewportchange',{bubbles:true}));
       },
       get zoom() {return vector?home[2]/controller.read()[2]:imageView[2];},
       get partial() {

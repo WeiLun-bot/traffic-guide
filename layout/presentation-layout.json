@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-05T12:42:39.297Z",
+  "updatedAt": "2026-11-06T06:38:20.438Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793882554235,
+    "updatedAt": 1793947075664,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -709,6 +709,133 @@
         ],
         "rotation": 0,
         "imageKey": "results:review-g1-01-after"
+      },
+      "module:m101-lanes-issues:path": {
+        "box": [
+          548,
+          221.2,
+          149.2,
+          117
+        ],
+        "rotation": -40,
+        "imageKey": "module:m101-issue-junction",
+        "crop": [
+          493.1,
+          147.9,
+          276.2,
+          261.2
+        ]
+      },
+      "module:m101-lanes-issues:review": {
+        "box": [
+          70.19999999999999,
+          279.5,
+          736.1,
+          95.3
+        ],
+        "rotation": -39,
+        "imageKey": "module:m101-issue-junction"
+      },
+      "module:m101-lanes-issues:continuity": {
+        "box": [
+          65.70000000000002,
+          162.5,
+          495.2,
+          72.3
+        ],
+        "rotation": 0,
+        "imageKey": "module:m101-issue-road-section"
+      },
+      "module:m101-lanes-diagram:concept-dotted-advance": {
+        "box": [
+          370,
+          490.9,
+          60.5,
+          119.1
+        ],
+        "imageKey": "module:m101-lanes",
+        "crop": [
+          229.6,
+          213.3,
+          803.4,
+          440.3
+        ]
+      },
+      "module:m101-lanes-diagram:concept-dotted-dotted": {
+        "box": [
+          376.7,
+          421.8,
+          592.1,
+          19
+        ],
+        "imageKey": "module:m101-lanes",
+        "rotation": 1
+      },
+      "module:m101-lanes-diagram:concept-continuity-guides": {
+        "box": [
+          881.7999999999998,
+          297.7,
+          589.8,
+          80.2
+        ],
+        "imageKey": "module:m101-lanes",
+        "rotation": -1.5
+      },
+      "module:m101-lanes-diagram:concept-trajectory-guides": {
+        "box": [
+          1165.2,
+          242.39999999999998,
+          165,
+          193.1
+        ],
+        "imageKey": "module:m101-lanes",
+        "rotation": 0
+      },
+      "module:m101-lanes-diagram:concept-trajectory-channel": {
+        "box": [
+          1050.3,
+          484.1,
+          93,
+          55.1
+        ],
+        "imageKey": "module:m101-lanes",
+        "crop": [
+          756.6,
+          351.8,
+          491,
+          343.9
+        ],
+        "rotation": 0
+      },
+      "module:m101-lanes-diagram:concept-dotted-arrows": {
+        "box": [
+          195.2,
+          419.6,
+          62.7,
+          68.6
+        ],
+        "rotation": 0,
+        "imageKey": "module:m101-lanes"
+      },
+      "module:m101-lanes-diagram:concept-trajectory-curb": {
+        "box": [
+          1186.2,
+          498.5,
+          191.6,
+          129.5
+        ],
+        "rotation": 0,
+        "imageKey": "module:m101-lanes"
+      },
+      "module:m101-lanes-diagram:concept-trajectory-custom-df7fc051-2506-4b87-9443-3c6000d0304b": {
+        "box": [
+          1194.8,
+          488.3,
+          142.7,
+          145.6
+        ],
+        "rotation": 0,
+        "imageKey": "module:m101-lanes"
       }
     },
     "disabledHighlights": {
@@ -1016,6 +1143,13 @@
         "fontSize": 24
       },
       "results-stop-extensions|results|curb-title": {
+        "fontSize": 24
+      },
+      "m101-lanes-diagram|module|advance-signs|text": {
+        "fontSize": 18,
+        "lineHeight": 1.4
+      },
+      "m101-lanes-diagram|concept|dotted|title": {
         "fontSize": 24
       }
     },
@@ -2235,6 +2369,76 @@
       "zoom": 0.8607079758387471,
       "x": -5.612661899331683,
       "y": 0.5703708304974625,
+      "rotation": 0
+    },
+    "modules-topic-m1-02/module%3Am102-roundabout": {
+      "id": "modules-topic-m1-02/module%3Am102-roundabout",
+      "pageId": "modules-topic-m1-02",
+      "assetKey": "module:m102-roundabout",
+      "units": "percent",
+      "zoom": 1.5683121886951528,
+      "x": 18.51830662348195,
+      "y": -32.87646970499284,
+      "rotation": 0
+    },
+    "modules-topic-m1-03/module%3Am103-layout": {
+      "id": "modules-topic-m1-03/module%3Am103-layout",
+      "pageId": "modules-topic-m1-03",
+      "assetKey": "module:m103-layout",
+      "units": "percent",
+      "zoom": 1.349858809415041,
+      "x": -13.834925082383357,
+      "y": -4.623752216373158,
+      "rotation": 0
+    },
+    "modules-topic-m1-01/module%3Am101-lanes": {
+      "id": "modules-topic-m1-01/module%3Am101-lanes",
+      "pageId": "modules-topic-m1-01",
+      "assetKey": "module:m101-lanes",
+      "units": "percent",
+      "zoom": 1.3498588094150399,
+      "x": -10.82978467054143,
+      "y": 4.131318149772791,
+      "rotation": 0
+    },
+    "m101-lanes-diagram/module%3Am101-lanes": {
+      "id": "m101-lanes-diagram/module%3Am101-lanes",
+      "pageId": "m101-lanes-diagram",
+      "assetKey": "module:m101-lanes",
+      "units": "percent",
+      "zoom": 1.5683121886951525,
+      "x": 19.57996374530756,
+      "y": -5.094154990870304,
+      "rotation": 0
+    },
+    "modules-concept-m101-lanes-diagram-dotted/module%3Am101-lanes": {
+      "id": "modules-concept-m101-lanes-diagram-dotted/module%3Am101-lanes",
+      "pageId": "modules-concept-m101-lanes-diagram-dotted",
+      "assetKey": "module:m101-lanes",
+      "units": "percent",
+      "zoom": 1.5683121886951525,
+      "x": 19.57996374530756,
+      "y": -5.094154990870304,
+      "rotation": 0
+    },
+    "modules-concept-m101-lanes-diagram-continuity/module%3Am101-lanes": {
+      "id": "modules-concept-m101-lanes-diagram-continuity/module%3Am101-lanes",
+      "pageId": "modules-concept-m101-lanes-diagram-continuity",
+      "assetKey": "module:m101-lanes",
+      "units": "percent",
+      "zoom": 1.8221188053553887,
+      "x": -46.49857123111724,
+      "y": 7.682148751366939,
+      "rotation": 0
+    },
+    "modules-concept-m101-lanes-diagram-trajectory/module%3Am101-lanes": {
+      "id": "modules-concept-m101-lanes-diagram-trajectory/module%3Am101-lanes",
+      "pageId": "modules-concept-m101-lanes-diagram-trajectory",
+      "assetKey": "module:m101-lanes",
+      "units": "percent",
+      "zoom": 1.8221188053553894,
+      "x": -49.27186713733931,
+      "y": -7.090318060708244,
       "rotation": 0
     }
   },

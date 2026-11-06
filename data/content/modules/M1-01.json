@@ -1,7 +1,17 @@
 {
   "schemaVersion": 1,
   "owner": "modules/M1-01",
-  "texts": {},
+  "texts": {
+    "m101-overview|0|text-1": "整合路口上下游車道配置與行駛動線，檢核各車道的行駛方向、轉向軌跡及下游車道銜接關係，並透過標誌標線提供明確導引，減少車輛於路口前臨時變換車道及路口內行駛動線衝突的情形。",
+    "m101-lanes-issues|0|text-1": "檢核路口前後的車道銜接與轉彎軌跡，確認車道用途及行駛路徑是否明確。",
+    "m101-lanes-diagram|module|connect-transition|text": "車道需要縮減或偏移時，應妥善安排車道配置及變換車道位置，避免車輛於路口內爭道。",
+    "m101-lanes-diagram|module|connect-transition|title": "安排縮減與偏移",
+    "m101-lanes-diagram|concept|continuity|title": "確保路口上下游車道銜接",
+    "m101-lanes-extensions|shared|title": "路口與路段車道配置｜延伸應用－－慢車道設計",
+    "m101-lanes-extensions|extension|wide|title": "慢車道與一般車道同寬（>2.8 m）",
+    "m101-lanes-extensions|extension|narrow|title": "慢車道 2.8 m（含）以下",
+    "m101-lanes-extensions|0|text-1": "以快慢車道分隔線做為快慢車道之界線，繪設機車及自行車圖案以標示空間屬於慢車道。近路口處依慢車道寬度，調整路口前的車道分隔與轉向導引。"
+  },
   "images": {},
   "blocks": {},
   "pages": [],
@@ -16,21 +26,21 @@
             "id": "continuity",
             "title": "車道用途前後不連續",
             "titleKey": "m101-lanes-issues|module|continuity|title",
-            "text": "例如直行車道變成左轉車道，導致駕駛來不及變換",
+            "text": "原直行車道於路口前轉為左轉專用車道",
             "textKey": "m101-lanes-issues|module|continuity|text"
           },
           {
             "id": "review",
             "title": "路口上下游車道數不平衡",
             "titleKey": "m101-lanes-issues|module|review|title",
-            "text": "上游直行車道數大於下游接收車道數，導致直行搶道",
+            "text": "上游直行車道數多於下游接收車道數，容易造成車輛於路口內搶道。",
             "textKey": "m101-lanes-issues|module|review|text"
           },
           {
             "id": "path",
             "title": "導引線、路緣轉角未依車輛軌跡設計",
             "titleKey": "m101-lanes-issues|module|path|title",
-            "text": "轉彎路徑若未檢核，車輛不易沿導引線行駛，甚至可能碰撞交通島。",
+            "text": "未檢核車輛轉彎軌跡，可能造成車輛偏離導引路徑，擦撞交通島或路緣；路緣轉角若僅以直線截角處理，可能形成多餘車行空間，並增加行人穿越距離。",
             "textKey": "m101-lanes-issues|module|path|text"
           }
         ]
@@ -50,6 +60,161 @@
             "titleKey": "m101-additional-issues|module|storage|title",
             "text": "轉向車流無法順暢進入，排隊可能外溢並影響主線直行車流。",
             "textKey": "m101-additional-issues|module|storage|text"
+          }
+        ]
+      },
+      "m101-lanes-diagram": {
+        "points": [
+          {
+            "id": "advance-signs",
+            "title": "預告車道用途與方向",
+            "titleKey": "m101-lanes-diagram|module|advance-signs|title",
+            "text": "於車道分流前，設置指向線與車道預告標誌，提示各車道的行駛方向。",
+            "textKey": "m101-lanes-diagram|module|advance-signs|text"
+          },
+          {
+            "id": "advance-dotted",
+            "title": "引導提前選道",
+            "titleKey": "m101-lanes-diagram|module|advance-dotted|title",
+            "text": "配合穿越虛線標示轉向車輛分流處，引導駕駛提前選擇適當車道。",
+            "textKey": "m101-lanes-diagram|module|advance-dotted|text"
+          },
+          {
+            "id": "advance-solid",
+            "title": "減少臨時變換車道",
+            "titleKey": "m101-lanes-diagram|module|advance-solid|title",
+            "text": "接近路口處配合禁止變換車道線，減少臨時變換車道的情形。",
+            "textKey": "m101-lanes-diagram|module|advance-solid|text"
+          },
+          {
+            "id": "connect-review",
+            "title": "檢核前後車道銜接",
+            "titleKey": "m101-lanes-diagram|module|connect-review|title",
+            "text": "依路口上下游車道數、車道用途與行駛方向，檢核各車道的銜接關係。",
+            "textKey": "m101-lanes-diagram|module|connect-review|text"
+          },
+          {
+            "id": "connect-guides",
+            "title": "標示穿越路徑",
+            "titleKey": "m101-lanes-diagram|module|connect-guides|title",
+            "text": "針對轉向、上下游車道偏移，可用路口行車導引線，標示穿越路口的行駛路徑。",
+            "textKey": "m101-lanes-diagram|module|connect-guides|text"
+          },
+          {
+            "id": "turn-review",
+            "title": "檢核設計車輛軌跡",
+            "titleKey": "m101-lanes-diagram|module|turn-review|title",
+            "text": "依設計車輛的轉彎軌跡，檢核路口行車導引線、左彎待轉區線、路緣轉角及交通島配置。",
+            "textKey": "m101-lanes-diagram|module|turn-review|text"
+          },
+          {
+            "id": "turn-space",
+            "title": "保留轉彎空間",
+            "titleKey": "m101-lanes-diagram|module|turn-space|title",
+            "text": "針對路口中不使用空間，以槽化線將多餘空間作為轉彎的導引",
+            "textKey": "m101-lanes-diagram|module|turn-space|text"
+          },
+          {
+            "id": "turn-curb",
+            "title": "合理配置路緣轉角",
+            "titleKey": "m101-lanes-diagram|module|turn-curb|title",
+            "text": "避免路緣轉角僅採直線截角而形成不必要的車行空間，進而壓縮人行道增加行人穿越距離。",
+            "textKey": "m101-lanes-diagram|module|turn-curb|text"
+          }
+        ],
+        "conceptFacilities": {
+          "continuity": [
+            {
+              "id": "guides",
+              "label": "路口行車導引線",
+              "focus": {
+                "asset": "m101-lanes",
+                "rect": [
+                  1090,
+                  290,
+                  270,
+                  280
+                ]
+              }
+            }
+          ],
+          "trajectory": [
+            {
+              "id": "guides",
+              "label": "路口行車導引線",
+              "focus": {
+                "asset": "m101-lanes",
+                "rect": [
+                  1090,
+                  290,
+                  270,
+                  280
+                ]
+              }
+            },
+            {
+              "id": "custom-7aabab8d-809f-4d9f-bd07-103ecd3daf03",
+              "label": "左彎待轉區線",
+              "focus": {
+                "asset": "m101-lanes"
+              }
+            },
+            {
+              "id": "channel",
+              "label": "槽化線",
+              "focus": {
+                "asset": "m101-lanes",
+                "rect": [
+                  1110,
+                  485,
+                  150,
+                  85
+                ]
+              }
+            },
+            {
+              "id": "custom-df7fc051-2506-4b87-9443-3c6000d0304b",
+              "label": "路緣轉角與交通島",
+              "focus": {
+                "asset": "m101-lanes"
+              }
+            }
+          ]
+        }
+      },
+      "m101-lanes-extensions": {
+        "points": [
+          {
+            "id": "right-turn",
+            "title": "近路口處維持快慢車道分隔",
+            "titleKey": "m101-lanes-extensions|module|right-turn|title",
+            "text": "近路口延續快慢車道分隔線，右轉車輛依規定提前駛入慢車道。",
+            "textKey": "m101-lanes-extensions|module|right-turn|text"
+          },
+          {
+            "id": "lane-line",
+            "title": "近路口處改以車道線分隔",
+            "titleKey": "m101-lanes-extensions|module|lane-line|title",
+            "text": "近路口處可將快慢車道分隔線改為車道線，提示右轉車先進入最外側車道。",
+            "textKey": "m101-lanes-extensions|module|lane-line|text"
+          }
+        ]
+      },
+      "m101-lanes-narrow": {
+        "points": [
+          {
+            "id": "transition",
+            "title": "路口前調整慢車道配置",
+            "titleKey": "m101-lanes-narrow|module|transition|title",
+            "text": "於路口前 30～60 m 中斷慢車道，改以分流式指向線引導各方向車流。",
+            "textKey": "m101-lanes-narrow|module|transition|text"
+          },
+          {
+            "id": "width",
+            "title": "最外側車道大於 4.5 m 時應以槽化縮減",
+            "titleKey": "m101-lanes-narrow|module|width|title",
+            "text": "非實體分隔的最外側車道不宜大於 4.5 m；原車道與慢車道合併超過時，可用槽化縮減，並可增設路寬縮減標誌。",
+            "textKey": "m101-lanes-narrow|module|width|text"
           }
         ]
       }

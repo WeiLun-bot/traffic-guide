@@ -17,7 +17,8 @@
       "height": 637,
       "label": "現況照片 1：路口動線",
       "caption": "M1-01.1 路口動線現況",
-      "credit": "使用者提供之現況照片"
+      "credit": "使用者提供之現況照片",
+      "highlightColor": "#d4a017"
     },
     "m101-issue-road-section": {
       "file": "materials/03-modules/M1-01/M1-01.1_現況議題_路段車道.png",
@@ -25,7 +26,8 @@
       "height": 407,
       "label": "現況照片 2：路段車道",
       "caption": "M1-01.1 路段車道現況",
-      "credit": "使用者提供之現況照片"
+      "credit": "使用者提供之現況照片",
+      "highlightColor": "#d4a017"
     },
     "m101-additional-issue-photo": {
       "file": "materials/03-modules/M1-01/M1-01.2_現況議題_附加車道.png",
@@ -133,7 +135,7 @@
       "submoduleId": "M1-01.1",
       "title": "路口與路段車道配置｜現況議題與相關條文",
       "intro": "從車道連續性與轉向軌跡，檢查路段如何銜接路口。",
-      "defaultView": "pair",
+      "defaultView": "single",
       "assets": [
         "m101-issue-junction",
         "m101-issue-road-section"
@@ -142,17 +144,26 @@
         {
           "id": "continuity",
           "title": "車道用途前後不連續",
-          "text": "路段車道若未配合轉向需求，駕駛到路口前才會發現需要換道。"
+          "text": "路段車道若未配合轉向需求，駕駛到路口前才會發現需要換道。",
+          "focus": {
+            "asset": "m101-issue-road-section"
+          }
         },
         {
           "id": "path",
           "title": "導引線未配合實際軌跡",
-          "text": "轉彎路徑若未檢核，車輛可能無法沿線行駛，甚至偏向交通島。"
+          "text": "轉彎路徑若未檢核，車輛可能無法沿線行駛，甚至偏向交通島。",
+          "focus": {
+            "asset": "m101-issue-junction"
+          }
         },
         {
           "id": "review",
           "title": "一併檢視路段與路口",
-          "text": "從車道配置、轉向軌跡到下游出口，一起確認動線是否連續。"
+          "text": "從車道配置、轉向軌跡到下游出口，一起確認動線是否連續。",
+          "focus": {
+            "asset": "m101-issue-junction"
+          }
         }
       ],
       "sourcePages": [],
@@ -165,7 +176,8 @@
         "189",
         "189-1"
       ],
-      "applicationNote": "通用模組，適用於各類道路情境。"
+      "applicationNote": "通用模組，適用於各類道路情境。",
+      "pointLinkedImages": true
     },
     {
       "id": "m101-lanes-diagram",
@@ -178,130 +190,49 @@
       ],
       "points": [
         {
-          "id": "dotted-width",
-          "title": "穿越虛線區分直行與轉向",
-          "text": "匯入主線建議採 15 cm 寬；匯出主線建議採 30 cm 寬，加強交織提示。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              420,
-              398,
-              620,
-              106
-            ]
-          }
+          "id": "advance-signs",
+          "title": "預告車道用途與方向",
+          "text": "於車道用途改變或轉向車道分流前，設置車道預告標誌與指向線，提示各車道的行駛方向。"
         },
         {
-          "id": "dotted-length",
-          "title": "從漸變區引導至專用車道",
-          "text": "穿越虛線由漸變區起點延伸至專用車道起點；左右轉專用道進入路口前 20 m 搭配禁止變換車道線。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              370,
-              398,
-              650,
-              112
-            ]
-          }
+          "id": "advance-dotted",
+          "title": "引導提前選道",
+          "text": "配合穿越虛線標示轉向車道的分流範圍，引導車輛提前選擇適當車道。"
         },
         {
-          "id": "arrows",
-          "title": "指向線分組預告",
-          "text": "第一組設於停止線或機慢車停等區外邊界上游 2–5 m；第二組再往上游 20 m，其後各組間隔 20–60 m。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              500,
-              400,
-              500,
-              115
-            ]
-          }
+          "id": "advance-solid",
+          "title": "減少臨時變換車道",
+          "text": "接近路口處配合禁止變換車道線，減少臨時變換車道的情形。"
         },
         {
-          "id": "advance",
-          "title": "車道漸變前先預告",
-          "text": "在漸變區上游設置車道預告標誌，讓駕駛提早選擇車道。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              370,
-              495,
-              70,
-              115
-            ]
-          }
+          "id": "connect-review",
+          "title": "檢核前後車道銜接",
+          "text": "依路口上下游車道數、車道用途與行駛方向，檢核各車道的銜接關係。"
         },
         {
-          "id": "guide-width",
-          "title": "轉彎後車道寬度改變",
-          "text": "下游過寬或過窄時，以導引線標示轉彎軌跡，銜接正確車道。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              1090,
-              290,
-              270,
-              280
-            ]
-          }
+          "id": "connect-transition",
+          "title": "安排縮減與偏移",
+          "text": "車道需要縮減或偏移時，應妥善安排車道配置及變換車道位置，避免車輛於路口內爭道。"
         },
         {
-          "id": "guide-offset",
-          "title": "直行偏移與主線方向不清",
-          "text": "直行車道偏移、偏斜或多岔路口，可用導引線提示連續的主要路徑。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              1070,
-              315,
-              310,
-              220
-            ]
-          }
+          "id": "connect-guides",
+          "title": "標示穿越路徑",
+          "text": "必要時利用路口行車導引線，明確標示穿越路口後的行駛路徑。"
         },
         {
-          "id": "guide-overlap",
-          "title": "導引線重疊時適度簡化",
-          "text": "優先保留容易誤判的關鍵流向；其他導引線可截斷或省略，避免過於複雜。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              1140,
-              350,
-              160,
-              155
-            ]
-          }
+          "id": "turn-review",
+          "title": "檢核設計車輛軌跡",
+          "text": "依設計車輛的轉彎軌跡，檢核路口行車導引線、路緣轉角及交通島配置。"
         },
         {
-          "id": "channel",
-          "title": "槽化多餘空間",
-          "text": "以槽化線界定禁止通行區域，區隔車流並順化轉彎軌跡。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              1110,
-              485,
-              150,
-              85
-            ]
-          }
+          "id": "turn-space",
+          "title": "保留轉彎空間",
+          "text": "避免轉彎空間不足，造成車輛偏離行駛路徑或擦撞交通島、路緣。"
         },
         {
-          "id": "waiting",
-          "title": "左彎待轉區避開其他動線",
-          "text": "依轉彎軌跡安排線形與停等位置，避免影響對向左轉及直行車流。",
-          "focus": {
-            "asset": "m101-lanes",
-            "rect": [
-              1095,
-              355,
-              90,
-              85
-            ]
-          }
+          "id": "turn-curb",
+          "title": "合理配置路緣轉角",
+          "text": "避免路緣轉角僅採直線截角而形成不必要的車行空間，增加行人穿越距離。"
         }
       ],
       "sourcePages": [],
@@ -432,16 +363,43 @@
           "text": "市區道路依設計規範第 4.2.6 節檢核，設計速率與漸變段長寬比對照如下。",
           "table": {
             "label": "設計速率與漸變段長寬比",
-            "headers": ["設計速率（km/h）", "漸變段長寬比"],
+            "headers": [
+              "設計速率（km/h）",
+              "漸變段長寬比"
+            ],
             "rows": [
-              ["20", "3:1"],
-              ["30", "4:1"],
-              ["40", "6:1"],
-              ["50", "8:1"],
-              ["60", "10:1"],
-              ["70", "12:1"],
-              ["80", "14:1"],
-              ["90", "15:1"]
+              [
+                "20",
+                "3:1"
+              ],
+              [
+                "30",
+                "4:1"
+              ],
+              [
+                "40",
+                "6:1"
+              ],
+              [
+                "50",
+                "8:1"
+              ],
+              [
+                "60",
+                "10:1"
+              ],
+              [
+                "70",
+                "12:1"
+              ],
+              [
+                "80",
+                "14:1"
+              ],
+              [
+                "90",
+                "15:1"
+              ]
             ]
           },
           "focus": {
@@ -579,53 +537,145 @@
           "topics": [
             {
               "id": "dotted",
-              "label": "穿越虛線",
+              "label": "提前預告車道用途與行駛方向",
               "sourcePageId": "m101-lanes-diagram",
               "pointIds": [
-                "dotted-width",
-                "dotted-length"
+                "advance-signs",
+                "advance-dotted",
+                "advance-solid"
+              ],
+              "facilities": [
+                {
+                  "id": "advance",
+                  "label": "車道預告標誌",
+                  "focus": {
+                    "asset": "m101-lanes",
+                    "rect": [
+                      370,
+                      495,
+                      70,
+                      115
+                    ]
+                  }
+                },
+                {
+                  "id": "arrows",
+                  "label": "指向線",
+                  "focus": {
+                    "asset": "m101-lanes"
+                  }
+                },
+                {
+                  "id": "dotted",
+                  "label": "穿越虛線",
+                  "focus": {
+                    "asset": "m101-lanes",
+                    "rect": [
+                      420,
+                      398,
+                      620,
+                      106
+                    ]
+                  }
+                },
+                {
+                  "id": "solid",
+                  "label": "禁止變換車道線",
+                  "focus": {
+                    "asset": "m101-lanes"
+                  }
+                }
               ]
             },
             {
-              "id": "arrows",
-              "label": "指向線",
+              "id": "continuity",
+              "label": "確保路口前後車道合理銜接",
               "sourcePageId": "m101-lanes-diagram",
               "pointIds": [
-                "arrows"
+                "connect-review",
+                "connect-transition",
+                "connect-guides"
+              ],
+              "facilities": [
+                {
+                  "id": "arrows",
+                  "label": "指向線",
+                  "focus": {
+                    "asset": "m101-lanes"
+                  }
+                },
+                {
+                  "id": "guides",
+                  "label": "路口行車導引線",
+                  "focus": {
+                    "asset": "m101-lanes",
+                    "rect": [
+                      1090,
+                      290,
+                      270,
+                      280
+                    ]
+                  }
+                },
+                {
+                  "id": "lanes",
+                  "label": "車道線",
+                  "focus": {
+                    "asset": "m101-lanes"
+                  }
+                }
               ]
             },
             {
-              "id": "advance",
-              "label": "車道預告標誌",
+              "id": "trajectory",
+              "label": "依轉彎軌跡配置導引線與路口空間",
               "sourcePageId": "m101-lanes-diagram",
               "pointIds": [
-                "advance"
-              ]
-            },
-            {
-              "id": "guide",
-              "label": "路口行車導引線",
-              "sourcePageId": "m101-lanes-diagram",
-              "pointIds": [
-                "guide-width",
-                "guide-offset",
-                "guide-overlap"
-              ]
-            },
-            {
-              "id": "channel",
-              "label": "槽化線",
-              "sourcePageId": "m101-lanes-diagram",
-              "pointIds": [
-                "channel"
-              ]
-            },
-            {
-              "id": "waiting",
-              "label": "左彎待轉區線",
-              "sourcePageId": "m101-lanes-diagram",
-              "pointIds": [
-                "waiting"
+                "turn-review",
+                "turn-space",
+                "turn-curb"
+              ],
+              "facilities": [
+                {
+                  "id": "guides",
+                  "label": "路口行車導引線",
+                  "focus": {
+                    "asset": "m101-lanes",
+                    "rect": [
+                      1090,
+                      290,
+                      270,
+                      280
+                    ]
+                  }
+                },
+                {
+                  "id": "channel",
+                  "label": "槽化線",
+                  "focus": {
+                    "asset": "m101-lanes",
+                    "rect": [
+                      1110,
+                      485,
+                      150,
+                      85
+                    ]
+                  }
+                },
+                {
+                  "id": "curb",
+                  "label": "路緣轉角",
+                  "focus": {
+                    "asset": "m101-lanes"
+                  }
+                },
+                {
+                  "id": "island",
+                  "label": "交通島",
+                  "focus": {
+                    "asset": "m101-lanes"
+                  }
+                }
               ]
             }
           ]
@@ -736,5 +786,8 @@
         }
       ]
     }
+  ],
+  "hiddenPages": [
+    "m101-overview"
   ]
 }

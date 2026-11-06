@@ -1,18 +1,36 @@
 (() => {
   'use strict';
   const Core = window.VisualLayoutCore;
-  const records = new WeakMap(), active = new Map(), opened = new Set();
+  const records = new WeakMap(), active = new Map(), opened = new Set(), positions = new Map();
+  let panelDrag=null;
   const selector = '.context-map-canvas svg.context-map,.conditions-current-canvas svg.conditions-current-diagram,.module-map-canvas svg.module-diagram,.results-map-canvas svg.results-diagram';
   const number = value => String(Math.round(value * 1000) / 1000);
   function place(record) {
     if (record.panel.hidden) return;
-    const rect = record.figure.getBoundingClientRect(), width = Math.min(300, innerWidth - 24);
-    const beside = rect.right + 12;
-    record.panel.style.width = width + 'px';
-    record.panel.style.left = Math.max(12, beside + width <= innerWidth - 12 ? beside : Math.min(rect.right - width, innerWidth - width - 12)) + 'px';
-    const top = Math.min(Math.max(90, rect.top + 42), Math.max(90, innerHeight - 460));
-    record.panel.style.top = top + 'px'; record.panel.style.maxHeight = Math.max(140, innerHeight - top - 85) + 'px';
+    const panel=record.panel,rect=record.figure.getBoundingClientRect(),margin=12,width=Math.min(300,innerWidth-margin*2);
+    panel.style.width=width+'px';panel.style.maxHeight=Math.max(100,innerHeight-margin*2)+'px';
+    const saved=positions.get(record.id),height=panel.getBoundingClientRect().height,beside=rect.right+margin;
+    const desired=saved||{x:beside+width<=innerWidth-margin?beside:rect.right-width,y:Math.min(Math.max(90,rect.top+42),Math.max(90,innerHeight-460))};
+    const x=Math.max(margin,Math.min(innerWidth-width-margin,desired.x)),y=Math.max(margin,Math.min(Math.max(margin,innerHeight-height-margin),desired.y));
+    panel.style.left=x+'px';panel.style.top=y+'px';
+    if(saved)positions.set(record.id,{x,y});
   }
+  function finishPanelDrag(cancel=false){
+    if(!panelDrag)return;
+    const current=panelDrag;panelDrag=null;
+    current.record.panel.classList.remove('is-dragging');
+    if(cancel){if(current.previous)positions.set(current.record.id,current.previous);else positions.delete(current.record.id);place(current.record);}
+    try{current.handle.releasePointerCapture(current.pointerId);}catch{}
+  }
+  function movePanel(event){
+    if(!panelDrag||event.pointerId!==panelDrag.pointerId)return;
+    event.preventDefault();
+    positions.set(panelDrag.record.id,{x:panelDrag.x+event.clientX-panelDrag.startX,y:panelDrag.y+event.clientY-panelDrag.startY});place(panelDrag.record);
+  }
+  document.addEventListener('pointermove',movePanel,{passive:false});
+  document.addEventListener('pointerup',event=>{if(panelDrag?.pointerId===event.pointerId)finishPanelDrag();});
+  document.addEventListener('pointercancel',event=>{if(panelDrag?.pointerId===event.pointerId)finishPanelDrag(true);});
+  window.addEventListener('blur',()=>finishPanelDrag(true));
   function setting(record) { return record.context.getConfig().imageViews[record.id] || Core.imageView(record.pageId, record.assetKey); }
   function fields(record) {
     const value = setting(record);
@@ -43,6 +61,7 @@
     fields(record); place(record);
   }
   function close(record) {
+    if(panelDrag?.record===record)finishPanelDrag();
     opened.delete(record.id); record.panel.hidden = true; record.button.setAttribute('aria-expanded', 'false');
   }
   function open(record) {
@@ -75,10 +94,10 @@
     const panel = document.createElement('section');
     panel.className = 'iv-panel'; panel.dataset.editorUi = 'initial-image-view'; panel.dataset.imageViewId = id;
     panel.setAttribute('aria-label', heading); panel.hidden = !opened.has(id);
-    const note = pageId.startsWith('results-representative-')?'只調整這張總覽縮圖；不會連動其他圖例或模組詳細頁。儲存後重新開啟也會保留。':/^results-scenario-[gc][1-4]-\d{2}-strategy$/.test(pageId)||context.overviewAssetKey===assetKey
+    const note = pageId.startsWith('modules-concept-')?'只調整目前這個概念的初始畫面；各概念分別儲存，切換時會套用自己的縮放、位置與旋轉。':(pageId.startsWith('results-representative-')||pageId.startsWith('modules-topic-'))?'只調整這張總覽縮圖；不會連動其他圖例或模組詳細頁。儲存後重新開啟也會保留。':/^results-scenario-[gc][1-4]-\d{2}-strategy$/.test(pageId)||context.overviewAssetKey===assetKey
       ? `此設定會同步到${context.overviewAssetKey===assetKey?'模組':'情境'}總覽縮圖；儲存設定後，重新開啟也會保留。`
       : zoomStep?'儲存後，按「播放局部放大」會平順移到這個範圍。':'儲存後，切頁、重新開啟及重設視圖會使用這個初始畫面。';
-    panel.innerHTML = `<div class="iv-heading"><strong>${heading}</strong><button type="button" data-iv-action="close" aria-label="關閉初始畫面設定">×</button></div>
+    panel.innerHTML = `<div class="iv-heading"><strong class="iv-drag-handle" tabindex="0" role="button" aria-label="拖曳移動視窗；方向鍵微調，Home 回到預設位置" title="拖曳移動視窗；方向鍵微調，Home 回到預設位置">${heading}<span class="iv-drag-hint">拖曳移動</span></strong><button type="button" data-iv-action="close" aria-label="關閉初始畫面設定">×</button></div>
       <p>可調整旋轉角度，再在圖上縮放、拖曳並套用目前畫面，也可直接調整下方數值。</p>
       <div class="iv-fields"><label>初始縮放（%）<input type="number" data-iv-field="zoom" min="2" max="20000" step="1"></label><label>左右位置（%）<input type="number" data-iv-field="x" min="-1000" max="1000" step="0.1"></label><label>上下位置（%）<input type="number" data-iv-field="y" min="-1000" max="1000" step="0.1"></label></div>
       <div class="iv-fields iv-rotation"><label>旋轉角度（°）<input type="number" data-iv-field="rotation" min="-360" max="360" step="1"></label><button type="button" data-iv-action="rotate-left">左轉 90°</button><button type="button" data-iv-action="rotate-right">右轉 90°</button></div>
@@ -88,6 +107,24 @@
     toolbar.append(button); document.body.append(panel);
     const record = {id, pageId, assetKey, svg, figure, button, panel, controller, context, home: controller.read(), signature: null};
     records.set(svg, record); active.set(id, record);
+    const handle=panel.querySelector('.iv-drag-handle');
+    handle.addEventListener('pointerdown',event=>{
+      if(event.button!==0||record.context.isBusy())return;
+      event.preventDefault();event.stopPropagation();finishPanelDrag();
+      const rect=panel.getBoundingClientRect();
+      panelDrag={record,handle,pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,x:rect.left,y:rect.top,previous:positions.get(id)};
+      panel.classList.add('is-dragging');handle.focus({preventScroll:true});
+      try{handle.setPointerCapture(event.pointerId);}catch{}
+    });
+    handle.addEventListener('lostpointercapture',event=>{if(panelDrag?.pointerId===event.pointerId)finishPanelDrag();});
+    handle.addEventListener('keydown',event=>{
+      if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(event.key))return;
+      event.preventDefault();event.stopPropagation();
+      if(event.key==='Home'){positions.delete(id);place(record);return;}
+      const rect=panel.getBoundingClientRect(),step=event.shiftKey?30:10;
+      positions.set(id,{x:rect.left+(event.key==='ArrowLeft'?-step:event.key==='ArrowRight'?step:0),y:rect.top+(event.key==='ArrowUp'?-step:event.key==='ArrowDown'?step:0)});place(record);
+    });
+
     button.addEventListener('click', event => {event.preventDefault();event.stopPropagation();if(!record.context.isBusy())record.panel.hidden ? open(record) : close(record);});
     panel.addEventListener('change', event => {
       const input = event.target.closest('[data-iv-field]'); if (!input) return;
@@ -117,7 +154,7 @@
     return record;
   }
   function mount(root, context) {
-    for (const [id, record] of active) if (!record.svg.isConnected) {record.panel.remove();active.delete(id);}
+    for (const [id, record] of active) if (!record.svg.isConnected) {if(panelDrag?.record===record)finishPanelDrag(true);record.panel.remove();active.delete(id);}
     for (const svg of root.querySelectorAll(selector)) {
       const assetKey = svg.closest('[data-editor-image-key]')?.dataset.editorImageKey;
       if (!assetKey) continue;

@@ -67,6 +67,18 @@
       }
       const label=nav.querySelector('.nav-label');if(label){label.classList.toggle('navigation-order-label',Boolean(editable()));label.title=editable()?'拖曳按鈕調整順序；Alt＋←／→也可移動':'';}
     }
+    mountFacilityOrder(module);
+  }
+  function mountFacilityOrder(module){
+    if(!editable()||!module?.topic?.facilities)return;
+    for(const nav of document.querySelectorAll('#presentation .module-concept-facilities')){
+      const buttons=[...nav.querySelectorAll('[data-module-concept-facility]')];if(buttons.length<2)continue;
+      nav.dataset.navigationOrder='concept-facilities:'+module.stage.pageId+'/'+module.topic.id;
+      for(const button of buttons){
+        button.dataset.orderId=button.dataset.moduleConceptFacility;button.classList.add('navigation-order-item','can-reorder');button.draggable=false;
+        button.title='拖曳調整相關設施順序；Alt＋←／→移動';
+      }
+    }
   }
   function updateTocActions(message,error=false){
     for(const button of document.querySelectorAll('[data-toc-editor-action]')){
@@ -102,6 +114,7 @@
   function commit(nav,id,target,after){
     const before=ids(nav),next=moved(before,id,target,after);if(next.every((value,index)=>value===before[index]))return;
     const key=nav.dataset.navigationOrder;
+    if(key.startsWith('concept-facilities:')){window.PresentationModules?.reorderFacilities(next,id);return;}
     if(key.startsWith('toc:')){
       const pages=reorderedPages(app.pages,before,next),pageOrder=pages.map(page=>page.id),scenarios=new Set(pages.filter(page=>before.includes(page.id)&&page.scenario).map(page=>page.scenario));
       if(window.visualLayoutEditor.transact(config=>{config.legacyState.pageOrder=pageOrder;for(const scene of scenarios)delete config.navigationOrders['scenario:'+scene];},false)){

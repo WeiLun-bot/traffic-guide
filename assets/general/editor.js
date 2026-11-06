@@ -351,7 +351,11 @@
     for(const [key,value]of Object.entries({x,y,width,height}))rect.setAttribute(key,value);
     for(const corner of ['nw','ne','sw','se']) {
       const handle=layer.querySelector(`[data-handle="${corner}"]`);
-      handle.setAttribute('x',(corner.includes('e')?x+width:x)-size/2);handle.setAttribute('y',(corner.includes('s')?y+height:y)-size/2);handle.setAttribute('width',size);handle.setAttribute('height',size);
+      const cx=corner.includes('e')?x+width:x,cy=corner.includes('s')?y+height:y;
+      // Keep the visible corner small, with a larger transparent drag target.
+      for(const [node,side]of [[handle,size*2],[handle.nextElementSibling,size*.6]]){
+        node.setAttribute('x',cx-side/2);node.setAttribute('y',cy-side/2);node.setAttribute('width',side);node.setAttribute('height',side);
+      }
     }
     const rotate=layer.querySelector('[data-handle="rotate"]');
     if(rotate){
@@ -365,6 +369,16 @@
     const controls=document.querySelector(`[data-controls-key="${frame.key}"]`);
     controls?.querySelectorAll('[data-bound-index]').forEach(input=>{input.value=String(Math.round(box[Number(input.dataset.boundIndex)]*10)/10);});
     const field=controls?.querySelector('[data-highlight-rotation]');if(field)field.value=String(Math.round(angle*10)/10);
+  }
+  function syncHandleSizes(root) {
+    if(!editing||!adjusting||!api)return;
+    for(const frame of api.editorFrames()){
+      if(root&&root!==frame.element&&!root.contains(frame.element))continue;
+      const layer=frame.element.querySelector('.editor-handle-layer');if(!layer)continue;
+      const current=drag?.frame.key===frame.key?drag:null;
+      const kind=targetKinds.get(frame.key)||'box';
+      setLayer(layer,current?.current||(kind==='crop'?frame.getCrop():frame.getBox()),frame,current?.currentAngle??(kind==='crop'?0:rotation(frame.key)));
+    }
   }
   function addFrameControls(frame) {
     const kind=targetKinds.get(frame.key)==='crop'&&frame.getCrop?'crop':'box';
@@ -389,7 +403,10 @@
       const element=document.createElementNS('http://www.w3.org/2000/svg',tag);element.dataset.frameKey=frame.key;element.dataset.handle=corner;element.setAttribute('tabindex','0');element.setAttribute('role','button');element.setAttribute('aria-label',frame.label+' '+label);return element;
     };
     const rect=makeHandle('rect','move','移動框選');rect.classList.add('editor-focus-box');rect.setAttribute('rx','3');layer.append(rect);
-    for(const corner of ['nw','ne','sw','se']){const handle=makeHandle('rect',corner,({nw:'左上',ne:'右上',sw:'左下',se:'右下'})[corner]+'角縮放');handle.classList.add('editor-corner');layer.append(handle);}
+    for(const corner of ['nw','ne','sw','se']){
+      const handle=makeHandle('rect',corner,({nw:'左上',ne:'右上',sw:'左下',se:'右下'})[corner]+'角縮放');handle.classList.add('editor-corner');layer.append(handle);
+      const marker=document.createElementNS('http://www.w3.org/2000/svg','rect');marker.classList.add('editor-corner-mark');marker.setAttribute('aria-hidden','true');layer.append(marker);
+    }
     if(kind==='box'){
       const stem=document.createElementNS('http://www.w3.org/2000/svg','line');stem.classList.add('editor-rotation-stem');layer.append(stem);
       const handle=makeHandle('circle','rotate','旋轉打亮框；方向鍵旋轉 1°，Shift 方向鍵旋轉 15°');handle.classList.add('editor-rotation-handle');layer.append(handle);
@@ -414,6 +431,8 @@
   function focusHandle(key,corner) {document.querySelector(`[data-frame-key="${key}"][data-handle="${corner}"]`)?.focus({preventScroll:true});}
   function connect(value) {
     api=value;
+    document.addEventListener('viewportchange',event=>syncHandleSizes(event.target));
+    window.addEventListener('resize',()=>requestAnimationFrame(()=>syncHandleSizes()));
     const toggle=document.createElement('button');toggle.type='button';toggle.className='edit-toggle';toggle.dataset.editorUi='toggle';toggle.textContent='編輯內容';toggle.setAttribute('aria-pressed','false');toggle.setAttribute('aria-controls','editor-toolbar');document.querySelector('.header').append(toggle);
     const toolbar=document.createElement('div');toolbar.id='editor-toolbar';toolbar.className='editor-toolbar';toolbar.dataset.editorUi='toolbar';toolbar.hidden=true;
     toolbar.innerHTML='<div class="editor-instructions"><strong>直接編輯這份簡報</strong><p>點文字修改，使用圖片旁的按鈕更換圖片。</p><span class="editor-status" role="status" aria-live="polite"></span></div><div class="editor-actions"><button type="button" class="editor-highlight" aria-pressed="false">調整打亮</button><button type="button" class="editor-add-page">新增頁面</button><button type="button" data-page-order="-1" title="新增頁面往前移">往前移</button><button type="button" data-page-order="1" title="新增頁面往後移">往後移</button><button type="button" class="editor-remove-page">移除此頁</button><button type="button" class="editor-download">下載 HTML</button></div>';
@@ -531,5 +550,5 @@
     });
     report(restored?'已恢復上次草稿，請儲存 JSON 設定':'點選虛線框即可編輯；請儲存 JSON 設定保存');
   }
-  window.generalRoadEditor={prepare,restorePages,connect,decorate,decorateAsset,image,bounds,rotation,serialize,setEditing,setAdjusting,addPage,movePage,removePage,replaceImage,getComparisonTransform,setComparisonTransform,get state(){return state;},get editing(){return editing;},get adjusting(){return adjusting;},needsAlignment:id=>Boolean(state.disabledHighlights['article:'+id])};
+  window.generalRoadEditor={prepare,restorePages,connect,decorate,decorateAsset,toggleModuleFrame,image,bounds,rotation,serialize,setEditing,setAdjusting,addPage,movePage,removePage,replaceImage,getComparisonTransform,setComparisonTransform,get state(){return state;},get editing(){return editing;},get adjusting(){return adjusting;},needsAlignment:id=>Boolean(state.disabledHighlights['article:'+id])};
 })();

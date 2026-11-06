@@ -28,7 +28,7 @@
     for(const deck of value.presentations){
       if(!/^[\w-]+$/.test(deck.id)||ids.has(deck.id)||typeof deck.title!=='string'||!deck.title.trim()||!Array.isArray(deck.chapters)||!deck.chapters.length)throw new Error('簡報主題無效');ids.add(deck.id);
       if(deck.chapterCovers!==undefined&&typeof deck.chapterCovers!=='boolean')throw new Error('章節頁設定無效');
-      for(const chapter of deck.chapters){if(!/^[\w-]+$/.test(chapter.id)||chapters.has(chapter.id)||!/^\d{2}$/.test(chapter.code)||typeof chapter.name!=='string'||!chapter.name.trim()||!/^[\w-]+$/.test(chapter.entry))throw new Error('簡報章節無效');chapters.add(chapter.id);}
+      for(const chapter of deck.chapters){if(chapter.chapterCover!==undefined&&typeof chapter.chapterCover!=='boolean')throw new Error('章節頁設定無效');if(!/^[\w-]+$/.test(chapter.id)||chapters.has(chapter.id)||!/^\d{2}$/.test(chapter.code)||typeof chapter.name!=='string'||!chapter.name.trim()||!/^[\w-]+$/.test(chapter.entry))throw new Error('簡報章節無效');chapters.add(chapter.id);}
       if(!deck.chapters.some(chapter=>chapter.entry===deck.entry))throw new Error('簡報入口不在章節架構中');
     }
     return value;
@@ -64,6 +64,7 @@
   }
   function navigationLabel(api=app){
     if(!deckFor(api.page))return '選擇第一場簡報';
+    const pointLabel=api.page.kind==='module'&&window.PresentationModules?.navigationLabel?.();if(pointLabel)return pointLabel;
     const target=navigationTarget(1,api);
     if(target.index===undefined)return '回到本場開頭';
     if(target.id===api.page.id)return api.page.article?'放大並解說':'下一步解說 '+(target.phase+1);
@@ -71,7 +72,7 @@
   }
   function addChapterCovers(pages,value=manifest){
     for(const deck of value?.presentations||[])if(deck.chapterCovers)for(const chapter of deck.chapters){
-      const id='chapter-cover-'+chapter.id;if(pages.some(page=>page.id===id))continue;const index=pages.findIndex(page=>page.chapter===chapter.id);if(index<0)continue;
+      if(chapter.chapterCover===false)continue;const id='chapter-cover-'+chapter.id;if(pages.some(page=>page.id===id))continue;const index=pages.findIndex(page=>page.chapter===chapter.id);if(index<0)continue;
       pages.splice(index,0,{id,chapter:chapter.id,kind:'chapter-cover',name:chapter.name,deckId:deck.id});
     }
     return pages;

@@ -267,6 +267,22 @@
     const signal=['g2','g4'].includes(page.chapter);
     return `<section class="slide chapter-opening" aria-labelledby="slide-title"><div><div class="eyebrow">${chapter.code} / ${chapter.group} ROAD SCENARIOS</div><h1 id="slide-title">${signal?'號誌化':'無號誌'}<br>${cross?'四岔':'三岔'}路口</h1><span class="tag">章節預留</span><p>以${signal?'號誌化':'無號誌'}${cross?'四岔':'三岔'}路口為本章主題，依市區與鄉區、正交與斜交，編排 ${chapter.count} 種情境。</p><p>後續可延續 G1-01 的講解方式：<br>情境大圖 → 框選定位 → 放大解說。</p><div class="opening-actions"><button class="primary-button" data-page="overview">回到 G1-01 示範 <span>↗</span></button><button class="text-button" data-action="toc">查看目錄</button></div><div class="opening-status">本次 demo 已建立章節開場；本章的情境圖面與條文解說待加入。</div></div><div class="opening-art"><span class="opening-number">${chapter.code}</span>${roadSymbol(cross,signal)}<span class="eyebrow">${chapter.group} / ${signal?'SIGNALIZED':'UNSIGNALIZED'} ${cross?'CROSS':'T'}-INTERSECTION</span></div></section>`;
   }
+  function captureScroll(){
+    const root=$('presentation'),nodes=[];
+    for(const element of [root,...root.querySelectorAll('*')]){
+      if(!(element.scrollTop||element.scrollLeft))continue;
+      const path=[];let node=element;
+      while(node!==root){const parent=node.parentElement;if(!parent)break;path.unshift([...parent.children].indexOf(node));node=parent;}
+      if(node===root)nodes.push({path,tag:element.tagName,top:element.scrollTop,left:element.scrollLeft});
+    }
+    return {nodes,x:window.scrollX,y:window.scrollY};
+  }
+  function restoreScroll(snapshot){
+    if(!snapshot)return;
+    const root=$('presentation');
+    for(const item of snapshot.nodes){let node=root;for(const index of item.path)node=node?.children[index];if(node?.tagName===item.tag){node.scrollTop=item.top;node.scrollLeft=item.left;}}
+    if(window.scrollX!==snapshot.x||window.scrollY!==snapshot.y)window.scrollTo(snapshot.x,snapshot.y);
+  }
   function navigate(index, options={}) {
     index=Math.max(0,Math.min(stops.length-1,index));
     if(!editor?.editing&&pages[stops[index].page].article&&stops[index].phase===0) {
@@ -278,6 +294,7 @@
     synchronizeData();
     if(!options.keepLoadStatus)loadStatus.hidden=true;
     if(index===position&&!options.force) return;
+    const previousScroll=options.preserveScroll?captureScroll():null;
     window.PresentationResults?.beforeNavigate(target,stops[index].phase);
     window.visualLayoutEditor?.beforeRender();
     viewport?.cancel();
@@ -343,6 +360,7 @@
     window.PresentationResults?.afterRender();
     window.PresentationOrder?.mount(window.generalRoadPresentation);
     window.PresentationImageOrder?.mount(window.generalRoadPresentation);
+    restoreScroll(previousScroll);
     if(options.hash!==false) {
       const hash=page.kind==='module'?window.PresentationModules.hashFor(page):`#${page.id}${page.article&&current().phase?'/zoom':['custom','results'].includes(page.kind)&&current().phase?'/step-'+current().phase:''}`;
       try {history.replaceState(null,'',hash);} catch {location.hash=hash;}
@@ -484,7 +502,7 @@
       return {key,label:side==='left'?'左圖':side==='right'?'右圖':'情境圖',element,width:1000,height:640,imageKey:element.dataset.editorImageKey,getBox:()=>editor.bounds(key,'box',fallback),toSource:bounds=>bounds,fromSource:bounds=>bounds,setBounds:(_kind,bounds)=>bounds,defaults:{box:fallback}};
     });
   }
-  window.generalRoadPresentation={data,pages,stops,fullView,displayBounds,pageTitle,goPage,navigate,updateContents,editorFrames,refresh:()=>navigate(position,{force:true}),refreshStructure,showAsset,whenIdle:()=>pendingNavigation,get page(){return currentPage();},get position(){return position;},get state(){return {page:currentPage().id,phase:current().phase,fullPeek};}};
+  window.generalRoadPresentation={data,pages,stops,fullView,displayBounds,pageTitle,goPage,navigate,updateContents,editorFrames,refresh:()=>navigate(position,{force:true,preserveScroll:true}),refreshStructure,showAsset,whenIdle:()=>pendingNavigation,get page(){return currentPage();},get position(){return position;},get state(){return {page:currentPage().id,phase:current().phase,fullPeek};}};
   editor?.connect(window.generalRoadPresentation);
   window.visualLayoutEditor?.connect(window.generalRoadPresentation);
   window.PresentationModules?.connect(window.generalRoadPresentation);

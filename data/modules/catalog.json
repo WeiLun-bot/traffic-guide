@@ -54,7 +54,8 @@
           "id": "M1-01.2",
           "name": "附加車道"
         }
-      ]
+      ],
+      "topicPreviewAsset": "m101-lanes"
     },
     {
       "id": "M1-02",
@@ -66,7 +67,8 @@
           "id": "M1-02.1",
           "name": "路徑與地點指示"
         }
-      ]
+      ],
+      "topicPreviewAsset": "m102-roundabout"
     },
     {
       "id": "M1-03",
@@ -78,7 +80,8 @@
           "id": "M1-03.1",
           "name": "路側停放與裝卸車位配置"
         }
-      ]
+      ],
+      "topicPreviewAsset": "m103-layout"
     },
     {
       "id": "M2-01",
