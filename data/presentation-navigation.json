@@ -396,12 +396,8 @@
   },
   "navigationOrders": {
     "module:m102-route-diagram": [
-      "location",
-      "angle",
       "lanes",
-      "single",
-      "simple",
-      "continuity"
+      "location"
     ],
     "module:m103-parking-diagram": [
       "signs",

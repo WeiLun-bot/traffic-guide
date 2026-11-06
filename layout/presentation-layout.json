@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-06T11:51:12.758Z",
+  "updatedAt": "2026-11-06T12:47:51.679Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793964082700,
+    "updatedAt": 1793969270030,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -854,7 +854,14 @@
           787.7,
           292
         ],
-        "imageKey": "module:m101-additional"
+        "imageKey": "module:m101-additional",
+        "box": [
+          218.50000000000003,
+          128.4,
+          304.7,
+          61.8
+        ],
+        "rotation": 0
       },
       "module:m101-additional-diagram:concept-advance-advance": {
         "crop": [
@@ -925,6 +932,16 @@
         "rotation": 0,
         "imageKey": "module:m101-lanes",
         "deleted": true
+      },
+      "module:m101-additional-diagram:concept-advance-arrows": {
+        "box": [
+          438,
+          134.7,
+          68.3,
+          47.3
+        ],
+        "rotation": 0,
+        "imageKey": "module:m101-additional"
       }
     },
     "disabledHighlights": {
@@ -1214,7 +1231,7 @@
         "color": "#6c7e72"
       },
       "m101-lanes-issues|module|continuity|title": {
-        "color": "#000000"
+        "color": "#233e36"
       },
       "results-background|results|source-p1": {
         "fontSize": 20
@@ -2639,7 +2656,8 @@
     "m201-yield-extensions/curb": "vertical",
     "m201-yield-extensions/buffer": "vertical",
     "m203-signals-extensions/explanation": "vertical",
-    "m203-signals-extensions/shield": "vertical"
+    "m203-signals-extensions/shield": "vertical",
+    "m101-additional-extensions/refuge": "horizontal"
   },
   "tableColumns": {
     "results-three-years/framework-0": [

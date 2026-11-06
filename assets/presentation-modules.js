@@ -56,9 +56,9 @@
           if(topic.summary!==undefined)assert(str(topic.summary)&&topic.summary.length<=1000,'概念摘要無效');
           if(topic.facilitiesLabel!==undefined)assert(str(topic.facilitiesLabel)&&topic.facilitiesLabel.length<=60,'概念設施標籤無效');
           if(topic.showPointTitles!==undefined)assert(typeof topic.showPointTitles==='boolean','概念說明標題顯示設定無效');
-          if(topic.facilities!==undefined){assert(Array.isArray(topic.facilities)&&topic.facilities.length>0&&topic.facilities.length<=12&&new Set(topic.facilities.map(item=>item.id)).size===topic.facilities.length,'概念設施清單無效');for(const facility of topic.facilities){const asset=value.assets[facility.focus?.asset];assert(/^[\w-]+$/.test(facility.id)&&str(facility.label)&&asset&&source.assets.includes(facility.focus.asset)&&(!facility.focus.rect||validBox(facility.focus.rect,asset)),'概念設施框選無效');}}
+          if(topic.facilities!==undefined){assert(Array.isArray(topic.facilities)&&(topic.facilities.length>0||stage.id==='diagram')&&topic.facilities.length<=12&&new Set(topic.facilities.map(item=>item.id)).size===topic.facilities.length,'概念設施清單無效');for(const facility of topic.facilities){const asset=value.assets[facility.focus?.asset];assert(/^[\w-]+$/.test(facility.id)&&str(facility.label)&&asset&&source.assets.includes(facility.focus.asset)&&(!facility.focus.rect||validBox(facility.focus.rect,asset)),'概念設施框選無效');assert(facility.kind===undefined||['control','design'].includes(facility.kind),'項目類別無效');}}
           const pointIds=topic.pointIds||source.points.map(point=>point.id);
-          assert(Array.isArray(pointIds)&&pointIds.length>0&&new Set(pointIds).size===pointIds.length&&pointIds.every(id=>source.points.some(point=>point.id===id)),'解說項目內容引用無效');
+          assert(Array.isArray(pointIds)&&(pointIds.length>0||(stage.id==='diagram'&&Array.isArray(topic.facilities)))&&new Set(pointIds).size===pointIds.length&&pointIds.every(id=>source.points.some(point=>point.id===id)),'解說項目內容引用無效');
           for(const id of pointIds){const key=source.id+':'+id;assert(!covered.has(key),'解說項目內容重複');covered.add(key);}
           if(topic.assets)assert(Array.isArray(topic.assets)&&new Set(topic.assets).size===topic.assets.length&&topic.assets.every(id=>source.assets.includes(id)),'解說項目圖例引用無效');
         }
@@ -152,6 +152,20 @@
     if(topicRoute!==undefined){const wanted=topicRoute.replace(/^topic-/,'');selectedTopics.set(context.stage.pageId,context.stage.topics?.some(topic=>topic.id===wanted)?wanted:context.stage.topics?.[0]?.id);}
     else if(alias)selectedTopics.set(context.stage.pageId,alias);
     return context.stage.pageId;
+  }
+  function prepareNavigation(id,direction){
+    if(direction!==1||id===presentation?.page.id||(typeof window==='object'&&window.generalRoadEditor?.editing))return;
+    const context=stageContext(id);
+    const source=context?.stage.id==='issues'&&moduleFor(id)?.pages.find(page=>page.id===id);
+    if(source?.pointLinkedImages){
+      const point=pagePoints(source)[0];
+      if(point)selectedPoints.set(source.id,point.id);else selectedPoints.delete(source.id);
+      pendingFocus=null;return;
+    }
+    if(context?.stage.id!=='diagram'||!context.stage.topics?.length)return;
+    const topic=context.stage.topics[0];
+    selectedTopics.set(context.stage.pageId,topic.id);
+    selectedPoints.delete(topic.sourcePageId);pendingFocus=null;
   }
   function hashFor(page){if(page.id==='modules-formation')return '#'+page.id+(presentation.state.phase?'/step-'+presentation.state.phase:'');const {stage,topic}=displayContext(page.id);return '#'+page.id+(topic&&stage.id!=='extensions'?'/topic-'+topic.id:'');}
   function extensionPaging(){return Boolean(document.fullscreenElement)&&innerWidth>900&&!document.body.classList.contains('is-editing')&&displayContext().stage?.id==='extensions';}
@@ -273,7 +287,7 @@
     const {stage,topic}=displayContext(page.id);
     if(stage?.id==='issues')return articleRefs(displayContext(page.id).source,true);
     if(stage?.id==='extensions')return '';
-    if(stage)return topic?`<nav class="article-nav module-topic-nav" aria-label="${stage.title}項目選擇"><span class="nav-label">${stage.title}</span>${stage.topics.map(value=>`<button type="button" class="article-chip${value.id===topic.id?' active':''}" data-module-topic="${value.id}" aria-pressed="${value.id===topic.id}">${esc(topicLabel(stage,value))}</button>`).join('')}</nav>`:'';
+    if(stage)return topic?`<nav class="article-nav module-topic-nav" style="--module-concept-count:${stage.topics.length}" aria-label="${stage.title}項目選擇"><span class="nav-label">${stage.title}</span>${stage.topics.map(value=>`<button type="button" class="article-chip${value.id===topic.id?' active':''}" data-module-topic="${value.id}" aria-pressed="${value.id===topic.id}">${esc(topicLabel(stage,value))}</button>`).join('')}</nav>`:'';
     const items=content.pages.filter(item=>entry.submodules.length<2||(item.submoduleId||null)===submoduleId);
     if(items.length<2)return '';
     return `<nav class="module-page-nav" aria-label="${submoduleId||entry.id+' 總覽'} 內容選擇">${items.map((item,index)=>`<button type="button" data-page="${item.id}" ${item.id===page.id?'aria-current="page"':''}><span>${String(index+1).padStart(2,'0')}</span>${esc(item.title.replace(/^(停管制|讓管制)：/,''))}</button>`).join('')}</nav>`;
@@ -527,8 +541,16 @@ function showSource(reg){
   function conceptTargets(page,topic){return effectiveFacilities(page,topic).map(facility=>({id:'concept-'+topic.id+'-'+facility.id,title:facility.label,focus:facility.focus,facilityId:facility.id}));}
   function conceptFacilities(page,topic){
     const editing=window.generalRoadEditor.editing,facilities=effectiveFacilities(page,topic),selected=selectedFacilities.get(conceptKey())||facilities[0]?.id;
-    const chips=facilities.map(facility=>editing?`<span class="module-concept-facility-chip"><button type="button" data-module-concept-facility="${esc(facility.id)}" aria-pressed="${facility.id===selected}">${esc(facility.label)}</button><button type="button" data-module-concept-remove-facility="${esc(facility.id)}" aria-label="刪除相關設施：${esc(facility.label)}" title="刪除這個相關設施">×</button></span>`:`<span>${esc(facility.label)}</span>`).join('');
-    return '<p class="module-concept-facility-label" data-block-edit-key="'+esc(page.id+'|concept|'+topic.id+'|facility-label')+'">'+esc(topic.facilitiesLabel||(topic.id==='trajectory'?'相關設施與設計要素':'相關設施'))+'</p><div class="module-concept-facilities">'+chips+'</div>'+(editing?'<div class="module-concept-facility-add" data-editor-ui="concept-facility-add"><input type="text" maxlength="60" data-module-concept-new-facility aria-label="新增相關設施名稱" placeholder="設施名稱"><button type="button" data-module-concept-add-facility>＋新增設施</button></div><p class="module-concept-edit-hint" data-editor-ui="concept-frame-hint">拖曳設施調整順序，或選取後按 Alt＋←／→；點選調整框線，× 刪除。完成後請儲存。</p>':'');
+    if(!editing&&!facilities.length)return '';
+    const groups=['control','design'].map(kind=>({kind,items:facilities.filter(item=>(item.kind||'control')===kind)})).filter(group=>group.items.length);
+    const labels={control:'相關交通管制設施',design:'相關設計要素'};
+    const html=groups.map(group=>{
+      const labelKey=page.id+'|concept|'+topic.id+'|'+(group.kind==='design'&&groups.some(item=>item.kind==='control')?'design-label':'facility-label');
+      const chips=group.items.map(facility=>editing?`<span class="module-concept-facility-chip"><button type="button" data-module-concept-facility="${esc(facility.id)}" aria-pressed="${facility.id===selected}">${esc(facility.label)}</button><button type="button" data-module-concept-remove-facility="${esc(facility.id)}" aria-label="刪除項目：${esc(facility.label)}" title="刪除這個項目">×</button></span>`:`<span>${esc(facility.label)}</span>`).join('');
+      return `<div class="module-concept-facility-group" data-facility-kind="${group.kind}"><p class="module-concept-facility-label" data-block-edit-key="${esc(labelKey)}">${labels[group.kind]}</p><div class="module-concept-facilities">${chips}</div></div>`;
+    }).join('');
+    const newKind=facilities.find(item=>item.id===selected)?.kind||'control';
+    return '<div class="module-concept-facility-groups">'+html+'</div>'+(editing?`<div class="module-concept-facility-add" data-editor-ui="concept-facility-add"><input type="text" maxlength="60" data-module-concept-new-facility aria-label="新增項目名稱" placeholder="項目名稱"><select data-module-concept-new-kind aria-label="新增項目類別"><option value="control" ${newKind==='control'?'selected':''}>交通管制設施</option><option value="design" ${newKind==='design'?'selected':''}>設計要素</option></select><button type="button" data-module-concept-add-facility>＋新增項目</button></div><p class="module-concept-edit-hint" data-editor-ui="concept-frame-hint">拖曳調整同類項目順序，或選取後按 Alt＋←／→；點選調整框線，× 刪除。完成後請儲存。</p>`:'');
   }
   function mutateFacilities(change){
     if(!window.generalRoadEditor.editing||window.visualLayoutEditor.busy)return false;
@@ -537,23 +559,25 @@ function showSource(reg){
     const configured=window.PresentationContent?.current,model=configured?.pageId===source.id?configured.model:{points:pagePoints(source).map(point=>({id:point.id,title:point.title,text:point.text,titleKey:source.id+'|module|'+point.id+'|title',textKey:source.id+'|module|'+point.id+'|text'}))};
     if(!window.visualLayoutEditor.transact(next=>{const entry=next.content.modules[source.id]||(next.content.modules[source.id]=window.VisualLayoutCore.clone(model));entry.conceptFacilities=entry.conceptFacilities||{};entry.conceptFacilities[topic.id]=updated;},false))return false;
     if(!updated.some(item=>item.id===selectedFacilities.get(conceptKey())))selectedFacilities.set(conceptKey(),updated[0]?.id);
-    presentation.refresh();window.visualLayoutEditor.report('相關設施已修改，請儲存設定。');return true;
+    presentation.refresh();window.visualLayoutEditor.report('項目已修改，請儲存設定。');return true;
   }
   function reorderFacilities(ids,focusId){
     const {source,topic}=displayContext();if(!topic?.facilities||!source)return false;
     const original=effectiveFacilities(source,topic),byId=new Map(original.map(item=>[item.id,item]));
-    if(!Array.isArray(ids)||ids.length!==original.length||new Set(ids).size!==ids.length||ids.some(id=>!byId.has(id))||ids.every((id,index)=>id===original[index].id))return false;
+    if(!Array.isArray(ids)||ids.length<2||new Set(ids).size!==ids.length||ids.some(id=>!byId.has(id)))return false;
+    const selected=new Set(ids);let index=0;ids=original.map(item=>selected.has(item.id)?ids[index++]:item.id);
+    if(ids.every((id,index)=>id===original[index].id))return false;
     const views=window.PresentationImageOrder?.captureViews(presentation),key=conceptKey();
     if(!selectedFacilities.has(key))selectedFacilities.set(key,original[0]?.id);
     const changed=mutateFacilities(items=>{const byId=new Map(items.map(item=>[item.id,item]));return ids.map(id=>byId.get(id));});
     if(changed){
       window.PresentationImageOrder?.restoreViews(views,presentation);
       [...document.querySelectorAll('[data-module-concept-facility]')].find(button=>button.dataset.moduleConceptFacility===focusId)?.focus({preventScroll:true});
-      window.visualLayoutEditor.report('相關設施順序已調整，請儲存設定。');
+      window.visualLayoutEditor.report('項目順序已調整，請儲存設定。');
     }
     return changed;
   }
-  function addConceptFacility(){const input=document.querySelector('[data-module-concept-new-facility]'),label=input?.value.trim();if(!label){input?.focus();return;}const {source}=displayContext();mutateFacilities(items=>{if(items.length>=24){window.visualLayoutEditor.report('每個概念最多可加入 24 個相關設施。',true);return null;}const item={id:'custom-'+crypto.randomUUID(),label,focus:{asset:source.assets[0]}};items.push(item);selectedFacilities.set(conceptKey(),item.id);return items;});document.querySelector('[data-module-concept-new-facility]')?.focus({preventScroll:true});}
+  function addConceptFacility(){const input=document.querySelector('[data-module-concept-new-facility]'),label=input?.value.trim();if(!label){input?.focus();return;}const {source}=displayContext(),kind=document.querySelector('[data-module-concept-new-kind]')?.value==='design'?'design':'control';mutateFacilities(items=>{if(items.length>=24){window.visualLayoutEditor.report('每個概念最多可加入 24 個項目。',true);return null;}const item={id:'custom-'+crypto.randomUUID(),label,kind,focus:{asset:source.assets[0]}};items.push(item);selectedFacilities.set(conceptKey(),item.id);return items;});document.querySelector('[data-module-concept-new-facility]')?.focus({preventScroll:true});}
   function conceptFrames(){const {source,topic}=displayContext();if(!topic?.facilities||!source)return [];return conceptTargets(source,topic).flatMap(target=>{const id=target.focus.asset,svg=document.querySelector('.module-map-canvas[data-editor-image-key="'+assetKey(id)+'"] svg');return svg?[{...frameFor(source,target,svg,id),target,facilityId:target.facilityId}]:[];});}
   function afterConceptRender(page,topic){
     const all=conceptFrames();for(const layer of document.querySelectorAll('.module-hotspot-layer'))layer.replaceChildren();
@@ -630,5 +654,5 @@ function showSource(reg){
       if(direction&&(moveConceptTopic(direction)||moveLinkedPoint(direction)||moveFormationFocus(direction)||moveExtensionGroup(direction))){event.preventDefault();event.stopImmediatePropagation();}
     },true);
   }
-  return {reorderFacilities,navigationLabel:pointNavigationLabel,validateCatalog,validateModule,validateFormation,load,prepare,pages,toc,render,pageTitle,switcher,subnavigation,connect,decorate,afterRender,frames,noteReplacement,highlightSpec,formationHighlightSpec,extensionLayout,resolvePage,hashFor,displayContext,overviewGroups,overviewPoints,directoryAssets,pointVisible,syncExtensionControls,syncPages,visibleStages,extensionRemoved,get catalog(){return catalog;},get formation(){return formation;},get content(){return moduleFor(presentation?.page.id)||contents.get('M2-01')||null;},get contents(){return [...contents.values()];},get moduleErrors(){return Object.fromEntries(moduleErrors);},get error(){return loadError;}};
+  return {reorderFacilities,navigationLabel:pointNavigationLabel,validateCatalog,validateModule,validateFormation,load,prepare,pages,toc,render,pageTitle,switcher,subnavigation,connect,decorate,afterRender,frames,noteReplacement,highlightSpec,formationHighlightSpec,extensionLayout,resolvePage,prepareNavigation,hashFor,displayContext,overviewGroups,overviewPoints,directoryAssets,pointVisible,syncExtensionControls,syncPages,visibleStages,extensionRemoved,get catalog(){return catalog;},get formation(){return formation;},get content(){return moduleFor(presentation?.page.id)||contents.get('M2-01')||null;},get contents(){return [...contents.values()];},get moduleErrors(){return Object.fromEntries(moduleErrors);},get error(){return loadError;}};
 });

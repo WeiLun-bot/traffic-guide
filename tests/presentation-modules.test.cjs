@@ -89,6 +89,59 @@ test('submodule flows expose three stages, preserve legacy routes, and reject fo
   const store=new Core.Store(read('layout/presentation-layout.json')),next=store.snapshot();next.content.modules['m201-stop-layout']={points:[{id:'note',title:'新增說明',titleKey:'module|note|title',text:'只屬於停止線',textKey:'module|note|text',topicId:'line'}]};store.commit(next);assert.equal(Core.parse(store.serialize()).content.modules['m201-stop-layout'].points[0].topicId,'line');next.content.modules['m201-stop-layout'].points[0].topicId='../bad';assert.throws(()=>store.commit(next));
 });
 
+test('empty concept drafts remain valid and editable while ordinary topics still require content',()=>{
+  const doc=read('data/modules/M1-02.json'),flow=doc.submoduleFlows[0],stage=flow.stages.find(item=>item.id==='diagram');
+  const draft=stage.topics[0],assigned=new Set(draft.pointIds),source=doc.pages.find(page=>page.id===draft.sourcePageId);
+  source.points=source.points.filter(point=>!assigned.has(point.id));draft.pointIds=[];draft.facilities=[];
+  Modules.validateModule(doc,catalog);
+  assert.deepEqual(draft.facilities,[]);
+  for(const change of [
+    next=>{delete next.submoduleFlows[0].stages[1].topics[0].facilities;},
+    next=>{next.submoduleFlows[0].stages[1].topics[0].facilities={};},
+    next=>{next.submoduleFlows[0].stages[1].topics[0].pointIds=['missing'];},
+    next=>{const topic=next.submoduleFlows[0].stages[2].topics[0];topic.pointIds=[];topic.facilities=[];}
+  ]){const invalid=structuredClone(doc);change(invalid);assert.throws(()=>Modules.validateModule(invalid,catalog));}
+});
+
+test('concept item categories distinguish control facilities from design elements and survive saved content',()=>{
+  for(const file of ['M1-01','M1-02']){
+    const doc=read('data/modules/'+file+'.json');Modules.validateModule(doc,catalog);
+    for(const flow of doc.submoduleFlows)for(const stage of flow.stages)for(const topic of stage.topics||[]){
+      for(const facility of topic.facilities||[])assert(['control','design'].includes(facility.kind));
+    }
+  }
+  const doc=read('data/modules/M1-01.json'),topic=doc.submoduleFlows[0].stages.find(stage=>stage.id==='diagram').topics.find(topic=>topic.id==='trajectory');
+  assert.deepEqual(topic.facilities.map(item=>[item.id,item.kind]),[['guides','control'],['channel','control'],['curb','design'],['island','design']]);
+  const facility=topic.facilities[0];delete facility.kind;Modules.validateModule(doc,catalog);
+  facility.kind='other';assert.throws(()=>Modules.validateModule(doc,catalog));
+  const store=new Core.Store(read('layout/presentation-layout.json')),next=store.snapshot(),page=next.content.modules['m101-lanes-diagram'];
+  page.conceptFacilities={trajectory:structuredClone(topic.facilities)};
+  page.conceptFacilities.trajectory[0].kind='control';store.commit(next);
+  assert.deepEqual(Core.parse(store.serialize()).content.modules['m101-lanes-diagram'].conceptFacilities,page.conceptFacilities);
+  const invalid=store.snapshot();invalid.content.modules['m101-lanes-diagram'].conceptFacilities.trajectory[0].kind='other';assert.throws(()=>store.commit(invalid));
+});
+
+test('forward entry starts diagram topics in their current order without changing same-page, backward, edit or explicit topic selections',async()=>{
+  const window={generalRoadEditor:{editing:false},PresentationOrder:{forKey:items=>items},addEventListener(){}};
+  const sandbox={module:{exports:{}},window,URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  let current={id:'modules-index'};api.connect({get page(){return current;}});
+  for(const doc of api.contents)for(const flow of doc.submoduleFlows||[]){
+    const diagram=flow.stages.find(stage=>stage.id==='diagram'),first=diagram.topics[0],last=diagram.topics.at(-1);
+    current={id:flow.stages[0].pageId};
+    api.resolvePage(diagram.pageId,'topic-'+last.id);
+    api.prepareNavigation(diagram.pageId,1);assert.equal(api.displayContext(diagram.pageId).topic.id,first.id,diagram.pageId);
+    api.resolvePage(diagram.pageId,'topic-'+last.id);
+    current={id:diagram.pageId};api.prepareNavigation(diagram.pageId,1);assert.equal(api.displayContext(diagram.pageId).topic.id,last.id);
+    current={id:flow.stages[2].pageId};api.prepareNavigation(diagram.pageId,-1);assert.equal(api.displayContext(diagram.pageId).topic.id,last.id);
+    window.generalRoadEditor.editing=true;api.prepareNavigation(diagram.pageId,1);assert.equal(api.displayContext(diagram.pageId).topic.id,last.id);window.generalRoadEditor.editing=false;
+  }
+  window.PresentationOrder.forKey=items=>[...items].reverse();
+  current={id:'m101-lanes-issues'};api.prepareNavigation('m101-lanes-diagram',1);assert.equal(api.displayContext('m101-lanes-diagram').topic.id,'trajectory');
+  api.resolvePage('m101-lanes-diagram','topic-continuity');assert.equal(api.displayContext('m101-lanes-diagram').topic.id,'continuity');
+  api.prepareNavigation('m101-additional-issues',1);api.prepareNavigation('results-modules',1);assert.equal(api.displayContext('m101-lanes-diagram').topic.id,'continuity');
+});
+
 test('overview groups preserve child ownership while supporting shared diagrams and merged headings',async()=>{
   const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();

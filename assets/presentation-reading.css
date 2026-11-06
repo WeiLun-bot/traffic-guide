@@ -107,3 +107,17 @@
 #presentation .results-representative-card .results-scenario-caption{padding-right:20px}
 #presentation .results-scenario-index .results-scenario-caption{gap:4px;padding-right:18px}
 #presentation .results-scenario-index .results-scenario-code>span{position:absolute;right:6px;top:50%;transform:translateY(-50%)}
+
+/* Concept explanations: a bold main heading, lighter subheadings, and regular body text. */
+#presentation>.module-concept-slide.has-concept-point-titles .module-topic-title:not(#slide-title){font-size:24px;font-weight:700;line-height:1.4}
+#presentation>.module-concept-slide.has-concept-point-titles .module-concept-points h3:not(#slide-title){font-size:18px;font-weight:500;line-height:1.4}
+#presentation>.module-concept-slide.has-concept-point-titles .module-concept-points p:not(#slide-title){font-size:16px;font-weight:400;line-height:1.4}
+
+/* Additional-lane extension follows the same explanation hierarchy. */
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-extension-card-heading{margin-bottom:10px}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-extension-card-heading h2:not(#slide-title){font-size:24px;font-weight:700;line-height:1.4}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points{margin:0 0 0 28px}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points>li{padding:8px 0 10px 24px}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points>li::before{top:11px;font-size:10px}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points h3:not(#slide-title){font-size:18px;font-weight:500;line-height:1.4;margin-bottom:5px}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points p:not(#slide-title){font-size:16px;font-weight:400;line-height:1.4}

@@ -246,6 +246,8 @@
 .module-focus-rect.module-photo-focus{stroke:var(--photo-focus-color);stroke-width:2.5;stroke-dasharray:none;fill:none;filter:drop-shadow(0 1px 2px #233e3655);animation:none;stroke-opacity:.95;fill-opacity:1}
 
 #presentation .module-concept-slide .module-concept-facility-label{margin:0 0 4px;font-size:12px;line-height:1.4;color:var(--muted)}
+.module-concept-facility-groups{display:flex;flex-wrap:wrap;gap:0 16px}
+.module-concept-facility-group{min-width:0;max-width:100%}
 .module-concept-facilities{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 .module-concept-facilities>span,.module-concept-facilities>button{display:inline-block;padding:4px 7px;border:1px solid #ccd9c4;border-radius:4px;background:#f8faf5;color:var(--green);font:inherit;font-size:11px;line-height:1.4}
 .module-concept-facilities>button{cursor:pointer}
@@ -259,7 +261,7 @@
 #presentation .module-concept-slide .module-topic-title{font-size:24px;line-height:1.5;margin:0 0 18px}
 .module-concept-slide .module-concept-points{font-size:18px}
 .module-concept-slide .module-concept-points p{font-size:18px;line-height:1.4}
-.module-concept-slide .module-topic-nav{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));align-items:stretch}
+.module-concept-slide .module-topic-nav{display:grid;grid-template-columns:auto repeat(var(--module-concept-count,3),minmax(0,1fr));align-items:stretch}
 .module-concept-slide .module-topic-nav>.nav-label{align-self:center;width:auto}
 .module-concept-slide .module-topic-nav>button{white-space:normal;line-height:1.6;text-align:left}
 @media(max-width:900px){.module-concept-slide .module-topic-nav{grid-template-columns:1fr}.module-concept-slide .module-topic-nav>.nav-label{width:100%}}
@@ -271,6 +273,7 @@
 .module-concept-facility-chip>button[data-module-concept-remove-facility]:hover{background:#f3e9e2;color:#8d5544}
 .module-concept-facility-add{display:flex;gap:7px;align-items:center;margin:-4px 0 12px}
 .module-concept-facility-add input{min-width:0;max-width:200px;flex:1;padding:7px 9px;border:1px solid #cbd8c4;border-radius:4px;background:#fff;color:var(--dark);font:inherit;font-size:12px}
+.module-concept-facility-add select{max-width:130px;padding:7px 6px;border:1px solid #cbd8c4;border-radius:4px;background:#fff;color:var(--dark);font:inherit;font-size:12px}
 .module-concept-facility-add button{padding:7px 10px;border:1px solid #cbd8c4;border-radius:4px;background:#f8faf5;color:var(--green);font:inherit;font-size:12px;cursor:pointer}
 
 /* Slow-lane extension: distinct card headings and indented, smaller explanation items. */
