@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-06T11:13:57.491Z",
+  "updatedAt": "2026-11-06T11:21:24.429Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793963528167,
+    "updatedAt": 1793964082700,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -1217,13 +1217,13 @@
         "color": "#000000"
       },
       "results-background|results|source-p1": {
-        "fontSize": 18
+        "fontSize": 20
       },
       "results-background|results|source-p2": {
-        "fontSize": 18
+        "fontSize": 19
       },
       "results-background|results|source-p3": {
-        "fontSize": 17
+        "fontSize": 19
       },
       "results-background|results|source-p4-text": {
         "fontSize": 18
