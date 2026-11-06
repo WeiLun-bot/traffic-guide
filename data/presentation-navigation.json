@@ -409,6 +409,13 @@
       "plates",
       "clearance",
       "angle"
+    ],
+    "scenario:g1-02": [
+      "rural-stopline",
+      "rural-stopword",
+      "rural-crosswalk",
+      "rural-stop-sign",
+      "rural-warning"
     ]
   },
   "imageOrders": {

@@ -38,7 +38,7 @@ module.exports=({root,content})=>{
       const heading=active.indexOf('\n==== ',start+1);
       if(end<0)end=active.length;if(heading>=0&&heading<end)end=heading;
       article.sourceRaw=active.slice(start,end).trim();article.sourceAnchor=sourceAnchor;
-      article.sourceParagraphs=article.sourceRaw.split('\n').map(line=>line.trim()).filter(line=>/^[\u3400-\u9fff《「]/u.test(line)&&/[。；]/u.test(line)).map(line=>line.replace(/~(?=[a-zA-Z])/g,' ').replace(/@[\w:.-]+(?:\[\])?/g,'（見原稿圖例或章節）').replace(/\]\s*$/,''));
+      article.sourceParagraphs=article.sourceRaw.split('\n').map(line=>line.trim()).filter(line=>/^[\u3400-\u9fff《「]/u.test(line)&&/[。；]/u.test(line)).map(line=>line.replace(/~(?=[a-zA-Z])/g,' ').replace(/@[\w:.-]+(?:\[\])?/g,'（見相關圖例或章節）').replace(/\]\s*$/,''));
       if(!article.sourceParagraphs.length)throw new Error('Source text missing: '+article.id);
       for(const [label,box]of [['box',article.box],['crop',article.crop]]) {
         if(box.length!==4||box.some(value=>!Number.isFinite(value))||box[0]<0||box[1]<0||box[2]<=0||box[3]<=0||box[0]+box[2]>width||box[1]+box[3]>height)throw new Error('Invalid '+label+': '+article.id);

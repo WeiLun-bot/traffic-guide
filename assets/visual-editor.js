@@ -104,7 +104,7 @@
     }
     if (settings.kind === 'text') {
       if (settings.fontFamily) element.style.setProperty('font-family', Core.fonts[settings.fontFamily], 'important');
-      for (const [key, css] of [['fontSize', 'font-size'], ['fontWeight', 'font-weight'], ['lineHeight', 'line-height']]) if (settings[key] !== null) element.style.setProperty(css, String(settings[key]) + (key === 'fontSize' ? 'px' : ''), 'important');
+      for (const [key, css] of [['fontSize', 'font-size'], ['fontWeight', 'font-weight'], ['lineHeight', 'line-height']]) if (settings[key] !== null) element.style.setProperty(css, key === 'fontSize' ? `calc(${settings[key]}px * var(--screen-font-inline-scale, 1))` : String(settings[key]), 'important');
     }
   }
   function path(element) {
@@ -305,6 +305,7 @@
   document.addEventListener('lostpointercapture', event => { if (drag?.capture === event.target) finishDrag(event, true); }, true);
   window.addEventListener('blur', cancelDrag);
   document.addEventListener('wheel', event => {
+    if(event.ctrlKey||event.metaKey)return;
     if (editing && event.target.closest('[data-layout-id]') && root.contains(event.target)) { event.preventDefault(); event.stopImmediatePropagation(); }
   }, {capture: true, passive: false});
   document.addEventListener('click', event => {

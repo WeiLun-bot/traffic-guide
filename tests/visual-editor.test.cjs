@@ -24,7 +24,8 @@ test('original content and unaffected presentation blocks remain unchanged while
     Object.assign(asset,{url:'[source SVG]',width:0,height:0});
   }
   for(const scene of data.scenarios){scene.width=0;scene.height=0;}
-  assert.equal(hash(JSON.stringify(data)),baseline.dataStructure,'Image refresh changed explanation text, article boxes, source identities or other presentation data');
+  const approved=data.scenarios[0].sourceDocument?require('./fixtures/general-docx-text-baseline.json'):baseline;
+  assert.equal(hash(JSON.stringify(data)),approved.dataStructure,'Image refresh changed explanation text, article boxes, source identities or other presentation data');
   // The external JSON is user-editable; its current highlights and layout may
   // legitimately differ from the original migration fixture.
   Core.validate(original());

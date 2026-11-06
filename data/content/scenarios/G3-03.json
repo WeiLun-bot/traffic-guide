@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G3-03",
+  "texts": {},
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g303-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "先行權僅以標字表示",
+            "titleKey": "g303-conditions:content:photo:g303-photo-1:title",
+            "imageKey": "g303-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "現況僅以路面標字區分主次道路，管制提示不夠完整。",
+                "textKey": "g303-conditions:content:photo:g303-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "缺少速限標誌",
+            "titleKey": "g303-conditions:content:photo:g303-photo-2:title",
+            "imageKey": "g303-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "主要依賴速限標字，缺少清楚的標誌提示。",
+                "textKey": "g303-conditions:content:photo:g303-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "外側車道兼供停車",
+            "titleKey": "g303-conditions:content:photo:g303-photo-3:title",
+            "imageKey": "g303-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "停車與行車使用同一外側空間，邊界不明確。",
+                "textKey": "g303-conditions:content:photo:g303-photo-3:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-3",
+            "title": "路權主要依賴標字",
+            "titleKey": "g303-conditions:content:photo:g303-photo-4:title",
+            "imageKey": "g303-photo-4",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-3-point-0",
+                "text": "現況僅以路面標字區分主次道路，管制提示不夠完整。",
+                "textKey": "g303-conditions:content:photo:g303-photo-4:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {}
+  }
+}

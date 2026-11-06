@@ -1,0 +1,39 @@
+/* Rendering only: preserve the saved colleague-authored sizes as the reference. */
+html{--screen-font-inline-scale:1}
+html[data-screen-fonts="active"]{--screen-font-inline-scale:var(--screen-font-scale)}
+html[data-screen-fonts="active"] #presentation#presentation#presentation [data-screen-font-size]{font-size:calc(var(--screen-font-base) * var(--screen-font-scale))!important}
+html[data-screen-fonts="active"] #presentation#presentation#presentation [data-screen-line-height]{line-height:calc(var(--screen-line-base) * var(--screen-font-scale))!important}
+html[data-screen-fonts="active"] #presentation#presentation#presentation [data-screen-before-font]::before{font-size:calc(var(--screen-before-font) * var(--screen-font-scale))!important;line-height:var(--screen-before-line,normal)!important}
+html[data-screen-fonts="active"] #presentation#presentation#presentation [data-screen-after-font]::after{font-size:calc(var(--screen-after-font) * var(--screen-font-scale))!important;line-height:var(--screen-after-line,normal)!important}
+/* Navigation at 1920x1080 / 100%: 40px controls, 5px breathing room per side,
+   and 14px text. Scale all three together with logical screen height.
+   zoom participates in layout; the main area reserves the scaled bar heights.
+   Narrow windows retain the existing two-row mobile navigation. */
+@media screen and (min-width:621px){
+ html[data-screen-fonts="active"]{--header:calc(50px * var(--screen-chrome-scale));--footer:calc(50px * var(--screen-chrome-scale))}
+ html[data-screen-fonts="active"] :is(.header,.playbar){height:50px;zoom:var(--screen-chrome-scale);font-size:14px;line-height:1.4}
+ html[data-screen-fonts="active"] :is(.header,.playbar) :where(*){font-size:14px;line-height:1.4}
+ html[data-screen-fonts="active"] .presentation-navigation #chapters :is(button,span){font-size:14px;line-height:1.4}
+ html[data-screen-fonts="active"] .header{justify-content:flex-start;column-gap:16px}
+ html[data-screen-fonts="active"] .presentation-navigation{max-width:none}
+ html[data-screen-fonts="active"] .header #toc-button{margin-inline-start:auto}
+ html[data-screen-fonts="active"] :is(.presentation-picker-toggle,.lecture-chapters,.header .edit-toggle,.header .icon-button,.playbar button){height:40px}
+ html[data-screen-fonts="active"] :is(.header .edit-toggle,.playbar button){padding-block:0}
+ html[data-screen-fonts="active"] :is(.header .icon-button,.playbar .previous-button){width:40px}
+ /* Editing status must not create a second footer row around 40px buttons. */
+ html[data-screen-fonts="active"] .playbar{position:relative}
+ html[data-screen-fonts="active"] .playbar:has(>#visual-layout-status:not([hidden])){display:flex;padding-bottom:0}
+ html[data-screen-fonts="active"] .playbar>#visual-layout-status{position:absolute;inset:auto 18px calc(100% + 6px) auto;max-width:min(680px,calc(100% - 36px));padding:6px 10px;border:1px solid #d0ddc5;border-radius:5px;background:#f9fcf4f0;font-size:14px;line-height:1.4;z-index:84}
+ html[data-screen-fonts="active"] .reading-progress{height:calc(3px * var(--screen-chrome-scale))}
+}
+@media screen and (max-width:620px){
+ .header #toc-button{grid-column:2;justify-self:end}
+ .header .edit-toggle{grid-column:3}
+ html[data-presentation-mode="view"] .header #toc-button{grid-column:3}
+}
+/* Long content retains the colleague's native page/table/text scrolling. */
+@media print{
+ html{--screen-font-inline-scale:1!important}
+ html[data-screen-fonts="active"] #presentation#presentation#presentation [data-screen-font-size]{font-size:var(--screen-font-base)!important}
+ html[data-screen-fonts="active"] #presentation#presentation#presentation [data-screen-line-height]{line-height:var(--screen-line-base)!important}
+}

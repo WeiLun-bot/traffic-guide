@@ -28,6 +28,28 @@ if ([IntPtr]::Size -eq 4) {
 }
 $previousNodeMode = $env:ELECTRON_RUN_AS_NODE
 try {
+  # CMD may exit while its PowerShell child keeps running. Watch the original
+  # window too, including any 32-bit PowerShell that forwarded this launcher.
+  $launcherPids = @([int]$PID)
+  $launcherScripts = @($PSCommandPath, (Join-Path $PSScriptRoot '../start-editor.ps1'), (Join-Path $PSScriptRoot '../start-viewer.ps1')) | ForEach-Object { [IO.Path]::GetFullPath($_) }
+  $launcherProcess = Get-CimInstance Win32_Process -Filter ('ProcessId = ' + $PID)
+  while ($launcherProcess -and $launcherProcess.ParentProcessId) {
+    $ancestor = Get-CimInstance Win32_Process -Filter ('ProcessId = ' + $launcherProcess.ParentProcessId)
+    if (!$ancestor -or $launcherPids -contains [int]$ancestor.ProcessId) { break }
+    if ($ancestor.Name -ieq 'cmd.exe') {
+      $launcherPids += [int]$ancestor.ProcessId
+      break
+    }
+    $forwardingLauncher = $false
+    if ($ancestor.Name -in @('powershell.exe', 'pwsh.exe') -and $ancestor.CommandLine) {
+      foreach ($launcherScript in $launcherScripts) {
+        if ($ancestor.CommandLine.IndexOf($launcherScript, [StringComparison]::OrdinalIgnoreCase) -ge 0) { $forwardingLauncher = $true }
+      }
+    }
+    if (!$forwardingLauncher) { break }
+    $launcherPids += [int]$ancestor.ProcessId
+    $launcherProcess = $ancestor
+  }
   $previewPort = 4173
   if ($env:PORT) {
     if ($env:PORT -notmatch '^\d+$' -or ![int]::TryParse($env:PORT, [ref]$previewPort) -or $previewPort -lt 1 -or $previewPort -gt 65535) { throw 'PORT must be a number from 1 to 65535.' }
@@ -64,7 +86,7 @@ try {
       $previewStatus = Invoke-RestMethod -Uri ($serverUrl + '__preview') -TimeoutSec 3
       $storageFiles = @('tools/serve-github-pages.cjs', 'tools/presentation-project-store.cjs', 'assets/presentation-document.js', 'assets/visual-editor-core.js')
       $storageSignature = (($storageFiles | ForEach-Object { (Get-FileHash -LiteralPath (Join-Path (Split-Path $PSScriptRoot -Parent) $_) -Algorithm SHA256).Hash.ToLowerInvariant() }) -join ':')
-      $currentServer = $previewStatus.version -eq 1 -and $previewStatus.projectStorage -eq $true -and $previewStatus.storageSignature -eq $storageSignature
+      $currentServer = $previewStatus.version -eq 2 -and $previewStatus.projectStorage -eq $true -and $previewStatus.storageSignature -eq $storageSignature
     } catch { }
     if ($currentServer) {
       Write-Host 'This project preview is already running. Its files have been updated.'
@@ -75,7 +97,7 @@ try {
       Write-Host 'Return to Chrome/Edge and press Ctrl+Shift+R.'
       return
     }
-    Write-Host 'Restarting this project preview to load the current project saving format...'
+    Write-Host 'Restarting this project preview to update launcher shutdown and project saving...'
     & (Join-Path $PSScriptRoot 'stop-preview.ps1') -Port $previewPort | Out-Host
     if ($LASTEXITCODE -ne 0) { throw 'Could not restart the outdated project preview.' }
   }
@@ -84,7 +106,9 @@ try {
   Write-Host 'Closing this launcher also stops its server. To stop it later, use stop-editor.cmd.'
   $ErrorActionPreference = 'Continue'
   $browserAttempted = $false
-  & $runtime (Join-Path $PSScriptRoot 'serve-github-pages.cjs') --parent-pid $PID 2>&1 | ForEach-Object {
+  $serverArguments = @((Join-Path $PSScriptRoot 'serve-github-pages.cjs'))
+  foreach ($launcherPid in $launcherPids) { $serverArguments += @('--parent-pid', [string]$launcherPid) }
+  & $runtime @serverArguments 2>&1 | ForEach-Object {
     $serverLine = [string]$_
     Write-Host $serverLine
     # The server prints this only after its listening callback fires.

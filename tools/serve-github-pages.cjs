@@ -19,7 +19,7 @@ return http.createServer((request,response)=>{
   const relative=pathname.startsWith(prefix)?pathname.slice(prefix.length):pathname.replace(/^\//,'');
   const filename=relative||'index.html';
   if(filename==='__preview'&&request.method==='GET'){
-    response.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});response.end(JSON.stringify({version:1,projectStorage:Boolean(sourceRoot),storageSignature}));return;
+    response.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});response.end(JSON.stringify({version:2,projectStorage:Boolean(sourceRoot),storageSignature}));return;
   }
   if(filename==='__project'&&sourceRoot){
     const send=(status,value)=>{response.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});response.end(JSON.stringify(value));};
@@ -49,9 +49,8 @@ return http.createServer((request,response)=>{
 }
 module.exports={createServer};
 if(require.main===module){
-  const parentIndex=process.argv.indexOf('--parent-pid');
-  const parent=parentIndex<0?null:Number(process.argv[parentIndex+1]);
-  if(parentIndex>=0&&(!Number.isSafeInteger(parent)||parent<1||parent===process.pid))throw new Error('Invalid preview parent PID');
+  const parents=[...new Set(process.argv.flatMap((argument,index)=>argument==='--parent-pid'?[Number(process.argv[index+1])]:[]))];
+  if(parents.some(parent=>!Number.isSafeInteger(parent)||parent<1||parent===process.pid))throw new Error('Invalid preview parent PID');
   const server=createServer();
   let closing=false,watcher,control;
   function shutdown(reason){
@@ -80,11 +79,13 @@ if(require.main===module){
     control.on('error',error=>console.error('Preview stop control unavailable: '+error.message));
     control.listen('\\\\.\\pipe\\traffic-guide-preview-'+process.pid);
   }
-  if(parent)watcher=setInterval(()=>{
-    try{process.kill(parent,0);}catch(error){if(error.code==='ESRCH')shutdown('launcher window closed');}
+  if(parents.length)watcher=setInterval(()=>{
+    for(const parent of parents){
+      try{process.kill(parent,0);}catch(error){if(error.code==='ESRCH'){shutdown('launcher window closed');break;}}
+    }
   },1000).unref();
   server.listen(port,'127.0.0.1',()=>{
     console.log('Preview: http://127.0.0.1:'+server.address().port+prefix+' (also available at /)');
-    console.log('Server PID: '+process.pid+(parent?' / launcher PID: '+parent:''));
+    console.log('Server PID: '+process.pid+(parents.length?' / launcher PID: '+parents[0]:'')+(parents.length>1?' / window PIDs: '+parents.slice(1).join(', '):''));
   });
 }

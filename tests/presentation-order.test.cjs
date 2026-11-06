@@ -2,6 +2,27 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const Order=require('../assets/presentation-order.js'),Core=require('../assets/visual-editor-core.js');
 const original=()=>require('./read-project-config.cjs')();
+
+test('general article categories preserve existing order, append new articles to primary and keep scenarios isolated',()=>{
+  const items=['a','b','c','new'].map(id=>({id})),config={navigationOrders:{'scenario:g1-01':['c','b','a']},scenarioOtherArticles:{'g1-01':['removed','b']}};
+  assert.deepEqual(Order.articleGroups(items,'g1-01',config),{primary:[items[0],items[2],items[3]],other:[items[1]]});
+  assert.deepEqual(Order.forKey(items,'scenario:g1-01',config).map(item=>item.id),['c','a','new','b']);
+  assert.deepEqual(Order.forKey(items,'scenario:g1-02',config),items);
+  const scene={id:'g1-01',articleIds:['a','b','c'],comparisonId:'compare'},pages=[{id:'a',scenario:scene.id,article:{reg:'183'}},{id:'b',scenario:scene.id,article:{reg:'185'}},{id:'compare',scenario:scene.id},{id:'c',scenario:scene.id,article:{reg:'30'}}];
+  Order.organize(pages,{scenarios:[scene]},config);assert.deepEqual(pages.map(page=>page.id),['c','a','b','compare']);
+  assert.deepEqual(items.map(item=>item.id),['a','b','c','new']);
+});
+
+test('category-only changes participate in history and project saving, while old projects default to primary',()=>{
+  const Document=require('../assets/presentation-document.js'),config=original();delete config.scenarioOtherArticles;
+  const store=new Core.Store(config);assert.deepEqual(store.config.scenarioOtherArticles,{});
+  const next=store.snapshot();next.scenarioOtherArticles['g1-01']=['school'];assert(store.commit(next));assert(store.dirty);
+  assert(store.undo());assert(!store.dirty);assert(store.redo());
+  const parts=Document.split(store.config);assert.deepEqual(parts.navigation.scenarioOtherArticles,{'g1-01':['school']});assert(!parts.layout.scenarioOtherArticles);
+  assert.deepEqual(Document.parse(JSON.stringify(Document.bundle(store.config))).scenarioOtherArticles,{'g1-01':['school']});
+  delete parts.navigation.scenarioOtherArticles;assert.deepEqual(Document.join(parts.layout,parts.navigation,Object.values(parts.documents)).scenarioOtherArticles,{});
+  for(const invalid of [null,[],{'c1-01':['a']},{'g1-01':['a','a']},{'g1-01':['../a']},{'g1-01':'a'}])assert.throws(()=>Core.validate({...store.snapshot(),scenarioOtherArticles:invalid}),/條文分類/);
+});
 test('ordering uses stable identities, appends new items and ignores removed entries without mutating source data',()=>{
   const items=['a','b','c'].map(id=>({id,title:id})),ids=['removed','b','b','a'];
   assert.deepEqual(Order.ordered(items,ids).map(item=>item.id),['b','a','c']);assert.deepEqual(items.map(item=>item.id),['a','b','c']);

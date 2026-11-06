@@ -60,6 +60,9 @@
     for (const [key, ids] of Object.entries(result.navigationOrders)) {
       assert(/^(module|scenario):[\w-]{1,160}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id => typeof id === 'string' && /^[\w-]{1,240}$/.test(id)) && new Set(ids).size === ids.length, '導覽排序清單無效');
     }
+    if (result.scenarioOtherArticles === undefined) result.scenarioOtherArticles = {};
+    assert(record(result.scenarioOtherArticles) && Object.keys(result.scenarioOtherArticles).length <= 2000, '情境條文分類設定無效');
+    for (const [key, ids] of Object.entries(result.scenarioOtherArticles)) assert(/^g[1-4]-\d{2}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id=>typeof id==='string'&&/^[\w-]{1,240}$/.test(id)) && new Set(ids).size===ids.length, '情境條文分類清單無效');
     if (result.extensionLayouts === undefined) result.extensionLayouts = {};
     assert(record(result.extensionLayouts) && Object.keys(result.extensionLayouts).length <= 2000, '延伸應用版型設定無效');
     for (const [key, layout] of Object.entries(result.extensionLayouts)) assert(/^[\w-]{1,160}\/[\w-]{1,160}$/.test(key) && ['horizontal','vertical'].includes(layout), '延伸應用圖文排列無效');
@@ -237,7 +240,7 @@
   }
   function signature(config) {
     const views = config.imageViews || {};
-    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState: config.legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, scenarioOtherArticles:config.scenarioOtherArticles||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
   }
   class Store {
     constructor(config) {

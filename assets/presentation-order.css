@@ -1,6 +1,17 @@
 .navigation-order-item.can-reorder{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;position:relative}
 .navigation-order-item.can-reorder::before{content:'⠿';opacity:.6;margin-right:5px;font-size:12px}
 .navigation-order-label::after{content:' · 拖曳排序';font-size:.9em}
+.article-nav.article-nav-grouped{display:flex;flex-direction:column;align-items:stretch;overflow:visible;gap:5px}
+.article-nav-grouped>.nav-label{margin:0;width:auto}
+.article-nav-grouped>.navigation-order-label::after{content:' · 拖曳分類與排序'}
+.article-index-group{display:flex;align-items:center;gap:10px;min-width:0;padding:4px 0;border-top:1px solid #e3eadc}
+.article-index-label{flex:0 0 126px;font-size:10px;color:#567349;line-height:1.5}
+.article-index-items{display:flex;align-items:center;flex-wrap:wrap;gap:6px;flex:1;min-width:0;min-height:32px;padding:3px}
+.article-index-items .article-chip{max-width:100%;white-space:normal;text-align:left}
+.article-index-empty{font-size:10px;color:#8b9984;padding:5px 8px}
+.article-index-group.can-classify .article-index-items{border:1px dashed #cbdac0;border-radius:4px}
+.article-index-group[data-group-drop] .article-index-items{background:#edf3e6;outline:2px solid #bc8a40;outline-offset:1px}
+@media(max-width:620px){.article-index-group{align-items:stretch;flex-direction:column;gap:3px}.article-index-label{flex-basis:auto}.article-index-items{min-height:36px}}
 .navigation-order-item.is-order-dragging{opacity:.4;cursor:grabbing}
 .navigation-order-item[data-drop-side]{outline:2px solid #bc8a40;outline-offset:2px}
 .navigation-order-item[data-drop-side]::after{content:'';position:absolute;top:-4px;bottom:-4px;width:3px;background:#bc8a40;border-radius:2px}

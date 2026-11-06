@@ -7,7 +7,9 @@
     "context|0|text-12": "提升行人穿越安全",
     "context|0|text-13": "縮短行人穿越暴露在道路的距離、提升行人穿越明視性。",
     "context|0|text-11": "缺少明確的停管制提示時，主要與次要道路的關係不易辨識。",
-    "speed|1|text-7": "建議原則上設於自路面邊緣算起 20 m 處，搭配原圖檢視位置。"
+    "crosswalk|0|text-4": "\n",
+    "school|1|text-9": "以學校環境的辨識需求，決定標誌位置。",
+    "review|0|text-1": "路面邊線與停車格界定路側空間，指向線與導引線銜接車流；行穿線、警示標誌及速限配置共同回應行人穿越需求。"
   },
   "images": {},
   "blocks": {
@@ -37,7 +39,7 @@
               },
               {
                 "id": "issue-original-0-point-1",
-                "text": "前方設有行穿線，建議加設「當心行人」標誌。",
+                "text": "前方設有行穿線，可加設「當心行人」標誌。",
                 "textKey": "g101-conditions|0|text-5"
               },
               {
@@ -56,12 +58,12 @@
             "points": [
               {
                 "id": "issue-original-1-point-0",
-                "text": "周邊學校為國中，「當心兒童」的適用情形應重新檢視。",
+                "text": "周邊學校為國中，「當心兒童」的適用情形可重新檢視。原則設於小學、幼兒園（含社區或部落互助教保服務中心）、兒童遊樂場所及兒童眾多處所將近之處。",
                 "textKey": "g101-conditions|0|text-8"
               },
               {
                 "id": "issue-original-1-point-1",
-                "text": "次要道路未設「最高速限」標誌。",
+                "text": "次要道路未配合「最高速限」標字設「最高速限」標誌。",
                 "textKey": "g101-conditions|0|text-9"
               }
             ]
@@ -69,132 +71,13 @@
         ]
       }
     },
-    "articles": {
-      "edge": {
-        "points": [
-          {
-            "id": "point-original-0",
-            "text": "作為最右側車道的行車導引，界定行車道與路側服務空間。",
-            "textKey": "edge|1|text-6"
-          },
-          {
-            "id": "point-original-1",
-            "text": "建議車輛停放線與路面邊線保留約 30 cm 緩衝，並讓路段邊線接續路口轉角的邊線。",
-            "textKey": "edge|1|text-7"
-          },
-          {
-            "id": "point-original-2",
-            "text": "路面邊線為 15 cm；應與 10 cm 的快慢車道分隔線區分。",
-            "textKey": "edge|1|text-8"
-          }
-        ]
-      },
-      "crosswalk": {
-        "points": [
-          {
-            "id": "point-original-0",
-            "text": "可配合設置當心行人標誌「警34」警告車輛注意行人通過。",
-            "textKey": "crosswalk|1|text-6"
-          },
-          {
-            "id": "point-original-1",
-            "text": "枕木紋平行車流方向劃設。",
-            "textKey": "crosswalk|1|text-7"
-          },
-          {
-            "id": "point-original-2",
-            "text": "枕木紋行人穿越道線與停止線建議 2 至 3 m。",
-            "textKey": "crosswalk|1|text-8"
-          }
-        ]
-      },
-      "arrows": {
-        "points": [
-          {
-            "id": "point-original-0",
-            "text": "本示例直右共用混合車道寬度為 3.5 m 以下，使用直線與弧形合併的分岔箭頭。",
-            "textKey": "arrows|1|text-6"
-          },
-          {
-            "id": "point-original-1",
-            "text": "車道寬度為 3.5 m 以上時，使用直線與弧形分離、並列的分流式指向線。",
-            "textKey": "arrows|1|text-7"
-          }
-        ]
-      },
-      "taper": {
-        "points": [
-          {
-            "id": "point-original-0",
-            "text": "由 1直行車道轉換為直行、左轉 2 車道時，提示左轉車可匯出至專用道。",
-            "textKey": "taper|1|text-6"
-          },
-          {
-            "id": "point-original-1",
-            "text": "原則上由漸變區起點劃至專用車道起點，提示左轉車打方向燈並分流。",
-            "textKey": "taper|1|text-7"
-          },
-          {
-            "id": "point-original-2",
-            "text": "本例屬市區道路，漸變長度依《市區道路及附屬工程設計規範》第 4.2.6 節；省道公路另依《公路路線設計規範》第 4.2.10 節。",
-            "textKey": "taper|1|text-8"
-          }
-        ]
-      },
-      "parking": {
-        "points": [
-          {
-            "id": "point-original-1",
-            "text": "建議靠近路口先配置大型重型機車以外的機車停放線，再配置其他車種格位。",
-            "textKey": "parking|1|text-7"
-          },
-          {
-            "id": "point-original-2",
-            "text": "建議佈設於距橫交道路緣延伸處 10 至 30 m 以外，保留路口空間。",
-            "textKey": "parking|1|text-8"
-          }
-        ]
-      },
-      "pedestrian": {
-        "points": [
-          {
-            "id": "point-original-0",
-            "text": "建議警34設於距行穿線上游停車視距處。",
-            "textKey": "pedestrian|1|text-6"
-          },
-          {
-            "id": "point-original-1",
-            "text": "可與其他標誌共桿，並加設「減速慢行暫停讓行人」附牌。",
-            "textKey": "pedestrian|1|text-7"
-          },
-          {
-            "id": "point-original-2",
-            "text": "亦可於上游距行穿線約 30 m 再增設一面，附「前方30 m」，並依行車速限與最短安全視距增加。",
-            "textKey": "pedestrian|1|text-8"
-          }
-        ]
-      },
-      "speed": {
-        "points": [
-          {
-            "id": "point-original-0",
-            "text": "本示例建議設於路口（即下游）遠端，速限變更處應能清楚辨識。",
-            "textKey": "speed|1|text-6"
-          },
-          {
-            "id": "point-original-2",
-            "text": "若上、下游速限相同，則可不重複設置。若重複提示時，得與遠端號誌共桿。",
-            "textKey": "speed|1|text-8"
-          }
-        ]
-      }
-    },
+    "articles": {},
     "overviews": {
       "overview": {
         "items": [
           {
             "id": "strategy-original-0",
-            "title": "界定行車與路側空間",
+            "title": "界定車行與路側空間",
             "titleKey": "overview|strategy|strategy-original-0|title",
             "articleIds": [
               "edge",
@@ -204,7 +87,7 @@
           },
           {
             "id": "strategy-original-1",
-            "title": "增加行人穿越警告標誌",
+            "title": "增加當心行人警告標誌",
             "titleKey": "overview|strategy|strategy-original-1|title",
             "articleIds": [
               "crosswalk",
@@ -225,7 +108,7 @@
           },
           {
             "id": "strategy-original-3",
-            "title": "傳達速限與學校環境",
+            "title": "表達速限與學校環境",
             "titleKey": "overview|strategy|strategy-original-3|title",
             "articleIds": [
               "speed",

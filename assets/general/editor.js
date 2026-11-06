@@ -245,6 +245,9 @@
     clearTimeout(draftTimer);
     state.updatedAt=Math.max(Date.now(),state.updatedAt);
     const clone=document.documentElement.cloneNode(true);
+    clone.querySelector('#screen-font-height-baseline')?.remove();
+    delete clone.dataset.screenFonts;clone.style.removeProperty('--screen-font-scale');
+    clone.style.removeProperty('--screen-chrome-scale');
     clone.querySelectorAll('[data-editor-ui]').forEach(element=>element.remove());
     clone.querySelectorAll('[contenteditable],[data-edit-key]').forEach(element=>{element.removeAttribute('contenteditable');element.removeAttribute('data-edit-key');element.removeAttribute('spellcheck');});
     clone.querySelectorAll('dialog[open]').forEach(dialog=>dialog.removeAttribute('open'));

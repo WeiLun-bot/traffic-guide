@@ -129,6 +129,7 @@
     window.addEventListener('resize',()=>{closePicker();revealChapter();});window.addEventListener('blur',closePicker);
     const brand=document.querySelector('.brand');brand.href='#presentations';brand.setAttribute('aria-label','回四場簡報總覽');
     document.getElementById('toc-title').textContent='簡報與章節目錄';
+    window.PresentationFontHeight?.connect();
   }
   function refreshToc(pages,scenarios=scenarioUI){
     refreshChapterNames();
@@ -156,6 +157,7 @@
     document.title=page.kind==='presentations-home'?(manifest?.title||'簡報總覽'):`${page.name}｜${deck?.title||'道路設施簡報'}`;
     refreshToc(app.pages);
     window.PresentationModules?.syncExtensionControls(page);
+    window.PresentationFontHeight?.refresh();
   }
   function move(direction){
     const target=navigationTarget(direction);if(!target)return false;

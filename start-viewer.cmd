@@ -3,7 +3,8 @@ setlocal
 title Traffic Guide - View Presentation
 echo Traffic Guide - View Presentation
 echo Your browser will open automatically when the presentation is ready.
-echo Keep this window open. To stop later, use stop-editor.cmd.
+echo Keep this window open. Closing it stops the server it starts.
+echo To stop an already-running preview, use stop-editor.cmd.
 echo.
 set "TRAFFIC_GUIDE_POWERSHELL=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 if exist "%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\powershell.exe" set "TRAFFIC_GUIDE_POWERSHELL=%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\powershell.exe"

@@ -31,7 +31,7 @@
     for(const key of layoutKeys)layout[key]=clone(config[key]||{});
     layout.elements=Object.fromEntries(Object.entries(layout.elements).filter(([,item])=>Core.overrides(item)));
     layout.imageViews=Object.fromEntries(Object.entries(layout.imageViews).filter(([,view])=>view.zoom!==1||view.x!==0||view.y!==0||(view.rotation||0)!==0));
-    const navigation={kind:'presentation-navigation',schemaVersion:1,pageOrder:clone(legacy.pageOrder),templateMigrations:clone(legacy.templateMigrations),navigationOrders:clone(config.navigationOrders),imageOrders:clone(config.imageOrders),removedModuleExtensions:clone(config.removedModuleExtensions)};
+    const navigation={kind:'presentation-navigation',schemaVersion:1,pageOrder:clone(legacy.pageOrder),templateMigrations:clone(legacy.templateMigrations),navigationOrders:clone(config.navigationOrders),scenarioOtherArticles:clone(config.scenarioOtherArticles),imageOrders:clone(config.imageOrders),removedModuleExtensions:clone(config.removedModuleExtensions)};
     const docFor=key=>{
       const owner=ownerFor(key,owners);check(validOwner(owner),'內容歸屬無效：'+owner);
       return documents[owner]||(documents[owner]={schemaVersion:1,owner,texts:{},images:{},blocks:{},pages:[],content:Object.fromEntries(contentKinds.map(key=>[key,{}]))});
@@ -67,6 +67,7 @@
     for(const key of legacyLayoutKeys)config.legacyState[key]=clone(layout.legacyState[key]||{});
     for(const key of layoutKeys)config[key]=clone(layout[key]||{});
     for(const key of ['navigationOrders','imageOrders','removedModuleExtensions'])config[key]=clone(navigation[key]);
+    config.scenarioOtherArticles=clone(navigation.scenarioOtherArticles||{});
     for(const key of ['pageOrder','templateMigrations'])config.legacyState[key]=clone(navigation[key]);
     config.content=Object.fromEntries(contentKinds.map(key=>[key,{}]));
     const assigned=new Set();

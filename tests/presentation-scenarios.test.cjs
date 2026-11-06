@@ -56,7 +56,7 @@ test('remaining case content preserves source-specific signal results, full-layo
   for(const doc of docs){
     for(const article of doc.articles.filter(item=>['標線','標誌'].includes(item.category)))assert.equal(article.mapAsset,doc.scenario.overall,article.id);
     assert.equal(doc.scenario.setting,doc.scenario.name.includes('市區')?'市區':'鄉區');
-    for(const article of doc.articles)assert(article.sourceRaw.length>80&&/[道路號誌標線]/.test(article.sourceRaw),article.id+' source excerpt is missing');
+    for(const article of doc.articles){assert(article.sourceRaw.length>(article.sourceDocument?0:80)&&/[道路號誌標線]/.test(article.sourceRaw),article.id+' source excerpt is missing');if(article.sourceDocument)assert.equal(article.sourceRaw,article.sourceParagraphs.join('\n\n'));}
   }
   for(const code of ['G2-03','G2-04','G4-01','G4-02','G4-03','G4-04']){const table=byCode[code].articles.find(item=>item.id.endsWith('-checklist')).table;assert.equal(table.rows.length,11);assert.match(table.rows[10][0],/^\[9\]/);assert(table.rows.some(row=>row.some(cell=>/現地檢查/.test(cell))));}
   assert(byCode['G2-03'].articles.find(item=>item.id==='g203-checklist').table.rows[10][1].includes('防窺'));

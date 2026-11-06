@@ -12,7 +12,7 @@
     for(const [header,value,priority]of record.headers){if(value)header.style.setProperty('min-height',value,priority);else header.style.removeProperty('min-height');}
     const [first,second]=record.cards.map(card=>card.getBoundingClientRect());
     if(!second||Math.abs(first.left-second.left)<2)return;
-    const height=Math.max(0,...record.headers.map(([header])=>header.getBoundingClientRect().height));
+    const height=Math.max(0,...record.headers.map(([header])=>header.offsetHeight));
     for(const [header]of record.headers)header.style.setProperty('min-height',height+'px');
   }
   function mountPairs(root) {
@@ -100,6 +100,7 @@
     controllers.set(element,controller);controller.configure(options);
     reset.addEventListener('click',event=>{event.stopPropagation();controller.reset();});
     element.addEventListener('wheel',event=>{
+      if(event.ctrlKey||event.metaKey)return;
       if(!controller.enabled()||!event.deltaY)return;
       event.preventDefault();event.stopPropagation();
       releasePan();controller.start();

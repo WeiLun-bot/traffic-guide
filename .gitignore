@@ -4,3 +4,6 @@ _site/
 tests/artifacts/
 debug.log
 /materials/output_1103.pdf
+
+# Local reference documents (not committed or uploaded through Git).
+/materials/references-local/
