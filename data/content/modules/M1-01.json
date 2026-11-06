@@ -12,7 +12,8 @@
     "m101-lanes-extensions|extension|narrow|title": "慢車道 2.8 m（含）以下",
     "m101-lanes-extensions|0|text-1": "以快慢車道分隔線做為快慢車道之界線，繪設機車及自行車圖案以標示空間屬於慢車道。近路口處依慢車道寬度，調整路口前的車道分隔與轉向導引。",
     "m101-additional-diagram|concept|taper|summary": "依設計速率及轉向需求，配置附加車道的漸變與儲車段。",
-    "m101-additional-diagram|concept|advance|summary": "於附加車道漸變區上游及起點，預告車道配置與轉向。"
+    "m101-additional-diagram|concept|advance|summary": "於附加車道漸變區上游及起點，預告車道配置與轉向。",
+    "m101-additional-issues|0|text-1": "檢核附加車道的漸變長度、儲車空間及標誌標線配置，確認轉向車輛能提前辨識並進入附加車道。"
   },
   "images": {},
   "blocks": {},
@@ -58,9 +59,9 @@
           },
           {
             "id": "recognition",
-            "title": "車道變化不易提早辨識",
+            "title": "附加車道界線不明確",
             "titleKey": "m101-additional-issues|module|recognition|title",
-            "text": "預告不完整，駕駛可能到路口前才察覺轉向車道。",
+            "text": "附加車道漸變起點未以穿越虛線區分主線與轉向車道，駕駛人可能忽略匯出時使用方向燈，影響其他車輛判斷。",
             "textKey": "m101-additional-issues|module|recognition|text"
           },
           {
@@ -144,7 +145,8 @@
                   270,
                   280
                 ]
-              }
+              },
+              "kind": "control"
             }
           ],
           "trajectory": [
@@ -159,14 +161,16 @@
                   270,
                   280
                 ]
-              }
+              },
+              "kind": "control"
             },
             {
               "id": "custom-7aabab8d-809f-4d9f-bd07-103ecd3daf03",
               "label": "左彎待轉區線",
               "focus": {
                 "asset": "m101-lanes"
-              }
+              },
+              "kind": "control"
             },
             {
               "id": "channel",
@@ -179,14 +183,16 @@
                   150,
                   85
                 ]
-              }
+              },
+              "kind": "control"
             },
             {
               "id": "custom-df7fc051-2506-4b87-9443-3c6000d0304b",
               "label": "路緣轉角與交通島",
               "focus": {
                 "asset": "m101-lanes"
-              }
+              },
+              "kind": "design"
             }
           ]
         }

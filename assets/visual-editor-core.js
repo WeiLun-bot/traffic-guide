@@ -134,7 +134,7 @@
         assert(record(entry.conceptFacilities),'相關設施設定無效');
         for(const [topic,facilities]of Object.entries(entry.conceptFacilities)){
           assert(id(topic)&&Array.isArray(facilities)&&facilities.length<=24&&new Set(facilities.map(item=>item?.id)).size===facilities.length,'相關設施清單無效');
-          for(const facility of facilities){assert(record(facility)&&id(facility.id)&&typeof facility.label==='string'&&facility.label.trim().length>0&&facility.label.length<=60&&record(facility.focus)&&id(facility.focus.asset),'相關設施內容無效');if(facility.focus.rect!==undefined)assert(Array.isArray(facility.focus.rect)&&facility.focus.rect.length===4&&facility.focus.rect.every(Number.isFinite)&&facility.focus.rect[0]>=0&&facility.focus.rect[1]>=0&&facility.focus.rect[2]>0&&facility.focus.rect[3]>0,'相關設施框選無效');}
+          for(const facility of facilities){assert(record(facility)&&id(facility.id)&&typeof facility.label==='string'&&facility.label.trim().length>0&&facility.label.length<=60&&record(facility.focus)&&id(facility.focus.asset),'相關設施內容無效');assert(facility.kind===undefined||['control','design'].includes(facility.kind),'項目類別無效');if(facility.focus.rect!==undefined)assert(Array.isArray(facility.focus.rect)&&facility.focus.rect.length===4&&facility.focus.rect.every(Number.isFinite)&&facility.focus.rect[0]>=0&&facility.focus.rect[1]>=0&&facility.focus.rect[2]>0&&facility.focus.rect[3]>0,'相關設施框選無效');}
         }
       }
     }

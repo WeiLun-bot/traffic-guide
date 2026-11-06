@@ -98,7 +98,7 @@
       nav.dataset.navigationOrder='concept-facilities:'+module.stage.pageId+'/'+module.topic.id;
       for(const button of buttons){
         button.dataset.orderId=button.dataset.moduleConceptFacility;button.classList.add('navigation-order-item','can-reorder');button.draggable=false;
-        button.title='拖曳調整相關設施順序；Alt＋←／→移動';
+        button.title='拖曳調整同類項目順序；Alt＋←／→移動';
       }
     }
   }

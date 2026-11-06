@@ -492,14 +492,16 @@
                       70,
                       115
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "arrows",
                   "label": "指向線",
                   "focus": {
                     "asset": "m101-lanes"
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "dotted",
@@ -512,16 +514,19 @@
                       620,
                       106
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "solid",
                   "label": "禁止變換車道線",
                   "focus": {
                     "asset": "m101-lanes"
-                  }
+                  },
+                  "kind": "control"
                 }
-              ]
+              ],
+              "showPointTitles": true
             },
             {
               "id": "continuity",
@@ -538,7 +543,8 @@
                   "label": "指向線",
                   "focus": {
                     "asset": "m101-lanes"
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "guides",
@@ -551,16 +557,19 @@
                       270,
                       280
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "lanes",
                   "label": "車道線",
                   "focus": {
                     "asset": "m101-lanes"
-                  }
+                  },
+                  "kind": "control"
                 }
-              ]
+              ],
+              "showPointTitles": true
             },
             {
               "id": "trajectory",
@@ -583,7 +592,8 @@
                       270,
                       280
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "channel",
@@ -596,23 +606,27 @@
                       150,
                       85
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "curb",
                   "label": "路緣轉角",
                   "focus": {
                     "asset": "m101-lanes"
-                  }
+                  },
+                  "kind": "design"
                 },
                 {
                   "id": "island",
                   "label": "交通島",
                   "focus": {
                     "asset": "m101-lanes"
-                  }
+                  },
+                  "kind": "design"
                 }
-              ]
+              ],
+              "showPointTitles": true
             }
           ]
         },
@@ -653,7 +667,6 @@
               "id": "taper",
               "label": "合理配置漸變與儲車空間",
               "summary": "依設計速率及轉向車流需求，配置附加車道的漸變段與儲車段。",
-              "facilitiesLabel": "對應設計要素",
               "showPointTitles": true,
               "sourcePageId": "m101-additional-diagram",
               "pointIds": [
@@ -675,7 +688,8 @@
                       390,
                       78
                     ]
-                  }
+                  },
+                  "kind": "design"
                 },
                 {
                   "id": "storage",
@@ -688,7 +702,8 @@
                       355,
                       34
                     ]
-                  }
+                  },
+                  "kind": "design"
                 }
               ]
             },
@@ -696,7 +711,6 @@
               "id": "advance",
               "label": "提前預告附加車道與行向",
               "summary": "於附加車道漸變區上游及起點，預告車道配置與轉向方向。",
-              "facilitiesLabel": "對應交通管制設施",
               "showPointTitles": true,
               "sourcePageId": "m101-additional-diagram",
               "pointIds": [
@@ -718,7 +732,8 @@
                       56,
                       78
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "arrows",
@@ -731,7 +746,8 @@
                       100,
                       48
                     ]
-                  }
+                  },
+                  "kind": "control"
                 }
               ]
             },
@@ -739,7 +755,6 @@
               "id": "dotted",
               "label": "明確標示分流範圍與車道邊界",
               "summary": "透過分流與車道管制標線，引導轉向車流進入附加車道，並界定不供通行的空間。",
-              "facilitiesLabel": "對應交通管制設施",
               "showPointTitles": true,
               "sourcePageId": "m101-additional-diagram",
               "pointIds": [
@@ -761,7 +776,8 @@
                       665,
                       33
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "solid",
@@ -774,7 +790,8 @@
                       99,
                       22
                     ]
-                  }
+                  },
+                  "kind": "control"
                 },
                 {
                   "id": "channel",
@@ -787,7 +804,8 @@
                       300,
                       32
                     ]
-                  }
+                  },
+                  "kind": "control"
                 }
               ]
             }

@@ -161,6 +161,7 @@
   }
   function move(direction){
     const target=navigationTarget(direction);if(!target)return false;
+    window.PresentationModules?.prepareNavigation?.(target.id,direction);
     if(target.index===undefined)app.goPage(target.id,target.phase);else app.navigate(target.index);return true;
   }
   function edge(last=false){const deck=deckFor(app.page),pages=app.pages.filter(page=>page.deckId===deck?.id);app.goPage(last?pages.at(-1)?.id||'presentations':entryFor(deck)||'presentations');}

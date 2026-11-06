@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M1-02",
+  "texts": {
+    "m102-route-issues|0|text-1": "檢視地名方向指示標誌與實際路型、車道配置及行駛動線的對應關係，確認駕駛人能否在進入路口前辨識行駛路徑。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m102-route-issues": {
+        "points": [
+          {
+            "id": "choice",
+            "title": "複雜路型不易辨識行駛路徑",
+            "titleKey": "m102-route-issues|module|choice|title",
+            "text": "錯位 T 字路口、多岔路口或渦輪圓環等複雜路型，若標誌未清楚呈現道路分岔與通往方向，駕駛人不易判斷應行駛的車道。",
+            "textKey": "m102-route-issues|module|choice|text"
+          },
+          {
+            "id": "match",
+            "title": "標誌與實際車道配置不一致",
+            "titleKey": "m102-route-issues|module|match|title",
+            "text": "牌面箭頭未對應路口車道數及各車道可通往的方向，駕駛人難以判斷應選擇哪一車道。",
+            "textKey": "m102-route-issues|module|match|text"
+          },
+          {
+            "id": "advance",
+            "title": "指示資訊不足或設置位置不當",
+            "titleKey": "m102-route-issues|module|advance|title",
+            "text": "標誌設置過於接近路口，或未於車道分流前提供足夠的方向資訊，可能造成駕駛人臨時變換車道。",
+            "textKey": "m102-route-issues|module|advance|text"
+          }
+        ]
+      },
+      "m102-route-diagram": {
+        "points": [
+          {
+            "id": "angle",
+            "title": "依道路分岔配置箭頭方向",
+            "text": "以向上為直行基準，分支方向角原則採 45° 的整數倍，特殊路型可依實際分岔角度調整。",
+            "titleKey": "m102-route-diagram|module|angle|title",
+            "textKey": "m102-route-diagram|module|angle|text"
+          },
+          {
+            "id": "lanes",
+            "title": "箭頭起始端對應車道數",
+            "text": "依臨近路口車道數及各車道可通往的方向，配置箭頭起始端，讓駕駛人辨識車道與行駛路徑的對應關係。",
+            "titleKey": "m102-route-diagram|module|lanes|title",
+            "textKey": "m102-route-diagram|module|lanes|text"
+          },
+          {
+            "id": "location",
+            "title": "於駕駛人選道前設置",
+            "text": "市區道路以距路口 150 m 以內為原則，並可配合車道漸變起點或最上游一組指向線位置設置，提前提供方向資訊。",
+            "titleKey": "m102-route-diagram|module|location|title",
+            "textKey": "m102-route-diagram|module|location|text"
+          },
+          {
+            "id": "duplication",
+            "title": "避免重複設置相同指示資訊",
+            "text": "已設置可明確表達車道配置及行駛方向的圖型化、車道化地名方向指示標誌時，原則上不再另設功能重複的車道預告標誌。",
+            "titleKey": "m102-route-diagram|module|duplication|title",
+            "textKey": "m102-route-diagram|module|duplication|text"
+          }
+        ]
+      }
+    },
+    "results": {}
+  }
+}

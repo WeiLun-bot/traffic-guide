@@ -1,7 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "M1-02",
-  "directoryAssets": ["m102-offset", "m102-roundabout"],
+  "directoryAssets": [
+    "m102-offset",
+    "m102-roundabout"
+  ],
   "title": "行車指示",
   "source": {
     "file": "02-route-guidance.typ",
@@ -152,39 +155,24 @@
       ],
       "points": [
         {
+          "id": "angle",
+          "title": "依道路分岔配置箭頭方向",
+          "text": "以向上為直行基準，分支方向角原則採 45° 的整數倍，特殊路型可依實際分岔角度調整。"
+        },
+        {
           "id": "lanes",
           "title": "箭頭起始端對應車道數",
-          "text": "原則上依臨近路口的車道數配置，讓駕駛能將牌面箭頭對應到所在車道。"
-        },
-        {
-          "id": "single",
-          "title": "路型單純可用單一起始端",
-          "text": "不致混淆車道選擇時，可簡化為單一箭頭起始端。"
-        },
-        {
-          "id": "angle",
-          "title": "方向角反映實際路型",
-          "text": "以向上為直行基準，各分支原則採 45° 的整數倍；特殊路型必要時依實際角度調整。"
-        },
-        {
-          "id": "simple",
-          "title": "簡化不必要的選道負擔",
-          "text": "不影響正確導向、且非以加強疏解右轉車流為目標時，可只保留外側車道的右轉動線。"
-        },
-        {
-          "id": "continuity",
-          "title": "保留連續車道的箭身",
-          "text": "分岔若延續自上游車道，可保留延伸箭身，幫助駕駛對照實際路型。"
+          "text": "依臨近路口車道數及各車道可通往的方向，配置箭頭起始端，讓駕駛人辨識車道與行駛路徑的對應關係。"
         },
         {
           "id": "location",
-          "title": "在選道與漸變之前設置",
-          "text": "市區道路以距路口 150 m 以內為原則，可設於車道漸變起點或最上游一組指向線處。"
+          "title": "於駕駛人選道前設置",
+          "text": "市區道路以距路口 150 m 以內為原則，並可配合車道漸變起點或最上游一組指向線位置設置，提前提供方向資訊。"
         },
         {
           "id": "duplication",
-          "title": "避免重複提供相同資訊",
-          "text": "已設圖型化、車道化地名方向指示標誌時，不再另設車道預告標誌，以減少資訊負擔。"
+          "title": "避免重複設置相同指示資訊",
+          "text": "已設置可明確表達車道配置及行駛方向的圖型化、車道化地名方向指示標誌時，原則上不再另設功能重複的車道預告標誌。"
         }
       ],
       "sourcePages": [],
@@ -258,65 +246,30 @@
           "topics": [
             {
               "id": "lanes",
-              "label": "箭頭與車道數",
+              "label": "箭頭圖形對應實際路型與車道配置",
               "sourcePageId": "m102-route-diagram",
               "pointIds": [
+                "angle",
                 "lanes"
               ],
               "assets": [
-                "m102-start-1",
-                "m102-start-2",
-                "m102-count-1",
-                "m102-count-2"
-              ]
-            },
-            {
-              "id": "single",
-              "label": "單一箭頭",
-              "sourcePageId": "m102-route-diagram",
-              "pointIds": [
-                "single"
-              ],
-              "assets": [
-                "m102-single"
-              ]
-            },
-            {
-              "id": "angle",
-              "label": "方向角",
-              "sourcePageId": "m102-route-diagram",
-              "pointIds": [
-                "angle"
-              ],
-              "assets": [
                 "m102-offset"
-              ]
-            },
-            {
-              "id": "simple",
-              "label": "動線提示簡化",
-              "sourcePageId": "m102-route-diagram",
-              "pointIds": [
-                "simple"
               ],
-              "assets": [
-                "m102-simple"
-              ]
-            },
-            {
-              "id": "continuity",
-              "label": "延伸箭身",
-              "sourcePageId": "m102-route-diagram",
-              "pointIds": [
-                "continuity"
+              "facilities": [
+                {
+                  "id": "directions",
+                  "label": "地名方向指示標誌",
+                  "focus": {
+                    "asset": "m102-offset"
+                  },
+                  "kind": "control"
+                }
               ],
-              "assets": [
-                "m102-continuity"
-              ]
+              "showPointTitles": true
             },
             {
               "id": "location",
-              "label": "設置位置",
+              "label": "提前預告並整合指示資訊",
               "sourcePageId": "m102-route-diagram",
               "pointIds": [
                 "location",
@@ -324,7 +277,34 @@
               ],
               "assets": [
                 "m102-offset"
-              ]
+              ],
+              "facilities": [
+                {
+                  "id": "directions",
+                  "label": "地名方向指示標誌",
+                  "focus": {
+                    "asset": "m102-offset"
+                  },
+                  "kind": "control"
+                },
+                {
+                  "id": "advance",
+                  "label": "車道預告標誌",
+                  "focus": {
+                    "asset": "m102-offset"
+                  },
+                  "kind": "control"
+                },
+                {
+                  "id": "arrows",
+                  "label": "指向線",
+                  "focus": {
+                    "asset": "m102-offset"
+                  },
+                  "kind": "control"
+                }
+              ],
+              "showPointTitles": true
             }
           ]
         },
