@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-06T09:39:13.623Z",
+  "updatedAt": "2026-11-06T11:13:57.491Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793957953623,
+    "updatedAt": 1793963528167,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -948,6 +948,7 @@
         "fontSize": 36
       },
       "results-background|results|source-p6-text": {
+        "fontSize": 18,
         "fontWeight": 400,
         "color": "#254b3b"
       },
@@ -1214,6 +1215,90 @@
       },
       "m101-lanes-issues|module|continuity|title": {
         "color": "#000000"
+      },
+      "results-background|results|source-p1": {
+        "fontSize": 18
+      },
+      "results-background|results|source-p2": {
+        "fontSize": 18
+      },
+      "results-background|results|source-p3": {
+        "fontSize": 17
+      },
+      "results-background|results|source-p4-text": {
+        "fontSize": 18
+      },
+      "results-background|results|source-p5-text": {
+        "fontSize": 18
+      },
+      "results-common-design-issues|results|shared-functions-title": {
+        "fontSize": 28
+      },
+      "results-common-design-issues|results|facility-roles-title": {
+        "fontSize": 28
+      },
+      "results-common-design-issues|results|changing-conditions-title": {
+        "fontSize": 28
+      },
+      "results-phase-three-functions|results|extract-functions-title": {
+        "fontSize": 28
+      },
+      "results-phase-three-functions|results|combine-facilities-title": {
+        "fontSize": 28
+      },
+      "results-phase-three-functions|results|reusable-examples-title": {
+        "fontSize": 28
+      },
+      "results-phase-three-functions|results|cross-reference-title": {
+        "fontSize": 28
+      },
+      "results-outline|results|title": {
+        "fontSize": 36
+      },
+      "results-common-design-issues|results|changing-conditions-text": {
+        "fontSize": 20
+      },
+      "results-common-design-issues|results|facility-roles-text": {
+        "fontSize": 20
+      },
+      "results-common-design-issues|results|shared-functions-text": {
+        "fontSize": 20
+      },
+      "results-wrap|results|module-title": {
+        "fontSize": 30
+      },
+      "results-wrap|results|scene-title": {
+        "fontSize": 30
+      },
+      "results-wrap|results|principle-title": {
+        "fontSize": 30
+      },
+      "results-wrap|results|scene-text": {
+        "fontSize": 20
+      },
+      "results-wrap|results|module-text": {
+        "fontSize": 20
+      },
+      "results-wrap|results|principle-text": {
+        "fontSize": 20
+      },
+      "results-road-system|results|system-title": {
+        "fontSize": 30
+      },
+      "results-road-system|results|consistency-title": {
+        "fontSize": 30
+      },
+      "results-road-system|results|continuity-title": {
+        "fontSize": 30
+      },
+      "results-road-system|results|continuity-text": {
+        "fontSize": 20
+      },
+      "results-road-system|results|consistency-text": {
+        "fontSize": 20
+      },
+      "results-road-system|results|system-text": {
+        "fontSize": 20
       }
     },
     "frames": {
@@ -2189,9 +2274,9 @@
       "pageId": "results-module-classification",
       "assetKey": "results:module-m4-01-diagram",
       "units": "percent",
-      "zoom": 1.1618342435197198,
-      "x": 19.738350619946186,
-      "y": 2.1743095071900576,
+      "zoom": 1.5683121886951525,
+      "x": -8.391238465612027,
+      "y": -11.183100303272832,
       "rotation": 90
     },
     "results-module-classification/results%3Amodule-m4-03-diagram": {
@@ -2199,9 +2284,9 @@
       "pageId": "results-module-classification",
       "assetKey": "results:module-m4-03-diagram",
       "units": "percent",
-      "zoom": 1,
-      "x": 0,
-      "y": 0,
+      "zoom": 1.3498588094150397,
+      "x": -3.8510790684409866,
+      "y": -2.914577862512049,
       "rotation": 90
     },
     "results-guide-experience-4/results%3Areading-vector-g2-01": {
@@ -2512,6 +2597,36 @@
       "zoom": 1.1202517508616472,
       "x": 0,
       "y": 0,
+      "rotation": 0
+    },
+    "results-submodule-contents/results%3Asubmodule-stop-basic": {
+      "id": "results-submodule-contents/results%3Asubmodule-stop-basic",
+      "pageId": "results-submodule-contents",
+      "assetKey": "results:submodule-stop-basic",
+      "units": "percent",
+      "zoom": 1.5683121886951525,
+      "x": -4.761884068320086,
+      "y": 18.7249732312814,
+      "rotation": 0
+    },
+    "results-submodule-contents/results%3Asubmodule-stop-current": {
+      "id": "results-submodule-contents/results%3Asubmodule-stop-current",
+      "pageId": "results-submodule-contents",
+      "assetKey": "results:submodule-stop-current",
+      "units": "percent",
+      "zoom": 1.5683121886951528,
+      "x": -2.4314383253802156,
+      "y": -28.11677189537444,
+      "rotation": 0
+    },
+    "results-module-classification/results%3Amodule-m1-01-diagram": {
+      "id": "results-module-classification/results%3Amodule-m1-01-diagram",
+      "pageId": "results-module-classification",
+      "assetKey": "results:module-m1-01-diagram",
+      "units": "percent",
+      "zoom": 1.5683121886951528,
+      "x": -7.39784906984137,
+      "y": 4.241637179866748,
       "rotation": 0
     }
   },

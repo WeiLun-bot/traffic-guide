@@ -90,3 +90,20 @@
  #presentation .results-case-copy .results-points:has(>li:nth-child(5)) h3{margin-bottom:4px}
 }
 @media(max-width:620px){:root{--reading-gutter:18px}#presentation>.slide:not(.results-cover):not(.chapter-cover):not(.cover){padding-block:18px}}
+#presentation .results-outline :is(#slide-title,.results-heading>p,.results-outline-menu>button>span,.results-outline-menu strong,.results-outline-menu b){font-size:26px;line-height:1.4}
+#presentation [data-results-page="results-module-classification"] .results-topic-cards>article{padding-top:8px}
+#presentation [data-results-page="results-module-classification"] .results-topic-cards>article>h2{margin-top:0}
+#presentation [data-results-page="results-submodule-contents"] .results-topic-cards>article{padding-top:8px;row-gap:4px}
+#presentation [data-results-page="results-submodule-contents"] .results-topic-cards>article>h2{margin:0 0 4px}
+@media(min-width:901px){
+ #presentation [data-results-page="results-submodule-contents"] .results-topic-cards{grid-template-rows:repeat(2,minmax(0,1fr))}
+}
+
+/* Compact overview captions give the image the remaining card height. */
+#presentation .results-thumbnail-grid .results-scenario-caption{position:relative;flex-direction:row;align-items:center;gap:6px}
+#presentation .results-thumbnail-grid .results-scenario-code{flex:none;white-space:nowrap;padding-right:0}
+#presentation .results-thumbnail-grid .results-scenario-caption>strong{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#presentation .results-representative-card>.map-toolbar{align-items:center;padding-block:6px}
+#presentation .results-representative-card .results-scenario-caption{padding-right:20px}
+#presentation .results-scenario-index .results-scenario-caption{gap:4px;padding-right:18px}
+#presentation .results-scenario-index .results-scenario-code>span{position:absolute;right:6px;top:50%;transform:translateY(-50%)}

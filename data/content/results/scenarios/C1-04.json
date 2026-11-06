@@ -61,7 +61,7 @@
           {
             "id": "guidance",
             "title": "優先標示主要車流路徑",
-            "text": "確認各分支的主要通行方向，於容易混淆的轉向及直行路徑劃設路口行車導引線，引導車輛進入正確的下游車道。",
+            "text": "確認各分支的主要通行方向，於容易混淆的路徑劃設路口行車導引線，引導車輛進入正確的下游車道。",
             "moduleId": "M1-01",
             "titleKey": "results-scenario-c1-04-strategy|results|guidance-title",
             "textKey": "results-scenario-c1-04-strategy|results|guidance-text"
@@ -69,7 +69,7 @@
           {
             "id": "information",
             "title": "減少重複的方向標誌",
-            "text": "以駕駛需要的選道及行向資訊為主，刪減重複或不必要的牌面，並將重要資訊安排於駕駛作出決策前的位置。",
+            "text": "以必要的資訊為主，減少重複或不必要的牌面，並將重要資訊安排於駕駛作出決策前的位置。",
             "moduleId": "M2-04",
             "titleKey": "results-scenario-c1-04-strategy|results|information-title",
             "textKey": "results-scenario-c1-04-strategy|results|information-text"
@@ -85,7 +85,7 @@
           {
             "id": "phases",
             "title": "以時相區隔高風險轉向與行人穿越",
-            "text": "若轉向車輛行駛路徑接近直行，或可能以較高速度穿越行穿線，應檢討採用人車分離的號誌時相，避免衝突人車流動同時開啟。",
+            "text": "\n",
             "moduleId": "M2-03",
             "titleKey": "results-scenario-c1-04-strategy|results|phases-title",
             "textKey": "results-scenario-c1-04-strategy|results|phases-text"
