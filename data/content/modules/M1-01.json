@@ -215,7 +215,7 @@
             "id": "transition",
             "title": "路口前調整慢車道配置",
             "titleKey": "m101-lanes-narrow|module|transition|title",
-            "text": "於路口前 30～60 m 中斷慢車道，改以分流式指向線引導各方向車流。",
+            "text": "於路口前 30～60 m 中斷慢車道，改以分流式指向線引導車流。",
             "textKey": "m101-lanes-narrow|module|transition|text"
           },
           {
