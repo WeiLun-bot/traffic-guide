@@ -33,9 +33,10 @@
       "file": "materials/03-modules/M1-01/M1-01.2_現況議題_附加車道.png",
       "width": 1608,
       "height": 778,
-      "label": "附加車道現況照片",
+      "label": "現況照片 2：附加車道",
       "caption": "M1-01.2 附加車道現況",
-      "credit": "使用者提供之現況照片"
+      "credit": "使用者提供之現況照片",
+      "highlightColor": "#d4a017"
     },
     "m101-lanes": {
       "file": "materials/03-modules/M1-01/M1-01_路口與路段車道配置代表型.svg",
@@ -84,6 +85,15 @@
       "label": "附加車道搭配庇護島",
       "caption": "圖 3.11 附加車道──搭配庇護島",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m101-additional-issue-missing": {
+      "file": "materials/03-modules/M1-01/M1-01.1_現況議題_路段車道.png",
+      "width": 622,
+      "height": 407,
+      "label": "現況照片 1：缺乏附加車道",
+      "caption": "M1-01.2 附加車道現況：缺乏附加車道",
+      "credit": "使用者提供之現況照片",
+      "highlightColor": "#d4a017"
     }
   },
   "pages": [
@@ -298,23 +308,41 @@
       "title": "附加車道｜現況議題與相關條文",
       "intro": "附加車道除了要放得下，也要讓駕駛看得懂、來得及進入。",
       "assets": [
+        "m101-additional-issue-missing",
         "m101-additional-issue-photo"
       ],
       "points": [
         {
+          "id": "missing-lane",
+          "title": "缺乏附加車道",
+          "text": "原直行車道於路口前改為左轉車道，轉向車流未另設附加車道分流，影響直行動線的連續性。",
+          "focus": {
+            "asset": "m101-additional-issue-missing"
+          }
+        },
+        {
           "id": "recognition",
           "title": "車道變化不易提早辨識",
-          "text": "標線與預告不完整，駕駛可能到路口前才察覺轉向車道。"
+          "text": "標線與預告不完整，駕駛可能到路口前才察覺轉向車道。",
+          "focus": {
+            "asset": "m101-additional-issue-photo"
+          }
         },
         {
           "id": "storage",
           "title": "漸變或儲車空間不足",
-          "text": "轉向車流無法順暢進入，排隊可能外溢並影響主線直行車流。"
+          "text": "轉向車流無法順暢進入，排隊可能外溢並影響主線直行車流。",
+          "focus": {
+            "asset": "m101-additional-issue-photo"
+          }
         },
         {
           "id": "consistency",
           "title": "幾何與導引一起檢視",
-          "text": "同時確認漸變長度、儲車空間、車道連續性與標誌標線的一致性。"
+          "text": "同時確認漸變長度、儲車空間、車道連續性與標誌標線的一致性。",
+          "focus": {
+            "asset": "m101-additional-issue-photo"
+          }
         }
       ],
       "sourcePages": [],
@@ -344,147 +372,55 @@
         "C4-02",
         "C4-03",
         "C4-04"
-      ]
+      ],
+      "defaultView": "single",
+      "pointLinkedImages": true
     },
     {
       "id": "m101-additional-diagram",
       "section": "module",
       "submoduleId": "M1-01.2",
       "title": "附加車道｜圖例說明",
-      "intro": "從漸變區開始，連續提示轉向車道的位置與用途。",
+      "intro": "依轉向車流需求配置漸變與儲車空間，並透過標誌標線提前預告車道變化及引導分流。",
       "assets": [
         "m101-additional",
         "m101-taper"
       ],
       "points": [
         {
-          "id": "taper",
-          "title": "依設計速率安排漸變長度",
-          "text": "市區道路依設計規範第 4.2.6 節檢核，設計速率與漸變段長寬比對照如下。",
-          "table": {
-            "label": "設計速率與漸變段長寬比",
-            "headers": [
-              "設計速率（km/h）",
-              "漸變段長寬比"
-            ],
-            "rows": [
-              [
-                "20",
-                "3:1"
-              ],
-              [
-                "30",
-                "4:1"
-              ],
-              [
-                "40",
-                "6:1"
-              ],
-              [
-                "50",
-                "8:1"
-              ],
-              [
-                "60",
-                "10:1"
-              ],
-              [
-                "70",
-                "12:1"
-              ],
-              [
-                "80",
-                "14:1"
-              ],
-              [
-                "90",
-                "15:1"
-              ]
-            ]
-          },
-          "focus": {
-            "asset": "m101-additional",
-            "rect": [
-              210,
-              115,
-              390,
-              78
-            ]
-          }
+          "id": "taper-speed",
+          "title": "依設計速率檢核漸變長度",
+          "text": "依《市區道路及附屬工程設計規範》第 4.2.6 節，按設計速率及漸變段長寬比配置附加車道。"
         },
         {
-          "id": "arrows",
-          "title": "漸變起點就提示轉向",
-          "text": "左轉或右轉附加車道在漸變起點劃設相應指向線；空間足夠時，各車道的指向線位置宜統一。",
-          "focus": {
-            "asset": "m101-taper",
-            "rect": [
-              145,
-              48,
-              120,
-              50
-            ]
-          }
+          "id": "storage-space",
+          "title": "依轉向車流需求配置儲車空間",
+          "text": "檢核轉向車輛的排隊需求，避免儲車長度不足造成車流回堵至直行車道。"
         },
         {
-          "id": "offset",
-          "title": "錯位 T 字路口配合實際動線",
-          "text": "左轉車道開始附加時劃設左轉指向線；同一斷面的直行車道若上下游順接、無選道疑慮，可不另設直行指向線。",
-          "focus": {
-            "asset": "m101-taper",
-            "rect": [
-              480,
-              45,
-              145,
-              138
-            ]
-          }
+          "id": "advance-signs",
+          "title": "於漸變區上游預告車道配置",
+          "text": "在漸變區前設置車道預告標誌，使駕駛人提前辨識轉向專用車道的位置。"
         },
         {
-          "id": "dotted",
-          "title": "穿越虛線銜接專用車道",
-          "text": "自漸變區起點延伸至專用車道起點，提示轉向車流依序分流；路口前 20 m 搭配禁止變換車道線。",
-          "focus": {
-            "asset": "m101-additional",
-            "rect": [
-              235,
-              150,
-              665,
-              33
-            ]
-          }
+          "id": "entry-arrows",
+          "title": "於漸變起點標示行駛方向",
+          "text": "附加車道開始漸變處，配合左轉或右轉指向線，提示轉向車輛進入附加車道。"
         },
         {
-          "id": "advance",
-          "title": "車道變化前先預告",
-          "text": "在漸變區上游設置車道預告標誌，讓駕駛提早準備選道。",
-          "focus": {
-            "asset": "m101-additional",
-            "rect": [
-              343,
-              208,
-              56,
-              78
-            ]
-          }
+          "id": "dotted-diversion",
+          "title": "以穿越虛線引導轉向車流",
+          "text": "穿越虛線自漸變區起點延伸至專用車道起點，標示轉向車輛進入附加車道的範圍。"
         },
         {
-          "id": "channel",
-          "title": "槽化不使用的空間",
-          "text": "界定禁止通行區域，區隔車流並順化行車軌跡。",
-          "focus": {
-            "asset": "m101-additional",
-            "rect": [
-              220,
-              132,
-              300,
-              32
-            ]
-          }
+          "id": "lane-boundaries",
+          "title": "配合禁止變換車道線及槽化線",
+          "text": "路口前 20 m 配合禁止變換車道線；不供車輛通行的多餘空間，可利用槽化線界定並引導車流。"
         }
       ],
       "sourcePages": [],
-      "references": []
+      "references": [],
+      "defaultView": "single"
     },
     {
       "id": "m101-additional-extensions",
@@ -715,58 +651,144 @@
           "topics": [
             {
               "id": "taper",
-              "label": "漸變長度",
+              "label": "合理配置漸變與儲車空間",
+              "summary": "依設計速率及轉向車流需求，配置附加車道的漸變段與儲車段。",
+              "facilitiesLabel": "對應設計要素",
+              "showPointTitles": true,
               "sourcePageId": "m101-additional-diagram",
               "pointIds": [
-                "taper"
+                "taper-speed",
+                "storage-space"
               ],
               "assets": [
                 "m101-additional"
-              ]
-            },
-            {
-              "id": "arrows",
-              "label": "指向線",
-              "sourcePageId": "m101-additional-diagram",
-              "pointIds": [
-                "arrows",
-                "offset"
               ],
-              "assets": [
-                "m101-taper"
-              ]
-            },
-            {
-              "id": "dotted",
-              "label": "穿越虛線",
-              "sourcePageId": "m101-additional-diagram",
-              "pointIds": [
-                "dotted"
-              ],
-              "assets": [
-                "m101-additional"
+              "facilities": [
+                {
+                  "id": "taper",
+                  "label": "附加車道漸變段",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      210,
+                      115,
+                      390,
+                      78
+                    ]
+                  }
+                },
+                {
+                  "id": "storage",
+                  "label": "附加車道儲車段",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      530,
+                      125,
+                      355,
+                      34
+                    ]
+                  }
+                }
               ]
             },
             {
               "id": "advance",
-              "label": "車道預告標誌",
+              "label": "提前預告附加車道與行向",
+              "summary": "於附加車道漸變區上游及起點，預告車道配置與轉向方向。",
+              "facilitiesLabel": "對應交通管制設施",
+              "showPointTitles": true,
               "sourcePageId": "m101-additional-diagram",
               "pointIds": [
-                "advance"
+                "advance-signs",
+                "entry-arrows"
               ],
               "assets": [
                 "m101-additional"
+              ],
+              "facilities": [
+                {
+                  "id": "advance",
+                  "label": "車道預告標誌",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      343,
+                      208,
+                      56,
+                      78
+                    ]
+                  }
+                },
+                {
+                  "id": "arrows",
+                  "label": "指向線",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      438,
+                      134,
+                      100,
+                      48
+                    ]
+                  }
+                }
               ]
             },
             {
-              "id": "channel",
-              "label": "槽化線",
+              "id": "dotted",
+              "label": "明確標示分流範圍與車道邊界",
+              "summary": "透過分流與車道管制標線，引導轉向車流進入附加車道，並界定不供通行的空間。",
+              "facilitiesLabel": "對應交通管制設施",
+              "showPointTitles": true,
               "sourcePageId": "m101-additional-diagram",
               "pointIds": [
-                "channel"
+                "dotted-diversion",
+                "lane-boundaries"
               ],
               "assets": [
                 "m101-additional"
+              ],
+              "facilities": [
+                {
+                  "id": "dotted",
+                  "label": "穿越虛線",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      235,
+                      150,
+                      665,
+                      33
+                    ]
+                  }
+                },
+                {
+                  "id": "solid",
+                  "label": "禁止變換車道線",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      800,
+                      150,
+                      99,
+                      22
+                    ]
+                  }
+                },
+                {
+                  "id": "channel",
+                  "label": "槽化線",
+                  "focus": {
+                    "asset": "m101-additional",
+                    "rect": [
+                      220,
+                      132,
+                      300,
+                      32
+                    ]
+                  }
+                }
               ]
             }
           ]

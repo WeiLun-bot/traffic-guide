@@ -281,3 +281,7 @@
 #presentation .module-extension-card:is([data-module-source-page="m101-lanes-extensions"],[data-module-source-page="m101-lanes-narrow"]) .module-explain-points>li::before{top:11px;font-size:10px}
 #presentation .module-extension-card:is([data-module-source-page="m101-lanes-extensions"],[data-module-source-page="m101-lanes-narrow"]) .module-explain-points h3{font-size:18px;font-weight:500;line-height:1.4;margin-bottom:5px}
 #presentation .module-extension-card:is([data-module-source-page="m101-lanes-extensions"],[data-module-source-page="m101-lanes-narrow"]) .module-explain-points p{font-size:14px;line-height:1.6}
+
+#presentation .module-concept-slide .module-concept-summary{font-size:14px;line-height:1.5;margin:-7px 0 12px;color:var(--muted)}
+#presentation .module-concept-slide.has-concept-point-titles .module-concept-points h3{display:block;font-size:18px;font-weight:600;line-height:1.4;margin:0 0 5px}
+.module-extension-footer:has(.module-extension-pager[hidden]){display:none}

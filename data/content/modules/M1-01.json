@@ -10,7 +10,9 @@
     "m101-lanes-extensions|shared|title": "路口與路段車道配置｜延伸應用－－慢車道設計",
     "m101-lanes-extensions|extension|wide|title": "慢車道與一般車道同寬（>2.8 m）",
     "m101-lanes-extensions|extension|narrow|title": "慢車道 2.8 m（含）以下",
-    "m101-lanes-extensions|0|text-1": "以快慢車道分隔線做為快慢車道之界線，繪設機車及自行車圖案以標示空間屬於慢車道。近路口處依慢車道寬度，調整路口前的車道分隔與轉向導引。"
+    "m101-lanes-extensions|0|text-1": "以快慢車道分隔線做為快慢車道之界線，繪設機車及自行車圖案以標示空間屬於慢車道。近路口處依慢車道寬度，調整路口前的車道分隔與轉向導引。",
+    "m101-additional-diagram|concept|taper|summary": "依設計速率及轉向需求，配置附加車道的漸變與儲車段。",
+    "m101-additional-diagram|concept|advance|summary": "於附加車道漸變區上游及起點，預告車道配置與轉向。"
   },
   "images": {},
   "blocks": {},
@@ -48,17 +50,24 @@
       "m101-additional-issues": {
         "points": [
           {
+            "id": "missing-lane",
+            "title": "缺乏附加車道",
+            "text": "原直行車道於路口前改為左轉車道，轉向車流未另設附加車道分流，影響直行動線的連續性。",
+            "titleKey": "m101-additional-issues|module|missing-lane|title",
+            "textKey": "m101-additional-issues|module|missing-lane|text"
+          },
+          {
             "id": "recognition",
             "title": "車道變化不易提早辨識",
             "titleKey": "m101-additional-issues|module|recognition|title",
-            "text": "標線與預告不完整，駕駛可能到路口前才察覺轉向車道。",
+            "text": "預告不完整，駕駛可能到路口前才察覺轉向車道。",
             "textKey": "m101-additional-issues|module|recognition|text"
           },
           {
             "id": "storage",
             "title": "漸變或儲車空間不足",
             "titleKey": "m101-additional-issues|module|storage|title",
-            "text": "轉向車流無法順暢進入，排隊可能外溢並影響主線直行車流。",
+            "text": "轉向排隊車輛可能溢流並影響主線直行車流。",
             "textKey": "m101-additional-issues|module|storage|text"
           }
         ]
@@ -215,6 +224,52 @@
             "titleKey": "m101-lanes-narrow|module|width|title",
             "text": "非實體分隔的最外側車道不宜大於 4.5 m；原車道與慢車道合併超過時，可用槽化縮減，並可增設路寬縮減標誌。",
             "textKey": "m101-lanes-narrow|module|width|text"
+          }
+        ]
+      },
+      "m101-additional-diagram": {
+        "points": [
+          {
+            "id": "taper-speed",
+            "title": "依設計速率檢核漸變長度",
+            "text": "依《市區道路及附屬工程設計規範》第 4.2.6 節，按設計速率及漸變段長寬比配置附加車道。",
+            "titleKey": "m101-additional-diagram|module|taper-speed|title",
+            "textKey": "m101-additional-diagram|module|taper-speed|text"
+          },
+          {
+            "id": "storage-space",
+            "title": "依轉向交通量設計儲車空間",
+            "text": "依轉向交通量與時相設計，避免儲車長度不足造成車流回堵至直行車道。",
+            "titleKey": "m101-additional-diagram|module|storage-space|title",
+            "textKey": "m101-additional-diagram|module|storage-space|text"
+          },
+          {
+            "id": "advance-signs",
+            "title": "於漸變區上游預告車道配置",
+            "text": "在漸變區前設置車道預告標誌，使駕駛人提前辨識轉向專用車道的位置。",
+            "titleKey": "m101-additional-diagram|module|advance-signs|title",
+            "textKey": "m101-additional-diagram|module|advance-signs|text"
+          },
+          {
+            "id": "entry-arrows",
+            "title": "於漸變起點標示行駛方向",
+            "text": "附加車道開始漸變處，配合左轉或右轉指向線，提示轉向車輛進入附加車道。",
+            "titleKey": "m101-additional-diagram|module|entry-arrows|title",
+            "textKey": "m101-additional-diagram|module|entry-arrows|text"
+          },
+          {
+            "id": "dotted-diversion",
+            "title": "以穿越虛線引導轉向車流",
+            "text": "穿越虛線自漸變區起點延伸至專用車道起點，標示轉向車輛進入附加車道的範圍。",
+            "titleKey": "m101-additional-diagram|module|dotted-diversion|title",
+            "textKey": "m101-additional-diagram|module|dotted-diversion|text"
+          },
+          {
+            "id": "lane-boundaries",
+            "title": "配合禁止變換車道線及槽化線",
+            "text": "路口前 20 m 配合禁止變換車道線；不供車輛通行的多餘空間，可利用槽化線界定並引導車流。",
+            "titleKey": "m101-additional-diagram|module|lane-boundaries|title",
+            "textKey": "m101-additional-diagram|module|lane-boundaries|text"
           }
         ]
       }
