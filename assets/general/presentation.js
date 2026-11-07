@@ -35,10 +35,10 @@
     if(page.kind==='chapter-scenarios')return '無號誌三岔路口從正交，到匯入。';
     if(page.kind==='current-conditions')return '現況問題';
     if(page.kind==='scenario-comparison')return /^G\d-\d{2}$/.test(window.PresentationScenarios.sceneFor(page,data).code)?'行穿線設置條件與方案比較':'有、無行穿線，怎麼選？';
-    if(page.kind==='map')return !page.article?'整體佈設策略':page.article.category==='標線'?'標線條文運用解說':page.article.category==='道路設施'?'道路設施':(page.article.category||'交通設施')+'條文';
+    if(page.kind==='map')return !page.article?'整體佈設策略':page.article.category==='道路設施'?'道路設施運用解說':(page.article.category||'交通設施')+'條文運用解說';
     if(['context','review'].includes(page.kind)){
       const value=window.PresentationScenarios.sceneFor(page,data);
-      return page.kind==='context'?value.name:value.presentation?.review?.title||value.recapTitle||(/^G\d-\d{2}$/.test(value.code)?'鄉區路口的預告、停讓與轉彎空間。':'同一章節，不同的設置重點。');
+      return page.kind==='context'?value.name:/^G\d-\d{2}$/.test(value.code)?'情境小結':value.presentation?.review?.title||value.recapTitle||'同一章節，不同的設置重點。';
     }
     if(page.kind==='custom')return {cover:'在這裡寫下你的章節標題',image:'情境與設置議題',closing:'回到情境，整理設置重點。',compare:'左右圖例比較',steps:'情境圖面逐步解說'}[page.type]||page.name;
     return page.name;
@@ -349,6 +349,7 @@
     if(!['module','results','presentations-home','presentation-empty','scenario-directory','chapter-cover'].includes(page.kind))scenarioUI.decorate(page);
     window.PresentationScenarios?.decorate(page,data);
     window.PresentationModules?.decorate(page);
+    window.PresentationText?.apply($('presentation'),{general:page.deckId==='general'});
     editor?.decorate();
     viewport?.mount($('presentation'));
     if(page.kind==='map'&&!page.article&&$('main-map')){
@@ -363,6 +364,8 @@
     window.PresentationResults?.afterRender();
     window.PresentationOrder?.mount(window.generalRoadPresentation);
     window.PresentationImageOrder?.mount(window.generalRoadPresentation);
+    window.GeneralScenarioLayout?.decorate(page);
+    window.PresentationText?.apply(document.body);
     restoreScroll(previousScroll);
     if(options.hash!==false) {
       const hash=page.kind==='module'?window.PresentationModules.hashFor(page):`#${page.id}${page.article&&current().phase?'/zoom':['custom','results'].includes(page.kind)&&current().phase?'/step-'+current().phase:''}`;

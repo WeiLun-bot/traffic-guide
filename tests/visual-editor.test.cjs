@@ -112,6 +112,17 @@ test('passive registration preserves layout; history, reset and JSON round trips
   store.markSaved(store.snapshot()); store.patch(entry.id, {x: 45}); store.undo(); assert.equal(store.dirty, false);
   store.patch(entry.id, entry); assert.equal(Core.overrides(store.config.elements[entry.id]), false);
 });
+test('save status ignores timestamps while retaining warnings for actual content changes', () => {
+  const store = new Core.Store(original()), key='save-status-test';
+  const metadata = store.snapshot();metadata.updatedAt='2026-11-07T00:00:00Z';metadata.legacyState.updatedAt+=1;
+  assert.equal(store.commit(metadata),false);assert.equal(store.dirty,false);
+  const edit=store.snapshot();edit.legacyState.texts[key]='未儲存';edit.legacyState.updatedAt+=2;
+  store.commit(edit);assert.equal(store.dirty,true);store.markSaved(store.snapshot());assert.equal(store.dirty,false);
+  const later=store.snapshot();later.legacyState.updatedAt+=3;assert.equal(store.commit(later),false);assert.equal(store.dirty,false);
+  later.legacyState.texts[key]='另有修改';store.commit(later);assert.equal(store.dirty,true);
+  later.legacyState.texts[key]='未儲存';later.legacyState.updatedAt+=4;store.commit(later);assert.equal(store.dirty,false);
+});
+
 test('invalid numbers, prototypes, identities and legacy settings are rejected atomically', () => {
   const config = original(), item = Core.element('edge', 1, 'text', {type: 'path', value: 'section:0>p:1'});
   config.elements[item.id] = item;
@@ -188,10 +199,10 @@ test('structured content is backward compatible and preserves identities through
   for(const change of [value=>value.content.articles.edge.points.push({...value.content.articles.edge.points[0]}),value=>value.content.conditions['g101-conditions'].issues[0].points[0].text=42]){const invalid=store.snapshot();change(invalid);assert.throws(()=>store.commit(invalid));}
 });
 test('overview strategies retain linked articles and stable identities through history and reject invalid navigation',()=>{
-  const config=original();config.content.overviews.overview={items:[
+  const config=original();config.content.overviews={overview:{items:[
     {id:'first',title:'界定空間',titleKey:'overview|strategy|first',articleIds:['edge','parking'],targetId:'edge'},
     {id:'plain',title:'補充策略',titleKey:'overview|strategy|plain',articleIds:[],targetId:null}
-  ]};
+  ]}};
   const data={scenarios:[{id:'g1-01',overviewId:'overview'},{id:'g1-02',overviewId:'g102-overview'}],articles:[{id:'edge',scenario:'g1-01'},{id:'parking',scenario:'g1-01'},{id:'rural-stopline',scenario:'g1-02'}]};
   const store=new Core.Store(Core.validateOverviewReferences(config,data));
   const next=store.snapshot();next.content.overviews.overview.items.reverse();store.commit(next);

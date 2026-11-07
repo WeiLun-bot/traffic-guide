@@ -139,11 +139,11 @@
     const selector=['#slide-title','main h2','main h3','main p','main .tag','main .context-note','main .issue-row strong','main .metric-number','main .metric-value small','main .metric-label','main .takeaway','main .explain-points li>span','main .road-fact strong','main .custom-bullets li','main .contents-intro strong'].join(',');
     let baseIndex=0;
     [...document.querySelectorAll(selector)].forEach(element=>{
-      const index=element.closest('[data-user-block]')?-1:baseIndex++;
+      const index=element.closest('[data-user-block],[data-summary-topic]')?-1:baseIndex++;
       if(element.closest('[data-template-hidden]')||element.closest('[data-editor-ui]')||element.querySelector('button'))return;
       const key=element.dataset.blockEditKey||(element.id==='slide-title'?api.page.id+'|shared|title':api.page.id+'|'+api.state.phase+'|text-'+index);
       element.dataset.editKey=key;
-      if(typeof state.texts[key]==='string')setText(element,state.texts[key]);
+      if(typeof state.texts[key]==='string')setText(element,window.PresentationText?.format(state.texts[key],{general:api.page.deckId==='general'})??state.texts[key]);
       if(editing&&!window.visualLayoutEditor?.editing){element.setAttribute('contenteditable','plaintext-only');element.spellcheck=false;}
       else {element.removeAttribute('contenteditable');element.removeAttribute('spellcheck');}
     });
@@ -203,6 +203,8 @@
     const toggle=document.querySelector('.edit-toggle');
     toggle.textContent=editing?'完成編輯・預覽':'編輯內容';
     toggle.setAttribute('aria-pressed',String(editing));
+    toggle.title=editing?'Esc 離開編輯模式；修改請按儲存寫入專案':'編輯內容';
+    if(editing)toggle.setAttribute('aria-keyshortcuts','Escape');else toggle.removeAttribute('aria-keyshortcuts');
     if(window.visualLayoutEditor?.refresh)window.visualLayoutEditor.refresh();else api.refresh();
     window.visualLayoutEditor?.sessionChanged();
     if(!editing&&dirty){clearTimeout(draftTimer);saveDraft();}

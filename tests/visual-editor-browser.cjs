@@ -56,7 +56,7 @@ async function main() {
   const heldStartupRequests=[];
   const setStartupHold=value=>{startupHold=value;if(!value)for(const release of heldStartupRequests.splice(0))release();};
   let projectFixture=null;
-  if(process.argv.includes('--project-storage-only')||process.argv.includes('--road-clarity-only')||process.argv.includes('--module-representatives-only')||process.argv.includes('--stop-extension-copy-only')||process.argv.includes('--module-concept-navigation-only')){
+  if(process.argv.includes('--scenario-polish-only')||process.argv.includes('--project-storage-only')||process.argv.includes('--road-clarity-only')||process.argv.includes('--module-representatives-only')||process.argv.includes('--stop-extension-copy-only')||process.argv.includes('--module-concept-navigation-only')){
     projectFixture=fs.mkdtempSync(path.join(artifacts,'project-storage-'));
     for(const file of require('../tools/presentation-project-store.cjs').releaseFiles(root)){const target=path.join(projectFixture,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,file),target);}
   }
@@ -120,6 +120,10 @@ async function main() {
       await mouse('mouseReleased', x + dx, y + dy, {button: 'left', buttons: 0, clickCount: 1});await delay(60);
     }
     const moduleCheck=async()=>require('./presentation-modules-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure:value=>{failModules=value;}});
+    if(process.argv.includes('--scenario-sidebar-only')){await require('./scenario-sidebar-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario sidebar groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--scenario-polish-only')){await require('./scenario-polish-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario polish groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--scenario-reading-only')){await require('./scenario-reading-followup-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario-reading groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--general-layout-only')){await require('./general-layout-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' general-layout groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--font-height-only')){await require('./presentation-font-height-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' font-height regression groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--viewer-only')){await require('./viewer-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,setConfigFailure:value=>{failConfig=value;}});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' viewer browser regression groups; no uncaught JavaScript exceptions.');return;}
     const libraryCheck=async()=>require('./module-library-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText});

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G4-02",
+  "texts": {
+    "g402-signal-plan|1|text-2": "速幹道號誌配置"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {},
+    "results": {}
+  }
+}

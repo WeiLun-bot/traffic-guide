@@ -392,7 +392,18 @@
     catch (error) { report(error.message, true); }
     finally { busy = false; updateButtons(); refreshFields(); }
   });
-  window.addEventListener('beforeunload', event => { if(readOnly)return;syncLegacy(); if (store?.dirty) { event.preventDefault(); event.returnValue = ''; } });
+  // User edits already enter the store through changed()/transact(). Merely
+  // leaving a page must not commit runtime defaults as another content edit.
+  window.addEventListener('beforeunload', event => { if(readOnly)return; if (store?.dirty) { event.preventDefault(); event.returnValue = ''; } });
+  window.addEventListener('keydown',event=>{
+    if(readOnly||event.key!=='Escape'||event.defaultPrevented||event.isComposing||event.ctrlKey||event.metaKey||event.altKey)return;
+    if(document.querySelector('dialog[open]')||window.VisualInitialViews?.isOpen||window.RoadFlowEditor?.isOpen)return;
+    if(!editing&&!window.generalRoadEditor?.editing)return;
+    event.preventDefault();event.stopImmediatePropagation();
+    document.activeElement?.blur();
+    window.generalRoadEditor?.setEditing(false);
+    document.querySelector('.edit-toggle')?.focus({preventScroll:true});
+  });
   async function loadDefault() {
     const response = await fetch(configURL, {cache: 'no-store'});
     if (!response.ok) throw new Error('無法讀取版面設定（HTTP ' + response.status + '）');

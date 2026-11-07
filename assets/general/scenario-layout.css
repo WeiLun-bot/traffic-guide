@@ -1,0 +1,166 @@
+/* General-road layouts share viewport-relative spacing and proportional columns.
+   Content typography stays on the common 24/16px reference and screen-height scale. */
+body[data-presentation="general"] #presentation{--general-gap:clamp(6px,.75vw,16px);--general-unit:calc(1px * var(--screen-chrome-scale,1))}
+body[data-presentation="general"] #presentation .general-layout-slide{padding-block:calc(8 * var(--general-unit));min-width:0}
+body[data-presentation="general"] #presentation .general-layout-slide .scenario-switcher{flex:none;gap:calc(4 * var(--general-unit));margin:0 0 calc(6 * var(--general-unit));padding:0 0 calc(4 * var(--general-unit));align-items:center}
+body[data-presentation="general"] #presentation .scenario-switcher button{font-size:11.2px;line-height:1.3;padding:calc(4 * var(--general-unit)) calc(8 * var(--general-unit))}
+body[data-presentation="general"] #presentation .scenario-switcher button strong{font-size:11.2px}
+body[data-presentation="general"] #presentation .scenario-switcher>span{font-size:9.6px}
+body[data-presentation="general"] #presentation .article-nav{flex:none;gap:calc(4 * var(--general-unit));margin-top:calc(5 * var(--general-unit));padding:0;max-height:17dvh;overflow:auto}
+body[data-presentation="general"] #presentation .article-index-group{gap:calc(6 * var(--general-unit));padding-block:calc(2 * var(--general-unit))}
+body[data-presentation="general"] #presentation .article-index-items{gap:calc(4 * var(--general-unit));padding:0;min-height:0}
+body[data-presentation="general"] #presentation .article-index-label{flex-basis:9%;font-size:11.2px}
+body[data-presentation="general"]:not(.is-editing) #presentation .article-index-group:has(.article-index-empty){display:none}
+body[data-presentation="general"] #presentation .article-chip{font-size:11.2px;padding:calc(4 * var(--general-unit)) calc(7 * var(--general-unit))}
+body[data-presentation="general"] #presentation .article-chip span{font-size:10.4px}
+body[data-presentation="general"] #presentation .map-toolbar{padding:calc(5 * var(--general-unit)) calc(10 * var(--general-unit));min-height:0;flex:none}
+body[data-presentation="general"] #presentation .map-foot{padding:calc(4 * var(--general-unit)) calc(10 * var(--general-unit));flex:none}
+body[data-presentation="general"] #presentation .general-layout-slide .map-heading{margin-bottom:var(--general-gap);gap:var(--general-gap);flex:none}
+body[data-presentation="general"] #presentation .general-layout-slide :is(.map-card,.context-visual,.map-canvas,.explanation,.context-grid,.conditions-layout){min-width:0;min-height:0}
+body[data-presentation="general"] #presentation .general-layout-slide :is(.context-issues h2,.issue-row strong,.condition-card-heading h3,.review-row h2){font-size:24px;line-height:1.4}
+body[data-presentation="general"] #presentation .general-layout-slide :is(.context-intro,.issue-row p,.context-note,.condition-points p,.review-copy,.review-row p,.conditions-bottom p){font-size:16px;line-height:1.4}
+body[data-presentation="general"] #presentation .general-layout-slide :is(.issue-row>span,.condition-card-heading>span,.review-row>span){font-size:16px;line-height:1.4}
+body[data-presentation="general"] #presentation .context-opening .context-header{margin-bottom:var(--general-gap);flex:none}
+body[data-presentation="general"] #presentation .context-opening .context-intro{margin-top:calc(6 * var(--general-unit))}
+body[data-presentation="general"] #presentation .context-opening .context-map-card{display:flex;flex-direction:column;flex:1;margin:0}
+body[data-presentation="general"] #presentation .context-opening .context-map-canvas{height:auto;flex:1}
+body[data-presentation="general"] #presentation .context-opening .context-map{height:100%;width:100%;min-height:0}
+body[data-presentation="general"] #presentation .context-opening .road-facts{flex:none;margin:var(--general-gap) 0 0}
+body[data-presentation="general"] #presentation .context-opening .road-fact{grid-template-columns:minmax(0,25fr) minmax(0,15fr) minmax(0,60fr);align-items:end;gap:var(--general-gap);padding:calc(4 * var(--general-unit)) 0}
+body[data-presentation="general"] #presentation .context-opening .road-fact :is(h3,p){font-size:14px;line-height:1.4}
+body[data-presentation="general"] #presentation .context-opening .road-fact strong{font-size:20px;line-height:1.4}
+body[data-presentation="general"] #presentation .context-opening .road-fact strong small{font-size:14px}
+body[data-presentation="general"] #presentation .context-opening .road-speed{margin-left:var(--general-gap);white-space:normal}
+body[data-presentation="general"] #presentation .context-opening .context-note{margin:calc(5 * var(--general-unit)) 0 0;padding-top:calc(5 * var(--general-unit));flex:none}
+body[data-presentation="general"] #presentation .context-opening>.source-line{display:none}
+body[data-presentation="general"] #presentation .context-opening .context-issues{padding:0;overflow:auto;scrollbar-width:thin}
+body[data-presentation="general"] #presentation .context-opening .context-issues h2{font-size:28px;margin:0;padding:0 0 calc(6 * var(--general-unit))}
+body[data-presentation="general"] #presentation .context-opening .issue-row{grid-template-columns:auto minmax(0,1fr);gap:var(--general-gap);padding:calc(8 * var(--general-unit)) 0}
+body[data-presentation="general"] #presentation .context-opening .issue-row p{margin:calc(5 * var(--general-unit)) 0 0}
+body[data-presentation="general"] #presentation .scenario-article-table{max-height:28dvh;overflow:auto;flex:none}
+body[data-presentation="general"] #presentation .overview-list button{font-size:16px;line-height:1.4;padding-block:calc(6 * var(--general-unit));gap:var(--general-gap)}
+body[data-presentation="general"] #presentation .overview-list button small{font-size:12px}
+body[data-presentation="general"] #presentation .is-overview .explain-intro{font-size:16px;font-weight:400;line-height:1.4;color:var(--muted)}
+body[data-presentation="general"] #presentation .is-overview .overview-list>.strategy-row{padding-block:calc(8 * var(--general-unit));gap:var(--general-gap);align-items:baseline}
+body[data-presentation="general"] #presentation .is-overview .strategy-title{font-size:var(--reading-heading-size,24px);font-weight:500;line-height:1.4;color:var(--ink)}
+body[data-presentation="general"] #presentation .is-overview .strategy-number{font-size:16px;font-weight:400;line-height:1.4;color:#8ea27e}
+body[data-presentation="general"] #presentation .is-overview :is(.strategy-refs,.strategy-ref){font-size:var(--reading-body-size,16px);font-weight:400;line-height:1.4;color:var(--muted)}
+body[data-presentation="general"] #presentation .is-overview .overview-list .strategy-row button.strategy-ref{font-size:var(--reading-body-size,16px);font-weight:400;line-height:1.4;color:var(--muted)}
+body[data-presentation="general"] #presentation :is(.directory-heading,.section-heading){margin-bottom:var(--general-gap)}
+body[data-presentation="general"] #presentation .directory-group{margin-top:var(--general-gap)}
+body[data-presentation="general"] #presentation .directory-group>header{padding-bottom:calc(6 * var(--general-unit));margin-bottom:var(--general-gap)}
+body[data-presentation="general"] #presentation .directory-card-grid{gap:var(--general-gap)}
+body[data-presentation="general"] #presentation .directory-card{padding:1vw;gap:var(--general-gap)}
+body[data-presentation="general"] #presentation .directory-card h3{font-size:24px;line-height:1.4}
+body[data-presentation="general"] #presentation .directory-card-visual{height:24dvh;min-height:120px}
+body[data-presentation="general"] #presentation .directory-card-bottom{font-size:14px}
+body[data-presentation="general"] #presentation .scenario-comparison :is(.custom-side-title,.custom-compare-explanation h2){font-size:24px;line-height:1.4}
+body[data-presentation="general"] #presentation .scenario-comparison :is(.scenario-compare-card>p,.custom-compare-explanation p){font-size:16px;line-height:1.4;margin:.4em 0}
+body[data-presentation="general"] #presentation .conditions-layout-options{display:flex;flex-wrap:wrap;align-items:center;gap:calc(4 * var(--general-unit));margin-left:auto}
+body[data-presentation="general"] #presentation .conditions-layout-options :is(span,button){font-size:11.2px;line-height:1.3}
+body[data-presentation="general"] #presentation .conditions-layout-options button{border:1px solid #c8d7bd;border-radius:4px;background:#fff;padding:calc(5 * var(--general-unit)) calc(8 * var(--general-unit));color:var(--green)}
+body[data-presentation="general"] #presentation .conditions-layout-options button[aria-pressed="true"]{background:var(--dark);border-color:var(--dark);color:white}
+body[data-presentation="general"] #presentation .conditions-current-slide .condition-card-heading{grid-column:1/-1;align-items:baseline;gap:var(--general-gap);margin:0}
+body[data-presentation="general"] #presentation .conditions-current-slide .condition-card-heading h3{margin:0}
+body[data-presentation="general"] #presentation .conditions-current-slide .condition-points p{padding-left:.65em;margin:.3em 0}
+body[data-presentation="general"] #presentation .conditions-bottom{gap:var(--general-gap);margin-top:calc(5 * var(--general-unit));flex:none}
+body[data-presentation="general"] #presentation .conditions-bottom button{font-size:14px}
+.scenario-reference-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2%;font-size:16px;line-height:1.4}
+.scenario-reference-content>svg{width:100%;height:48dvh;min-height:180px;background:white}
+.scenario-reference-content li{margin-bottom:.7em}
+/* At 2560x1600 / 175%, 15.12 reference px render as 16px. Keep the
+   existing heading:body:reference ratio (24:16:14) for summary content. */
+body[data-presentation="general"] #presentation .general-layout-slide.review{--summary-heading:25.92px;--summary-body:17.28px;--summary-small:15.12px}
+body[data-presentation="general"] #presentation .general-layout-slide.review #slide-title,
+body[data-presentation="general"] #presentation .general-layout-slide.review .review-row h2{font-size:var(--summary-heading);line-height:1.4}
+body[data-presentation="general"] #presentation .general-layout-slide.review :is(.review-topic,.review-copy,.review-row p,.review-row>span,.opening-actions button){font-size:var(--summary-body);line-height:1.4}
+body[data-presentation="general"] #presentation .general-layout-slide.review :is(.review-row small,.source-line){font-size:var(--summary-small);line-height:1.4}
+body[data-presentation="general"] #presentation .review .review-topic{font-weight:600;margin:0 0 .6em}
+body[data-presentation="general"] #presentation .review .review-copy{max-width:none}
+body[data-presentation="general"] #presentation .review>div:not(.review-rows) #slide-title{font-size:calc(var(--summary-heading) * 1.25)}
+body[data-presentation="general"] #presentation .review>div:not(.review-rows) :is(.review-topic,.review-copy){font-size:calc(var(--summary-body) * 1.25)}
+body[data-presentation="general"] #presentation .review>div:not(.review-rows) .source-line{font-size:calc(var(--summary-small) * 1.25)}
+body[data-presentation="general"] #presentation :is(.scenario-related-links button,.scenario-module-link,.explain-footer .text-button){border:0;border-bottom:1px solid #b6c8af;border-radius:0;background:none;color:var(--green);font-size:12px;font-weight:400;line-height:1.4;padding:3px 0 5px}
+body[data-presentation="general"] #presentation .scenario-checklist-open{border:0;background:none;color:inherit;font:inherit;line-height:inherit;text-align:inherit;padding:0;margin:0;cursor:pointer;text-decoration:underline;text-underline-offset:.2em}
+body[data-presentation="general"] #presentation .explain-points li{grid-template-columns:max-content minmax(0,1fr)}
+body[data-presentation="general"] #presentation .explain-points li::before{content:counter(points,decimal);font-size:16px;line-height:1.4;min-width:1.3em}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card{padding:calc(8 * var(--general-unit));gap:calc(6 * var(--general-unit));overflow:hidden}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-top{font-size:16px;line-height:1.4;flex:none}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-top .tag{font-size:12px;padding:.1em .4em}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-visual{flex:1;min-height:0;height:auto;margin:0}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-preview{padding:0}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-copy{flex:none;margin:0;display:block}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-copy h2{font-size:24px;line-height:1.4;font-weight:500;margin:0 0 .2em}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-copy p{font-size:16px;line-height:1.4;font-weight:400;white-space:normal;overflow:visible;margin:0}
+body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-footer{font-size:12px;line-height:1.4;margin-top:.4em;padding-top:.3em}
+.playbar:has([data-return-scenario]) .footer-label{display:none}
+#source-dialog.checklist-dialog{max-width:1200px;width:92vw;max-height:90dvh}
+.scenario-checklist-view{max-height:65dvh;overflow:auto}
+.scenario-checklist-view table{width:100%;min-width:600px;border-collapse:collapse;font-size:16px;line-height:1.4}
+.scenario-checklist-view :is(th,td){border:1px solid var(--line);padding:.55em;text-align:left;font-weight:400}
+.scenario-checklist-view thead{background:var(--soft);position:sticky;top:0}
+.scenario-checklist-view caption{text-align:left;margin-bottom:.7em}
+@media(min-width:761px){
+ body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory]{height:100%;min-height:0;overflow:auto}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-grid{flex:1;min-height:0;grid-template-columns:repeat(var(--directory-columns),minmax(0,1fr));grid-template-rows:repeat(var(--directory-rows),minmax(0,1fr));gap:var(--general-gap)}
+ body[data-presentation="general"] #presentation .general-layout-slide:is(.context-opening,.map-slide,.conditions-current-slide){height:100%;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+ body[data-presentation="general"] #presentation .general-layout-slide :is(.context-grid,.map-layout){flex:1;min-height:0;gap:var(--general-gap);align-items:stretch;grid-template-columns:minmax(0,64fr) minmax(0,36fr)}
+ body[data-presentation="general"] #presentation .context-opening .context-visual{display:flex;flex-direction:column}
+ body[data-presentation="general"] #presentation .map-slide .map-card{display:flex;flex-direction:column;height:100%}
+ body[data-presentation="general"] #presentation .map-slide .map-canvas{flex:1;height:auto}
+ body[data-presentation="general"] #presentation .map-slide .explanation{overflow:auto;padding:0 0 0 var(--general-gap);scrollbar-width:thin}
+ /* Reserve the surrounding explanation and links, then give the table all
+    remaining height with its own scrollbar. */
+ body[data-presentation="general"] #presentation .has-scenario-table .explanation>div{display:flex;flex-direction:column;min-height:100%;height:100%;gap:calc(4 * var(--general-unit))}
+ body[data-presentation="general"] #presentation .has-scenario-table .explanation>div>*{flex-shrink:0}
+ body[data-presentation="general"] #presentation .has-scenario-table .explanation :is(h2,.explain-points,.takeaway,.scenario-related-links,.explain-footer,.source-line){margin-block:0}
+ body[data-presentation="general"] #presentation .has-scenario-table .explanation :is(.takeaway,.source-line){padding-top:0}
+ body[data-presentation="general"] #presentation .has-scenario-table .explain-points li{padding-block:calc(4 * var(--general-unit))}
+ body[data-presentation="general"] #presentation .has-scenario-table .scenario-article-table{flex:1 1 0;min-height:calc(64 * var(--general-unit));max-height:none;margin-block:0;scrollbar-width:thin}
+ body[data-presentation="general"] #presentation .has-scenario-table .scenario-article-table caption{position:sticky;top:0;background:transparent;padding-bottom:calc(3 * var(--general-unit))}
+ body[data-presentation="general"] #presentation .conditions-current-slide .conditions-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ body[data-presentation="general"] #presentation .conditions-current-figure{display:flex;flex-direction:column;height:100%}
+ body[data-presentation="general"] #presentation .conditions-current-canvas{flex:1;height:auto;min-height:0}
+ body[data-presentation="general"] #presentation .conditions-issues.context-issues{overflow:auto;min-height:0}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .conditions-layout{grid-template-columns:minmax(0,28fr) minmax(0,72fr)}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .conditions-issues{display:grid;grid-template-columns:repeat(var(--issue-columns,2),minmax(0,1fr));grid-template-rows:repeat(var(--issue-rows,1),minmax(0,1fr));gap:var(--general-gap);align-items:stretch}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .condition-issue{display:flex;flex-direction:column;min-height:0;gap:calc(6 * var(--general-unit));border:1px solid var(--line);border-radius:5px;padding:calc(8 * var(--general-unit));margin:0;background:#ffffffb8;overflow:hidden}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .condition-photo{flex:1;min-height:calc(65 * var(--general-unit));max-height:none;aspect-ratio:auto;width:100%;margin:0}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .condition-points{flex:0 1 auto;max-height:45%;min-height:0;overflow:auto;scrollbar-width:thin}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .conditions-source{grid-column:1/-1;display:none}
+ body[data-presentation="general"] #presentation .general-layout-slide.review{height:100%;min-height:0;display:grid;grid-template-columns:minmax(0,45fr) minmax(0,55fr);grid-template-rows:auto minmax(0,1fr);gap:var(--general-gap);overflow:hidden}
+ body[data-presentation="general"] #presentation .review>.scenario-switcher{grid-column:1/-1;margin-bottom:0}
+ body[data-presentation="general"] #presentation .review>div:not(.review-rows){display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:auto;padding-inline:8vw 2vw}
+ body[data-presentation="general"] #presentation .review #slide-title{font-size:var(--summary-heading);line-height:1.4;margin:0 0 .7em}
+ body[data-presentation="general"] #presentation .review .review-copy{margin:0 0 1em}
+ body[data-presentation="general"] #presentation .review .opening-actions{gap:var(--general-gap);flex-wrap:wrap}
+ body[data-presentation="general"] #presentation .review .opening-actions button{font-size:var(--summary-body);line-height:1.4;padding:calc(8 * var(--general-unit)) calc(12 * var(--general-unit))}
+ body[data-presentation="general"] #presentation .review .review-rows{min-height:0;overflow:auto;align-self:stretch;align-content:center}
+ body[data-presentation="general"] #presentation .review .review-row{padding:calc(10 * var(--general-unit)) 0;gap:var(--general-gap)}
+ body[data-presentation="general"] #presentation .review .review-row p{margin:.3em 0}
+ body[data-presentation="general"] #presentation .review .review-row small{font-size:var(--summary-small)}
+ body[data-presentation="general"] #presentation .general-layout-slide.scenario-comparison{height:100%;min-height:0;display:flex;flex-direction:column;gap:var(--general-gap);overflow:hidden}
+ body[data-presentation="general"] #presentation .scenario-comparison .custom-comparison-grid{flex:1;min-height:0;gap:var(--general-gap)}
+ body[data-presentation="general"] #presentation .scenario-compare-card{display:flex;flex-direction:column;min-height:0;min-width:0;overflow:auto}
+ body[data-presentation="general"] #presentation .scenario-detail-frame{flex:1;min-height:calc(100 * var(--general-unit));height:auto;padding:calc(6 * var(--general-unit))}
+ body[data-presentation="general"] #presentation .scenario-detail-image{min-height:0;height:100%;width:100%}
+ body[data-presentation="general"] #presentation .scenario-comparison .custom-compare-explanation{flex:none;max-height:27%;overflow:auto;margin:0;padding:calc(8 * var(--general-unit))}
+ body[data-presentation="general"] #presentation .scenario-comparison .source-line{margin:0;font-size:12px;flex:none}
+}
+@media(max-width:760px){
+ body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-grid{grid-template-columns:1fr}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-detail-directory] .scenario-card-visual{flex:none;height:38dvh;min-height:180px}
+ body[data-presentation="general"] #presentation .general-layout-slide:is(.context-opening,.map-slide,.conditions-current-slide,.review){height:auto;min-height:100%;display:flex;flex-direction:column}
+ body[data-presentation="general"] #presentation .general-layout-slide :is(.context-grid,.map-layout,.conditions-layout){display:flex;flex-direction:column;gap:16px;min-height:0}
+ body[data-presentation="general"] #presentation .general-layout-slide :is(.context-map-card,.conditions-current-figure,.map-layout>.map-card){height:55dvh;min-height:280px;flex:none}
+ body[data-presentation="general"] #presentation .context-opening .context-visual{display:flex;flex-direction:column}
+ body[data-presentation="general"] #presentation .general-layout-slide :is(.context-issues,.explanation,.conditions-issues){overflow:visible}
+ body[data-presentation="general"] #presentation .conditions-layout-options{margin-left:0}
+ body[data-presentation="general"] #presentation .conditions-current-slide .condition-issue{display:flex;flex-direction:column;gap:8px}
+ body[data-presentation="general"] #presentation .conditions-current-slide .condition-photo{width:100%;height:28dvh;min-height:140px;max-height:none;aspect-ratio:auto}
+ body[data-presentation="general"] #presentation .review>div:not(.review-rows){padding-inline:3vw}
+ body[data-presentation="general"] #presentation .review #slide-title{font-size:var(--summary-heading);line-height:1.4}
+ .playbar .scenario-return-button{font-size:12px;max-width:28vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .scenario-reference-content{grid-template-columns:minmax(0,1fr)}
+ .scenario-reference-content>svg{height:35dvh}
+}
