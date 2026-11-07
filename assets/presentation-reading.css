@@ -113,6 +113,19 @@
 #presentation>.module-concept-slide.has-concept-point-titles .module-concept-points h3:not(#slide-title){font-size:18px;font-weight:500;line-height:1.4}
 #presentation>.module-concept-slide.has-concept-point-titles .module-concept-points p:not(#slide-title){font-size:16px;font-weight:400;line-height:1.4}
 
+/* Application cards use the same heading and explanation hierarchy as concepts. */
+#presentation .module-extension-card.has-concept-point-titles .module-extension-card-heading h2:not(#slide-title){font-size:24px;font-weight:700;line-height:1.4}
+#presentation .module-extension-card.has-concept-point-titles .module-explain-points h3:not(#slide-title){font-size:18px;font-weight:500;line-height:1.4}
+#presentation .module-extension-card.has-concept-point-titles .module-explain-points p:not(#slide-title){font-size:16px;font-weight:400;line-height:1.4}
+#presentation .module-extension-card .module-concept-facility-label{margin:0 0 4px;font-size:12px;line-height:1.4;color:var(--muted)}
+#presentation .module-extension-grid.is-paged{grid-template-rows:minmax(0,1fr)}
+#presentation .module-extension-card.has-concept-point-titles[data-extension-layout="vertical"] .module-extension-body{grid-template-rows:auto minmax(100px,1fr)}
+@media(min-width:901px) and (max-height:850px){#presentation .module-extension-card.has-concept-point-titles{padding:12px 15px}}
+@media(min-width:901px) and (max-height:850px){
+ #presentation>.module-detail[data-module-source-page="m201-yield-issues"] .module-explain-points>li{padding-block:6px}
+ #presentation>.module-detail[data-module-source-page="m201-yield-issues"] .module-explain-points>li::before{top:15px}
+}
+
 /* Additional-lane extension follows the same explanation hierarchy. */
 #presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-extension-card-heading{margin-bottom:10px}
 #presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-extension-card-heading h2:not(#slide-title){font-size:24px;font-weight:700;line-height:1.4}

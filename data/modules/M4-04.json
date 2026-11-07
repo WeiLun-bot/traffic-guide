@@ -97,53 +97,107 @@
       "id": "m404-pedestrian-issues",
       "section": "module",
       "submoduleId": "M4-04.1",
-      "title": "行人優先區｜現況議題與相關條文",
-      "intro": "從區域邊界、速限到道路環境，持續表達行人優先。",
+      "title": "區域管制｜現況議題與相關條文",
+      "intro": "行人優先區與通學區應依實際通行需求界定管制範圍，並透過完整的區域邊界及一致的交通管制設施，使駕駛人清楚辨識區域內的通行要求。",
       "assets": [
         "m404-pedestrian-issue-photo-1"
       ],
       "points": [
         {
           "id": "meaning",
-          "title": "行人優先要求需持續可辨識",
-          "text": "區內允許行人使用道路全寬，車輛可進入但須減速、停讓；道路環境也應反映此通行方式。"
+          "title": "區域範圍與實際通行需求未能對應",
+          "text": "行人優先區若僅設置標誌，未配合道路環境調整，可能使駕駛人難以辨識行人優先要求；通學區若僅以校門位置或固定距離界定，則可能未能完整涵蓋學童實際通行路徑。",
+          "focus": {
+            "asset": "m404-pedestrian-issue-photo-1"
+          }
         },
         {
           "id": "boundary",
-          "title": "各方向入口需有一致資訊",
-          "text": "若只加標誌而環境未調整，或不同入口標示不完整，容易對區域範圍產生不同理解。"
+          "title": "區域邊界與管制資訊不明確",
+          "text": "若各出入口未完整設置起終點標誌，或速限及適用時段資訊缺乏整合，可能使駕駛人難以判斷管制區域的適用範圍及應遵循的通行要求。",
+          "focus": {
+            "asset": "m404-pedestrian-issue-photo-1"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
-        "67-2"
-      ]
+        "67-2",
+        "137-1",
+        "163-1"
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m404-pedestrian-diagram",
       "section": "module",
       "submoduleId": "M4-04.1",
-      "title": "行人優先區｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "title": "區域管制｜圖例說明",
+      "intro": "依行人優先及通學需求界定適當的區域範圍，並整合起終點標誌、標線與速限資訊，建立明確且連續的區域管制方式。",
       "assets": [
-        "m404-3762916f50"
+        "m404-3762916f50",
+        "m404-8af799c9f9",
+        "m404-f3708fbde3"
       ],
       "points": [
         {
+          "id": "pedestrian",
+          "title": "行人優先區應配合道路環境表達通行要求",
+          "text": "行人優先區允許行人於道路全寬通行，車輛仍得進入，但須減速並停讓行人。區域內的車行空間、出入口及停車配置應配合調整，使道路環境與行人優先的通行原則一致。",
+          "focus": {
+            "asset": "m404-3762916f50"
+          }
+        },
+        {
+          "id": "school",
+          "title": "通學區應涵蓋實際通學路徑",
+          "text": "通學區不應僅以校門或固定距離界定，應考量住宅、公共運輸站點與學校之間的主要通學路徑，將學童經常通行的路口及路段納入管制範圍。",
+          "focus": {
+            "asset": "m404-8af799c9f9"
+          }
+        },
+        {
           "id": "pair",
-          "title": "起點應有對應終點",
-          "text": "起終點原則設於車行方向右側，區內交叉口不再重複設置。"
+          "title": "完整配置區域起終點標誌",
+          "text": "區域邊界上各進出方向均應配置相對應的起終點標誌，原則設於車行方向右側；區域內交叉口不再重複設置，避免駕駛人誤判區域範圍。",
+          "focus": {
+            "asset": "m404-3762916f50"
+          }
+        },
+        {
+          "id": "speed",
+          "title": "整合區域管制與速限資訊",
+          "text": "應配合區域通行需求設置最高速限標誌，建議與起終點標誌共桿配置，並將速限標誌設於上方，使駕駛人能同時辨識區域範圍及速率限制。",
+          "focus": {
+            "asset": "m404-3762916f50"
+          }
         },
         {
           "id": "obstruction",
-          "title": "終點標誌避免遮擋停讓資訊",
-          "text": "有遮擋可能時，可提前至路段上游錯開，或改設車行方向左側。"
+          "title": "避免終點標誌遮擋其他管制設施",
+          "text": "終點標誌若可能遮擋停、讓等禁制標誌，可提前於路段上游設置，使兩者錯開，或調整至車行方向左側，確保管制資訊清楚可辨。",
+          "focus": {
+            "asset": "m404-3762916f50"
+          }
+        },
+        {
+          "id": "timing",
+          "title": "配合通學區標線及時段資訊",
+          "text": "通學區可配合起終點標線強化區域邊界辨識；有特定適用時段時，應清楚說明適用時間，使駕駛人正確判斷通學區的管制要求。",
+          "focus": {
+            "asset": "m404-f3708fbde3"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
-        "67-2"
-      ]
+        "67-2",
+        "137-1",
+        "163-1"
+      ],
+      "imageFit": "contain"
     },
     {
       "id": "m404-pedestrian-extensions",
@@ -265,7 +319,7 @@
     }
   ],
   "referenceNames": {
-    "67-2": "行人優先區起（終）點標誌、",
+    "67-2": "行人優先區起（終）點標誌",
     "137-1": "通學區起（終）點標誌",
     "163-1": "通學區起（終）點標線"
   },
@@ -284,15 +338,95 @@
           "title": "圖例說明",
           "topics": [
             {
-              "id": "boundary",
-              "label": "區域起終點",
+              "id": "scope",
+              "label": "依區域通行特性界定管制範圍",
+              "sourcePageId": "m404-pedestrian-diagram",
+              "pointIds": [
+                "pedestrian",
+                "school"
+              ],
+              "assets": [
+                "m404-3762916f50",
+                "m404-8af799c9f9"
+              ],
+              "imageLayout": "row",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "scope-1",
+                  "label": "行人優先區起（終）點標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m404-3762916f50"
+                  }
+                },
+                {
+                  "id": "scope-2",
+                  "label": "通學區起（終）點標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m404-8af799c9f9"
+                  }
+                },
+                {
+                  "id": "scope-3",
+                  "label": "區域範圍與道路環境配置",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m404-3762916f50"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "signs",
+              "label": "整合起終點標誌標線與速限資訊",
               "sourcePageId": "m404-pedestrian-diagram",
               "pointIds": [
                 "pair",
-                "obstruction"
+                "speed",
+                "obstruction",
+                "timing"
               ],
               "assets": [
-                "m404-3762916f50"
+                "m404-3762916f50",
+                "m404-f3708fbde3"
+              ],
+              "imageLayout": "row",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "signs-1",
+                  "label": "行人優先區起（終）點標誌（遵22-2、遵22-3）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m404-3762916f50"
+                  }
+                },
+                {
+                  "id": "signs-2",
+                  "label": "通學區起（終）點標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m404-f3708fbde3"
+                  }
+                },
+                {
+                  "id": "signs-3",
+                  "label": "通學區起（終）點標線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m404-f3708fbde3"
+                  }
+                },
+                {
+                  "id": "signs-4",
+                  "label": "最高速限標誌（限5）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m404-3762916f50"
+                  }
+                }
               ]
             }
           ]
@@ -306,9 +440,17 @@
             {
               "id": "speed",
               "label": "與最高速限標誌整合",
-              "sourcePageId": "m404-pedestrian-extensions"
+              "sourcePageId": "m404-pedestrian-extensions",
+              "showPointTitles": true
+            },
+            {
+              "id": "markings",
+              "label": "通學區起終點標線",
+              "sourcePageId": "m404-school-extensions",
+              "showPointTitles": true
             }
-          ]
+          ],
+          "paged": false
         }
       ]
     },
@@ -365,6 +507,22 @@
           ]
         }
       ]
+    }
+  ],
+  "hiddenPages": [
+    "m404-overview",
+    "m404-school-issues",
+    "m404-school-diagram",
+    "m404-school-extensions"
+  ],
+  "subnavigationGroups": [
+    {
+      "label": "M4-04.1 行人優先區、M4-04.2 通學區",
+      "submoduleIds": [
+        "M4-04.1",
+        "M4-04.2"
+      ],
+      "shared": true
     }
   ]
 }

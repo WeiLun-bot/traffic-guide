@@ -1,7 +1,14 @@
 {
   "schemaVersion": 1,
   "owner": "modules/M2-01",
-  "texts": {},
+  "texts": {
+    "m201-stop-issues|shared|title": "停管制路口｜現況議題與相關條文",
+    "m201-stop-layout|shared|title": "停管制路口｜圖例說明",
+    "m201-stop-extensions|shared|title": "停管制路口｜延伸應用",
+    "m201-yield-issues|shared|title": "讓管制路口｜現況議題與相關條文",
+    "m201-yield-layout|shared|title": "讓管制路口｜圖例說明",
+    "m201-yield-extensions|shared|title": "讓管制路口｜延伸應用"
+  },
   "images": {
     "module:stop-crosswalk": {
       "src": "materials/edited/8f7fa22bafa65a44fe05bc8cfa63168199efeba66207cb36a34898a25f9ec4e4.svg",

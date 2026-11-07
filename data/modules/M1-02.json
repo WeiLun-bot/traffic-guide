@@ -265,7 +265,13 @@
                   "kind": "control"
                 }
               ],
-              "showPointTitles": true
+              "showPointTitles": true,
+              "illustrations": [
+                "m102-start-1",
+                "m102-start-2",
+                "m102-count-1",
+                "m102-count-2"
+              ]
             },
             {
               "id": "location",

@@ -18,11 +18,13 @@ module.exports=async function({evaluate,view,navigate,click,cdp,base,artifacts,p
  await shot('module-directory-representatives');
  const signature=await evaluate('window.VisualLayoutCore.signature(window.visualLayoutEditor.store.config)');
  const target=await evaluate('(()=>{const node=document.querySelector("[data-directory-asset=stop-basic] svg");node.scrollIntoView({block:"center"});const r=node.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()');
- await cdp.send('Input.dispatchMouseEvent',{type:'mouseMoved',...target});await cdp.send('Input.dispatchMouseEvent',{type:'mousePressed',...target,button:'left',buttons:1,clickCount:1});await cdp.send('Input.dispatchMouseEvent',{type:'mouseReleased',...target,button:'left',buttons:0,clickCount:1});assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m201-overview');
+ await cdp.send('Input.dispatchMouseEvent',{type:'mouseMoved',...target});await cdp.send('Input.dispatchMouseEvent',{type:'mousePressed',...target,button:'left',buttons:1,clickCount:1});await cdp.send('Input.dispatchMouseEvent',{type:'mouseReleased',...target,button:'left',buttons:0,clickCount:1});assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m201-stop-issues');
  await view('modules-index');await click('[data-directory-module=M1-02] .module-catalog-figure');assert.equal(await evaluate('window.generalRoadPresentation.page.id'),'m102-route-issues');
  assert.equal(await evaluate('window.VisualLayoutCore.signature(window.visualLayoutEditor.store.config)'),signature);
- await view('modules-M2');assert.equal(await evaluate('document.querySelectorAll(".module-catalog-figure").length'),0);assert.equal(await evaluate('document.querySelectorAll(".module-catalog-card").length'),4);
- pass('all fifteen directory cards show complete representative drawings, stack multiple figures vertically, retain shared/merged modules and keep module entry links and compact chapter cards');
+ for(const [id,modules]of [['modules-M2',['M2-01','M2-02']],['modules-M2-2',['M2-03','M2-04']]]){
+  await view(id);assert.equal(await evaluate('document.querySelectorAll(".module-catalog-figure").length'),id==='modules-M2-2'?3:2);assert.deepEqual(await evaluate('[...document.querySelectorAll("[data-directory-module]")].map(node=>node.dataset.directoryModule)'),modules);
+ }
+ pass('all fifteen directory cards show complete representative drawings, retain module entry links, and split the junction control overview into two illustrated pairs');
  for(const width of [1920,1366,768,390]){
   await cdp.send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});await view('modules-index');
   assert(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),'Directory overflow at '+width);

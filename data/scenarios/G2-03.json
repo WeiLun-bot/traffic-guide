@@ -220,7 +220,7 @@
       "rotation": 0,
       "scenario": "G2-03",
       "label": "號誌化市區斜交三叉路口交通設施整體設置圖例",
-      "sha256": "d18bd82b0fd71cd754bd29ffc9400e543b694e8ea1a5f7f284251a9e475ca4c4"
+      "sha256": "8e5199336e20921a49fdbd894df0ce6f6fa7e574faa94a71160845abc98dc1e4"
     },
     "g203-signals": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_號誌化市區斜交三叉路口號誌平面設置圖例.svg",
@@ -229,7 +229,7 @@
       "rotation": 0,
       "scenario": "G2-03",
       "label": "號誌化市區斜交三叉路口號誌平面設置圖例",
-      "sha256": "30c2b495ecdd08c3cf87a8598624dd7ce4ed9f3b91040f52aa2cce5488f53e5a"
+      "sha256": "d9279993c7ee88513f0f3fb3cde41a85cfc7db0add724265dcc8496b53a966cd"
     },
     "g203-left-signal": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_左轉專用號誌加設附牌範例.svg",
@@ -238,7 +238,7 @@
       "rotation": 0,
       "scenario": "G2-03",
       "label": "左轉專用號誌加設附牌範例",
-      "sha256": "9fec5d42abc6403e4464fcd7f2a391c788d2a6a08a494b445a7066444efb6f0a"
+      "sha256": "4b75dc164b8e72fe2aaa4c03ba0ebe805e62fd3f5e453ba57c42b684667dac25"
     },
     "g203-visible-1": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_號誌化市區斜交三叉路口之可視模板（1）.svg",
@@ -247,7 +247,7 @@
       "rotation": 90,
       "scenario": "G2-03",
       "label": "號誌化市區斜交三叉路口之可視模板（1）",
-      "sha256": "856ffa809bc6195b10f28f3f3dcb7506ee8da7ae78d9e6575b10cda3d31b8045"
+      "sha256": "d70289e3dddc92b494704c2e7bde98930f4f463cd3bd559373ad5cf0f60e7337"
     },
     "g203-visible-2": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_號誌化市區斜交三叉路口之可視模板（2）.svg",
@@ -256,7 +256,7 @@
       "rotation": 0,
       "scenario": "G2-03",
       "label": "號誌化市區斜交三叉路口之可視模板（2）",
-      "sha256": "786b38c1ea7e172c83809226b4e086a0eb618d092d0d9e4c3268e37bbce17eef"
+      "sha256": "9108295f75bafae8f97cbe2087b02dcd3fe5b88f9821d01d8354b41a31c8f5ac"
     },
     "g203-visible-3": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_號誌化市區斜交三叉路口之可視模板（3）.svg",
@@ -265,7 +265,7 @@
       "rotation": 0,
       "scenario": "G2-03",
       "label": "號誌化市區斜交三叉路口之可視模板（3）",
-      "sha256": "2ddf750280457e0f382b1d469681ee0c1a003bde98adad28aa7e850b1811cb2f"
+      "sha256": "6b1cfc36ea92bf5dfc4c81baf9f370e2b22fb4cca75887c52f893abaae623f39"
     },
     "g203-privacy": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_新竹市特長筒式罩簷（民間俗稱砲筒）.png",

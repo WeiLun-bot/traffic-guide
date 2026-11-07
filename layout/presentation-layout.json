@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-06T18:12:03.729Z",
+  "updatedAt": "2026-11-07T02:48:18.250Z",
   "legacyState": {
     "version": 1,
     "updatedAt": 1793988722728,
@@ -47,11 +47,13 @@
       },
       "module:m201-stop-issues:sight": {
         "box": [
-          467.5,
-          65,
-          207.5,
-          52.1
-        ]
+          601.4,
+          769.1,
+          526.7,
+          70.1
+        ],
+        "rotation": 0,
+        "imageKey": "module:stop-issue-photo-1"
       },
       "module:m201-yield-crosswalk:stop": {
         "box": [
@@ -942,6 +944,16 @@
         ],
         "rotation": 0,
         "imageKey": "module:m101-additional"
+      },
+      "module:m201-stop-issues:notice": {
+        "box": [
+          681.4,
+          832,
+          470.8,
+          202.6
+        ],
+        "rotation": 0,
+        "imageKey": "module:stop-issue-photo-1"
       }
     },
     "disabledHighlights": {
@@ -1891,9 +1903,9 @@
       "pageId": "m103-parking-issues",
       "assetKey": "module:m103-issue-parking-bays",
       "units": "percent",
-      "zoom": 0.7408182196724333,
-      "x": 10.316696467283059,
-      "y": 1.0840812557844242,
+      "zoom": 1.1618342536105384,
+      "x": 5.829255540047063,
+      "y": -9.933827028405444,
       "rotation": 0
     },
     "m103-parking-diagram/module%3Am103-plate-1": {
@@ -2381,9 +2393,9 @@
       "pageId": "results-representative-m4-01-m401-a6bae42a3b",
       "assetKey": "module:m401-a6bae42a3b",
       "units": "percent",
-      "zoom": 1.8221188053553887,
-      "x": -6.198737723208093,
-      "y": 37.99544276267896,
+      "zoom": 5.206979971719013,
+      "x": 114.54286038899735,
+      "y": -11.787970078223376,
       "rotation": -90
     },
     "results-representative-m4-02-m402-b18c7d1f2f/module%3Am402-b18c7d1f2f": {
@@ -2391,9 +2403,9 @@
       "pageId": "results-representative-m4-02-m402-b18c7d1f2f",
       "assetKey": "module:m402-b18c7d1f2f",
       "units": "percent",
-      "zoom": 1,
-      "x": 0,
-      "y": 0,
+      "zoom": 1.3498588172309451,
+      "x": -0.5893223893367056,
+      "y": 0.3358081551049972,
       "rotation": 90
     },
     "results-representative-m4-02-m402-ae32e39564/module%3Am402-ae32e39564": {
@@ -2412,8 +2424,8 @@
       "assetKey": "module:m403-e43da210bb",
       "units": "percent",
       "zoom": 1.3498588094150399,
-      "x": 0.05483015525732303,
-      "y": -0.6950581606456949,
+      "x": 17.633434663753242,
+      "y": -4.434346786522476,
       "rotation": 90
     },
     "results-representative-m4-03-m403-79496b3bb6/module%3Am403-79496b3bb6": {
@@ -2501,9 +2513,9 @@
       "pageId": "results-representative-m2-04-m204-7592970ada",
       "assetKey": "module:m204-7592970ada",
       "units": "percent",
-      "zoom": 2.459603121209779,
-      "x": 12.469469356056127,
-      "y": -6.872949579098638,
+      "zoom": 1.568312175073972,
+      "x": 0.1909345195032564,
+      "y": 1.5707470374110541,
       "rotation": 0
     },
     "results-scenario-g4-03/results%3Ag4-03-diagram-1": {
@@ -2621,9 +2633,9 @@
       "pageId": "results-submodule-contents",
       "assetKey": "results:submodule-stop-basic",
       "units": "percent",
-      "zoom": 1.5683121886951525,
-      "x": -4.761884068320086,
-      "y": 18.7249732312814,
+      "zoom": 1.1618342367925079,
+      "x": -1.971093922837246,
+      "y": 12.449007062531532,
       "rotation": 0
     },
     "results-submodule-contents/results%3Asubmodule-stop-current": {
@@ -2645,6 +2657,66 @@
       "x": -7.39784906984137,
       "y": 4.241637179866748,
       "rotation": 0
+    },
+    "modules-topic-m2-03/module%3Am203-2f27e58a6a": {
+      "id": "modules-topic-m2-03/module%3Am203-2f27e58a6a",
+      "pageId": "modules-topic-m2-03",
+      "assetKey": "module:m203-2f27e58a6a",
+      "units": "percent",
+      "zoom": 1.5683121886951528,
+      "x": -2.42290811791171,
+      "y": -2.985772354911809,
+      "rotation": 90
+    },
+    "results-representative-m3-02-m302-b172c5ac34/module%3Am302-b172c5ac34": {
+      "id": "results-representative-m3-02-m302-b172c5ac34/module%3Am302-b172c5ac34",
+      "pageId": "results-representative-m3-02-m302-b172c5ac34",
+      "assetKey": "module:m302-b172c5ac34",
+      "units": "percent",
+      "zoom": 1.8221188264561263,
+      "x": -5.203106933438915,
+      "y": -8.129715056981164,
+      "rotation": 0
+    },
+    "results-representative-m3-01-m301-4b73804d52/module%3Am301-4b73804d52": {
+      "id": "results-representative-m3-01-m301-4b73804d52/module%3Am301-4b73804d52",
+      "pageId": "results-representative-m3-01-m301-4b73804d52",
+      "assetKey": "module:m301-4b73804d52",
+      "units": "percent",
+      "zoom": 2.1170000544675833,
+      "x": 2.474463201297408,
+      "y": -0.9230694611652631,
+      "rotation": 0
+    },
+    "modules-topic-m2-02/module%3Am202-roundabout": {
+      "id": "modules-topic-m2-02/module%3Am202-roundabout",
+      "pageId": "modules-topic-m2-02",
+      "assetKey": "module:m202-roundabout",
+      "units": "percent",
+      "zoom": 1.822118826456126,
+      "x": 0.2288148240697051,
+      "y": 5.953231410342084,
+      "rotation": 0
+    },
+    "m201-yield-issues/module%3Ayield-issue-photo-2": {
+      "id": "m201-yield-issues/module%3Ayield-issue-photo-2",
+      "pageId": "m201-yield-issues",
+      "assetKey": "module:yield-issue-photo-2",
+      "units": "percent",
+      "zoom": 2.117000054467583,
+      "x": -7.543174512434718,
+      "y": 22.533281576068116,
+      "rotation": 0
+    },
+    "m201-yield-issues/module%3Ayield-issue-photo-1": {
+      "id": "m201-yield-issues/module%3Ayield-issue-photo-1",
+      "pageId": "m201-yield-issues",
+      "assetKey": "module:yield-issue-photo-1",
+      "units": "percent",
+      "zoom": 0.9999999999999999,
+      "x": -0.14516694352622916,
+      "y": -0.09134726563836466,
+      "rotation": 0
     }
   },
   "extensionLayouts": {
@@ -2657,7 +2729,8 @@
     "m201-yield-extensions/buffer": "vertical",
     "m203-signals-extensions/explanation": "vertical",
     "m203-signals-extensions/shield": "vertical",
-    "m101-additional-extensions/refuge": "horizontal"
+    "m101-additional-extensions/refuge": "horizontal",
+    "m203-signals-extensions/turning": "vertical"
   },
   "tableColumns": {
     "results-three-years/framework-0": [
@@ -2683,6 +2756,216 @@
       "scale": 1.4,
       "x": 3,
       "y": -13
+    }
+  },
+  "roadFlowPaths": {
+    "results-road-clarity": {
+      "assetKey": "results:c1-08-layout",
+      "routes": [
+        {
+          "id": "north-west",
+          "points": [
+            [
+              1132,
+              -100
+            ],
+            [
+              1131.559,
+              8.519
+            ],
+            [
+              1130.016,
+              117.028
+            ],
+            [
+              1126.927,
+              225.503
+            ],
+            [
+              1121.601,
+              333.89
+            ],
+            [
+              1113.317,
+              442.091
+            ],
+            [
+              1105.915,
+              550.339
+            ],
+            [
+              1064.843,
+              648.33
+            ],
+            [
+              970.305,
+              700.031
+            ],
+            [
+              885.823,
+              767.263
+            ],
+            [
+              826.157,
+              857.506
+            ],
+            [
+              757.192,
+              927.288
+            ],
+            [
+              625.638,
+              946.894
+            ],
+            [
+              442.222,
+              993.065
+            ],
+            [
+              236.036,
+              1005.082
+            ],
+            [
+              13.407,
+              1017.099
+            ]
+          ]
+        },
+        {
+          "id": "south-east",
+          "points": [
+            [
+              1140,
+              2024
+            ],
+            [
+              1140.629,
+              1916.628
+            ],
+            [
+              1142.5,
+              1809.271
+            ],
+            [
+              1145.438,
+              1701.937
+            ],
+            [
+              1148.917,
+              1594.62
+            ],
+            [
+              1152.003,
+              1487.291
+            ],
+            [
+              1156.053,
+              1380.043
+            ],
+            [
+              1190.566,
+              1281.319
+            ],
+            [
+              1284.112,
+              1228.916
+            ],
+            [
+              1365.823,
+              1147.649
+            ],
+            [
+              1422.774,
+              1066.631
+            ],
+            [
+              1520.448,
+              1025.104
+            ],
+            [
+              1625.772,
+              1004.586
+            ],
+            [
+              1732.732,
+              995.43
+            ],
+            [
+              1839.776,
+              987.025
+            ],
+            [
+              1946.821,
+              978.62
+            ],
+            [
+              2053.866,
+              970.215
+            ],
+            [
+              2160.911,
+              961.81
+            ],
+            [
+              2267.955,
+              953.405
+            ],
+            [
+              2375,
+              945
+            ]
+          ]
+        },
+        {
+          "id": "east-west",
+          "points": [
+            [
+              2371.862,
+              887.525
+            ],
+            [
+              1797.457,
+              918.32
+            ],
+            [
+              1391.759,
+              931.71
+            ],
+            [
+              1277.949,
+              815.222
+            ],
+            [
+              1119.954,
+              725.513
+            ],
+            [
+              948.57,
+              793.799
+            ],
+            [
+              860.2,
+              995.979
+            ],
+            [
+              920.452,
+              1172.719
+            ],
+            [
+              1057.024,
+              1301.257
+            ],
+            [
+              1106.565,
+              1581.095
+            ],
+            [
+              1109.243,
+              1960.015
+            ]
+          ]
+        }
+      ]
     }
   },
   "blockDecorations": {

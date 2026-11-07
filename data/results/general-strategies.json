@@ -12,7 +12,7 @@
       "label": "G1-02 整體佈設圖",
       "scenario": "G1-02",
       "role": "strategy",
-      "sha256": "80b095c867b28c7a1c74663217ac4307c2f0ad83f8ba70bfc7dcbed32efd19c9"
+      "sha256": "dec733e6fcae6457df5c9fe3a25c20ca1617ddf0dd0f502f8ea9684b81261ab2"
     },
     "results:g1-03-strategy": {
       "file": "materials/04-一般道路情境/G1-03/G1-03_無號誌市區匯入型巷道路口交通設施整體設置圖例.svg",
@@ -21,7 +21,7 @@
       "label": "G1-03 整體佈設圖",
       "scenario": "G1-03",
       "role": "strategy",
-      "sha256": "d608df0593148da27bd44e66c93672248f20633203be52ea1cd9cdc24eb358c0"
+      "sha256": "873ba956f6b80373299799ceccc42f66943bb5bb61889775679fd8d1deb571e4"
     },
     "results:g1-04-strategy": {
       "file": "materials/04-一般道路情境/G1-04/G1-04_無號誌鄉區匯入型巷道路口交通設施整體設置圖例.svg",
@@ -30,7 +30,7 @@
       "label": "G1-04 整體佈設圖",
       "scenario": "G1-04",
       "role": "strategy",
-      "sha256": "c96986e3f5c4577e55e24384fdba7c804a50b519acbe2d56bc395376c07b9b5e"
+      "sha256": "748bf5d6e96c921f146f79f09f3f4619c9d8d0679f05ac6264d698fef3d11557"
     },
     "results:g1-05-strategy": {
       "file": "materials/04-一般道路情境/G1-05/G1-05_無號誌市區斜交三叉路口交通設施整體設置圖例.svg",
@@ -39,7 +39,7 @@
       "label": "G1-05 整體佈設圖",
       "scenario": "G1-05",
       "role": "strategy",
-      "sha256": "4989067ab3686943cce412ddd7ce8b100e87b14407c48d0d3da4d67a6da799ad"
+      "sha256": "8e6abca1278e47bc0ef47ecfedd9a5afe0cd6dbf6d6cab4424c3a7d9c088138f"
     },
     "results:g1-06-strategy": {
       "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口交通設施整體設置圖例.svg",
@@ -48,7 +48,7 @@
       "label": "G1-06 整體佈設圖",
       "scenario": "G1-06",
       "role": "strategy",
-      "sha256": "1b74c5a344362773ef2ccb14288c9a921dd11c0eb13cf8e3ada51ad009d6e282"
+      "sha256": "c5d4abb93ed29d81e4668fb1511b971b4f63303c5918795d8f11a371957cf3b8"
     },
     "results:g2-01-strategy": {
       "file": "materials/04-一般道路情境/G2-01/G2-01_號誌化市區正交三叉路口交通設施整體設置圖例.svg",
@@ -57,7 +57,7 @@
       "label": "G2-01 整體佈設圖",
       "scenario": "G2-01",
       "role": "strategy",
-      "sha256": "688975c46cf5381c68eb5b1b841bcb8e718c38ae17cd860a05a7e15c8ca02f3b"
+      "sha256": "154ec10a1220f91eaa2c0520e68bcf26782f7332406cea6cd9d9d899c7f9668c"
     },
     "results:g2-02-strategy": {
       "file": "materials/04-一般道路情境/G2-02/G2-02_號誌化鄉區正交三叉路口交通設施整體設置圖例.svg",
@@ -66,7 +66,7 @@
       "label": "G2-02 整體佈設圖",
       "scenario": "G2-02",
       "role": "strategy",
-      "sha256": "00c0a038f5264bb40820ef9e7c13916495bd23dc04f218714a75e1784a26d05a"
+      "sha256": "d56c54644effbe08da79cfaafb2b6ac6967c055691b5b6c2f413e454678b9d83"
     },
     "results:g2-03-strategy": {
       "file": "materials/04-一般道路情境/G2-03/G2-03_號誌化市區斜交三叉路口交通設施整體設置圖例.svg",
@@ -75,7 +75,7 @@
       "label": "G2-03 整體佈設圖",
       "scenario": "G2-03",
       "role": "strategy",
-      "sha256": "d18bd82b0fd71cd754bd29ffc9400e543b694e8ea1a5f7f284251a9e475ca4c4"
+      "sha256": "8e5199336e20921a49fdbd894df0ce6f6fa7e574faa94a71160845abc98dc1e4"
     },
     "results:g2-04-strategy": {
       "file": "materials/04-一般道路情境/G2-04/G2-04_號誌化鄉區斜交三叉路口交通設施整體設置圖例.svg",
@@ -84,7 +84,7 @@
       "label": "G2-04 整體佈設圖",
       "scenario": "G2-04",
       "role": "strategy",
-      "sha256": "835b9b5bf8f0ca15334fdcd0b594b1b353a3552895bafd4c679991eef591ec46"
+      "sha256": "9f5ef39b04c1bbde48f056f8834f1678e8a13ed27292e761bcffd9548e30415f"
     },
     "results:g3-01-strategy": {
       "file": "materials/04-一般道路情境/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg",
@@ -93,7 +93,7 @@
       "label": "G3-01 整體佈設圖",
       "scenario": "G3-01",
       "role": "strategy",
-      "sha256": "4d8d5353facddc4d4c54fb85cb8816fa173e7dc3b523c17b1dadbb6719fb42e1"
+      "sha256": "a6bf999d277532409b33636a4e86deac42a5fe916c3a58f744e4949e4f5d6d6a"
     },
     "results:g3-02-strategy": {
       "file": "materials/04-一般道路情境/G3-02/G3-02_無號誌鄉區正交四叉路口交通設施整體設置圖例.svg",
@@ -102,7 +102,7 @@
       "label": "G3-02 整體佈設圖",
       "scenario": "G3-02",
       "role": "strategy",
-      "sha256": "f9d55dd05ebf128120a96c0a0c94aefd3d7ed00d7a0d2cb7d887c71d3125a5e1"
+      "sha256": "31e7f596b020d1d15b352de2c2c5109597dcbca1d861323cff3d310469e85cb9"
     },
     "results:g3-03-strategy": {
       "file": "materials/04-一般道路情境/G3-03/G3-03_無號誌市區斜交四叉路口交通設施整體設置圖例.svg",
@@ -111,7 +111,7 @@
       "label": "G3-03 整體佈設圖",
       "scenario": "G3-03",
       "role": "strategy",
-      "sha256": "99546cafcbb0c4993015f7d1ad76b15a4ca7d0f33e58b3aac58169efd835eee0"
+      "sha256": "da70df1b0d6b4ffa4313149ab93d1650ccd82b119048f093cc545a798ee8f6c1"
     },
     "results:g3-04-strategy": {
       "file": "materials/04-一般道路情境/G3-04/G3-04_無號誌鄉區斜交四叉路口交通設施整體設置圖例.svg",
@@ -120,7 +120,7 @@
       "label": "G3-04 整體佈設圖",
       "scenario": "G3-04",
       "role": "strategy",
-      "sha256": "e4d44da4c27b204d2d5384573c53e984a0b36e55dbb0e4bb3e3b359946452c51"
+      "sha256": "ac54083ffe073c5480742aec56a2d84b2418b703621f4789982c5d88be376e76"
     },
     "results:g4-01-strategy": {
       "file": "materials/04-一般道路情境/G4-01/G4-01_號誌化市區正交四叉路口交通設施整體設置圖例.svg",
@@ -129,7 +129,7 @@
       "label": "G4-01 整體佈設圖",
       "scenario": "G4-01",
       "role": "strategy",
-      "sha256": "56075b46a088be1aca0c914cb98144b2a4dcbceb5781bc8bb11644cab7a32604"
+      "sha256": "fcc2b941b44e5f365a718fc1ed92b0d4561879d435750c97569c198d3ad5dd13"
     },
     "results:g4-02-strategy": {
       "file": "materials/04-一般道路情境/G4-02/G4-02_號誌化鄉區正交四叉路口交通設施整體設置圖例.svg",
@@ -138,7 +138,7 @@
       "label": "G4-02 整體佈設圖",
       "scenario": "G4-02",
       "role": "strategy",
-      "sha256": "aabe89bdc5c39c82c98c48fbd0c97ad14158c9cc01f42878be727490d80eb903"
+      "sha256": "84e64b34c378883426a3532a5edbb19e78c370f5d83acf76c71c43abdca05fcf"
     },
     "results:g4-03-strategy": {
       "file": "materials/04-一般道路情境/G4-03/G4-03_號誌化市區斜交四叉路口交通設施整體設置圖例.svg",
@@ -147,7 +147,7 @@
       "label": "G4-03 整體佈設圖",
       "scenario": "G4-03",
       "role": "strategy",
-      "sha256": "5eb3f11773ffdc03c57b948203fc59e8a19963f3cff52f880fd8f4fb8f5db0a6"
+      "sha256": "ae09fb252843cf2dc2a2197b6e0128ccf273df548aa124314f104e64290d540d"
     },
     "results:g4-04-strategy": {
       "file": "materials/04-一般道路情境/G4-04/G4-04_號誌化鄉區斜交四叉路口交通設施整體設置圖例.svg",
@@ -156,7 +156,7 @@
       "label": "G4-04 整體佈設圖",
       "scenario": "G4-04",
       "role": "strategy",
-      "sha256": "e2cab0b4e883a997418e343ea32243d9c8e651db83402143030c86f40acf9407"
+      "sha256": "7dceb3e568996f871ecd5fe41b20bfc96852c54abf458d0dde922250f893b6da"
     }
   },
   "scenarios": {

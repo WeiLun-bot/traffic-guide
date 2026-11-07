@@ -29,7 +29,8 @@
       "materials/03-modules/M2-04/M2-04.2_現況議題_02.png",
       "materials/03-modules/M2-04/M2-04.2_現況議題_03.png",
       "materials/03-modules/M2-04/M2-04.3_現況議題_01.png",
-      "materials/03-modules/M2-04/M2-04.3_現況議題_02.png"
+      "materials/03-modules/M2-04/M2-04.3_現況議題_02.png",
+      "materials/03-modules/M2-04/M2-04_近遠端標誌配置對照.png"
     ],
     "notes": []
   },
@@ -201,6 +202,14 @@
       "label": "單行道代表型",
       "caption": "單行道代表型",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m204-near-far-sign-comparison": {
+      "file": "materials/03-modules/M2-04/M2-04_近遠端標誌配置對照.png",
+      "width": 551,
+      "height": 376,
+      "label": "近端與遠端標誌配置對照",
+      "caption": "非橫向箭頭、橫向箭頭及禁行方向標誌的近遠端配置",
+      "credit": "使用者提供之標誌配置對照圖"
     }
   },
   "pages": [
@@ -260,8 +269,8 @@
       "section": "module",
       "submoduleId": "M2-04.1",
       "title": "行駛動線遵行與限制｜現況議題與相關條文",
-      "intro": "先讓駕駛看懂可行方向，再配合近、遠端位置表達限制。",
-      "defaultView": "pair",
+      "intro": "路口行駛方向可透過遵行或禁行標誌進行管制，惟標誌選用、組合及設置位置缺乏一致性，可能使駕駛人難以正確判斷通行方向。",
+      "defaultView": "single",
       "imageFit": "contain",
       "assets": [
         "m204-movement-issue-photo-1",
@@ -270,13 +279,19 @@
       "points": [
         {
           "id": "choice",
-          "title": "標誌選用與組合不一致",
-          "text": "遵行方向與禁行方向若缺乏一致用法，駕駛不易判斷可以往哪裡行駛。"
+          "title": "標誌選用與設置位置缺乏一致性",
+          "text": "遵行與禁行方向標誌的選用、組合及設置位置未能配合駕駛人行駛動線與辨識需求，可能使管制資訊不易判讀，導致駕駛人違規轉向或誤入禁止通行方向。",
+          "focus": {
+            "asset": "m204-movement-issue-photo-1"
+          }
         },
         {
           "id": "position",
-          "title": "標誌位置未配合辨識需求",
-          "text": "僅靠指向線，或近、遠端標誌位置不當，都可能造成違規轉向或誤入。"
+          "title": "僅以指向線導引，管制資訊不足",
+          "text": "部分路口僅利用路面指向線提示行駛方向，缺乏相對應的遵行或禁行標誌，可能使駕駛人無法明確辨識轉向限制，增加違規轉向或誤入禁止通行方向的風險。",
+          "focus": {
+            "asset": "m204-movement-issue-photo-2"
+          }
         }
       ],
       "sourcePages": [],
@@ -297,42 +312,44 @@
         "C4-03",
         "C4-01",
         "C2-02"
-      ]
+      ],
+      "pointLinkedImages": true
     },
     {
       "id": "m204-movement-diagram",
       "section": "module",
       "submoduleId": "M2-04.1",
       "title": "行駛動線遵行與限制｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依據路口行駛方向的管制需求，選用現行《設置規則》所提供的遵行或禁行標誌牌面，並配合箭頭形式與駕駛人辨識需求，決定近遠端設置位置。",
       "assets": [
         "m204-08538b11c2",
         "m204-7592970ada",
-        "m204-d51c6d29fa",
-        "m204-4717732e84",
-        "m204-19ca9fef6b",
-        "m204-a8581ed740",
-        "m204-819e3b333d",
-        "m204-35dec10948",
-        "m204-494a9f07e4",
-        "m204-63819fd535",
-        "m204-a2e842bf06"
+        "m204-near-far-sign-comparison"
       ],
       "points": [
         {
+          "id": "choice",
+          "title": "依現有牌面選擇適當的管制方式",
+          "text": "現行遵行及禁行標誌未完整涵蓋所有行駛方向組合，應依路口實際允許或禁止的行向，選用適當的標誌牌面或組合，明確傳達管制內容。",
+          "focus": {
+            "asset": "m204-08538b11c2"
+          }
+        },
+        {
           "id": "near",
-          "title": "近端表達非橫向的行駛方向",
-          "text": "路口近端配置非橫向箭頭的道路遵行方向標誌，讓駕駛在進入前辨識。"
+          "title": "近端配置禁行及非橫向箭頭標誌",
+          "text": "禁行方向標誌及非橫向箭頭的遵行方向標誌，原則配置於路口近端，使駕駛人在進入路口前即可辨識禁止或應遵循的行駛方向。",
+          "focus": {
+            "asset": "m204-near-far-sign-comparison"
+          }
         },
         {
           "id": "far",
-          "title": "遠端可增設橫向箭頭",
-          "text": "必要時在遠端增設水平方向箭頭；已有對應單行道標誌時，可免重複設置。"
-        },
-        {
-          "id": "restriction",
-          "title": "禁止轉向資訊設於近端",
-          "text": "路口近端清楚表達禁止左轉或右轉等限制，並與指向線及可行方向一致。"
+          "title": "遠端配置橫向箭頭標誌",
+          "text": "橫向箭頭的遵行方向標誌可配置於路口遠端，讓駕駛人從上游接近時，能直觀辨識轉向方向，避免將橫向箭頭誤認為指示其他道路或出入口。",
+          "focus": {
+            "asset": "m204-near-far-sign-comparison"
+          }
         }
       ],
       "sourcePages": [],
@@ -377,7 +394,7 @@
       "section": "module",
       "submoduleId": "M2-04.2",
       "title": "交通島通行導引｜現況議題與相關條文",
-      "intro": "以通行方向、高度與淨距，讓島頭位置更容易辨識。",
+      "intro": "交通島標誌應明確提示車輛通行方向及島頭位置，惟標誌設置高度與橫向淨距不當，可能影響駕駛人辨識及通行安全。",
       "defaultView": "pair",
       "assets": [
         "m204-island-issue-photo-1",
@@ -386,14 +403,24 @@
       ],
       "points": [
         {
-          "id": "clearance",
-          "title": "島頭標誌與車流淨距不足",
-          "text": "靠右、靠左行駛標誌及分道標誌需保留橫向淨距，避免碰撞。"
+          "id": "association",
+          "title": "標誌高度與交通島位置不易對應",
+          "text": "靠右、靠左行駛標誌及分道標誌若設置過高，可能使駕駛人難以直觀辨識標誌與交通島的對應關係，降低島頭位置及通行方向的辨識性。",
+          "focus": {
+            "asset": "m204-island-issue-photo-2"
+          }
         },
         {
-          "id": "association",
-          "title": "標誌高度與島頭不易對應",
-          "text": "高度應配合駕駛視點，使標誌與交通島位置具有明確關聯。"
+          "id": "clearance",
+          "title": "標誌與車流間的橫向淨距不足",
+          "text": "交通島上的標誌及危險標記若距離車道過近，可能侵入車輛行駛空間，增加車輛碰撞交通設施的風險。",
+          "focus": {
+            "asset": "m204-island-issue-photo-1",
+            "assets": [
+              "m204-island-issue-photo-1",
+              "m204-island-issue-photo-3"
+            ]
+          }
         }
       ],
       "sourcePages": [],
@@ -418,14 +445,16 @@
         "C4-01",
         "C4-03",
         "C4-05"
-      ]
+      ],
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m204-island-diagram",
       "section": "module",
       "submoduleId": "M2-04.2",
       "title": "交通島通行導引｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依交通島的分隔型式與車輛通行方向，配置適當的遵行或警告標誌，並兼顧島頭辨識性及車流通行淨距。",
       "assets": [
         "m204-e6f9a94e50",
         "m204-55b65042db"
@@ -433,18 +462,43 @@
       "points": [
         {
           "id": "keep",
-          "title": "依允許通行側明確導引",
-          "text": "靠右行駛標誌指示從右側通過，避免碰撞島頭或誤入對向。"
-        },
-        {
-          "id": "height",
-          "title": "高度與橫向淨距一起檢查",
-          "text": "標誌底邊不低於路面 0.60 m，並盡量貼近駕駛視點；橫向淨距建議 0.50 m 以上。"
+          "title": "以靠右、靠左行駛標誌指定通行側",
+          "text": "當車輛必須由交通島特定一側通過時，設置靠右或靠左行駛標誌，明確提示應遵循的通行方向，避免碰撞島頭或誤入對向車道。",
+          "focus": {
+            "asset": "m204-55b65042db"
+          }
         },
         {
           "id": "split",
-          "title": "分流端可由兩側通過",
-          "text": "設於分流端部，提示車流可依各自行駛路徑從左側或右側通過。"
+          "title": "以分道標誌提示兩側均可通行",
+          "text": "於同向車流分流的交通島端部設置分道標誌，提醒駕駛人可依各自行駛路徑，由交通島左側或右側通過。",
+          "focus": {
+            "asset": "m204-e6f9a94e50"
+          }
+        },
+        {
+          "id": "height",
+          "title": "降低標誌高度以強化島頭辨識",
+          "text": "標誌高度宜配合駕駛人視點，並盡可能降低，使標誌與交通島形成明確的視覺關聯；標誌底邊距路面不得低於 0.60 m。",
+          "focus": {
+            "asset": "m204-55b65042db"
+          }
+        },
+        {
+          "id": "clearance",
+          "title": "保留足夠的車流通行淨距",
+          "text": "設置標誌時應檢核與相鄰車流的橫向距離，建議保留 0.50 m 以上淨距，避免標誌或附屬設施遭車輛碰撞。",
+          "focus": {
+            "asset": "m204-e6f9a94e50"
+          }
+        },
+        {
+          "id": "marker",
+          "title": "於標誌下方加設危險標記",
+          "text": "可於靠右、靠左行駛標誌或分道標誌下方增設危險標記，強化交通島端部的視覺提示，提醒駕駛人注意島頭位置，降低碰撞風險。",
+          "focus": {
+            "asset": "m204-e6f9a94e50"
+          }
         }
       ],
       "sourcePages": [],
@@ -488,7 +542,7 @@
       "section": "module",
       "submoduleId": "M2-04.3",
       "title": "單行道｜現況議題與相關條文",
-      "intro": "讓駕駛在進入路段前，清楚辨識單行方向與禁止進入方向。",
+      "intro": "單行道應透過明確且一致的標誌配置，讓不同方向來車均能辨識道路通行方向，避免誤入或逆向行駛。",
       "defaultView": "pair",
       "assets": [
         "m204-oneway-issue-photo-1",
@@ -497,13 +551,15 @@
       "points": [
         {
           "id": "search",
-          "title": "入口、出口標誌不易搜尋",
-          "text": "禁止進入與單行道標誌若位置不一致，駕駛難以及時判斷通行方向。"
-        },
-        {
-          "id": "risk",
-          "title": "誤入或迴轉可能形成逆向",
-          "text": "需要從各進入方向檢查，確認駕駛都能看見適用的標誌。"
+          "title": "單行道標誌設置位置缺乏一致性",
+          "text": "單行道標誌與禁止進入標誌的設置位置未能配合不同方向來車的辨識需求，使駕駛人難以及時判斷道路通行方向及禁止進入的位置，增加誤入或逆向行駛的風險。",
+          "focus": {
+            "asset": "m204-oneway-issue-photo-1",
+            "assets": [
+              "m204-oneway-issue-photo-1",
+              "m204-oneway-issue-photo-2"
+            ]
+          }
         }
       ],
       "sourcePages": [],
@@ -516,32 +572,47 @@
       "applications": [
         "C1-06",
         "C4-03"
-      ]
+      ],
+      "imageFit": "contain",
+      "pointLinkedImages": true,
+      "referenceNames": {
+        "74": "禁止左轉標誌"
+      }
     },
     {
       "id": "m204-oneway-diagram",
       "section": "module",
       "submoduleId": "M2-04.3",
       "title": "單行道｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依據單行道出入口位置及不同方向來車的辨識需求，配置單行道與禁止進入標誌，明確傳達道路通行方向。",
       "assets": [
-        "m204-8bd169718b"
+        "m204-8bd169718b",
+        "m204-7592970ada"
       ],
       "points": [
         {
           "id": "entry",
-          "title": "出口面向禁止進入方向設置",
-          "text": "設於該方向右側，必要時可在左側增設，避免車輛逆向駛入。"
+          "title": "出口設置禁止進入標誌",
+          "text": "於單行道出口設置禁止進入標誌，面向禁止進入方向，原則設於該方向右側，必要時得增設於左側，避免車輛逆向進入。",
+          "focus": {
+            "asset": "m204-7592970ada"
+          }
         },
         {
           "id": "far",
-          "title": "入口標誌設於路口遠端",
-          "text": "使各方向轉入單行道的車輛都能看見。"
+          "title": "入口遠端設置單行道標誌",
+          "text": "於單行道入口遠端設置單行道標誌（遵16），使不同方向轉入單行道的駕駛人均能辨識道路通行方向。",
+          "focus": {
+            "asset": "m204-8bd169718b"
+          }
         },
         {
           "id": "right",
-          "title": "順接車流看不清時在右側補強",
-          "text": "雙向道續接單行道時，若原標誌不在右側或無法清楚辨認，可於入口右側增設。"
+          "title": "視需要於入口右側增設單行道標誌",
+          "text": "當雙向道順接單行道，且遠端標誌無法供直行來車清楚辨識時，可於入口右側增設單行道標誌（遵17），補足通行方向提示。",
+          "focus": {
+            "asset": "m204-8bd169718b"
+          }
         }
       ],
       "sourcePages": [],
@@ -587,9 +658,9 @@
     "49": "雙向道標誌",
     "61": "道路遵行方向標誌",
     "63": "單行道標誌",
-    "64": "靠右（左）行駛標誌、",
+    "64": "靠右、靠左行駛標誌",
     "73": "禁止進入標誌",
-    "74": "禁止左轉標誌",
+    "74": "禁行方向標誌",
     "162": "危險標記"
   },
   "submoduleFlows": [
@@ -607,42 +678,66 @@
           "title": "圖例說明",
           "topics": [
             {
-              "id": "near",
-              "label": "近端遵行方向",
+              "id": "selection",
+              "label": "依管制需求與現有牌面選擇標誌",
               "sourcePageId": "m204-movement-diagram",
-              "pointIds": [
-                "near"
-              ],
               "assets": [
-                "m204-d51c6d29fa",
-                "m204-4717732e84"
+                "m204-08538b11c2",
+                "m204-7592970ada"
+              ],
+              "imageLayout": "row",
+              "pointIds": [
+                "choice"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "direction",
+                  "label": "道路遵行方向標誌（遵7～遵10）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-08538b11c2"
+                  }
+                },
+                {
+                  "id": "restriction",
+                  "label": "禁行方向標誌（禁17～禁21）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-7592970ada"
+                  }
+                }
               ]
             },
             {
-              "id": "far",
-              "label": "遠端遵行方向",
+              "id": "position",
+              "label": "依箭頭形式及辨識需求配置近遠端",
               "sourcePageId": "m204-movement-diagram",
+              "assets": [
+                "m204-near-far-sign-comparison"
+              ],
               "pointIds": [
+                "near",
                 "far"
               ],
-              "assets": [
-                "m204-19ca9fef6b",
-                "m204-a8581ed740"
-              ]
-            },
-            {
-              "id": "restriction",
-              "label": "禁行方向標誌",
-              "sourcePageId": "m204-movement-diagram",
-              "pointIds": [
-                "restriction"
-              ],
-              "assets": [
-                "m204-819e3b333d",
-                "m204-35dec10948",
-                "m204-494a9f07e4",
-                "m204-63819fd535",
-                "m204-a2e842bf06"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "direction",
+                  "label": "道路遵行方向標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-near-far-sign-comparison"
+                  }
+                },
+                {
+                  "id": "restriction",
+                  "label": "禁行方向標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-near-far-sign-comparison"
+                  }
+                }
               ]
             }
           ]
@@ -677,25 +772,116 @@
           "topics": [
             {
               "id": "keep",
-              "label": "靠右、靠左行駛",
+              "label": "依交通島通行型態選擇標誌",
               "sourcePageId": "m204-island-diagram",
+              "assets": [
+                "m204-e6f9a94e50",
+                "m204-55b65042db"
+              ],
+              "imageLayout": "row",
               "pointIds": [
                 "keep",
-                "height"
+                "split"
               ],
-              "assets": [
-                "m204-55b65042db"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "keep",
+                  "label": "靠右、靠左行駛標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-55b65042db"
+                  }
+                },
+                {
+                  "id": "split",
+                  "label": "分道標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-e6f9a94e50"
+                  }
+                }
               ]
             },
             {
-              "id": "split",
-              "label": "分道標誌",
+              "id": "clearance",
+              "label": "兼顧標誌辨識高度與橫向淨距",
               "sourcePageId": "m204-island-diagram",
-              "pointIds": [
-                "split"
-              ],
               "assets": [
-                "m204-e6f9a94e50"
+                "m204-e6f9a94e50",
+                "m204-55b65042db"
+              ],
+              "imageLayout": "row",
+              "pointIds": [
+                "height",
+                "clearance"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "keep",
+                  "label": "靠右、靠左行駛標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-55b65042db"
+                  }
+                },
+                {
+                  "id": "split",
+                  "label": "分道標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-e6f9a94e50"
+                  }
+                },
+                {
+                  "id": "space",
+                  "label": "標誌設置高度與橫向淨距",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m204-55b65042db"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "marker",
+              "label": "以危險標記強化島頭辨識",
+              "sourcePageId": "m204-island-diagram",
+              "assets": [
+                "m204-e6f9a94e50",
+                "m204-55b65042db"
+              ],
+              "imageLayout": "row",
+              "pointIds": [
+                "marker"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "marker",
+                  "label": "危險標記（危3）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-e6f9a94e50"
+                  }
+                },
+                {
+                  "id": "keep",
+                  "label": "靠右、靠左行駛標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-55b65042db"
+                  }
+                },
+                {
+                  "id": "split",
+                  "label": "分道標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-e6f9a94e50"
+                  }
+                }
               ]
             }
           ]
@@ -730,25 +916,36 @@
           "topics": [
             {
               "id": "entry",
-              "label": "禁止進入",
+              "label": "依單行道出入口及來車方向配置標誌",
               "sourcePageId": "m204-oneway-diagram",
-              "pointIds": [
-                "entry"
-              ],
               "assets": [
-                "m204-8bd169718b"
-              ]
-            },
-            {
-              "id": "oneway",
-              "label": "單行道標誌",
-              "sourcePageId": "m204-oneway-diagram",
+                "m204-8bd169718b",
+                "m204-7592970ada"
+              ],
+              "imageLayout": "row",
               "pointIds": [
+                "entry",
                 "far",
                 "right"
               ],
-              "assets": [
-                "m204-8bd169718b"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "no-entry",
+                  "label": "禁止進入標誌（禁1）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-7592970ada"
+                  }
+                },
+                {
+                  "id": "oneway",
+                  "label": "單行道標誌（遵16、遵17）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-8bd169718b"
+                  }
+                }
               ]
             }
           ]
@@ -768,5 +965,8 @@
         }
       ]
     }
+  ],
+  "hiddenPages": [
+    "m204-overview"
   ]
 }

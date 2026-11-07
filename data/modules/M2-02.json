@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "M2-02",
-  "directoryAssets": ["m202-roundabout"],
+  "directoryAssets": [
+    "m202-roundabout"
+  ],
   "title": "圓環管制",
   "source": {
     "file": "05-roundabout-control.typ",
@@ -29,6 +31,14 @@
       "label": "圓環管制配置",
       "caption": "圖 3.30 圓環管制路口模組範例",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m202-roundabout-directions": {
+      "file": "materials/03-modules/M1-02/M1-02_路徑與地點指示代表型2_渦輪圓環.svg",
+      "width": 2276,
+      "height": 1924,
+      "label": "渦輪圓環指示配置",
+      "caption": "圖 3.13 路徑與地點指示範例 2──渦輪圓環",
+      "credit": "道路交通標誌標線號誌設置參考指引"
     }
   },
   "pages": [
@@ -37,25 +47,34 @@
       "section": "module",
       "submoduleId": "M2-02.1",
       "title": "無號誌圓環｜現況議題與相關條文",
-      "intro": "建立環內優先，讓入口、環內與出口的動線連續。",
+      "intro": "圓環藉由環內優先及車流軌跡控制，降低路口交會衝突，惟入口管制與行車導引不明確，仍可能影響通行秩序及安全。",
       "assets": [
         "m202-roundabout-issue-photo-1"
       ],
       "points": [
         {
           "id": "priority",
-          "title": "環內優先不夠明確",
-          "text": "入口缺少讓路標誌、讓路線，或方向標誌位置不一致，容易發生環內外車輛爭道。"
+          "title": "環內車輛優先關係不明確",
+          "text": "圓環入口缺乏讓路標誌、讓路線，或相關標誌設置位置不一致，使駕駛人難以辨識環內車輛具有優先通行權，容易發生環內外車輛爭道。",
+          "focus": {
+            "asset": "m202-roundabout-issue-photo-1"
+          }
         },
         {
           "id": "entry",
-          "title": "入口偏移與分隔島不易辨識",
-          "text": "缺少明確導引時，駕駛難以提早掌握車道偏移與島頭位置。"
+          "title": "入口行駛軌跡缺乏適當控制",
+          "text": "圓環入口幾何配置不當，或缺乏分隔島及標線導引，可能使車輛以過於直順的軌跡駛入圓環，難以有效控制入環速度。",
+          "focus": {
+            "asset": "m202-roundabout-issue-photo-1"
+          }
         },
         {
           "id": "exit",
-          "title": "環內導引與出口銜接不足",
-          "text": "動線不連續可能造成臨時換道、切入出口或不必要減速。"
+          "title": "環內車道與出口缺乏連續導引",
+          "text": "環內車道標線與出口銜接關係不明確，駕駛人難以提前掌握行駛路徑，可能發生臨時變換車道、切入出口或不必要減速，影響環內行車秩序。",
+          "focus": {
+            "asset": "m202-roundabout-issue-photo-1"
+          }
         }
       ],
       "sourcePages": [],
@@ -70,47 +89,75 @@
       "applications": [
         "C1-07",
         "C1-08"
-      ]
+      ],
+      "defaultView": "single",
+      "pointLinkedImages": true
     },
     {
       "id": "m202-roundabout-diagram",
       "section": "module",
       "submoduleId": "M2-02.1",
       "title": "無號誌圓環｜圖例說明",
-      "intro": "各入口以一致方式，搭配讓路、方向標誌與標線導引。",
+      "intro": "透過入口讓路管制、行駛軌跡控制及環內動線導引，明確建立優先關係，讓車輛以適當速度進入圓環並順利駛離。",
       "assets": [
         "m202-roundabout"
       ],
       "points": [
         {
           "id": "yield-line",
-          "title": "讓路線建立環內優先",
-          "text": "入口讓路線搭配讓路標誌；雙白虛線與行車導引線對齊，提醒駕駛注意環內車流。"
-        },
-        {
-          "id": "channel",
-          "title": "槽化線配合分隔島與車道偏移",
-          "text": "提早呈現入口島頭與車道偏移，讓車輛沿清楚的軌跡進入圓環。"
-        },
-        {
-          "id": "guide",
-          "title": "導引線連續提示環內邊界與出口",
-          "text": "以路口行車導引線延伸主要道路邊線，協助駕駛辨識環內路徑及出口位置。"
+          "title": "以讓路線明確標示入環讓路位置",
+          "text": "於圓環入口劃設讓路線，使雙白虛線與路口行車導引線對齊，明確標示車輛進入圓環前的讓路位置，提醒駕駛人觀察並讓行環內車輛。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
         },
         {
           "id": "direction",
-          "title": "方向標誌設於一致位置",
-          "text": "原則設於圓環外緣、臨近入口右側；必要時可增設於交通島或入口左側。"
+          "title": "整合讓路與圓環遵行方向標誌",
+          "text": "圓環遵行方向標誌原則設於圓環外緣、入口右側，並於上方設置讓路標誌，明確傳達圓環行駛方向及環內車輛優先通行的規定。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
         },
         {
-          "id": "yield-sign",
-          "title": "讓路標誌設於方向標誌上方",
-          "text": "再次提醒進入圓環的車輛，讓環內車輛優先通行。"
+          "id": "channel",
+          "title": "透過入口幾何控制入環速度",
+          "text": "配合中央島、入口曲率及分隔島配置，使車輛進入圓環時形成適當的行駛軌跡偏轉，避免以過於直順的路徑高速駛入。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
         },
         {
-          "id": "advance",
-          "title": "視距不足或車速較高時提前預告",
-          "text": "可在入口上游設置圓環標誌，讓駕駛及早辨識圓環並準備減速。"
+          "id": "channel-path",
+          "title": "以槽化線引導入口行駛路徑",
+          "text": "配合入口分隔島及車道線形配置槽化線，協助駕駛人提前辨識島頭位置及行駛路徑，依循既定軌跡進入圓環。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
+        },
+        {
+          "id": "curvature",
+          "title": "兼顧入口與出口的行駛曲率",
+          "text": "入口速度控制不應僅以道路中心線偏移程度判斷，應同時考量入口及出口的行駛軌跡，避免改善入口偏轉時，反而使出口過於直順。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
+        },
+        {
+          "id": "guide",
+          "title": "明確標示環內行駛邊界",
+          "text": "透過路口行車導引線延伸道路邊界，協助駕駛人辨識環內行駛範圍與車道位置，維持清楚的行車軌跡。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
+        },
+        {
+          "id": "exit",
+          "title": "引導環內車輛銜接出口",
+          "text": "使環內標線與出口車道相互對應，協助駕駛人提前掌握出口位置與行駛動線，減少臨時變換車道及切入出口的情形。",
+          "focus": {
+            "asset": "m202-roundabout"
+          }
         }
       ],
       "sourcePages": [],
@@ -122,28 +169,34 @@
       "section": "module",
       "submoduleId": "M2-02.1",
       "title": "無號誌圓環｜延伸應用",
-      "intro": "多車道與行人穿越需求，一併納入圓環配置。",
-      "assets": [],
+      "intro": "透過圖形化地名方向指示標誌，提前呈現圓環出口方向與目的地資訊，協助駕駛人辨識行駛路徑。",
+      "assets": [
+        "m202-roundabout-directions"
+      ],
       "points": [
         {
-          "id": "arrows",
-          "title": "多車道入口加設指向線",
-          "text": "進入多車道圓環前佈設一組指向線，說明各車道的行駛方向。"
+          "id": "exits",
+          "title": "以圖形化牌面預告出口方向",
+          "text": "透過圓環圖形呈現各出口位置及可通往的目的地，讓駕駛人在入環前掌握出口方向，降低臨時判斷行駛路徑的負擔。",
+          "focus": {
+            "asset": "m202-roundabout-directions"
+          }
         },
         {
-          "id": "crosswalk",
-          "title": "行穿線銜接禁臨停線",
-          "text": "枕木紋行穿線與禁止臨時停車線同時設置時，由行穿線截斷禁臨停線。"
+          "id": "geometry",
+          "title": "配合實際路型設計指示資訊",
+          "text": "標誌圖形應對應圓環形狀、出口數量及道路配置，並設於入口上游適當位置，提供足夠的辨識與反應時間。",
+          "focus": {
+            "asset": "m202-roundabout-directions"
+          }
         },
         {
-          "id": "refuge",
-          "title": "提供行人庇護空間",
-          "text": "可增設行人庇護島，提供分段穿越空間，並提醒駕駛注意行人。"
-        },
-        {
-          "id": "distance",
-          "title": "停止線與行穿線保留淨距",
-          "text": "設有枕木紋行穿線時，停止線與其淨距為 1–3 m。"
+          "id": "lanes",
+          "title": "整合車道選擇與目的地資訊",
+          "text": "多車道或渦輪圓環可進一步結合車道配置與出口方向資訊，協助駕駛人於入環前選擇正確車道，減少環內臨時變換車道的需求。",
+          "focus": {
+            "asset": "m202-roundabout-directions"
+          }
         }
       ],
       "sourcePages": [],
@@ -174,50 +227,112 @@
           "topics": [
             {
               "id": "yield-line",
-              "label": "讓路線",
+              "label": "以標誌及標線建立環內優先關係",
               "sourcePageId": "m202-roundabout-diagram",
+              "assets": [
+                "m202-roundabout"
+              ],
               "pointIds": [
-                "yield-line"
+                "yield-line",
+                "direction"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "yield-sign",
+                  "label": "讓路標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                },
+                {
+                  "id": "yield-line",
+                  "label": "讓路線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                },
+                {
+                  "id": "direction",
+                  "label": "圓環遵行方向標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                },
+                {
+                  "id": "guide",
+                  "label": "路口行車導引線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                }
               ]
             },
             {
               "id": "channel",
-              "label": "槽化線",
+              "label": "以入口幾何與標線控制行駛軌跡",
               "sourcePageId": "m202-roundabout-diagram",
+              "assets": [
+                "m202-roundabout"
+              ],
               "pointIds": [
-                "channel"
+                "channel",
+                "channel-path",
+                "curvature"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "channel",
+                  "label": "槽化線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                },
+                {
+                  "id": "splitter",
+                  "label": "入口分隔島",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                },
+                {
+                  "id": "trajectory",
+                  "label": "入口曲率及行駛軌跡",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                }
               ]
             },
             {
               "id": "guide",
-              "label": "路口行車導引線",
+              "label": "以導引線維持環內與出口動線連續",
               "sourcePageId": "m202-roundabout-diagram",
+              "assets": [
+                "m202-roundabout"
+              ],
               "pointIds": [
-                "guide"
-              ]
-            },
-            {
-              "id": "direction",
-              "label": "圓環遵行方向標誌",
-              "sourcePageId": "m202-roundabout-diagram",
-              "pointIds": [
-                "direction"
-              ]
-            },
-            {
-              "id": "yield-sign",
-              "label": "讓路標誌",
-              "sourcePageId": "m202-roundabout-diagram",
-              "pointIds": [
-                "yield-sign"
-              ]
-            },
-            {
-              "id": "advance",
-              "label": "圓環預告標誌",
-              "sourcePageId": "m202-roundabout-diagram",
-              "pointIds": [
-                "advance"
+                "guide",
+                "exit"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "guide",
+                  "label": "路口行車導引線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout"
+                  }
+                }
               ]
             }
           ]
@@ -226,27 +341,42 @@
           "id": "extensions",
           "pageId": "m202-roundabout-extensions",
           "title": "延伸應用",
-          "intro": "把多車道選道與行人穿越需求，納入圓環入口設計。",
+          "intro": "透過圖形化地名方向指示標誌，提前呈現圓環出口方向與目的地資訊，協助駕駛人辨識行駛路徑。",
           "topics": [
             {
-              "id": "arrows",
-              "label": "多車道入口指向線",
+              "id": "directions",
+              "label": "圓環圖形化地名方向指示標誌",
               "sourcePageId": "m202-roundabout-extensions",
+              "assets": [
+                "m202-roundabout-directions"
+              ],
               "pointIds": [
-                "arrows"
-              ]
-            },
-            {
-              "id": "pedestrians",
-              "label": "行人穿越與庇護空間",
-              "sourcePageId": "m202-roundabout-extensions",
-              "pointIds": [
-                "crosswalk",
-                "refuge",
-                "distance"
+                "exits",
+                "geometry",
+                "lanes"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "place-direction",
+                  "label": "地名方向指示標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout-directions"
+                  }
+                },
+                {
+                  "id": "roundabout-warning",
+                  "label": "圓環預告標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m202-roundabout-directions"
+                  }
+                }
               ]
             }
-          ]
+          ],
+          "paged": true
         }
       ]
     }

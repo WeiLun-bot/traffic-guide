@@ -214,7 +214,7 @@
       "rotation": 90,
       "scenario": "G4-04",
       "label": "號誌化鄉區斜交四叉路口交通設施整體設置圖例",
-      "sha256": "e2cab0b4e883a997418e343ea32243d9c8e651db83402143030c86f40acf9407"
+      "sha256": "7dceb3e568996f871ecd5fe41b20bfc96852c54abf458d0dde922250f893b6da"
     },
     "g404-permissive": {
       "file": "materials/04-一般道路情境/G4-04/G4-04_號誌化鄉區斜交四叉路口號誌平面設置圖例（佈設法1）.svg",
@@ -223,7 +223,7 @@
       "rotation": 0,
       "scenario": "G4-04",
       "label": "號誌化鄉區斜交四叉路口號誌平面設置圖例（佈設法1）",
-      "sha256": "56bc79ea04481e238b9680b6add55980efa4441af0cf6faf68f9c453b89a6328"
+      "sha256": "1c1b32b8c42051f74c8802b4ba2a7ab370560ad26d43d2743234bbceb59bcd44"
     },
     "g404-protected": {
       "file": "materials/04-一般道路情境/G4-04/G4-04_號誌化鄉區斜交四叉路口號誌平面設置圖例（佈設法2）.svg",
@@ -232,7 +232,7 @@
       "rotation": 0,
       "scenario": "G4-04",
       "label": "號誌化鄉區斜交四叉路口號誌平面設置圖例（佈設法2）",
-      "sha256": "b47094c159b7e9b6611bc08d5d4058ae3dda33146f6a52247a9ca9c08ff88a4e"
+      "sha256": "a0060ca25b7b35e2d6c986db448ff5ad58e4e7a83919c5b03aa11e4df4bcaebd"
     },
     "g404-before": {
       "file": "materials/04-一般道路情境/current-conditions/G4-04/G4-04_現況圖_01.png",

@@ -78,12 +78,30 @@
 .module-point-table thead th{background:#e8efdf;font-weight:600;white-space:nowrap}
 .module-point-table tbody th{font-weight:400}
 .module-point-table tbody tr:nth-child(even){background:#f2f6ed}
+#presentation .module-explain-points>.module-point-with-illustration{padding-right:78px;min-height:clamp(96px,12vh,112px)}
+.module-point-illustration{position:absolute;right:0;top:50%;transform:translateY(-50%);width:66px;margin:0;padding:0}
+.module-point-illustration>button{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.module-point-illustration img{display:block;width:auto;height:clamp(96px,12vh,112px);max-width:100%;object-fit:contain;margin-inline:auto}
+.module-concept-illustrations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0 0}
+.module-concept-illustrations figure{min-width:0;margin:0}
+.module-concept-illustrations button{display:block;width:100%;padding:4px;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:zoom-in}
+.module-concept-illustrations button:hover{border-color:#859b76}
+.module-concept-illustrations img{display:block;width:100%;height:clamp(68px,10vh,100px);object-fit:contain}
+#presentation>[data-module-source-page="m301-midblock-diagram"] .module-concept-points:has(>.module-point-with-illustration)>li{padding-block:4px 6px}
+#presentation>[data-module-source-page="m303-turning-diagram"]:has([data-module-concept-title="direct"]) .module-concept-points>li{padding-block:4px 6px}
+#presentation>[data-module-source-page="m404-pedestrian-diagram"]:has([data-module-concept-title="signs"]) .module-concept-points>li{padding-block:4px 6px}
+#presentation>[data-module-source-page="m404-pedestrian-diagram"]:has([data-module-concept-title="signs"]) .module-topic-title{margin-bottom:12px}
+#presentation>[data-module-source-page="m404-pedestrian-diagram"]:has([data-module-concept-title="signs"]) .module-concept-facilities{margin-bottom:8px}
+@media(min-width:901px){#presentation>[data-module-source-page="m404-pedestrian-diagram"]:has([data-module-concept-title="signs"])>.module-layout{grid-template-columns:minmax(0,1.6fr) minmax(280px,1fr)}}
 .module-referral-content{max-width:850px;border-top:1px solid var(--line);padding-top:15px}.module-referral-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.module-referral-links .primary-button{font-size:13px;padding:12px 18px;white-space:normal;text-align:left}
+.module-referral.has-figures{gap:12px}.module-referral.has-figures>.module-heading{margin-bottom:0}.module-referral-visuals{flex:1}.module-referral-visuals .module-map-card,.module-referral-visuals .module-map-canvas{min-height:0}.module-referral.has-figures>.module-referral-content{max-width:none;flex-shrink:0;padding-top:10px}.module-referral.has-figures .module-explain-points{margin:0}.module-referral.has-figures .module-explain-points li{padding:0 0 0 28px;border:0}.module-referral.has-figures .module-explain-points li::before{top:3px}.module-referral.has-figures .module-referral-links{margin-top:8px}.is-editing .module-referral-visuals{min-height:320px}
+@media(max-width:900px){.module-referral-visuals{flex:none;min-height:0}.module-referral-visuals .module-map-card{min-height:250px}}
 .module-scenario-refs{margin:14px 0;font-size:10px;color:var(--muted)}.module-scenario-refs>span{display:block;margin-bottom:6px;color:var(--green)}.module-scenario-refs p{font-size:11px;line-height:1.6}.module-scenario-refs>div{display:flex;flex-wrap:wrap;gap:5px}.module-scenario-refs button,.module-scenario-refs>div>span{font:inherit;color:var(--green);border:1px solid var(--line);border-radius:4px;background:#f9fcf6;padding:4px 6px}
 .module-topic-title{font-size:20px;font-weight:500;line-height:1.5;margin:0 0 10px;color:var(--dark)}
 .module-topic-nav,.module-related-nav{flex-shrink:0;margin-top:12px;padding-top:0;gap:7px}
 .module-extension-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--module-extension-rows,2),minmax(0,1fr));gap:12px;flex:1;min-height:0}
 .module-extension-grid>.module-extension-card:only-child{grid-column:1/-1}
+@media(min-width:901px){#presentation .module-extension-card[data-module-source-page="m202-roundabout-extensions"] .module-extension-body{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#presentation .module-extension-card[data-module-source-page="m202-roundabout-extensions"] .module-extension-image{max-height:none}}
 .module-extension-card{display:flex;flex-direction:column;min-width:0;min-height:0;padding:13px 15px;border:1px solid var(--line);border-radius:6px;background:#ffffffb8}
 .module-extension-card-heading{display:flex;align-items:baseline;gap:9px;margin-bottom:7px;flex-shrink:0}.module-extension-card-heading>span{font-size:11px;color:#9b8250}.module-extension-card-heading h2{font-size:18px;font-weight:500;line-height:1.35;margin:0;color:var(--dark)}
 .module-extension-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(110px,.65fr);gap:12px;flex:1;min-height:0}.module-extension-card.text-only .module-extension-body{grid-template-columns:1fr}
@@ -214,6 +232,11 @@
 .module-topic-representatives .module-catalog-card>.module-catalog-figures{margin-top:auto;padding-top:12px}
 .module-topic-representatives .module-catalog-thumbnail{height:clamp(160px,20vh,270px);padding:4px}
 .module-topic-representatives .module-catalog-figure-label{min-height:0}
+.module-topic-representatives .module-catalog-figures.is-pair{display:flex;align-items:stretch;gap:12px}
+.module-topic-representatives .module-catalog-figures.is-pair>.module-catalog-figure{flex:1;min-width:0}
+.module-topic-paged>.module-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#presentation .module-topic-representatives:has([data-directory-module="M3-01"]) .module-adjustable-card>ul{min-height:3lh}
+@media(max-width:620px){.module-topic-paged>.module-catalog-grid{grid-template-columns:1fr}}
 
 .module-topic-representatives .module-catalog-card>.module-catalog-figures{padding-top:4px;margin-bottom:10px}
 .module-topic-representatives .module-catalog-figure-label{padding:5px 9px}
@@ -257,6 +280,13 @@
 .module-concept-points>li{padding:8px 0 12px 2px;border:0;counter-increment:none}
 .module-concept-points>li::before{display:none}
 .module-concept-points>li::marker{color:#859b76}
+.module-concept-gallery{display:grid;grid-template-columns:repeat(var(--module-gallery-columns),minmax(0,1fr));grid-template-rows:repeat(var(--module-gallery-rows),minmax(0,1fr));gap:10px;flex:1;min-width:0;min-height:0}
+.module-concept-gallery .module-map-card,.module-concept-gallery .module-map-canvas,.module-concept-gallery .module-diagram{min-height:0}
+.module-concept-gallery .module-map-card .map-toolbar{min-height:0;padding:6px 8px;gap:4px}
+.module-concept-gallery .module-map-card .map-tools{gap:7px}
+.module-concept-gallery .module-map-canvas{padding:6px}
+@media(max-width:900px){.module-concept-gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:280px;flex:none}.module-concept-gallery .module-map-canvas{height:auto;flex:1}}
+@media(max-width:620px){.module-concept-gallery{grid-template-columns:minmax(0,1fr);grid-auto-rows:320px}}
 .module-concept-points h3{display:none}
 #presentation .module-concept-slide .module-topic-title{font-size:24px;line-height:1.5;margin:0 0 18px}
 .module-concept-slide .module-concept-points{font-size:18px}
@@ -288,3 +318,31 @@
 #presentation .module-concept-slide .module-concept-summary{font-size:14px;line-height:1.5;margin:-7px 0 12px;color:var(--muted)}
 #presentation .module-concept-slide.has-concept-point-titles .module-concept-points h3{display:block;font-size:18px;font-weight:600;line-height:1.4;margin:0 0 5px}
 .module-extension-footer:has(.module-extension-pager[hidden]){display:none}
+#presentation .module-extension-card[data-module-source-page="m203-signals-extension-turning"][data-extension-layout="vertical"] .module-extension-images{grid-template-columns:minmax(0,2.2fr) minmax(0,.7fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);align-items:stretch}
+#presentation .module-extension-card[data-module-source-page="m203-signals-extension-shield"][data-extension-layout="vertical"] .module-extension-images{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);align-items:stretch}
+
+/* Keep all three stop-control applications together with a shared image row. */
+@media(min-width:901px){
+ #presentation .module-extension-grid.has-three-topics{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto minmax(150px,1fr);gap:10px 14px}
+ #presentation .module-extension-grid.has-three-topics>.module-extension-card{display:grid;grid-row:1/span 3;grid-template-rows:subgrid;padding:12px 14px;row-gap:10px}
+ #presentation .module-extension-grid.has-three-topics .module-extension-card-heading{margin:0}
+ #presentation .module-extension-grid.has-three-topics .module-extension-card.has-images[data-extension-layout]>.module-extension-body{grid-row:2/span 2;grid-template-columns:minmax(0,1fr);grid-template-rows:subgrid;gap:10px}
+ #presentation .module-extension-grid.has-three-topics .module-extension-copy{overflow:visible;padding-right:0}
+ #presentation .module-extension-grid.has-three-topics .module-extension-images{align-items:stretch;align-self:end;height:100%}
+ #presentation .module-extension-grid.has-three-topics .module-extension-image{height:100%;max-height:none;aspect-ratio:auto}
+ #presentation .module-extension-grid.has-three-topics .module-extension-thumbnail{object-position:center bottom}
+ .is-editing #presentation .module-extension-grid.has-three-topics{grid-template-rows:auto auto minmax(180px,1fr)}
+}
+
+/* Yield applications share a bounded image row, regardless of copy length. */
+@media(min-width:901px){
+ #presentation .module-extension-slide .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]){grid-template-rows:auto auto max-content minmax(120px,1fr);row-gap:8px}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"])>.module-extension-card{display:grid;grid-row:1/span 4;grid-template-rows:subgrid;row-gap:10px}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]) :is(.module-extension-card-heading,.module-extension-notice){margin:0}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"])>.module-extension-card.has-images[data-extension-layout]>.module-extension-body{grid-row:3/span 2;grid-template-columns:minmax(0,1fr);grid-template-rows:subgrid;row-gap:10px}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]) .module-extension-images{align-self:end;align-items:stretch;height:min(100%,220px)}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]) .module-extension-image{height:100%;max-height:none;aspect-ratio:auto}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]) .module-extension-thumbnail{object-position:center bottom}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]) .module-explain-points>li{padding-block:4px}
+ #presentation .module-extension-grid:has(>[data-module-source-page="m201-yield-extensions"]) .module-explain-points h3{margin-bottom:3px}
+}
