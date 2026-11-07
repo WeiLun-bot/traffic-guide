@@ -117,27 +117,25 @@
       "section": "module",
       "submoduleId": "M4-01.1",
       "title": "局部危險警示｜現況議題與相關條文",
-      "intro": "在到達局部危險處所前，提供看得見、來得及反應的警告。",
+      "intro": "隧道、狹橋等局部危險處所的道路條件可能與上游路段不同，應透過適當的警告標誌，使駕駛人提前辨識危險並完成必要的減速及停等準備。",
       "assets": [
         "m401-local-issue-photo-1"
       ],
       "points": [
         {
           "id": "distance",
-          "title": "警告太近或太遠都不易發揮作用",
-          "text": "太近可能來不及反應；太遠且位置資訊不清，則難以對照實際危險處所。"
-        },
-        {
-          "id": "visibility",
-          "title": "道路線形與遮蔽影響辨識",
-          "text": "應一起檢查接近速率、可視性、反應距離及其他導引、管制設施。"
+          "title": "警告標誌設置位置與辨識需求不符",
+          "text": "警告標誌若距離危險處所過近，或受到道路線形、植栽及其他設施遮蔽，可能使駕駛人來不及反應；若距離過遠且未明確提示危險位置，則可能降低警示效果。",
+          "focus": {
+            "asset": "m401-local-issue-photo-1"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
         "24–55-2",
-        "48",
-        "29"
+        "29",
+        "48"
       ],
       "applications": [
         "G1-01",
@@ -156,14 +154,17 @@
         "C3-01",
         "C2-02",
         "C2-01"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m401-local-diagram",
       "section": "module",
       "submoduleId": "M4-01.1",
       "title": "局部危險警示｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依據道路接近速率、標誌可視性及駕駛人反應需求，配置局部危險警告標誌，使警示位置與實際危險處所明確對應。",
       "assets": [
         "m401-a614a49c08",
         "m401-cbdb2c7c69"
@@ -171,21 +172,36 @@
       "points": [
         {
           "id": "distance",
-          "title": "與危險標的保留停車視距",
-          "text": "警告標誌與隧道洞口、狹橋端點等標的，以 45–200 m 為原則，並檢視實際可視距離。"
+          "title": "依停車視距決定預告位置",
+          "text": "警告標誌與危險標的物之間，原則保留 45～200 m 的停車視距，並依道路接近速率及實際視距條件調整，使駕駛人有足夠時間辨識及反應。",
+          "focus": {
+            "asset": "m401-a614a49c08"
+          }
         },
         {
           "id": "relation",
-          "title": "警示與實際路況明確對應",
-          "text": "確認駕駛可在到達前完成辨識、減速及必要停等準備。"
+          "title": "明確對應危險處所位置",
+          "text": "隧道標誌應以隧道洞口、狹橋標誌應以狹橋端點作為警告標的物，避免標誌距離過近或過遠，影響駕駛人對實際危險位置的判斷。",
+          "focus": {
+            "asset": "m401-cbdb2c7c69"
+          }
+        },
+        {
+          "id": "visibility",
+          "title": "確保標誌可視性與反應距離",
+          "text": "檢核道路線形、植栽及其他設施對標誌視認的影響，確保駕駛人在到達危險處所前，能完成必要的減速與停等準備。",
+          "focus": {
+            "asset": "m401-a614a49c08"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
         "24–55-2",
-        "48",
-        "29"
-      ]
+        "29",
+        "48"
+      ],
+      "imageFit": "contain"
     },
     {
       "id": "m401-local-extensions",
@@ -248,20 +264,18 @@
       "section": "module",
       "submoduleId": "M4-01.2",
       "title": "路段危險警示｜現況議題與相關條文",
-      "intro": "把起點預告、沿線方向及危險持續範圍連成完整資訊。",
+      "intro": "危險彎道路段除須提前警告駕駛人外，亦應持續提供道路線形及危險範圍資訊，使駕駛人能依實際道路條件調整行駛速度。",
       "assets": [
         "m401-a6bae42a3b"
       ],
       "points": [
         {
           "id": "continuity",
-          "title": "只在起點警告，難以掌握後續彎道",
-          "text": "駕駛可能在第一個彎道後過早加速，未能預期危險持續的範圍。"
-        },
-        {
-          "id": "load",
-          "title": "標誌重複過多也會增加負擔",
-          "text": "整合起點預告、沿線方向與範圍資訊，並照顧由中途道路駛入的駕駛。"
+          "title": "危險彎道的走向與持續範圍不易辨識",
+          "text": "若僅於路段起點設置警告標誌，缺乏沿線方向導引或危險範圍提示，可能使駕駛人無法預期後續彎道，或通過第一處彎道後過早加速；反之，過度重複設置警告標誌，也可能增加駕駛人的資訊負擔。",
+          "focus": {
+            "asset": "m401-a6bae42a3b"
+          }
         }
       ],
       "sourcePages": [],
@@ -272,14 +286,17 @@
       ],
       "applications": [
         "C4-06"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m401-road-diagram",
       "section": "module",
       "submoduleId": "M4-01.2",
       "title": "路段危險警示｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依危險彎道的線形及辨識需求，配置安全方向導引標誌與彎路警告標誌，結合沿線導引、上游預告及危險範圍提示。",
       "assets": [
         "m401-a6bae42a3b",
         "m401-08de382a19"
@@ -287,28 +304,51 @@
       "points": [
         {
           "id": "need",
-          "title": "依辨識困難與彎道特性判斷需求",
-          "text": "後續走向不清或曲率明顯超出預期時，檢討安全方向導引；緩和彎道無需一律增設。"
+          "title": "依彎道辨識需求決定設置時機",
+          "text": "當駕駛人無法及時看清後續彎道走向，或彎道曲率明顯超出上游路段的行車預期時，應考量設置安全方向導引標誌；較緩和且容易辨識的彎道則不必一律設置。",
+          "focus": {
+            "asset": "m401-a6bae42a3b"
+          }
         },
         {
           "id": "visibility",
-          "title": "彎道至少三面，接近時持續可見",
-          "text": "本指引建議入彎前與彎中隨時可見兩面；同曲率段盡量均勻布設。"
+          "title": "沿彎道配置連續的方向導引",
+          "text": "彎道中至少設置 3 面安全方向導引標誌，並建議使駕駛人於入彎前及彎道中隨時可見至少 2 面，持續掌握後續道路走向。",
+          "focus": {
+            "asset": "m401-a6bae42a3b"
+          }
+        },
+        {
+          "id": "spacing",
+          "title": "依彎道曲率調整設置間距",
+          "text": "同一曲率路段的標誌宜均勻配置；若彎道曲率有所變化，應於曲率半徑較小處加密設置。直線路段間的短距離明顯轉折，亦可使用合併式安全方向導引標誌。",
+          "focus": {
+            "asset": "m401-a6bae42a3b"
+          }
         },
         {
           "id": "criteria",
-          "title": "配合危險彎道條件再加預告",
-          "text": "已配置方向導引，且曲線半徑與視距低於適用條件時，在上游配置對應的彎路標誌。"
+          "title": "依彎道條件增設上游警告",
+          "text": "危險彎道已適當設置安全方向導引標誌後，若曲線半徑及視距符合彎路標誌的設置條件，應於上游增設對應方向的彎路標誌，建議距危險彎道 150～250 m，以提供駕駛人反應時間。",
+          "focus": {
+            "asset": "m401-08de382a19"
+          }
         },
         {
           "id": "range",
-          "title": "連續危險彎道標明範圍",
-          "text": "型式對應第一個危險彎道方向，並搭配適用範圍附牌。"
+          "title": "以連續彎路標誌表達危險範圍",
+          "text": "當道路具有連續危險彎道，或連續彎道中穿插危險彎道時，應設置連續彎路標誌及適用範圍附牌，並使標誌圖案對應第一處危險彎道方向。",
+          "focus": {
+            "asset": "m401-08de382a19"
+          }
         },
         {
           "id": "distance",
-          "title": "預告位置以利駕駛反應",
-          "text": "彎路或連續彎路標誌宜設於危險彎道上游 150–250 m。"
+          "title": "整合上游預告與沿線方向導引",
+          "text": "彎路或連續彎路標誌應與安全方向導引標誌相互配合，避免警告資訊重複或不一致，並檢核由中途道路進入的駕駛人是否能取得必要的警示資訊。",
+          "focus": {
+            "asset": "m401-08de382a19"
+          }
         }
       ],
       "sourcePages": [],
@@ -316,7 +356,9 @@
         "24",
         "25",
         "134"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain"
     },
     {
       "id": "m401-road-extensions",
@@ -371,11 +413,11 @@
     }
   ],
   "referenceNames": {
-    "24": "彎路標誌、",
-    "25": "連續彎路標誌、",
+    "24": "彎路標誌（警1、警2）",
+    "25": "連續彎路標誌（警3、警4）",
     "29": "狹橋標誌",
     "48": "隧道標誌",
-    "134": "安全方向導引標誌",
+    "134": "安全方向導引標誌（輔2）",
     "24–55-2": "警告標誌"
   },
   "submoduleFlows": [
@@ -394,15 +436,44 @@
           "topics": [
             {
               "id": "placement",
-              "label": "警告標誌位置",
+              "label": "依停車視距配置局部危險警告標誌",
               "sourcePageId": "m401-local-diagram",
               "pointIds": [
                 "distance",
-                "relation"
+                "relation",
+                "visibility"
               ],
               "assets": [
                 "m401-a614a49c08",
                 "m401-cbdb2c7c69"
+              ],
+              "imageLayout": "row",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "tunnel",
+                  "label": "隧道標誌（警41）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-a614a49c08"
+                  }
+                },
+                {
+                  "id": "bridge",
+                  "label": "狹橋標誌（警10）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-cbdb2c7c69"
+                  }
+                },
+                {
+                  "id": "warnings",
+                  "label": "其他適用的警告標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-a614a49c08"
+                  }
+                }
               ]
             }
           ]
@@ -442,19 +513,31 @@
           "topics": [
             {
               "id": "direction",
-              "label": "安全方向導引",
+              "label": "以安全方向導引標誌提示彎道走向",
               "sourcePageId": "m401-road-diagram",
               "pointIds": [
                 "need",
-                "visibility"
+                "visibility",
+                "spacing"
               ],
               "assets": [
                 "m401-a6bae42a3b"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "direction",
+                  "label": "安全方向導引標誌（輔2）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-a6bae42a3b"
+                  }
+                }
               ]
             },
             {
               "id": "warning",
-              "label": "彎路與連續彎路標誌",
+              "label": "以彎路標誌預告危險及其持續範圍",
               "sourcePageId": "m401-road-diagram",
               "pointIds": [
                 "criteria",
@@ -463,6 +546,33 @@
               ],
               "assets": [
                 "m401-08de382a19"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "curve",
+                  "label": "彎路標誌（警1、警2）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-08de382a19"
+                  }
+                },
+                {
+                  "id": "continuous",
+                  "label": "連續彎路標誌（警3、警4）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-08de382a19"
+                  }
+                },
+                {
+                  "id": "range",
+                  "label": "危險範圍附牌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-08de382a19"
+                  }
+                }
               ]
             }
           ]
@@ -487,5 +597,8 @@
         }
       ]
     }
+  ],
+  "hiddenPages": [
+    "m401-overview"
   ]
 }

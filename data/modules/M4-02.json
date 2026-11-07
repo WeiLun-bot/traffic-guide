@@ -1,7 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "M4-02",
-  "directoryAssets": ["m402-b18c7d1f2f", "m402-ae32e39564"],
+  "directoryAssets": [
+    "m402-b18c7d1f2f",
+    "m402-ae32e39564"
+  ],
   "title": "通行限制",
   "source": {
     "file": "13-access-restriction.typ",
@@ -48,25 +51,26 @@
       "section": "module",
       "submoduleId": "M4-02.1",
       "title": "車種與通行條件限制｜現況議題與相關條文",
-      "intro": "把限制條件、改道準備與實際管制起點一起說清楚。",
+      "intro": "車種、限重、限寬及限高等通行限制，應整合管制起點、上游預告與改道需求，並使限制數值符合實際可通行空間。",
       "assets": [
         "m402-restriction-issue-photo-1"
       ],
       "points": [
         {
           "id": "exit",
-          "title": "到達瓶頸才知道受限，可能無法退出",
-          "text": "橋涵或隧道前若缺少安全改道、迴轉空間，容易形成倒車、停滯或碰撞風險。"
-        },
-        {
-          "id": "scope",
-          "title": "上游預告與實際管制起點不清",
-          "text": "限制範圍及受限對象需明確，並兼顧沿線目的地的通達需求。"
+          "title": "管制起點未兼顧改道與沿線通達需求",
+          "text": "若僅於橋涵、隧道等瓶頸前設置限制標誌，受限車輛可能已無適當空間迴轉或改道；若過度提前管制，則可能不必要地限制沿線目的地的通達。",
+          "focus": {
+            "asset": "m402-restriction-issue-photo-1"
+          }
         },
         {
           "id": "values",
-          "title": "標示值需對應實際可通行空間",
-          "text": "依結構尺寸與安全餘裕檢核，避免牌面數值與現況不符。"
+          "title": "限制數值與實際可通行空間不符",
+          "text": "限高、限寬等限制若未依實際結構尺寸及必要安全餘裕檢核，可能使標誌所示的通行條件與道路實際可通行空間不符，影響車輛通行安全。",
+          "focus": {
+            "asset": "m402-restriction-issue-photo-1"
+          }
         }
       ],
       "sourcePages": [],
@@ -82,14 +86,17 @@
         "G1-06",
         "C1-01",
         "C2-02"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m402-restriction-diagram",
       "section": "module",
       "submoduleId": "M4-02.1",
       "title": "車種與通行條件限制｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依據實際限制位置、受限車輛改道需求及道路可通行條件，配置限制標誌與上游導引資訊，使駕駛人能提前辨識並選擇適當行駛路徑。",
       "assets": [
         "m402-b18c7d1f2f",
         "m402-ae32e39564"
@@ -97,23 +104,43 @@
       "points": [
         {
           "id": "start",
-          "title": "原則設於限制開始適用處",
-          "text": "需要提前告知時，以距離附牌或告示牌區分預告與實際限制起點；警告性限高門架亦同。"
-        },
-        {
-          "id": "avoid",
-          "title": "不因單一瓶頸一律限制整段道路",
-          "text": "先確認受限車輛是否仍需到達沿線目的地。"
+          "title": "區分實際管制起點與上游預告",
+          "text": "車種及通行條件限制原則設於實際限制起點；若需提前提醒駕駛人，應搭配距離附牌或告示牌，明確區分上游預告位置與實際管制起點。",
+          "focus": {
+            "asset": "m402-b18c7d1f2f"
+          }
         },
         {
           "id": "exceptions",
-          "title": "退出困難時選擇適當上游位置",
-          "text": "瓶頸前無法迴轉、駛入後無法退出，或中間沒有受限車輛需到達的目的地時，再檢討提前管制。"
+          "title": "依改道與沿線通達需求調整限制起點",
+          "text": "當瓶頸前缺乏適當迴轉空間，或車輛進入後無法退出，且不影響沿線必要目的地通達時，可將限制起點提前至適當位置，避免車輛進入後無法安全改道。",
+          "focus": {
+            "asset": "m402-ae32e39564"
+          }
         },
         {
           "id": "vehicle",
-          "title": "各接近方向提前表達限制",
-          "text": "離開路口即限制某車種進入時，相關遵行方向標誌可加入車輛圖案，讓駕駛提早選擇正確方向。"
+          "title": "於各接近方向提供車種與行向資訊",
+          "text": "當車種限制設於路口下游時，應於各接近方向配合設置遵行方向標誌，並於牌面加入受限車種圖案，使駕駛人在進入路口前即可辨識可行駛方向。",
+          "focus": {
+            "asset": "m402-b18c7d1f2f"
+          }
+        },
+        {
+          "id": "height",
+          "title": "依實際高度與安全淨高檢核限高數值",
+          "text": "限高數值應以車輛可行駛寬度範圍內的實際高度為基礎，扣除必要安全淨高；本指引以 0.20～0.50 m 作為安全餘裕的檢討示例。",
+          "focus": {
+            "asset": "m402-b18c7d1f2f"
+          }
+        },
+        {
+          "id": "width",
+          "title": "依結構寬度與兩側淨寬檢核限寬數值",
+          "text": "限寬數值應由實際結構寬度扣除兩側必要安全淨寬；本指引以兩側各保留 0.25 m 為示例，確保標示數值與可通行空間相符。",
+          "focus": {
+            "asset": "m402-ae32e39564"
+          }
         }
       ],
       "sourcePages": [],
@@ -124,7 +151,8 @@
         "81",
         "82",
         "83"
-      ]
+      ],
+      "imageFit": "contain"
     },
     {
       "id": "m402-restriction-extensions",
@@ -208,38 +236,109 @@
           "topics": [
             {
               "id": "start",
-              "label": "管制起點與預告",
+              "label": "整合限制起點、上游預告與改道導引",
               "sourcePageId": "m402-restriction-diagram",
               "pointIds": [
-                "start"
-              ],
-              "assets": [
-                "m402-b18c7d1f2f",
-                "m402-ae32e39564"
-              ]
-            },
-            {
-              "id": "upstream",
-              "label": "何時提前限制起點",
-              "sourcePageId": "m402-restriction-diagram",
-              "pointIds": [
-                "avoid",
-                "exceptions"
-              ],
-              "assets": [
-                "m402-b18c7d1f2f",
-                "m402-ae32e39564"
-              ]
-            },
-            {
-              "id": "directions",
-              "label": "路口方向標誌配合車種限制",
-              "sourcePageId": "m402-restriction-diagram",
-              "pointIds": [
+                "start",
+                "exceptions",
                 "vehicle"
               ],
               "assets": [
-                "m402-b18c7d1f2f"
+                "m402-b18c7d1f2f",
+                "m402-ae32e39564"
+              ],
+              "imageLayout": "row",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "vehicle",
+                  "label": "指定某種車輛禁止進入標誌（禁2～禁15）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-b18c7d1f2f"
+                  }
+                },
+                {
+                  "id": "weight",
+                  "label": "車輛總重限制標誌（限1）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-ae32e39564"
+                  }
+                },
+                {
+                  "id": "width",
+                  "label": "車輛寬度限制標誌（限2）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-ae32e39564"
+                  }
+                },
+                {
+                  "id": "height",
+                  "label": "車輛高度限制標誌（限3）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-b18c7d1f2f"
+                  }
+                },
+                {
+                  "id": "directions",
+                  "label": "道路及車道遵行方向標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-b18c7d1f2f"
+                  }
+                },
+                {
+                  "id": "advance",
+                  "label": "距離附牌及告示牌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-b18c7d1f2f"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "dimensions",
+              "label": "依實際結構尺寸檢核限制數值",
+              "sourcePageId": "m402-restriction-diagram",
+              "pointIds": [
+                "height",
+                "width"
+              ],
+              "assets": [
+                "m402-b18c7d1f2f",
+                "m402-ae32e39564"
+              ],
+              "imageLayout": "row",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "height",
+                  "label": "車輛高度限制標誌（限3）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-b18c7d1f2f"
+                  }
+                },
+                {
+                  "id": "width",
+                  "label": "車輛寬度限制標誌（限2）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m402-ae32e39564"
+                  }
+                },
+                {
+                  "id": "structure",
+                  "label": "實際結構尺寸與安全淨空",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m402-b18c7d1f2f"
+                  }
+                }
               ]
             }
           ]

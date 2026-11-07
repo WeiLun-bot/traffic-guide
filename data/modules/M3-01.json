@@ -272,20 +272,20 @@
       "section": "module",
       "submoduleId": "M3-01.1",
       "title": "人行道標線｜現況議題與相關條文",
-      "intro": "讓人行空間跨越路段與轉角，形成連續的步行路徑。",
+      "intro": "人行道標線可於缺乏實體人行道的道路提供步行空間，惟仍須兼顧人行動線連續性及道路速率環境，才能維持行人通行安全。",
       "assets": [
         "m301-sidewalk-issue-photo-1"
       ],
       "points": [
         {
           "id": "continuity",
-          "title": "人行動線在轉角與路段銜接處中斷",
-          "text": "標線偏移、寬度不足或不連續，可能迫使行人繞行或走入車道。"
+          "title": "人行道標線缺乏連續性",
+          "text": "人行道標線常以局部路段個別劃設，未能整體考量前後路段及路口轉角的銜接，容易出現標線中斷、偏移或寬度不足等情形，迫使行人繞行或進入車道。"
         },
         {
           "id": "protection",
-          "title": "標線不能取代實體防護",
-          "text": "原則用於速限 30 km/h 以下環境；速限較高或人車衝突風險高時，應檢討實體人行道或分隔設施。"
+          "title": "高車速或高衝突環境仍僅以標線區隔",
+          "text": "人行道標線不具實體防護功能，原則適用於速限 30 km/h 以下的道路。若道路車速較高或人車衝突風險較大，仍僅以標線區隔人車空間，可能難以提供足夠的行人安全防護。"
         }
       ],
       "sourcePages": [],
@@ -304,7 +304,7 @@
       "section": "module",
       "submoduleId": "M3-01.1",
       "title": "人行道標線｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依道路速率及人車衝突風險選擇適當的人行空間設施，並整合前後路段、路口轉角及車輛轉彎軌跡，建立連續且安全的步行動線。",
       "assets": [
         "m301-1ce77bf207",
         "m301-7f710fdd90"
@@ -312,18 +312,35 @@
       "points": [
         {
           "id": "sidewalk",
-          "title": "無實體人行道時安排步行空間",
-          "text": "可於路面劃設人行道標線，並使交叉口各側彼此銜接。"
+          "title": "依道路條件選擇人車分隔方式",
+          "text": "道路缺乏實體人行道時，可利用人行道標線提供步行空間，原則適用於速限 30 km/h 以下的環境；當車速較高或人車衝突風險較大時，應考量實體人行道或其他適當的阻隔設施。",
+          "focus": {
+            "asset": "m301-1ce77bf207"
+          }
         },
         {
           "id": "connection",
-          "title": "前後路段與轉角一起規劃",
-          "text": "避免在路口開口、車道出入口或轉角處中斷行人動線。"
+          "title": "確保前後路段與路口動線連續",
+          "text": "人行道標線應整體銜接前後路段及路口各側的人行空間，避免於路口轉角或道路交會處中斷，提供行人連續的通行路徑。",
+          "focus": {
+            "asset": "m301-7f710fdd90"
+          }
         },
         {
           "id": "turning",
-          "title": "線形配合設計車種",
-          "text": "依轉彎軌跡檢核轉角曲率，並配合市區道路或公路適用的設計規範。"
+          "title": "配合設計車種檢核轉角曲率",
+          "text": "路口轉角的人行道標線應依設計車種轉彎軌跡調整線形，兼顧車輛轉彎所需空間及人行空間配置，避免車輛轉彎時侵入人行空間。",
+          "focus": {
+            "asset": "m301-7f710fdd90"
+          }
+        },
+        {
+          "id": "corner-connection",
+          "title": "維持轉角人行動線順暢銜接",
+          "text": "轉角線形應與相鄰路段的人行道標線連續銜接，避免形成不必要的動線偏移或繞行。",
+          "focus": {
+            "asset": "m301-7f710fdd90"
+          }
         }
       ],
       "sourcePages": [],
@@ -360,8 +377,8 @@
       "section": "module",
       "submoduleId": "M3-01.2",
       "title": "路口穿越｜現況議題與相關條文",
-      "intro": "把穿越路徑、停等空間與行人號誌一起檢查。",
-      "defaultView": "pair",
+      "intro": "路口行人穿越設施應兼顧穿越動線、距離、停等空間及號誌辨識性，提供行人安全且連續的通行環境。",
+      "defaultView": "single",
       "assets": [
         "m301-crossing-issue-photo-1",
         "m301-crossing-issue-photo-2"
@@ -369,18 +386,27 @@
       "points": [
         {
           "id": "marking",
-          "title": "枕木紋方向與車流不一致",
-          "text": "標線辨識性與銜接方式，需配合車流方向及人行道開口檢查。"
+          "title": "行人穿越道線方向及銜接不當",
+          "text": "枕木紋行人穿越道線未與車流方向平行，或與兩側人行道開口銜接不良，可能影響標線辨識性及行人穿越動線的連續性。",
+          "focus": {
+            "asset": "m301-crossing-issue-photo-1"
+          }
         },
         {
           "id": "distance",
-          "title": "寬闊或斜交路口穿越距離過長",
-          "text": "穿越長度達 15 m 以上宜設庇護島，達 25 m 以上應設置，並可利用中央分隔島。"
+          "title": "穿越距離過長且缺乏庇護空間",
+          "text": "寬闊或斜交路口的行人穿越距離較長，若缺乏行人庇護島，將增加行人暴露於車流中的時間，並提高高齡者、兒童及行動不便者的穿越負擔。",
+          "focus": {
+            "asset": "m301-crossing-issue-photo-1"
+          }
         },
         {
           "id": "signals",
-          "title": "行人不容易找到應遵循的燈面",
-          "text": "位置偏離、朝向不當或遮擋，都可能使行人誤判路口的管制方式。"
+          "title": "行人專用號誌辨識性不足",
+          "text": "行人號誌位置偏離穿越路徑、燈面朝向不當或受到遮蔽，可能使行人難以找到應遵循的燈面，甚至誤判路口的號誌管制方式。",
+          "focus": {
+            "asset": "m301-crossing-issue-photo-2"
+          }
         }
       ],
       "sourcePages": [],
@@ -394,14 +420,16 @@
         "222",
         "231"
       ],
-      "applicationNote": "通用模組，適用於各類號誌化路口行人穿越情境。"
+      "applicationNote": "通用模組，適用於各類號誌化路口行人穿越情境。",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m301-crossing-diagram",
       "section": "module",
       "submoduleId": "M3-01.2",
       "title": "路口穿越｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "透過行人穿越道線、庇護空間及行人專用號誌的整合配置，明確引導行人穿越路徑，並確保行人能正確辨識通行燈號。",
       "assets": [
         "m301-d5772b64b2",
         "m301-4b73804d52",
@@ -410,78 +438,84 @@
         "m301-49391268dd",
         "m301-7c404c416a",
         "m301-3813d0ba8d",
-        "m301-b5bb22f221"
+        "m301-b5bb22f221",
+        "m301-6c801912e9",
+        "m301-c4c1d1f196",
+        "m301-6ace818928",
+        "m301-5e86427a67"
       ],
       "points": [
         {
           "id": "orientation",
-          "title": "枕木紋平行車流方向",
-          "text": "配合人行道開口與道路邊緣銜接，維持清楚、連續的穿越路徑。"
-        },
-        {
-          "id": "edge",
-          "title": "從路側邊緣開始劃設",
-          "text": "可自緣石、人行道標線或禁臨停線邊緣起畫；遇交通島採分段處理。"
-        },
-        {
-          "id": "guide",
-          "title": "視覺功能障礙引導標線銜接兩端",
-          "text": "有需求、距離長或斜交時，可檢討引導標線，並對準人行道定位磚。"
+          "title": "枕木紋方向應平行車流",
+          "text": "枕木紋應平行車輛行駛方向，並與兩側人行道開口銜接。行穿線可自緣石、人行道標線或禁止臨時停車線邊緣開始劃設，遇交通島時應分段處理。",
+          "focus": {
+            "asset": "m301-d5772b64b2"
+          }
         },
         {
           "id": "refuge",
-          "title": "穿越距離與中途停等一起規劃",
-          "text": "配合庇護島檢討分段穿越；完整導盲設計參照市區道路人行道路口導盲設施設計指南。"
+          "title": "依穿越距離配置庇護空間",
+          "text": "行人穿越道長度達 15 m 以上宜設置庇護島，達 25 m 以上應設置，並可利用中央分隔島提供分段穿越及停等空間。",
+          "focus": {
+            "asset": "m301-d5772b64b2"
+          }
         },
         {
-          "id": "diagonal",
-          "title": "行人專用時相可搭配對角線",
-          "text": "依需求劃設 X 字型平行白色實線。"
-        },
-        {
-          "id": "hours",
-          "title": "時段性實施需標示時間",
-          "text": "在對角線四個端點布設時段標字，讓行人辨識開放時間。"
-        },
-        {
-          "id": "roadside",
-          "title": "路側式號誌配合來車方向",
-          "text": "本指引建議可朝來車方向安排燈面，讓行人在等候位置容易辨認。"
-        },
-        {
-          "id": "base",
-          "title": "基座埋於鋪面下",
-          "text": "減少突出障礙，並檢核燈面與穿越路徑的水平距離及縱深。"
-        },
-        {
-          "id": "size",
-          "title": "依尺寸圖檢查燈面與按鈕",
-          "text": "同時檢視燈箱、按鈕與安裝位置，避免因共桿設置降低可辨識性。"
-        },
-        {
-          "id": "pole",
-          "title": "與行車管制號誌共桿時分別檢核",
-          "text": "燈面朝向與行人路徑對應，保留行走淨空與操作空間。"
+          "id": "guide",
+          "title": "配合視覺功能障礙者通行需求",
+          "text": "於穿越距離較長或斜交路口，可依需求設置視覺功能障礙引導標線，並銜接兩端人行道及定位磚，提供連續的方向引導。",
+          "focus": {
+            "asset": "m301-d5772b64b2"
+          }
         },
         {
           "id": "search",
-          "title": "檢查等候位置能否清楚看見",
-          "text": "燈面若偏離預期搜尋範圍，行人可能未察覺該處有號誌管制。"
+          "title": "燈面位置應對應行人穿越路徑",
+          "text": "依行人等候位置及穿越方向配置燈面，檢核號誌與穿越路徑的水平距離及縱深，避免燈面偏離行人的視覺搜尋範圍。",
+          "focus": {
+            "asset": "m301-881f861887"
+          }
         },
         {
           "id": "standard",
-          "title": "優先採用標準配置",
-          "text": "對照圖例確認燈面、按鈕與穿越路徑的相對位置。"
+          "title": "優先採用容易辨識的號誌配置",
+          "text": "可採路側式或適當的共桿配置，使行人於等候位置清楚辨識燈號；號誌基座宜設於鋪面以下，減少突出障礙及碰撞風險。",
+          "focus": {
+            "asset": "m301-49391268dd"
+          }
         },
         {
           "id": "flashing",
-          "title": "行車號誌閃光運轉時",
-          "text": "行人紅燈採閃光顯示；行人先停止、確認左右來車並注意安全後再穿越。"
+          "title": "配合行車號誌運轉方式設定燈號",
+          "text": "設有行人觸動號誌時，應配合行車號誌運轉：行車號誌採閃光運轉時，行人紅燈採閃光顯示；行車號誌採三色運轉且綠燈恆亮時，建議行人紅燈維持恆亮。",
+          "focus": {
+            "asset": "m301-881f861887"
+          }
         },
         {
-          "id": "steady",
-          "title": "行車綠燈恆亮時",
-          "text": "行車號誌採三色運轉、綠燈恆亮時，本指引建議行人紅燈維持恆亮。"
+          "id": "diagonal",
+          "title": "以對角線標線提供全向穿越",
+          "text": "設有行人專用時相的路口，可依實際需求劃設 X 字型對角線行人穿越道線；若僅於特定時段實施，應於對角線四端標示適用時段。",
+          "focus": {
+            "asset": "m301-4b73804d52"
+          }
+        },
+        {
+          "id": "direction",
+          "title": "增設對應斜向穿越的行人號誌",
+          "text": "除一般方向燈面外，可依對角線穿越路徑增設斜向燈面，朝向等候行人的穿越路徑，減少側看其他方向燈面的情形。斜向燈面僅於行人專用時相顯示綠燈，其餘時間顯示紅燈，並與一般方向行人號誌協調。",
+          "focus": {
+            "asset": "m301-6c801912e9"
+          }
+        },
+        {
+          "id": "hours",
+          "title": "以告示牌說明行人專用時相",
+          "text": "行人專用時相告示牌應與所說明燈面明確對應，可設於側方、上方或下方；設於下方時應檢查最低點淨高與突出範圍。必要時於面向人行道側補充相同資訊，讓等候位置與上游均能辨識；採時段性實施時，以附牌標示適用日別及時間，避免誤判開放時段。",
+          "focus": {
+            "asset": "m301-6ace818928"
+          }
         }
       ],
       "sourcePages": [],
@@ -500,58 +534,10 @@
       "id": "m301-crossing-extensions",
       "section": "module",
       "submoduleId": "M3-01.2",
-      "title": "全向穿越的斜向燈面",
-      "intro": "把穿越路徑、停等空間與行人號誌一起檢查。",
-      "assets": [
-        "m301-6c801912e9",
-        "m301-c4c1d1f196"
-      ],
-      "points": [
-        {
-          "id": "direction",
-          "title": "燈面朝向對角線穿越路徑",
-          "text": "讓等候的行人直接辨識，減少側看其他方向燈面的情形。"
-        },
-        {
-          "id": "timing",
-          "title": "僅在行人專用時相顯示綠燈",
-          "text": "其餘時間顯示紅燈，並與一般方向的行人號誌協調。"
-        }
-      ],
-      "sourcePages": [],
-      "references": [
-        "185",
-        "185-1",
-        "194",
-        "200",
-        "201",
-        "220",
-        "222",
-        "231"
-      ]
-    },
-    {
-      "id": "m301-crossing-extension-signs",
-      "section": "module",
-      "submoduleId": "M3-01.2",
-      "title": "行人專用時相告示",
-      "intro": "把穿越路徑、停等空間與行人號誌一起檢查。",
-      "assets": [
-        "m301-6ace818928",
-        "m301-5e86427a67"
-      ],
-      "points": [
-        {
-          "id": "relation",
-          "title": "告示與所說明燈面明確對應",
-          "text": "可設於側方、上方或下方；設於下方時特別檢查最低點淨高與突出範圍。"
-        },
-        {
-          "id": "visibility",
-          "title": "等候位置與上游都要看得懂",
-          "text": "必要時在面向人行道的一側補充相同資訊；時段性實施時加設日別與時段附牌。"
-        }
-      ],
+      "title": "路口穿越｜延伸應用",
+      "intro": "依特殊場地條件及視覺功能障礙者需求，補充行人號誌的配置方式。",
+      "assets": [],
+      "points": [],
       "sourcePages": [],
       "references": [
         "185",
@@ -633,8 +619,8 @@
       "section": "module",
       "submoduleId": "M3-01.3",
       "title": "路段穿越｜現況議題與相關條文",
-      "intro": "在路段中提供清楚的穿越提示與分段停等空間。",
-      "defaultView": "pair",
+      "intro": "路段中行人穿越應兼顧穿越位置辨識、車輛減速及行人停等空間，避免僅依賴行人穿越道線提供安全保障。",
+      "defaultView": "single",
       "assets": [
         "m301-midblock-issue-photo-1",
         "m301-midblock-issue-photo-2"
@@ -642,13 +628,27 @@
       "points": [
         {
           "id": "types",
-          "title": "路口與路段的穿越型式混用",
-          "text": "標線型式與位置需配合適用情境，讓駕駛清楚辨識穿越處。"
+          "title": "路口與路段穿越標線型式混用",
+          "text": "部分路段中穿越位置仍混用斑馬紋與枕木紋行人穿越道線，未依不同設置情境選用適當標線，影響駕駛人對行人穿越位置及管制方式的辨識。",
+          "focus": {
+            "asset": "m301-midblock-issue-photo-1"
+          }
         },
         {
           "id": "distance",
-          "title": "只畫行穿線仍可能缺乏保護",
-          "text": "寬路幅或較高速環境，需一起檢討庇護島、減速與分段停等空間。"
+          "title": "穿越距離過長且缺乏庇護空間",
+          "text": "路幅較寬的路段中穿越位置，常僅劃設行人穿越道線，缺乏庇護島、車道縮減或減速設施，使行人單次穿越距離過長，且缺乏中途停等空間。",
+          "focus": {
+            "asset": "m301-midblock-issue-photo-2"
+          }
+        },
+        {
+          "id": "warning",
+          "title": "行人穿越位置缺乏提前提示",
+          "text": "路段中行人穿越位置若缺乏適當的預告及警示設施，尤其在視距不足或車速較高的環境，駕駛人可能無法及早察覺行人穿越需求並採取減速、停讓措施。",
+          "focus": {
+            "asset": "m301-midblock-issue-photo-2"
+          }
         }
       ],
       "sourcePages": [],
@@ -665,47 +665,93 @@
       ],
       "applications": [
         "C4-05"
-      ]
+      ],
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m301-midblock-diagram",
       "section": "module",
       "submoduleId": "M3-01.3",
       "title": "路段穿越｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "透過行人庇護島、錯開式穿越及標誌號誌警示，縮短行人單次穿越距離，並引導駕駛人提前辨識穿越位置及減速停讓。",
       "assets": [
-        "m301-c80421bad4"
+        "m301-c80421bad4",
+        "m301-c1e58a61de"
       ],
       "points": [
         {
           "id": "refuge",
           "title": "縮短單次穿越距離",
-          "text": "提供中途停等與避護空間，並搭配道路線形及減速設計。"
+          "text": "於路幅較寬的路段中穿越位置設置行人庇護島，使行人得以分段穿越不同方向車流，減少單次暴露於車道中的時間，並提供中途停等空間。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
+        },
+        {
+          "id": "speed",
+          "title": "配合道路線形引導車輛減速",
+          "text": "透過庇護島、車道縮減及減速標線等設施，增加穿越位置的辨識性，引導駕駛人在接近行人穿越處時降低車速。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
         },
         {
           "id": "demand",
-          "title": "需求較低時也可檢討庇護空間",
-          "text": "尚未達劃設斑馬紋行穿線的程度時，仍可依路幅與交通條件檢討分段穿越。"
+          "title": "依交通條件評估庇護空間",
+          "text": "即使行人穿越需求較低，尚未達劃設斑馬紋行穿線的程度，仍可依道路寬度及交通條件設置庇護島，提供行人分段穿越與臨時等候空間。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
         },
         {
           "id": "stagger",
-          "title": "讓行人在島內面向下一階段來車",
-          "text": "兩側穿越道沿路段方向錯開，配合島內轉向動線，依序觀察不同方向車流。"
+          "title": "將雙向車流分為兩階段穿越",
+          "text": "將道路兩側的行人穿越道沿道路方向錯開，使行人先穿越一個方向的車流，再經由庇護島內的導引動線，接續穿越另一方向車流。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
+        },
+        {
+          "id": "direction",
+          "title": "使行人自然面向下一階段來車",
+          "text": "錯開方向應配合車流行駛方向，使行人在庇護島內移動及停等時，自然面向下一階段的來車方向，降低同時判斷雙向車流的負擔。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
         },
         {
           "id": "distance",
-          "title": "上游預告保留反應距離",
-          "text": "當心行人標誌建議設於斑馬線上游路側 30–100 m，並配合停車視距。"
+          "title": "於上游提前警告行人穿越需求",
+          "text": "當心行人標誌建議設於行穿線上游 30～100 m 的路側，提醒駕駛人提前注意行人穿越及減速需求；當自行車穿越道緊鄰行穿線，且視距不足或車速較高時，可增設當心自行車標誌。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
         },
         {
           "id": "position",
-          "title": "警告與確切位置提示分開檢視",
-          "text": "上游警告標誌與穿越點指示功能不同；本圖暫以當心行人標誌示意穿越位置。"
+          "title": "區分提前警告與穿越位置指示",
+          "text": "當心行人標誌主要提供上游警告，並非指示行穿線確切位置；應搭配適當的標誌標線，明確提示行人穿越位置。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
         },
         {
-          "id": "cycle",
-          "title": "自行車穿越也需提醒來車",
-          "text": "鄰接自行車穿越道，且視距不足或車速較高時，可檢討當心自行車標誌。"
+          "id": "yellow",
+          "title": "以雙閃黃燈強化減速停讓提醒",
+          "text": "視需要設置行人穿越道號誌，利用並列圓形雙閃黃燈提醒駕駛人減速慢行，遇行人穿越時應暫停讓行。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          },
+          "illustration": "m301-c1e58a61de"
+        },
+        {
+          "id": "placement",
+          "title": "配合行穿線配置號誌燈面",
+          "text": "行人穿越道號誌應設於斑馬紋行穿線前、靠近停止線的位置，原則每方向設置一燈面，必要時得增設，以提高穿越位置的辨識性。",
+          "focus": {
+            "asset": "m301-c80421bad4"
+          }
         }
       ],
       "sourcePages": [],
@@ -765,7 +811,7 @@
     "41": "當心行人標誌",
     "46": "當心自行車標誌",
     "64": "靠右行駛標誌",
-    "119": "行人穿越道標誌、",
+    "119": "行人穿越道標誌",
     "162": "危險標記",
     "185": "枕木紋行人穿越道線",
     "186": "斑馬紋行人穿越道線",
@@ -796,26 +842,68 @@
           "topics": [
             {
               "id": "continuity",
-              "label": "連續人行動線",
+              "label": "依道路環境設置連續人行空間",
               "sourcePageId": "m301-sidewalk-diagram",
+              "assets": [
+                "m301-1ce77bf207",
+                "m301-7f710fdd90"
+              ],
+              "imageLayout": "row",
               "pointIds": [
                 "sidewalk",
                 "connection"
               ],
-              "assets": [
-                "m301-1ce77bf207",
-                "m301-7f710fdd90"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "sidewalk",
+                  "label": "人行道標線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-1ce77bf207"
+                  }
+                },
+                {
+                  "id": "barrier",
+                  "label": "實體阻隔設施",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-7f710fdd90"
+                  }
+                }
               ]
             },
             {
               "id": "turning",
-              "label": "轉角與車輛軌跡",
+              "label": "依車輛轉彎軌跡調整轉角線形",
               "sourcePageId": "m301-sidewalk-diagram",
-              "pointIds": [
-                "turning"
-              ],
               "assets": [
+                "m301-1ce77bf207",
                 "m301-7f710fdd90"
+              ],
+              "imageLayout": "row",
+              "pointIds": [
+                "turning",
+                "corner-connection"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "sidewalk",
+                  "label": "人行道標線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-1ce77bf207"
+                  }
+                },
+                {
+                  "id": "trajectory",
+                  "label": "設計車輛轉彎軌跡",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-7f710fdd90"
+                  }
+                }
               ]
             }
           ]
@@ -850,91 +938,136 @@
           "topics": [
             {
               "id": "markings",
-              "label": "枕木紋行穿線",
+              "label": "配置連續的行人穿越動線與庇護空間",
               "sourcePageId": "m301-crossing-diagram",
+              "assets": [
+                "m301-d5772b64b2"
+              ],
               "pointIds": [
                 "orientation",
-                "edge"
+                "refuge",
+                "guide"
               ],
-              "assets": [
-                "m301-d5772b64b2",
-                "m301-f381b3cba3"
-              ]
-            },
-            {
-              "id": "tactile",
-              "label": "導盲與庇護空間",
-              "sourcePageId": "m301-crossing-diagram",
-              "pointIds": [
-                "guide",
-                "refuge"
-              ],
-              "assets": [
-                "m301-4b73804d52",
-                "m301-f381b3cba3"
-              ]
-            },
-            {
-              "id": "diagonal",
-              "label": "對角線穿越",
-              "sourcePageId": "m301-crossing-diagram",
-              "pointIds": [
-                "diagonal",
-                "hours"
-              ],
-              "assets": [
-                "m301-4b73804d52"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "marking",
+                  "label": "枕木紋行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-d5772b64b2"
+                  }
+                },
+                {
+                  "id": "refuge",
+                  "label": "行人庇護島",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-d5772b64b2"
+                  }
+                },
+                {
+                  "id": "guide",
+                  "label": "視覺功能障礙引導標線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-d5772b64b2"
+                  }
+                }
               ]
             },
             {
               "id": "position",
-              "label": "行人號誌位置",
+              "label": "依行人穿越路徑配置專用號誌",
               "sourcePageId": "m301-crossing-diagram",
-              "pointIds": [
-                "roadside",
-                "base"
-              ],
-              "assets": [
-                "m301-d5772b64b2"
-              ]
-            },
-            {
-              "id": "dimensions",
-              "label": "尺寸與共桿配置",
-              "sourcePageId": "m301-crossing-diagram",
-              "pointIds": [
-                "size",
-                "pole"
-              ],
               "assets": [
                 "m301-881f861887",
                 "m301-49391268dd"
-              ]
-            },
-            {
-              "id": "examples",
-              "label": "標準與不良配置",
-              "sourcePageId": "m301-crossing-diagram",
+              ],
               "pointIds": [
                 "search",
-                "standard"
+                "standard",
+                "flashing"
               ],
-              "assets": [
-                "m301-7c404c416a",
-                "m301-3813d0ba8d",
-                "m301-b5bb22f221"
-              ]
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "signals",
+                  "label": "行人專用號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-881f861887"
+                  }
+                },
+                {
+                  "id": "button",
+                  "label": "行人觸動按鈕",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-881f861887"
+                  }
+                },
+                {
+                  "id": "pole",
+                  "label": "號誌桿柱及基座",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-49391268dd"
+                  }
+                }
+              ],
+              "imageLayout": "row"
             },
             {
-              "id": "pushbutton",
-              "label": "行人觸動號誌",
+              "id": "diagonal",
+              "label": "配合行人專用時相設置對角線穿越",
               "sourcePageId": "m301-crossing-diagram",
-              "pointIds": [
-                "flashing",
-                "steady"
-              ],
               "assets": [
-                "m301-881f861887"
+                "m301-4b73804d52",
+                "m301-6c801912e9",
+                "m301-c4c1d1f196",
+                "m301-6ace818928",
+                "m301-5e86427a67"
+              ],
+              "pointIds": [
+                "diagonal",
+                "direction",
+                "hours"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "diagonal",
+                  "label": "對角線行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-4b73804d52"
+                  }
+                },
+                {
+                  "id": "signals",
+                  "label": "行人專用號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-6c801912e9"
+                  }
+                },
+                {
+                  "id": "notice",
+                  "label": "行人專用時相告示牌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-6ace818928"
+                  }
+                },
+                {
+                  "id": "hours",
+                  "label": "時段標字及附牌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-5e86427a67"
+                  }
+                }
               ]
             }
           ]
@@ -943,18 +1076,8 @@
           "id": "extensions",
           "pageId": "m301-crossing-extensions",
           "title": "延伸應用",
-          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "intro": "依特殊場地條件及視覺功能障礙者需求，補充行人號誌的配置方式。",
           "topics": [
-            {
-              "id": "diagonal",
-              "label": "全向穿越的斜向燈面",
-              "sourcePageId": "m301-crossing-extensions"
-            },
-            {
-              "id": "signs",
-              "label": "行人專用時相告示",
-              "sourcePageId": "m301-crossing-extension-signs"
-            },
             {
               "id": "limited",
               "label": "特殊場地配置",
@@ -984,38 +1107,130 @@
           "topics": [
             {
               "id": "refuge",
-              "label": "行人庇護島",
+              "label": "以庇護島提供分段穿越空間",
               "sourcePageId": "m301-midblock-diagram",
-              "pointIds": [
-                "refuge",
-                "demand"
-              ],
               "assets": [
                 "m301-c80421bad4"
+              ],
+              "pointIds": [
+                "refuge",
+                "speed",
+                "demand"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "crosswalk",
+                  "label": "斑馬紋行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "island",
+                  "label": "行人庇護島",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "speed",
+                  "label": "車道縮減與減速設施",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                }
               ]
             },
             {
               "id": "stagger",
-              "label": "錯開式穿越",
+              "label": "以錯開式配置引導分階段穿越",
               "sourcePageId": "m301-midblock-diagram",
-              "pointIds": [
-                "stagger"
-              ],
               "assets": [
                 "m301-c80421bad4"
+              ],
+              "pointIds": [
+                "stagger",
+                "direction"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "crosswalk",
+                  "label": "斑馬紋行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "island",
+                  "label": "行人庇護島",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "route",
+                  "label": "島內行人導引動線",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                }
               ]
             },
             {
               "id": "warning",
-              "label": "上游警告與位置提示",
+              "label": "以標誌與號誌強化行人穿越警示",
               "sourcePageId": "m301-midblock-diagram",
+              "assets": [
+                "m301-c80421bad4"
+              ],
               "pointIds": [
                 "distance",
                 "position",
-                "cycle"
+                "yellow",
+                "placement"
               ],
-              "assets": [
-                "m301-c80421bad4"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "pedestrian",
+                  "label": "當心行人標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "cycle",
+                  "label": "當心自行車標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "beacon",
+                  "label": "行人穿越道號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                },
+                {
+                  "id": "crosswalk",
+                  "label": "斑馬紋行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m301-c80421bad4"
+                  }
+                }
               ]
             }
           ]
@@ -1035,5 +1250,8 @@
         }
       ]
     }
+  ],
+  "hiddenPages": [
+    "m301-overview"
   ]
 }

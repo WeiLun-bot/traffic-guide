@@ -135,7 +135,7 @@
       "section": "module",
       "submoduleId": "M3-04.1",
       "title": "公車專用道｜現況議題與相關條文",
-      "intro": "從進出端、島頭到路口轉向，維持公車專用道的清楚辨識。",
+      "intro": "公車專用道應透過連續且明確的車道配置、進出動線及交通管制設施，降低一般車流干擾，並確保公車行駛安全與運行效率。",
       "defaultView": "pair",
       "assets": [
         "m304-lane-issue-photo-1",
@@ -143,14 +143,9 @@
       ],
       "points": [
         {
-          "id": "continuity",
-          "title": "專用道需要連續且清楚的導引",
-          "text": "路段、進出端與路口應一起檢查，減少一般車流與路邊停車的干擾。"
-        },
-        {
           "id": "paths",
-          "title": "公車轉向軌跡較大",
-          "text": "島頭、槽化及進出端若未配合車身長度，可能迫使公車偏移或輾壓交通島。"
+          "title": "交通島配置未配合公車行駛軌跡",
+          "text": "公車車身較長、轉向所需空間較大，若路口交通島未配合公車行駛軌跡及動態包絡範圍設計，可能造成公車輾壓島頭，或為避開交通島而提前偏移車道。"
         }
       ],
       "sourcePages": [],
@@ -170,14 +165,17 @@
         "G4-01",
         "G4-03",
         "C4-03"
-      ]
+      ],
+      "referenceNames": {
+        "74": "禁行方向標誌"
+      }
     },
     {
       "id": "m304-lane-diagram",
       "section": "module",
       "submoduleId": "M3-04.1",
       "title": "公車專用道｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依公車行駛軌跡及專用道進出需求，整合槽化線、車道管制標線與標誌，確保公車行駛動線連續，並明確區分公車專用道與一般車道的通行空間。",
       "assets": [
         "m304-55a30512cf",
         "m304-4ce4616de6"
@@ -185,33 +183,43 @@
       "points": [
         {
           "id": "channel",
-          "title": "實體島頭前保留軌跡修正空間",
-          "text": "部分交通島可改以槽化線過渡，並依公車轉向軌跡與動態包絡檢核。"
+          "title": "以槽化線提供軌跡修正空間",
+          "text": "公車專用道接近路口時，可將部分實體交通島改以槽化線過渡，保留公車行駛或轉向所需的緩衝及軌跡修正空間。",
+          "focus": {
+            "asset": "m304-4ce4616de6"
+          }
+        },
+        {
+          "id": "envelope",
+          "title": "依公車動態包絡範圍檢核島頭位置",
+          "text": "透過公車行駛軌跡模擬，檢核交通島與公車通行空間的關係，避免公車輾壓島頭，或為閃避交通島而提前偏移車道。",
+          "focus": {
+            "asset": "m304-4ce4616de6"
+          }
         },
         {
           "id": "entry",
-          "title": "上游起點方便公車匯入",
-          "text": "公車道側採實線、一般車道側採虛線，配合允許匯入的方向配置。"
-        },
-        {
-          "id": "exit",
-          "title": "近路口提供專用道車輛匯出",
-          "text": "公車道側採虛線、一般車道側採實線，並連接交通島或槽化線。"
+          "title": "以單邊禁止變換車道線引導匯入與匯出",
+          "text": "於公車專用道進出端配置單邊禁止變換車道線。上游起點公車道側為實線、一般車道側為虛線，提供公車匯入；接近路口時則反向配置，公車道側為虛線、一般車道側為實線，提供專用道車輛匯出空間。",
+          "focus": {
+            "asset": "m304-55a30512cf"
+          }
         },
         {
           "id": "bus",
-          "title": "箭頭對準公車專用道中間",
-          "text": "車道指定大客車專行標誌設於專用道起點，本圖為離開路口處。"
+          "title": "以標誌標線明確指示專用道位置",
+          "text": "於專用道起點設置車道指定大客車專行標誌（遵28），箭頭應對準專用道中央，並配合車種專用車道標線及標字，使駕駛人清楚辨識專用道範圍，避免一般車輛誤入。",
+          "focus": {
+            "asset": "m304-55a30512cf"
+          }
         },
         {
           "id": "wrong-way",
-          "title": "依路型檢討禁止進入標誌",
-          "text": "無中央分隔或單行道等環境，可加強對向專用道的禁止進入提示，避免誤闖逆向。"
-        },
-        {
-          "id": "mount",
-          "title": "門架、L 桿或 T 桿依現況選擇",
-          "text": "裝設方式需使標誌與適用車道的對應關係清楚。"
+          "title": "視道路型態防止逆向誤入",
+          "text": "於無中央分隔或單行道等容易誤判車道方向的環境，可增設車道禁止進入標誌（禁16），避免車輛逆向進入對向公車專用道。",
+          "focus": {
+            "asset": "m304-55a30512cf"
+          }
         }
       ],
       "sourcePages": [],
@@ -224,7 +232,9 @@
         "174",
         "175",
         "189"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain"
     },
     {
       "id": "m304-lane-extensions",
@@ -298,28 +308,26 @@
       "section": "module",
       "submoduleId": "M3-04.2",
       "title": "公車路側停靠站｜現況議題與相關條文",
-      "intro": "讓公車靠站、離站與乘客上下車，都有清楚且足夠的空間。",
+      "intro": "公車路側停靠站應提供足夠的停靠及進出空間，並透過明確的標線導引公車靠站與離站，維持乘客上下車及周邊車流安全。",
       "assets": [
         "m304-stop-issue-photo-1"
       ],
       "points": [
         {
           "id": "space",
-          "title": "停靠區與前後操作空間不足",
-          "text": "可能使公車無法貼近路緣，或必須跨越鄰近車道修正。"
-        },
-        {
-          "id": "guidance",
-          "title": "進出站標線不夠清楚",
-          "text": "停靠區幾何、站位與導引需一起安排，維護上下車及外側車流安全。"
+          "title": "公車停靠空間與進出動線配置不當",
+          "text": "公車停靠區長度、前後進出空間不足，或缺乏明確的標線導引，可能使公車無法貼近路緣停靠，或需提前偏移、跨越鄰近車道修正行駛軌跡，影響乘客上下車及其他車流安全。",
+          "focus": {
+            "asset": "m304-stop-issue-photo-1"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
         "169",
+        "171",
         "183",
-        "189-1",
-        "171"
+        "189-1"
       ],
       "applications": [
         "G1-03",
@@ -327,14 +335,17 @@
         "G4-01",
         "G4-03",
         "C4-03"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m304-stop-diagram",
       "section": "module",
       "submoduleId": "M3-04.2",
       "title": "公車路側停靠站｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依據公車進出停靠區的行駛需求，配置適當的漸變段、導引標線及停車限制設施，確保公車能順利靠站與離站。",
       "assets": [
         "m304-599bae677d",
         "m304-3d1fe5b8ea",
@@ -343,60 +354,88 @@
       "points": [
         {
           "id": "geometry",
-          "title": "入端與離去端分別檢查",
-          "text": "市區公車彎入端漸變長寬比至少 5:1，離去端至少 3:1。"
+          "title": "配合公車行駛需求設置漸變段",
+          "text": "公車彎的幾何設計應提供足夠的駛入及駛出空間。依市區道路設計規範，入端漸變段長寬比不得小於 5:1，離去端不得小於 3:1，以利公車順暢靠站及離站。",
+          "focus": {
+            "asset": "m304-bcd74bb050"
+          }
         },
         {
           "id": "edge",
-          "title": "路面邊線提示停靠區起點",
-          "text": "配合幾何配置，引導駕駛辨識入端及順利靠站。"
+          "title": "以路面邊線提示停靠區起點",
+          "text": "於公車彎入端配合設置路面邊線，明確呈現停靠區邊界，引導公車駕駛人辨識駛入位置及行駛方向。",
+          "focus": {
+            "asset": "m304-599bae677d"
+          }
         },
         {
           "id": "dotted",
-          "title": "進出邊界提供清楚提示",
-          "text": "在駛入、駛出公車彎的邊界劃設穿越虛線，說明公車跨越的位置。"
+          "title": "以穿越虛線引導進出動線",
+          "text": "於公車彎駛入及駛出的邊界劃設穿越虛線，明確提示公車跨越車道與停靠區邊界的位置，使進出動線更容易辨識。",
+          "focus": {
+            "asset": "m304-599bae677d"
+          }
         },
         {
           "id": "clearance",
-          "title": "保留公車進出操作空間",
-          "text": "本圖建議停靠區前、後至少各劃設 2 m 禁止臨時停車線，避免停車占用。"
+          "title": "避免停靠區前後空間遭停車占用",
+          "text": "公車停靠區前後端為車輛進出時所需的操作空間，應避免其他車輛臨時停車占用，影響公車進出站動線。",
+          "focus": {
+            "asset": "m304-bcd74bb050"
+          }
+        },
+        {
+          "id": "no-stopping",
+          "title": "於前後端劃設禁止臨時停車線",
+          "text": "本指引建議於公車停靠區前後端至少各劃設 2 m 禁止臨時停車線，保留公車進出及修正行駛軌跡所需空間。",
+          "focus": {
+            "asset": "m304-bcd74bb050"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
         "169",
+        "171",
         "183",
-        "189-1",
-        "171"
-      ]
+        "189-1"
+      ],
+      "defaultView": "single",
+      "imageFit": "contain"
     },
     {
       "id": "m304-stop-extensions",
       "section": "module",
       "submoduleId": "M3-04.2",
-      "title": "站臺後方自行車道",
-      "intro": "讓公車靠站、離站與乘客上下車，都有清楚且足夠的空間。",
+      "title": "公車路側停靠站｜延伸應用",
+      "intro": "當公車停靠站與自行車道共存時，應整合公車停靠、乘客上下車及自行車通行動線，降低不同用路人之間的衝突。",
       "assets": [
         "m304-3d1fe5b8ea"
       ],
       "points": [
         {
           "id": "separation",
-          "title": "公車、乘客與自行車動線分開",
-          "text": "空間許可時，自行車道繞行站臺後方，維持自行車路徑連續，減少與停靠及上下車動線衝突。"
+          "title": "分隔公車停靠與自行車通行動線",
+          "text": "空間條件許可時，建議將自行車道配置於公車站臺後方，使公車於車道側停靠、乘客於站臺上下車，自行車則由站臺後方通行，避免自行車與公車停靠動線直接衝突。",
+          "focus": {
+            "asset": "m304-3d1fe5b8ea"
+          }
         },
         {
           "id": "transition",
-          "title": "導入與導出採平順漸變",
-          "text": "本指引建議漸變比例 3:1，並配合現地空間檢核。"
+          "title": "以平順漸變維持自行車道連續",
+          "text": "自行車道繞行站臺後方時，導入及導出路段應採平順漸變方式銜接，本指引建議漸變比例為 3:1，維持自行車行駛動線的連續性與順暢性。",
+          "focus": {
+            "asset": "m304-3d1fe5b8ea"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
         "169",
+        "171",
         "183",
-        "189-1",
-        "171"
+        "189-1"
       ]
     },
     {
@@ -456,38 +495,97 @@
           "topics": [
             {
               "id": "channel",
-              "label": "槽化與行駛軌跡",
+              "label": "依公車行駛軌跡調整交通島配置",
               "sourcePageId": "m304-lane-diagram",
-              "pointIds": [
-                "channel"
-              ],
               "assets": [
                 "m304-4ce4616de6"
+              ],
+              "pointIds": [
+                "channel",
+                "envelope"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "channel",
+                  "label": "槽化線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-4ce4616de6"
+                  }
+                },
+                {
+                  "id": "island",
+                  "label": "實體交通島",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m304-4ce4616de6"
+                  }
+                },
+                {
+                  "id": "envelope",
+                  "label": "公車行駛軌跡與動態包絡範圍",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m304-4ce4616de6"
+                  }
+                }
               ]
             },
             {
               "id": "lines",
-              "label": "禁止變換車道線",
+              "label": "以標誌標線明確導引專用道進出及車道使用",
               "sourcePageId": "m304-lane-diagram",
+              "assets": [
+                "m304-55a30512cf"
+              ],
               "pointIds": [
                 "entry",
-                "exit"
-              ],
-              "assets": [
-                "m304-55a30512cf"
-              ]
-            },
-            {
-              "id": "signs",
-              "label": "專用道標誌與裝設",
-              "sourcePageId": "m304-lane-diagram",
-              "pointIds": [
                 "bus",
-                "wrong-way",
-                "mount"
+                "wrong-way"
               ],
-              "assets": [
-                "m304-55a30512cf"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "lane-change",
+                  "label": "單邊禁止變換車道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-55a30512cf"
+                  }
+                },
+                {
+                  "id": "bus-lane",
+                  "label": "車種專用車道標線及標字",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-55a30512cf"
+                  }
+                },
+                {
+                  "id": "guide",
+                  "label": "路口行車導引線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-55a30512cf"
+                  }
+                },
+                {
+                  "id": "bus-sign",
+                  "label": "車道指定大客車專行標誌（遵28）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-55a30512cf"
+                  }
+                },
+                {
+                  "id": "entry-sign",
+                  "label": "車道禁止進入標誌（禁16）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-55a30512cf"
+                  }
+                }
               ]
             }
           ]
@@ -527,36 +625,66 @@
           "topics": [
             {
               "id": "edge",
-              "label": "路面邊線與漸變段",
+              "label": "以漸變段及標線引導公車進出停靠區",
               "sourcePageId": "m304-stop-diagram",
               "pointIds": [
                 "geometry",
-                "edge"
-              ],
-              "assets": [
-                "m304-599bae677d"
-              ]
-            },
-            {
-              "id": "dotted",
-              "label": "穿越虛線",
-              "sourcePageId": "m304-stop-diagram",
-              "pointIds": [
+                "edge",
                 "dotted"
               ],
               "assets": [
-                "m304-599bae677d"
+                "m304-599bae677d",
+                "m304-bcd74bb050"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "edge",
+                  "label": "路面邊線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-599bae677d"
+                  }
+                },
+                {
+                  "id": "dotted",
+                  "label": "穿越虛線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-599bae677d"
+                  }
+                },
+                {
+                  "id": "taper",
+                  "label": "公車彎入端與離去端漸變段",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m304-bcd74bb050"
+                  }
+                }
               ]
             },
             {
               "id": "clearance",
-              "label": "前後端淨空",
+              "label": "保留公車靠站與離站所需淨空",
               "sourcePageId": "m304-stop-diagram",
               "pointIds": [
-                "clearance"
+                "clearance",
+                "no-stopping"
               ],
               "assets": [
                 "m304-bcd74bb050"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "no-stopping",
+                  "label": "禁止臨時停車線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m304-bcd74bb050"
+                  }
+                }
               ]
             }
           ]
@@ -565,21 +693,47 @@
           "id": "extensions",
           "pageId": "m304-stop-extensions",
           "title": "延伸應用",
-          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "intro": "當公車停靠站與自行車道共存時，應整合公車停靠、乘客上下車及自行車通行動線，降低不同用路人之間的衝突。",
           "topics": [
             {
               "id": "cycle",
-              "label": "站臺後方自行車道",
-              "sourcePageId": "m304-stop-extensions"
-            },
-            {
-              "id": "standards",
-              "label": "依道路類別檢查站位設計",
-              "sourcePageId": "m304-stop-extension-standards"
+              "label": "自行車道繞行公車站臺後方",
+              "sourcePageId": "m304-stop-extensions",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "platform",
+                  "label": "公車站臺",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m304-3d1fe5b8ea"
+                  }
+                },
+                {
+                  "id": "cycle",
+                  "label": "自行車道",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m304-3d1fe5b8ea"
+                  }
+                },
+                {
+                  "id": "taper",
+                  "label": "自行車道導入與導出漸變段",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m304-3d1fe5b8ea"
+                  }
+                }
+              ]
             }
-          ]
+          ],
+          "paged": false
         }
       ]
     }
+  ],
+  "hiddenPages": [
+    "m304-overview"
   ]
 }

@@ -98,6 +98,14 @@
       "label": "多元停車管制牌面",
       "caption": "圖 3.23 多元停車管制方式牌面示例",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m103-issue-intersection-visibility": {
+      "file": "materials/03-modules/M1-03/M1-03.1_現況議題_停車格位遮蔽路口視距.png",
+      "width": 1248,
+      "height": 748,
+      "label": "現況照片：停車格位與路口視距",
+      "caption": "停車格位配置影響路口視距",
+      "credit": "使用者提供之現況照片"
     }
   },
   "pages": [
@@ -110,7 +118,8 @@
       "defaultView": "single",
       "assets": [
         "m103-issue-street-parking",
-        "m103-issue-parking-bays"
+        "m103-issue-parking-bays",
+        "m103-issue-intersection-visibility"
       ],
       "points": [
         {
@@ -126,7 +135,7 @@
           "title": "停車格位配置影響路口視距",
           "text": "停車格位過於接近路口，或未考量不同車種的停放順序，可能使大型車輛遮蔽路口視線，影響駕駛人觀察交叉來車及行人的能力。",
           "focus": {
-            "asset": "m103-issue-street-parking"
+            "asset": "m103-issue-intersection-visibility"
           }
         },
         {

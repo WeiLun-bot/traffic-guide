@@ -121,6 +121,14 @@
       "label": "鄉區道路讓路線退縮實景",
       "caption": "圖 3.24 鄉區道路讓路線退縮實景圖",
       "credit": "Google Street View [11]"
+    },
+    "stop-issue-photo-3": {
+      "file": "materials/03-modules/M2-01/M2-01.1_現況議題_03.png",
+      "width": 1186,
+      "height": 859,
+      "label": "現況照片 3：行人穿越與停車位置",
+      "caption": "停管制路口行人穿越與停止位置空拍現況",
+      "credit": "使用者提供之現況照片"
     }
   },
   "pages": [
@@ -192,7 +200,8 @@
       "defaultView": "single",
       "assets": [
         "stop-issue-photo-1",
-        "stop-issue-photo-2"
+        "stop-issue-photo-2",
+        "stop-issue-photo-3"
       ],
       "points": [
         {
@@ -208,7 +217,7 @@
           "title": "僅依賴路面標字，難以提前辨識管制",
           "text": "「停」標字主要在車輛接近路口時提醒駕駛人，且容易受到前車遮蔽、路面濕潤或標線磨耗等因素影響，無法完全取代路側停車再開標誌的預告功能。",
           "focus": {
-            "asset": "stop-issue-photo-1"
+            "asset": "stop-issue-photo-2"
           }
         },
         {
@@ -216,7 +225,7 @@
           "title": "停讓行人與觀察來車的位置混淆",
           "text": "設有行人穿越道線時，停止線主要用於指示停讓行人的位置，未必適合觀察幹道來車。若缺乏明確的視距參考位置，容易忽略再次停車觀察的需求。",
           "focus": {
-            "asset": "stop-issue-photo-2"
+            "asset": "stop-issue-photo-3"
           }
         }
       ],
@@ -325,13 +334,27 @@
       "points": [
         {
           "id": "pedestrian",
-          "title": "區分停讓行人與觀察幹道來車的位置",
-          "text": "停止線用於指示車輛停讓行人的位置，與行穿線的淨距以 2～3 m 為原則，受限時不得少於 1 m；另以路口行車導引線標示幹道邊界，作為再次停車觀察來車的位置。"
+          "title": "停止線為停讓行人位置",
+          "text": "停止線標示停讓行人的位置，未必能看清主線道來車。",
+          "focus": {
+            "asset": "stop-crosswalk"
+          }
+        },
+        {
+          "id": "second",
+          "title": "保留二次觀察位置",
+          "text": "設有行人或自行車穿越道時，增設路面邊線延伸線，作為再次停車觀察的參考。",
+          "focus": {
+            "asset": "stop-crosswalk"
+          }
         },
         {
           "id": "sign",
-          "title": "停車再開標誌設於行穿線下游",
-          "text": "將停車再開標誌設於行穿線下游、靠近幹道處，提醒駕駛人停讓行人後，仍須再次停車觀察並停讓幹道車輛。"
+          "title": "標誌設於行穿線下游",
+          "text": "提醒停讓行人後重新起步的車輛，再次停讓幹道來車。",
+          "focus": {
+            "asset": "stop-crosswalk"
+          }
         }
       ],
       "sourcePages": [
@@ -350,7 +373,7 @@
       "submoduleId": "M2-01.1",
       "section": "stop",
       "title": "停管制路口｜延伸應用",
-      "intro": "因應行人穿越、路口幾何及上游道路條件，調整停管制設施配置，兼顧不同用路人的通行安全。",
+      "intro": "依行人穿越、路口空間與車速，調整停讓配置。",
       "assets": [
         "stop-refuge",
         "stop-curb"
@@ -358,16 +381,24 @@
       "points": [
         {
           "id": "refuge",
-          "title": "增設庇護島提供分段穿越空間",
-          "text": "路口幾何空間充足時，可設置行人庇護島，提供行人分段穿越及停等空間，同時提醒駕駛人注意行人活動。",
+          "title": "行人分段穿越",
+          "text": "路口空間充足時，建議增設行人庇護島，讓行人分段穿越，也提醒駕駛注意行人。",
           "focus": {
             "asset": "stop-refuge"
           }
         },
         {
           "id": "curb",
-          "title": "以槽化線修飾路緣轉角",
-          "text": "未設置實體或標線型人行道的轉角，可依設計車輛轉彎軌跡配置槽化線，避免車輛偏離既定車道，並維持路口視距。",
+          "title": "約束轉彎軌跡確保路口視距竟空",
+          "text": "轉角未設實體或標線型人行道時，建議以槽化線引導轉彎，避免偏離車道並維持視距。",
+          "focus": {
+            "asset": "stop-curb"
+          }
+        },
+        {
+          "id": "vehicle",
+          "title": "配合設計車種",
+          "text": "槽化線的曲率配合設計車種，讓轉彎軌跡維持在既定車道內。",
           "focus": {
             "asset": "stop-curb"
           }
@@ -456,16 +487,45 @@
       "id": "m201-yield-layout",
       "submoduleId": "M2-01.2",
       "section": "yield",
-      "title": "讓管制：基本配置",
-      "intro": "以標誌表達路權，以標線標示讓行位置。",
+      "title": "讓管制路口｜圖例說明",
+      "intro": "透過讓路線、讓路標誌及路口行車導引線的搭配，明確界定讓路位置與優先關係，並兼顧行人穿越需求。",
       "assets": [
-        "yield-basic"
+        "yield-basic",
+        "yield-crosswalk"
       ],
       "points": [
         {
+          "id": "guide",
+          "title": "雙白虛線應對應幹道邊界",
+          "text": "以幹道路面邊線延伸形成的視距參考線為基準，原則上使雙白虛線與其重合，明確標示支道車輛讓路停等的位置。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              478,
+              80,
+              188,
+              45
+            ]
+          }
+        },
+        {
+          "id": "position",
+          "title": "確保讓路位置具有足夠視距",
+          "text": "雙白虛線應設於駕駛人能充分觀察幹道來車的位置，避免過度退縮，導致車輛停等後仍須再次前移才能確認來車。",
+          "focus": {
+            "asset": "yield-basic",
+            "rect": [
+              235,
+              79,
+              244,
+              32
+            ]
+          }
+        },
+        {
           "id": "sign",
-          "title": "讓路標誌",
-          "text": "設在駕駛看得見、靠近幹道的位置。以右側為原則，必要時增設於交通島或左側；優先以標誌提醒減速讓行。",
+          "title": "優先以讓路標誌宣告管制",
+          "text": "讓路標誌應設於駕駛人容易辨識、且盡可能靠近幹道的位置，原則設於路口右側，提前提示駕駛人減速並讓幹道車輛先行。",
           "focus": {
             "asset": "yield-basic",
             "rect": [
@@ -478,8 +538,8 @@
         },
         {
           "id": "triangle",
-          "title": "讓路線與雙白虛線",
-          "text": "倒三角形與平行白虛線相距 2 m 至 2.5 m；白虛線連接幹道路面邊線的延伸。",
+          "title": "以倒三角形加強近端提醒",
+          "text": "於雙白虛線上游配置白色倒三角形，兩者間距為 2～2.5 m，提醒駕駛人即將進入讓管制路口，並配合雙白虛線辨識讓路位置。",
           "focus": {
             "asset": "yield-basic",
             "rect": [
@@ -492,29 +552,43 @@
         },
         {
           "id": "pedestrian",
-          "title": "未設行穿線時",
-          "text": "以兩條平行白虛線引導行人穿越，位置與兩側路緣斜坡銜接。",
+          "title": "停止線標示停讓行人位置",
+          "text": "設有枕木紋行人穿越道線時，於行穿線上游 2～3 m 設置停止線，明確標示車輛停讓行人的位置。",
           "focus": {
-            "asset": "yield-basic",
+            "asset": "yield-crosswalk",
             "rect": [
-              478,
-              80,
-              188,
-              45
+              479,
+              308,
+              94,
+              35
             ]
           }
         },
         {
-          "id": "guide",
-          "title": "路口行車導引線",
-          "text": "延伸幹道路面邊線，提示支道車輛觀察來車並減速。",
+          "id": "priority",
+          "title": "讓路線及標誌對應幹道優先關係",
+          "text": "行穿線下游空間充足時，將白色倒三角形、雙白虛線及讓路標誌配置於靠近幹道的位置，區分停讓行人與讓行幹道車輛的管制需求。",
           "focus": {
-            "asset": "yield-basic",
+            "asset": "yield-crosswalk",
             "rect": [
-              235,
-              79,
-              244,
-              32
+              722,
+              179,
+              229,
+              204
+            ]
+          }
+        },
+        {
+          "id": "space",
+          "title": "依現場空間調整標線配置",
+          "text": "行穿線下游空間不足時，可將白色倒三角形移至行穿線或停止線上游，維持讓管制的提示功能，並避免不同標線相互干擾。",
+          "focus": {
+            "asset": "yield-crosswalk",
+            "rect": [
+              503,
+              359,
+              55,
+              118
             ]
           }
         }
@@ -605,11 +679,10 @@
       "id": "m201-yield-extensions",
       "submoduleId": "M2-01.2",
       "section": "yield",
-      "title": "讓管制的庇護與槽化",
-      "intro": "以庇護島與槽化線，兼顧行人穿越、車流軌跡及視距。",
+      "title": "讓管制路口｜延伸應用",
+      "intro": "配合行人穿越需求及路口空間，配置庇護設施與停讓位置。",
       "assets": [
-        "stop-refuge",
-        "stop-curb"
+        "stop-refuge"
       ],
       "points": [
         {
@@ -618,22 +691,6 @@
           "text": "路口空間充足時，建議增設行人庇護島，讓行人分段穿越，也提醒駕駛注意行人。",
           "focus": {
             "asset": "stop-refuge"
-          }
-        },
-        {
-          "id": "curb",
-          "title": "引導轉彎並維持視距",
-          "text": "轉角未設實體或標線型人行道時，建議以槽化線引導轉彎；曲率配合設計車種。",
-          "focus": {
-            "asset": "stop-curb"
-          }
-        },
-        {
-          "id": "reference",
-          "title": "搭配讓路標誌",
-          "text": "附圖說明庇護與槽化配置；讓管制路口的標誌配置，請對照讓路標誌圖例。",
-          "focus": {
-            "asset": "stop-curb"
           }
         }
       ],
@@ -853,7 +910,7 @@
           "topics": [
             {
               "id": "crosswalk",
-              "label": "搭配行人穿越道線",
+              "label": "停管制路口設置行穿線",
               "sourcePageId": "m201-stop-crosswalk",
               "showPointTitles": true,
               "facilities": [
@@ -889,11 +946,19 @@
                     "asset": "stop-crosswalk"
                   }
                 }
+              ],
+              "pointIds": [
+                "pedestrian",
+                "second",
+                "sign"
+              ],
+              "assets": [
+                "stop-crosswalk"
               ]
             },
             {
               "id": "refuge",
-              "label": "搭配庇護空間與路緣修飾",
+              "label": "行人庇護空間",
               "sourcePageId": "m201-stop-extensions",
               "showPointTitles": true,
               "facilities": [
@@ -904,7 +969,28 @@
                   "focus": {
                     "asset": "stop-refuge"
                   }
-                },
+                }
+              ],
+              "pointIds": [
+                "refuge"
+              ],
+              "assets": [
+                "stop-refuge"
+              ]
+            },
+            {
+              "id": "curb",
+              "label": "路緣轉角槽化",
+              "sourcePageId": "m201-stop-extensions",
+              "pointIds": [
+                "curb",
+                "vehicle"
+              ],
+              "assets": [
+                "stop-curb"
+              ],
+              "showPointTitles": true,
+              "facilities": [
                 {
                   "id": "channel",
                   "label": "槽化線",
@@ -922,41 +1008,10 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "warning",
-              "label": "視距不足時提前預告停管制",
-              "sourcePageId": "m201-stop-warning",
-              "assets": [],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "advance",
-                  "label": "停管制預告標誌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "stop-basic"
-                  }
-                },
-                {
-                  "id": "sign",
-                  "label": "停車再開標誌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "stop-basic",
-                    "rect": [
-                      710,
-                      155,
-                      190,
-                      180
-                    ]
-                  }
-                }
-              ]
             }
           ],
-          "intro": "因應行人穿越、路口幾何及上游道路條件，調整停管制設施配置，兼顧不同用路人的通行安全。",
-          "paged": true
+          "intro": "依行人穿越、路口空間與車速，調整停讓配置。",
+          "paged": false
         }
       ]
     },
@@ -974,28 +1029,155 @@
           "title": "圖例說明",
           "topics": [
             {
-              "id": "sign",
-              "label": "讓路標誌",
-              "sourcePageId": "m201-yield-layout",
-              "pointIds": [
-                "sign"
-              ]
-            },
-            {
               "id": "line",
-              "label": "讓路線佈設原則",
+              "label": "以視距參考線決定讓路位置",
               "sourcePageId": "m201-yield-layout",
+              "assets": [
+                "yield-basic"
+              ],
               "pointIds": [
-                "triangle",
-                "pedestrian"
+                "guide",
+                "position"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "double-dashed",
+                  "label": "雙白虛線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-basic",
+                    "rect": [
+                      478,
+                      80,
+                      188,
+                      45
+                    ]
+                  }
+                },
+                {
+                  "id": "guide",
+                  "label": "路口行車導引線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-basic",
+                    "rect": [
+                      235,
+                      79,
+                      244,
+                      32
+                    ]
+                  }
+                }
               ]
             },
             {
-              "id": "guide",
-              "label": "路口行車導引線",
+              "id": "sign",
+              "label": "以標誌及標線強化讓管制辨識",
               "sourcePageId": "m201-yield-layout",
+              "assets": [
+                "yield-basic"
+              ],
               "pointIds": [
-                "guide"
+                "sign",
+                "triangle"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "sign",
+                  "label": "讓路標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-basic",
+                    "rect": [
+                      715,
+                      167,
+                      232,
+                      201
+                    ]
+                  }
+                },
+                {
+                  "id": "yield-line",
+                  "label": "讓路線（白色倒三角形、雙白虛線）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-basic",
+                    "rect": [
+                      477,
+                      79,
+                      190,
+                      207
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pedestrian",
+              "label": "區分行人停讓與車輛讓路位置",
+              "sourcePageId": "m201-yield-layout",
+              "assets": [
+                "yield-crosswalk"
+              ],
+              "pointIds": [
+                "pedestrian",
+                "priority",
+                "space"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "crosswalk",
+                  "label": "行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk"
+                  }
+                },
+                {
+                  "id": "stop-line",
+                  "label": "停止線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk",
+                    "rect": [
+                      479,
+                      308,
+                      94,
+                      35
+                    ]
+                  }
+                },
+                {
+                  "id": "yield-line",
+                  "label": "讓路線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk",
+                    "rect": [
+                      503,
+                      359,
+                      55,
+                      118
+                    ]
+                  }
+                },
+                {
+                  "id": "sign",
+                  "label": "讓路標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk",
+                    "rect": [
+                      722,
+                      179,
+                      229,
+                      204
+                    ]
+                  }
+                }
               ]
             }
           ]
@@ -1014,31 +1196,80 @@
               ],
               "assets": [
                 "stop-refuge"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "island",
+                  "label": "行人庇護島",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "stop-refuge"
+                  }
+                }
               ]
             },
             {
               "id": "crosswalk",
               "label": "行穿線搭配配置",
-              "sourcePageId": "m201-yield-crosswalk"
-            },
-            {
-              "id": "curb",
-              "label": "路緣轉角槽化",
-              "sourcePageId": "m201-yield-extensions",
-              "pointIds": [
-                "curb",
-                "reference"
-              ],
-              "assets": [
-                "stop-curb"
+              "sourcePageId": "m201-yield-crosswalk",
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "crosswalk",
+                  "label": "行人穿越道線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk"
+                  }
+                },
+                {
+                  "id": "stop-line",
+                  "label": "停止線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk",
+                    "rect": [
+                      479,
+                      308,
+                      94,
+                      35
+                    ]
+                  }
+                },
+                {
+                  "id": "yield-line",
+                  "label": "讓路線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk",
+                    "rect": [
+                      503,
+                      359,
+                      55,
+                      118
+                    ]
+                  }
+                },
+                {
+                  "id": "sign",
+                  "label": "讓路標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "yield-crosswalk",
+                    "rect": [
+                      722,
+                      179,
+                      229,
+                      204
+                    ]
+                  }
+                }
               ]
-            },
-            {
-              "id": "buffer",
-              "label": "高速環境緩衝空間",
-              "sourcePageId": "m201-yield-buffer"
             }
-          ]
+          ],
+          "paged": true,
+          "intro": "配合行人穿越需求及路口空間，配置庇護設施與停讓位置。"
         }
       ]
     }
@@ -1064,6 +1295,9 @@
     ]
   },
   "hiddenPages": [
-    "m201-overview"
+    "m201-overview",
+    "m201-stop-warning",
+    "m201-yield-buffer",
+    "m201-applications"
   ]
 }

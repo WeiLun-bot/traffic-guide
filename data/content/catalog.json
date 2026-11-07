@@ -594,7 +594,13 @@
     "g404-photo-1": "scenarios/G4-04",
     "g404-photo-2": "scenarios/G4-04",
     "g404-photo-3": "scenarios/G4-04",
-    "g404-photo-4": "scenarios/G4-04"
+    "g404-photo-4": "scenarios/G4-04",
+    "module:m202-roundabout-directions": "modules/M2-02",
+    "module:m203-signals-issue-photo-3": "modules/M2-03",
+    "module:m203-upstream-visibility-template": "modules/M2-03",
+    "module:m204-near-far-sign-comparison": "modules/M2-04",
+    "module:m303-lane-slow-wide": "modules/M3-03",
+    "module:m303-lane-slow-narrow": "modules/M3-03"
   },
   "files": [
     "data/content/modules/M1-01.json",

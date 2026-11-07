@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "M2-03",
-  "directoryAssets": ["m203-2f27e58a6a"],
+  "directoryAssets": [
+    "m203-2f27e58a6a"
+  ],
   "title": "號誌化管制",
   "source": {
     "file": "06-signalized-control.typ",
@@ -30,7 +32,9 @@
     ],
     "userImageFiles": [
       "materials/03-modules/M2-03/M2-03.1_現況議題_01.png",
-      "materials/03-modules/M2-03/M2-03.1_現況議題_02.png"
+      "materials/03-modules/M2-03/M2-03.1_現況議題_02.png",
+      "materials/03-modules/M2-03/M2-03.1_現況議題_03.png",
+      "materials/03-modules/M2-03/image163.svg"
     ],
     "notes": [
       "號誌可視模板與立桿錯距檢核分別參照指引附錄 C、附錄 B。",
@@ -205,6 +209,22 @@
       "label": "日本側式罩簷及垂直百葉窗示例_1",
       "caption": "日本側式罩簷及垂直百葉窗示例_1",
       "credit": "Google Street View"
+    },
+    "m203-signals-issue-photo-3": {
+      "file": "materials/03-modules/M2-03/M2-03.1_現況議題_03.png",
+      "width": 621,
+      "height": 871,
+      "label": "現況照片 3：號誌設置整體檢核",
+      "caption": "號誌設置高度及周邊環境現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m203-upstream-visibility-template": {
+      "file": "materials/03-modules/M2-03/image163.svg",
+      "width": 456,
+      "height": 574,
+      "label": "上游來車可視模板",
+      "caption": "號誌上游辨認距離與可視範圍檢核",
+      "credit": "使用者提供之號誌設置圖例"
     }
   },
   "pages": [
@@ -213,27 +233,33 @@
       "section": "module",
       "submoduleId": "M2-03.1",
       "title": "號誌化路口｜現況議題與相關條文",
-      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "intro": "行車管制號誌應使駕駛人於適當距離內清楚辨識燈號，惟燈面設置位置及周邊環境因素，均可能影響號誌的辨識性與安全性。",
       "defaultView": "pair",
       "assets": [
         "m203-signals-issue-photo-1",
-        "m203-signals-issue-photo-2"
+        "m203-signals-issue-photo-2",
+        "m203-signals-issue-photo-3"
       ],
       "points": [
         {
           "id": "visibility",
-          "title": "燈面不容易及時辨識",
-          "text": "遠端過遠、偏離視軸或受樹木、招牌與逆光干擾，都可能造成燈號誤判。"
+          "title": "號誌燈面辨識性不足",
+          "text": "遠端號誌距離過遠、燈面偏離駕駛人行車視軸，或受到樹木、招牌、逆光及周邊光源干擾，可能使駕駛人無法及時辨識燈號，甚至產生誤判。",
+          "focus": {
+            "asset": "m203-signals-issue-photo-1",
+            "assets": [
+              "m203-signals-issue-photo-1",
+              "m203-signals-issue-photo-2"
+            ]
+          }
         },
         {
-          "id": "position",
-          "title": "近端、遠端位置需要互相配合",
-          "text": "同時檢視左右位置、與停止線的距離，以及用路人的視野。"
-        },
-        {
-          "id": "clearance",
-          "title": "淨空也要納入整體檢核",
-          "text": "從辨認距離、起步可視範圍到部件淨寬與淨高，逐項檢查配置。"
+          "id": "inspection",
+          "title": "號誌設置缺乏整體檢核",
+          "text": "號誌設置涉及辨認距離、可視燈面數量、近遠端配置、起步視野及設施淨高、淨寬等多項要求，若僅檢核單一條文，可能忽略不同設置條件間的相互影響，無法完整確保號誌的明視性與安全性。",
+          "focus": {
+            "asset": "m203-signals-issue-photo-3"
+          }
         }
       ],
       "sourcePages": [],
@@ -260,127 +286,140 @@
         "C2-01",
         "C4-01",
         "C4-03"
-      ]
+      ],
+      "pointLinkedImages": true
     },
     {
       "id": "m203-signals-diagram",
       "section": "module",
       "submoduleId": "M2-03.1",
       "title": "號誌化路口｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "從基本燈面配置出發，整合上游辨識、近遠端設置、起步視野及淨空要求，確保駕駛人在接近、停等及通過路口時，均能清楚辨識管制燈號。",
       "assets": [
         "m203-2f27e58a6a",
-        "m203-cd5bcd9029",
+        "m203-f01d41842a",
         "m203-22b38300ee",
         "m203-a3b46fb4f0",
         "m203-3955393bcf",
-        "m203-f01d41842a",
+        "m203-upstream-visibility-template",
         "m203-1d1f6b14f8",
+        "m203-9060c4516f",
         "m203-1f4a9ba99d",
         "m203-205bbd9cba",
-        "m203-9060c4516f",
         "m203-d6e2d6ea4c"
       ],
       "points": [
         {
           "id": "two",
-          "title": "上游應能辨認兩個同燈號燈面",
-          "text": "依行車速限與辨認距離，檢查上游駕駛能否同時辨認兩個以上相同燈號的燈面。"
+          "title": "確保駕駛人可同時辨識兩個燈面",
+          "text": "每一進入路口的駕駛人，應能於規定辨認距離前，同時辨識兩個以上顯示相同燈號的燈面，避免僅依賴單一號誌判斷通行權。",
+          "focus": {
+            "asset": "m203-2f27e58a6a"
+          }
         },
         {
           "id": "far",
-          "title": "至少一個遠端燈面位於左側",
-          "text": "與近端停止線相距至少 10 m；柱立式於遠端左右側各設燈面。"
-        },
-        {
-          "id": "near",
-          "title": "近端燈面提示停止線",
-          "text": "本指引建議近端至少一組燈面，協助辨識停止位置與起步。"
-        },
-        {
-          "id": "distance",
-          "title": "依速限選擇辨認距離",
-          "text": "30／40／50／60 km/h：30／50／80／110 m；70／80／90／100 km/h：140／170／200／220 m。"
-        },
-        {
-          "id": "template",
-          "title": "用可視模板檢查上游視野",
-          "text": "以駕駛行進時的視域投影檢核兩組燈面，操作方式參照指引附錄 C。"
-        },
-        {
-          "id": "background",
-          "title": "排除眩光與背景干擾",
-          "text": "一併檢查招牌、植栽與光源；斜交路口角度在 60° 以內時，也需檢查防窺處理。"
-        },
-        {
-          "id": "lamp",
-          "title": "以燈面位置判斷左右關係",
-          "text": "向左錯距由近端綠燈鏡面邊緣，沿停止線法線投射至遠端鏡面邊緣量測。"
-        },
-        {
-          "id": "left-pole",
-          "title": "立桿在左側或採門架式",
-          "text": "至少一個遠端燈面齊平或位於近端左側，不得偏至右方。"
-        },
-        {
-          "id": "right-pole",
-          "title": "立桿在右側需明顯錯開",
-          "text": "本指引建議遠端與近端燈面向左錯距大於 90 cm，呈現清楚的左右對應。"
-        },
-        {
-          "id": "column",
-          "title": "柱立式兩側配置",
-          "text": "遠端左右各設一燈面，檢核細節參照指引附錄 B。"
+          "title": "遠端至少一燈面位於左側",
+          "text": "基本配置應至少有一燈面設於遠端左側，並距近端停止線 10 m 以上。柱立式號誌應於遠端左右兩側設置燈面；懸臂式等配置則可搭配近端右側燈面。",
+          "focus": {
+            "asset": "m203-2f27e58a6a"
+          }
         },
         {
           "id": "near-distance",
-          "title": "近端靠近停止線",
-          "text": "本指引建議理想距離 2 m，範圍以 0–3 m 為參考，協助辨識停止位置及起步。"
+          "title": "近端號誌提示停止線位置",
+          "text": "近端號誌應靠近停止線設置，協助駕駛人辨識停車位置及接近路口時的管制燈號。建議與停止線距離以 2 m 為理想值，最大以 3 m 為原則。",
+          "focus": {
+            "asset": "m203-f01d41842a"
+          }
         },
         {
           "id": "far-distance",
-          "title": "遠端兼顧起步與接收車道",
-          "text": "距近端停止線至少 10 m，並以起步可視模板確認停等車輛能看見燈號。"
+          "title": "遠端號誌提供起步及行車導引",
+          "text": "遠端號誌應距停止線至少 10 m，提供停等車輛起步、通過路口時的燈號確認，並協助辨識下游接續車道方向。",
+          "focus": {
+            "asset": "m203-f01d41842a"
+          }
         },
         {
-          "id": "fast",
-          "title": "高速環境加強停止線提示",
-          "text": "配合規範檢查近端是否需要兩個燈面，讓駕駛提早辨識停止位置。"
+          "id": "lamp",
+          "title": "確保近遠端燈面具有左右區別",
+          "text": "遠端至少一燈面應位於相對左側；當遠端燈桿位於車行道右側時，建議與近端燈面保持大於 90 cm 的向左錯距，使駕駛人能明確區分兩組號誌。",
+          "focus": {
+            "asset": "m203-a3b46fb4f0"
+          }
+        },
+        {
+          "id": "template",
+          "title": "以可視模板確認上游辨認距離",
+          "text": "依道路速限所對應的號誌辨認距離，利用可視模板檢核駕駛人能否於有效視野內，同時辨識至少兩個顯示相同燈號的燈面。",
+          "focus": {
+            "asset": "m203-upstream-visibility-template"
+          }
         },
         {
           "id": "spacing",
-          "title": "同向燈面不宜相距過遠",
-          "text": "同向燈面法線的垂直距離以不超過 12 m 為度；超過時考慮增設一組燈面。"
+          "title": "避免燈面間距形成視覺漏洞",
+          "text": "同向號誌燈面之法線垂直距離以不超過 12 m 為原則，超過時應考慮增設燈面，避免道路橫向範圍過大，使部分車道駕駛人不易察覺號誌。",
+          "focus": {
+            "asset": "m203-1d1f6b14f8"
+          }
+        },
+        {
+          "id": "background",
+          "title": "排除遮蔽及背景干擾",
+          "text": "檢查燈面是否受樹木、招牌、逆光及周邊光源影響，必要時調整燈面位置或採取改善措施，確保駕駛人能正確辨識燈號。",
+          "focus": {
+            "asset": "m203-upstream-visibility-template"
+          }
         },
         {
           "id": "eye",
-          "title": "以實際停等位置檢查",
-          "text": "有待轉區時由待轉車輛視點檢核；其餘以停止線前第一輛車的視點檢核。"
+          "title": "以停止線或待轉區為起點檢核",
+          "text": "以停止線前方第一輛車或左彎待轉區內車輛的視野為基準，確認車輛停等時能看見適用燈面，並於綠燈啟動後安全通行。",
+          "focus": {
+            "asset": "m203-9060c4516f"
+          }
         },
         {
           "id": "hat",
-          "title": "帽式罩簷採三角形模板",
-          "text": "依圖示的 30° 起步可視角度，檢查至下游 54 m 的燈面。"
+          "title": "依罩簷型式採用不同可視範圍",
+          "text": "帽式罩簷採 30° 展開的三角形可視模板；筒式罩簷採左右各 20° 的梯形可視模板，檢核燈面是否落於可視範圍內。",
+          "focus": {
+            "asset": "m203-1f4a9ba99d"
+          }
         },
         {
           "id": "tube",
-          "title": "筒式罩簷採梯形模板",
-          "text": "左右各展開 20°，檢查停止線下游 15–54 m；遠端建議採筒式罩簷並通過起步可視檢核。"
+          "title": "兼顧可視性與避免誤視",
+          "text": "遠端號誌建議採用筒式罩簷，並以起步可視模板確認可視性；同時避免燈號被非管制方向的駕駛人誤認。",
+          "focus": {
+            "asset": "m203-205bbd9cba"
+          }
         },
         {
           "id": "width",
-          "title": "以最靠近車流的部件檢查淨寬",
-          "text": "燈箱、桿柱及附屬部件都納入；本指引建議至少 0.30 m，理想值 1.00 m。"
+          "title": "以最突出部件檢核實際淨寬",
+          "text": "號誌與車道邊緣的淨寬，不應僅量測至桿柱，亦須考量燈箱及其他突出部件。實際淨寬至少 0.30 m，以 1.00 m 為理想值。",
+          "focus": {
+            "asset": "m203-d6e2d6ea4c"
+          }
         },
         {
           "id": "height",
-          "title": "分別檢查車行與人行空間",
-          "text": "車行道上方號誌燈箱高出路面 4.6–5.6 m；柱立式燈箱高出人行道 2.4–4.6 m。"
+          "title": "依設置型式檢核淨高",
+          "text": "懸臂式、門架式及懸掛式號誌的燈箱高度為路面上方 4.60～5.60 m；柱立式號誌燈箱高度為人行道上方 2.40～4.60 m。",
+          "focus": {
+            "asset": "m203-d6e2d6ea4c"
+          }
         },
         {
           "id": "parts",
-          "title": "附屬設施也需保留淨高",
-          "text": "懸臂部件至少高出路面 4.6 m；人行空間上方部件至少 2.4 m，避免突出形成障礙。"
+          "title": "確認所有附屬部件符合淨空要求",
+          "text": "除燈箱外，亦應檢核其他號誌附屬部件的最低高度，避免侵入車輛或行人通行空間，造成碰撞風險。",
+          "focus": {
+            "asset": "m203-d6e2d6ea4c"
+          }
         }
       ],
       "sourcePages": [],
@@ -394,24 +433,16 @@
       "id": "m203-signals-extensions",
       "section": "module",
       "submoduleId": "M2-03.1",
-      "title": "橫排與縱排號誌",
-      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "title": "號誌化路口｜延伸應用",
+      "intro": "針對左彎待轉區及特殊燈面配置，透過增設號誌、標示適用對象及限制燈號可視角度，兼顧目標車流的明視性與其他方向的防誤視需求。",
       "assets": [
-        "m203-53e08c0e5d",
-        "m203-2c79d79484"
+        "m203-6a551f7dc7",
+        "m203-ae61912c1e",
+        "m203-35a54335c3",
+        "m203-e9c1bf866d",
+        "m203-1e337c7e0f"
       ],
-      "points": [
-        {
-          "id": "types",
-          "title": "排列方式配合設置型式",
-          "text": "柱立與懸掛式通常採縱排；懸臂與門架式可採橫排或縱排。"
-        },
-        {
-          "id": "situations",
-          "title": "受限環境與低視角需求",
-          "text": "空間受限、低角度日照干擾，或高速環境不易辨認兩燈面時，可檢討縱排或增設燈面。"
-        }
-      ],
+      "points": [],
       "sourcePages": [],
       "references": [
         "201",
@@ -424,45 +455,28 @@
       "section": "module",
       "submoduleId": "M2-03.1",
       "title": "左彎待轉區對角號誌",
-      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "intro": "針對左彎待轉區及特殊燈面配置，透過增設號誌、標示適用對象及限制燈號可視角度，兼顧目標車流的明視性與其他方向的防誤視需求。",
       "assets": [
-        "m203-a317c01f6c",
-        "m203-6a551f7dc7"
-      ],
-      "points": [
-        {
-          "id": "view",
-          "title": "待轉後重新檢查駕駛視野",
-          "text": "車輛進入左彎待轉區後，朝向可能偏離原遠端燈面；必要時在主要視野內增設燈面。"
-        }
-      ],
-      "sourcePages": [],
-      "references": [
-        "201",
-        "220",
-        "221"
-      ]
-    },
-    {
-      "id": "m203-signals-extension-explanation",
-      "section": "module",
-      "submoduleId": "M2-03.1",
-      "title": "燈面說明標誌",
-      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
-      "assets": [
+        "m203-6a551f7dc7",
         "m203-ae61912c1e",
         "m203-35a54335c3"
       ],
       "points": [
         {
-          "id": "target",
-          "title": "清楚標明燈面的遵循對象",
-          "text": "圓形紅、黃燈不表示方向，可加設燈面說明標誌，降低其他流向誤認的可能。"
+          "id": "view",
+          "title": "增設對角號誌確保待轉車輛可視",
+          "text": "左彎待轉區內的車輛因行駛方向改變，可能無法清楚辨識原有遠端號誌，應依待轉車輛視野增設對角號誌，確保停等及起步時能看見適用燈號。",
+          "focus": {
+            "asset": "m203-6a551f7dc7"
+          }
         },
         {
-          "id": "placement",
-          "title": "配合燈面型式安排位置",
-          "text": "直立式標誌可設於直立燈面側方；橫式標誌可設於號誌上方。"
+          "id": "target",
+          "title": "以燈面說明標誌明確標示適用對象",
+          "text": "由於紅燈及黃燈不具方向指示功能，增設對角號誌時，可於燈面上方或側邊配置燈面說明標誌，明確標示適用的轉向車流，避免駕駛人誤判管制對象。",
+          "focus": {
+            "asset": "m203-ae61912c1e"
+          }
         }
       ],
       "sourcePages": [],
@@ -476,8 +490,8 @@
       "id": "m203-signals-extension-shield",
       "section": "module",
       "submoduleId": "M2-03.1",
-      "title": "避免對角號誌誤視",
-      "intro": "從上游辨認、停止線提示到起步視野，檢查燈面的整體配置。",
+      "title": "避免號誌誤視",
+      "intro": "針對左彎待轉區及特殊燈面配置，透過增設號誌、標示適用對象及限制燈號可視角度，兼顧目標車流的明視性與其他方向的防誤視需求。",
       "assets": [
         "m203-e9c1bf866d",
         "m203-1e337c7e0f"
@@ -485,8 +499,19 @@
       "points": [
         {
           "id": "shield",
-          "title": "限制非目標方向看見燈號",
-          "text": "可採筒式罩簷或百葉窗，使燈號主要朝向待轉區，遮蔽其他車流的視線。"
+          "title": "限制燈號可視角度",
+          "text": "對角號誌可能同時被其他方向的車輛看見，造成燈號誤認。可採用筒式罩簷或百葉窗式遮光設施，限制燈號的可視角度，使其主要朝向受管制的車流。",
+          "focus": {
+            "asset": "m203-e9c1bf866d"
+          }
+        },
+        {
+          "id": "visibility",
+          "title": "兼顧目標車流可視性與非目標車流遮蔽",
+          "text": "應依燈面位置與車輛行駛方向調整遮光設施，確保左彎待轉區內車輛能清楚辨識燈號，同時避免其他方向車流誤視而產生衝突。",
+          "focus": {
+            "asset": "m203-1e337c7e0f"
+          }
         }
       ],
       "sourcePages": [],
@@ -518,96 +543,194 @@
           "topics": [
             {
               "id": "basic",
-              "label": "基本布設",
+              "label": "建立基本號誌燈面配置",
               "sourcePageId": "m203-signals-diagram",
-              "pointIds": [
-                "two",
-                "far",
-                "near"
-              ],
-              "assets": [
-                "m203-cd5bcd9029"
-              ]
-            },
-            {
-              "id": "visibility",
-              "label": "可視模板",
-              "sourcePageId": "m203-signals-diagram",
-              "pointIds": [
-                "distance",
-                "template",
-                "background"
-              ],
               "assets": [
                 "m203-2f27e58a6a"
-              ]
-            },
-            {
-              "id": "left",
-              "label": "遠端燈面在左",
-              "sourcePageId": "m203-signals-diagram",
-              "pointIds": [
-                "lamp",
-                "left-pole",
-                "right-pole",
-                "column"
               ],
-              "assets": [
-                "m203-22b38300ee",
-                "m203-a3b46fb4f0",
-                "m203-3955393bcf"
+              "pointIds": [
+                "two",
+                "far"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "signals",
+                  "label": "行車管制號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-2f27e58a6a"
+                  }
+                },
+                {
+                  "id": "mounting",
+                  "label": "柱立式、懸臂式、門架式及懸掛式號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-2f27e58a6a"
+                  }
+                }
               ]
             },
             {
               "id": "near-far",
-              "label": "近端與遠端",
+              "label": "明確區分近端與遠端號誌功能",
               "sourcePageId": "m203-signals-diagram",
+              "assets": [
+                "m203-f01d41842a",
+                "m203-22b38300ee",
+                "m203-a3b46fb4f0",
+                "m203-3955393bcf"
+              ],
+              "imageLayout": "grid",
               "pointIds": [
                 "near-distance",
                 "far-distance",
-                "fast"
+                "lamp"
               ],
-              "assets": [
-                "m203-f01d41842a"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "near",
+                  "label": "近端行車管制號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-f01d41842a"
+                  }
+                },
+                {
+                  "id": "far",
+                  "label": "遠端行車管制號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-a3b46fb4f0"
+                  }
+                }
               ]
             },
             {
-              "id": "gap",
-              "label": "12 m 視覺漏洞",
+              "id": "visibility",
+              "label": "檢核上游可視範圍與視覺漏洞",
               "sourcePageId": "m203-signals-diagram",
-              "pointIds": [
-                "spacing"
-              ],
               "assets": [
+                "m203-upstream-visibility-template",
                 "m203-1d1f6b14f8"
+              ],
+              "imageLayout": "row",
+              "pointIds": [
+                "template",
+                "spacing",
+                "background"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "signals",
+                  "label": "行車管制號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-upstream-visibility-template"
+                  }
+                },
+                {
+                  "id": "template",
+                  "label": "上游來車可視模板",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m203-upstream-visibility-template"
+                  }
+                },
+                {
+                  "id": "gap",
+                  "label": "12 m 視覺漏洞檢核",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m203-1d1f6b14f8"
+                  }
+                }
               ]
             },
             {
               "id": "start",
-              "label": "起步可視範圍",
+              "label": "以起步可視模板確保停等車輛可見燈號",
               "sourcePageId": "m203-signals-diagram",
+              "assets": [
+                "m203-9060c4516f",
+                "m203-1f4a9ba99d",
+                "m203-205bbd9cba"
+              ],
+              "imageLayout": "row",
               "pointIds": [
                 "eye",
                 "hat",
                 "tube"
               ],
-              "assets": [
-                "m203-1f4a9ba99d",
-                "m203-205bbd9cba",
-                "m203-9060c4516f"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "signals",
+                  "label": "行車管制號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-9060c4516f"
+                  }
+                },
+                {
+                  "id": "template",
+                  "label": "起步可視模板",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m203-1f4a9ba99d"
+                  }
+                },
+                {
+                  "id": "hood",
+                  "label": "帽式與筒式罩簷",
+                  "kind": "design",
+                  "focus": {
+                    "asset": "m203-205bbd9cba"
+                  }
+                }
               ]
             },
             {
               "id": "clearance",
-              "label": "淨寬與淨高",
+              "label": "檢核號誌設施的淨寬與淨高",
               "sourcePageId": "m203-signals-diagram",
+              "assets": [
+                "m203-d6e2d6ea4c"
+              ],
               "pointIds": [
                 "width",
                 "height",
                 "parts"
               ],
-              "assets": [
-                "m203-d6e2d6ea4c"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "pole",
+                  "label": "號誌桿柱",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-d6e2d6ea4c"
+                  }
+                },
+                {
+                  "id": "parts",
+                  "label": "號誌燈箱與附屬部件",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-d6e2d6ea4c"
+                  }
+                },
+                {
+                  "id": "mounting",
+                  "label": "懸臂式及柱立式號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-d6e2d6ea4c"
+                  }
+                }
               ]
             }
           ]
@@ -616,29 +739,83 @@
           "id": "extensions",
           "pageId": "m203-signals-extensions",
           "title": "延伸應用",
-          "intro": "依道路條件，檢視設施搭配與延伸運用。",
+          "intro": "針對左彎待轉區及特殊燈面配置，透過增設號誌、標示適用對象及限制燈號可視角度，兼顧目標車流的明視性與其他方向的防誤視需求。",
           "topics": [
-            {
-              "id": "arrangement",
-              "label": "橫排與縱排號誌",
-              "sourcePageId": "m203-signals-extensions"
-            },
             {
               "id": "turning",
               "label": "左彎待轉區對角號誌",
-              "sourcePageId": "m203-signals-extension-turning"
-            },
-            {
-              "id": "explanation",
-              "label": "燈面說明標誌",
-              "sourcePageId": "m203-signals-extension-explanation"
+              "sourcePageId": "m203-signals-extension-turning",
+              "assets": [
+                "m203-6a551f7dc7",
+                "m203-ae61912c1e",
+                "m203-35a54335c3"
+              ],
+              "pointIds": [
+                "view",
+                "target"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "waiting",
+                  "label": "左彎待轉區",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-6a551f7dc7"
+                  }
+                },
+                {
+                  "id": "signal",
+                  "label": "對角行車管制號誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-6a551f7dc7"
+                  }
+                },
+                {
+                  "id": "sign",
+                  "label": "燈面說明標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-ae61912c1e"
+                  }
+                }
+              ]
             },
             {
               "id": "shield",
-              "label": "避免對角號誌誤視",
-              "sourcePageId": "m203-signals-extension-shield"
+              "label": "避免號誌誤視",
+              "sourcePageId": "m203-signals-extension-shield",
+              "assets": [
+                "m203-e9c1bf866d",
+                "m203-1e337c7e0f"
+              ],
+              "pointIds": [
+                "shield",
+                "visibility"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "hood",
+                  "label": "筒式罩簷",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-e9c1bf866d"
+                  }
+                },
+                {
+                  "id": "louver",
+                  "label": "百葉窗式遮光設施",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m203-1e337c7e0f"
+                  }
+                }
+              ]
             }
-          ]
+          ],
+          "paged": true
         }
       ]
     }

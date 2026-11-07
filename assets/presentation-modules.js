@@ -19,6 +19,10 @@
     assert(value?.schemaVersion===1&&catalog.modules.some(entry=>entry.id===value.id)&&value.assets&&Array.isArray(value.pages),'模組內容格式無效');
     if(value.hiddenPages!==undefined)assert(Array.isArray(value.hiddenPages)&&new Set(value.hiddenPages).size===value.hiddenPages.length&&value.hiddenPages.every(id=>value.pages.some(page=>page.id===id)),'隱藏模組頁面無效');
     const submodules=new Set(catalog.modules.find(entry=>entry.id===value.id).submodules.map(sub=>sub.id));
+    if(value.subnavigationGroups!==undefined){
+      assert(Array.isArray(value.subnavigationGroups)&&value.subnavigationGroups.length>0,'子模組導覽群組無效');const grouped=new Set();
+      for(const group of value.subnavigationGroups){assert(group&&str(group.label)&&group.label.length<=120&&Array.isArray(group.submoduleIds)&&group.submoduleIds.length>0,'子模組導覽群組無效');assert(group.shared===undefined||typeof group.shared==='boolean','子模組共用頁面設定無效');for(const id of group.submoduleIds){assert(submodules.has(id)&&!grouped.has(id),'子模組導覽群組歸屬無效');grouped.add(id);}}
+    }
     if(value.directoryAssets!==undefined)assert(Array.isArray(value.directoryAssets)&&value.directoryAssets.length>0&&new Set(value.directoryAssets).size===value.directoryAssets.length&&value.directoryAssets.every(id=>typeof id==='string'&&Object.hasOwn(value.assets,id)),'模組目錄代表型清單無效');
     for(const page of value.pages){assert(page.pointLinkedImages===undefined||typeof page.pointLinkedImages==='boolean','照片連動設定無效');if(page.pointLinkedImages)assert(page.points.every(point=>page.assets.includes(point.focus?.asset)),'連動照片引用無效');assert(page.submoduleId===undefined||submodules.has(page.submoduleId),'解說頁的子模組歸屬無效');assert(page.defaultView===undefined||['single','pair'].includes(page.defaultView),'圖面預設顯示方式無效');assert(page.imageFit===undefined||['contain','cover'].includes(page.imageFit),'圖面填滿方式無效');}
     for(const page of value.pages)if(page.excludedOverviewPointIds!==undefined)assert(page===value.pages[0]&&!page.submoduleId&&Array.isArray(page.excludedOverviewPointIds)&&new Set(page.excludedOverviewPointIds).size===page.excludedOverviewPointIds.length&&page.excludedOverviewPointIds.every(id=>typeof id==='string'&&/^[\w-]+$/.test(id)),'總覽排除項目無效');
@@ -32,14 +36,17 @@
         if(group.assets!==undefined){assert(Array.isArray(group.assets)&&group.assets.length>0&&new Set(group.assets).size===group.assets.length&&group.assets.every(id=>typeof id==='string'&&/^[\w-]+$/.test(id)),'總覽代表型清單無效');if(!group.sourceModuleId||group.sourceModuleId===value.id)assert(group.assets.every(id=>Object.hasOwn(value.assets,id)),'總覽代表型不存在');}
       }
     }
+    for(const page of value.pages)for(const point of page.points)if(point.focus?.assets!==undefined)assert(page.pointLinkedImages&&Array.isArray(point.focus.assets)&&point.focus.assets.length>0&&point.focus.assets.length<=2&&(point.focus.assets.length===1||page.defaultView==='pair')&&new Set(point.focus.assets).size===point.focus.assets.length&&point.focus.assets.includes(point.focus.asset)&&point.focus.assets.every(id=>page.assets.includes(id)),'連動照片群組無效');
     for(const asset of Object.values(value.assets))assert(safePath(asset.file)&&asset.file.startsWith('materials/03-modules/')&&Number.isFinite(asset.width)&&asset.width>0&&Number.isFinite(asset.height)&&asset.height>0&&str(asset.label),'模組圖片資料無效');
     for(const asset of Object.values(value.assets))if(asset.highlightColor!==undefined)assert(/^#[a-fA-F0-9]{6}$/.test(asset.highlightColor),'照片框線顏色無效');
     for(const asset of Object.values(value.assets))assert(asset.rotation===undefined||[0,90,180,270].includes(asset.rotation),'模組圖片方向無效');
     for(const page of value.pages)if(page.links)assert(Array.isArray(page.links)&&page.links.length>0&&page.links.every(link=>/^[\w-]+$/.test(link.pageId)&&str(link.label)&&(link.topicId===undefined||/^[\w-]+$/.test(link.topicId))),'模組轉介連結無效');
+    for(const page of value.pages)if(page.referenceNames!==undefined)assert(page.referenceNames&&typeof page.referenceNames==='object'&&!Array.isArray(page.referenceNames)&&Object.entries(page.referenceNames).every(([reg,name])=>page.references?.includes(reg)&&str(name)&&name.length<=120),'頁面條文名稱無效');
     const prefix=value.id.toLowerCase().replace('-','')+'-';
     const ids=new Set();for(const page of value.pages){assert(/^[\w-]+$/.test(page.id)&&page.id.startsWith(prefix)&&!ids.has(page.id)&&str(page.title)&&Array.isArray(page.assets)&&page.assets.every(id=>Object.hasOwn(value.assets,id))&&Array.isArray(page.points)&&Array.isArray(page.sourcePages),'模組頁面資料無效');ids.add(page.id);const points=new Set();for(const point of page.points){assert(/^[\w-]+$/.test(point.id)&&!points.has(point.id)&&str(point.title)&&str(point.text),'模組說明項目無效');points.add(point.id);if(point.focus){const asset=value.assets[point.focus.asset];assert(asset,'圖面定位引用無效');if(point.focus.rect){const b=point.focus.rect;assert(Array.isArray(b)&&b.length===4&&b.every(Number.isFinite)&&b[0]>=0&&b[1]>=0&&b[2]>0&&b[3]>0&&b[0]+b[2]<=asset.width&&b[1]+b[3]<=asset.height,'圖面定位超出素材範圍');}}}}
     for(const page of value.pages)for(const point of page.points){
       assert(point.submoduleId===undefined||submodules.has(point.submoduleId),'說明項目的子模組歸屬無效');
+      if(point.illustration!==undefined)assert(str(point.illustration)&&page.assets.includes(point.illustration),'說明配圖引用無效');
       if(point.table!==undefined){const table=point.table;assert(table&&typeof table==='object'&&str(table.label)&&Array.isArray(table.headers)&&table.headers.length>=2&&table.headers.length<=12&&table.headers.every(str)&&Array.isArray(table.rows)&&table.rows.length>0&&table.rows.length<=200&&table.rows.every(row=>Array.isArray(row)&&row.length===table.headers.length&&row.every(str)),'模組說明表格無效');}
     }
     const flows=new Set(),anchors=new Set();
@@ -54,10 +61,13 @@
         assert(Array.isArray(stage.topics)&&stage.topics.length>0,'解說項目清單無效');const topics=new Set(),covered=new Set();
         for(const topic of stage.topics){
           const source=value.pages.find(page=>page.id===topic.sourcePageId);
-          assert(/^[\w-]+$/.test(topic.id)&&!topics.has(topic.id)&&str(topic.label)&&source?.submoduleId===flow.submoduleId,'解說項目引用無效');topics.add(topic.id);
+          const shared=source&&value.subnavigationGroups?.some(group=>group.shared&&group.submoduleIds.includes(flow.submoduleId)&&group.submoduleIds.includes(source.submoduleId));
+          assert(/^[\w-]+$/.test(topic.id)&&!topics.has(topic.id)&&str(topic.label)&&(source?.submoduleId===flow.submoduleId||shared),'解說項目引用無效');topics.add(topic.id);
           if(topic.summary!==undefined)assert(str(topic.summary)&&topic.summary.length<=1000,'概念摘要無效');
           if(topic.facilitiesLabel!==undefined)assert(str(topic.facilitiesLabel)&&topic.facilitiesLabel.length<=60,'概念設施標籤無效');
           if(topic.showPointTitles!==undefined)assert(typeof topic.showPointTitles==='boolean','概念說明標題顯示設定無效');
+          if(topic.illustrations!==undefined)assert(stage.id==='diagram'&&Array.isArray(topic.illustrations)&&topic.illustrations.length>0&&topic.illustrations.length<=4&&new Set(topic.illustrations).size===topic.illustrations.length&&topic.illustrations.every(id=>source.assets.includes(id)),'概念補充圖例引用無效');
+          if(topic.imageLayout!==undefined)assert(stage.id==='diagram'&&['row','grid'].includes(topic.imageLayout)&&Array.isArray(topic.assets)&&topic.assets.length>=2&&topic.assets.length<=4,'概念多圖排版設定無效');
           if(topic.facilities!==undefined){assert(Array.isArray(topic.facilities)&&(topic.facilities.length>0||stage.id==='diagram')&&topic.facilities.length<=12&&new Set(topic.facilities.map(item=>item.id)).size===topic.facilities.length,'概念設施清單無效');for(const facility of topic.facilities){const asset=value.assets[facility.focus?.asset];assert(/^[\w-]+$/.test(facility.id)&&str(facility.label)&&asset&&source.assets.includes(facility.focus.asset)&&(!facility.focus.rect||validBox(facility.focus.rect,asset)),'概念設施框選無效');assert(facility.kind===undefined||['control','design'].includes(facility.kind),'項目類別無效');}}
           const pointIds=topic.pointIds||source.points.map(point=>point.id);
           assert(Array.isArray(pointIds)&&(pointIds.length>0||(stage.id==='diagram'&&Array.isArray(topic.facilities)))&&new Set(pointIds).size===pointIds.length&&pointIds.every(id=>source.points.some(point=>point.id===id)),'解說項目內容引用無效');
@@ -66,6 +76,7 @@
         }
       }
     }
+    for(const group of value.subnavigationGroups||[])if(group.shared)assert(group.submoduleIds.length>1&&group.submoduleIds.every(id=>flows.has(id)),'子模組共用流程無效');
     return value;
   }
   function validateFormation(value,catalog){
@@ -84,6 +95,8 @@
   const contents=new Map(),pageOwners=new Map(),moduleErrors=new Map();
   const moduleFor=id=>contents.get(id)||pageOwners.get(id)||null;
   const entryPoint=id=>{const doc=contents.get(id);return doc?.pages.find(page=>!doc.hiddenPages?.includes(page.id))?.id||'module-'+id;};
+  const sharedFlow=(content,id)=>{const group=content?.subnavigationGroups?.find(group=>group.shared&&group.submoduleIds.includes(id));return group?content.submoduleFlows.find(flow=>flow.submoduleId===group.submoduleIds[0]):null;};
+  const flowName=(content,flow)=>{const entry=catalog?.modules.find(entry=>entry.id===content.id);return sharedFlow(content,flow.submoduleId)?entry.name:entry.submodules.find(sub=>sub.id===flow.submoduleId).name;};
   const selectedAssets=new Map(),selectedOverviewAssets=new Map(),selectedPoints=new Map(),selectedTopics=new Map(),selectedFacilities=new Map(),extensionGroups=new Map(),comparisonPages=new Map();let pendingFocus=null,extensionFooter=null;
   let formationCamera=null;
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -117,8 +130,9 @@
     return [...new Set(assets)].filter(id=>sharedAsset(id));
   }
   function overviewAsset(group){const id=group.assets.includes(selectedOverviewAssets.get(group.key))?selectedOverviewAssets.get(group.key):group.assets[0];if(id)selectedOverviewAssets.set(group.key,id);return id;}
+  function linkedAssets(page){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),point=points.find(point=>point.id===selectedPoints.get(page.id))||points[0];return (point?.focus?.assets||[point?.focus?.asset]).filter(id=>page.assets.includes(id));}
   function activeAsset(page){if(page.pointLinkedImages){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),point=points.find(point=>point.id===selectedPoints.get(page.id))||points[0];if(page.assets.includes(point?.focus?.asset))return point.focus.asset;}const id=page.assets.includes(selectedAssets.get(page.id))?selectedAssets.get(page.id):page.assets[0];if(id)selectedAssets.set(page.id,id);return id;}
-  function shownAssets(page){const groups=overviewGroups(page);if(groups.length)return groups.map(overviewAsset).filter(Boolean);const id=activeAsset(page);return id?(page.mode==='pair'?[id,page.assets[(page.assets.indexOf(id)+1)%page.assets.length]]:[id]):[];}
+  function shownAssets(page){const groups=overviewGroups(page);if(groups.length)return groups.map(overviewAsset).filter(Boolean);if(page.mode==='gallery')return page.assets;const id=activeAsset(page);return id?(page.mode==='pair'?[id,page.assets[(page.assets.indexOf(id)+1)%page.assets.length]]:[id]):[];}
   function activePoint(page){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),assets=shownAssets(page),state=typeof window==='object'?window.generalRoadEditor?.state||{}:{};return points.find(point=>point.id===selectedPoints.get(page.id))||points.find(point=>assets.some(id=>highlightSpec(page,point,id,state).hasBox))||((displayContext().stage?.id==='diagram'||page.pointLinkedImages)?points[0]:undefined);}
   const orderedStage=stage=>stage.id==='diagram'&&typeof window==='object'&&window.PresentationOrder?{...stage,topics:window.PresentationOrder.forKey(stage.topics,'module:'+stage.pageId)}:stage;
   function stageContext(id){const content=moduleFor(id);for(const flow of content?.submoduleFlows||[])for(const stage of flow.stages)if(stage.pageId===id)return {flow,stage:orderedStage(stage)};return null;}
@@ -135,8 +149,8 @@
   }
   function imageOrderKey(page,group){const context=presentation?displayContext():null;return 'module:'+(presentation?.page.id||page.id)+'/'+(group?'overview:'+group.id:context?.stage?.id==='diagram'?'topic:'+context.topic.id:'main');}
   function orderedAssets(assets,page,group){return typeof window==='object'&&window.PresentationImageOrder?window.PresentationImageOrder.ordered(assets,imageOrderKey(page,group),assetKey):assets;}
-  const visualPage=source=>source&&({...source,assets:orderedAssets(source.assets,source),mode:!source.pointLinkedImages&&(comparisonPages.get(source.id)??source.defaultView==='pair')&&source.assets.length>1?'pair':undefined});
-  const currentPage=()=>{const {source,topic}=displayContext();return visualPage(source&&topic?.assets?{...source,assets:topic.assets}:source);};
+  const visualPage=(source,topic)=>{if(!source)return source;const assets=orderedAssets(source.pointLinkedImages?linkedAssets(source):source.assets,source);return {...source,assets,imageLayout:topic?.imageLayout,mode:topic?.imageLayout&&assets.length>1?'gallery':(comparisonPages.get(source.id)??source.defaultView==='pair')&&assets.length>1?'pair':undefined};};
+  const currentPage=()=>{const {source,topic}=displayContext();return visualPage(source&&topic?.assets?{...source,assets:topic.assets}:source,topic);};
   function pointVisible(pageId,point,topicId){
     const {stage,topic:active}=displayContext(),topic=topicId?stage?.topics?.find(topic=>topic.id===topicId):active;if(!topic||topic.sourcePageId!==pageId)return true;
     const siblings=stage.topics.filter(value=>value.sourcePageId===pageId);
@@ -146,6 +160,8 @@
   function resolvePage(id,topicRoute){
     for(const entry of catalog?.modules||[]){if(moduleErrors.has(entry.id)&&id.startsWith(entry.id.toLowerCase().replace('-','')+'-'))return 'module-'+entry.id;const content=contents.get(entry.id);if(!content)continue;if(id==='module-'+entry.id)return entryPoint(entry.id);const sub=entry.submodules.find(sub=>submodulePageId(sub)===id);if(sub)return submoduleStart(entry,sub);}
     const content=moduleFor(id);
+    const memberContext=stageContext(id),primary=sharedFlow(content,memberContext?.flow.submoduleId);
+    if(primary&&primary!==memberContext.flow){const target=primary.stages.find(stage=>stage.id===memberContext.stage.id),topic=target.topics?.find(topic=>topic.sourcePageId===id);return resolvePage(target.pageId,topicRoute??(topic?'topic-'+topic.id:undefined));}
     if(content?.hiddenPages?.includes(id))return entryPoint(content.id);
     let context=stageContext(id),alias;
     if(!context)for(const flow of content?.submoduleFlows||[])for(const stage of flow.stages){const topic=stage.topics?.find(topic=>topic.sourcePageId===id);if(topic){context={flow,stage:orderedStage(stage)};alias=topic.id;break;}}
@@ -171,7 +187,7 @@
     selectedPoints.delete(topic.sourcePageId);pendingFocus=null;
   }
   function hashFor(page){if(page.id==='modules-formation')return '#'+page.id+(presentation.state.phase?'/step-'+presentation.state.phase:'');const {stage,topic}=displayContext(page.id);return '#'+page.id+(topic&&stage.id!=='extensions'?'/topic-'+topic.id:'');}
-  function extensionPaging(){const {stage}=displayContext();return stage?.id==='extensions'&&(Boolean(document.fullscreenElement)||stage.paged===true)&&innerWidth>900&&!document.body.classList.contains('is-editing');}
+  function extensionPaging(){const {stage}=displayContext();return stage?.id==='extensions'&&stage.paged!==false&&(Boolean(document.fullscreenElement)||stage.paged===true)&&innerWidth>900&&!document.body.classList.contains('is-editing');}
   function syncExtensionControls(page){
     if((page||presentation?.page)?.id==='modules-formation'&&formation){
       const phase=presentation.state.phase,next=document.getElementById('next'),stage=formation.stages[phase],following=formation.stages[phase+1];
@@ -233,7 +249,7 @@
   const submodulePageId=sub=>'submodule-'+sub.id.replace(/\./g,'-');
   function pagesForModule(entry){
     const chapter='modules-'+entry.theme,content=contents.get(entry.id);
-    if(content)return [...content.pages.filter(page=>!content.hiddenPages?.includes(page.id)&&(!content.submoduleFlows?.some(flow=>flow.submoduleId===page.submoduleId)||stageContext(page.id))).map(page=>{const context=stageContext(page.id),sub=entry.submodules.find(sub=>sub.id===page.submoduleId);return {id:page.id,chapter,kind:'module',moduleId:entry.id,name:context?sub.id+' '+sub.name+'｜'+context.stage.title:page.title,...(page.submoduleId?{submoduleId:page.submoduleId}:{})};}),...entry.submodules.filter(sub=>!content.pages.some(page=>page.submoduleId===sub.id)).map(sub=>({id:submodulePageId(sub),chapter,kind:'presentation-empty',name:sub.name,moduleId:entry.id,submoduleId:sub.id}))];
+    if(content)return [...content.pages.filter(page=>!content.hiddenPages?.includes(page.id)&&(!content.submoduleFlows?.some(flow=>flow.submoduleId===page.submoduleId)||stageContext(page.id))).map(page=>{const context=stageContext(page.id),sub=entry.submodules.find(sub=>sub.id===page.submoduleId);return {id:page.id,chapter,kind:'module',moduleId:entry.id,name:context?(sharedFlow(content,context.flow.submoduleId)?entry.id:sub.id)+' '+flowName(content,context.flow)+'｜'+context.stage.title:page.title,...(page.submoduleId?{submoduleId:page.submoduleId}:{})};}),...entry.submodules.filter(sub=>!content.pages.some(page=>page.submoduleId===sub.id)).map(sub=>({id:submodulePageId(sub),chapter,kind:'presentation-empty',name:sub.name,moduleId:entry.id,submoduleId:sub.id}))];
     if(moduleErrors.has(entry.id))return [{id:'module-'+entry.id,chapter,kind:'module',name:entry.name,moduleId:entry.id}];
     const single=entry.submodules.length===1?entry.submodules[0]:null;
     return [{id:'module-'+entry.id,chapter,kind:'presentation-empty',name:single?.name||entry.name,moduleId:entry.id,...(single?{submoduleId:single.id}:{})},...(entry.submodules.length>1?entry.submodules.map(sub=>({id:submodulePageId(sub),chapter,kind:'presentation-empty',name:sub.name,moduleId:entry.id,submoduleId:sub.id})):[])];
@@ -268,14 +284,17 @@
   }
   function submoduleStart(entry,sub){
     const content=contents.get(entry.id);
+    const flow=sub&&sharedFlow(content,sub.id);if(flow)return flow.stages[0].pageId;
     if(entry.id===content?.id)return content.pages.find(page=>(page.submoduleId||null)===(sub?.id||null))?.id||(sub?submodulePageId(sub):content.pages[0]?.id);
     return sub?submodulePageId(sub):'module-'+entry.id;
   }
   function subnavigation(page){
     const {entry,submoduleId}=submoduleContext(page);
     if(!entry||entry.submodules.length<2)return '';
-    const choices=[{id:'overview',name:'總覽',pageId:submoduleStart(entry,null)},...entry.submodules.map(sub=>({id:sub.id,name:sub.id+' '+sub.name,pageId:submoduleStart(entry,sub)}))].filter(choice=>!contents.get(entry.id)?.hiddenPages?.includes(choice.pageId));
-    return `<nav class="module-subnav${choices.length>4?' is-compact':''}" aria-label="${entry.id} 子分類" data-choice-count="${choices.length}"><div class="module-subnav-buttons">${choices.map(choice=>`<button type="button" data-submodule-id="${choice.id}" data-page="${choice.pageId}" ${(submoduleId||'overview')===choice.id?'class="active" aria-current="page"':''}>${esc(choice.name)}</button>`).join('')}</div><select data-module-subselect aria-label="選擇${entry.id}子分類">${choices.map(choice=>`<option value="${choice.pageId}" ${(submoduleId||'overview')===choice.id?'selected':''}>${esc(choice.name)}</option>`).join('')}</select></nav>`;
+    const content=contents.get(entry.id),groups=content?.subnavigationGroups||[],grouped=new Set(groups.flatMap(group=>group.submoduleIds));
+    const choices=[{id:'overview',submoduleIds:['overview'],name:'總覽',pageId:submoduleStart(entry,null)},...groups.map(group=>({id:group.submoduleIds[0],submoduleIds:group.submoduleIds,name:group.label,pageId:submoduleStart(entry,entry.submodules.find(sub=>sub.id===group.submoduleIds[0]))})),...entry.submodules.filter(sub=>!grouped.has(sub.id)).map(sub=>({id:sub.id,submoduleIds:[sub.id],name:sub.id+' '+sub.name,pageId:submoduleStart(entry,sub)}))].filter(choice=>!content?.hiddenPages?.includes(choice.pageId));
+    const selected=choices.find(choice=>choice.submoduleIds.includes(submoduleId||'overview'))?.id;
+    return `<nav class="module-subnav${choices.length>4?' is-compact':''}" aria-label="${entry.id} 子分類" data-choice-count="${choices.length}"><div class="module-subnav-buttons">${choices.map(choice=>`<button type="button" data-submodule-id="${choice.id}" data-page="${choice.pageId}" ${selected===choice.id?'class="active" aria-current="page"':''}>${esc(choice.name)}</button>`).join('')}</div><select data-module-subselect aria-label="選擇${entry.id}子分類">${choices.map(choice=>`<option value="${choice.pageId}" ${selected===choice.id?'selected':''}>${esc(choice.name)}</option>`).join('')}</select></nav>`;
   }
   function syncNavigation(){
     const row=document.querySelector('.module-navigation'),sub=row?.querySelector('.module-subnav');if(!sub)return;
@@ -343,18 +362,29 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     const groups=overviewGroups(page);
     if(groups.length)return `<div class="module-overview-grid${groups.some(group=>group.assets.length>1)?' has-switchers':''}" style="--overview-columns:${groups.length}">${groups.map(group=>group.assets.length?figure({...page,assets:group.assets},overviewAsset(group),true,group):`<article class="module-overview-reference" data-overview-submodule="${group.id}"><h2>${esc(group.label)}</h2><p>${esc(group.intro)}</p><button type="button" class="text-button" data-page="${group.sourcePageId}">查看說明 ↗</button></article>`).join('')}</div>`;
     if(!page.assets.length)return applications();
+    if(page.mode==='gallery'){const columns=page.imageLayout==='row'?page.assets.length:2;return `<div class="module-concept-gallery" data-image-layout="${page.imageLayout}" style="--module-gallery-columns:${columns};--module-gallery-rows:${Math.ceil(page.assets.length/columns)}">${page.assets.map(id=>figure(page,id)).join('')}</div>`;}
     const id=activeAsset(page);
     if(page.mode==='pair'){const next=page.assets[(page.assets.indexOf(id)+1)%page.assets.length];return `<div class="module-pair">${figure(page,id,true)}${figure(page,next)}</div>`;}
     return figure(page,id,true);
   }
   function applications(){const content=contents.get('M2-01');const names={'G1-01':'市區正交三岔','G1-02':'鄉區正交三岔','G1-03':'市區匯入型巷道','G1-04':'鄉區匯入型巷道','G1-05':'市區斜交三岔','G1-06':'鄉區斜交三岔','G3-01':'市區正交四岔','G3-02':'鄉區正交四岔','G3-03':'市區斜交四岔','G3-04':'鄉區斜交四岔','C2-01':'部分苜蓿葉型交流道','C3-01':'鐵路平交道','C4-04':'路段中央分隔迴轉道'};return `<div class="module-applications">${[['stop','停管制'],['yield','讓管制']].map(([type,label])=>`<section><h2>${label}的適用情境</h2><div class="module-case-grid">${content.applications[type].map(code=>{const scene=presentation.data.scenarios.find(scene=>scene.code===code);return `<${scene?'button':'div'} class="module-case" ${scene?`data-module-scenario="${scene.overviewId}"`:''}><b>${code}</b><span>${esc(names[code])}</span><small>${scene?'查看整體配置 ↗':''}</small></${scene?'button':'div'}>`;}).join('')}</div></section>`).join('')}</div>`;}
   function articleRefs(page,footer=false){
-    const content=moduleFor(page.id);
-    if(footer)return `<nav class="article-nav module-related-nav" aria-label="本子模組相關條文"><span class="nav-label">相關條文</span>${(page.references||[]).map(reg=>`<button type="button" class="article-chip" data-module-reference="${reg}" title="§ ${reg} ${esc(content.referenceNames[reg])}"><span>§ ${reg}</span>${esc(content.referenceNames[reg])}</button>`).join('')}</nav>`;
+    const content=moduleFor(page.id),name=reg=>page.referenceNames?.[reg]||content.referenceNames[reg];
+    if(footer)return `<nav class="article-nav module-related-nav" aria-label="本子模組相關條文"><span class="nav-label">相關條文</span>${(page.references||[]).map(reg=>`<button type="button" class="article-chip" data-module-reference="${reg}" title="§ ${reg} ${esc(name(reg))}"><span>§ ${reg}</span>${esc(name(reg))}</button>`).join('')}</nav>`;
     return `<div class="module-reference-row"><span>相關條文</span>${(page.references||[]).map(reg=>`<button data-module-reference="${reg}">§ ${reg}</button>`).join('')}</div>`;
   }
   function pointTable(point){const table=point.table;if(!table)return '';return `<div class="module-point-table-wrap"><table class="module-point-table" aria-label="${esc(table.label)}"><thead><tr>${table.headers.map(header=>`<th scope="col">${esc(header)}</th>`).join('')}</tr></thead><tbody>${table.rows.map(row=>`<tr>${row.map((cell,index)=>index===0?`<th scope="row">${esc(cell)}</th>`:`<td>${esc(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
-  function pointList(source,concept=false){return `<ol class="module-explain-points${concept?' module-concept-points':''}">${source.points.map(point=>`<li data-module-point="${point.id}"><h3 data-block-edit-key="${source.id}|module|${point.id}|title">${esc(point.title)}</h3><p data-block-edit-key="${source.id}|module|${point.id}|text">${esc(point.text)}</p>${pointTable(point)}</li>`).join('')}</ol>`;}
+  function pointIllustration(source,point){
+    const asset=moduleFor(source.id)?.assets[point.illustration];if(!asset)return '';
+    const key=assetKey(point.illustration),url=presentation?.data.embeddedAssets[key]?.url||asset.file;
+    return `<figure class="module-point-illustration"><button type="button" data-asset="${esc(key)}" aria-label="放大${esc(asset.label)}"><img src="${esc(url)}" alt="${esc(asset.label)}" width="${asset.width}" height="${asset.height}" draggable="false"></button></figure>`;
+  }
+  function conceptIllustrations(source,topic){
+    if(!topic?.illustrations?.length)return '';
+    const assets=moduleFor(source.id).assets;
+    return `<div class="module-concept-illustrations" aria-label="補充圖例">${topic.illustrations.map(id=>{const asset=assets[id],key=assetKey(id),url=presentation?.data.embeddedAssets[key]?.url||asset.file;return `<figure><button type="button" data-asset="${esc(key)}" aria-label="放大${esc(asset.label)}" title="${esc(asset.label)}"><img src="${esc(url)}" alt="${esc(asset.label)}" width="${asset.width}" height="${asset.height}" draggable="false"></button></figure>`;}).join('')}</div>`;
+  }
+  function pointList(source,concept=false){return `<ol class="module-explain-points${concept?' module-concept-points':''}">${source.points.map(point=>`<li data-module-point="${point.id}"${point.illustration?' class="module-point-with-illustration"':''}><h3 data-block-edit-key="${source.id}|module|${point.id}|title">${esc(point.title)}</h3><p data-block-edit-key="${source.id}|module|${point.id}|text">${esc(point.text)}</p>${point.illustration?pointIllustration(source,point):''}${pointTable(point)}</li>`).join('')}</ol>`;}
   function extensionFigure(id){const content=moduleFor(presentation.page.id),asset=content.assets[id],key=assetKey(id),swapped=(asset.rotation||0)%180;return `<figure class="module-extension-image custom-image-frame" data-editor-image-key="${key}" style="--extension-image-ratio:${swapped?asset.height:asset.width}/${swapped?asset.width:asset.height}"><button type="button" class="module-extension-image-open" data-asset="${key}" aria-label="放大${esc(asset.label)}">${asset.rotation?orientedImage(asset,key,'module-extension-thumbnail'):`<img class="module-extension-thumbnail" src="${esc(presentation?.data.embeddedAssets[key]?.url||asset.file)}" alt="${esc(asset.label)}" draggable="false">`}</button></figure>`;}
   function extensionLayout(content,stage,topic,config=typeof window==='object'?window.visualLayoutEditor?.store?.config:null){
     const source=content.pages.find(page=>page.id===topic.sourcePageId),assets=topic.assets||source.assets,key=stage.pageId+'/'+topic.id;
@@ -393,9 +423,10 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     const content=moduleFor(page.id);
     const cards=stage.topics.map((topic,index)=>{
       const source=content.pages.find(source=>source.id===topic.sourcePageId),assets=topic.assets||source.assets,layout=extensionLayout(content,stage,topic),editing=typeof window==='object'&&window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing;
-      return `<article class="module-extension-card${assets.length?' has-images':' text-only'}${topic.showPointTitles?' has-concept-point-titles':''}" data-extension-layout="${layout.layout}" data-extension-group="${Math.floor(index/2)}" data-module-source-page="${source.id}" data-module-topic-id="${topic.id}"><header class="module-extension-card-heading"><span>${String(index+1).padStart(2,'0')}</span><h2 data-block-edit-key="${stage.pageId}|extension|${topic.id}|title">${esc(topic.label)}</h2>${assets.length&&editing?extensionLayoutControl(layout):''}</header>${assets.length&&source.notice?`<p class="module-extension-notice" data-editor-ui="module-image-note">${esc(source.notice)}</p>`:''}<div class="module-extension-body"><div class="module-extension-copy">${topic.facilities?conceptFacilities(source,topic,false):''}${pointList(source)}</div>${assets.length?`<div class="module-extension-images${assets.length>1?' is-pair':''}">${assets.map(extensionFigure).join('')}</div>`:''}</div></article>`;
+      const copy={...source,points:topic.pointIds?source.points.filter(point=>topic.pointIds.includes(point.id)):source.points};
+      return `<article class="module-extension-card${assets.length?' has-images':' text-only'}${topic.showPointTitles?' has-concept-point-titles':''}" data-extension-layout="${layout.layout}" data-extension-group="${Math.floor(index/2)}" data-module-source-page="${source.id}" data-module-topic-id="${topic.id}"><header class="module-extension-card-heading"><span>${String(index+1).padStart(2,'0')}</span><h2 data-block-edit-key="${stage.pageId}|extension|${topic.id}|title">${esc(topic.label)}</h2>${assets.length&&editing?extensionLayoutControl(layout):''}</header>${assets.length&&source.notice?`<p class="module-extension-notice" data-editor-ui="module-image-note">${esc(source.notice)}</p>`:''}<div class="module-extension-body"><div class="module-extension-copy">${topic.facilities?conceptFacilities(source,topic,false):''}${pointList(copy)}</div>${assets.length?`<div class="module-extension-images${assets.length>1?' is-pair':''}">${assets.map(extensionFigure).join('')}</div>`:''}</div></article>`;
     }).join('');
-    return `<section class="slide module-slide module-detail module-extension-slide" data-module-id="${content.id}" data-module-stage="extensions">${switcher(page)}${extensionPageActions(page)}${heading(sub.id+' / '+(content.id==='M2-01'?(sub.id.endsWith('.1')?'STOP CONTROL':'YIELD CONTROL'):'FUNCTIONAL MODULE')+' · '+stageProgress(stageContext(page.id).flow,stage),sub.name+'｜'+stage.title,stage.intro||'依行人穿越、路口空間與車速，調整停讓配置。',true)}<div class="module-extension-grid" style="--module-extension-rows:${Math.ceil(stage.topics.length/2)}">${cards}</div><div class="module-extension-footer"><nav class="module-extension-pager" aria-label="延伸應用分組" data-editor-ui="extension-pager" hidden><button type="button" data-module-extension-step="-1">← 上一組</button><span data-extension-range role="status" aria-live="polite"></span><button type="button" data-module-extension-step="1">下一組 →</button></nav></div></section>`;
+    return `<section class="slide module-slide module-detail module-extension-slide" data-module-id="${content.id}" data-module-stage="extensions">${switcher(page)}${extensionPageActions(page)}${heading(sub.id+' / '+(content.id==='M2-01'?(sub.id.endsWith('.1')?'STOP CONTROL':'YIELD CONTROL'):'FUNCTIONAL MODULE')+' · '+stageProgress(stageContext(page.id).flow,stage),pageTitle(page),stage.intro||'依行人穿越、路口空間與車速，調整停讓配置。',true)}<div class="module-extension-grid${stage.paged===false&&stage.topics.length===3?' has-three-topics':''}" style="--module-extension-rows:${Math.ceil(stage.topics.length/2)}">${cards}</div><div class="module-extension-footer"><nav class="module-extension-pager" aria-label="延伸應用分組" data-editor-ui="extension-pager" hidden><button type="button" data-module-extension-step="-1">← 上一組</button><span data-extension-range role="status" aria-live="polite"></span><button type="button" data-module-extension-step="1">下一組 →</button></nav></div></section>`;
   }
   function pageTitle(page){
     if(page.id==='modules-cover')return catalog?.cover?.title||page.name;
@@ -406,7 +437,7 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     if(page.theme)return page.name;
     const {source,stage,flow}=displayContext(page.id),content=moduleFor(page.id);
     const sub=flow&&catalog?.modules.find(entry=>entry.id===content?.id)?.submodules.find(sub=>sub.id===flow.submoduleId);
-    return stage&&sub?sub.name+'｜'+stage.title:source?.title||page.name;
+    return stage&&sub?flowName(content,flow)+'｜'+stage.title:source?.title||page.name;
   }
   function render(page){
     const content=moduleFor(page.id);
@@ -416,14 +447,14 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     if(page.id==='modules-structure')return structure();if(page.id==='modules-formation')return formationSlide();if(page.id==='modules-index')return index();
     if(page.theme)return index(page.theme,page.themePageIndex||0);
     const {source,stage,topic,flow}=displayContext(page.id);if(!source)return '';
-    const item=visualPage(topic?.assets?{...source,assets:topic.assets}:source);
+    const item=visualPage(topic?.assets?{...source,assets:topic.assets}:source,topic);
     const sub=flow&&catalog.modules.find(entry=>entry.id===content.id).submodules.find(sub=>sub.id===flow.submoduleId),title=pageTitle(page);
     if(stage?.id==='extensions')return extensionSlide(page,stage,sub);
-    if(item.links)return `<section class="slide module-slide module-detail module-referral" data-module-id="${content.id}" data-module-source-page="${item.id}">${switcher(page)}${heading(item.submoduleId+' / MODULE REFERENCE',title,item.intro,true)}<div class="module-referral-content">${pointList(item)}<nav class="module-referral-links" aria-label="相關配置說明">${item.links.map(link=>`<button type="button" class="primary-button" data-module-route="${link.pageId}${link.topicId?'/topic-'+link.topicId:''}">${esc(link.label)} ↗</button>`).join('')}</nav></div></section>`;
+    if(item.links)return `<section class="slide module-slide module-detail module-referral${item.assets.length?' has-figures':''}" data-module-id="${content.id}" data-module-source-page="${item.id}">${switcher(page)}${heading(item.submoduleId+' / MODULE REFERENCE',title,item.intro,true)}${item.assets.length?`<div class="module-visuals module-referral-visuals">${visuals(item)}</div>`:''}<div class="module-referral-content">${pointList(item)}<nav class="module-referral-links" aria-label="相關配置說明">${item.links.map(link=>`<button type="button" class="primary-button" data-module-route="${link.pageId}${link.topicId?'/topic-'+link.topicId:''}">${esc(link.label)} ↗</button>`).join('')}</nav></div></section>`;
     const intro=item.intro;
     const conceptSummary=topic?.facilities&&topic.summary?`<p class="module-concept-summary" data-block-edit-key="${stage.pageId}|concept|${topic.id}|summary">${esc(topic.summary)}</p>`:'';
     const overview=overviewGroups(item).length>0,explanationHeading=overview?'<h2 class="module-summary-heading" data-editor-ui="module-summary-label">模組說明</h2>':(topic?`<h2 class="module-topic-title" ${topic.facilities?`data-block-edit-key="${conceptTitleKey(stage,topic)}" data-module-concept-title="${topic.id}"`:'data-editor-ui="module-topic-label"'}>${esc(topicLabel(stage,topic))}</h2>`:'')+(stage?'':articleRefs(item));
-    return `<section class="slide module-slide module-detail${topic?.facilities?' module-concept-slide'+(topic.showPointTitles?' has-concept-point-titles':''):''}${stage?' module-flow-detail':''}" data-module-id="${content.id}" data-module-source-page="${item.id}" ${stage?`data-module-stage="${stage.id}"`:''}>${switcher(page)}${extensionPageActions(page)}${heading((sub?.id||content.id)+' / '+(item.section==='stop'?'STOP CONTROL':item.section==='yield'?'YIELD CONTROL':'FUNCTIONAL MODULE')+(stage?' · '+stageProgress(flow,stage):''),title,intro,true)}<div class="map-layout module-layout"><div class="module-visuals">${item.notice?`<p class="module-notice">${esc(item.notice)}</p>`:''}${visuals(item)}</div><aside class="custom-explanation module-explanation" aria-label="模組說明">${explanationHeading}${conceptSummary}${topic?.facilities?conceptFacilities(item,topic):''}${pointList({...item,points:overviewPoints(item)},Boolean(topic?.facilities))}${overview&&item.references?.length?articleRefs(item):''}${scenarioRefs(item)}</aside></div>${contentNavigation(page)}</section>`;
+    return `<section class="slide module-slide module-detail${topic?.facilities?' module-concept-slide'+(topic.showPointTitles?' has-concept-point-titles':''):''}${stage?' module-flow-detail':''}" data-module-id="${content.id}" data-module-source-page="${item.id}" ${stage?`data-module-stage="${stage.id}"`:''}>${switcher(page)}${extensionPageActions(page)}${heading((sub?.id||content.id)+' / '+(item.section==='stop'?'STOP CONTROL':item.section==='yield'?'YIELD CONTROL':'FUNCTIONAL MODULE')+(stage?' · '+stageProgress(flow,stage):''),title,intro,true)}<div class="map-layout module-layout"><div class="module-visuals">${item.notice?`<p class="module-notice">${esc(item.notice)}</p>`:''}${visuals(item)}</div><aside class="custom-explanation module-explanation" aria-label="模組說明">${explanationHeading}${conceptSummary}${topic?.facilities?conceptFacilities(item,topic):''}${pointList({...item,points:overviewPoints(item)},Boolean(topic?.facilities))}${conceptIllustrations(item,topic)}${overview&&item.references?.length?articleRefs(item):''}${scenarioRefs(item)}</aside></div>${contentNavigation(page)}</section>`;
   }
   function modal(title,body){const dialog=document.createElement('dialog');dialog.className='module-info-dialog';dialog.dataset.editorUi='module-info';dialog.innerHTML=`<div class="dialog-head"><h2>${esc(title)}</h2><button type="button" data-close aria-label="關閉">×</button></div>${body}`;document.body.append(dialog);dialog.addEventListener('close',()=>dialog.remove());dialog.showModal();}
   function showInfo(id){const entry=catalog?.modules.find(entry=>entry.id===id);if(entry)presentation.goPage(entryPoint(entry.id));}
@@ -441,7 +472,7 @@ function showSource(reg){
     const page=currentPage(),content=moduleFor(presentation.page.id);if(!content)return;
     const context=displayContext(),all=context.stage?.id==='extensions'?[...new Set(context.stage.topics.map(topic=>topic.sourcePageId))].map(id=>content.pages.find(page=>page.id===id)):null;
     const related=reg?content.pages.filter(value=>value.references?.includes(reg)):all||(page?[page]:content.pages);
-    modal(reg?'§ '+reg+' '+(content.referenceNames?.[reg]||''):content.id+' 資料來源',
+    modal(reg?'§ '+reg+' '+(page?.referenceNames?.[reg]||content.referenceNames?.[reg]||''):content.id+' 資料來源',
       '<p>《道路交通標誌標線號誌設置參考指引》'+esc(content.source.section||'第 3.2.1 節「停、讓管制」，第 46–51 頁')+'。</p>'+
       (content.source.notes?.length?'<ul>'+content.source.notes.map(note=>'<li>'+esc(note)+'</li>').join('')+'</ul>':'')+
       related.map(item=>'<h3>'+esc(item.title)+'</h3><p>'+esc(item.points.map(point=>point.text).join('\n\n'))+'</p>'+item.points.filter(point=>point.table).map(pointTable).join('')+(item.sourcePages.length?'<small>正文第 '+item.sourcePages.join('、')+' 頁</small>':'')).join('')+

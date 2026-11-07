@@ -118,20 +118,18 @@
       "section": "module",
       "submoduleId": "M4-03.1",
       "title": "速率管理｜現況議題與相關條文",
-      "intro": "在進入路段及速限改變時，提供一致且容易辨識的速度資訊。",
+      "intro": "道路速限應透過明確且一致的標誌標線配置，使駕駛人及時辨識適用速限，並配合道路環境調整行駛速度。",
       "assets": [
         "m403-speed-issue-photo-1"
       ],
       "points": [
         {
           "id": "consistency",
-          "title": "速限標誌與標字缺乏一致位置",
-          "text": "駕駛進入路段時不易即時確認速限，可能依直覺與道路外觀選擇速度。"
-        },
-        {
-          "id": "environment",
-          "title": "道路傳達的速度感與速限不一致",
-          "text": "需要配合路段環境，提供清楚的速限資訊與減速提示。"
+          "title": "速限資訊設置位置缺乏一致性",
+          "text": "速限標誌及標字的設置位置缺乏一致性，可能使駕駛人進入路段時無法及時辨識適用速限，轉而依道路幾何、路側環境或個人直覺選擇行駛速度，造成速率認知與法定速限不一致。",
+          "focus": {
+            "asset": "m403-speed-issue-photo-1"
+          }
         }
       ],
       "sourcePages": [],
@@ -145,37 +143,44 @@
         "G1-06",
         "G2-03",
         "C4-01"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m403-speed-diagram",
       "section": "module",
       "submoduleId": "M4-03.1",
       "title": "速率管理｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依據速限生效位置及道路減速需求，整合最高速限標誌、速度限制標字與視覺化減速標線，使速限資訊明確且容易辨識。",
       "assets": [
         "m403-e43da210bb"
       ],
       "points": [
         {
           "id": "start",
-          "title": "進入路段與速限變更處明確標示",
-          "text": "最高速限標誌的位置即速限生效處，需保留足夠的遠處可辨識性。"
-        },
-        {
-          "id": "repeat",
-          "title": "速限相同時檢討重複設置",
-          "text": "離開路口與各進入方向速限均相同時，可不重複設置，除非道路環境明顯不同。"
+          "title": "於進入路段及速限變更處提示速限",
+          "text": "原則於路口遠端及速限變更處設置最高速限標誌與速度限制標字，並確保標誌具有足夠的遠處辨識性，使駕駛人能及時確認適用速限。",
+          "focus": {
+            "asset": "m403-e43da210bb"
+          }
         },
         {
           "id": "distance",
-          "title": "原則設於行穿線下游 20 m",
-          "text": "未設行穿線時，以路口路緣線下游 20 m 為原則；現地調整以駕駛容易檢視為準。"
+          "title": "依路口位置配置標誌標字",
+          "text": "速限標誌及標字原則設於行人穿越道線下游 20 m 處；未設行穿線時，以路口路緣線下游 20 m 為原則，並得依現地辨識需求調整。",
+          "focus": {
+            "asset": "m403-e43da210bb"
+          }
         },
         {
-          "id": "side",
-          "title": "右側為原則，寬路幅可左側補強",
-          "text": "使不同車道的駕駛都能辨識適用速限。"
+          "id": "repeat",
+          "title": "避免重複設置並兼顧各車道辨識",
+          "text": "離開路口的速限與各進入方向均相同時，原則可不重複設置，除非道路環境有明顯差異。標誌以設於行車方向右側為原則，路幅較寬時建議增設於左側。",
+          "focus": {
+            "asset": "m403-e43da210bb"
+          }
         }
       ],
       "sourcePages": [],
@@ -183,7 +188,8 @@
         "85",
         "159-1",
         "179"
-      ]
+      ],
+      "imageFit": "contain"
     },
     {
       "id": "m403-speed-extensions",
@@ -232,7 +238,7 @@
       "section": "module",
       "submoduleId": "M4-03.2",
       "title": "超車、會車控制｜現況議題與相關條文",
-      "intro": "從視距、管制起點與可停等位置，安排超車及會車控制。",
+      "intro": "道路於視距不足或路幅狹窄處，應透過適當的標誌標線限制超車與會車行為，降低對向車輛衝突風險。",
       "assets": [
         "m403-79496b3bb6",
         "m403-36895aca28"
@@ -240,13 +246,19 @@
       "points": [
         {
           "id": "sight",
-          "title": "視距不足時超車衝突風險較高",
-          "text": "彎道、接近路口或看不清對向車流的路段，需檢查超車管制。"
+          "title": "視距不足路段缺乏明確超車限制",
+          "text": "彎道、接近交岔路口或其他視距不足的路段，若未明確設置禁止超車標誌標線，可能使駕駛人在無法充分掌握對向及交岔車流的情況下超車，增加車輛衝突風險。",
+          "focus": {
+            "asset": "m403-79496b3bb6"
+          }
         },
         {
           "id": "width",
-          "title": "狹窄路段缺乏會車空間",
-          "text": "先確認可停等的位置及先行方向，避免車輛在瓶頸內對峙。"
+          "title": "狹窄路段會車管制與先行關係不明",
+          "text": "道路或橋梁寬度不足以供雙向車輛同時通過時，若未明確指定先行方向及適當停等位置，可能使對向車輛同時進入狹窄路段，造成通行衝突。",
+          "focus": {
+            "asset": "m403-36895aca28"
+          }
         }
       ],
       "sourcePages": [],
@@ -257,14 +269,17 @@
       ],
       "applications": [
         "C4-06"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain",
+      "pointLinkedImages": true
     },
     {
       "id": "m403-passing-diagram",
       "section": "module",
       "submoduleId": "M4-03.2",
       "title": "超車、會車控制｜圖例說明",
-      "intro": "對照圖例，逐項檢視設施位置與配置方式。",
+      "intro": "依道路視距及會車空間，整合禁止超車標誌標線與會車管制設施，明確提示限制範圍、先行方向及停等位置。",
       "assets": [
         "m403-79496b3bb6",
         "m403-36895aca28",
@@ -273,23 +288,43 @@
       "points": [
         {
           "id": "line",
-          "title": "依視距與交岔車流判斷需求",
-          "text": "於視距不足或接近交岔路口的路段標示禁止超車；最短超車視距參照相關條文。"
+          "title": "依視距及道路條件設置禁止超車線",
+          "text": "於彎道、視距不足或接近交岔路口等不宜超車的路段，依最短超車視距及道路條件配置禁止超車線，明確界定禁止超車範圍。",
+          "focus": {
+            "asset": "m403-79496b3bb6"
+          }
         },
         {
           "id": "recognition",
-          "title": "標線起點不易辨識時加強提示",
-          "text": "禁止超車線或分向限制線起點不清，或前方將突變為禁超路段時，可加設標誌。"
-        },
-        {
-          "id": "alignment",
-          "title": "標誌對應管制起點",
-          "text": "設置地點與禁止超車線或分向限制線的起點一致。"
+          "title": "視需要以標誌強化管制起點辨識",
+          "text": "當禁止超車線或分向限制線的起點不易提前辨識，或前方將突然轉變為禁止超車路段時，可增設禁止超車標誌，並使標誌位置對應標線管制起點。",
+          "focus": {
+            "asset": "m403-e616a7d57a"
+          }
         },
         {
           "id": "waiting",
-          "title": "設於狹窄路段上游可停等處",
-          "text": "位置需仍能容納停等車輛與對向來車交會。"
+          "title": "於狹窄路段上游安排停等位置",
+          "text": "禁止會車標誌應設於狹窄路段上游、道路寬度仍足以供停等車輛與對向來車交會的位置，避免車輛進入瓶頸後無法安全停等。",
+          "focus": {
+            "asset": "m403-36895aca28"
+          }
+        },
+        {
+          "id": "priority",
+          "title": "以不同標誌明確區分先行方向",
+          "text": "非優先方向設置禁止會車標誌（禁27），先行方向則設置狹橋標誌（警10）或狹路標誌（警7），使雙向駕駛人辨識會車管制及先行關係。",
+          "focus": {
+            "asset": "m403-36895aca28"
+          }
+        },
+        {
+          "id": "yield",
+          "title": "先行車輛仍應注意已進入的對向車流",
+          "text": "即使該方向未設置禁止會車標誌，仍應確認狹窄路段內是否已有對向車輛，不得迫使已進入的車輛倒退讓行。",
+          "focus": {
+            "asset": "m403-36895aca28"
+          }
         }
       ],
       "sourcePages": [],
@@ -297,7 +332,9 @@
         "76",
         "80",
         "166"
-      ]
+      ],
+      "defaultView": "single",
+      "imageFit": "contain"
     },
     {
       "id": "m403-passing-extensions",
@@ -374,26 +411,34 @@
           "topics": [
             {
               "id": "start",
-              "label": "速限生效與變更位置",
+              "label": "於速限生效位置明確配置標誌標字",
               "sourcePageId": "m403-speed-diagram",
               "pointIds": [
                 "start",
+                "distance",
                 "repeat"
               ],
               "assets": [
                 "m403-e43da210bb"
-              ]
-            },
-            {
-              "id": "position",
-              "label": "標誌與標字的位置",
-              "sourcePageId": "m403-speed-diagram",
-              "pointIds": [
-                "distance",
-                "side"
               ],
-              "assets": [
-                "m403-e43da210bb"
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "speed-sign",
+                  "label": "最高速限標誌（限5）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-e43da210bb"
+                  }
+                },
+                {
+                  "id": "speed-marking",
+                  "label": "速度限制標字",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-e43da210bb"
+                  }
+                }
               ]
             }
           ]
@@ -433,36 +478,82 @@
           "topics": [
             {
               "id": "line",
-              "label": "禁止超車線",
+              "label": "以標誌標線明確限制超車行為",
               "sourcePageId": "m403-passing-diagram",
               "pointIds": [
-                "line"
+                "line",
+                "recognition"
               ],
               "assets": [
-                "m403-79496b3bb6"
-              ]
-            },
-            {
-              "id": "sign",
-              "label": "禁止超車標誌",
-              "sourcePageId": "m403-passing-diagram",
-              "pointIds": [
-                "recognition",
-                "alignment"
-              ],
-              "assets": [
+                "m403-79496b3bb6",
                 "m403-e616a7d57a"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "no-passing-line",
+                  "label": "禁止超車線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-79496b3bb6"
+                  }
+                },
+                {
+                  "id": "no-passing-sign",
+                  "label": "禁止超車標誌（禁23）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-e616a7d57a"
+                  }
+                },
+                {
+                  "id": "direction-line",
+                  "label": "分向限制線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-79496b3bb6"
+                  }
+                }
               ]
             },
             {
               "id": "waiting",
-              "label": "會車停等位置",
+              "label": "依道路寬度及先行關係配置會車管制",
               "sourcePageId": "m403-passing-diagram",
               "pointIds": [
-                "waiting"
+                "waiting",
+                "priority",
+                "yield"
               ],
               "assets": [
                 "m403-36895aca28"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "no-meeting",
+                  "label": "禁止會車標誌（禁27）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-36895aca28"
+                  }
+                },
+                {
+                  "id": "bridge",
+                  "label": "狹橋標誌（警10）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-36895aca28"
+                  }
+                },
+                {
+                  "id": "narrow",
+                  "label": "狹路標誌（警7）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m403-36895aca28"
+                  }
+                }
               ]
             }
           ]
@@ -487,5 +578,8 @@
         }
       ]
     }
+  ],
+  "hiddenPages": [
+    "m403-overview"
   ]
 }

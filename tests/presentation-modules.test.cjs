@@ -24,9 +24,42 @@ test('junction control theme has two overview pages with two adjustable represen
   assert.equal(pages[pages.findIndex(page=>page.id==='modules-M2')+1].id,'modules-M2-2');
   assert.equal(pages[pages.findIndex(page=>page.id==='modules-M2-2')+1].id,'m201-stop-issues');
   assert(!pages.some(page=>page.id==='m201-overview'));assert.equal(api.resolvePage('m201-overview'),'m201-stop-issues');
-  assert.equal(pages.filter(page=>page.theme==='M1').length,1);assert.equal(pages.filter(page=>page.theme==='M3').length,1);
+  assert.equal(pages.filter(page=>page.theme==='M1').length,1);assert.equal(pages.filter(page=>page.theme==='M3').length,2);
   for(const value of [0,-1,1.5,'2',16]){const invalid=structuredClone(catalog);invalid.themes[1].modulesPerPage=value;assert.throws(()=>Modules.validateCatalog(invalid));}
   for(const value of [[],['same','same'],['../invalid'],'invalid']){const invalid=structuredClone(catalog);invalid.modules.find(entry=>entry.id==='M2-04').topicPreviewAssets=value;assert.throws(()=>Modules.validateCatalog(invalid));}
+});
+
+test('merged submodule buttons retain both classifications and a shared active state',async()=>{
+  const doc=read('data/modules/M3-02.json'),label='M3-02.1 自行車道 M3-02.2 自行車穿越道';Modules.validateModule(doc,catalog);
+  const invalidGroups=[null,{},[],[{label:'',submoduleIds:['M3-02.1']}],[{label,submoduleIds:[]}],[{label,submoduleIds:['M3-01.1']}],[{label,submoduleIds:['M3-02.1','M3-02.1']}],[{label,submoduleIds:['M3-02.1']},{label,submoduleIds:['M3-02.1']}]];
+  for(const groups of invalidGroups){const invalid=structuredClone(doc);invalid.subnavigationGroups=groups;assert.throws(()=>Modules.validateModule(invalid,catalog));}
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  for(const id of ['m302-lane-issues','m302-lane-diagram','m302-crossing-reference']){
+    const html=api.subnavigation(Array.from(api.pages()).find(page=>page.id===id));assert.equal((html.match(/data-submodule-id=/g)||[]).length,1);assert.equal((html.match(/<option /g)||[]).length,1);assert(html.includes('data-submodule-id="M3-02.1" data-page="m302-lane-issues" class="active"'));assert(html.includes(label));assert(!html.includes('data-submodule-id="M3-02.2"'));
+  }
+  const other=api.subnavigation(Array.from(api.pages()).find(page=>page.id==='m301-crossing-issues'));assert.equal((other.match(/data-submodule-id=/g)||[]).length,3);assert.equal(catalog.modules.flatMap(entry=>entry.submodules).length,27);
+});
+
+test('shared submodule presentations consolidate routes and titles while preserving both classifications',async()=>{
+  const doc=read('data/modules/M4-04.json');Modules.validateModule(doc,catalog);
+  for(const value of [null,'true',1]){const invalid=structuredClone(doc);invalid.subnavigationGroups[0].shared=value;assert.throws(()=>Modules.validateModule(invalid,catalog));}
+  const unshared=structuredClone(doc);delete unshared.subnavigationGroups[0].shared;assert.throws(()=>Modules.validateModule(unshared,catalog),'A shared source requires an explicit shared group');
+  const single=structuredClone(doc);single.subnavigationGroups[0].submoduleIds=['M4-04.1'];assert.throws(()=>Modules.validateModule(single,catalog));
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  const pages=Array.from(api.pages()),combined=pages.filter(page=>page.moduleId==='M4-04');
+  assert.deepEqual(combined.map(page=>page.id),['m404-pedestrian-issues','m404-pedestrian-diagram','m404-pedestrian-extensions']);
+  assert.deepEqual(combined.map(page=>api.pageTitle(page)),['區域管制｜現況議題與相關條文','區域管制｜圖例說明','區域管制｜延伸應用']);
+  for(const page of combined){const html=api.subnavigation(page);assert.equal((html.match(/data-submodule-id=/g)||[]).length,1);assert(html.includes('data-submodule-id="M4-04.1" data-page="m404-pedestrian-issues" class="active"'));assert(!html.includes('data-submodule-id="M4-04.2"'));}
+  for(const id of ['module-M4-04','submodule-M4-04-1','submodule-M4-04-2','m404-school-issues','m404-overview'])assert.equal(api.resolvePage(id),'m404-pedestrian-issues');
+  assert.equal(api.resolvePage('m404-school-diagram','topic-signs'),'m404-pedestrian-diagram');assert.equal(api.displayContext('m404-pedestrian-diagram').topic.id,'signs');
+  assert.equal(api.resolvePage('m404-school-extensions'),'m404-pedestrian-extensions');assert.equal(api.displayContext('m404-pedestrian-extensions').topic.id,'markings');
+  sandbox.window={visualLayoutEditor:{store:{config:{removedModuleExtensions:['m404-pedestrian-extensions']}}}};
+  assert.equal(api.resolvePage('m404-school-extensions'),'m404-pedestrian-diagram','An old shared extension link follows removal of the combined page');
+  assert(!api.toc().includes('data-page="m404-school-issues"'));assert(!api.toc().includes('data-page="m404-school-diagram"'));assert(!api.toc().includes('data-page="m404-school-extensions"'));
+  assert.equal(api.resolvePage('submodule-M3-02-2'),'m302-crossing-reference','A grouped button without shared pages keeps its original routes');
+  assert.equal(catalog.modules.flatMap(entry=>entry.submodules).length,27);assert.equal(catalog.modules.find(entry=>entry.id==='M4-04').submodules.length,2);
 });
 
 test('module formation keeps ten ordered stages with eight native drawings, independent shared-image focus and isolated load failures',async()=>{
@@ -72,14 +105,27 @@ test('directory representatives cover every module and retain shared/merged diag
   assert.deepEqual(Array.from(api.directoryAssets('missing')),[]);
   for(const directoryAssets of [[],['missing'],['m102-offset','m102-offset']]){const invalid=read('data/modules/M1-02.json');invalid.directoryAssets=directoryAssets;assert.throws(()=>Modules.validateModule(invalid,catalog));}
 });
-test('complete M2-01 has twelve unique content pages, eight original figures and four issue photos',()=>{
-  Modules.validateModule(data,catalog);assert.equal(data.pages.length,12);assert.equal(Object.keys(data.assets).length,12);
+test('complete M2-01 has twelve unique content pages, eight original figures and five issue photos',()=>{
+  Modules.validateModule(data,catalog);assert.equal(data.pages.length,12);assert.equal(Object.keys(data.assets).length,13);
   assert(data.pages.some(page=>page.id==='m201-stop-extensions'));assert(data.pages.some(page=>page.id==='m201-yield-buffer'));
   for(const asset of Object.values(data.assets)){
     const bytes=fs.readFileSync(path.join(root,asset.file));assert(bytes.length>100);
     if(asset.file.endsWith('.png')){assert.equal(bytes.readUInt32BE(16),asset.width);assert.equal(bytes.readUInt32BE(20),asset.height);}
   }
   for(const change of [next=>next.assets['stop-basic'].file='../secret.png',next=>next.pages[0].id=next.pages[1].id,next=>next.pages.find(page=>page.points.some(point=>point.focus?.rect)).points.find(point=>point.focus?.rect).focus.rect=[0,0,99999,1]]){const next=structuredClone(data);change(next);assert.throws(()=>Modules.validateModule(next,catalog));}
+});
+test('linked issue photo groups keep primary photos and reject empty, repeated or foreign images',()=>{
+  const grouped=structuredClone(data),page=grouped.pages.find(page=>page.id==='m201-stop-issues');
+  page.defaultView='pair';page.points[0].focus.assets=['stop-issue-photo-1','stop-issue-photo-2'];
+  Modules.validateModule(grouped,catalog);
+  for(const assets of [[],['stop-issue-photo-1','stop-issue-photo-1'],['stop-issue-photo-2'],['stop-issue-photo-1','stop-issue-photo-2','stop-issue-photo-3'],['stop-issue-photo-1','yield-basic'],'stop-issue-photo-1']){
+    const invalid=structuredClone(grouped);invalid.pages.find(page=>page.id==='m201-stop-issues').points[0].focus.assets=assets;
+    assert.throws(()=>Modules.validateModule(invalid,catalog));
+  }
+  const unlinked=structuredClone(grouped);unlinked.pages.find(page=>page.id==='m201-stop-issues').pointLinkedImages=false;
+  assert.throws(()=>Modules.validateModule(unlinked,catalog));
+  const single=structuredClone(grouped);single.pages.find(page=>page.id==='m201-stop-issues').defaultView='single';
+  assert.throws(()=>Modules.validateModule(single,catalog));
 });
 test('module point identities, headings, fonts, images and initial views survive JSON and history together',()=>{
   const store=new Core.Store(read('layout/presentation-layout.json')),next=store.snapshot();
@@ -95,7 +141,7 @@ test('submodule flows expose three stages, preserve legacy routes, and reject fo
   assert.equal(pages.filter(page=>page.submoduleId==='M2-01.1').length,3);assert.equal(pages.filter(page=>page.submoduleId==='M2-01.2').length,3);
   for(const page of data.pages)assert(ids.has(api.resolvePage(page.id)));
   assert.equal(api.resolvePage('m201-stop-crosswalk'),'m201-stop-extensions');assert.equal(api.displayContext('m201-stop-extensions').topic.id,'crosswalk');
-  assert.equal(api.resolvePage('m201-yield-buffer'),'m201-yield-extensions');assert.equal(api.displayContext('m201-yield-extensions').topic.id,'buffer');
+  assert.equal(api.resolvePage('m201-yield-crosswalk'),'m201-yield-extensions');assert.equal(api.displayContext('m201-yield-extensions').topic.id,'crosswalk');
   api.resolvePage('m201-stop-layout','topic-line');assert.equal(api.displayContext('m201-stop-layout').topic.id,'line');
   assert.equal(api.resolvePage('edge'),'edge');
   assert.equal(data.pages.filter(page=>page.submoduleId==='M2-01.1').length,5);assert.equal(data.pages.filter(page=>page.submoduleId==='M2-01.2').length,5);
@@ -108,6 +154,41 @@ test('submodule flows expose three stages, preserve legacy routes, and reject fo
     const expected=[...new Set(stage.topics.map(topic=>topic.sourcePageId))].flatMap(id=>data.pages.find(page=>page.id===id).points.map(point=>id+':'+point.id));assert.deepEqual([...assigned].sort(),expected.sort());
   }
   const store=new Core.Store(read('layout/presentation-layout.json')),next=store.snapshot();next.content.modules['m201-stop-layout']={points:[{id:'note',title:'新增說明',titleKey:'module|note|title',text:'只屬於停止線',textKey:'module|note|text',topicId:'line'}]};store.commit(next);assert.equal(Core.parse(store.serialize()).content.modules['m201-stop-layout'].points[0].topicId,'line');next.content.modules['m201-stop-layout'].points[0].topicId='../bad';assert.throws(()=>store.commit(next));
+});
+
+test('page-specific article names preserve module defaults and reject unrelated or invalid labels',()=>{
+  const doc=read('data/modules/M2-04.json'),page=doc.pages.find(page=>page.id==='m204-oneway-issues');
+  Modules.validateModule(doc,catalog);
+  assert.equal(doc.referenceNames['74'],'禁行方向標誌');assert.equal(page.referenceNames['74'],'禁止左轉標誌');
+  for(const names of [null,[],{'74':''},{'74':123},{'74':'x'.repeat(121)},{'201':'unrelated'}]){
+    const invalid=structuredClone(doc);invalid.pages.find(page=>page.id==='m204-oneway-issues').referenceNames=names;assert.throws(()=>Modules.validateModule(invalid,catalog));
+  }
+});
+
+test('explanation illustrations must belong to the page and stay beside their explanation',async()=>{
+  const doc=read('data/modules/M3-01.json'),page=doc.pages.find(page=>page.id==='m301-midblock-diagram'),point=page.points.find(point=>point.id==='yellow');
+  Modules.validateModule(doc,catalog);assert.equal(point.illustration,'m301-c1e58a61de');
+  for(const value of ['',null,[],{},'missing','m301-d5772b64b2']){
+    const invalid=structuredClone(doc);invalid.pages.find(item=>item.id===page.id).points.find(point=>point.id==='yellow').illustration=value;assert.throws(()=>Modules.validateModule(invalid,catalog),/說明配圖引用無效/);
+  }
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  const target=Array.from(api.pages()).find(item=>item.id===page.id),data={embeddedAssets:{},assetMeta:{}};api.prepare(data);api.connect({page:target,data});api.resolvePage(page.id,'topic-warning');const html=api.render(target);
+  assert.match(html,/data-module-point="yellow" class="module-point-with-illustration"/);assert.match(html,/class="module-point-illustration"/);assert(html.includes('data-asset="module:'+point.illustration+'"'));
+});
+
+test('concept galleries accept rows and grids, and reject unsupported layouts or image counts',()=>{
+  const doc=read('data/modules/M2-03.json');Modules.validateModule(doc,catalog);
+  const stage=doc.submoduleFlows[0].stages.find(stage=>stage.id==='diagram');
+  assert.equal(stage.topics.find(topic=>topic.id==='near-far').assets.length,4);
+  assert.equal(stage.topics.find(topic=>topic.id==='start').imageLayout,'row');
+  for(const change of [
+    topic=>{topic.imageLayout='unknown';},
+    topic=>{topic.assets=topic.assets.slice(0,1);},
+    topic=>{topic.assets=doc.pages.find(page=>page.id===topic.sourcePageId).assets.slice(0,5);},
+    topic=>{delete topic.assets;}
+  ]){const invalid=structuredClone(doc);change(invalid.submoduleFlows[0].stages[1].topics.find(topic=>topic.id==='near-far'));assert.throws(()=>Modules.validateModule(invalid,catalog));}
+  const invalid=structuredClone(doc);invalid.submoduleFlows[0].stages[2].topics[0].imageLayout='grid';assert.throws(()=>Modules.validateModule(invalid,catalog));
 });
 
 test('empty concept drafts remain valid and editable while ordinary topics still require content',()=>{
@@ -147,7 +228,8 @@ test('forward entry starts diagram topics in their current order without changin
   const sandbox={module:{exports:{}},window,URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
   let current={id:'modules-index'};api.connect({get page(){return current;}});
-  for(const doc of api.contents)for(const flow of doc.submoduleFlows||[]){
+  const visible=new Set(api.pages().map(page=>page.id));
+  for(const doc of api.contents)for(const flow of (doc.submoduleFlows||[]).filter(flow=>visible.has(flow.stages[0].pageId))){
     const diagram=flow.stages.find(stage=>stage.id==='diagram'),first=diagram.topics[0],last=diagram.topics.at(-1);
     current={id:flow.stages[0].pageId};
     api.resolvePage(diagram.pageId,'topic-'+last.id);
