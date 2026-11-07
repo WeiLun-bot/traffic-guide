@@ -230,7 +230,7 @@
       "rotation": 90,
       "scenario": "G1-06",
       "label": "無號誌鄉區斜交三叉路口交通設施整體設置圖例",
-      "sha256": "1b74c5a344362773ef2ccb14288c9a921dd11c0eb13cf8e3ada51ad009d6e282"
+      "sha256": "c5d4abb93ed29d81e4668fb1511b971b4f63303c5918795d8f11a371957cf3b8"
     },
     "g106-crosswalk": {
       "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口設置行穿線圖例.svg",
@@ -239,7 +239,7 @@
       "rotation": 0,
       "scenario": "G1-06",
       "label": "無號誌鄉區斜交三叉路口設置行穿線圖例",
-      "sha256": "f6efb6aecdd90543ec2a7d504424f8635a514d8df1df06eec573922cf3415992"
+      "sha256": "939802885d3404b1629014bc1a72dec238b18a231d3b8acfd5ea577df639a8ba"
     },
     "g106-no-crosswalk": {
       "file": "materials/04-一般道路情境/G1-06/G1-06_無號誌鄉區斜交三叉路口不設置行穿線圖例.svg",
@@ -248,7 +248,7 @@
       "rotation": 0,
       "scenario": "G1-06",
       "label": "無號誌鄉區斜交三叉路口不設置行穿線圖例",
-      "sha256": "d42ca8cbac2a91d0db96ffba6364cb89792c76960cec74d561aa78d9d070138c"
+      "sha256": "99a2bed6f4d9e45d016380bdcb446cbe4ac73f78ca45c48b5001967aaf736b13"
     },
     "g106-before": {
       "file": "materials/04-一般道路情境/current-conditions/G1-06/G1-06_現況圖_01.png",

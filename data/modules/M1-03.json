@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "M1-03",
-  "directoryAssets": ["m103-layout"],
+  "directoryAssets": [
+    "m103-layout"
+  ],
   "title": "路側停車",
   "source": {
     "file": "03-roadside-parking.typ",
@@ -104,8 +106,8 @@
       "section": "module",
       "submoduleId": "M1-03.1",
       "title": "路側停放與裝卸車位配置｜現況議題與相關條文",
-      "intro": "讓停車範圍、適用車種與使用規則一眼可辨。",
-      "defaultView": "pair",
+      "intro": "路側停車不僅涉及停放空間的劃設，也影響行車動線、路口視距及停車管制資訊的辨識。",
+      "defaultView": "single",
       "assets": [
         "m103-issue-street-parking",
         "m103-issue-parking-bays"
@@ -113,19 +115,34 @@
       "points": [
         {
           "id": "boundary",
-          "title": "停車與禁停範圍不清",
-          "text": "停車帶、禁止停車與禁止臨時停車區間若界線不清，容易讓駕駛誤判。"
+          "title": "行車與停車空間界線不明",
+          "text": "車輛停放線與路面邊線未適當區隔，容易造成行車空間與停車空間界線混淆，影響駕駛人對道路空間的判讀。",
+          "focus": {
+            "asset": "m103-issue-parking-bays"
+          }
+        },
+        {
+          "id": "sight",
+          "title": "停車格位配置影響路口視距",
+          "text": "停車格位過於接近路口，或未考量不同車種的停放順序，可能使大型車輛遮蔽路口視線，影響駕駛人觀察交叉來車及行人的能力。",
+          "focus": {
+            "asset": "m103-issue-street-parking"
+          }
         },
         {
           "id": "consistency",
-          "title": "標誌與停車帶位置不一致",
-          "text": "標誌若未對應停車範圍，用路人不易搜尋、判讀與遵循。"
+          "title": "停車範圍與管制資訊不明確",
+          "text": "停車帶與禁止停車、禁止臨時停車區間界線不清，且停車處標誌未對應實際停放範圍，使駕駛人難以確認可停車區間及適用規則。",
+          "focus": {
+            "asset": "m103-issue-street-parking"
+          }
         }
       ],
       "sourcePages": [],
       "references": [
         "118",
         "169",
+        "183",
         "190"
       ],
       "applications": [
@@ -141,14 +158,15 @@
         "C1-06",
         "C4-03",
         "C4-05"
-      ]
+      ],
+      "pointLinkedImages": true
     },
     {
       "id": "m103-parking-diagram",
       "section": "module",
       "submoduleId": "M1-03.1",
       "title": "路側停放與裝卸車位配置｜圖例說明",
-      "intro": "從格位配置到標誌附牌，使用一致方式說明停車規則。",
+      "intro": "透過停車格位配置、路口視距維護及停車資訊整合，明確區分行車與停車空間，提升停放秩序及交通安全。",
       "assets": [
         "m103-layout",
         "m103-plate-1",
@@ -157,39 +175,34 @@
       ],
       "points": [
         {
-          "id": "clearance",
-          "title": "進出端保留必要淨空",
-          "text": "以禁止臨時停車線保留轉角、漸變段及出入口所需空間。"
+          "id": "buffer",
+          "title": "停放線與路面邊線保留緩衝空間",
+          "text": "車輛停放線與路面邊線建議間隔約 30 cm，以明確區分行車道與路側停車空間。間距由路面邊線中心量測至車輛停放線邊緣。"
         },
         {
           "id": "angle",
-          "title": "停放角度配合場地條件",
-          "text": "90° 格位通常較多，但操作與通道空間需求較大；45° 進出較順暢，格位數較少。"
+          "title": "依道路空間選擇停放角度",
+          "text": "停車格位可依場地條件採 90°、45° 等不同角度配置，兼顧停車數量、車輛進出便利性及操作空間需求。"
         },
         {
-          "id": "dedicated",
-          "title": "專用車位清楚標示用途",
-          "text": "由主管機關依需求訂定尺寸與車種；地面標示白色專用車輛標字或圖案，必要時搭配標誌。"
+          "id": "sight",
+          "title": "路口附近優先配置機車停車位",
+          "text": "接近路口處優先配置一般機車停車位，再往上游依序配置大型重型機車、小型車及大型客車停車位，減少較高車輛遮蔽路口視線的情形。"
+        },
+        {
+          "id": "clearance",
+          "title": "保留路口及出入口必要淨空",
+          "text": "停車格位應與路口保持適當距離，並於轉角、漸變段及出入口配置禁止臨時停車線，避免停放車輛影響視距及車輛通行。"
         },
         {
           "id": "ends",
-          "title": "標誌對應停車帶起終點",
-          "text": "起終點設置停車處標誌，較長時可在中段加設；短停車帶不致誤判時，可於起點適當處設一面。"
-        },
-        {
-          "id": "orientation",
-          "title": "箭頭與朝向要一致",
-          "text": "標誌整合起點、終點或中段箭頭，避免與停車處方向指示混淆；起終點標誌原則面向車行方向 45°，並依路型調整。"
+          "title": "以標誌及箭頭界定停車區間",
+          "text": "停車處標誌原則設於停車帶起終點，配合箭頭標明適用範圍；停車帶較長時，可於中段加設標誌，方便駕駛人確認停放區間。"
         },
         {
           "id": "order",
-          "title": "附牌由上而下統一順序",
-          "text": "依「車種 → 時間 → 收費方式」排列，讓駕駛以一致順序閱讀。"
-        },
-        {
-          "id": "icons",
-          "title": "車種優先使用圖示",
-          "text": "管制單純時以標誌搭配模組化附牌為主，減少文字判讀負擔。"
+          "title": "統一停車條件的資訊呈現",
+          "text": "停放車種、時間及收費方式等資訊，原則透過附牌依「車種 → 時間 → 收費方式」排列；管制較複雜時，可整合為專用牌面，提升資訊辨識性。"
         }
       ],
       "sourcePages": [],
@@ -270,6 +283,7 @@
   "referenceNames": {
     "118": "停車處標誌",
     "169": "禁止臨時停車線",
+    "183": "路面邊線",
     "190": "車輛停放線"
   },
   "submoduleFlows": [
@@ -287,62 +301,146 @@
           "title": "圖例說明",
           "topics": [
             {
-              "id": "clearance",
-              "label": "進出端淨空",
+              "id": "space",
+              "label": "明確區分行車空間與停車空間",
+              "showPointTitles": true,
               "sourcePageId": "m103-parking-diagram",
               "pointIds": [
-                "clearance"
-              ],
-              "assets": [
-                "m103-layout"
-              ]
-            },
-            {
-              "id": "angle",
-              "label": "停放角度",
-              "sourcePageId": "m103-parking-diagram",
-              "pointIds": [
+                "buffer",
                 "angle"
               ],
               "assets": [
                 "m103-layout"
+              ],
+              "facilities": [
+                {
+                  "id": "edge",
+                  "label": "路面邊線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      334,
+                      84,
+                      202,
+                      9
+                    ]
+                  }
+                },
+                {
+                  "id": "parking",
+                  "label": "車輛停放線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      232,
+                      180,
+                      130,
+                      21
+                    ]
+                  }
+                }
               ]
             },
             {
-              "id": "dedicated",
-              "label": "專用車位",
+              "id": "sight",
+              "label": "透過停車格位配置維持路口視距",
+              "showPointTitles": true,
               "sourcePageId": "m103-parking-diagram",
               "pointIds": [
-                "dedicated"
+                "sight",
+                "clearance"
               ],
               "assets": [
                 "m103-layout"
+              ],
+              "facilities": [
+                {
+                  "id": "parking",
+                  "label": "車輛停放線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      49,
+                      174,
+                      610,
+                      30
+                    ]
+                  }
+                },
+                {
+                  "id": "no-stopping",
+                  "label": "禁止臨時停車線",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      194,
+                      66,
+                      151,
+                      28
+                    ]
+                  }
+                }
               ]
             },
             {
-              "id": "signs",
-              "label": "停車處標誌",
+              "id": "information",
+              "label": "整合停車範圍與使用規則",
+              "showPointTitles": true,
               "sourcePageId": "m103-parking-diagram",
               "pointIds": [
                 "ends",
-                "orientation"
+                "order"
               ],
               "assets": [
                 "m103-layout"
-              ]
-            },
-            {
-              "id": "plates",
-              "label": "標誌與附牌",
-              "sourcePageId": "m103-parking-diagram",
-              "pointIds": [
-                "order",
-                "icons"
               ],
-              "assets": [
-                "m103-plate-1",
-                "m103-plate-2",
-                "m103-plate-3"
+              "facilities": [
+                {
+                  "id": "sign",
+                  "label": "停車處標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      344,
+                      22,
+                      20,
+                      21
+                    ]
+                  }
+                },
+                {
+                  "id": "range",
+                  "label": "停車區間指示箭頭",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      344,
+                      33,
+                      20,
+                      10
+                    ]
+                  }
+                },
+                {
+                  "id": "plates",
+                  "label": "停車資訊附牌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m103-layout",
+                    "rect": [
+                      344,
+                      45,
+                      20,
+                      23
+                    ]
+                  }
+                }
               ]
             }
           ]

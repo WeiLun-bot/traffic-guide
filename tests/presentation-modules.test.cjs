@@ -8,6 +8,27 @@ test('module architecture has four themes, fifteen modules and twenty-seven subm
   assert.equal(catalog.modules.flatMap(item=>item.submodules).length,27);assert.equal(catalog.modules.filter(item=>item.ready).length,15);
 });
 
+test('junction control theme has two overview pages with two adjustable representative cards each',async()=>{
+  const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
+  const pages=Array.from(api.pages()),overviews=pages.filter(page=>page.theme==='M2');
+  assert.deepEqual(overviews.map(page=>page.id),['modules-M2','modules-M2-2']);
+  assert.deepEqual(overviews.map(page=>api.pageTitle(page)),['路口管制（1/2）','路口管制（2/2）']);
+  const entries=catalog.modules.filter(entry=>entry.theme==='M2');
+  for(const [index,page]of overviews.entries()){
+    const html=api.render(page),group=entries.slice(index*2,index*2+2);
+    assert.equal((html.match(/data-directory-module=/g)||[]).length,2);assert.match(html,/module-topic-paged/);
+    for(const entry of group){assert(html.includes('data-directory-module="'+entry.id+'"'));for(const asset of entry.topicPreviewAssets||[entry.topicPreviewAsset])assert(html.includes('data-directory-asset="'+asset+'"'));assert(html.includes('data-initial-view-page="modules-topic-'+entry.id.toLowerCase()+'"'));}
+    for(const entry of entries.filter(entry=>!group.includes(entry)))assert(!html.includes('data-directory-module="'+entry.id+'"'));
+  }
+  assert.equal(pages[pages.findIndex(page=>page.id==='modules-M2')+1].id,'modules-M2-2');
+  assert.equal(pages[pages.findIndex(page=>page.id==='modules-M2-2')+1].id,'m201-stop-issues');
+  assert(!pages.some(page=>page.id==='m201-overview'));assert.equal(api.resolvePage('m201-overview'),'m201-stop-issues');
+  assert.equal(pages.filter(page=>page.theme==='M1').length,1);assert.equal(pages.filter(page=>page.theme==='M3').length,1);
+  for(const value of [0,-1,1.5,'2',16]){const invalid=structuredClone(catalog);invalid.themes[1].modulesPerPage=value;assert.throws(()=>Modules.validateCatalog(invalid));}
+  for(const value of [[],['same','same'],['../invalid'],'invalid']){const invalid=structuredClone(catalog);invalid.modules.find(entry=>entry.id==='M2-04').topicPreviewAssets=value;assert.throws(()=>Modules.validateCatalog(invalid));}
+});
+
 test('module formation keeps ten ordered stages with eight native drawings, independent shared-image focus and isolated load failures',async()=>{
   const formation=read('data/modules/formation.json');Modules.validateFormation(formation,catalog);
   assert.equal(formation.stages.length,10);assert.deepEqual(formation.stages.map(stage=>stage.moduleId||null),[null,'M1-01','M1-02','M1-03','M2-03','M2-04','M3-01','M3-02','M3-03','M4-01']);
@@ -81,7 +102,7 @@ test('submodule flows expose three stages, preserve legacy routes, and reject fo
   assert.equal(pages.find(page=>page.id==='m202-roundabout-issues').submoduleId,'M2-02.1');assert.equal(api.resolvePage('submodule-M2-04-3'),'m204-oneway-issues');
   const invalid=structuredClone(data);invalid.pages[0].submoduleId='M2-02.1';assert.throws(()=>Modules.validateModule(invalid,catalog));
   const badCatalog=structuredClone(catalog);badCatalog.modules[0].submodules[0].id='M1-01.bad/path';assert.throws(()=>Modules.validateCatalog(badCatalog));
-  for(const change of [next=>next.submoduleFlows[0].stages.reverse(),next=>next.submoduleFlows[0].stages[1].topics[0].sourcePageId='m201-yield-layout',next=>next.submoduleFlows[0].stages[1].topics[0].pointIds=['unknown'],next=>next.submoduleFlows[0].stages[2].topics[0].assets=['yield-basic']]){const invalid=structuredClone(data);change(invalid);assert.throws(()=>Modules.validateModule(invalid,catalog));}
+  for(const change of [next=>next.submoduleFlows[0].stages.reverse(),next=>next.submoduleFlows[0].stages[1].topics[0].sourcePageId='m201-yield-layout',next=>next.submoduleFlows[0].stages[1].topics[0].pointIds=['unknown'],next=>next.submoduleFlows[0].stages[2].topics[0].assets=['yield-basic'],next=>next.submoduleFlows[0].stages[0].paged=true,next=>next.submoduleFlows[0].stages[2].paged='yes']){const invalid=structuredClone(data);change(invalid);assert.throws(()=>Modules.validateModule(invalid,catalog));}
   for(const flow of data.submoduleFlows)for(const stage of flow.stages.filter(stage=>stage.topics)){
     const assigned=stage.topics.flatMap(topic=>(topic.pointIds||data.pages.find(page=>page.id===topic.sourcePageId).points.map(point=>point.id)).map(id=>topic.sourcePageId+':'+id));
     const expected=[...new Set(stage.topics.map(topic=>topic.sourcePageId))].flatMap(id=>data.pages.find(page=>page.id===id).points.map(point=>id+':'+point.id));assert.deepEqual([...assigned].sort(),expected.sort());

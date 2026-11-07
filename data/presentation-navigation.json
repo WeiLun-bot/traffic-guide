@@ -60,7 +60,7 @@
     "m103-parking-diagram",
     "m103-parking-extensions",
     "modules-M2",
-    "m201-overview",
+    "modules-M2-2",
     "m201-stop-issues",
     "m201-stop-layout",
     "m201-stop-extensions",
@@ -400,11 +400,13 @@
       "location"
     ],
     "module:m103-parking-diagram": [
-      "signs",
-      "dedicated",
-      "plates",
-      "clearance",
-      "angle"
+      "space",
+      "sight",
+      "information"
+    ],
+    "module:m201-stop-layout": [
+      "sign",
+      "line"
     ],
     "scenario:g1-02": [
       "rural-stopline",

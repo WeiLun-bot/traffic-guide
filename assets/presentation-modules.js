@@ -10,8 +10,9 @@
   function validateCatalog(value){
     assert(value?.schemaVersion===1&&Array.isArray(value.themes)&&Array.isArray(value.modules),'模組索引格式無效');
     if(value.cover){const {title,meeting,image}=value.cover;assert(str(title)&&meeting&&['project','event','presenter','organization','date'].every(k=>str(meeting[k]))&&image&&safePath(image.file)&&image.file.startsWith('materials/')&&image.file.endsWith('.svg')&&Number.isFinite(image.width)&&image.width>0&&Number.isFinite(image.height)&&image.height>0&&str(image.label),'????????');}
-    const themes=new Set();for(const theme of value.themes){assert(/^M[1-4]$/.test(theme.id)&&!themes.has(theme.id)&&str(theme.name)&&str(theme.question),'模組主題無效');themes.add(theme.id);}
+    const themes=new Set();for(const theme of value.themes){assert(/^M[1-4]$/.test(theme.id)&&!themes.has(theme.id)&&str(theme.name)&&str(theme.question),'模組主題無效');assert(theme.modulesPerPage===undefined||(Number.isInteger(theme.modulesPerPage)&&theme.modulesPerPage>0&&theme.modulesPerPage<=15),'主題每頁模組數無效');themes.add(theme.id);}
     const ids=new Set();for(const entry of value.modules){assert(/^M[1-4]-\d{2}$/.test(entry.id)&&!ids.has(entry.id)&&themes.has(entry.theme)&&str(entry.name)&&Array.isArray(entry.submodules),'模組項目無效');ids.add(entry.id);const children=new Set();for(const sub of entry.submodules){assert(/^M[1-4]-\d{2}\.\d+$/.test(sub.id)&&sub.id.startsWith(entry.id+'.')&&!children.has(sub.id)&&str(sub.name),'子模組項目無效');children.add(sub.id);}}
+    for(const entry of value.modules)if(entry.topicPreviewAssets!==undefined)assert(Array.isArray(entry.topicPreviewAssets)&&entry.topicPreviewAssets.length>0&&new Set(entry.topicPreviewAssets).size===entry.topicPreviewAssets.length&&entry.topicPreviewAssets.every(id=>typeof id==='string'&&/^[\w-]+$/.test(id)),'主題代表型清單無效');
     return value;
   }
   function validateModule(value,catalog){
@@ -48,6 +49,7 @@
       for(const stage of flow.stages){
         const base=value.pages.find(page=>page.id===stage.pageId);
         assert(base?.submoduleId===flow.submoduleId&&!anchors.has(stage.pageId)&&str(stage.title),'子模組主題頁無效');anchors.add(stage.pageId);
+        if(stage.paged!==undefined)assert(stage.id==='extensions'&&typeof stage.paged==='boolean','延伸應用分組設定無效');
         if(stage.topics===undefined){assert(stage.id==='issues','解說主題缺少項目');assert((base.references||[]).every(reg=>str(value.referenceNames?.[reg])),'相關條文名稱缺漏');continue;}
         assert(Array.isArray(stage.topics)&&stage.topics.length>0,'解說項目清單無效');const topics=new Set(),covered=new Set();
         for(const topic of stage.topics){
@@ -156,6 +158,7 @@
   function prepareNavigation(id,direction){
     if(direction!==1||id===presentation?.page.id||(typeof window==='object'&&window.generalRoadEditor?.editing))return;
     const context=stageContext(id);
+    if(context?.stage.id==='extensions'&&context.stage.paged){extensionGroups.set(id,0);return;}
     const source=context?.stage.id==='issues'&&moduleFor(id)?.pages.find(page=>page.id===id);
     if(source?.pointLinkedImages){
       const point=pagePoints(source)[0];
@@ -168,7 +171,7 @@
     selectedPoints.delete(topic.sourcePageId);pendingFocus=null;
   }
   function hashFor(page){if(page.id==='modules-formation')return '#'+page.id+(presentation.state.phase?'/step-'+presentation.state.phase:'');const {stage,topic}=displayContext(page.id);return '#'+page.id+(topic&&stage.id!=='extensions'?'/topic-'+topic.id:'');}
-  function extensionPaging(){return Boolean(document.fullscreenElement)&&innerWidth>900&&!document.body.classList.contains('is-editing')&&displayContext().stage?.id==='extensions';}
+  function extensionPaging(){const {stage}=displayContext();return stage?.id==='extensions'&&(Boolean(document.fullscreenElement)||stage.paged===true)&&innerWidth>900&&!document.body.classList.contains('is-editing');}
   function syncExtensionControls(page){
     if((page||presentation?.page)?.id==='modules-formation'&&formation){
       const phase=presentation.state.phase,next=document.getElementById('next'),stage=formation.stages[phase],following=formation.stages[phase+1];
@@ -184,6 +187,7 @@
     if(page)extensionFooter={pageId:page.id,next:next.textContent};
     const {stage}=displayContext(),grid=document.querySelector('.module-extension-grid');if(stage?.id!=='extensions'||!grid)return;
     const paging=extensionPaging(),total=Math.ceil(stage.topics.length/2),group=Math.max(0,Math.min(total-1,extensionGroups.get(stage.pageId)||0));extensionGroups.set(stage.pageId,group);
+    grid.classList.toggle('is-paged',Boolean(paging));
     let changed=false;for(const card of grid.children){const hide=paging&&Number(card.dataset.extensionGroup)!==group;if(card.hidden!==hide){card.hidden=hide;changed=true;}}
     const pager=document.querySelector('.module-extension-pager');pager.hidden=!paging||total<2;
     pager.querySelector('[data-module-extension-step="-1"]').disabled=group===0;pager.querySelector('[data-module-extension-step="1"]').disabled=group===total-1;
@@ -234,7 +238,11 @@
     const single=entry.submodules.length===1?entry.submodules[0]:null;
     return [{id:'module-'+entry.id,chapter,kind:'presentation-empty',name:single?.name||entry.name,moduleId:entry.id,...(single?{submoduleId:single.id}:{})},...(entry.submodules.length>1?entry.submodules.map(sub=>({id:submodulePageId(sub),chapter,kind:'presentation-empty',name:sub.name,moduleId:entry.id,submoduleId:sub.id})):[])];
   }
-  function pages(){return [...(catalog?.cover?[{id:'modules-cover',chapter:'modules-intro',kind:'module',name:catalog.cover.title},{id:'modules-outline',chapter:'modules-intro',kind:'module',name:'簡報大綱'}]:[]),{id:'modules-structure',chapter:'modules-intro',kind:'module',name:'功能模組架構'},{id:'modules-index',chapter:'modules-intro',kind:'module',name:'全部模組總覽'},{id:'modules-formation',chapter:'modules-intro',kind:'module',name:formation?.title||'模組如何逐步形成',stepCount:formation?.stages.length||1},...(catalog?.themes||['M1','M2','M3','M4'].map(id=>({id,name:id}))).flatMap(theme=>[{id:'modules-'+theme.id,chapter:'modules-'+theme.id,kind:'module',name:theme.name,theme:theme.id},...(catalog?.modules||[]).filter(entry=>entry.theme===theme.id).flatMap(pagesForModule)])];}
+  function themePages(theme){
+    const count=(catalog?.modules||[]).filter(entry=>entry.theme===theme.id).length,total=Math.max(1,Math.ceil(count/(theme.modulesPerPage||count||1)));
+    return Array.from({length:total},(_,index)=>({id:'modules-'+theme.id+(index?'-'+(index+1):''),chapter:'modules-'+theme.id,kind:'module',name:theme.name+(total>1?'（'+(index+1)+'/'+total+'）':''),theme:theme.id,themePageIndex:index,themePageCount:total}));
+  }
+  function pages(){return [...(catalog?.cover?[{id:'modules-cover',chapter:'modules-intro',kind:'module',name:catalog.cover.title},{id:'modules-outline',chapter:'modules-intro',kind:'module',name:'簡報大綱'}]:[]),{id:'modules-structure',chapter:'modules-intro',kind:'module',name:'功能模組架構'},{id:'modules-index',chapter:'modules-intro',kind:'module',name:'全部模組總覽'},{id:'modules-formation',chapter:'modules-intro',kind:'module',name:formation?.title||'模組如何逐步形成',stepCount:formation?.stages.length||1},...(catalog?.themes||['M1','M2','M3','M4'].map(id=>({id,name:id}))).flatMap(theme=>[...themePages(theme),...(catalog?.modules||[]).filter(entry=>entry.theme===theme.id).flatMap(pagesForModule)])];}
   function syncPages(target,config=currentConfig()){
     const extensions=pages().filter(page=>stageContext(page.id)?.stage.id==='extensions'),known=new Set(extensions.map(page=>page.id));
     for(let index=target.length-1;index>=0;index--)if(known.has(target[index].id)&&extensionRemoved(target[index].id,config))target.splice(index,1);
@@ -288,21 +296,23 @@
     if(stage?.id==='issues')return articleRefs(displayContext(page.id).source,true);
     if(stage?.id==='extensions')return '';
     if(stage)return topic?`<nav class="article-nav module-topic-nav" style="--module-concept-count:${stage.topics.length}" aria-label="${stage.title}項目選擇"><span class="nav-label">${stage.title}</span>${stage.topics.map(value=>`<button type="button" class="article-chip${value.id===topic.id?' active':''}" data-module-topic="${value.id}" aria-pressed="${value.id===topic.id}">${esc(topicLabel(stage,value))}</button>`).join('')}</nav>`:'';
-    const items=content.pages.filter(item=>entry.submodules.length<2||(item.submoduleId||null)===submoduleId);
+    const items=content.pages.filter(item=>!content.hiddenPages?.includes(item.id)&&(entry.submodules.length<2||(item.submoduleId||null)===submoduleId));
     if(items.length<2)return '';
     return `<nav class="module-page-nav" aria-label="${submoduleId||entry.id+' 總覽'} 內容選擇">${items.map((item,index)=>`<button type="button" data-page="${item.id}" ${item.id===page.id?'aria-current="page"':''}><span>${String(index+1).padStart(2,'0')}</span>${esc(item.title.replace(/^(停管制|讓管制)：/,''))}</button>`).join('')}</nav>`;
   }
   function heading(kicker,title,intro,compact=false){const code=kicker.split(' / ')[0];return `<header class="module-heading${compact?' module-heading-compact':''}"><span class="eyebrow" ${compact&&title.startsWith(code)?'hidden':''}>${esc(compact?code+(kicker.match(/ · .+$/)?.[0]||''):kicker)}</span><h1 id="slide-title">${esc(title)}</h1><p>${esc(intro)}</p></header>`;}
 function structure(){return `<section class="slide module-slide module-structure">${heading('FUNCTIONAL MODULES','從設施搭配，走到完整路口。','依交通功能與管制目的，將標誌、標線、號誌及其他交通工程設施整理為可重複運用、相互組合的設計單元。')}<div class="module-structure-grid"><div><div class="module-levels"><div><b>04</b><span>主題</span></div><i>→</i><div><b>15</b><span>模組</span></div><i>→</i><div><b>27</b><span>子模組</span></div></div><div class="module-theme-grid">${catalog.themes.map(theme=>`<button class="module-theme theme-${theme.id}" data-module-category="${theme.id}"><span>${theme.id}</span><h2>${esc(theme.name)}</h2><p>${esc(theme.question)}</p><small>${catalog.modules.filter(entry=>entry.theme===theme.id).length} 個模組 ↗</small></button>`).join('')}</div></div></div></section>`;}
-  function index(category='all'){
+  function index(category='all',pageIndex=0){
     const entries=catalog.modules.filter(entry=>category==='all'||entry.theme===category),theme=catalog.themes.find(theme=>theme.id===category);
-    const cards=values=>`<div class="module-catalog-grid${theme?'':' has-representatives'}">${values.map(entry=>catalogCard(entry,!theme,theme?entry.topicPreviewAsset:null)).join('')}</div>`;
-return `<section class="slide module-slide module-index${theme?' module-topic-index'+(theme.id==='M1'?' module-topic-representatives':''):''}">${theme?'<button type="button" class="catalog-back" data-page="modules-index">全部模組總覽 ↖</button>':''}${heading(theme?'FUNCTIONAL MODULES / '+theme.id:'00 / MODULE DIRECTORY',theme?theme.name:'全部模組總覽',theme?theme.description:'依 M1–M4 分組瀏覽模組與子分類，選擇主題查看圖文解說。')}${theme?cards(entries):catalog.themes.map(group=>`<section class="module-catalog-group" data-module-group="${group.id}"><h2>${group.id} ${esc(group.name)}</h2>${cards(entries.filter(entry=>entry.theme===group.id))}</section>`).join('')}<p class="module-source-note">${entries.length} 個模組 · 依交通功能分類</p></section>`;
+    const pageSize=theme?.modulesPerPage||entries.length||1,pageCount=Math.max(1,Math.ceil(entries.length/pageSize)),shown=theme?entries.slice(pageIndex*pageSize,(pageIndex+1)*pageSize):entries,representatives=theme&&shown.some(entry=>entry.topicPreviewAssets||entry.topicPreviewAsset);
+    const cards=values=>`<div class="module-catalog-grid${theme?'':' has-representatives'}">${values.map(entry=>catalogCard(entry,!theme,theme?(entry.topicPreviewAssets||entry.topicPreviewAsset):null)).join('')}</div>`;
+return `<section class="slide module-slide module-index${theme?' module-topic-index'+(representatives?' module-topic-representatives':'')+(pageCount>1?' module-topic-paged':''):''}">${theme?'<button type="button" class="catalog-back" data-page="modules-index">全部模組總覽 ↖</button>':''}${heading(theme?'FUNCTIONAL MODULES / '+theme.id:'00 / MODULE DIRECTORY',theme?theme.name+(pageCount>1?'（'+(pageIndex+1)+'/'+pageCount+'）':''):'全部模組總覽',theme?theme.description:'依 M1–M4 分組瀏覽模組與子分類，選擇主題查看圖文解說。')}${theme?cards(shown):catalog.themes.map(group=>`<section class="module-catalog-group" data-module-group="${group.id}"><h2>${group.id} ${esc(group.name)}</h2>${cards(entries.filter(entry=>entry.theme===group.id))}</section>`).join('')}<p class="module-source-note">${shown.length} 個模組 · 依交通功能分類</p></section>`;
   }
   function catalogCard(entry,previews=false,previewAsset=null){
     if(previewAsset){
-      const asset=sharedAsset(previewAsset),key=assetKey(previewAsset),viewPage='modules-topic-'+entry.id.toLowerCase();
-      return `<article class="module-catalog-card module-adjustable-card theme-${entry.theme}" data-directory-module="${entry.id}"><div><b>${entry.id}</b></div><h2>${esc(entry.name)}</h2><ul>${entry.submodules.map(sub=>`<li>${esc(sub.name)}</li>`).join('')}</ul><div class="module-catalog-figures"><figure class="map-card module-map-card module-catalog-figure" data-directory-asset="${previewAsset}" data-initial-view-page="${viewPage}"><div class="map-toolbar"><div class="map-tools"><button type="button" data-asset="${key}" aria-label="開啟原圖：${esc(asset.label)}">↗</button></div></div><div class="map-canvas module-map-canvas" data-editor-image-key="${key}">${orientedImage(asset,key,'scenario-detail-image module-diagram module-catalog-thumbnail')}</div><figcaption class="module-catalog-figure-label">${esc(asset.label)}</figcaption></figure></div><button type="button" class="module-catalog-entry" data-page="${entryPoint(entry.id)}">查看完整內容 ↗</button></article>`;
+      const previewAssets=Array.isArray(previewAsset)?previewAsset:[previewAsset],viewPage='modules-topic-'+entry.id.toLowerCase();
+      const figures=previewAssets.map(id=>{const asset=sharedAsset(id),key=assetKey(id);return `<figure class="map-card module-map-card module-catalog-figure" data-directory-asset="${id}" data-initial-view-page="${viewPage}"><div class="map-toolbar"><div class="map-tools"><button type="button" data-asset="${key}" aria-label="開啟原圖：${esc(asset.label)}">↗</button></div></div><div class="map-canvas module-map-canvas" data-editor-image-key="${key}">${orientedImage(asset,key,'scenario-detail-image module-diagram module-catalog-thumbnail')}</div><figcaption class="module-catalog-figure-label">${esc(asset.label)}</figcaption></figure>`;}).join('');
+      return `<article class="module-catalog-card module-adjustable-card theme-${entry.theme}" data-directory-module="${entry.id}"><div><b>${entry.id}</b></div><h2>${esc(entry.name)}</h2><ul>${entry.submodules.map(sub=>`<li>${esc(sub.name)}</li>`).join('')}</ul><div class="module-catalog-figures${previewAssets.length>1?' is-pair':''}">${figures}</div><button type="button" class="module-catalog-entry" data-page="${entryPoint(entry.id)}">查看完整內容 ↗</button></article>`;
     }
 
     return `<button class="module-catalog-card theme-${entry.theme}" data-directory-module="${entry.id}" data-page="${entryPoint(entry.id)}"><div><b>${entry.id}</b>${contents.has(entry.id)?'':`<small>${moduleErrors.has(entry.id)?'載入失敗':'內容留空'}</small>`}</div><h2>${esc(entry.name)}</h2><ul>${entry.submodules.map(sub=>`<li>${esc(sub.name)}</li>`).join('')}</ul>${previewAsset?directoryPreviews(entry.id,[previewAsset]):previews?directoryPreviews(entry.id):''}<span>${contents.has(entry.id)?'查看完整內容':moduleErrors.has(entry.id)?'重新開啟':'開啟預留頁'} ↗</span></button>`;
@@ -383,7 +393,7 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     const content=moduleFor(page.id);
     const cards=stage.topics.map((topic,index)=>{
       const source=content.pages.find(source=>source.id===topic.sourcePageId),assets=topic.assets||source.assets,layout=extensionLayout(content,stage,topic),editing=typeof window==='object'&&window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing;
-      return `<article class="module-extension-card${assets.length?' has-images':' text-only'}" data-extension-layout="${layout.layout}" data-extension-group="${Math.floor(index/2)}" data-module-source-page="${source.id}" data-module-topic-id="${topic.id}"><header class="module-extension-card-heading"><span>${String(index+1).padStart(2,'0')}</span><h2 data-block-edit-key="${stage.pageId}|extension|${topic.id}|title">${esc(topic.label)}</h2>${assets.length&&editing?extensionLayoutControl(layout):''}</header>${assets.length&&source.notice?`<p class="module-extension-notice" data-editor-ui="module-image-note">${esc(source.notice)}</p>`:''}<div class="module-extension-body"><div class="module-extension-copy">${pointList(source)}</div>${assets.length?`<div class="module-extension-images${assets.length>1?' is-pair':''}">${assets.map(extensionFigure).join('')}</div>`:''}</div></article>`;
+      return `<article class="module-extension-card${assets.length?' has-images':' text-only'}${topic.showPointTitles?' has-concept-point-titles':''}" data-extension-layout="${layout.layout}" data-extension-group="${Math.floor(index/2)}" data-module-source-page="${source.id}" data-module-topic-id="${topic.id}"><header class="module-extension-card-heading"><span>${String(index+1).padStart(2,'0')}</span><h2 data-block-edit-key="${stage.pageId}|extension|${topic.id}|title">${esc(topic.label)}</h2>${assets.length&&editing?extensionLayoutControl(layout):''}</header>${assets.length&&source.notice?`<p class="module-extension-notice" data-editor-ui="module-image-note">${esc(source.notice)}</p>`:''}<div class="module-extension-body"><div class="module-extension-copy">${topic.facilities?conceptFacilities(source,topic,false):''}${pointList(source)}</div>${assets.length?`<div class="module-extension-images${assets.length>1?' is-pair':''}">${assets.map(extensionFigure).join('')}</div>`:''}</div></article>`;
     }).join('');
     return `<section class="slide module-slide module-detail module-extension-slide" data-module-id="${content.id}" data-module-stage="extensions">${switcher(page)}${extensionPageActions(page)}${heading(sub.id+' / '+(content.id==='M2-01'?(sub.id.endsWith('.1')?'STOP CONTROL':'YIELD CONTROL'):'FUNCTIONAL MODULE')+' · '+stageProgress(stageContext(page.id).flow,stage),sub.name+'｜'+stage.title,stage.intro||'依行人穿越、路口空間與車速，調整停讓配置。',true)}<div class="module-extension-grid" style="--module-extension-rows:${Math.ceil(stage.topics.length/2)}">${cards}</div><div class="module-extension-footer"><nav class="module-extension-pager" aria-label="延伸應用分組" data-editor-ui="extension-pager" hidden><button type="button" data-module-extension-step="-1">← 上一組</button><span data-extension-range role="status" aria-live="polite"></span><button type="button" data-module-extension-step="1">下一組 →</button></nav></div></section>`;
   }
@@ -393,7 +403,7 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     if(page.id==='modules-structure')return '從設施搭配，走到完整路口。';
     if(page.id==='modules-formation')return formation?.title||'模組形成示範尚未載入';
     if(page.id==='modules-index')return '全部模組總覽';
-    if(page.theme)return catalog?.themes.find(theme=>theme.id===page.theme)?.name||page.name;
+    if(page.theme)return page.name;
     const {source,stage,flow}=displayContext(page.id),content=moduleFor(page.id);
     const sub=flow&&catalog?.modules.find(entry=>entry.id===content?.id)?.submodules.find(sub=>sub.id===flow.submoduleId);
     return stage&&sub?sub.name+'｜'+stage.title:source?.title||page.name;
@@ -404,7 +414,7 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
     if(page.id==='modules-cover'){const cover=catalog.cover,image=cover.image,key='modules:cover';return window.PresentationResults.render({...page,resultType:'cover',content:{title:cover.title,meeting:cover.meeting,images:[{key,label:image.label}]}},{embeddedAssets:{[key]:{url:encodeURI(image.file),width:image.width,height:image.height}}});}
     if(page.id==='modules-outline')return window.PresentationResults.render({...page,resultType:'outline',content:{title:'簡報大綱',deck:'modules',eyebrow:'CONTENTS / 02'}},{});
     if(page.id==='modules-structure')return structure();if(page.id==='modules-formation')return formationSlide();if(page.id==='modules-index')return index();
-    if(page.theme)return index(page.theme);
+    if(page.theme)return index(page.theme,page.themePageIndex||0);
     const {source,stage,topic,flow}=displayContext(page.id);if(!source)return '';
     const item=visualPage(topic?.assets?{...source,assets:topic.assets}:source);
     const sub=flow&&catalog.modules.find(entry=>entry.id===content.id).submodules.find(sub=>sub.id===flow.submoduleId),title=pageTitle(page);
@@ -539,14 +549,14 @@ function showSource(reg){
   function conceptKey(){const {stage,topic}=displayContext();return stage?.pageId+'/'+topic?.id;}
   function effectiveFacilities(page,topic){const saved=currentConfig()?.content.modules[page.id]?.conceptFacilities;return saved&&Object.hasOwn(saved,topic.id)?saved[topic.id]:topic.facilities;}
   function conceptTargets(page,topic){return effectiveFacilities(page,topic).map(facility=>({id:'concept-'+topic.id+'-'+facility.id,title:facility.label,focus:facility.focus,facilityId:facility.id}));}
-  function conceptFacilities(page,topic){
-    const editing=window.generalRoadEditor.editing,facilities=effectiveFacilities(page,topic),selected=selectedFacilities.get(conceptKey())||facilities[0]?.id;
+  function conceptFacilities(page,topic,editable=true){
+    const editing=editable&&typeof window==='object'&&window.generalRoadEditor?.editing,facilities=effectiveFacilities(page,topic),selected=selectedFacilities.get(conceptKey())||facilities[0]?.id;
     if(!editing&&!facilities.length)return '';
     const groups=['control','design'].map(kind=>({kind,items:facilities.filter(item=>(item.kind||'control')===kind)})).filter(group=>group.items.length);
     const labels={control:'相關交通管制設施',design:'相關設計要素'};
     const html=groups.map(group=>{
       const labelKey=page.id+'|concept|'+topic.id+'|'+(group.kind==='design'&&groups.some(item=>item.kind==='control')?'design-label':'facility-label');
-      const chips=group.items.map(facility=>editing?`<span class="module-concept-facility-chip"><button type="button" data-module-concept-facility="${esc(facility.id)}" aria-pressed="${facility.id===selected}">${esc(facility.label)}</button><button type="button" data-module-concept-remove-facility="${esc(facility.id)}" aria-label="刪除項目：${esc(facility.label)}" title="刪除這個項目">×</button></span>`:`<span>${esc(facility.label)}</span>`).join('');
+      const chips=group.items.map(facility=>editing?`<span class="module-concept-facility-chip"><button type="button" data-module-concept-facility="${esc(facility.id)}" aria-pressed="${facility.id===selected}">${esc(facility.label)}</button><button type="button" data-module-concept-remove-facility="${esc(facility.id)}" aria-label="刪除項目：${esc(facility.label)}" title="刪除這個項目">×</button></span>`:`<span${!editable?' data-block-edit-key="'+esc(page.id+'|concept|'+topic.id+'|facility-'+facility.id)+'"':''}>${esc(facility.label)}</span>`).join('');
       return `<div class="module-concept-facility-group" data-facility-kind="${group.kind}"><p class="module-concept-facility-label" data-block-edit-key="${esc(labelKey)}">${labels[group.kind]}</p><div class="module-concept-facilities">${chips}</div></div>`;
     }).join('');
     const newKind=facilities.find(item=>item.id===selected)?.kind||'control';
@@ -584,8 +594,8 @@ function showSource(reg){
     for(const frame of all)paintHighlight(frame,highlightSpec(page,frame.target,frame.imageKey.slice('module:'.length),window.generalRoadEditor.state),false,true);
     if(window.generalRoadEditor.editing){const frame=frames()[0];if(frame){const tools=frame.element.closest('figure').querySelector('.map-tools'),toggle=document.createElement('button');toggle.type='button';toggle.dataset.moduleConceptFrame='';const spec=highlightSpec(page,frame.target,frame.imageKey.slice('module:'.length),window.generalRoadEditor.state);toggle.textContent=spec.enabled?'移除框線':'新增框線';toggle.setAttribute('aria-label',toggle.textContent+'：'+frame.label);tools.append(toggle);}}
   }
-  function moveConceptTopic(direction){const {stage,topic}=displayContext();if(!topic?.facilities||window.generalRoadEditor.editing)return false;const next=stage.topics[stage.topics.findIndex(item=>item.id===topic.id)+direction];if(!next)return false;selectedTopics.set(stage.pageId,next.id);pendingFocus=null;presentation.refresh();return true;}
-  function pointNavigationLabel(){const {stage,topic}=displayContext();if(topic?.facilities&&!window.generalRoadEditor.editing){const index=stage.topics.findIndex(item=>item.id===topic.id);return index<stage.topics.length-1?'下一個概念 '+String(index+2).padStart(2,'0'):'';}const page=currentPage();if(!page?.pointLinkedImages||window.generalRoadEditor.editing)return '';const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),index=points.findIndex(point=>point.id===activePoint(page)?.id);return index<points.length-1?'下一個重點 '+String(index+2).padStart(2,'0'):'';}
+  function moveConceptTopic(direction){const {stage,topic}=displayContext();if(stage?.id!=='diagram'||!topic?.facilities||window.generalRoadEditor.editing)return false;const next=stage.topics[stage.topics.findIndex(item=>item.id===topic.id)+direction];if(!next)return false;selectedTopics.set(stage.pageId,next.id);pendingFocus=null;presentation.refresh();return true;}
+  function pointNavigationLabel(){const {stage,topic}=displayContext();if(stage?.id==='diagram'&&topic?.facilities&&!window.generalRoadEditor.editing){const index=stage.topics.findIndex(item=>item.id===topic.id);return index<stage.topics.length-1?'下一個概念 '+String(index+2).padStart(2,'0'):'';}const page=currentPage();if(!page?.pointLinkedImages||window.generalRoadEditor.editing)return '';const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),index=points.findIndex(point=>point.id===activePoint(page)?.id);return index<points.length-1?'下一個重點 '+String(index+2).padStart(2,'0'):'';}
   function moveLinkedPoint(direction){const page=currentPage();if(!page?.pointLinkedImages||window.generalRoadEditor.editing)return false;const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),index=points.findIndex(point=>point.id===activePoint(page)?.id),next=points[index+direction];if(!next)return false;choosePoint(next.id,false);return true;}
   function choosePoint(id,zoom=false,focus){const page=currentPage(),point=page&&pagePoints(page).find(point=>point.id===id&&pointVisible(page.id,point));if(!point)return;selectedPoints.set(page.id,id);if(zoom&&point.focus&&page.assets.includes(point.focus.asset))selectedAssets.set(page.id,point.focus.asset);pendingFocus=zoom&&!page.pointLinkedImages?id:null;presentation.refresh();document.querySelector(focus||`[data-module-point="${id}"]`)?.focus({preventScroll:true});}
   function afterRender(){syncNavigation();if(presentation?.page.id==='modules-formation'){afterFormationRender();return;}cancelFormationAnimation();formationCamera=null;const {stage,topic}=displayContext();if(stage?.id==='extensions')return;const page=currentPage();if(!page)return;if(topic?.facilities){afterConceptRender(page,topic);pendingFocus=null;return;}const selected=activePoint(page)?.id,editing=window.generalRoadEditor.editing;

@@ -56,4 +56,16 @@ module.exports=async({evaluate,click,navigate,cdp,base,pass})=>{
   }
   assert.equal(await run(()=>{const c=window.visualLayoutEditor.store.config;return JSON.stringify({imageViews:c.imageViews,highlights:c.legacyState.highlights,texts:c.legacyState.texts});}),config,'Navigation must preserve saved views, frames and text');
   pass('Both M1-01 submodules restart at the first issue/photo and first concept on forward entry; Next/PageDown, Previous, same-page refresh, editing and explicit topic links retain their intended behavior.');
+  await navigate(base+'/presentation-demo/#m201-stop-issues');
+  const stopIssues=await issueState();assert.equal(stopIssues.asset,'module:stop-issue-photo-1');
+  await next(false);assert.equal((await issueState()).asset,'module:stop-issue-photo-1');
+  await next(true);assert.equal((await issueState()).asset,'module:stop-issue-photo-2');
+  await next(false);assert.equal((await state()).page,'m201-stop-layout');assert.equal((await state()).topic,'sign');
+  await next(false);assert.equal((await state()).topic,'line');await next(false);assert.equal((await state()).page,'m201-stop-extensions');
+  const visible=()=>run(()=>[...document.querySelectorAll('.module-extension-card:not([hidden])')].map(node=>node.dataset.moduleTopicId));
+  assert.deepEqual(await visible(),['crosswalk','refuge']);await next(false);assert.deepEqual(await visible(),['warning']);
+  await click('#previous');assert.deepEqual(await visible(),['crosswalk','refuge']);await next(true);assert.deepEqual(await visible(),['warning']);
+  await evaluate('(async()=>{await window.generalRoadPresentation.goPage("m201-stop-layout");await window.generalRoadPresentation.whenIdle();})()');
+  await click('[data-module-topic="line"]');await next(false);assert.deepEqual(await visible(),['crosswalk','refuge']);
+  pass('Stop-control photos follow 1/1/2, its two concepts advance into application groups, and application Next/PageDown, Previous and re-entry keep the correct group.');
 };

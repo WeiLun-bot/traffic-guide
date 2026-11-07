@@ -214,6 +214,10 @@
 .module-topic-representatives .module-catalog-card>.module-catalog-figures{margin-top:auto;padding-top:12px}
 .module-topic-representatives .module-catalog-thumbnail{height:clamp(160px,20vh,270px);padding:4px}
 .module-topic-representatives .module-catalog-figure-label{min-height:0}
+.module-topic-representatives .module-catalog-figures.is-pair{display:flex;align-items:stretch;gap:12px}
+.module-topic-representatives .module-catalog-figures.is-pair>.module-catalog-figure{flex:1;min-width:0}
+.module-topic-paged>.module-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:620px){.module-topic-paged>.module-catalog-grid{grid-template-columns:1fr}}
 
 .module-topic-representatives .module-catalog-card>.module-catalog-figures{padding-top:4px;margin-bottom:10px}
 .module-topic-representatives .module-catalog-figure-label{padding:5px 9px}

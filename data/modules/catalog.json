@@ -24,7 +24,8 @@
       "id": "M2",
       "name": "路口管制",
       "question": "誰先走，哪些方向可以通行？",
-      "description": "以路權安排、號誌與行向規則，建立路口通行的優先關係。"
+      "description": "以路權安排、號誌與行向規則，建立路口通行的優先關係。",
+      "modulesPerPage": 2
     },
     {
       "id": "M3",
@@ -97,7 +98,8 @@
           "id": "M2-01.2",
           "name": "讓管制"
         }
-      ]
+      ],
+      "topicPreviewAsset": "stop-basic"
     },
     {
       "id": "M2-02",
@@ -109,7 +111,8 @@
           "id": "M2-02.1",
           "name": "無號誌圓環"
         }
-      ]
+      ],
+      "topicPreviewAsset": "m202-roundabout"
     },
     {
       "id": "M2-03",
@@ -121,7 +124,8 @@
           "id": "M2-03.1",
           "name": "號誌化路口"
         }
-      ]
+      ],
+      "topicPreviewAsset": "m203-2f27e58a6a"
     },
     {
       "id": "M2-04",
@@ -141,6 +145,11 @@
           "id": "M2-04.3",
           "name": "單行道"
         }
+      ],
+      "topicPreviewAsset": "m204-08538b11c2",
+      "topicPreviewAssets": [
+        "m204-08538b11c2",
+        "m204-e6f9a94e50"
       ]
     },
     {
