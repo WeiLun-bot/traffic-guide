@@ -18,28 +18,31 @@
 @media(max-width:620px){.playbar{--next-button-width:140px}.next-button{gap:8px}}
 @media(max-width:380px){.playbar{--next-button-width:110px}}
 
-/* Enlarge the presentation/chapter directory by one 2px step at each level. */
-#toc-dialog{font-size:18px}
+/* Keep directory entries large enough to read alongside slide body text. */
+#toc-dialog{font-size:18px;max-width:1200px}
 #toc-dialog .dialog-head h2{font-size:26px}
 #toc-dialog .eyebrow{font-size:12px}
 #toc-dialog .close-button{font-size:25px;width:35px;height:35px}
-#toc-dialog .presentations-toc-home{font-size:14px}
-#toc-dialog .toc-presentation>summary>span{font-size:14px}
-#toc-dialog .toc-presentation>summary>strong{font-size:20px}
+#toc-dialog .presentations-toc-home{font-size:18px}
+#toc-dialog .toc-presentation>summary>span{font-size:16px}
+#toc-dialog .toc-presentation>summary>strong{font-size:22px}
 #toc-dialog .toc-presentation>summary::after{font-size:21px}
-#toc-dialog .toc-chapter{font-size:16px}
-#toc-dialog .toc-chapter span{font-size:12px}
-#toc-dialog :is(.toc-pages,.toc-chapter-overview) button{font-size:13px}
-#toc-dialog .toc-pages small{font-size:12px}
-#toc-dialog .toc-scenario-title{font-size:14px}
-#toc-dialog .toc-scenario-title strong{font-size:13px}
-#toc-dialog .toc-order-toolbar p,#toc-dialog .toc-order-editor-actions button,#toc-dialog .toc-order-actions>button{font-size:14px}
-#toc-dialog .toc-order-feedback{font-size:13px}
+#toc-dialog .toc-chapter{font-size:20px;line-height:1.5}
+#toc-dialog .toc-chapter span{font-size:16px}
+#toc-dialog :is(.toc-pages,.toc-chapter-overview) button{font-size:18px;line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+#toc-dialog .toc-pages small{font-size:16px}
+#toc-dialog .toc-scenario-title{font-size:20px}
+#toc-dialog .toc-scenario-title strong{font-size:16px}
+#toc-dialog .toc-order-toolbar p,#toc-dialog .toc-order-editor-actions button{font-size:18px}
+#toc-dialog .toc-order-actions>button{font-size:18px;min-width:32px;min-height:26px}
+#toc-dialog .toc-order-feedback{font-size:16px}
+#toc-dialog .toc-presentation-body .toc-group{grid-template-columns:240px minmax(0,1fr)}
+@media(max-width:760px){
+ #toc-dialog .toc-presentation-body .toc-group{grid-template-columns:minmax(0,1fr)}
+}
 @media(max-width:620px){
  #toc-dialog .dialog-head h2{font-size:23px}
  #toc-dialog .eyebrow{font-size:11px}
- #toc-dialog .toc-presentation>summary>strong{font-size:17px}
- #toc-dialog .toc-pages button{font-size:12px}
- #toc-dialog .toc-scenario-title{font-size:13px}
- #toc-dialog .toc-order-actions>button{font-size:14px}
+ #toc-dialog .toc-presentation>summary>strong{font-size:20px}
+ #toc-dialog .toc-order-editor-actions{flex-wrap:wrap}
 }
