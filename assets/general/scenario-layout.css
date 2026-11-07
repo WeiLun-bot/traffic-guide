@@ -77,7 +77,7 @@ body[data-presentation="general"] #presentation .general-layout-slide.review :is
 body[data-presentation="general"] #presentation .general-layout-slide.review :is(.review-row small,.source-line){font-size:var(--summary-small);line-height:1.4}
 body[data-presentation="general"] #presentation .review .review-topic{font-weight:600;margin:0 0 .6em}
 body[data-presentation="general"] #presentation .review .review-copy{max-width:none}
-body[data-presentation="general"] #presentation .review>div:not(.review-rows) #slide-title{font-size:calc(var(--summary-heading) * 1.25)}
+body[data-presentation="general"] #presentation .review>div:not(.review-rows) #slide-title{font-size:calc(var(--summary-heading) * 1.25);font-weight:700}
 body[data-presentation="general"] #presentation .review>div:not(.review-rows) :is(.review-topic,.review-copy){font-size:calc(var(--summary-body) * 1.25)}
 body[data-presentation="general"] #presentation .review>div:not(.review-rows) .source-line{font-size:calc(var(--summary-small) * 1.25)}
 body[data-presentation="general"] #presentation :is(.scenario-related-links button,.scenario-module-link,.explain-footer .text-button){border:0;border-bottom:1px solid #b6c8af;border-radius:0;background:none;color:var(--green);font-size:12px;font-weight:400;line-height:1.4;padding:3px 0 5px}
@@ -122,7 +122,7 @@ body[data-presentation="general"] #presentation .scenario-chapter[data-detail-di
  body[data-presentation="general"] #presentation .conditions-current-figure{display:flex;flex-direction:column;height:100%}
  body[data-presentation="general"] #presentation .conditions-current-canvas{flex:1;height:auto;min-height:0}
  body[data-presentation="general"] #presentation .conditions-issues.context-issues{overflow:auto;min-height:0}
- body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .conditions-layout{grid-template-columns:minmax(0,28fr) minmax(0,72fr)}
+ body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .conditions-layout{grid-template-columns:minmax(0,var(--conditions-figure-track,28fr)) minmax(0,var(--conditions-issues-track,72fr))}
  body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .conditions-issues{display:grid;grid-template-columns:repeat(var(--issue-columns,2),minmax(0,1fr));grid-template-rows:repeat(var(--issue-rows,1),minmax(0,1fr));gap:var(--general-gap);align-items:stretch}
  body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .condition-issue{display:flex;flex-direction:column;min-height:0;gap:calc(6 * var(--general-unit));border:1px solid var(--line);border-radius:5px;padding:calc(8 * var(--general-unit));margin:0;background:#ffffffb8;overflow:hidden}
  body[data-presentation="general"] #presentation [data-conditions-layout^="cards"] .condition-photo{flex:1;min-height:calc(65 * var(--general-unit));max-height:none;aspect-ratio:auto;width:100%;margin:0}
@@ -164,3 +164,60 @@ body[data-presentation="general"] #presentation .scenario-chapter[data-detail-di
  .scenario-reference-content{grid-template-columns:minmax(0,1fr)}
  .scenario-reference-content>svg{height:35dvh}
 }
+
+/* Keep corresponding card sections aligned even when their text wraps. */
+body[data-presentation="general"] #presentation [style*="--card-aligned-height"]{min-height:var(--card-aligned-height)!important;box-sizing:border-box}
+body[data-presentation="general"] #presentation .contents-grid{align-items:stretch}
+body[data-presentation="general"] #presentation .chapter-card{gap:12px;min-height:360px}
+body[data-presentation="general"] #presentation .chapter-card .road-symbol{width:100%;height:auto;min-height:140px;max-height:none;flex:1;aspect-ratio:160/145;margin:0;align-self:center}
+body[data-presentation="general"] #presentation .chapter-card h2{margin:0}
+body[data-presentation="general"] #presentation .scenario-card-copy{box-sizing:border-box}
+body[data-presentation="general"] #presentation .scenario-card-copy p{white-space:normal}
+body[data-presentation="general"] #presentation .scenario-card-footer{display:flex;justify-content:space-between;gap:8px}
+body[data-presentation="general"] #presentation .strategy-row.strategy-wrap{grid-template-columns:minmax(0,1fr)}
+body[data-presentation="general"] #presentation .strategy-row.strategy-wrap .strategy-refs{text-align:right;padding-left:0;margin-top:.3em;white-space:normal;overflow-wrap:anywhere;max-width:100%}
+body[data-presentation="general"] #presentation .strategy-title-group{min-width:0}
+body[data-presentation="general"] #presentation .strategy-refs{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body[data-presentation="general"] #presentation .scenario-article-table table[data-compact-table]{table-layout:auto;width:max-content;min-width:100%}
+body[data-presentation="general"] #presentation .scenario-article-table table[data-compact-table] :is(th,td){white-space:nowrap;width:auto;max-width:none;word-break:normal;overflow-wrap:normal}
+body[data-presentation="general"] #presentation .scenario-article-table table[data-compact-table] tbody th{width:1%}
+.scenario-checklist-view table[data-compact-table] :is(th,td){white-space:nowrap;width:auto}
+.scenario-checklist-view table[data-compact-table] tbody th{width:1%}
+@media(min-width:0px){
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(230px,1fr);overflow:visible}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card{display:grid;grid-template-columns:minmax(0,48fr) minmax(0,52fr);grid-template-rows:auto minmax(0,1fr);gap:var(--general-gap);align-items:stretch}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-top{grid-column:1/-1}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-visual{grid-column:1;grid-row:2;height:100%!important;min-height:180px!important;max-height:none!important;width:100%;margin:0}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-copy{grid-column:2;grid-row:2;display:flex;flex-direction:column;justify-content:flex-start;min-width:0;padding:0}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-copy h2{font-size:22px}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-footer{margin-top:auto}
+}
+@media(max-width:760px){
+ body[data-presentation="general"] #presentation .scenario-card-visual{height:240px!important;min-height:180px!important;flex:none!important}
+}
+
+.viewport-tools[hidden]{display:none!important}
+@media(max-width:760px){
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-grid{grid-template-columns:minmax(0,1fr)}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-copy h2{font-size:18px}
+ body[data-presentation="general"] #presentation .scenario-chapter[data-scenario-card-layout="horizontal"] .scenario-card-copy p{font-size:14px}
+}
+
+body[data-presentation="general"] #presentation .contents-slide .section-heading>p{max-width:none;flex:0 0 auto;white-space:nowrap}
+body:not(.is-editing) [data-scenario-card-default]{display:none!important}
+.scenario-card-layout-options small{font-size:11px;color:var(--muted);white-space:nowrap}
+@media(max-width:620px){body[data-presentation="general"] #presentation .contents-slide .section-heading>p{font-size:clamp(9px,2.7vw,12px)}}
+
+body:not(.is-editing) :is([data-scenario-card-chapter-default],[data-scenario-card-use-global]),[data-scenario-card-use-global][hidden]{display:none!important}
+
+/* Align the page title and scenario name without relying on their text sizes. */
+body[data-presentation="general"] #presentation .conditions-heading{align-items:baseline}
+body[data-presentation="general"] #presentation .conditions-heading>p{font-size:22px}
+body[data-presentation="general"] #presentation>.slide.conditions-current-slide .conditions-heading #slide-title{margin-block:0}
+/* Reserve text first, then share the remaining height across all card photos. */
+@media(min-width:761px){
+ body[data-presentation="general"] #presentation [data-condition-height-bounded="true"] .condition-card-heading{flex:none}
+ body[data-presentation="general"] #presentation [data-condition-height-bounded="true"] .condition-photo{flex:1;min-height:0;height:auto;aspect-ratio:auto}
+ body[data-presentation="general"] #presentation [data-condition-height-bounded="true"] .condition-points{flex:none;max-height:none;overflow:visible}
+}
+body[data-presentation="general"] #presentation .condition-points p::before{content:"";width:.34em;height:.34em;border-radius:50%;background:var(--accent);top:.7em;transform:translateY(-50%)}

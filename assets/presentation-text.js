@@ -19,6 +19,7 @@
     return String(total+n);
   }
   function generalText(value){
+    value=value.replace(/[，,、]?\s*(?:如|參見|詳見|參照)?圖\s*\d+(?:[.．-]\d+)+(?:\s*所示)?/g,'').replace(/本情境涵蓋路面邊線、行穿線、車流導引、路側停車及相關標誌配置。/g,'');
     let text=value.replace(/整理(?=車流|路側|路口|斜交|銳角|人行|人車|車道|槽化|轉角|左轉|偏移|停車|高速|混合|停讓)/g,'調整').replace(/(需共同|需要|分向標線)整理/g,'$1調整');
     text=text.replace(/依本情境章節整理/g,'依本情境章節彙整').replace(/(\.typ\s*)整理/g,'$1彙整');
     text=text.replace(/「(市區道路及附屬工程設計規範|公路路線設計規範|交通工程規範)」/g,'《$1》');

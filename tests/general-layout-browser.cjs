@@ -31,7 +31,7 @@ module.exports=async({evaluate,navigate,view,click,wait,cdp,base,artifacts,pass}
   await view(referenceId,1);const original=await evaluate('JSON.stringify(generalRoadPresentation.state)');await click('[data-reference-page="g203-privacy"]');
   assert(await evaluate('document.getElementById("asset-dialog").open'));assert.equal(await evaluate('JSON.stringify(generalRoadPresentation.state)'),original);await click('#asset-dialog [data-close]');assert.equal(await evaluate('JSON.stringify(generalRoadPresentation.state)'),original);
   assert.equal(await evaluate('document.getElementById("slide-title").textContent'),'號誌條文運用解說');
-  await click('[data-action="source"]');assert(await evaluate('document.getElementById("source-content").textContent.includes("§ "+generalRoadPresentation.page.article.sourceDocument.section)'));await click('#source-dialog [data-close]');
+  assert.equal(await evaluate('document.querySelectorAll("#presentation .source-line,#presentation [data-action=source]").length'),0,'General-road slides omit report source notes');
   await click('#toc-button');assert(!await evaluate('document.getElementById("toc-content").textContent.includes("情境回顧")'));await click('#toc-dialog [data-close]');
   assert.equal(await evaluate('VisualLayoutCore.signature(visualLayoutEditor.store.config)'),signature,'Display layouts must not rewrite saved content or figure settings');
   pass('G4-04 cross-reference opens in a dialog and closes back to the same page/phase; article headings, section spacing and summary terminology are consistent');

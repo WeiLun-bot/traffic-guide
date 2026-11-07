@@ -1,3 +1,49 @@
+/* Enlarge the five general-road chapter covers without changing other decks. */
+#presentation .chapter-cover:is([data-chapter-cover="intro"],[data-chapter-cover="g1"],[data-chapter-cover="g2"],[data-chapter-cover="g3"],[data-chapter-cover="g4"]) .chapter-cover-deck{font-size:clamp(22.75px,2.0125vw,33.25px)}
+#presentation .chapter-cover:is([data-chapter-cover="intro"],[data-chapter-cover="g1"],[data-chapter-cover="g2"],[data-chapter-cover="g3"],[data-chapter-cover="g4"]) .chapter-cover-code{font-size:clamp(175px,22.75vw,332.5px)}
+#presentation .chapter-cover:is([data-chapter-cover="intro"],[data-chapter-cover="g1"],[data-chapter-cover="g2"],[data-chapter-cover="g3"],[data-chapter-cover="g4"]) #slide-title{font-size:63px}
+@media(max-width:620px){
+ #presentation .chapter-cover:is([data-chapter-cover="intro"],[data-chapter-cover="g1"],[data-chapter-cover="g2"],[data-chapter-cover="g3"],[data-chapter-cover="g4"]) .chapter-cover-code{font-size:175px}
+}
+/* General-road cover text uses 1.75 times its authored sizes. */
+#presentation .cover.cover #slide-title{font-size:63px}
+#presentation .cover .cover-intro{font-size:29.75px;max-width:none}
+#presentation .cover .primary-button{font-size:22.75px}
+#presentation .cover .cover-meta strong{font-size:33.25px}
+#presentation .cover .cover-meta small{font-size:17.5px}
+#presentation .cover .art-topline{font-size:17.5px;right:26px}
+#presentation .cover .art-label strong{font-size:22.75px}
+#presentation .cover .art-label small{font-size:17.5px}
+#presentation .cover .art-label b{font-size:38.5px}
+#presentation .cover .cover-meta{max-width:none;flex-wrap:wrap}
+#presentation .cover:has(>.cover-art.content-block-removed){grid-template-columns:minmax(0,1fr)!important}
+#presentation .cover:has(>.cover-art.content-block-removed)>.format-splitter{display:none}
+#presentation .contents-slide .card-top{font-size:16.5px;font-weight:700}
+#presentation .contents-slide .chapter-card h2{font-size:30px;font-weight:700}
+#presentation .contents-slide .card-bottom{justify-content:flex-end}
+#presentation .contents-intro p.is-empty{display:none}
+@media(max-height:800px) and (min-width:901px){
+ #presentation .cover .cover-intro{font-size:26.25px}
+ #presentation .cover .cover-meta strong{font-size:29.75px}
+}
+@media(max-width:900px){
+ #presentation .cover .cover-intro{font-size:24.5px}
+ #presentation .cover .cover-meta strong{font-size:26.25px}
+ #presentation .cover .cover-meta small{font-size:15.75px}
+}
+@media(max-width:1150px){
+ #presentation .contents-slide .chapter-card h2{font-size:25.5px}
+}
+@media(max-width:620px){
+ #presentation .cover .cover-intro{font-size:22.75px}
+ #presentation .cover .primary-button{font-size:21px}
+ #presentation .cover .cover-meta strong{font-size:29.75px}
+ #presentation .cover .art-topline{font-size:15.75px}
+ #presentation .cover .art-label strong{font-size:21px}
+ #presentation .cover .art-label small{font-size:15.75px}
+ #presentation .contents-slide .card-top{font-size:13.5px}
+ #presentation .contents-slide .chapter-card h2{font-size:22.5px}
+}
 /* Rendering only: preserve the saved colleague-authored sizes as the reference. */
 html{--screen-font-inline-scale:1}
 html[data-screen-fonts="active"]{--screen-font-inline-scale:var(--screen-font-scale)}

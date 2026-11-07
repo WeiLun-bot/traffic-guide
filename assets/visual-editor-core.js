@@ -84,6 +84,8 @@
       for (const axis of ['x', 'y']) assert(Number.isFinite(view[axis]) && Math.abs(view[axis]) <= 1000, '初始圖面位置須介於 -1000% 與 1000%');
       if (view.rotation === undefined) view.rotation = 0;
       assert(Number.isFinite(view.rotation) && Math.abs(view.rotation) <= 360, '旋轉角度須介於 -360° 與 360°');
+      assert(view.fit===undefined||['all','width','height'].includes(view.fit),'圖面顯示方式無效');
+      for(const axis of ['flipX','flipY'])assert(view[axis]===undefined||typeof view[axis]==='boolean','圖面翻轉設定無效');
     }
     for (const [id, item] of Object.entries(result.elements)) {
       assert(record(item) && item.id === id && id.length <= 3000, '元素 ID 無效');
@@ -241,7 +243,7 @@
   function signature(config) {
     const views = config.imageViews || {};
     const {updatedAt: _timestamp, ...legacyState} = config.legacyState;
-    return JSON.stringify({legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, scenarioOtherArticles:config.scenarioOtherArticles||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0).map(id => views[id])});
+    return JSON.stringify({legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, scenarioOtherArticles:config.scenarioOtherArticles||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0 || views[id].fit || views[id].flipX || views[id].flipY).map(id => views[id])});
   }
   class Store {
     constructor(config) {

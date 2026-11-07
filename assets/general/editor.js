@@ -136,7 +136,7 @@
       const node=[...element.childNodes].find(child=>child.nodeType===Node.TEXT_NODE&&child.textContent.trim());
       if(node){const span=document.createElement('span');span.className='metric-number';node.replaceWith(span);span.append(node);}
     });
-    const selector=['#slide-title','main h2','main h3','main p','main .tag','main .context-note','main .issue-row strong','main .metric-number','main .metric-value small','main .metric-label','main .takeaway','main .explain-points li>span','main .road-fact strong','main .custom-bullets li','main .contents-intro strong'].join(',');
+    const selector=['#slide-title','main h2','main h3','main p','main .tag','main .context-note','main .issue-row strong','main .metric-number','main .metric-value small','main .metric-label','main .takeaway','main .explain-points li>span','main .road-fact strong','main .custom-bullets li','main .contents-intro strong','main [data-block-edit-key]'].join(',');
     let baseIndex=0;
     [...document.querySelectorAll(selector)].forEach(element=>{
       const index=element.closest('[data-user-block],[data-summary-topic]')?-1:baseIndex++;
@@ -144,6 +144,7 @@
       const key=element.dataset.blockEditKey||(element.id==='slide-title'?api.page.id+'|shared|title':api.page.id+'|'+api.state.phase+'|text-'+index);
       element.dataset.editKey=key;
       if(typeof state.texts[key]==='string')setText(element,window.PresentationText?.format(state.texts[key],{general:api.page.deckId==='general'})??state.texts[key]);
+      if(element.matches('.contents-intro p'))element.classList.toggle('is-empty',!element.textContent.trim());
       if(editing&&!window.visualLayoutEditor?.editing){element.setAttribute('contenteditable','plaintext-only');element.spellcheck=false;}
       else {element.removeAttribute('contenteditable');element.removeAttribute('spellcheck');}
     });
@@ -161,6 +162,7 @@
       const vector=element.querySelector('image');
       if(img&&img.getAttribute('src')!==src)img.src=src;
       if(vector&&vector.getAttribute('href')!==src)vector.setAttribute('href',src);
+      if(element.matches('.compare-source-image'))continue;
       if(!editing||seen.has(key))continue;
       seen.add(key);
       const button=document.createElement('button');

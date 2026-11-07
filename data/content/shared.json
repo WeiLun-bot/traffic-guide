@@ -3,7 +3,16 @@
   "owner": "shared",
   "texts": {
     "modules-formation|shared|title": "模組的組成架構",
-    "modules-M1|0|text-1": "從車道空間分配、行駛路徑指示到路側停車管理，建立明確且連續的車行道使用空間與行駛動線。"
+    "modules-M1|0|text-1": "從車道空間分配、行駛路徑指示到路側停車管理，建立明確且連續的車行道使用空間與行駛動線。",
+    "contents|0|text-16": "\n",
+    "contents|0|text-3": "\n",
+    "cover|meta|scenarios-label": "情境",
+    "cover|meta|groups-label": "大情境分類",
+    "cover|action|enter": "開始 →",
+    "cover|art|caption": "全圖定位 → 放大 → 條文解說",
+    "contents|shared|title": "4大情境分類",
+    "contents|0|text-1": "依號誌管制與路口型態，分為4大分類。\n各情境包括整體配置與個別設施的設置考量。",
+    "cover|0|text-1": "以情境理解標誌標線號誌的布設及其考量。"
   },
   "images": {
     "results:module-m3-03-diagram": {
@@ -11,7 +20,14 @@
       "alt": "M3-03_機車兩段式左轉代表型1.svg"
     }
   },
-  "blocks": {},
+  "blocks": {
+    "cover|0": {
+      "added": [],
+      "removed": [
+        "cover-art"
+      ]
+    }
+  },
   "pages": [],
   "content": {
     "conditions": {},
