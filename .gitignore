@@ -1,4 +1,5 @@
 _site/
+/.venv-pdf/
 # Local exports: PDFs, previews, intermediate files, scripts, and backups.
 /exports/
 tests/artifacts/

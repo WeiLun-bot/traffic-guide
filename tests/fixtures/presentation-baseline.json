@@ -1,13 +1,13 @@
 {
   "styles": {
     "anonymous": "d2dbfa379dc131e7db20c2687711f2af453d2170e71a501a78889682f6159d0a",
-    "general-editor-styles": "561efd774997eb720abed867148891b9d7a8af19c3ab50892cd65474b0f3dd42",
+    "general-editor-styles": "d0a6b3cb8f0b5d387947458463cb78e686c7ab3ed1b999cc7b4efef905428c1c",
     "general-viewport-styles": "e56d897f5c923b259b06fa69cbb1d882076adc014781672b5aa3d62e4b88fd2a",
     "general-formatting-styles": "5a198d0ebec80404e1233f28beb9bb45c9787e68e9b934f3d6b8df42cbc284e3",
     "general-block-styles": "a8e7a2a1cf434b0a9d200ad68739c3751191a81c9763985ade469708f070102a",
     "general-scenario-styles": "8b6f0635a084d39d714bc1348ebd8cf2da76031f3fc245873614f2bf029b173f",
     "figure-focused-styles": "7cf65447133f63979991f4a922121664941b2a988f1896e13696c0847c292383",
-    "current-conditions-styles": "974db265f5e33f5e1c8f72d07f9b4abf1391c232162b549b4f7d83216210473b",
+    "current-conditions-styles": "ebc774c414578494f7ef146d0bddc8d9b2a5190ee7b02f5b11bbb7f3e27455eb",
     "overview-width-styles": "4f11af4c249d56a27b64bf7635546f21c07d4eb75c98d1658aa34707bac1a818",
     "overview-heading-styles": "20445a22524f78c554d64825c095f6fce8ebd63338f637bd398fca377d57267e",
     "article-explanation-type-styles": "8eecc69220d7b9a6605b66776cc2eef89ca2c6179a1b5c7f9dafb7251f29c12e"
@@ -15,7 +15,7 @@
   "scripts": {
     "general-page-templates": "e0453b77ce53d4eb3d4452980c3f533498ad4d23f77fbe72b3c9779e9f942e81",
     "general-image-viewport": "2d0b28a6de09952d8abb7f531b4add8819c17042cc9e73358ac6dde5ddc025f2",
-    "general-explanation-blocks": "6ae7a4e2b1246ded2532fd56cbcf148679e7677c27ca20994678c2fb3fa3b5f8",
+    "general-explanation-blocks": "30af9f3e7761609b741fa45113129773c8fdb3e8c96491b63814d6fa0289908d",
     "general-formatting": "1045de2e99cf2acf186ce2a93d99fe7d4599bf7308750688440be46f2d865b35",
     "general-editor": "19507ead80cf03cb0c94cdef756d4074f532cbe20f6d48661f28a50c25291fb3",
     "general-current-conditions": "84a89eacac9302c6757407635f4f93076a18cb1c0cce153014a9f4fabb4efa3e",

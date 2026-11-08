@@ -8,6 +8,8 @@ body.pdf-hide-controls :is(button:not(.pdf-content-control),select,input,.readin
 .pdf-content-control:focus { outline:none!important; }
 .pdf-section-label { position:absolute;right:3.4vw;top:30px;color:var(--green);font-size:14px;letter-spacing:.04em; }
 .pdf-footer { position:fixed;left:4.3vw;right:4.3vw;bottom:22px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted); }
+.pdf-footer>span:first-child{max-width:90%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.pdf-hide-controls .scenario-article-table thead{position:sticky;top:0;background:var(--soft,#edf2e7);z-index:1}
 body.pdf-hide-controls .compare-before-wrap { visibility:hidden!important; }
 body.pdf-hide-controls :is(.map-foot span:last-child,.compare-help) { visibility:hidden!important; }
 body.pdf-hide-controls :is(#presentation,.explanation,.module-explanation,.conditions-issues) { scrollbar-color:transparent transparent!important; }

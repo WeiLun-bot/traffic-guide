@@ -2,7 +2,25 @@
   "schemaVersion": 1,
   "owner": "scenarios/G4-01",
   "texts": {
-    "g401-overview|0|text-3": "路段保留連續直行車道，路口附加車道分流轉向車流，並搭配行人庇護島與無衝突時相。"
+    "g401-overview|0|text-3": "路段保留連續直行車道，路口附加車道分流轉向車流，並搭配行人庇護島與無衝突時相。",
+    "g401-signal-plan|1|text-2": "號誌燈面配置",
+    "g401-context|0|text-12": "提升行人穿越安全",
+    "g401-context|0|text-14": "車道選擇提示與號誌可視性",
+    "g401-context|0|text-10": "降低轉向車與同向直行車之干擾",
+    "g401-signal-plan|0|text-3": "號誌配置",
+    "g401-checklist|1|text-2": "各方向號誌檢核",
+    "g401-checklist|1|text-8": "\n",
+    "g401-parking|1|text-8": "\n",
+    "g401-crosswalk|1|text-2": "枕木紋行人穿越道線",
+    "g401-review|0|text-6": "行穿線與庇護島",
+    "g401-review|0|text-7": "以中央庇護空間，確保行人安全。",
+    "g401-review|0|text-1": "路段保留連續直行車道，路口附加車道分流轉向車流，並搭配行人庇護島。",
+    "g401-lane-advance|0|text-4": "車道預告標誌建議設於車道配置漸變起點，提供提早選則車道的資訊。",
+    "g401-bus-bay|0|text-4": "公車彎入口以穿越虛線導引公車進站，其餘車流維持續行。",
+    "g401-parking|0|text-4": "停車帶以停車出標誌標示。",
+    "g401-crosswalk|0|text-3": "行人穿越道",
+    "g401-crosswalk|0|text-4": "行穿線搭配中央庇護空間，保留轉彎車停讓行人的位置。",
+    "g401-review|shared|title": "轉向附加車道、 行人庇護與號誌時相。"
   },
   "images": {},
   "blocks": {},
@@ -12,65 +30,150 @@
       "g401-conditions": {
         "issues": [
           {
-            "id": "issue-original-0",
-            "title": "左轉車道銜接不佳",
-            "titleKey": "g401-conditions:content:photo:g401-photo-1:title",
-            "imageKey": "g401-photo-1",
-            "photo": true,
-            "points": [
-              {
-                "id": "issue-original-0-point-0",
-                "text": "左轉空間占用直行車道的延續位置，且左右轉向配置需再檢視。",
-                "textKey": "g401-conditions:content:photo:g401-photo-1:point-0"
-              }
-            ]
-          },
-          {
-            "id": "issue-original-1",
-            "title": "長距離穿越缺少庇護",
-            "titleKey": "g401-conditions:content:photo:g401-photo-2:title",
-            "imageKey": "g401-photo-2",
-            "photo": true,
-            "points": [
-              {
-                "id": "issue-original-1-point-0",
-                "text": "行人穿越距離長，路口未提供庇護島。",
-                "textKey": "g401-conditions:content:photo:g401-photo-2:point-0"
-              }
-            ]
-          },
-          {
-            "id": "issue-original-2",
-            "title": "車道與上游導引不足",
-            "titleKey": "g401-conditions:content:photo:g401-photo-3:title",
-            "imageKey": "g401-photo-3",
-            "photo": true,
-            "points": [
-              {
-                "id": "issue-original-2-point-0",
-                "text": "進出車道數不同，預告標誌又太近路口，駕駛不易提早選道。",
-                "textKey": "g401-conditions:content:photo:g401-photo-3:point-0"
-              }
-            ]
-          },
-          {
             "id": "issue-original-3",
-            "title": "過路口直行動線銜接不佳",
+            "title": "左轉空間配置不佳\n",
             "titleKey": "g401-conditions:content:photo:g401-photo-4:title",
             "imageKey": "g401-photo-4",
             "photo": true,
             "points": [
               {
                 "id": "issue-original-3-point-0",
-                "text": "左轉空間占用直行車道的延續位置，且左右轉向配置需再檢視。",
+                "text": "左轉空間配置未考量直行車道之延續，導致直行需於路口偏移。\n",
                 "textKey": "g401-conditions:content:photo:g401-photo-4:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "過路口直行動線銜接不佳",
+            "titleKey": "g401-conditions:content:photo:g401-photo-3:title",
+            "imageKey": "g401-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "進入路口車道數未對應離開路口車道數，交叉口中間車流引導效果較差。\n",
+                "textKey": "g401-conditions:content:photo:g401-photo-3:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "缺少路口上游預示與導引",
+            "titleKey": "g401-conditions:content:photo:g401-photo-2:title",
+            "imageKey": "g401-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "預告標誌缺乏或位置不當\n",
+                "textKey": "g401-conditions:content:photo:g401-photo-2:point-0"
+              },
+              {
+                "id": "point-88b5cf5c-ea03-458a-bd12-db2e9422cf4b",
+                "text": "逕行採用直行轉向共用車道",
+                "textKey": "g401-conditions|content|issue-original-1|point-88b5cf5c-ea03-458a-bd12-db2e9422cf4b"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-0",
+            "title": "行人穿越安全性不足",
+            "titleKey": "g401-conditions:content:photo:g401-photo-1:title",
+            "imageKey": "g401-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "行人穿越距離長，缺少行人庇護島",
+                "textKey": "g401-conditions:content:photo:g401-photo-1:point-0"
               }
             ]
           }
         ]
       }
     },
-    "articles": {},
+    "articles": {
+      "g401-visibility": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "以「55 km/h以下之可視模板」進行檢驗，對於次要道路的用路人而言，由於主要道路路幅寬敞，以北上號誌為例，如果只有近端（8.1）與遠端號誌（8.3）各一面，上游僅能看見近端號誌，無法同時看見兩面號誌（近端與遠端）。",
+            "textKey": "g401-visibility|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "故須於近端加設柱立號誌，使駕駛可以看到兩個燈面8.1、8.2直。\n",
+            "textKey": "g401-visibility|1|text-7"
+          }
+        ]
+      },
+      "g401-checklist": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "南北向需加設近端柱立式號誌",
+            "textKey": "g401-checklist|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "東西向另檢查眩光。",
+            "textKey": "g401-checklist|1|text-7"
+          }
+        ]
+      },
+      "g401-parking": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "以停車處標誌暨箭頭標示路邊停車帶之起終點。\n",
+            "textKey": "g401-parking|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "必要時可加設附牌告知停車收費、車種等資訊。",
+            "textKey": "g401-parking|1|text-7"
+          }
+        ]
+      },
+      "g401-signal-plan": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本路口為典型的市區路口，具有高流量的行人與機動車輛。",
+            "textKey": "g401-signal-plan|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "故不論主要道路、次要道路之號誌燈面的「鏡面排列順序」皆可採取五燈式，如此可以設計成人、車完全無衝突之號誌時制。",
+            "textKey": "g401-signal-plan|1|text-7"
+          }
+        ]
+      },
+      "g401-bus-bay": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本示例建議自道路上游車道邊界至公車彎入口處繪設穿越虛線，當公車駛入時，公車駕駛會跨越進入停靠區，其餘車輛則維持前行。",
+            "textKey": "g401-bus-bay|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "若有設置公車停靠站之需求時，屬市區道路範疇者，依《市區道路及附屬工程設計規範》§ 10.1 辦理；屬省道公路範疇者，依《公路路線設計規範》§ 2.14.2 辦理。",
+            "textKey": "g401-bus-bay|1|text-7"
+          }
+        ]
+      },
+      "g401-crosswalk": {
+        "points": [
+          {
+            "id": "point-original-1",
+            "text": "依設置規則停止線與行穿線之距離建議以2–3 m為原則。",
+            "textKey": "g401-crosswalk|1|text-7"
+          }
+        ]
+      }
+    },
     "overviews": {
       "g401-overview": {
         "items": [
@@ -114,6 +217,7 @@
       }
     },
     "modules": {},
-    "results": {}
+    "results": {},
+    "references": {}
   }
 }

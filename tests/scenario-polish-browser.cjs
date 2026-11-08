@@ -10,7 +10,7 @@ module.exports=async({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass}
  let links=0,points=0;
  for(const id of pages){
   await view(id,1);
-  const m=await evaluate(`(()=>{const root=document.getElementById('presentation'),base=root.querySelector('.explain-footer .text-button'),font=n=>parseFloat(getComputedStyle(n).fontSize);return {base:font(base),links:[...root.querySelectorAll('.scenario-related-links button,.scenario-module-link')].map(n=>({label:n.textContent,font:font(n)})),points:[...root.querySelectorAll('.explain-points>li:not([data-user-block])')].map(n=>{const s=getComputedStyle(n,'::before');return {content:s.content,font:parseFloat(s.fontSize),body:font(n.querySelector('span'))}})}})()`);
+  const m=await evaluate(`(()=>{const root=document.getElementById('presentation'),font=n=>parseFloat(getComputedStyle(n).fontSize),probe=document.createElement('div');probe.className='explain-footer';probe.innerHTML='<button class="text-button">reference style</button>';root.append(probe);const base=font(probe.firstElementChild);probe.remove();return {base,links:[...root.querySelectorAll('.scenario-related-links button,.scenario-module-link')].map(n=>({label:n.textContent,font:font(n)})),points:[...root.querySelectorAll('.explain-points>li:not([data-user-block])')].map(n=>{const s=getComputedStyle(n,'::before');return {content:s.content,font:parseFloat(s.fontSize),body:font(n.querySelector('span'))}})}})()`);
   for(const link of m.links){assert(Math.abs(link.font-m.base)<.05,id+' link size: '+JSON.stringify(link));links++;}
   for(const point of m.points){assert(!point.content.includes('leading-zero'),id+' must use natural numbering');assert(point.font>=15.99,id+' point numbers must be readable');points++;}
  }

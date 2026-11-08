@@ -272,7 +272,7 @@ body.is-highlighting .results-comparison{animation:none}
 
 /* Independent camera controls for each representative thumbnail. */
 .results-representative-card{min-height:0;min-width:0;margin:0;position:relative}
-.results-representative-card>.map-toolbar{display:flex;flex-direction:row;align-items:flex-start;gap:7px;padding:7px 9px;min-height:0}
+.results-representative-card>.map-toolbar{display:flex;flex-direction:row;align-items:flex-start;gap:7px;padding:7px 9px;min-height:32px}
 .results-representative-card .results-scenario-caption{padding:0;flex:1;min-width:0;gap:3px}
 .results-representative-card .map-toolbar strong{font-size:clamp(11px,.95vw,16px);line-height:1.4;white-space:normal;font-weight:500}
 .results-representative-card .map-tools{flex:none;gap:6px;justify-content:flex-end}

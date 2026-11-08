@@ -192,17 +192,19 @@
       const legacy=window.generalRoadBlocks?.items.find(block=>block.element===old);if(legacy)legacy.element=row;
       const titleGroup=element('div','strategy-title-group');titleGroup.append(element('span','strategy-number',String(index+1).padStart(2,'0')));
       const title=textNode(element('span','strategy-title'),item.titleKey,item.title,context,['overviews',pageId,'items',item.id,'title']);
-      if(preview&&item.targetId){const button=element('button','strategy-title-button');button.type='button';button.dataset.page=item.targetId;button.append(title);titleGroup.append(button);row.dataset.strategyTarget=item.targetId;}
+      const hidden=id=>editor()?.store.config.scenarioHiddenArticles?.[context.api.page.scenario]?.includes(id);
+      if(preview&&item.targetId&&!hidden(item.targetId)){const button=element('button','strategy-title-button');button.type='button';button.dataset.page=item.targetId;button.append(title);titleGroup.append(button);row.dataset.strategyTarget=item.targetId;}
       else titleGroup.append(title);
       const refs=element('small','strategy-refs');
-      item.articleIds.forEach((id,i)=>{
+      const references=item.articleIds.filter(id=>!preview||!hidden(id)).sort((a,b)=>window.VisualLayoutCore.compareReferences(available.find(x=>x.id===a),available.find(x=>x.id===b)));
+      references.forEach((id,i)=>{
         const article=available.find(article=>article.id===id);if(!article)return;
         if(i)refs.append(document.createTextNode(' / '));
         const reference=element(preview?'button':'span','strategy-ref',articleLabel(article));reference.title=article.name;
         if(preview){reference.type='button';reference.dataset.page=id;reference.setAttribute('aria-label',articleLabel(article)+' '+article.name);}
         refs.append(reference);
       });
-      if(preview&&item.articleIds.length)refs.append(document.createTextNode(' ↗'));
+      if(preview&&references.length)refs.append(document.createTextNode(' ↗'));
       row.append(titleGroup,refs);
       if(editing()){
         const bar=actions('strategy',item.id,index,model.items.length);

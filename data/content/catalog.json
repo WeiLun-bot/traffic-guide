@@ -651,9 +651,22 @@
     "data/content/results/scenarios/G4-04.json",
     "data/content/scenarios/G1-01.json",
     "data/content/scenarios/G1-02.json",
+    "data/content/scenarios/G1-03.json",
+    "data/content/scenarios/G1-04.json",
+    "data/content/scenarios/G1-05.json",
+    "data/content/scenarios/G1-06.json",
+    "data/content/scenarios/G2-01.json",
+    "data/content/scenarios/G2-02.json",
+    "data/content/scenarios/G2-03.json",
+    "data/content/scenarios/G2-04.json",
+    "data/content/scenarios/G3-01.json",
+    "data/content/scenarios/G3-02.json",
     "data/content/scenarios/G3-03.json",
+    "data/content/scenarios/G3-04.json",
     "data/content/scenarios/G4-01.json",
     "data/content/scenarios/G4-02.json",
+    "data/content/scenarios/G4-03.json",
+    "data/content/scenarios/G4-04.json",
     "data/content/shared.json"
   ]
 }

@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cryp
 const {spawn}=require('node:child_process');
 const {createServer}=require('./serve-github-pages.cjs');
 const root=path.resolve(__dirname,'..'),output=process.env.TRAFFIC_GUIDE_PDF_OUTPUT?path.resolve(process.env.TRAFFIC_GUIDE_PDF_OUTPUT):path.join(root,'exports','PDF-M1-01-G1-01');
-const width=1600,height=900,delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const general=process.argv.includes('--deck=general'),width=1600,height=900,delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 class CDP{
  constructor(url){this.seq=0;this.pending=new Map();this.listeners=new Map();this.socket=new WebSocket(url);this.ready=new Promise((resolve,reject)=>{this.socket.addEventListener('open',resolve);this.socket.addEventListener('error',reject);});this.socket.addEventListener('message',event=>{const message=JSON.parse(event.data);if(message.id){const request=this.pending.get(message.id);if(!request)return;clearTimeout(request.timer);this.pending.delete(message.id);message.error?request.reject(new Error(JSON.stringify(message.error))):request.resolve(message.result);}else for(const callback of this.listeners.get(message.method)||[])callback(message.params);});}
  on(event,callback){this.listeners.set(event,[...(this.listeners.get(event)||[]),callback]);}
@@ -13,7 +13,7 @@ class CDP{
  close(){this.socket.close();}
 }
 async function main(){
- const snapshot=require('./presentation-project-store.cjs').read(root),config=Buffer.from(JSON.stringify(snapshot.config));
+ const snapshot=general&&process.env.TRAFFIC_GUIDE_PDF_SNAPSHOT?{config:JSON.parse(fs.readFileSync(process.env.TRAFFIC_GUIDE_PDF_SNAPSHOT,'utf8'))}:require('./presentation-project-store.cjs').read(root),config=Buffer.from(JSON.stringify(snapshot.config));
  const executable=process.env.VISUAL_EDITOR_BROWSER||['C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','C:/Program Files/Google/Chrome/Application/chrome.exe'].find(file=>fs.existsSync(file));
  assert(executable,'Chrome or Edge is required.');fs.mkdirSync(output,{recursive:true});
  const published=createServer(undefined,{configFile:null}),server=require('node:http').createServer((req,res)=>{if(new URL(req.url,'http://localhost').pathname.endsWith('/layout/presentation-layout.json')){res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(config);}else published.emit('request',req,res);});
@@ -27,12 +27,14 @@ async function main(){
   const port=fs.readFileSync(portFile,'utf8').split(/\r?\n/)[0],targets=await(await fetch('http://127.0.0.1:'+port+'/json/list')).json();cdp=new CDP(targets.find(target=>target.type==='page').webSocketDebuggerUrl);
   const errors=[];cdp.on('Runtime.exceptionThrown',event=>errors.push(event.exceptionDetails.exception?.description||event.exceptionDetails.text));
   await cdp.send('Page.enable');await cdp.send('Runtime.enable');
-  await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width,height,...(general?{screenWidth:width,screenHeight:height}:{}),deviceScaleFactor:1,mobile:false});
   await cdp.send('Emulation.setEmulatedMedia',{media:'screen',features:[{name:'prefers-reduced-motion',value:'reduce'}]});
-  await cdp.send('Page.navigate',{url:base+'#m101-overview'});
+  await cdp.send('Page.navigate',{url:base+(general?'#general-scenarios-index':'#m101-overview')});
   let loaded=false;for(let i=0;i<400;i++){if(await cdp.evaluate('Boolean(document.documentElement.dataset.presentationState==="ready"&&window.visualLayoutEditor?.store&&document.querySelector("main>.slide"))').catch(()=>false)){loaded=true;break;}await delay(100);}assert(loaded,'Presentation did not load');
   let documents=await cdp.evaluate(`(()=>{
-    const api=window.generalRoadPresentation,content=window.PresentationModules.contents.find(doc=>doc.id==='M1-01');
+    const api=window.generalRoadPresentation;
+    if(${general})return [{id:'GENERAL',title:'一般道路情境',outputName:'general-road-scenarios.pdf',sheets:api.pages.filter(page=>page.deckId==='general'&&!window.PresentationOrder.hidden(page)).map(page=>({id:page.id,phase:page.article?1:0,title:window.PresentationStructure.pageTitle(page)}))}];
+    const content=window.PresentationModules.contents.find(doc=>doc.id==='M1-01');
     const moduleSheets=[{id:content.pages[0].id,title:content.pages[0].title}];
     for(const flow of content.submoduleFlows)for(const stage of window.PresentationModules.visibleStages(flow)){
       if(stage.id==='diagram')for(const topic of window.PresentationOrder.forKey(stage.topics,'module:'+stage.pageId))moduleSheets.push({id:stage.pageId,topic:topic.id,title:flow.submoduleId+' '+stage.title+'｜'+topic.label});
@@ -44,11 +46,13 @@ async function main(){
   assert(documents.every(doc=>doc.sheets.length>0),'Both chapters must have pages.');
   const chapter=process.argv.find(arg=>arg.startsWith('--chapter='))?.slice('--chapter='.length);
   if(chapter){assert(documents.some(doc=>doc.id===chapter),'Unknown chapter: '+chapter);documents=documents.filter(doc=>doc.id===chapter);}
+  const pageId=process.argv.find(arg=>arg.startsWith('--page='))?.slice('--page='.length);
+  if(pageId){documents=documents.map(doc=>({...doc,sheets:doc.sheets.filter(sheet=>sheet.id===pageId)})).filter(doc=>doc.sheets.length);assert(documents.length,'Unknown page: '+pageId);}
   await cdp.evaluate(`(()=>{const style=document.createElement('style');style.id='pdf-slides-styles';style.textContent=${JSON.stringify(fs.readFileSync(path.join(__dirname,'pdf-slides.css'),'utf8'))};document.head.append(style);const label=document.createElement('span');label.className='pdf-section-label';document.querySelector('.header').append(label);const footer=document.createElement('div');footer.className='pdf-footer';document.body.append(footer);})()`);
   const manifest={paper:'16:9 landscape',viewport:{width,height},configSha256:crypto.createHash('sha256').update(config).digest('hex'),generatedAt:new Date().toISOString(),documents:[]};
   for(const doc of documents){
    const folder=path.join(output,doc.id);fs.mkdirSync(folder,{recursive:true});const sheets=[];
-   for(const sheet of doc.sheets){
+   for(const [sourceIndex,sheet] of doc.sheets.entries()){
     await cdp.evaluate(`(async()=>{document.body.classList.remove('pdf-hide-controls');const api=window.generalRoadPresentation;await api.goPage(${JSON.stringify(sheet.id)},${sheet.phase||0},{force:true});${sheet.topic?`await api.goPage(window.PresentationModules.resolvePage(${JSON.stringify(sheet.id)},${JSON.stringify('topic-'+sheet.topic)}),0,{force:true});`:''}})()`);
     await cdp.evaluate(`(async()=>{await document.fonts.ready;await Promise.all([...document.querySelectorAll('main img,main svg image')].map(node=>{const src=node.currentSrc||node.src||node.getAttribute('href');if(!src)return;const image=new Image();image.src=src;return image.decode();}));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));})()`);
     await delay(500);
@@ -58,6 +62,7 @@ async function main(){
       const contentImages=[...slide.querySelectorAll('img,svg image')].filter(n=>!n.closest('.compare-before-wrap')&&n.getClientRects().length&&getComputedStyle(n).visibility==='visible');
       // Some content uses buttons as containers. Keep its text and pictures as static content.
       slide.querySelectorAll('.overview-list button,.module-reference-row button,.module-scenario-refs button,.module-case,.module-link,.module-extension-image-open,.condition-photo-open').forEach(node=>node.classList.add('pdf-content-control'));
+      if(${general})slide.querySelectorAll('button').forEach(node=>{if(node.querySelector('img,svg')||node.matches('.directory-card,.scenario-card,.chapter-card,.strategy-title-button,.strategy-ref,[data-reference-preview],[data-table-preview]'))node.classList.add('pdf-content-control');});
       document.body.classList.add('pdf-hide-controls');
       document.querySelector('.pdf-section-label').textContent=${JSON.stringify(doc.title)};
       const after=maps.map(rect);if(before.some((r,i)=>r.some((v,k)=>Math.abs(v-after[i][k])>0.5)))throw new Error('Hiding controls changed an image frame: '+${JSON.stringify(sheet.id)}+' '+JSON.stringify({before,after,body:rect(document.body),main:rect(document.querySelector('main'))}));
@@ -68,18 +73,45 @@ async function main(){
       return {id:window.generalRoadPresentation.page.id,title:slide.querySelector('h1')?.textContent,text:slide.innerText,frames:after,overflow:scroll,clipped,mainHeight:document.getElementById('presentation').clientHeight,mainScroll:document.getElementById('presentation').scrollHeight};
     })()`);
     assert.equal(metadata.id,sheet.id,'Wrong page selected');
-    if(metadata.overflow.length||metadata.clipped.length){const diagnostic=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(folder,'overflow-'+sheet.id+'.png'),Buffer.from(diagnostic.data,'base64'));throw new Error('Content needs continuation pages: '+JSON.stringify({sheet,...metadata,text:undefined,frames:undefined}));}
-    const number=sheets.length+1,filename=String(number).padStart(2,'0')+'-'+sheet.id+(sheet.topic?'-'+sheet.topic:'');
-    await cdp.evaluate(`document.querySelector('.pdf-footer').innerHTML='<span>'+${JSON.stringify(sheet.title)}+'</span><span>'+${JSON.stringify(String(number).padStart(2,'0')+' / '+doc.sheets.length)}+'</span>'`);
+    if(!general&&(metadata.overflow.length||metadata.clipped.length)){const diagnostic=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(folder,'overflow-'+sheet.id+'.png'),Buffer.from(diagnostic.data,'base64'));throw new Error('Content needs continuation pages: '+JSON.stringify({sheet,...metadata,text:undefined,frames:undefined}));}
+    const plan=general?await cdp.evaluate(`(()=>{
+      const nodes=[document.getElementById('presentation'),...document.querySelectorAll('#presentation .explanation,#presentation .conditions-issues,#presentation .condition-points,#presentation .scenario-article-table,#presentation .review-rows')].filter(n=>n.getClientRects().length&&n.clientHeight>30&&n.scrollHeight>n.clientHeight+3&&/auto|scroll|hidden/.test(getComputedStyle(n).overflowY));
+      window.__pdfScrollNodes=nodes;
+      const top=nodes.filter(n=>!nodes.some(parent=>parent!==n&&parent.contains(n))),inner=nodes.filter(n=>!top.includes(n));
+      const count=n=>Math.ceil((n.scrollHeight-n.clientHeight)/Math.max(20,n.clientHeight-32))+1;
+      const outerCount=Math.max(1,...top.map(count)),innerCount=Math.max(1,...inner.map(count)),positions=[];
+      for(let a=0;a<outerCount;a++)for(let b=0;b<innerCount;b++)positions.push(nodes.map(n=>Math.min(n.scrollHeight-n.clientHeight,(top.includes(n)?a:b)*Math.max(20,n.clientHeight-32))));
+      if(positions.length>50)throw new Error('此頁內容過長，請先縮短內容：'+generalRoadPresentation.page.id);
+      return positions.length?positions:[[]];
+    })()`):[[]];
+    for(let continuation=0;continuation<plan.length;continuation++){
+    if(general)await cdp.evaluate(`(()=>{window.__pdfScrollNodes.forEach((node,i)=>node.scrollTop=${JSON.stringify(plan[continuation])}[i]);})()`);
+    await cdp.evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
+      // Printing resets native overflow scroll positions. Materialize their
+      // offsets in child transforms so the PDF matches the visible continuation.
+      if(general)await cdp.evaluate(`(()=>{
+        const sticky=[...document.querySelectorAll('#presentation .scenario-article-table thead')].map(node=>({node,top:node.getBoundingClientRect().top}));
+        window.__pdfFrozen=[];
+        const shift=(node,offset)=>{const value=getComputedStyle(node).translate,parts=value==='none'?['0px','0px']:value.split(/\\s+/);window.__pdfFrozen.push([node,node.style.translate]);node.style.translate=parts[0]+' calc('+(parts[1]||'0px')+' + '+offset+'px)'+(parts[2]?' '+parts[2]:'');};
+        for(const node of window.__pdfScrollNodes){const offset=node.scrollTop;if(!offset)continue;
+          for(const child of node.children)shift(child,-offset);
+          node.scrollTop=0;
+        }
+        for(const {node,top} of sticky){const delta=top-node.getBoundingClientRect().top;if(Math.abs(delta)>.1)shift(node,delta);}
+      })()`);
+    const number=sheets.length+1,filename=String(number).padStart(3,'0')+'-'+sheet.id+(sheet.topic?'-'+sheet.topic:'')+(continuation?'-continued-'+(continuation+1):'');
+    await cdp.evaluate(`(()=>{const footer=document.querySelector('.pdf-footer');footer.replaceChildren();const label=document.createElement('span'),page=document.createElement('span');label.textContent=${JSON.stringify(general?metadata.title+'｜'+sheet.title:sheet.title)}+${JSON.stringify(continuation?'（續 '+(continuation+1)+' / '+plan.length+'）':'')};page.textContent=${JSON.stringify(String(number).padStart(3,'0'))};footer.append(label,page);})()`);
     const png=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(folder,filename+'.png'),Buffer.from(png.data,'base64'));
     const pdf=await cdp.send('Page.printToPDF',{printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false,marginTop:0,marginBottom:0,marginLeft:0,marginRight:0,paperWidth:width/96,paperHeight:height/96,scale:1,generateTaggedPDF:true});fs.writeFileSync(path.join(folder,filename+'.pdf'),Buffer.from(pdf.data,'base64'));
-    sheets.push({...sheet,file:doc.id+'/'+filename+'.pdf',image:doc.id+'/'+filename+'.png',titleInPresentation:metadata.title,frames:metadata.frames,textCharacters:metadata.text.length});
-    console.log('Exported '+doc.id+' '+number+' / '+doc.sheets.length+': '+filename);
+      if(general)await cdp.evaluate(`(()=>{for(const [node,translate] of window.__pdfFrozen.reverse())node.style.translate=translate;})()`);
+    sheets.push({...sheet,continuation:continuation+1,continuations:plan.length,file:doc.id+'/'+filename+'.pdf',image:doc.id+'/'+filename+'.png',titleInPresentation:metadata.title,frames:metadata.frames,textCharacters:metadata.text.length});
+      console.log('Exported '+doc.id+' '+(general?sourceIndex+1:number)+' / '+doc.sheets.length+': '+filename);
+    }
    }
    manifest.documents.push({...doc,sheets});
   }
   assert.deepEqual(errors,[],'Uncaught presentation errors');
-  assert.equal(require('./presentation-project-store.cjs').read(root).revision,snapshot.revision,'Presentation project changed during export');
+  if(!general)assert.equal(require('./presentation-project-store.cjs').read(root).revision,snapshot.revision,'Presentation project changed during export');
   fs.writeFileSync(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log('PDF sheets ready: '+output);
  }finally{if(cdp)await cdp.send('Browser.close').catch(()=>{});cdp?.close();if(browser.exitCode===null)browser.kill();await Promise.race([exited,delay(1500)]);await new Promise(resolve=>server.close(resolve));}
 }

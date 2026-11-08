@@ -84,7 +84,7 @@ try {
     $currentServer = $false
     try {
       $previewStatus = Invoke-RestMethod -Uri ($serverUrl + '__preview') -TimeoutSec 3
-      $storageFiles = @('tools/serve-github-pages.cjs', 'tools/presentation-project-store.cjs', 'assets/presentation-document.js', 'assets/visual-editor-core.js')
+      $storageFiles = @('tools/serve-github-pages.cjs', 'tools/presentation-project-store.cjs', 'tools/presentation-pdf-jobs.cjs', 'assets/presentation-document.js', 'assets/visual-editor-core.js')
       $storageSignature = (($storageFiles | ForEach-Object { (Get-FileHash -LiteralPath (Join-Path (Split-Path $PSScriptRoot -Parent) $_) -Algorithm SHA256).Hash.ToLowerInvariant() }) -join ':')
       $currentServer = $previewStatus.version -eq 2 -and $previewStatus.projectStorage -eq $true -and $previewStatus.storageSignature -eq $storageSignature
     } catch { }

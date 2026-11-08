@@ -14,19 +14,24 @@
     "cover|art|caption": "全圖定位 → 放大 → 條文解說",
     "contents|shared|title": "4大情境分類",
     "contents|0|text-1": "依號誌管制與路口型態，分為4大分類。\n各情境包括整體配置與個別設施的設置考量。",
-    "cover|0|text-1": "以情境理解標誌標線號誌的布設及其考量。"
+    "cover|0|text-1": "以情境理解標誌標線號誌的布設及設置考量。"
   },
   "images": {
     "results:module-m3-03-diagram": {
       "src": "materials/edited/29b29406e5bf98d8bc3f5880d00d784fb34f2d3b97c2eed78476c8035ee7808d.svg",
       "alt": "M3-03_機車兩段式左轉代表型1.svg"
+    },
+    "content:g402-conditions:issue-ad6fe3a2-22ab-4e35-8a49-df0f720da0ce": {
+      "src": "materials/edited/7cef25453fa08702a642bdd225558719ddf4ee9080252ae87509f255ae0db52a.jpeg",
+      "alt": "22.681246,120.3556605_202602.jpg"
     }
   },
   "blocks": {
     "cover|0": {
       "added": [],
       "removed": [
-        "cover-art"
+        "cover-art",
+        "cover-meta-chapters"
       ]
     }
   },
@@ -36,6 +41,7 @@
     "articles": {},
     "overviews": {},
     "modules": {},
-    "results": {}
+    "results": {},
+    "references": {}
   }
 }

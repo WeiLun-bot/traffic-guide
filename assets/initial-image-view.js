@@ -42,7 +42,7 @@
     for (const button of record.panel.querySelectorAll('button')) button.disabled = record.context.isBusy();
   }
   function fittedHome(record,value){
-    const base=Core.viewBoxFor(record.home,{...value,zoom:1,x:0,y:0}),ratio=record.svg.clientWidth/Math.max(1,record.svg.clientHeight);
+    const base=Core.viewBoxFor(record.home,{...value,zoom:1,x:0,y:0,aspect:undefined}),ratio=record.svg.clientWidth/Math.max(1,record.svg.clientHeight);
     if(value.fit==='width'){const height=base[2]/ratio;base[1]+=(base[3]-height)/2;base[3]=height;}
     if(value.fit==='height'){const width=base[3]*ratio;base[0]+=(base[2]-width)/2;base[2]=width;}
     return base;
@@ -80,7 +80,7 @@
         const cx=x+width/2,cy=y+height/2;
         record.rotationLayer.setAttribute('transform', `rotate(${value.rotation ?? 0} ${cx} ${cy}) translate(${cx} ${cy}) scale(${value.flipX?-1:1} ${value.flipY?-1:1}) translate(${-cx} ${-cy})`);
       }
-      record.controller.configure(record.svg.closest('[data-zoom-steps]')?{home:record.home,resetView:view}:{home:view}); record.controller.write(view, false);
+      record.controller.start();record.controller.configure(record.svg.closest('[data-zoom-steps]')?{home:record.home,resetView:view}:{home:view}); record.controller.write(view, false);
       record.signature = signature;
     }
     fields(record); place(record);
@@ -91,11 +91,12 @@
   }
   function open(record) {
     if(window.PresentationMode?.readOnly||!isEditing()){record.context.report('請先開啟編輯模式，再設定初始畫面。');return;}
+    if(window.generalRoadEditor?.adjusting){record.context.report('請先按「完成打亮調整」，再設定初始畫面。');return;}
     opened.add(record.id);
     record.context.prepare();
     const current = active.get(record.id);
     if (!current) return;
-    current.panel.hidden = false; current.button.setAttribute('aria-expanded', 'true'); fields(current); place(current);
+    current.panel.hidden = false; current.button.setAttribute('aria-expanded', 'true'); fields(current);current.panel.querySelector('[data-iv-parameters]').value=Core.cameraParameters(setting(current)); place(current);
   }
   function commit(record, patch) {
     if(window.PresentationMode?.readOnly||!isEditing())return false;
@@ -108,6 +109,14 @@
     } catch (error) { record.context.report(error.message, true); status(record,'設定失敗：'+error.message,true);fields(record); return false; }
   }
   function status(record,message,error=false){const node=record.panel.querySelector('.iv-status');if(node){node.textContent=message;node.dataset.error=String(error);place(record);}}
+  function inherited(record,sourceId){
+    const app=window.generalRoadPresentation,article=app.data.articles.find(a=>a.id===sourceId);
+    if(!article||article.scenario!==app.page.scenario)throw new Error('找不到同一情境的解說');
+    const zoom=record.pageId===app.page.id+'-zoom',pageId=article.id+(zoom?'-zoom':''),saved=record.context.getConfig().imageViews[Core.imageView(pageId,record.assetKey).id];
+    if(saved)return Core.parseCameraParameters(Core.cameraParameters(saved));
+    const defaults=Core.imageView(record.pageId,record.assetKey);
+    return zoom?{...defaults,...Core.settingsForView(fittedHome(record,defaults),app.displayBounds(article.crop))}:defaults;
+  }
   function create(svg, context, pageId, assetKey) {
     const figure = svg.closest('figure,.scenario-compare-card,.custom-image-frame,.cover-art')||svg.parentElement;
     let toolbar = figure?.querySelector('.map-toolbar .map-tools') || figure?.querySelector('.map-toolbar');
@@ -133,7 +142,15 @@
       <div class="iv-fields iv-rotation"><label>旋轉角度（°）<input type="number" data-iv-field="rotation" min="-360" max="360" step="1"></label><button type="button" data-iv-action="rotate-left">左轉 90°</button><button type="button" data-iv-action="rotate-right">右轉 90°</button></div>
       <small>左右正值向右、上下正值向下；角度正值順時針。各頁與各圖分別保存。</small>
       <div class="iv-actions"><button type="button" data-iv-action="capture">套用目前畫面</button><button type="button" data-iv-action="reset">回到原始畫面</button><button type="button" data-iv-action="save">儲存設定</button></div>
-      <p class="iv-note">${note}</p>`;
+      <p class="iv-note">${note}</p><details class="view-parameter-tools"><summary>複製、貼上或沿用視角</summary><textarea data-iv-parameters aria-label="初始畫面純文字參數" spellcheck="false"></textarea><div class="iv-actions"><button type="button" data-iv-action="copy">複製參數</button><button type="button" data-iv-action="paste">套用貼上參數</button></div><label class="view-inherit-label">沿用同情境、同圖面的其他解說<select data-iv-source aria-label="選擇要沿用視角的解說"></select></label><button type="button" data-iv-action="inherit">沿用所選解說</button></details>`;
+    const sourceSelect=panel.querySelector('[data-iv-source]'),app=window.generalRoadPresentation,scene=app?.data.scenarios.find(s=>s.id===app.page.scenario);
+    sourceSelect.add(new Option('選擇其他運用解說',''));
+    for(const article of app?.data.articles||[])if(article.scenario===app.page.scenario&&article.id!==app.page.id&&(article.mapAsset||scene?.overall)===assetKey)sourceSelect.add(new Option(article.name,article.id));
+    if(sourceSelect.options.length===1){sourceSelect.closest('label').hidden=true;panel.querySelector('[data-iv-action="inherit"]').hidden=true;}
+    if(svg.id==='main-map'&&app?.page.article&&app.state.phase){
+      const note=panel.querySelector('.iv-note');note.textContent='這是目前運用解說的初始畫面，與打亮框、放大範圍分開保存。已設定時優先使用此畫面；可按下方按鈕恢復沿用打亮的放大範圍。';
+      const useCrop=document.createElement('button');useCrop.type='button';useCrop.dataset.ivAction='use-crop';useCrop.textContent='沿用打亮的放大範圍';note.after(useCrop);
+    }
     const dialog=svg.closest('dialog');let triggerHost=toolbar;
     if(svg.dataset.comparisonSide){triggerHost=toolbar.querySelector('.comparison-initial-pair');if(!triggerHost){triggerHost=document.createElement('span');triggerHost.className='comparison-control-pair comparison-initial-pair';toolbar.append(triggerHost);}}
     triggerHost.insertBefore(button,svg.dataset.comparisonSide==='before'?triggerHost.querySelector('.iv-trigger[data-comparison-side="after"]'):null);(dialog||document.body).append(panel);
@@ -145,9 +162,9 @@
     controller.configure({onImageAction(action){
       if(action==='initial'){open(record);return;}
       const current=setting(record);let patch;
-      if(['all','width','height'].includes(action))patch={fit:action,zoom:1,x:0,y:0};
+      if(['all','width','height'].includes(action))patch={fit:action,zoom:1,x:0,y:0,aspect:undefined};
       else if(action==='reset'){
-        patch={...Core.imageView(pageId,assetKey),fit:'all',flipX:false,flipY:false};
+        patch={...Core.imageView(pageId,assetKey),fit:'all',flipX:false,flipY:false,aspect:undefined};
         const stage=svg.closest('.compare-stage');
         if(stage){
           const app=window.generalRoadPresentation,scene=app.data.scenarios.find(s=>s.id===app.page.scenario),side=svg.dataset.comparisonSide,offset=side==='before'?scene.currentConditions.beforeOffsetY||0:0;
@@ -198,6 +215,22 @@
       if (action === 'close') {close(record);return;}
       if (record.context.isBusy()) return;
       if (action === 'save') {Promise.resolve(record.context.save()).then(()=>status(record,record.context.isDirty?.()?'設定尚未儲存，請再次儲存設定。':'初始畫面已儲存成功。')).catch(error=>status(record,'儲存失敗：'+error.message,true));return;}
+      if(action==='copy'){
+        const field=panel.querySelector('[data-iv-parameters]');field.value=Core.cameraParameters(setting(record));field.focus();field.select();
+        navigator.clipboard?.writeText(field.value).catch(()=>{});status(record,'參數已列出並選取，可複製到另一圖面貼上。');return;
+      }
+      if(action==='paste'||action==='inherit'){
+        try{
+          const value=action==='paste'?Core.parseCameraParameters(panel.querySelector('[data-iv-parameters]').value):Core.parseCameraParameters(Core.cameraParameters(inherited(record,sourceSelect.value)));
+          if(commit(record,value))panel.querySelector('[data-iv-parameters]').value=Core.cameraParameters(setting(record));
+        }catch(error){status(record,'未套用：'+error.message,true);}return;
+      }
+      if(action==='use-crop'){
+        close(record);record.preview=null;record.signature=null;
+        if(record.rotationLayer)record.rotationLayer.setAttribute('transform','');
+        if(record.originalAspect)record.svg.setAttribute('preserveAspectRatio',record.originalAspect);else record.svg.removeAttribute('preserveAspectRatio');delete record.svg.dataset.imageFitExplicit;
+        record.context.clearView(record.id);return;
+      }
       if (action === 'reset') {record.controller.imageAction('reset');return;}
       if (action === 'rotate-left' || action === 'rotate-right') {
         const angle = (setting(record).rotation ?? 0) + (action === 'rotate-left' ? -90 : 90);
@@ -205,8 +238,9 @@
       }
       if (action === 'capture') {
         try {
+          record.controller.start();
           const value=setting(record),view=record.controller.read();
-          const patch=record.vector?{...Core.settingsForView(fittedHome(record,value),view,0),rotation:value.rotation??0}:{zoom:view[2]/rasterBase(record,value).fit,x:(view[0]-(record.svg.clientWidth-record.svg.clientWidth*view[2])/2)/record.svg.clientWidth*100,y:(view[1]-(record.svg.clientHeight-record.svg.clientHeight*view[2])/2)/record.svg.clientHeight*100};
+          const patch=record.vector?{aspect:undefined,...Core.settingsForView(fittedHome(record,value),view,0),rotation:value.rotation??0}:{zoom:view[2]/rasterBase(record,value).fit,x:(view[0]-(record.svg.clientWidth-record.svg.clientWidth*view[2])/2)/record.svg.clientWidth*100,y:(view[1]-(record.svg.clientHeight-record.svg.clientHeight*view[2])/2)/record.svg.clientHeight*100};
           commit(record,patch);
         }
         catch (error) {record.context.report(error.message, true);}
@@ -233,7 +267,9 @@
       }
       if (!record) record = create(svg, context, pageId, assetKey);
       if (!record) continue;
-      record.context = context; active.set(record.id, record); apply(record);
+      record.context = context; active.set(record.id, record);
+      if(svg.id==='main-map'&&window.generalRoadEditor?.adjusting){if(record.rotationLayer)record.rotationLayer.setAttribute('transform','');record.signature=null;close(record);continue;}
+      apply(record);
       if(!window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing)close(record);
     }
   }

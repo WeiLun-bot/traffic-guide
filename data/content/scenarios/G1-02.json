@@ -6,16 +6,170 @@
     "g102-context|0|text-13": "次要道路停管制以標誌為主、停標字為輔，以停止線做為停等與觀察位置。",
     "g102-context|0|text-15": "行穿線依人行環境及需求評估是否設置。",
     "g102-context|0|text-14": "行穿線設置",
-    "rural-stopline|0|text-5": "琥珀色框線標示設施位置。放大圖面提供設置細節與解說。"
+    "rural-stopline|0|text-5": "琥珀色框線標示設施位置。放大圖面提供設置細節與解說。",
+    "rural-stopline|1|text-9": "\n",
+    "rural-stopword|1|text-8": "\n",
+    "rural-stop-sign|1|text-9": "\n",
+    "rural-stopword|0|text-4": "支道停止線上游劃設「停」標字，預告前方停車再開的管制。",
+    "rural-stopline|0|text-4": "次要道路停止線提示車輛停等位置，可採有無退縮設置。",
+    "g102-comparison|0|text-5": "無行穿線的停止線的退縮，仍可適度保留。",
+    "g102-comparison|0|text-6": "無行穿線時，停止線原則不退縮。惟若考量主要道路車速較高、次要道路狹窄或大型車轉入時可能使用部分對向車道等情形，仍可依轉向軌跡檢核適度退縮停止線。",
+    "rural-warning|1|text-9": "\n",
+    "g102-overview|0|text-3": "鄉區道路以提示停車再開、停等位置與路口預告為主軸，並依人行環境比較有、無行穿線的配置。",
+    "g102-review|0|text-7": "行穿線依行人需求與路側條件配置；設置或不設行穿線，可保留停止線退縮及轉彎空間。"
   },
   "images": {},
   "blocks": {},
   "pages": [],
   "content": {
-    "conditions": {},
-    "articles": {},
-    "overviews": {},
+    "conditions": {
+      "g102-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "路口預告、速限與停讓提示",
+            "titleKey": "g102-conditions:G1:photo:g102-photo-1:title",
+            "imageKey": "g102-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "主要道路未設「岔路」標誌，路口預告不足。",
+                "textKey": "g102-conditions:G1:photo:g102-photo-1:point-0"
+              },
+              {
+                "id": "issue-original-0-point-1",
+                "text": "主要與次要道路均未設「最高速限」標誌。",
+                "textKey": "g102-conditions:G1:photo:g102-photo-1:point-1"
+              },
+              {
+                "id": "issue-original-0-point-2",
+                "text": "遠端已有「輔2」提示方向限制。",
+                "textKey": "g102-conditions:G1:photo:g102-photo-1:point-2"
+              },
+              {
+                "id": "issue-original-0-point-3",
+                "text": "次要道路未設「停車再開」標誌。",
+                "textKey": "g102-conditions:G1:photo:g102-photo-1:point-3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "rural-stopline": {
+        "points": [
+          {
+            "id": "point-original-1",
+            "text": "停止線僅做為標示車輛停止等位置之用，應配合設置停車再開標誌、停標字或號誌，其本身不具停止之效力。",
+            "textKey": "rural-stopline|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "無行穿線時，停止線原則不退縮。惟若考量主要道路車速較高、次要道路狹窄或大型車轉入時可能使用部分對向車道等情形，仍可依轉向軌跡檢核適度退縮停止線。",
+            "textKey": "rural-stopline|1|text-8"
+          },
+          {
+            "id": "point-original-0",
+            "text": "與行穿線同時設置時，淨距原則為 2.00–3.00 m，不得小於 1.00 m，保留行人與停等車輛之間的緩衝。",
+            "textKey": "rural-stopline|1|text-6"
+          }
+        ]
+      },
+      "rural-stopword": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "「停」標字設於停止線上游2.00 m以上之位置，有助於駕駛人提前得知前方停車再開的位置。",
+            "textKey": "rural-stopword|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "考量標誌之明示性較佳，本參考指引建議應配合設立桿「停車再開」標誌。以標誌為主，地面停標字為輔。",
+            "textKey": "rural-stopword|1|text-7"
+          }
+        ]
+      },
+      "rural-warning": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "主要道路未設慢行標誌或當心行人標誌時，建議以岔路標誌提醒駕駛注意前方路口。",
+            "textKey": "rural-warning|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "建議在距路口上游設置，並依行車速限及最短安全視距增加。\n§ 23 警告標誌設置位置與警告標的物起點之距離，應配合行車速率，自45–200 m為度，如受實際情形限制，得酌予變更。但其設置位置必須明顯，並不得少於安全停車視距。",
+            "textKey": "rural-warning|1|text-7"
+          }
+        ]
+      },
+      "rural-crosswalk": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "如次要道路需提供行人穿越道路之環境時，於次要道路口佈設行穿線。",
+            "textKey": "rural-crosswalk|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "如次要道路路側無人行道且評估行人通行需求較低，則路口採不設置行穿線。",
+            "textKey": "rural-crosswalk|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "此示例之次要道路因路幅較狹窄，需考量大型車轉向需求，可退縮停止線位置，以符合大型車轉彎軌跡。",
+            "textKey": "rural-crosswalk|1|text-8"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g102-overview": {
+        "items": [
+          {
+            "id": "strategy-original-1",
+            "title": "提示停車再開",
+            "titleKey": "g102-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "rural-stopword",
+              "rural-stop-sign"
+            ],
+            "targetId": "rural-stop-sign"
+          },
+          {
+            "id": "strategy-original-0",
+            "title": "停等位置",
+            "titleKey": "g102-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "rural-stopline"
+            ],
+            "targetId": "rural-stopline"
+          },
+          {
+            "id": "strategy-original-4",
+            "title": "讓駕駛提前察覺路口",
+            "titleKey": "g102-overview|strategy|strategy-original-4|title",
+            "articleIds": [
+              "rural-warning"
+            ],
+            "targetId": "rural-warning"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "依需求比較行穿線配置",
+            "titleKey": "g102-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "rural-crosswalk"
+            ],
+            "targetId": "rural-crosswalk"
+          }
+        ]
+      }
+    },
     "modules": {},
-    "results": {}
+    "results": {},
+    "references": {}
   }
 }

@@ -133,3 +133,16 @@ body:not(.is-editing):not(.is-visual-editing) .iv-trigger{display:none}
 .iv-panel.is-dragging{user-select:none}
 .iv-panel.is-dragging .iv-drag-handle{cursor:grabbing}
 .iv-panel .iv-drag-handle:focus-visible{outline:2px solid #72965c;outline-offset:3px;border-radius:3px}
+.review-row{position:relative}
+.review-row>.review-order-tools{position:absolute;right:0;top:6px;display:flex;gap:4px}
+.review-order-tools button{border:1px solid #b9cbb0;border-radius:4px;background:#fff;color:#28523b;padding:4px 9px;font:14px/1.3 sans-serif;cursor:pointer}
+.review-order-tools button:disabled{opacity:.35;cursor:default}
+body.is-editing .review-row:has(>.review-order-tools)>div{padding-right:75px}
+.view-parameter-tools{margin-top:12px;border-top:1px solid #ccdac3;padding-top:8px}
+.view-parameter-tools summary{cursor:pointer;color:#28523b}
+.view-parameter-tools textarea{display:block;box-sizing:border-box;width:100%;height:130px;margin:8px 0;resize:vertical;font:11px/1.45 Consolas,monospace;background:#fff;border:1px solid #c5d4bb;color:#233e36}
+.view-inherit-label{display:block;margin:8px 0;font-size:11px}
+.view-inherit-label select{box-sizing:border-box;display:block;max-width:100%;width:100%;font:inherit;padding:5px;background:#fff;border:1px solid #c5d4bb}
+.view-parameter-tools [hidden]{display:none!important}
+.focus-parameter-tools[open]{max-height:245px;overflow:auto;overscroll-behavior:contain}
+.pdf-download-link{position:fixed;right:18px;bottom:80px;z-index:90;border:1px solid #b9cbb0;background:#f4f9ee;color:#28523b;padding:10px 14px;border-radius:4px;font:14px/1.4 sans-serif}

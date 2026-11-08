@@ -1,10 +1,10 @@
 (() => {
   'use strict';
-  const key='traffic-guide:scenario-layouts:v1',modes=['auto','split','cards','cards-4'];
+  const key='traffic-guide:scenario-layouts:v1',modes=['auto','split','cards','cards-3','cards-4'];
   let choices={};try{choices=JSON.parse(localStorage.getItem(key)||'{}');}catch{}
   if(!choices||typeof choices!=='object'||Array.isArray(choices))choices={};
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  let returnPoint=null;
+  const returnPoints=[];
   let layoutObserver,layoutFrame=0;
   const conditionFits=new WeakMap();
   const cardGroups=[
@@ -97,21 +97,31 @@
   }
   function chapterCardLayout(page){const value=window.generalRoadEditor?.state.layouts[page.id]?.scenarioCardLayout;return ['horizontal','vertical'].includes(value)?value:null;}
   function defaultCardLayout(page){return chapterCardLayout(page)||(window.generalRoadEditor?.state.layouts['general-scenario-cards']?.scenarioCardLayout==='horizontal'?'horizontal':'vertical');}
-  function captureReturn(){
+  function captureReturn(destination){
     const app=window.generalRoadPresentation,root=document.getElementById('presentation'),nodes=[root,...root.querySelectorAll('*')],images=[...root.querySelectorAll('svg,img')];
-    returnPoint={...app.state,code:app.data.scenarios.find(s=>s.id===app.page.scenario)?.code||'',label:app.page.name,
+    returnPoints.push({...app.state,destination,code:app.data.scenarios.find(s=>s.id===app.page.scenario)?.code||'',label:app.page.name,
       scroll:nodes.map((node,index)=>({index,top:node.scrollTop,left:node.scrollLeft})).filter(n=>n.top||n.left),
-      views:images.flatMap((node,index)=>{const controller=window.generalRoadViewport?.get(node);return controller?[{index,tag:node.tagName,view:controller.read(),fit:node.getAttribute('preserveAspectRatio')}]:[]})};
+      views:images.flatMap((node,index)=>{const controller=window.generalRoadViewport?.get(node);return controller?[{index,tag:node.tagName,view:controller.read(),fit:node.getAttribute('preserveAspectRatio')}]:[]})});
+    if(returnPoints.length>32)returnPoints.shift();
   }
   function mountReturn(page){
     document.querySelector('[data-return-scenario]')?.remove();
-    if(page.deckId==='general'){returnPoint=null;return;}
+    while(returnPoints.length){
+      const saved=returnPoints.at(-1),destination=saved.destination;
+      if(page.id===saved.page||page.deckId!==destination.deckId||destination.scenario&&page.scenario!==destination.scenario)returnPoints.pop();else break;
+    }
+    // Comparison pages also need a way back when opened from a direct URL or the contents.
+    if(!returnPoints.length&&page.kind==='scenario-comparison'){
+      const scene=window.generalRoadPresentation.data.scenarios.find(scene=>scene.id===page.scenario);
+      if(scene)returnPoints.push({page:scene.overviewId,phase:0,code:scene.code,label:scene.code+' 整體佈設策略',destination:{deckId:page.deckId,scenario:page.scenario},views:[],scroll:[]});
+    }
+    const returnPoint=returnPoints.at(-1);
     if(!returnPoint)return;
     const button=document.createElement('button');button.type='button';button.className='quiet-button scenario-return-button';button.dataset.returnScenario='';button.textContent='↶ 返回 '+returnPoint.code;button.title='返回原檢視：'+returnPoint.code+' '+returnPoint.label;button.setAttribute('aria-label',button.title);
     document.querySelector('.playbar .utilities').append(button);
   }
   async function restoreReturn(){
-    const saved=returnPoint,app=window.generalRoadPresentation;if(!saved)return;returnPoint=null;
+    const saved=returnPoints.pop(),app=window.generalRoadPresentation;if(!saved)return;
     await app.goPage(saved.page,saved.phase,{force:true});await app.whenIdle();await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     const root=document.getElementById('presentation'),images=[...root.querySelectorAll('svg,img')],nodes=[root,...root.querySelectorAll('*')];
     for(const item of saved.views){const node=images[item.index],controller=node&&window.generalRoadViewport?.get(node);if(controller&&node.tagName===item.tag){if(item.fit)node.setAttribute('preserveAspectRatio',item.fit);if(saved.fullPeek&&node.id==='main-map')controller.showFull();controller.write(item.view,false);controller.sync();}}
@@ -120,8 +130,8 @@
   function setMode(slide,page,mode){
     const photos=[...slide.querySelectorAll('.condition-issue')],length=photos.reduce((sum,n)=>sum+n.textContent.length,0);
     const effectiveWidth=innerWidth/((screen.height||innerHeight)/1080);
-    slide.dataset.conditionsLayout=mode==='auto'?(photos.length>=8&&effectiveWidth>=1500?'cards-4':photos.length>=3||length>350?'cards':'split'):mode;
-    const columns=Math.min(photos.length||1,slide.dataset.conditionsLayout==='cards-4'?4:2);
+    slide.dataset.conditionsLayout=mode==='auto'?(photos.length===3?'cards-3':photos.length>=8&&effectiveWidth>=1500?'cards-4':photos.length>=3||length>350?'cards':'split'):mode;
+    const columns=Math.min(photos.length||1,slide.dataset.conditionsLayout==='cards-4'?4:slide.dataset.conditionsLayout==='cards-3'?3:2);
     slide.style.setProperty('--issue-columns',columns);slide.style.setProperty('--issue-rows',Math.max(1,Math.ceil(photos.length/columns)));
     for(const button of slide.querySelectorAll('[data-condition-layout]'))button.setAttribute('aria-pressed',String(button.dataset.conditionLayout===mode));
     scheduleAlignment();
@@ -142,12 +152,13 @@
     if(page.kind==='current-conditions'){
       slide.dataset.conditionScenario=page.scenario;
       const toolbar=document.createElement('div');toolbar.className='conditions-layout-options';toolbar.setAttribute('role','group');toolbar.setAttribute('aria-label','現況問題呈現方式');
-      toolbar.innerHTML='<span>呈現</span>'+[['auto','自動'],['split','圖文分欄'],['cards','雙欄卡片'],['cards-4','四欄卡片']].map(([value,label])=>`<button type="button" data-condition-layout="${value}" aria-pressed="false">${label}</button>`).join('');
+      toolbar.innerHTML='<span>呈現</span>'+[['auto','自動'],['split','圖文分欄'],['cards','雙欄卡片'],['cards-3','三欄卡片'],['cards-4','四欄卡片']].map(([value,label])=>`<button type="button" data-condition-layout="${value}" aria-pressed="false">${label}</button>`).join('');
       slide.querySelector('.conditions-heading')?.append(toolbar);
       setMode(slide,page,modes.includes(choices[page.id])?choices[page.id]:'auto');
     }
     for(const button of slide.querySelectorAll('.scenario-related-links [data-page]')){
       const target=window.generalRoadPresentation.pages.find(p=>p.id===button.dataset.page);
+      if(!window.generalRoadEditor?.editing&&window.PresentationOrder?.hidden(target)){button.remove();continue;}
       if(target?.article){button.dataset.referencePage=target.id;delete button.dataset.page;button.title='彈出參照，關閉後繼續本頁';}
     }
     for(const button of slide.querySelectorAll('[data-open-module],[data-module-route]')){
@@ -161,6 +172,7 @@
     observeLayout(slide);
   }
   function checklist(id){
+    if(window.PresentationReferences){window.PresentationReferences.preview('table:'+id);return;}
     const app=window.generalRoadPresentation,article=app.pages.find(p=>p.id===id)?.article;if(!article?.table)return;
     const table=article.table,dialog=document.getElementById('source-dialog');dialog.classList.add('checklist-dialog');
     document.getElementById('source-title').textContent='表：'+article.name;dialog.querySelector('.eyebrow').textContent=app.data.scenarios.find(s=>s.id===article.scenario)?.code||'';
@@ -180,8 +192,12 @@
     window.PresentationText?.apply(dialog,{general:true});dialog.showModal();
   }
   window.addEventListener('click',event=>{
-    const app=window.generalRoadPresentation,button=event.target.closest('button[data-open-module],button[data-module-route]');
-    if(app?.page.deckId==='general'&&button?.closest('#presentation'))captureReturn();
+    const app=window.generalRoadPresentation,button=event.target.closest('button[data-open-module],button[data-module-route],button[data-page]');
+    if(!['general','complex'].includes(app?.page.deckId)||!app.page.scenario||!button?.closest('#presentation'))return;
+    const target=app.pages.find(page=>page.id===button.dataset.page);
+    const moduleLink=button.hasAttribute('data-open-module')||button.hasAttribute('data-module-route')||target?.deckId==='modules';
+    if(moduleLink)captureReturn({deckId:'modules'});
+    else if(target&&target.id!==app.page.id&&(target.kind==='scenario-comparison'||button.closest('.scenario-related-links')))captureReturn({deckId:target.deckId,scenario:target.scenario});
   },true);
   document.addEventListener('click',event=>{
     const button=event.target.closest('button[data-condition-layout],button[data-scenario-card-layout],button[data-scenario-card-default],button[data-scenario-card-chapter-default],button[data-scenario-card-use-global],button[data-reference-page],button[data-table-preview],button[data-return-scenario]');if(!button)return;

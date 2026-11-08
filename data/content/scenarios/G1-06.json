@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G1-06",
+  "texts": {
+    "g106-context|0|text-12": "防止臨時轉向與交織",
+    "g106-context|0|text-15": "盡可能將停等方向調整為接近垂直，減少斜交死角。",
+    "g106-context|0|text-16": "交角與轉向空間併同考量，行穿線則依行人需求配置。",
+    "g106-yield-sign|1|text-7": "\n",
+    "g106-speed-sign|0|text-4": "加以提示支線道速限。",
+    "g106-speed-sign|1|text-8": "\n",
+    "g106-review|0|text-2": "轉向車提前選擇車道",
+    "g106-review|0|text-1": "將次要道路交角調整，並在主線安排左轉與直右車道。",
+    "g106-review|shared|title": "斜交路口的交角改善與轉向動線銜接。",
+    "g106-review|0|text-7": "標誌位置、路面標字與導標共同考量。"
+  },
+  "images": {
+    "g106-crosswalk": {
+      "src": "materials/edited/f107cb4449edf49121f95310c5f973185dba0a0a8d9c86937a21e33c96d3ca3b.svg",
+      "alt": "G1-06_無號誌鄉區斜交三叉路口設置行穿線圖例.svg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g106-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-1",
+            "title": "主次道路明示性不足",
+            "titleKey": "g106-conditions:content:photo:g106-photo-2:title",
+            "imageKey": "g106-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "主要道路無設置警示設施，提醒用路人注意來車\n",
+                "textKey": "g106-conditions:content:photo:g106-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-3",
+            "title": "主要道路鄰近路口缺少左、右轉空間配置",
+            "titleKey": "g106-conditions:content:photo:g106-photo-4:title",
+            "imageKey": "g106-photo-4",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-3-point-0",
+                "text": "主要道路外側配置機慢車道，右轉汽車與機慢車產生交織衝突\n",
+                "textKey": "g106-conditions:content:photo:g106-photo-4:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "斜交影響觀察視距",
+            "titleKey": "g106-conditions:content:photo:g106-photo-3:title",
+            "imageKey": "g106-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "次要道路斜交角度小，駕駛觀察主要道路來車較困難。",
+                "textKey": "g106-conditions:content:photo:g106-photo-3:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-0",
+            "title": "速限不明確",
+            "titleKey": "g106-conditions:content:photo:g106-photo-1:title",
+            "imageKey": "g106-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "次要道路速限不明確。",
+                "textKey": "g106-conditions:content:photo:g106-photo-1:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g106-lane-line": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本示例於距離路口前30–60 m範圍，取消佈設快慢車道分隔線，改佈設混合車道。",
+            "textKey": "g106-lane-line|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "透過指向線引導、劃分直行或右轉方向，使用路人明確判斷其應選擇的車道位置。",
+            "textKey": "g106-lane-line|1|text-7"
+          }
+        ]
+      },
+      "g106-crosswalk-line": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "如次要道路配合路側人行道有佈設行穿線之需求時，佈設方式。",
+            "textKey": "g106-crosswalk-line|1|text-6"
+          },
+          {
+            "id": "point-531a3337-3bc2-41ad-b0b0-0b0207f25f8d",
+            "text": "因為斜交路口，可採調和角度的行穿線。",
+            "textKey": "g106-crosswalk-line|content|articles|point-531a3337-3bc2-41ad-b0b0-0b0207f25f8d"
+          },
+          {
+            "id": "point-original-1",
+            "text": "如次要道路評估行人通行需求較低，則路口採不設置行穿線。",
+            "textKey": "g106-crosswalk-line|1|text-7"
+          }
+        ]
+      },
+      "g106-yield-sign": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本示例如於次要道路路口設置讓路線時，將配合設置讓路標誌「遵2」。",
+            "textKey": "g106-yield-sign|1|text-6"
+          }
+        ]
+      },
+      "g106-speed-sign": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "於支線道路口處布設最高速限標誌，提示轉入支線駕駛人依速限行駛。",
+            "textKey": "g106-speed-sign|1|text-6"
+          },
+          {
+            "id": "point-82284545-6dee-4fc9-85f0-4871e765991d",
+            "text": "標誌以布設於駕駛人面向之右側為原則，但由於本情境為斜交路口，考慮到幹道右轉轉入車輛之可視性，建議增設於左側。",
+            "textKey": "g106-speed-sign|content|articles|point-82284545-6dee-4fc9-85f0-4871e765991d"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g106-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "調整路口前車道",
+            "titleKey": "g106-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g106-lane-line"
+            ],
+            "targetId": "g106-lane-line"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "慢車道與漸變",
+            "titleKey": "g106-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g106-slow-line"
+            ],
+            "targetId": "g106-slow-line"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "依需求安排人行穿越",
+            "titleKey": "g106-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g106-crosswalk-line"
+            ],
+            "targetId": "g106-crosswalk-line"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "讓路、速限與夜間導引",
+            "titleKey": "g106-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g106-yield-sign",
+              "g106-speed-sign",
+              "g106-reflectors"
+            ],
+            "targetId": "g106-yield-sign"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

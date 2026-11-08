@@ -19,14 +19,16 @@
     let index=0;return pages.map(page=>selected.has(page.id)?selected.get(next[index++]):page);
   }
   const configuration=()=>typeof window==='object'?window.visualLayoutEditor?.store?.config:null;
+  function hidden(page,config=configuration()){return Boolean(page?.article&&config?.scenarioHiddenArticles?.[page.scenario]?.includes(page.id));}
   function articleGroups(items,scene,config=configuration(),identify=item=>item.id){
     const other=new Set(config?.scenarioOtherArticles?.[scene]||[]);
-    return {primary:items.filter(item=>!other.has(identify(item))),other:items.filter(item=>other.has(identify(item)))};
+    const hidden=new Set(config?.scenarioHiddenArticles?.[scene]||[]);
+    return {primary:items.filter(item=>!other.has(identify(item))&&!hidden.has(identify(item))),other:items.filter(item=>other.has(identify(item))&&!hidden.has(identify(item))),hidden:items.filter(item=>hidden.has(identify(item)))};
   }
   function forKey(items,key,config=configuration()){
     const result=ordered(key.startsWith('scenario:')?ordered(items,config?.legacyState?.pageOrder):items,config?.navigationOrders?.[key]);
     if(!/^scenario:g[1-4]-\d{2}$/.test(key))return result;
-    const groups=articleGroups(result,key.slice(9),config);return groups.primary.concat(groups.other);
+    const groups=articleGroups(result,key.slice(9),config);return groups.primary.concat(groups.other,groups.hidden);
   }
   function organize(pages,data,config){
     for(const scene of data.scenarios){
@@ -37,7 +39,7 @@
       const companion=pages.find(page=>page.id===scene.comparisonId),anchor=articles.find(page=>String(page.article.reg)==='185');
       const ids=new Set(articles.map(page=>page.id));if(companion&&anchor)ids.add(companion.id);
       const bundle=items=>items.flatMap(page=>companion&&anchor===page?[page,companion]:[page]);
-      const next=config?.navigationOrders?.['scenario:'+scene.id]||config?.scenarioOtherArticles?.[scene.id]?bundle(sequence):ordered(bundle(canonical),legacy);let index=0;
+      const next=config?.navigationOrders?.['scenario:'+scene.id]||config?.scenarioOtherArticles?.[scene.id]||config?.scenarioHiddenArticles?.[scene.id]?bundle(sequence):ordered(bundle(canonical),legacy);let index=0;
       for(let i=0;i<pages.length;i++)if(ids.has(pages[i].id))pages[i]=next[index++];
     }
   }
@@ -58,6 +60,8 @@
   }
   function mount(api){
     app=api;if(drag)cancel();
+    mountReview(api);
+    mountContext(api);
     mountToc(api);
     const module=window.PresentationModules?.displayContext(),scene=api.page.scenario||api.page.article?.scenario;
     for(const nav of document.querySelectorAll('#presentation .article-nav')){
@@ -77,7 +81,7 @@
         nav.classList.add('article-nav-grouped');
         nav.querySelectorAll('[data-article-group]').forEach(node=>node.remove());
         const groups=articleGroups(items,scene,config,id);
-        for(const [group,title]of [['primary','主要涉及設施暨條文'],['other','其他條文']]){
+        for(const [group,title]of [['primary','主要涉及設施暨條文'],['other','其他條文'],...(editable()?[['hidden','隱藏條文（僅編輯模式顯示）']]:[])]){
           const row=document.createElement('div');row.className='article-index-group';row.dataset.articleGroup=group;row.setAttribute('role','group');row.setAttribute('aria-label',title);
           const label=document.createElement('span');label.className='article-index-label';label.textContent=title;
           const list=document.createElement('div');list.className='article-index-items';
@@ -85,7 +89,8 @@
           if(!groups[group].length){const empty=document.createElement('span');empty.className='article-index-empty';empty.textContent=editable()?'拖曳條文至此':'尚無條文';list.append(empty);}
           row.classList.toggle('can-classify',Boolean(editable()));nav.append(row);
         }
-        for(const button of items)if(editable())button.title+='；Alt＋↑／↓切換分類';
+        if(!editable())for(const button of groups.hidden)button.remove();
+        for(const button of items)if(editable())button.title+='；Alt＋↑／↓切換分類；Alt＋Shift＋↓移至隱藏條文';
       }
       const label=nav.querySelector('.nav-label');if(label){label.classList.toggle('navigation-order-label',Boolean(editable()));label.title=editable()?'拖曳按鈕調整順序；Alt＋←／→也可移動':'';}
     }
@@ -101,6 +106,37 @@
         button.title='拖曳調整同類項目順序；Alt＋←／→移動';
       }
     }
+  }
+  function mountContext(api){
+    if(api.page.deckId!=='general'||api.page.kind!=='context')return;
+    const host=document.querySelector('#presentation .context-grid>.context-issues');if(!host)return;
+    const rows=[...host.querySelectorAll(':scope>.issue-row')];rows.forEach((row,index)=>row.dataset.contextTarget='target-'+index);
+    const key='context:'+api.page.id,items=ordered(rows,configuration()?.navigationOrders?.[key],row=>row.dataset.contextTarget);
+    items.forEach((row,index)=>{host.append(row);row.querySelector(':scope>span').textContent=String(index+1);if(!editable())return;
+      const controls=document.createElement('div');controls.className='context-target-order-tools';controls.dataset.editorUi='context-order';
+      for(const [direction,label]of [[-1,'上移'],[1,'下移']]){const button=document.createElement('button');button.type='button';button.textContent=direction<0?'↑':'↓';button.setAttribute('aria-label',label+'改善目標');button.disabled=index+direction<0||index+direction>=items.length;
+        button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();if(!editable())return;const ids=items.map(row=>row.dataset.contextTarget),next=moved(ids,row.dataset.contextTarget,ids[index+direction],direction>0);if(window.visualLayoutEditor.transact(config=>{config.navigationOrders[key]=next;},false))api.refresh();});controls.append(button);
+      }row.querySelector(':scope>div').append(controls);
+    });
+  }
+  function mountReview(api){
+    const host=document.querySelector('#presentation .review-rows');if(!host)return;
+    const rows=[...host.querySelectorAll(':scope>.review-row')];
+    rows.forEach((row,index)=>{row.dataset.reviewRow='row-'+index;row.querySelector('[data-review-order-tools]')?.remove();});
+    const key='review:'+api.page.id,items=ordered(rows,configuration()?.navigationOrders?.[key],row=>row.dataset.reviewRow);
+    items.forEach((row,index)=>{
+      host.append(row);row.querySelector(':scope>span').textContent=String(index+1);
+      if(!editable())return;
+      const controls=document.createElement('span');controls.className='review-order-tools';controls.dataset.reviewOrderTools='';controls.dataset.editorUi='review-order';
+      for(const [direction,label]of [[-1,'上移'],[1,'下移']]){
+        const button=document.createElement('button');button.type='button';button.textContent=direction<0?'↑':'↓';button.dataset.reviewMove=direction;button.setAttribute('aria-label',label+'這個小結列點');button.disabled=index+direction<0||index+direction>=items.length;
+        button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();if(!editable())return;
+          const ids=items.map(item=>item.dataset.reviewRow),next=moved(ids,row.dataset.reviewRow,ids[index+direction],direction>0);
+          if(window.visualLayoutEditor.transact(config=>{config.navigationOrders[key]=next;},false)){api.refresh();const controls=document.querySelector('[data-review-row="'+row.dataset.reviewRow+'"] .review-order-tools');(controls?.querySelector('[data-review-move="'+direction+'"]:not(:disabled)')||controls?.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});}
+        });controls.append(button);
+      }
+      row.append(controls);
+    });
   }
   function updateTocActions(message,error=false){
     for(const button of document.querySelectorAll('[data-toc-editor-action]')){
@@ -137,12 +173,12 @@
     if(nav.classList.contains('article-nav-grouped')){
       const scene=nav.dataset.navigationOrder.slice(9),before=ids(nav),groups=articleGroups(before,scene,configuration(),id=>id);
       group=group||nav.querySelector('[data-order-id="'+target+'"]')?.closest('[data-article-group]')?.dataset.articleGroup;
-      if(!['primary','other'].includes(group)||!before.includes(id))return;
-      const oldOther=[...groups.other];for(const key of ['primary','other'])groups[key]=groups[key].filter(value=>value!==id);
+      if(!['primary','other','hidden'].includes(group)||!before.includes(id))return;
+      const oldOther=[...groups.other],oldHidden=[...groups.hidden];for(const key of ['primary','other','hidden'])groups[key]=groups[key].filter(value=>value!==id);
       const index=groups[group].indexOf(target);groups[group].splice(index<0?groups[group].length:index+(after?1:0),0,id);
-      const next=groups.primary.concat(groups.other);
-      if(JSON.stringify(before)===JSON.stringify(next)&&JSON.stringify(oldOther)===JSON.stringify(groups.other))return;
-      if(window.visualLayoutEditor.transact(config=>{config.navigationOrders[nav.dataset.navigationOrder]=next;config.scenarioOtherArticles[scene]=groups.other;},false)){
+      const next=groups.primary.concat(groups.other,groups.hidden);
+      if(JSON.stringify(before)===JSON.stringify(next)&&JSON.stringify(oldOther)===JSON.stringify(groups.other)&&JSON.stringify(oldHidden)===JSON.stringify(groups.hidden))return;
+      if(window.visualLayoutEditor.transact(config=>{config.navigationOrders[nav.dataset.navigationOrder]=next;config.scenarioOtherArticles[scene]=groups.other;config.scenarioHiddenArticles[scene]=groups.hidden;},false)){
         refresh();document.querySelector('[data-navigation-order="'+nav.dataset.navigationOrder+'"] [data-order-id="'+id+'"]')?.focus({preventScroll:true});
         window.visualLayoutEditor.report('條文分類與順序已調整，請儲存設定。');
       }
@@ -220,7 +256,7 @@
       if(event.key==='Escape'&&drag){const previous=drag;if(previous.active){suppressed={key:previous.nav.dataset.navigationOrder,id:previous.button.dataset.orderId,until:performance.now()+500};event.preventDefault();event.stopImmediatePropagation();}cancel();return;}
       const grouped=event.target.closest('.article-nav-grouped .navigation-order-item');
       if(grouped&&editable()&&event.altKey&&!event.ctrlKey&&!event.metaKey&&['ArrowUp','ArrowDown'].includes(event.key)){
-        event.preventDefault();event.stopImmediatePropagation();const group=event.key==='ArrowUp'?'primary':'other';
+        event.preventDefault();event.stopImmediatePropagation();const group=event.key==='ArrowUp'?'primary':event.shiftKey?'hidden':'other';
         if(grouped.closest('[data-article-group]').dataset.articleGroup!==group)commit(grouped.closest('[data-navigation-order]'),grouped.dataset.orderId,null,true,group);return;
       }
       const button=event.target.closest('.navigation-order-item'),toc=button?.classList.contains('toc-order-trigger');if(!button||!editable()||!event.altKey||event.ctrlKey||event.metaKey||!(toc?['ArrowLeft','ArrowRight','ArrowUp','ArrowDown']:['ArrowLeft','ArrowRight']).includes(event.key))return;
@@ -229,5 +265,5 @@
     },true);
     window.addEventListener('blur',cancel);
   }
-  return {ordered,moved,reorderedPages,articleGroups,forKey,organize,mount,mountToc,updateTocActions,refresh};
+  return {ordered,moved,reorderedPages,articleGroups,forKey,organize,hidden,mount,mountToc,updateTocActions,refresh};
 });

@@ -2,9 +2,13 @@
 from pathlib import Path
 import json
 import fitz
+import argparse
 
 root = Path(__file__).resolve().parents[1]
-output = root / "exports" / "PDF-M1-01-G1-01"
+parser = argparse.ArgumentParser()
+parser.add_argument('--output', type=Path)
+args = parser.parse_args()
+output = args.output or root / "exports" / "PDF-M1-01-G1-01"
 manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
 checks = []
 for chapter in manifest["documents"]:
@@ -20,12 +24,12 @@ for chapter in manifest["documents"]:
             page.set_mediabox(fitz.Rect(0, 0, 1200, 675))
             text = page.get_text()
             assert "".join(sheet["titleInPresentation"].split()) in "".join(text.split()), sheet["file"]
-            assert len(text.strip()) > 50, sheet["file"]
+            assert len(text.strip()) > (10 if sheet['id'].startswith('chapter-cover-') else 50), sheet["file"]
             result.insert_pdf(source)
             titles.append([1, sheet["title"], index + 1])
     result.set_metadata({"title": chapter["title"], "subject": "道路交通標誌標線號誌設置參考指引", "keywords": chapter["id"] + ", 簡報, 16:9"})
     result.set_toc(titles)
-    destination = output / (chapter["title"].replace(" ", "_", 1) + ".pdf")
+    destination = output / chapter.get('outputName', chapter["title"].replace(" ", "_", 1) + ".pdf")
     result.save(destination, garbage=4, deflate=True)
     result.close()
     with fitz.open(destination) as document:

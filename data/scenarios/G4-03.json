@@ -218,7 +218,7 @@
       "rotation": 0,
       "scenario": "G4-03",
       "label": "號誌化市區斜交四叉路口交通設施整體設置圖例",
-      "sha256": "ae09fb252843cf2dc2a2197b6e0128ccf273df548aa124314f104e64290d540d"
+      "sha256": "5eb3f11773ffdc03c57b948203fc59e8a19963f3cff52f880fd8f4fb8f5db0a6"
     },
     "g403-signals": {
       "file": "materials/04-一般道路情境/G4-03/G4-03_號誌市區斜交四叉路口號誌平面設置圖例.svg",
@@ -227,7 +227,7 @@
       "rotation": 0,
       "scenario": "G4-03",
       "label": "號誌市區斜交四叉路口號誌平面設置圖例",
-      "sha256": "7d9909faff66bec3e11090c0a4a36a0c3a1879ddc61db6c03555401a06fd045e"
+      "sha256": "5155b747b4e964aed979a9bbd19dd2d8026c730dee1b3811787475ebf4ad705e"
     },
     "g403-before": {
       "file": "materials/04-一般道路情境/current-conditions/G4-03/G4-03_現況圖_01.png",

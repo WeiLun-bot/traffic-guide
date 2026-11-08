@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G2-01",
+  "texts": {
+    "g201-conditions:content:photo:g201-photo-4:title": "路口空間配置不佳\n",
+    "g201-conditions:content:photo:g201-photo-4:point-0": "主要道路接近路口處，缺少清楚的左右轉空間配置。",
+    "g201-review|shared|title": "車道用途、左轉管制與號誌可視性。"
+  },
+  "images": {
+    "g201-photo-3": {
+      "src": "materials/edited/092dfebf63eda525cb41c60cb911a0b40d728b598358530edd84cce1143ddaf8.jpeg",
+      "alt": "24.828965,121.0107438_202602.jpg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g201-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "路口空間配置不佳\n",
+            "titleKey": "g201-conditions:content:photo:g201-photo-1:title",
+            "imageKey": "g201-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "主要道路接近路口處，缺少清楚的左右轉空間配置。",
+                "textKey": "g201-conditions:content:photo:g201-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "速限不明確",
+            "titleKey": "g201-conditions:content:photo:g201-photo-2:title",
+            "imageKey": "g201-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "主、次要道路無標字、標誌表示速限",
+                "textKey": "g201-conditions:content:photo:g201-photo-2:point-0"
+              },
+              {
+                "id": "point-2b40852e-0d85-4a61-aaac-cca0278c49a3",
+                "text": "道路自明性不足",
+                "textKey": "g201-conditions|content|issue-original-1|point-2b40852e-0d85-4a61-aaac-cca0278c49a3"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "行人號誌不易直視",
+            "titleKey": "g201-conditions:content:photo:g201-photo-3:title",
+            "imageKey": "g201-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "行穿線與行人號誌位置不易相互對照，行人判讀較困難。",
+                "textKey": "g201-conditions:content:photo:g201-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g201-waiting": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "設於速限 60 km/h 以下的號誌化路口，位在停止線後方。",
+            "textKey": "g201-waiting|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "縱深 2.50–6.00 m；橫向線寬 0.20 m，縱向線寬 0.10 或 0.15 m。",
+            "textKey": "g201-waiting|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "區內繪設縮小型指向線，部分邊線可與相鄰實線共用。",
+            "textKey": "g201-waiting|1|text-8"
+          }
+        ]
+      },
+      "g201-visible": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "「可視模板」提供符合人因工程（human factors）─又稱人體工學（ergonomics）─之檢查，根據人因工程，機動車輛用路人，行駛狀態下視覺僅能限縮在一定圓錐形範圍，投射到平面圖上為三角形，稱為「可視模板」，有關「可視模板」之操作方式詳見附錄3。",
+            "textKey": "g201-visible|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "以「55 km/h以下可視模板」檢驗，確認上游接近時，根據人因工程，可以看到兩個燈面（2.2、2.1）。",
+            "textKey": "g201-visible|1|text-7"
+          }
+        ]
+      },
+      "g201-far": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "根據設置規則§ 221「行車管制號誌至少應有一燈面設於遠端左側，且距近端停止線10 m以上。",
+            "textKey": "g201-far|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "…（後略）」，由南下停止線起算至遠端號誌燈面2.1，其距離X2為28 m，符合10 m以上的標準。",
+            "textKey": "g201-far|1|text-7"
+          }
+        ]
+      },
+      "g201-near": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "號誌燈面應有以下功能，如果未達成將造成安全或效率之疑慮",
+            "textKey": "g201-near|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "協助車輛自上游辨識號誌之燈號：需有近端號誌負責",
+            "textKey": "g201-near|1|text-7"
+          }
+        ]
+      },
+      "g201-gap": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "根據交通工程規範§ 5.6「同向車輛或行人之行車管制號誌同向燈面之法線垂直距離以不超過12 m為度，若超過時，易被忽略，應考慮增設1 組。」",
+            "textKey": "g201-gap|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "由可視模板沿行車方向投射，2.2、2.1之間並沒有12 m的空隙，因此不用額外增設燈面。",
+            "textKey": "g201-gap|1|text-7"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g201-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "安排機慢車停等空間",
+            "titleKey": "g201-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g201-waiting"
+            ],
+            "targetId": "g201-waiting"
+          },
+          {
+            "id": "strategy-d3fc203a-edcc-4122-b630-5dd775884cf6",
+            "title": "機會保護左轉的燈面配置",
+            "titleKey": "g201-overview|strategy|strategy-d3fc203a-edcc-4122-b630-5dd775884cf6|title",
+            "articleIds": [
+              "g201-permissive",
+              "g201-protected"
+            ],
+            "targetId": "g201-permissive"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "逐項檢核號誌可視性",
+            "titleKey": "g201-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g201-permissive",
+              "g201-protected",
+              "g201-visible",
+              "g201-clearance",
+              "g201-checklist",
+              "g201-left",
+              "g201-far",
+              "g201-near",
+              "g201-start"
+            ],
+            "targetId": "g201-visible"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "對應行穿線與行人號誌",
+            "titleKey": "g201-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g201-pedestrian"
+            ],
+            "targetId": "g201-pedestrian"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {
+      "g201-permissive": {
+        "ids": [
+          "table:g201-checklist"
+        ]
+      },
+      "g201-protected": {
+        "ids": [
+          "table:g201-checklist"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G3-04",
+  "texts": {
+    "g304-conditions:content:photo:g304-photo-1:point-0": "路口缺少必要的警示與管制提示，駕駛不易判斷是否停讓。",
+    "g304-stopline|0|text-4": "斜交路口停止線位置應兼顧觀察視角與轉彎軌跡。",
+    "g304-stopline|1|text-8": "斜交路口停止線位置應兼顧觀察視角與轉彎軌跡。",
+    "g304-weight|0|text-4": "限重資訊於上游預告，提供超重車輛改道或迴車的空間。",
+    "g304-review|0|text-3": "停止線配合觀察及轉彎軌跡決定位置。",
+    "g304-review|shared|title": "斜交路口的停讓位置與橋梁限重預告。"
+  },
+  "images": {
+    "g304-crosswalk-option": {
+      "src": "materials/edited/83c3aa1abd9b51d191f6df1e824c36b79620e99eba2fb4069f3695cd81940e8b.svg",
+      "alt": "G3-04_無號誌鄉區斜交四叉路口設置行穿線圖例.svg"
+    },
+    "g304-no-crosswalk-option": {
+      "src": "materials/edited/d11f3ff43c1b9b06f17e556bb42b3068a568adf27cdc4da1d365a04ac005190d.svg",
+      "alt": "G3-04_無號誌鄉區斜交四叉路口不設置行穿線圖例.svg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g304-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-1",
+            "title": "主次道路辨識不足\n",
+            "titleKey": "g304-conditions:content:photo:g304-photo-2:title",
+            "imageKey": "g304-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "路口缺少必要的警示與管制提示，駕駛不易判斷是否停讓。",
+                "textKey": "g304-conditions:content:photo:g304-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "速度限制不明確",
+            "titleKey": "g304-conditions:content:photo:g304-photo-3:title",
+            "imageKey": "g304-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "兩條道路的速限標字與標誌提示不足。",
+                "textKey": "g304-conditions:content:photo:g304-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g304-stopline": {
+        "points": [
+          {
+            "id": "point-original-1",
+            "text": "斜交路口多車道之停止線設置，各車道可採鋸齒狀佈設，但如需配合號誌位置也可佈設在同一斷面。",
+            "textKey": "g304-stopline|1|text-7"
+          }
+        ]
+      },
+      "g304-weight": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "當道路或橋梁所能承載之重量有所限制時，應設置車輛總重限制標誌「限1」，以禁止超重車輛通行。",
+            "textKey": "g304-weight|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "車輛總重限制標誌「限1」建議設於限制車輛總重地點前方鄰近之處，並應考量超重車輛能於該地點繞道行駛或迴車。",
+            "textKey": "g304-weight|1|text-7"
+          },
+          {
+            "id": "point-5d52f7a6-7b65-4a96-a3b9-31a386331f40",
+            "text": "單位寫法建議參考限4-1、指33-1及《法定度量衡單位及前綴詞》相關規定。\n",
+            "textKey": "g304-weight|content|articles|point-5d52f7a6-7b65-4a96-a3b9-31a386331f40"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g304-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "確定停讓觀察位置",
+            "titleKey": "g304-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g304-stopline"
+            ],
+            "targetId": "g304-stopline"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "調整轉角與行車邊界",
+            "titleKey": "g304-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g304-edge"
+            ],
+            "targetId": "g304-edge"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "依人行需求選擇穿越方案",
+            "titleKey": "g304-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g304-crosswalk"
+            ],
+            "targetId": "g304-crosswalk"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "讓限重車輛提早改道",
+            "titleKey": "g304-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g304-weight"
+            ],
+            "targetId": "g304-weight"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

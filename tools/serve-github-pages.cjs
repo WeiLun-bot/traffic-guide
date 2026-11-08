@@ -10,7 +10,8 @@ directory=path.resolve(directory);
 const configFile=options.configFile===undefined?(directory===root?projectConfig:null):options.configFile;
 const sourceRoot=options.projectRoot===undefined?(directory===root&&options.configFile===undefined?path.resolve(__dirname,'..'):null):options.projectRoot;
 const token=crypto.randomBytes(32).toString('hex');
-const storageSignature=['tools/serve-github-pages.cjs','tools/presentation-project-store.cjs','assets/presentation-document.js','assets/visual-editor-core.js'].map(file=>crypto.createHash('sha256').update(fs.readFileSync(path.resolve(__dirname,'..',file))).digest('hex')).join(':');
+const pdfJobs=sourceRoot?require('./presentation-pdf-jobs.cjs').createJobs(sourceRoot):null;
+const storageSignature=['tools/serve-github-pages.cjs','tools/presentation-project-store.cjs','tools/presentation-pdf-jobs.cjs','assets/presentation-document.js','assets/visual-editor-core.js'].map(file=>crypto.createHash('sha256').update(fs.readFileSync(path.resolve(__dirname,'..',file))).digest('hex')).join(':');
 if(!fs.existsSync(path.join(directory,'index.html')))throw new Error('Run node tools/prepare-github-pages.cjs first.');
 return http.createServer((request,response)=>{
   let pathname;
@@ -18,6 +19,7 @@ return http.createServer((request,response)=>{
   if(pathname==='/presentation-demo'){response.writeHead(302,{Location:prefix});response.end();return;}
   const relative=pathname.startsWith(prefix)?pathname.slice(prefix.length):pathname.replace(/^\//,'');
   const filename=relative||'index.html';
+  if(pdfJobs?.handle(request,response,filename,token))return;
   if(filename==='__preview'&&request.method==='GET'){
     response.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});response.end(JSON.stringify({version:2,projectStorage:Boolean(sourceRoot),storageSignature}));return;
   }

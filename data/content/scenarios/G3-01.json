@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G3-01",
+  "texts": {
+    "g301-review|0|text-5": "以略為偏移的路口車道配置，提醒車輛減速至 30 km/h 以下。",
+    "g301-review|shared|title": "住宅區交錯車道與低速路口設計。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g301-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-3",
+            "title": "缺少主次道路提示",
+            "titleKey": "g301-conditions:content:photo:g301-photo-4:title",
+            "imageKey": "g301-photo-4",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-3-point-0",
+                "text": "主要道路缺少提醒駕駛留意次要道路來車的警示。",
+                "textKey": "g301-conditions:content:photo:g301-photo-4:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-0",
+            "title": "外側行車與停車混用",
+            "titleKey": "g301-conditions:content:photo:g301-photo-1:title",
+            "imageKey": "g301-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "外側空間同時供車輛行駛與停車，邊界不明確。",
+                "textKey": "g301-conditions:content:photo:g301-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "速限不明確",
+            "titleKey": "g301-conditions:content:photo:g301-photo-3:title",
+            "imageKey": "g301-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "主、次要道路無標字、標誌表示速限",
+                "textKey": "g301-conditions:content:photo:g301-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g301-staggered-layout": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "配合形成車行道偏移，將路側停車格單邊交錯配置，並明確區分停車及行車空間。",
+            "textKey": "g301-staggered-layout|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "車行道偏移配合行穿線及路側活動，提高路口來車與行人的可見度。",
+            "textKey": "g301-staggered-layout|1|text-7"
+          }
+        ]
+      },
+      "g301-guide": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本示例位於地區服務道路，透過調整路型之方式，使得車輛得以限速在30 km/h以下；有關路型設計規範，如屬市區道路部分，應遵循《市區道路及附屬工程設計規範》之規定；如屬公路部分，應遵循《公路路線設計規範》之規定。",
+            "textKey": "g301-guide|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "路口採用些微斜向交岔型式，形成車行道偏移，可使主要道路及次要道路之車輛達到減速至30 km/h以下之效果，且因車速降低，更不易造成視線上的死角，提高整個行車安全。",
+            "textKey": "g301-guide|1|text-7"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g301-overview": {
+        "items": [
+          {
+            "id": "strategy-original-1",
+            "title": "引導主要道路車流",
+            "titleKey": "g301-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g301-guide"
+            ],
+            "targetId": "g301-guide"
+          },
+          {
+            "id": "strategy-original-0",
+            "title": "交錯配置車道與停車空間",
+            "titleKey": "g301-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g301-staggered-layout"
+            ],
+            "targetId": "g301-staggered-layout"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "提高行穿線及行人辨識度",
+            "titleKey": "g301-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g301-staggered-layout"
+            ],
+            "targetId": "g301-staggered-layout"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

@@ -221,3 +221,13 @@ body[data-presentation="general"] #presentation>.slide.conditions-current-slide 
  body[data-presentation="general"] #presentation [data-condition-height-bounded="true"] .condition-points{flex:none;max-height:none;overflow:visible}
 }
 body[data-presentation="general"] #presentation .condition-points p::before{content:"";width:.34em;height:.34em;border-radius:50%;background:var(--accent);top:.7em;transform:translateY(-50%)}
+body[data-presentation="general"] #presentation .context-opening>.context-note{display:none!important}
+body[data-presentation="general"]:not(.is-editing):not(.is-visual-editing) #presentation .context-opening .context-grid{grid-template-columns:minmax(0,1fr)!important}
+body[data-presentation="general"]:not(.is-editing):not(.is-visual-editing) #presentation .context-opening .context-grid>.context-issues{display:none!important}
+body[data-presentation="general"] #presentation .takeaway.is-empty{height:0!important;min-height:0!important;max-height:0!important;margin:0!important;padding:0!important;border:0!important;overflow:hidden!important}
+.context-target-order-tools{display:flex;gap:5px;justify-content:flex-end;margin-top:4px}
+.context-target-order-tools button{font:12px/1.3 sans-serif;color:var(--green);border:1px solid #c5d4bb;border-radius:3px;background:white;padding:3px 8px}
+.article-name-dialog{width:min(480px,calc(100vw - 32px));box-sizing:border-box;border:1px solid #b9cbb0;border-radius:6px;padding:20px;color:var(--dark)}
+.article-name-dialog label{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:14px}
+.article-name-dialog input,.article-name-dialog textarea{font:inherit;padding:8px;border:1px solid #c5d4bb}
+.article-name-dialog form>div{display:flex;justify-content:flex-end;gap:8px}

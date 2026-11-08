@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G2-03",
+  "texts": {
+    "g203-lane-warning|1|text-8": "在車道縮減處上游預告。",
+    "g203-speed|0|text-4": "路段速限由 60 km/h 降至 50 km/h 時，於變更地點處設置。",
+    "g203-visible-1|1|text-7": "由上游接近路口，應確保能同時辨認兩個顯示相同燈號的燈面。",
+    "g203-visible-2|1|text-7": "由上游接近路口，應確保能同時辨認兩個顯示相同燈號的燈面。",
+    "g203-privacy|1|text-7": "燈面5.3、2.3可能被其他方向誤認，須處理燈面可見範圍。",
+    "g203-review|0|text-7": "由 60 km/h 降至 50 km/h 的路段，在路段中變更。"
+  },
+  "images": {
+    "g203-photo-2": {
+      "src": "materials/edited/deec32a6ef3273d2300887a27b820ca32c639be8a2c68d523a7e3005f48bf053.jpeg",
+      "alt": "24.7966128,120.95261_202206_2.jpg"
+    },
+    "g203-photo-3": {
+      "src": "materials/edited/ef77f0759b0da0aeac350b5a219efa857f4622b3c4fcd6640523a22cba3491a8.jpeg",
+      "alt": "24.7966128,120.95261_202206.jpg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g203-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "車道數配置不一致",
+            "titleKey": "g203-conditions:content:photo:g203-photo-1:title",
+            "imageKey": "g203-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "進入與離開路口的車道數不同，銜接與導引不夠清楚。",
+                "textKey": "g203-conditions:content:photo:g203-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "行人穿越安全性不足",
+            "titleKey": "g203-conditions:content:photo:g203-photo-2:title",
+            "imageKey": "g203-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "行人穿越距離長，但路口無設置行人庇護島\n",
+                "textKey": "g203-conditions:content:photo:g203-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "速限範圍不明確",
+            "titleKey": "g203-conditions:content:photo:g203-photo-3:title",
+            "imageKey": "g203-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "路面標字與速限標誌位置不同，限制範圍不易判讀。",
+                "textKey": "g203-conditions:content:photo:g203-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g203-lane-warning": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "左側車道、路寬縮減標誌，設於同向多車道或路寬縮減路段鄰近處。",
+            "textKey": "g203-lane-warning|1|text-6"
+          },
+          {
+            "id": "point-b141adf7-58db-4f90-93a8-449e087e1c84",
+            "text": "以設置於漸變起始處為原則。",
+            "textKey": "g203-lane-warning|content|articles|point-b141adf7-58db-4f90-93a8-449e087e1c84"
+          }
+        ]
+      },
+      "g203-speed": {
+        "points": [
+          {
+            "id": "point-935adade-d942-456e-9bdf-1bf1cd3374d9",
+            "text": "速限之變更建議於路段中進行，避免駕駛人於路口中改變行駛速率。儘管最高速限標誌設立處之橫斷面始為速限生效處。",
+            "textKey": "g203-speed|content|articles|point-935adade-d942-456e-9bdf-1bf1cd3374d9"
+          },
+          {
+            "id": "point-original-1",
+            "text": "依設置規則§ 85，行車管制號誌路口遠端適當距離處。",
+            "textKey": "g203-speed|1|text-7"
+          },
+          {
+            "id": "point-a05dc027-bff8-4f1d-9b3d-02fe3eaea1e8",
+            "text": "速限標字應與速限標誌設於同一橫斷面。",
+            "textKey": "g203-speed|content|articles|point-a05dc027-bff8-4f1d-9b3d-02fe3eaea1e8"
+          }
+        ]
+      },
+      "g203-left-signal": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "左轉專用號誌與附牌配合左轉待轉區位置，燈面須在停等位置可辨識。",
+            "textKey": "g203-left-signal|1|text-6"
+          }
+        ]
+      },
+      "g203-visible-1": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "在本路口中，因為路口寬敞，可透過視模板檢查決定某方向是否需要加設近端柱立式號誌，以符合【設置規則§ 201:2】要求的看到兩面燈面。",
+            "textKey": "g203-visible-1|1|text-6"
+          }
+        ]
+      },
+      "g203-visible-2": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "透過可視模板檢查後，需要加設近端柱立式號誌，以符合【設置規則§ 201:2】要求的看到兩面燈面。",
+            "textKey": "g203-visible-2|1|text-6"
+          }
+        ]
+      },
+      "g203-visible-3": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "透過可視模板檢查後，需要加設近端柱立式號誌，以符合【設置規則§ 201:2】要求的看到兩面燈面。",
+            "textKey": "g203-visible-3|1|text-6"
+          }
+        ]
+      },
+      "g203-privacy": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "當駕駛人有誤看其他燈號可能時，就需要對燈面處理，讓駕駛人只看得到屬於自己正確方向的燈面，因此建議燈面5.3、2.3可以用特長筒式罩簷（民間俗稱「砲筒」），即可正確對應至管制的路段。",
+            "textKey": "g203-privacy|1|text-6"
+          }
+        ]
+      }
+    },
+    "overviews": {},
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

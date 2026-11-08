@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G1-04",
+  "texts": {
+    "rural-merge-yield-sign|1|text-8": "若受路側空間影響，建議本標誌設置位置不宜超過讓路線倒三角尖端處。",
+    "rural-merge-centerline|1|text-7": "分向限制線沿島側佈設，惟不包覆。",
+    "rural-merge-centerline|0|text-4": "中央分隔島側邊劃設單黃實線。",
+    "rural-merge-lanes|0|text-4": "\n",
+    "rural-merge-lanes|1|text-8": "\n",
+    "rural-merge-lanes|1|text-9": "\n",
+    "g104-review|0|text-5": "慢車道分隔、速限標字與標誌配合。",
+    "g104-review|0|text-7": "分隔島頭則以遵行方向與危險標記提示安全行駛位置。",
+    "g104-review|0|text-6": "分隔島導引"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {
+      "rural-merge-yield-sign": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "當無號誌路口之次要道路屬於視線良好者，建議於次要道路口處設置讓路標誌「遵2」。",
+            "textKey": "rural-merge-yield-sign|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "依設置規則本標誌設於約路口範圍5 m之內，此標誌係為提醒駕駛人通過此無號誌路口時，應減速慢行讓主要道路車輛先行。",
+            "textKey": "rural-merge-yield-sign|1|text-7"
+          }
+        ]
+      },
+      "rural-merge-centerline": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "當主要道路設有中央分隔島時，若需劃設分向限制線時以單黃實線方式設於分向島之兩側，與分向島間隔建議至少0.10 m。",
+            "textKey": "rural-merge-centerline|1|text-6"
+          },
+          {
+            "id": "point-fce23431-e363-471a-859a-dd96f47e8343",
+            "text": "依照設施規則標線不包覆島頭的方式進行佈設",
+            "textKey": "rural-merge-centerline|content|articles|point-fce23431-e363-471a-859a-dd96f47e8343"
+          }
+        ]
+      },
+      "rural-merge-keep-right": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "由於靠右行駛標誌主要用以告示車輛駕駛人必須靠分向設施之右側行駛，因此建議靠右行駛標誌設置於中央分隔島之島頭處，並搭配設置危險標記第三類。",
+            "textKey": "rural-merge-keep-right|1|text-6"
+          },
+          {
+            "id": "point-f619d726-64fc-4379-bd2f-7d8e64f0d606",
+            "text": "靠右行駛標誌底邊高度以不高於路面0.60 m為原則。",
+            "textKey": "rural-merge-keep-right|content|articles|point-f619d726-64fc-4379-bd2f-7d8e64f0d606"
+          }
+        ]
+      },
+      "rural-merge-lanes": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "主要道路佈設慢車道時，速限不得超過40 km/h。",
+            "textKey": "rural-merge-lanes|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "透過路口處佈設路口行車導引線，可提醒用路人此有次要道路交岔需注意行駛。",
+            "textKey": "rural-merge-lanes|1|text-7"
+          },
+          {
+            "id": "point-f1e3fc31-9420-45aa-b9da-347c10bdfe40",
+            "text": "本標線應於慢車道由左至右併排繪設機車圖案及自行車圖案，每過交岔路口入口處標繪之。",
+            "textKey": "rural-merge-lanes|content|articles|point-f1e3fc31-9420-45aa-b9da-347c10bdfe40"
+          }
+        ]
+      },
+      "rural-merge-crosswalk": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "如次要道路有佈設行穿線之需求時，可於次要道路口佈設行穿線。",
+            "textKey": "rural-merge-crosswalk|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "由於主要道路有較寬之路肩，可同時搭配佈設標線型人行道，並於路緣轉角處以佈設槽化線方式提供緩衝空間。",
+            "textKey": "rural-merge-crosswalk|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "如次要道路評估行人通行需求較低，則路口得不設置行穿線。",
+            "textKey": "rural-merge-crosswalk|1|text-8"
+          }
+        ]
+      },
+      "rural-merge-speed-sign": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "快、慢車道速限不同且未設中央分隔島時，速限資訊須明確對應適用車道。以最高速限標誌加設附牌表示。",
+            "textKey": "rural-merge-speed-sign|1|text-6"
+          },
+          {
+            "id": "point-b8a71858-2c9f-449a-a042-f96fe58ed4c1",
+            "text": "快車道速限在上；慢車道速限在下。",
+            "textKey": "rural-merge-speed-sign|content|articles|point-b8a71858-2c9f-449a-a042-f96fe58ed4c1"
+          },
+          {
+            "id": "point-9be166e6-1380-494b-887a-5d9b9884f155",
+            "text": "若涉有速限標字，則與標誌應相互配合。",
+            "textKey": "rural-merge-speed-sign|content|articles|point-9be166e6-1380-494b-887a-5d9b9884f155"
+          }
+        ]
+      },
+      "rural-merge-speed": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "速度限制標字為黃色數字，用以告示前方道路最高行車時速限制，設置位置須配合路段起點與路口遠端條件。",
+            "textKey": "rural-merge-speed|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "速度限制標字與最高速限標誌得同時或擇一設置；本指引建議兩者配合，以利辨識速限。",
+            "textKey": "rural-merge-speed|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "本例快、慢車道速限不同，各車道之速限標字與標誌應相互配合。",
+            "textKey": "rural-merge-speed|1|text-8"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g104-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "明確讓路位置與視距條件",
+            "titleKey": "g104-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "rural-merge-yield-line",
+              "rural-merge-yield-sign"
+            ],
+            "targetId": "rural-merge-yield-line"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "整合分隔島與方向導引",
+            "titleKey": "g104-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "rural-merge-centerline",
+              "rural-merge-keep-right",
+              "rural-merge-island"
+            ],
+            "targetId": "rural-merge-island"
+          },
+          {
+            "id": "strategy-original-4",
+            "title": "分別提示快慢車道速限",
+            "titleKey": "g104-overview|strategy|strategy-original-4|title",
+            "articleIds": [
+              "rural-merge-speed",
+              "rural-merge-speed-sign"
+            ],
+            "targetId": "rural-merge-speed"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "依人行需求比較配置",
+            "titleKey": "g104-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "rural-merge-crosswalk"
+            ],
+            "targetId": "rural-merge-crosswalk"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

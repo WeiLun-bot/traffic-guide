@@ -4,6 +4,7 @@
   await window.presentationDataReady;
   await window.visualLayoutReady;
   const repository=window.PresentationRepository;
+  await window.PresentationReferences?.ready;
   const data = repository?repository.fresh():JSON.parse(document.getElementById('presentation-data').textContent);
   await window.presentationModulesReady;
   await window.presentationStructureReady;
@@ -33,7 +34,7 @@
     if(page.kind==='contents')return '從路口型態，找到對應情境。';
     if(page.kind==='scenario-directory')return '全部情境總覽';
     if(page.kind==='chapter-scenarios')return '無號誌三岔路口從正交，到匯入。';
-    if(page.kind==='current-conditions')return '現況問題';
+    if(page.kind==='current-conditions')return '現況分析';
     if(page.kind==='scenario-comparison')return /^G\d-\d{2}$/.test(window.PresentationScenarios.sceneFor(page,data).code)?'行穿線設置條件與方案比較':'有、無行穿線，怎麼選？';
     if(page.kind==='map')return !page.article?'整體佈設策略':page.article.category==='道路設施'?'道路設施運用解說':(page.article.category||'交通設施')+'條文運用解說';
     if(['context','review'].includes(page.kind)){
@@ -61,7 +62,8 @@
   window.PresentationModules?.syncPages(pages);
   window.PresentationStructure?.organize(pages);
   window.PresentationOrder?.organize(pages,data,window.visualLayoutEditor?.store.config);
-  const makeStops = () => pages.flatMap((page,index) => Array.from({length:page.article?2:page.kind==='results'?window.PresentationResults.stepCount(page):page.kind==='module'?page.stepCount||1:page.kind==='custom'&&['steps','compare'].includes(page.type)?page.steps.length:1},(_,phase)=>({page:index,phase})));
+  const generalArticle=page=>Boolean(page.article&&/^g[1-4]-\d{2}$/.test(page.scenario));
+  const makeStops = () => pages.flatMap((page,index) => generalArticle(page)?[{page:index,phase:1}]:Array.from({length:page.article?2:page.kind==='results'?window.PresentationResults.stepCount(page):page.kind==='module'?page.stepCount||1:page.kind==='custom'&&['steps','compare'].includes(page.type)?page.steps.length:1},(_,phase)=>({page:index,phase})));
   const stops = makeStops();
   let position = -1;
   let fullPeek = false;
@@ -111,7 +113,8 @@
   $('chapters').innerHTML = data.chapters.map(chapterButton).join('');
   function updateContents() {
     $('page-total').textContent = String(pages.length).padStart(2,'0');
-    if(window.PresentationStructure)window.PresentationStructure.refreshToc(pages,scenarioUI);else $('toc-content').innerHTML=scenarioUI.toc(pages);
+    const visible=editor?.editing?pages:pages.filter(page=>!window.PresentationOrder?.hidden(page));
+    if(window.PresentationStructure)window.PresentationStructure.refreshToc(visible,scenarioUI);else $('toc-content').innerHTML=scenarioUI.toc(visible);
   }
   updateContents();
 
@@ -207,7 +210,7 @@
     $('zoom-label').hidden = !zoomed;
     $('zoom-label').textContent = article ? `${article.regLabel||'§ '+article.reg} / 局部放大` : '';
     $('map-svg-title').textContent = article ? `${currentScene.code} ${article.name}，${zoomed?'局部放大':'全圖框選位置'}` : currentScene.code+' '+currentScene.name+'交通設施整體圖';
-    $('selection-group').style.display = article && (editor?.adjusting || !editor?.needsAlignment(article.id)) ? '' : 'none';
+    $('selection-group').style.display = article && !editor?.state.highlights['article:'+article.id]?.deleted && (editor?.adjusting || !editor?.needsAlignment(article.id)) ? '' : 'none';
     $('main-map').dataset.editorImageKey=currentScene.overall;
     $('main-map').dataset.scenarioId=currentScene.id;
     if(article) {
@@ -288,6 +291,8 @@
   }
   function navigate(index, options={}) {
     index=Math.max(0,Math.min(stops.length-1,index));
+    const requested=pages[stops[index].page];
+    if(!editor?.editing&&window.PresentationOrder?.hidden(requested))return goPage(data.scenarios.find(s=>s.id===requested.scenario).overviewId,0,{...options,hash:true});
     if(!editor?.editing&&pages[stops[index].page].article&&stops[index].phase===0) {
       index=stops.findIndex(stop=>stop.page===stops[index].page&&stop.phase===1);
     }
@@ -365,6 +370,7 @@
     window.PresentationOrder?.mount(window.generalRoadPresentation);
     window.PresentationImageOrder?.mount(window.generalRoadPresentation);
     window.GeneralScenarioLayout?.decorate(page);
+    window.PresentationReferences?.mount(page);
     window.PresentationText?.apply(document.body);
     restoreScroll(previousScroll);
     if(options.hash!==false) {
@@ -378,6 +384,7 @@
     if(resolved!==id)options={...options,force:true};
     id=resolved;
     const page=pages.findIndex(item=>item.id===id);
+    if(generalArticle(pages[page]||{}))phase=1;
     const index=stops.findIndex(stop=>stop.page===page&&stop.phase===phase);
     if(index>=0)return navigate(index,options);
   }
@@ -431,7 +438,8 @@
     const id=resolvePageId(requestedId,phase);
     const page=pages.findIndex(item=>item.id===id);
     const rawPhase=phase==='zoom'?1:/^step-\d+$/.test(phase||'')?Number(phase.slice(5)):0;
-    const requestedPhase=pages[page]?.resultType==='comparison'?Math.min(rawPhase,window.PresentationResults.stepCount(pages[page])-1):rawPhase;
+    const requestedPhase=generalArticle(pages[page]||{})?1:pages[page]?.resultType==='comparison'?Math.min(rawPhase,window.PresentationResults.stepCount(pages[page])-1):rawPhase;
+    if(generalArticle(pages[page]||{})&&phase!=='zoom')history.replaceState(null,'',location.pathname+location.search+'#'+id+'/zoom');
     const index=stops.findIndex(stop=>stop.page===page&&stop.phase===requestedPhase);
     return navigate(index>=0?index:0,{hash:false,force:pages[page]?.kind==='module'});
   }
@@ -491,6 +499,7 @@
     window.PresentationStructure?.organize(pages);
     window.PresentationOrder?.organize(pages,data,window.visualLayoutEditor?.store.config);
     id=resolvePageId(id);
+    if(generalArticle(pages.find(page=>page.id===id)||{}))phase=1;
     const comparison=pages.find(page=>page.id===id&&page.resultType==='comparison');if(comparison)phase=Math.min(phase,window.PresentationResults.stepCount(comparison)-1);
     stops.splice(0,stops.length,...makeStops());
     updateContents();
@@ -503,7 +512,7 @@
     const page=currentPage();
     if(page.kind==='results')return window.PresentationResults?.frames()||[];
     if(page.kind==='module')return window.PresentationModules?.frames()||[];
-    if(page.article&&$('main-map')) return [{key:'article:'+page.id,label:page.article.name,element:$('main-map'),width:fullView[2],height:fullView[3],imageKey:scene().overall,articleId:page.id,getBox:()=>displayBounds(page.article.box),getCrop:()=>displayBounds(page.article.crop),toSource:sourceBounds,fromSource:displayBounds,setBounds:(kind,bounds)=>{const raw=sourceBounds(bounds);page.article[kind]=raw;return raw;}}];
+    if(page.article&&$('main-map')) return editor.articleFrames({key:'article:'+page.id,label:page.article.name,element:$('main-map'),width:fullView[2],height:fullView[3],imageKey:scene().overall,articleId:page.id,getBox:()=>displayBounds(page.article.box),getCrop:()=>displayBounds(page.article.crop),toSource:sourceBounds,fromSource:displayBounds,setBounds:(kind,bounds)=>{const raw=sourceBounds(bounds);page.article[kind]=raw;return raw;}});
     if(page.kind!=='custom') return [];
     return [...document.querySelectorAll('[data-custom-frame]')].map(element=>{
       const side=element.dataset.customFrame;

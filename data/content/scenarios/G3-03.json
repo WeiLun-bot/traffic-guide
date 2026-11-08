@@ -1,8 +1,18 @@
 {
   "schemaVersion": 1,
   "owner": "scenarios/G3-03",
-  "texts": {},
-  "images": {},
+  "texts": {
+    "g303-conditions:content:photo:g303-photo-3:title": "外側車道兼供停車",
+    "g303-conditions:content:photo:g303-photo-3:point-0": "停車與行車使用同一外側空間，邊界不明確。",
+    "g303-hump-warning|1|text-7": "\n",
+    "g303-review|shared|title": "連續人行道與次要道路減速平台。"
+  },
+  "images": {
+    "g303-photo-2": {
+      "src": "materials/edited/51ab07a5c8647811c43ee12aee4813cfb3b13935b6bb9c30629f6983af9f3b77.jpeg",
+      "alt": "25.0841816,121.548864_202502.jpg"
+    }
+  },
   "blocks": {},
   "pages": [],
   "content": {
@@ -10,16 +20,16 @@
       "g303-conditions": {
         "issues": [
           {
-            "id": "issue-original-0",
-            "title": "先行權僅以標字表示",
-            "titleKey": "g303-conditions:content:photo:g303-photo-1:title",
-            "imageKey": "g303-photo-1",
+            "id": "issue-original-3",
+            "title": "路權僅靠標誌宣告",
+            "titleKey": "g303-conditions:content:photo:g303-photo-4:title",
+            "imageKey": "g303-photo-4",
             "photo": true,
             "points": [
               {
-                "id": "issue-original-0-point-0",
+                "id": "issue-original-3-point-0",
                 "text": "現況僅以路面標字區分主次道路，管制提示不夠完整。",
-                "textKey": "g303-conditions:content:photo:g303-photo-1:point-0"
+                "textKey": "g303-conditions:content:photo:g303-photo-4:point-0"
               }
             ]
           },
@@ -38,39 +48,83 @@
             ]
           },
           {
-            "id": "issue-original-2",
-            "title": "外側車道兼供停車",
-            "titleKey": "g303-conditions:content:photo:g303-photo-3:title",
-            "imageKey": "g303-photo-3",
+            "id": "issue-original-0",
+            "title": "行車空間分隔不明確",
+            "titleKey": "g303-conditions:content:photo:g303-photo-1:title",
+            "imageKey": "g303-photo-1",
             "photo": true,
             "points": [
               {
-                "id": "issue-original-2-point-0",
-                "text": "停車與行車使用同一外側空間，邊界不明確。",
-                "textKey": "g303-conditions:content:photo:g303-photo-3:point-0"
-              }
-            ]
-          },
-          {
-            "id": "issue-original-3",
-            "title": "路權僅靠標誌宣告",
-            "titleKey": "g303-conditions:content:photo:g303-photo-4:title",
-            "imageKey": "g303-photo-4",
-            "photo": true,
-            "points": [
-              {
-                "id": "issue-original-3-point-0",
-                "text": "現況僅以路面標字區分主次道路，管制提示不夠完整。",
-                "textKey": "g303-conditions:content:photo:g303-photo-4:point-0"
+                "id": "issue-original-0-point-0",
+                "text": "外側車道同時提供路邊停車使用",
+                "textKey": "g303-conditions:content:photo:g303-photo-1:point-0"
               }
             ]
           }
         ]
       }
     },
-    "articles": {},
-    "overviews": {},
+    "articles": {
+      "g303-crosswalk": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本示例有行人南北向的穿越需求，且行人僅跨越兩車行道，槽化線僅作分隔使用，並無行人庇護功能，此外，行穿線上游處會增設停止線，使車輛行駛於此處時注意並停等行人通過。",
+            "textKey": "g303-crosswalk|1|text-6"
+          }
+        ]
+      },
+      "g303-hump-warning": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路面突然高聳路段鄰近處，宜設置該標誌，提醒駕駛人減速慢行。",
+            "textKey": "g303-hump-warning|1|text-6"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g303-overview": {
+        "items": [
+          {
+            "id": "strategy-original-1",
+            "title": "明示行人穿越與停讓",
+            "titleKey": "g303-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g303-crosswalk"
+            ],
+            "targetId": "g303-crosswalk"
+          },
+          {
+            "id": "strategy-original-0",
+            "title": "延續人行道與減速平台",
+            "titleKey": "g303-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g303-sidewalk"
+            ],
+            "targetId": "g303-sidewalk"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "提前預告路面高差",
+            "titleKey": "g303-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g303-hump-warning"
+            ],
+            "targetId": "g303-hump-warning"
+          }
+        ]
+      }
+    },
     "modules": {},
-    "results": {}
+    "results": {},
+    "references": {
+      "g303-hump-warning": {
+        "ids": [
+          "sight-distance"
+        ]
+      }
+    }
   }
 }

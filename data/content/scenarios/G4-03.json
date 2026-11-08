@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G4-03",
+  "texts": {
+    "g403-context|0|text-14": "路側使用明確化",
+    "g403-context|0|text-12": "路口車道數平衡",
+    "g403-left-waiting|0|text-4": "左彎待轉區配置須避開對向直行與左轉軌跡，並且不布設機慢車停等區。",
+    "g403-checklist|0|text-4": "南下及北上方向依可視模板增設近端柱立式號誌，以補足上游可視性。",
+    "g403-phase|0|text-4": "庇護島及行穿線配合行人等候與分段穿越，並與號誌時相銜接。",
+    "g403-phase|1|text-7": "輪放與共用車道的安排，可參閱市區正交案例，仍須檢查接收車道。",
+    "g403-review|0|text-1": "平衡上下游車道，以導引線銜接偏移；同時安排分段穿越行穿線、庇護及公車停靠。",
+    "g403-review|shared|title": "斜交偏移車道銜接與行人庇護配置。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g403-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-2",
+            "title": "行人穿越安全性不足",
+            "titleKey": "g403-conditions:content:photo:g403-photo-3:title",
+            "imageKey": "g403-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "行人穿越距離長，無設置行人庇護島\n",
+                "textKey": "g403-conditions:content:photo:g403-photo-3:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-0",
+            "title": "次要道路車道數不平衡",
+            "titleKey": "g403-conditions:content:photo:g403-photo-1:title",
+            "imageKey": "g403-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "離開路口車道數不等於進入路口車道數\n",
+                "textKey": "g403-conditions:content:photo:g403-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "公車停靠位置不明確",
+            "titleKey": "g403-conditions:content:photo:g403-photo-2:title",
+            "imageKey": "g403-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "缺少容易辨識的停靠區範圍，路側空間需要調整。",
+                "textKey": "g403-conditions:content:photo:g403-photo-2:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g403-guide": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "示例中次要道路的直行車道有明顯的橫向偏移，為使駕駛人能清楚辨識車道位置，並引導直行車輛通過路口，因此佈設路口行車導引線。",
+            "textKey": "g403-guide|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "本指引建議當車道出現（1）左右轉車道寬度有明顯變化（變寬或變窄）、（2）直行車道偏移、（3）為明確宣告直行車時，則建議佈設路口導引線。",
+            "textKey": "g403-guide|1|text-7"
+          }
+        ]
+      },
+      "g403-left-waiting": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "需設置距離中心不得少於3 m，須確保不會影響對向左轉彎及直行車的路徑位置，本指引建議佈設左彎待轉區線的車行道前，需先進行車行軌跡模擬，且如該車道佈設此標線則不布設機慢車停等區。",
+            "textKey": "g403-left-waiting|1|text-6"
+          }
+        ]
+      },
+      "g403-signal-plan": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "此道路佈設為市區斜交四叉路口，需經由「人因工程」方法檢驗是否各路口皆能見到兩組號誌，若無法看到兩組號誌，則需加設柱立式號誌。",
+            "textKey": "g403-signal-plan|1|text-6"
+          }
+        ]
+      },
+      "g403-checklist": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "南下及北上依可視模板需增設近端柱立式號誌。",
+            "textKey": "g403-checklist|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "東西向眩光需現地檢查。",
+            "textKey": "g403-checklist|1|text-7"
+          }
+        ]
+      },
+      "g403-phase": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "庇護島及行穿線配合行人等候與分段穿越。",
+            "textKey": "g403-phase|1|text-6"
+          },
+          {
+            "id": "point-b204ebc5-8a1e-49b0-937b-24b69b2f575d",
+            "text": "行穿線之枕木方向應沿車行方向劃設。",
+            "textKey": "g403-phase|content|articles|point-b204ebc5-8a1e-49b0-937b-24b69b2f575d"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g403-overview": {
+        "items": [
+          {
+            "id": "strategy-original-1",
+            "title": "保留行人庇護空間",
+            "titleKey": "g403-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g403-island"
+            ],
+            "targetId": "g403-island"
+          },
+          {
+            "id": "strategy-original-0",
+            "title": "銜接偏移直行車道",
+            "titleKey": "g403-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g403-guide"
+            ],
+            "targetId": "g403-guide"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "銜接無障礙穿越引導",
+            "titleKey": "g403-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g403-accessible-crosswalk"
+            ],
+            "targetId": "g403-accessible-crosswalk"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "逐方向檢查號誌與待轉視角",
+            "titleKey": "g403-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g403-signal-plan"
+            ],
+            "targetId": "g403-signal-plan"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

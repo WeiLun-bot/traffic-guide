@@ -187,7 +187,7 @@ test('rotated cameras fit the original bounds and capture the same zoom/position
 
 test('structured content is backward compatible and preserves identities through ordering, deletion, history and JSON',()=>{
   const legacy=original();delete legacy.content;
-  const store=new Core.Store(legacy);assert.deepEqual(store.config.content,{conditions:{},articles:{},overviews:{},modules:{},results:{}});
+  const store=new Core.Store(legacy);assert.deepEqual(store.config.content,{conditions:{},articles:{},overviews:{},modules:{},results:{},references:{}});
   const next=store.snapshot();
   const point=id=>({id,text:'說明 '+id,textKey:'context|content|'+id});
   next.content.conditions['g101-conditions']={issues:[{id:'issue-a',title:'現況問題',titleKey:'context|title',imageKey:'content:issue-a',photo:false,points:[point('a'),point('b')]}]};

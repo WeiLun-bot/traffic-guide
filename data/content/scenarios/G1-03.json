@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G1-03",
+  "texts": {
+    "g103-context|0|text-11": "透過禁行及遵行方向標誌明示巷道匯入主要道路時的轉向限制。",
+    "g103-overview|0|text-3": "以右進右出的匯入動線為主軸，串接道路遵行方向與禁止左轉標誌、直右車道指向線，並整合人行與路側空間。",
+    "urban-merge-direction|0|text-4": "僅准左轉或僅准右轉道路遵行方向標誌設於主要道路對側、巷道行車方向的路口遠端。",
+    "g103-review|shared|title": "右進右出的轉向限制與巷道空間配置。",
+    "g103-review|0|text-2": "依車道寬度決定指向線布設方式",
+    "g103-review|0|text-3": "本例維持外側直行與右轉共用，依車道寬度選擇指向線布設方式",
+    "g103-review|0|text-6": "在支道臨近路口明示轉向限制"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g103-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "匯入方向、速限",
+            "titleKey": "g103-conditions:G1:photo:g103-photo-1:title",
+            "imageKey": "g103-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "主要道路未設道路遵行方向或禁行方向標誌。",
+                "textKey": "g103-conditions:G1:photo:g103-photo-1:point-0"
+              },
+              {
+                "id": "issue-original-0-point-1",
+                "text": "主要道路未設「岔路」標誌。",
+                "textKey": "g103-conditions:G1:photo:g103-photo-1:point-1"
+              },
+              {
+                "id": "issue-original-0-point-2",
+                "text": "次要道路僅有地面速限標字，未設「最高速限」標誌。",
+                "textKey": "g103-conditions:G1:photo:g103-photo-1:point-2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "urban-merge-no-left": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路口行駛方向有所限制時，應設置禁行方向標誌。",
+            "textKey": "urban-merge-no-left|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "以設置於車行道右側為原則，得加設於左側。",
+            "textKey": "urban-merge-no-left|1|text-7"
+          },
+          {
+            "id": "point-1ba56fc1-c6e3-45a9-a952-d9bd4c473f3b",
+            "text": "得改以起點形式為直行的道路遵行方向標誌設置。",
+            "textKey": "urban-merge-no-left|content|articles|point-1ba56fc1-c6e3-45a9-a952-d9bd4c473f3b"
+          }
+        ]
+      },
+      "urban-merge-direction": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路口行駛方向有所限制時，應設置遵行方向標誌。",
+            "textKey": "urban-merge-direction|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "僅准左轉或僅准右轉設於遠端，其他起點形式為直行的道路遵行方向標誌設於近端。",
+            "textKey": "urban-merge-direction|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "故本示例建議「遵8」設於路口遠端，以車行方向中軸線為原則。",
+            "textKey": "urban-merge-direction|1|text-8"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g103-overview": {
+        "items": [
+          {
+            "id": "strategy-original-2",
+            "title": "在巷道明示禁止左轉",
+            "titleKey": "g103-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "urban-merge-no-left"
+            ],
+            "targetId": "urban-merge-no-left"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "在遠端提示道路遵行方向",
+            "titleKey": "g103-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "urban-merge-direction"
+            ],
+            "targetId": "urban-merge-direction"
+          },
+          {
+            "id": "strategy-original-0",
+            "title": "提示車道行駛動線",
+            "titleKey": "g103-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "urban-merge-arrows"
+            ],
+            "targetId": "urban-merge-arrows"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

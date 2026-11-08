@@ -5,7 +5,7 @@ const original=()=>require('./read-project-config.cjs')();
 
 test('general article categories preserve existing order, append new articles to primary and keep scenarios isolated',()=>{
   const items=['a','b','c','new'].map(id=>({id})),config={navigationOrders:{'scenario:g1-01':['c','b','a']},scenarioOtherArticles:{'g1-01':['removed','b']}};
-  assert.deepEqual(Order.articleGroups(items,'g1-01',config),{primary:[items[0],items[2],items[3]],other:[items[1]]});
+  assert.deepEqual(Order.articleGroups(items,'g1-01',config),{primary:[items[0],items[2],items[3]],other:[items[1]],hidden:[]});
   assert.deepEqual(Order.forKey(items,'scenario:g1-01',config).map(item=>item.id),['c','a','new','b']);
   assert.deepEqual(Order.forKey(items,'scenario:g1-02',config),items);
   const scene={id:'g1-01',articleIds:['a','b','c'],comparisonId:'compare'},pages=[{id:'a',scenario:scene.id,article:{reg:'183'}},{id:'b',scenario:scene.id,article:{reg:'185'}},{id:'compare',scenario:scene.id},{id:'c',scenario:scene.id,article:{reg:'30'}}];

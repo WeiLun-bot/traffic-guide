@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G4-04",
+  "texts": {
+    "g404-speed|1|text-7": "\n",
+    "g404-review|0|text-1": "槽化配置平衡車道並保留左轉空間，庇護島提供行人等候空間；號誌布設確保防窺。",
+    "g404-review|shared|title": "銳角右轉車道配置與號誌布設確保防窺。",
+    "g404-review|0|text-4": "車道速限資訊",
+    "g404-review|0|text-5": "快慢車道速限不同且無中央分隔島時，透過最高速限＋附牌表示不同車道速限。",
+    "g404-review|0|text-6": "號誌布設確保防窺",
+    "g404-review|0|text-7": "斜交路口（60 度以內）防窺處理檢查。",
+    "g404-context|0|text-14": "速限與號誌提示不足",
+    "g404-near-highspeed|1|text-7": "\n"
+  },
+  "images": {
+    "g404-photo-1": {
+      "src": "materials/edited/9b6e6713fa2a5e5f8812d7bd2e6feea6d27788fd855a88282a6220d8efdfb15f.jpeg",
+      "alt": "24.8390985,121.8244778_202507.jpg"
+    },
+    "g404-photo-2": {
+      "src": "materials/edited/7dced9095f647c31c3364d2e4fdf9cf3698a879c80b70dc43ba06efdf2b6eeb0.jpeg",
+      "alt": "24.8394588,121.8243838_202507.jpg"
+    },
+    "g404-photo-3": {
+      "src": "materials/edited/c5859293f5a56f5ab43fdce9a1978684db24c490d1ed41765a58d76071034db0.jpeg",
+      "alt": "24.8390217,121.8244566_202507.jpg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g404-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "行人穿越安全性不足",
+            "titleKey": "g404-conditions:content:photo:g404-photo-1:title",
+            "imageKey": "g404-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "主要道路行人穿越距離長，無設置行人庇護島\n",
+                "textKey": "g404-conditions:content:photo:g404-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "主要道路車道銜接不一致",
+            "titleKey": "g404-conditions:content:photo:g404-photo-2:title",
+            "imageKey": "g404-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "路口進出車道數不同，行車動線需要清楚引導。",
+                "textKey": "g404-conditions:content:photo:g404-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "速限資訊不明",
+            "titleKey": "g404-conditions:content:photo:g404-photo-3:title",
+            "imageKey": "g404-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "主要道路僅部分方向有速限提示，次要道路則缺少速限標示。",
+                "textKey": "g404-conditions:content:photo:g404-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g404-lane-warning": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "右側車道、路寬縮減標誌，設於同向多車道或路寬縮減路段鄰近處。",
+            "textKey": "g404-lane-warning|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "§ 23 警告標誌設置位置與警告標的物起點之距離，應配合行車速率，自45–200 m為度，如受實際情形限制，得酌予變更。但其設置位置必須明顯，並不得少於安全停車視距。",
+            "textKey": "g404-lane-warning|1|text-7"
+          }
+        ]
+      },
+      "g404-speed": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "快、慢車道速限不同且未設中央分隔島時，速限資訊須明確對應適用車道。以最高速限標誌加設附牌表示。",
+            "textKey": "g404-speed|1|text-6"
+          },
+          {
+            "id": "point-99425f74-9c3f-4c0f-bb12-b22ceeadf1fa",
+            "text": "快車道速限在上；慢車道速限在下。",
+            "textKey": "g404-speed|content|articles|point-99425f74-9c3f-4c0f-bb12-b22ceeadf1fa"
+          },
+          {
+            "id": "point-2dd35d27-0906-48ed-b37c-31c6a2ffefa9",
+            "text": "若涉有速限標字，則與標誌應相互配合。",
+            "textKey": "g404-speed|content|articles|point-2dd35d27-0906-48ed-b37c-31c6a2ffefa9"
+          }
+        ]
+      },
+      "g404-privacy": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "當駕駛人有誤看其他燈號可能時，就需要對燈面處理，讓駕駛人只看得到屬於自己正確方向的燈面，因此建議燈面可以用特長筒式罩簷（民間俗稱「砲筒」），即可正確對應至管制的路段。",
+            "textKey": "g404-privacy|1|text-6"
+          }
+        ]
+      },
+      "g404-near-highspeed": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "依設置規則§ 201 第2款規定：「行車管制號誌應使車輛駕駛人在距停止線之左表列距離前能同時辨認兩個以上顯示相同燈號之燈面。如因路況限制無法符合下表要求時，應於號誌將近之處輔設「注意號誌」標誌，或作速率限制。」",
+            "textKey": "g404-near-highspeed|1|text-6"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g404-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "調整銳角右轉與車道縮減",
+            "titleKey": "g404-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g404-lane-reduction"
+            ],
+            "targetId": "g404-lane-reduction"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "提供速限資訊",
+            "titleKey": "g404-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g404-speed"
+            ],
+            "targetId": "g404-speed"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "號誌辨識",
+            "titleKey": "g404-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g404-permissive",
+              "g404-protected",
+              "g404-near-highspeed",
+              "g404-privacy"
+            ],
+            "targetId": "g404-near-highspeed"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "機會與保護左轉",
+            "titleKey": "g404-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g404-permissive",
+              "g404-protected",
+              "g404-near-highspeed",
+              "g404-privacy"
+            ],
+            "targetId": "g404-permissive"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {
+      "g404-lane-warning": {
+        "ids": [
+          "sight-distance"
+        ]
+      }
+    }
+  }
+}

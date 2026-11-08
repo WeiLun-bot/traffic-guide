@@ -2,16 +2,246 @@
   "schemaVersion": 1,
   "owner": "scenarios/G4-02",
   "texts": {
-    "g402-signal-plan|1|text-2": "速幹道號誌配置"
+    "g402-signal-plan|1|text-2": "速幹道號誌配置",
+    "g402-context|0|text-14": "次要道路速限提示不足",
+    "g402-context|0|text-10": "提升行人穿越安全",
+    "g402-context|0|text-11": "以庇護島及錯開行穿線設置分段穿越。",
+    "g402-context|0|text-15": "並檢查號誌辨識。",
+    "g402-context|0|text-12": "路口上下游車道數對應",
+    "g402-context|0|text-13": "透過附加左轉車道與導引線銜接。",
+    "g402-conditions:content:takeaway": "維持主線直行車道連續，配置附加左轉車道、兩段式左轉及行人庇護。",
+    "g402-backboard|1|text-8": "\n",
+    "g402-no-uturn|1|text-8": "\n",
+    "g402-visibility-1|1|text-7": "由「可視模板」檢查後，確認遠端號誌不在可視範圍內，表示次要道路駕駛人於上游時無法辨認遠端號誌，因此建議於近端加設柱立式號誌（東行為號誌燈面「3直」、西行為號誌燈面「4直」），以符合設置規則。",
+    "g402-visibility-1|1|text-2": "主要道路可視檢核",
+    "g402-visibility-1|0|text-3": "主要道路可視檢核",
+    "g402-visibility-1|0|text-4": "\n",
+    "g402-visibility-2|1|text-2": "次要道路可視檢核",
+    "g402-visibility-1|1|text-8": "\n",
+    "g402-review|shared|title": "機慢車轉向配置與高速路口的號誌辨識性。",
+    "g402-review|0|text-2": "號誌燈面辨識性",
+    "g402-review|0|text-4": "安排兩段左轉動線",
+    "g402-review|0|text-3": "透過背板及增設柱立式號誌等措施提高鄉區道路高速情況下的號誌燈面辨識性，並確保安全淨空。"
   },
-  "images": {},
+  "images": {
+    "g402-photo-3": {
+      "src": "materials/edited/924b04e31a3b80d734d64182c8fbbd9af1f0ddf272f77c90802c487ca42bb0d0.jpeg",
+      "alt": "22.6817457,120.3553748_202602.jpg"
+    },
+    "g402-photo-2": {
+      "src": "materials/edited/52bec04a6abea0e075929040be35fe3e4b88f89ce263c95cd956d931217c99ee.jpeg",
+      "alt": "22.6816338,120.3551464_202405.jpg"
+    }
+  },
   "blocks": {},
   "pages": [],
   "content": {
-    "conditions": {},
-    "articles": {},
-    "overviews": {},
+    "conditions": {
+      "g402-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "過路口直行動線銜接不佳",
+            "titleKey": "g402-conditions:content:photo:g402-photo-1:title",
+            "imageKey": "g402-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "進入路口車道數未對應離開路口車道數",
+                "textKey": "g402-conditions:content:photo:g402-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-ad6fe3a2-22ab-4e35-8a49-df0f720da0ce",
+            "title": "機慢車兩段式左轉預告性不足",
+            "titleKey": "g402-conditions|content|issue-ad6fe3a2-22ab-4e35-8a49-df0f720da0ce|title",
+            "imageKey": "content:g402-conditions:issue-ad6fe3a2-22ab-4e35-8a49-df0f720da0ce",
+            "photo": false,
+            "points": [
+              {
+                "id": "point-3728ed12-3b7c-4f72-b173-b519558628c7",
+                "text": "主要道路車速快，未於路口上游加以提示機慢車兩段式左轉。",
+                "textKey": "g402-conditions|content|issue-ad6fe3a2-22ab-4e35-8a49-df0f720da0ce|point-3728ed12-3b7c-4f72-b173-b519558628c7"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "行人穿越安全性不足\n",
+            "titleKey": "g402-conditions:content:photo:g402-photo-2:title",
+            "imageKey": "g402-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "行人穿越距離長，缺少行人庇護島\n",
+                "textKey": "g402-conditions:content:photo:g402-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "次要道路速限不明確",
+            "titleKey": "g402-conditions:content:photo:g402-photo-3:title",
+            "imageKey": "g402-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "次要道路往西方向缺少速限標字與標誌。",
+                "textKey": "g402-conditions:content:photo:g402-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g402-direction": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "地名方向指示標誌之佈設可分為預告點、行動點與確認點，參考《道路指示標誌設置參考手冊》，預告點標誌設置於距離前方路口停止線100–130 m處，行動點標誌設置於距離前方路口不超過20 m處，確認點標誌（地名里程）設置於路口下游60–100 m處，設置圖例。",
+            "textKey": "g402-direction|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "本示例情境中所設置之地名方向指示標誌為「指22.2」屬於行動點標誌，若僅設置行動點標誌，則設置位置為不超過前方路口60 m處。",
+            "textKey": "g402-direction|1|text-7"
+          }
+        ]
+      },
+      "g402-backboard": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "以背板提升號誌辨識與警示。",
+            "textKey": "g402-backboard|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "背板及附屬部件均納入淨空檢核。依法高出路面4.60–5.60 m、高出人行道2.40 –4.60 m。依法號誌桿柱距離車道邊緣之距離大於0.30 m。",
+            "textKey": "g402-backboard|1|text-7"
+          }
+        ]
+      },
+      "g402-checklist": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "主線高速方向建議近端提供兩燈面。",
+            "textKey": "g402-checklist|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "次要道路補足上游辨識，東西向眩光需現地確認。",
+            "textKey": "g402-checklist|1|text-7"
+          }
+        ]
+      },
+      "g402-visibility-1": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "主要道路通過可視檢核。",
+            "textKey": "g402-visibility-1|1|text-6"
+          },
+          {
+            "id": "point-36f7c22d-3005-49e6-833c-66d31115aa4e",
+            "text": "鄉區公路若前後鄰近路口較遠，以及主要道路速率較\n高時，成本允許下建議近端提供兩燈面提升警示（增\n設柱立式號誌燈面）",
+            "textKey": "g402-visibility-1|content|articles|point-36f7c22d-3005-49e6-833c-66d31115aa4e"
+          }
+        ]
+      },
+      "g402-visibility-2": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "對於次要道路的用路人而言，由於主要道路路幅寬敞，導致遠端號誌立桿位置過遠，且有些許錯位非正交路口。",
+            "textKey": "g402-visibility-2|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "由「可視模板」檢查後，確認遠端號誌不在可視範圍內，表示次要道路駕駛人於上游時無法辨認遠端號誌，因此建議於近端加設柱立式號誌，以符合設置規則。",
+            "textKey": "g402-visibility-2|1|text-7"
+          }
+        ]
+      },
+      "g402-no-uturn": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "視距不足或迴轉易造成事故、壅塞時，明示禁止迴車。",
+            "textKey": "g402-no-uturn|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "近端若有分隔島設於分向島島頭，否則設於右側，必要時以附牌說明時段與車種。",
+            "textKey": "g402-no-uturn|1|text-7"
+          }
+        ]
+      },
+      "g402-signal-plan": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "此道路佈設為鄉區正交四叉路口，橫向道路為次要道路，南北向道路為主要道路。",
+            "textKey": "g402-signal-plan|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "本示例之主要道路為速限60 km/h，因此在「可視模板」檢核上需用「高速模板」，以符合人因工程車速偏高狀況下狹視之情形。",
+            "textKey": "g402-signal-plan|1|text-7"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g402-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "機慢車停等空間",
+            "titleKey": "g402-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g402-waiting"
+            ],
+            "targetId": "g402-waiting"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "兩段式左轉動線",
+            "titleKey": "g402-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g402-two-stage-area"
+            ],
+            "targetId": "g402-two-stage-area"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "分階段提供地名方向資訊",
+            "titleKey": "g402-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g402-direction"
+            ],
+            "targetId": "g402-direction"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "提升號誌辨識並檢核淨空",
+            "titleKey": "g402-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g402-backboard"
+            ],
+            "targetId": "g402-backboard"
+          }
+        ]
+      }
+    },
     "modules": {},
-    "results": {}
+    "results": {},
+    "references": {}
   }
 }

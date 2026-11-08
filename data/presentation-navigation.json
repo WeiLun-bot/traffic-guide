@@ -406,11 +406,11 @@
       "line"
     ],
     "scenario:g1-02": [
-      "rural-stopline",
-      "rural-stopword",
-      "rural-crosswalk",
       "rural-stop-sign",
-      "rural-warning"
+      "rural-stopword",
+      "rural-stopline",
+      "rural-warning",
+      "rural-crosswalk"
     ],
     "module:m201-yield-layout": [
       "sign",
@@ -421,17 +421,167 @@
       "g401-left-waiting",
       "g401-dotted",
       "g401-lane-advance",
-      "g401-signal-plan",
       "g401-visibility",
       "g401-checklist",
-      "g401-crosswalk",
       "g401-bus-bay",
       "g401-parking",
+      "g401-crosswalk",
+      "g401-signal-plan",
       "g401-phase-two",
       "g401-phase-three"
+    ],
+    "scenario:g1-01": [
+      "edge",
+      "guidance",
+      "taper",
+      "crosswalk",
+      "pedestrian",
+      "speed",
+      "school",
+      "arrows",
+      "parking"
+    ],
+    "scenario:g1-03": [
+      "urban-merge-no-left",
+      "urban-merge-direction",
+      "urban-merge-arrows"
+    ],
+    "scenario:g3-04": [
+      "g304-stopline",
+      "g304-edge",
+      "g304-crosswalk",
+      "g304-weight"
+    ],
+    "scenario:g4-02": [
+      "g402-two-stage-sign",
+      "g402-no-uturn",
+      "g402-direction",
+      "g402-waiting",
+      "g402-two-stage-area",
+      "g402-signal-plan",
+      "g402-backboard",
+      "g402-visibility-1",
+      "g402-visibility-2",
+      "g402-checklist"
+    ],
+    "review:g402-review": [
+      "row-1",
+      "row-0",
+      "row-2"
+    ],
+    "scenario:g4-03": [
+      "g403-guide",
+      "g403-left-waiting",
+      "g403-island",
+      "g403-accessible-crosswalk",
+      "g403-hospital",
+      "g403-two-stage-area",
+      "g403-signal-plan",
+      "g403-checklist",
+      "g403-phase"
+    ],
+    "scenario:g4-04": [
+      "g404-lane-reduction",
+      "g404-lane-warning",
+      "g404-speed",
+      "g404-near-highspeed",
+      "g404-privacy",
+      "g404-checklist",
+      "g404-permissive",
+      "g404-protected",
+      "g404-risk"
+    ],
+    "scenario:g1-04": [
+      "rural-merge-yield-line",
+      "rural-merge-yield-sign",
+      "rural-merge-centerline",
+      "rural-merge-keep-right",
+      "rural-merge-lanes",
+      "rural-merge-crosswalk",
+      "rural-merge-island",
+      "rural-merge-speed",
+      "rural-merge-speed-sign"
+    ],
+    "review:g104-review": [
+      "row-0",
+      "row-2",
+      "row-1"
+    ],
+    "scenario:g2-04": [
+      "g204-sidewalk",
+      "g204-trajectory",
+      "g204-bend",
+      "g204-signal-warning",
+      "g204-signal-plan",
+      "g204-recognition-distance",
+      "g204-curve-option-1",
+      "g204-curve-option-2",
+      "g204-curve-option-3",
+      "g204-near-alternative",
+      "g204-far-post",
+      "g204-checklist"
+    ],
+    "review:g204-review": [
+      "row-0",
+      "row-2",
+      "row-1"
+    ],
+    "review:g301-review": [
+      "row-1",
+      "row-0",
+      "row-2"
+    ],
+    "scenario:g3-02": [
+      "g302-channel",
+      "g302-junction-warning",
+      "g302-center",
+      "g302-edge",
+      "g302-crosswalk"
+    ],
+    "review:g303-review": [
+      "row-1",
+      "row-0",
+      "row-2"
+    ],
+    "scenario:g1-05": [
+      "g105-yellow-line",
+      "g105-no-parking-sign",
+      "g105-red-line",
+      "g105-no-stopping-sign",
+      "g105-parking-sign"
     ]
   },
-  "scenarioOtherArticles": {},
+  "scenarioOtherArticles": {
+    "g1-02": [],
+    "g1-03": [],
+    "g3-04": [],
+    "g4-01": [
+      "g401-crosswalk",
+      "g401-signal-plan",
+      "g401-phase-two",
+      "g401-phase-three"
+    ],
+    "g4-02": [],
+    "g4-03": [
+      "g403-two-stage-area",
+      "g403-signal-plan",
+      "g403-checklist",
+      "g403-phase"
+    ],
+    "g4-04": [
+      "g404-checklist",
+      "g404-permissive",
+      "g404-protected",
+      "g404-risk"
+    ],
+    "g1-04": [],
+    "g2-04": [],
+    "g3-02": [],
+    "g1-05": []
+  },
+  "scenarioHiddenArticles": {
+    "g1-05": []
+  },
   "imageOrders": {
     "results:results-scenario-g3-02/photo": [
       "results:g3-02-photo-2",

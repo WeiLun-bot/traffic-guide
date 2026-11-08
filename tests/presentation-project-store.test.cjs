@@ -38,7 +38,7 @@ test('legacy migration preserves collaborator edits, cameras, cover art and cont
   fs.mkdirSync(path.join(dir,'layout'),{recursive:true});fs.mkdirSync(path.join(dir,'data'),{recursive:true});fs.writeFileSync(path.join(dir,Document.layoutFile),JSON.stringify(c));
   fs.copyFileSync(path.join(root,'data/presentation-registry.json'),path.join(dir,'data/presentation-registry.json'));
   const result=Project.migrate({root:dir});assert(result.migrated);const migrated=Project.read(dir);
-  assert.deepEqual(migrated.config.content,c.content);assert.deepEqual(migrated.config.imageViews,Object.fromEntries(Object.entries(c.imageViews).filter(([,v])=>v.zoom!==1||v.x!==0||v.y!==0||(v.rotation||0)!==0)));assert.deepEqual(migrated.config.coverArt,c.coverArt);
+  assert.deepEqual(migrated.config.content,c.content);assert.deepEqual(migrated.config.imageViews,Object.fromEntries(Object.entries(c.imageViews).filter(([,v])=>v.zoom!==1||v.x!==0||v.y!==0||(v.rotation||0)!==0||v.fit||v.flipX||v.flipY||v.aspect)));assert.deepEqual(migrated.config.coverArt,c.coverArt);
   for(const [key,text]of Object.entries(c.legacyState.texts))assert.equal(migrated.config.legacyState.texts[key],text,'Text changed: '+key);
   assert(result.layoutBytes<result.beforeBytes);const revision=migrated.revision;assert.equal(Project.migrate({root:dir}).migrated,false);assert.equal(Project.read(dir).revision,revision);
 });

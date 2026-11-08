@@ -40,6 +40,7 @@
     for (const key of ['texts', 'images', 'highlights', 'disabledHighlights', 'styles', 'frames', 'layouts', 'blocks', 'comparisonTransforms', 'templateMigrations']) assert(record(value.legacyState[key]), '原簡報的 ' + key + ' 設定無效');
     for (const highlight of Object.values(value.legacyState.highlights)) {
       if (record(highlight) && highlight.rotation !== undefined) assert(Number.isFinite(highlight.rotation) && Math.abs(highlight.rotation) <= 360, '打亮框旋轉角度須介於 -360° 與 360°');
+      if(record(highlight)&&highlight.extraIds!==undefined)assert(Array.isArray(highlight.extraIds)&&highlight.extraIds.length<=30&&highlight.extraIds.every(id=>typeof id==='string'&&/^extra-[\w-]+$/.test(id))&&new Set(highlight.extraIds).size===highlight.extraIds.length,'多個打亮框設定無效');
     }
     assert(Array.isArray(value.legacyState.pages) && Array.isArray(value.legacyState.pageOrder), '原簡報的頁面設定無效');
     assert(record(value.elements) && Object.keys(value.elements).length <= 20000, '元素清單無效');
@@ -58,11 +59,14 @@
     if (result.navigationOrders === undefined) result.navigationOrders = {};
     assert(record(result.navigationOrders) && Object.keys(result.navigationOrders).length <= 2000, '導覽排序設定無效');
     for (const [key, ids] of Object.entries(result.navigationOrders)) {
-      assert(/^(module|scenario):[\w-]{1,160}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id => typeof id === 'string' && /^[\w-]{1,240}$/.test(id)) && new Set(ids).size === ids.length, '導覽排序清單無效');
+      assert(/^(module|scenario|review|context):[\w-]{1,160}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id => typeof id === 'string' && /^[\w-]{1,240}$/.test(id)) && new Set(ids).size === ids.length, '導覽排序清單無效');
     }
     if (result.scenarioOtherArticles === undefined) result.scenarioOtherArticles = {};
     assert(record(result.scenarioOtherArticles) && Object.keys(result.scenarioOtherArticles).length <= 2000, '情境條文分類設定無效');
     for (const [key, ids] of Object.entries(result.scenarioOtherArticles)) assert(/^g[1-4]-\d{2}$/.test(key) && Array.isArray(ids) && ids.length <= 300 && ids.every(id=>typeof id==='string'&&/^[\w-]{1,240}$/.test(id)) && new Set(ids).size===ids.length, '情境條文分類清單無效');
+    if(result.scenarioHiddenArticles===undefined)result.scenarioHiddenArticles={};
+    assert(record(result.scenarioHiddenArticles),'隱藏條文設定無效');
+    for(const [key,ids]of Object.entries(result.scenarioHiddenArticles))assert(/^g[1-4]-\d{2}$/.test(key)&&Array.isArray(ids)&&ids.length<=300&&ids.every(id=>typeof id==='string'&&/^[\w-]{1,240}$/.test(id))&&new Set(ids).size===ids.length,'隱藏條文清單無效');
     if (result.extensionLayouts === undefined) result.extensionLayouts = {};
     assert(record(result.extensionLayouts) && Object.keys(result.extensionLayouts).length <= 2000, '延伸應用版型設定無效');
     for (const [key, layout] of Object.entries(result.extensionLayouts)) assert(/^[\w-]{1,160}\/[\w-]{1,160}$/.test(key) && ['horizontal','vertical'].includes(layout), '延伸應用圖文排列無效');
@@ -85,6 +89,7 @@
       if (view.rotation === undefined) view.rotation = 0;
       assert(Number.isFinite(view.rotation) && Math.abs(view.rotation) <= 360, '旋轉角度須介於 -360° 與 360°');
       assert(view.fit===undefined||['all','width','height'].includes(view.fit),'圖面顯示方式無效');
+      assert(view.aspect===undefined||Number.isFinite(view.aspect)&&view.aspect>0&&view.aspect<=1000000,'圖面視框比例無效');
       for(const axis of ['flipX','flipY'])assert(view[axis]===undefined||typeof view[axis]==='boolean','圖面翻轉設定無效');
     }
     for (const [id, item] of Object.entries(result.elements)) {
@@ -107,7 +112,7 @@
     return text;
   }
   function validateContent(content) {
-    if (content === undefined) return {conditions:{},articles:{},overviews:{},modules:{},results:{}};
+    if (content === undefined) return {conditions:{},articles:{},overviews:{},modules:{},results:{},references:{}};
     assert(record(content) && record(content.conditions) && record(content.articles), '內容設定無效');
     if(content.overviews===undefined)content.overviews={};
     assert(record(content.overviews),'佈設策略設定無效');
@@ -115,9 +120,14 @@
     assert(record(content.modules),'模組說明設定無效');
     if(content.results===undefined)content.results={};
     assert(record(content.results),'情境議題與佈設說明設定無效');
+    if(content.references===undefined)content.references={};
+    assert(record(content.references),'參照設定無效');
     const id=value=>typeof value==='string' && /^[\w:-]{1,240}$/.test(value);
     const text=value=>typeof value==='string' && value.length<=100000;
     const key=value=>typeof value==='string' && value.length>0 && value.length<=1000 && !['__proto__','constructor','prototype'].includes(value);
+    for(const [page,entry]of Object.entries(content.references)){
+      assert(id(page)&&record(entry)&&Array.isArray(entry.ids)&&entry.ids.length<=100&&entry.ids.every(id)&&new Set(entry.ids).size===entry.ids.length,'參照清單無效');
+    }
     function points(items) {
       assert(Array.isArray(items) && items.length<=500, '說明項目清單無效');
       const seen=new Set();
@@ -186,7 +196,7 @@
   function viewBoxFor(home, settings) {
     home = rotatedHome(home, settings.rotation ?? 0);
     assert(Number.isFinite(settings.zoom) && settings.zoom > 0 && Number.isFinite(settings.x) && Number.isFinite(settings.y), '圖面視角設定無效');
-    const width = home[2] / settings.zoom, height = home[3] / settings.zoom;
+    const width = home[2] / settings.zoom, height = settings.aspect ? width / settings.aspect : home[3] / settings.zoom;
     return [home[0] + (home[2] - width) / 2 - width * settings.x / 100, home[1] + (home[3] - height) / 2 - height * settings.y / 100, width, height];
   }
   function rotatedHome(home, rotation) {
@@ -201,12 +211,44 @@
   }
   function settingsForView(home, view, rotation = 0) {
     home = rotatedHome(home, rotation); viewBounds(view);
-    return {zoom: home[2] / view[2], x: (home[0] + (home[2] - view[2]) / 2 - view[0]) / view[2] * 100, y: (home[1] + (home[3] - view[3]) / 2 - view[1]) / view[3] * 100, rotation};
+    return {zoom: home[2] / view[2], x: (home[0] + (home[2] - view[2]) / 2 - view[0]) / view[2] * 100, y: (home[1] + (home[3] - view[3]) / 2 - view[1]) / view[3] * 100, rotation,...(Math.abs(home[2]/home[3]-view[2]/view[3])>1e-10?{aspect:view[2]/view[3]}:{})};
   }
   function highlightAngle(value = 0) {
     assert(Number.isFinite(value), '打亮框旋轉角度無效');
     const angle = ((value + 180) % 360 + 360) % 360 - 180;
     return Math.abs(angle) < 1e-10 ? 0 : angle;
+  }
+  function cameraParameters(value){
+    const view={};for(const key of ['zoom','x','y','rotation','fit','flipX','flipY','aspect'])if(value[key]!==undefined)view[key]=value[key];
+    parseCameraParameters(JSON.stringify({kind:'traffic-camera',version:1,view}));
+    return JSON.stringify({kind:'traffic-camera',version:1,view},null,2);
+  }
+  function compareReferences(a,b){
+    const key=article=>{const label=article?.regLabel||'§ '+article?.reg,bracket=label.match(/^\[(\d+)([a-z]*)/i),number=(label+' '+(article?.reference||'')).match(/§\s*([\d.-]+)/);return {group:bracket?2:/^§\s*\d/.test(label)?0:/規範|標準/.test(label)?1:3,number:bracket?bracket[1]:number?.[1]||'999999',suffix:bracket?.[2]||''};};
+    const x=key(a),y=key(b);return x.group-y.group||(x.group===3?0:x.number.localeCompare(y.number,'en',{numeric:true})||x.suffix.localeCompare(y.suffix));
+  }
+  function parseCameraParameters(text){
+    const doc=JSON.parse(text);assert(doc?.kind==='traffic-camera'&&doc.version===1&&record(doc.view),'請貼上「初始畫面」參數');
+    const value=doc.view,view={};
+    assert(Number.isFinite(value.zoom)&&value.zoom>=.02&&value.zoom<=200,'初始縮放須介於 2% 與 20000%');
+    for(const key of ['x','y'])assert(Number.isFinite(value[key])&&Math.abs(value[key])<=1000,'初始圖面位置須介於 -1000% 與 1000%');
+    assert(Number.isFinite(value.rotation)&&Math.abs(value.rotation)<=360,'旋轉角度無效');
+    assert(value.fit===undefined||['all','width','height'].includes(value.fit),'圖面顯示方式無效');
+    assert(value.aspect===undefined||Number.isFinite(value.aspect)&&value.aspect>0&&value.aspect<=1000000,'圖面視框比例無效');
+    for(const key of ['flipX','flipY'])assert(value[key]===undefined||typeof value[key]==='boolean','圖面翻轉設定無效');
+    for(const key of ['zoom','x','y','rotation','fit','flipX','flipY','aspect'])view[key]=value[key];
+    return view;
+  }
+  function focusParameters(bounds,width,height,target,rotation=0){
+    viewBounds(bounds);assert(['box','crop'].includes(target)&&width>0&&height>0,'框選參數無效');
+    return JSON.stringify({kind:'traffic-focus',version:1,target,bounds:bounds.map((v,i)=>v/[width,height,width,height][i]),...(target==='box'?{rotation}:{})},null,2);
+  }
+  function parseFocusParameters(text,width,height){
+    const doc=JSON.parse(text);assert(doc?.kind==='traffic-focus'&&doc.version===1&&['box','crop'].includes(doc.target),'請貼上「打亮框／放大範圍」參數');
+    viewBounds(doc.bounds);const [x,y,w,h]=doc.bounds;
+    assert(x>=0&&y>=0&&x+w<=1+1e-9&&y+h<=1+1e-9,'框選參數超出圖面');
+    if(doc.target==='box')highlightAngle(doc.rotation);
+    return {target:doc.target,bounds:doc.bounds.map((v,i)=>v*[width,height,width,height][i]),rotation:doc.rotation??0};
   }
   function highlightCorners(box, rotation = 0) {
     const [x,y,w,h] = box, cx = x+w/2, cy = y+h/2, radians = highlightAngle(rotation)*Math.PI/180, c = Math.cos(radians), s = Math.sin(radians);
@@ -243,7 +285,7 @@
   function signature(config) {
     const views = config.imageViews || {};
     const {updatedAt: _timestamp, ...legacyState} = config.legacyState;
-    return JSON.stringify({legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, scenarioOtherArticles:config.scenarioOtherArticles||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0 || views[id].fit || views[id].flipX || views[id].flipY).map(id => views[id])});
+    return JSON.stringify({legacyState, content:config.content||{conditions:{},articles:{},overviews:{}}, imageOrders:config.imageOrders||{}, navigationOrders:config.navigationOrders||{}, scenarioOtherArticles:config.scenarioOtherArticles||{}, scenarioHiddenArticles:config.scenarioHiddenArticles||{}, extensionLayouts:config.extensionLayouts||{}, tableColumns:config.tableColumns||{}, coverArt:config.coverArt||{}, roadFlowPaths:config.roadFlowPaths||{}, removedModuleExtensions:[...(config.removedModuleExtensions||[])].sort(), elements: Object.keys(config.elements).sort().filter(id => overrides(config.elements[id])).map(id => config.elements[id]), imageViews: Object.keys(views).sort().filter(id => views[id].zoom !== 1 || views[id].x !== 0 || views[id].y !== 0 || (views[id].rotation ?? 0) !== 0 || views[id].fit || views[id].flipX || views[id].flipY || views[id].aspect).map(id => views[id])});
   }
   class Store {
     constructor(config) {
@@ -275,5 +317,5 @@
     markSaved(snapshot) { this.saved = signature(snapshot); }
     serialize(snapshot = this.config) { return checkSize(JSON.stringify(validate(snapshot), null, 2) + '\n'); }
   }
-  return {DOCUMENT_ID, fonts, limits, coverArtDefaults,coverArtLimits,coverArtSettings,clone, validate, validateOverviewReferences, parse, checkSize, element, overrides, imageView, viewBoxFor, settingsForView, highlightAngle, highlightCorners, highlightBounds, highlightTransform, fitHighlight, resizeHighlight, signature, Store};
+  return {DOCUMENT_ID, fonts, limits, coverArtDefaults,coverArtLimits,coverArtSettings,clone, validate, validateOverviewReferences, parse, checkSize, element, overrides, imageView, viewBoxFor, settingsForView,compareReferences,cameraParameters,parseCameraParameters,focusParameters,parseFocusParameters, highlightAngle, highlightCorners, highlightBounds, highlightTransform, fitHighlight, resizeHighlight, signature, Store};
 });

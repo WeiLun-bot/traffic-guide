@@ -58,7 +58,7 @@
   function navigationTarget(direction,api=app,editing=typeof window==='object'&&window.generalRoadEditor?.editing){
     if(!api)return null;const deck=deckFor(api.page);
     if(!deck)return {id:direction>0?entryFor(decks()[0],api):'presentations',phase:0};
-    const candidates=api.stops.map((stop,index)=>({stop,index})).filter(item=>api.pages[item.stop.page].deckId===deck.id&&(editing||!api.pages[item.stop.page].article||item.stop.phase!==0));
+    const candidates=api.stops.map((stop,index)=>({stop,index})).filter(item=>api.pages[item.stop.page].deckId===deck.id&&(editing||!window.PresentationOrder?.hidden(api.pages[item.stop.page]))&&(editing||!api.pages[item.stop.page].article||item.stop.phase!==0));
     const target=direction>0?candidates.find(item=>item.index>api.position):candidates.findLast(item=>item.index<api.position);
     return target?{id:api.pages[target.stop.page].id,phase:target.stop.phase,index:target.index}:{id:direction>0?entryFor(deck,api):'presentations',phase:0};
   }
@@ -149,7 +149,7 @@
     chapterNav.innerHTML=deck?deck.chapters.map(chapter=>`<button type="button" data-chapter="${chapter.id}" title="${esc(chapterName(chapter))}" ${chapter.id===page.chapter?'class="active" aria-current="step"':''}><span>${chapter.code}</span>${esc(chapterName(chapter))}</button>`).join(''):'<span class="lecture-nav-hint">請選擇簡報主題</span>';
     revealChapter();
     document.querySelector('.footer-label').textContent=window.PresentationMode?.readOnly?'純瀏覽模式':deck?.footer||'ROAD DESIGN PRESENTATIONS';
-    const selected=deck?app.pages.filter(item=>item.deckId===deck.id):[page],pageIndex=selected.findIndex(item=>item.id===page.id),positions=app.stops.map((stop,index)=>({stop,index})).filter(item=>selected.includes(app.pages[item.stop.page])),position=positions.findIndex(item=>item.index===app.position);
+    const selected=deck?app.pages.filter(item=>item.deckId===deck.id&&(window.generalRoadEditor?.editing||!window.PresentationOrder?.hidden(item))):[page],pageIndex=selected.findIndex(item=>item.id===page.id),positions=app.stops.map((stop,index)=>({stop,index})).filter(item=>selected.includes(app.pages[item.stop.page])),position=positions.findIndex(item=>item.index===app.position);
     document.getElementById('page-number').textContent=String(pageIndex+1).padStart(2,'0');document.getElementById('page-total').textContent=String(selected.length).padStart(2,'0');
     document.getElementById('page-track').style.width=((pageIndex+1)/selected.length*100)+'%';document.getElementById('progress').style.width=(positions.length>1?position/(positions.length-1)*100:0)+'%';
     const nextLabel=document.getElementById('next-label');nextLabel.textContent=navigationLabel();document.getElementById('previous').disabled=!deck;

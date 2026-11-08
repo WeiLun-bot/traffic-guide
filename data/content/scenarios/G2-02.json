@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G2-02",
+  "texts": {
+    "g202-review|0|text-6": "免設行人號誌但仍有條件"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g202-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-1",
+            "title": "速限不明確",
+            "titleKey": "g202-conditions:content:photo:g202-photo-2:title",
+            "imageKey": "g202-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "主、次要道路無標字、標誌表示速限",
+                "textKey": "g202-conditions:content:photo:g202-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-0",
+            "title": "號誌容易被背景干擾",
+            "titleKey": "g202-conditions:content:photo:g202-photo-1:title",
+            "imageKey": "g202-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "路側樹林影響辨識，既有標誌標線也需隨現況檢視更新。",
+                "textKey": "g202-conditions:content:photo:g202-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "行人穿越需求被忽略",
+            "titleKey": "g202-conditions:content:photo:g202-photo-3:title",
+            "imageKey": "g202-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "鄉區路口仍有步行與穿越需求，需一併檢視人行配置。",
+                "textKey": "g202-conditions:content:photo:g202-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g202-street-name": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路名標誌「指 25、指 25.1 」，設置規則§ 99",
+            "textKey": "g202-street-name|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "參考實務中常見設置方式與設置規則中之佈設方式，有分向島者建議設於分向島上，並可與路燈桿或號誌桿共桿設置，且可採雙面設置，即遠端與近端皆設置，以設於近端為原則，但視需求遠端亦可設置；無分向島者設於右側路側空間適當位置。",
+            "textKey": "g202-street-name|1|text-7"
+          }
+        ]
+      },
+      "g202-glare": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "根據設置規則§ 221「號誌佈設以能使各車道駕駛者均能清楚辨認為原則。路幅寬廣之道路，必要時得加設號誌燈面，並採門架式或懸掛式設置」",
+            "textKey": "g202-glare|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "由於東西向號誌可能受到陽光直射，導致鏡面反光，或是陽光直射用路人視線，導致辨識號誌困難。",
+            "textKey": "g202-glare|1|text-7"
+          },
+          {
+            "id": "point-2cabccb1-bb4c-4877-ae5e-7e7c1705fc2f",
+            "text": "近端同時設立柱立式與懸臂式號誌，使至少有一燈面對用路人來說與陽光直射方向高度角不同，使用路人易於辨認號誌。",
+            "textKey": "g202-glare|content|articles|point-2cabccb1-bb4c-4877-ae5e-7e7c1705fc2f"
+          }
+        ]
+      },
+      "g202-pedestrians": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "當行人稀少免設行人專用號誌時，依據【設置規則§ 206:1:2, § 206:2:2】，以圓形綠燈或直行箭頭綠燈准許行人穿越道路，因此北上雖沒有機動車輛，但燈面不得省略。",
+            "textKey": "g202-pedestrians|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "本例為三叉路口，為了確保南下、北上行人符合法規穿越，因此南北向綠燈燈鏡使用圓形綠燈，不得僅設置左轉箭頭或右轉箭頭。",
+            "textKey": "g202-pedestrians|1|text-7"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g202-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "區分雙向車流",
+            "titleKey": "g202-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g202-center"
+            ],
+            "targetId": "g202-center"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "路名資訊",
+            "titleKey": "g202-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g202-street-name"
+            ],
+            "targetId": "g202-street-name"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "檢核號誌與眩光",
+            "titleKey": "g202-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g202-signal-plan",
+              "g202-glare",
+              "g202-checklist"
+            ],
+            "targetId": "g202-signal-plan"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "確保行人穿越燈號",
+            "titleKey": "g202-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g202-pedestrians"
+            ],
+            "targetId": "g202-pedestrians"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

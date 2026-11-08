@@ -6,6 +6,19 @@
   const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
   let pan=null;
   let suppressClick=null;
+  const displayMenus=new Set();
+  function positionMenu(details){
+    const menu=details.lastElementChild,rect=details.firstElementChild.getBoundingClientRect();
+    const below=innerHeight-rect.bottom-12,above=rect.top-12,up=below<260&&above>below;
+    menu.style.maxHeight=Math.max(60,Math.min(innerHeight-16,up?above:below))+'px';
+    menu.style.left=Math.max(8,Math.min(rect.right-180,innerWidth-188))+'px';
+    const height=menu.getBoundingClientRect().height,desired=up?rect.top-height-4:rect.bottom+4;
+    menu.style.top=Math.max(8,Math.min(desired,innerHeight-height-8))+'px';
+  }
+  function syncMenus(){for(const details of displayMenus){if(!details.isConnected){displayMenus.delete(details);continue;}if(details.open)positionMenu(details);}}
+  window.addEventListener('resize',syncMenus);document.addEventListener('scroll',syncMenus,true);
+  document.addEventListener('click',event=>{if(!event.target.closest('.viewport-display-options'))for(const details of displayMenus)details.open=false;});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')for(const details of displayMenus)if(details.isConnected&&details.open){details.open=false;details.firstElementChild.focus();event.preventDefault();event.stopImmediatePropagation();}},true);
   function readView(svg) {return svg.getAttribute('viewBox').trim().split(/[\s,]+/).map(Number);}
   function alignPair(record) {
     if(!record.pair.isConnected)return;
@@ -55,7 +68,10 @@
     const reset=document.createElement('button');reset.type='button';reset.textContent='↺';reset.setAttribute('aria-label','重設視圖');tools.append(percentage,reset);container.append(tools);
     if(element.matches('.compare-source-image'))tools.hidden=true;
     let displayOptions;
-    if(!element.matches('.compare-diagram')){
+    // Shared viewport controllers also serve the results, modules and complex decks.
+    // Their compact toolbars keep the original controls; this menu belongs to general roads.
+    // The body deck marker updates after mounting, so use the destination page instead.
+    if(window.generalRoadPresentation?.page?.deckId==='general'&&!element.matches('.compare-diagram')){
       displayOptions=document.createElement('details');displayOptions.className='viewport-display-options';displayOptions.dataset.editorUi='image-display';
       if(element.dataset.comparisonSide)displayOptions.dataset.comparisonSide=element.dataset.comparisonSide;
       const label=element.dataset.comparisonSide==='before'?'現況圖':element.dataset.comparisonSide==='after'?'改善圖':'圖面';
@@ -67,7 +83,9 @@
         if(element.dataset.comparisonSide){host=displayToolbar.querySelector('.comparison-display-pair');if(!host){host=document.createElement('span');host.className='comparison-control-pair comparison-display-pair';displayToolbar.append(host);}}
         host.insertBefore(displayOptions,element.dataset.comparisonSide==='before'?host.querySelector('.viewport-display-options[data-comparison-side="after"]'):null);
       }else container.append(displayOptions);
-      displayOptions.addEventListener('click',event=>{const button=event.target.closest('[data-viewport-action]');if(!button)return;event.preventDefault();event.stopPropagation();controller.imageAction(button.dataset.viewportAction);});
+      const menu=displayOptions.lastElementChild;menu.classList.add('viewport-display-menu');menu.setAttribute('popover','manual');displayMenus.add(displayOptions);
+      displayOptions.addEventListener('toggle',()=>{if(!menu.isConnected)return;if(displayOptions.open){for(const other of displayMenus)if(other!==displayOptions)other.open=false;menu.showPopover?.();positionMenu(displayOptions);}else if(menu.matches(':popover-open'))menu.hidePopover?.();});
+      displayOptions.addEventListener('click',event=>{const button=event.target.closest('[data-viewport-action]');if(!button)return;event.preventDefault();event.stopPropagation();displayOptions.open=false;controller.imageAction(button.dataset.viewportAction);});
     }
     const toolbar=element.matches('.compare-source-image')?null:container.closest('.map-card')?.querySelector('.map-toolbar .map-tools');
     let status,returnToFull;
@@ -180,5 +198,5 @@
     if(performance.now()>suppressClick.until){suppressClick=null;return;}
     if(suppressClick.element.contains(event.target)) {suppressClick=null;event.preventDefault();event.stopImmediatePropagation();}
   },true);
-  window.generalRoadViewport={attach,mount(root=document){root.querySelectorAll(selector).forEach(element=>attach(element,element.matches('.compare-source-image')?{enabled:()=>false}:{}));mountPairs(root);},sync:element=>controllers.get(element)?.sync(),get:element=>controllers.get(element),cancel:()=>releasePan(true)};
+  window.generalRoadViewport={attach,mount(root=document){syncMenus();root.querySelectorAll(selector).forEach(element=>attach(element,element.matches('.compare-source-image')?{enabled:()=>false}:{}));mountPairs(root);},sync:element=>controllers.get(element)?.sync(),get:element=>controllers.get(element),cancel:()=>releasePan(true)};
 })();

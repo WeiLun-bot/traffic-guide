@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G1-05",
+  "texts": {
+    "g105-context|0|text-12": "界定停車與行車空間",
+    "g105-context|0|text-10": "辨別主次道路",
+    "g105-context|0|text-11": "路口停讓關係。",
+    "g105-context|0|text-16": "將停車進出、路口視距與行人穿越合併考量。",
+    "g105-red-line|0|text-4": "路口轉彎等處劃設禁止臨時停車線，保留轉彎與視距空間。",
+    "g105-red-line|1|text-8": "\n",
+    "g105-parking-sign|0|text-4": "路邊停車格位旁設置停車處標誌，牌面與車行方向呈夾角。",
+    "g105-parking-sign|1|text-8": "\n",
+    "g105-review|0|text-5": "紅線配合行穿線位置斷開，保留轉彎及視距。",
+    "g105-review|shared|title": "路側停車範圍與轉角禁停配置。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {
+      "g105-red-line": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "禁止臨時停車線用以指示禁止臨時停車路段，以劃設於道路緣石正面或頂面為原則，無緣石之道路得標繪於路面上。",
+            "textKey": "g105-red-line|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "本指引建議於路口轉彎處需繪設禁止臨時停車線，路口如有佈設行穿線時，禁止臨時停車線原則採斷線處理。",
+            "textKey": "g105-red-line|1|text-7"
+          }
+        ]
+      },
+      "g105-no-parking-sign": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "建議將禁止停車標誌設置於禁止停車路段的起點、終點處，並加設附牌，以箭頭標示禁停路段方向。",
+            "textKey": "g105-no-parking-sign|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "另可視需要（如T字路口匯入時）於中間加設一面禁止停車標誌。",
+            "textKey": "g105-no-parking-sign|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "建議本標誌與禁止停車線同時設置，以提升駕駛人之識別度，同時亦能透過標誌明示禁停時間訊息給駕駛人，起點、終點標誌牌面採面行車方向45度設置。",
+            "textKey": "g105-no-parking-sign|1|text-8"
+          }
+        ]
+      },
+      "g105-parking-sign": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路邊設有停車格位時，參考實務上常見作法，於停車格位旁設置停車處標誌，牌面與車行方向呈夾角。",
+            "textKey": "g105-parking-sign|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "以附牌告知駕駛人可停車種、收費的時段、收費方式、收費金額等資訊，建議可設於路邊停車格位的起點、終點處，若停車格位區段長，可於中間再增設一面停車處標誌。",
+            "textKey": "g105-parking-sign|1|text-7"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g105-overview": {
+        "items": [
+          {
+            "id": "strategy-original-1",
+            "title": "保留轉角與行穿線",
+            "titleKey": "g105-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g105-red-line"
+            ],
+            "targetId": "g105-red-line"
+          },
+          {
+            "id": "strategy-original-0",
+            "title": "安排臨時停車空間",
+            "titleKey": "g105-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g105-yellow-line"
+            ],
+            "targetId": "g105-yellow-line"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "明示禁停路段及時段",
+            "titleKey": "g105-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g105-no-parking-sign",
+              "g105-no-stopping-sign"
+            ],
+            "targetId": "g105-no-parking-sign"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "提供停車服務資訊",
+            "titleKey": "g105-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g105-parking-sign"
+            ],
+            "targetId": "g105-parking-sign"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

@@ -2,16 +2,29 @@
   "schemaVersion": 1,
   "owner": "scenarios/G1-01",
   "texts": {
-    "context|0|text-10": "明確化次要道路管制",
+    "context|0|text-10": "明確次要道路管制",
     "context|0|text-15": "左轉、直行續進、公車與路側停車，應各有清楚位置。",
     "context|0|text-12": "提升行人穿越安全",
     "context|0|text-13": "縮短行人穿越暴露在道路的距離、提升行人穿越明視性。",
     "context|0|text-11": "缺少明確的停管制提示時，主要與次要道路的關係不易辨識。",
     "crosswalk|0|text-4": "\n",
     "school|1|text-9": "以學校環境的辨識需求，決定標誌位置。",
-    "review|0|text-1": "路面邊線與停車格界定路側空間，指向線與導引線銜接車流；行穿線、警示標誌及速限配置共同回應行人穿越需求。",
-    "pedestrian|1|text-9": "§ 23 警告標誌設置位置與警告標的物起點之距離，應配合行車速率，自45 m至200 m為度，如受實際情形限制，得酌予變更。但其設置位置必須明顯，並不得少於安全停車視距。\n",
-    "pedestrian|1|text-10": "\n"
+    "review|0|text-1": "路面邊線與停車格界定路側空間，指向線與導引線導引車流；行穿線、警示標誌及速限促進行人穿越安全。",
+    "pedestrian|1|text-9": "\n",
+    "pedestrian|1|text-10": "\n",
+    "context|0|text-14": "調整車流動線與路側空間",
+    "context|0|text-16": "若在主要道路設置無號誌行人穿越道，建議配合將速限降至 30 km/h，或改設為號誌化路口。",
+    "arrows|0|text-4": "主要道路外側為直行與右轉共用車道，內側為左轉車道，臨近路口以指向線指示車行方向。",
+    "guidance|1|text-8": "主要道路直行車有路徑可循，支道車也有觀察位置可辨識。",
+    "review|0|text-4": "路面邊線界定車道與路側空間；指向線、導引線及穿越虛線串接直行與轉彎動線。",
+    "review|0|text-6": "行穿線位置、退縮與當心行人標誌共同配置，並配合降速或號誌化。",
+    "review|0|text-8": "停車格位保留間隔與路口空間；速限及學校標誌提供駕駛環境訊息。",
+    "edge|1|text-9": "\n",
+    "crosswalk|1|text-2": "枕木紋行人穿越道線\n",
+    "crosswalk|1|text-9": "\n",
+    "pedestrian|0|text-4": "主要道路行穿線上游設置當心行人標誌。",
+    "speed|0|text-4": "最高速限標誌設於進入路口處，提示進入路口的車輛路段速限。",
+    "speed|1|text-9": "\n"
   },
   "images": {},
   "blocks": {
@@ -40,14 +53,14 @@
                 "textKey": "g101-conditions|0|text-4"
               },
               {
-                "id": "issue-original-0-point-1",
-                "text": "前方設有行穿線，可加設「當心行人」標誌。",
-                "textKey": "g101-conditions|0|text-5"
-              },
-              {
                 "id": "issue-original-0-point-2",
                 "text": "路側空間足夠時，搭配「停車再開」標誌。",
                 "textKey": "g101-conditions|0|text-6"
+              },
+              {
+                "id": "issue-original-0-point-1",
+                "text": "前方設有行穿線，可適當加設「當心行人」標誌。",
+                "textKey": "g101-conditions|0|text-5"
               }
             ]
           },
@@ -65,7 +78,7 @@
               },
               {
                 "id": "issue-original-1-point-1",
-                "text": "次要道路未配合「最高速限」標字設「最高速限」標誌。",
+                "text": "次要道路可配合設置「最高速限」標誌及標字設。",
                 "textKey": "g101-conditions|0|text-9"
               }
             ]
@@ -83,8 +96,165 @@
           },
           {
             "id": "point-original-2",
-            "text": "可依現地條件於接近行穿線處設置。",
+            "text": "可依現地條件於接近行穿線處設置。\n惟§ 23 警告標誌設置位置與警告標的物起點之距離，應配合行車速率，自45–200 m為度，如受實際情形限制，得酌予變更。但其設置位置必須明顯，並不得少於安全停車視距。\n",
             "textKey": "pedestrian|1|text-8"
+          }
+        ]
+      },
+      "edge": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路面邊線為 0.15 m 寬白實線，界定最右側行車道與路側空間；應與 0.10 m 的快慢車道分隔線區分。",
+            "textKey": "edge|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "建議車輛停放線與路面邊線保留約 0.30 m 緩衝，路段邊線接續路口轉角的邊線。",
+            "textKey": "edge|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "路面邊線應與緣石銜接，包括路緣外擴情形。",
+            "textKey": "edge|1|text-8"
+          }
+        ]
+      },
+      "crosswalk": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "無號誌路口且有重要行人穿越之需求時，可設置枕木紋行人穿越道線。設置位置應確保轉彎車能看見行穿線及正要穿越的行人。",
+            "textKey": "crosswalk|1|text-6"
+          },
+          {
+            "id": "point-original-2",
+            "text": "枕木紋行穿線線形具有導引車行方向的意義，故建議宜平行車流行進方向劃設，除可避免與車行方向斜交，亦可避免與斑馬紋產生混淆不清之狀況。",
+            "textKey": "crosswalk|1|text-8"
+          },
+          {
+            "id": "point-ab8ce0d7-9549-4a1b-af17-0167dd314a23",
+            "text": "枕木紋行人穿越道線上游可配合設置當心行人標誌「警34」，以提高行人穿越安全。",
+            "textKey": "crosswalk|content|articles|point-ab8ce0d7-9549-4a1b-af17-0167dd314a23"
+          },
+          {
+            "id": "point-original-1",
+            "text": "當路段中有行人穿越之需求時，則需佈設斑馬紋行人穿越道線，並應配合設置行人穿越道號誌（設置規則§ 186）。",
+            "textKey": "crosswalk|1|text-7"
+          }
+        ]
+      },
+      "arrows": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "直右共用混合車道寬度為 3.50 m 以下時，採直線與弧形合併的分岔箭頭。",
+            "textKey": "arrows|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "車道寬度為 3.50 m 以上時，採直線與弧形分離並列的分流式指向線，提醒右轉車提早靠右。",
+            "textKey": "arrows|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "車道寬度為 4.50 m 以上時，以路面邊線及槽化線限縮至 4.50 m，避免車輛並行。",
+            "textKey": "arrows|1|text-8"
+          }
+        ]
+      },
+      "guidance": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "引導主要道路之直行車通過路口並銜接下游車道，使駕駛人易於定位下游車道。",
+            "textKey": "guidance|1|text-6"
+          },
+          {
+            "id": "point-43a0769f-8ace-43bb-9406-255a5228ef93",
+            "text": "於主要道路通過次要道路之路口右側繪設時，做為動線延伸線，可凸顯主要道路之意象。劃設時應與緣石或路面邊線連接。",
+            "textKey": "guidance|content|articles|point-43a0769f-8ace-43bb-9406-255a5228ef93"
+          },
+          {
+            "id": "point-original-1",
+            "text": "路口右側之路口行車導引線除可凸顯主要道路之意象，亦可標示次要道路車輛進入路口前觀察主要道路車流的位置，同時提供次要道路進入的車輛判斷，可避免與主要道路車輛衝突。",
+            "textKey": "guidance|1|text-7"
+          }
+        ]
+      },
+      "taper": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "主要道路左彎進入次要道路的行車方向，採附加左轉車道，車道數由路段1直行車道增加至臨近路口直行左轉2車道。",
+            "textKey": "taper|1|text-6"
+          },
+          {
+            "id": "point-ec34e6f9-271d-4c95-8d06-7eea7800d14d",
+            "text": "透過穿越虛線之劃設，可提示駕駛人不同動線，有助車流秩序，並促進方向燈之使用。",
+            "textKey": "taper|content|articles|point-ec34e6f9-271d-4c95-8d06-7eea7800d14d"
+          },
+          {
+            "id": "point-original-1",
+            "text": "穿越虛線應整段繪製（含漸變段），包含全車道寬之情況，並應避免誤繪成路口行車導引線。",
+            "textKey": "taper|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "左彎附加車道之漸變長度計算，屬於市區道路範疇者，須符合《市區道路及附屬工程設計規範》§ 4.2.6；屬於省道公路範疇者，須符合《公路路線設計規範》§ 4.2.10。",
+            "textKey": "taper|1|text-8"
+          }
+        ]
+      },
+      "parking": {
+        "points": [
+          {
+            "id": "point-original-1",
+            "text": "建議佈設於距橫交道路緣延伸處 10–30 m 以外，並與路面邊線保留約 0.30 m 間隔。",
+            "textKey": "parking|1|text-7"
+          },
+          {
+            "id": "point-original-0",
+            "text": "大型重型機車以外的機車停放線配置於較靠近路口處，小型車及大型重型機車格位配置於較遠離路口處；大型客車停放線置於路段。",
+            "textKey": "parking|1|text-6"
+          }
+        ]
+      },
+      "speed": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "本示例建議將最高速限標誌「限5」設置於進入路口處。",
+            "textKey": "speed|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "應與速限標字設置位置相互配合。",
+            "textKey": "speed|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "若上、下游、轉出、轉入速限相同，得不重複設置。",
+            "textKey": "speed|1|text-8"
+          }
+        ]
+      },
+      "school": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "若路口周邊有學校，為提醒駕駛人行經學校區域需噤聲慢行，建議可設置學校標誌「指 62」。",
+            "textKey": "school|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "該標誌宜垂直行車方向設置，並設於駕駛人無法輕易辨識前方為學校附近之處，以達告示駕駛人之效果。",
+            "textKey": "school|1|text-7"
+          },
+          {
+            "id": "point-original-2",
+            "text": "此外，考量便於外國人士識別，可加設英文附牌。",
+            "textKey": "school|1|text-8"
           }
         ]
       }
@@ -137,6 +307,7 @@
       }
     },
     "modules": {},
-    "results": {}
+    "results": {},
+    "references": {}
   }
 }

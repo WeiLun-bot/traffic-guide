@@ -1,0 +1,56 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+module.exports=async({evaluate,navigate,view,click,wait,cdp,base,artifacts,pass,previewConfigPath})=>{
+  const run=fn=>evaluate('('+fn.toString()+')()');
+  const edit=async value=>{if(await run(()=>generalRoadEditor.editing)!==value)await click('.edit-toggle');};
+  const shot=async name=>{const image=await cdp.send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(artifacts,name+'.png'),Buffer.from(image.data,'base64'));};
+  await navigate(base+'/presentation-demo/#pedestrian/zoom');
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1536,height:864,deviceScaleFactor:1,mobile:false});
+  for(const id of ['pedestrian','rural-warning','rural-stop-sign','g302-junction-warning']){
+    await view(id,1);const state=await run(()=>JSON.stringify(generalRoadPresentation.state));
+    assert.equal(await run(()=>document.querySelectorAll('#reference-links table').length),0);
+    await click('[data-reference-preview="sight-distance"]');
+    assert(await run(()=>document.getElementById('source-dialog').open));
+    assert.equal(await run(()=>document.querySelectorAll('#source-content table').length),2);
+    assert.deepEqual(await run(()=>[...document.querySelectorAll('#source-content table:first-child tbody tr:last-child>*')].map(node=>node.textContent)),['80','135','135','160','270']);
+    await click('#source-dialog [data-close]');assert.equal(await run(()=>JSON.stringify(generalRoadPresentation.state)),state);
+  }
+  pass('sight-distance and grade-correction tables open together without changing the presentation page or phase');
+  await view('pedestrian',1);await edit(true);await click('#reference-links [data-reference-library]');
+  await wait('[...document.querySelectorAll(".reference-library-item")].some(node=>node.textContent.includes("反光導標及危險標記"))','existing tables');
+  assert(await run(()=>[...document.querySelectorAll('.reference-library-item')].some(node=>node.textContent.includes('反光導標及危險標記'))));
+  await run(()=>{const input=document.querySelector('.reference-library input');input.value='反光導標';input.dispatchEvent(new Event('input',{bubbles:true}));});
+  assert.equal(await run(()=>document.querySelectorAll('.reference-library-item').length),1);
+  await click('.reference-library-item [data-reference-preview]');assert(await run(()=>document.querySelector('#source-content').textContent.includes('第一類')));await click('#source-dialog [data-close]');
+  await click('.reference-library-item [data-reference-add]');
+  assert.deepEqual(await run(()=>visualLayoutEditor.store.config.content.references.pedestrian.ids),['sight-distance','table:g106-reflectors']);
+  const history=await run(()=>visualLayoutEditor.store.past.length);
+  await run(()=>document.querySelector('.reference-library-item [data-reference-add]').click());assert.equal(await run(()=>visualLayoutEditor.store.past.length),history);
+  await click('[data-reference-close]');await click('[data-reference-up="table:g106-reflectors"]');
+  assert.deepEqual(await run(()=>visualLayoutEditor.store.config.content.references.pedestrian.ids),['table:g106-reflectors','sight-distance']);
+  await click('[data-reference-remove="sight-distance"]');await click('[data-vl-action="undo"]');
+  assert.deepEqual(await run(()=>visualLayoutEditor.store.config.content.references.pedestrian.ids),['table:g106-reflectors','sight-distance']);
+  pass('library searches and previews existing tables; adding, duplicate prevention, ordering, removal and undo work');
+  await view('edge',1);await click('#reference-links [data-reference-library]');
+  assert(await run(()=>{const nav=document.getElementById('reference-links'),r=nav.getBoundingClientRect();return nav.contains(document.elementFromPoint(r.left+r.width/2,r.top+r.height/2));}),'The drawer must leave the reference drop area visible');
+  await run(()=>{const input=document.querySelector('.reference-library input');input.value='視界';input.dispatchEvent(new Event('input',{bubbles:true}));const item=document.querySelector('.reference-library-item'),nav=document.getElementById('reference-links'),data=new DataTransfer();item.dispatchEvent(new DragEvent('dragstart',{bubbles:true,dataTransfer:data}));nav.dispatchEvent(new DragEvent('dragover',{bubbles:true,cancelable:true,dataTransfer:data}));nav.dispatchEvent(new DragEvent('drop',{bubbles:true,cancelable:true,dataTransfer:data}));});
+  assert.deepEqual(await run(()=>visualLayoutEditor.store.config.content.references.edge.ids),['sight-distance']);
+  assert.equal(await run(()=>document.querySelectorAll('.is-reference-drop').length),0);
+  await shot('reference-library-editor');
+  await click('[data-reference-close]');
+  const saved=await run(()=>PresentationDocument.bundle(visualLayoutEditor.store.config,{...visualLayoutEditor.owners,edge:'scenarios/G1-01',pedestrian:'scenarios/G1-01'}));
+  fs.writeFileSync(previewConfigPath,JSON.stringify(saved));
+  await navigate(base+'/presentation-demo/#pedestrian/zoom');
+  assert.deepEqual(await run(()=>visualLayoutEditor.store.config.content.references.pedestrian.ids),['table:g106-reflectors','sight-distance']);
+  // The target table belongs to an unopened scenario on this fresh load.
+  await click('[data-reference-preview="table:g106-reflectors"]');assert(await run(()=>document.querySelector('#source-content').textContent.includes('第一類')));await click('#source-dialog [data-close]');
+  await view('edge',1);await click('[data-reference-preview="sight-distance"]');await shot('sight-distance-popup');await click('#source-dialog [data-close]');
+  pass('dragging into references and project round trips preserve links, including tables from an unopened scenario');
+  await edit(true);await click('[data-reference-remove="sight-distance"]');
+  const removed=await run(()=>visualLayoutEditor.store.serialize());fs.writeFileSync(previewConfigPath,removed);
+  await navigate(base+'/presentation-demo/#edge/zoom');assert.equal(await run(()=>document.querySelectorAll('#reference-links').length),0);
+  await navigate(base+'/presentation-demo/viewer.html#pedestrian/zoom');
+  assert.equal(await run(()=>document.querySelectorAll('[data-reference-library]').length),0);
+  await click('[data-reference-preview="sight-distance"]');assert(await run(()=>document.getElementById('source-dialog').open));
+  pass('explicitly removed links stay removed after reload and the read-only viewer retains working popups');
+};

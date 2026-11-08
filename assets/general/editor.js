@@ -35,6 +35,7 @@
   let draftTimer=0;
   let drag=null;
   let imageTarget='overall';
+  const selectedHighlights=new Map();
   const baseline={};
   const targetKinds=new Map();
   const placeholder='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640"><rect width="1000" height="640" fill="#edf2e7"/><path d="M450 0h100v270h450v100H550v270H450V370H0V270h450Z" fill="#d1dec4"/><path d="M500 0v640M0 320h1000" fill="none" stroke="#f9fbf5" stroke-width="4" stroke-dasharray="16 16"/><rect x="315" y="230" width="370" height="180" rx="12" fill="#f9fbf5" stroke="#bdcdb0"/><path d="M472 289h56m-28-28v56" stroke="#8da67d" stroke-width="5"/><text x="500" y="363" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#6c855c">新增情境圖面</text></svg>');
@@ -93,6 +94,7 @@
       if(migrated)changed();
     }
     for(const article of data.articles) {
+      const name=state.texts[article.id+'|article|name'];if(typeof name==='string'&&name.trim())article.name=name.trim();
       const scenario=data.scenarios.find(value=>value.id===article.scenario)||data.scenarios[0];
       const image=data.embeddedAssets[article.mapAsset]||scenario,width=image.width,height=image.height;
       baseline['article:'+article.id]={box:[...article.box],crop:[...article.crop]};
@@ -145,6 +147,7 @@
       element.dataset.editKey=key;
       if(typeof state.texts[key]==='string')setText(element,window.PresentationText?.format(state.texts[key],{general:api.page.deckId==='general'})??state.texts[key]);
       if(element.matches('.contents-intro p'))element.classList.toggle('is-empty',!element.textContent.trim());
+      if(element.matches('.takeaway'))element.classList.toggle('is-empty',!element.textContent.trim());
       if(editing&&!window.visualLayoutEditor?.editing){element.setAttribute('contenteditable','plaintext-only');element.spellcheck=false;}
       else {element.removeAttribute('contenteditable');element.removeAttribute('spellcheck');}
     });
@@ -176,6 +179,7 @@
     if(!api||!$('presentation').firstElementChild)return;
     window.generalRoadBlocks?.render();
     bindTexts();window.PresentationContent?.render({api,root:$('presentation'),state});bindImages();
+    mountArticleName();
     const frames=api.editorFrames();
     for(const frame of frames) {
       const custom=frame.element.querySelector('.custom-highlight');
@@ -186,13 +190,37 @@
     document.querySelectorAll('[data-page-order]').forEach(button=>button.disabled=!custom);
     document.querySelector('.editor-remove-page').disabled=!custom;
     document.querySelectorAll('.editor-highlight-controls,.editor-handle-layer').forEach(element=>element.remove());
-    if(editing&&adjusting)frames.forEach(addFrameControls);
+    drawExtraHighlights(frames);
+    if(editing&&adjusting){
+      if(api.page.article){const selected=frames.find(f=>f.key===selectedHighlights.get(api.page.id))||frames[0];if(selected)addFrameControls(selected);}
+      else frames.forEach(addFrameControls);
+    }
     window.generalRoadFormatting?.render();
     measure();
   }
   function measure() {
     const toolbar=$('editor-toolbar');
     document.body.style.setProperty('--editor-space',editing?toolbar.offsetHeight+'px':'0px');
+  }
+  let articleNameDialog;
+  function mountArticleName(){
+    for(const chip of document.querySelectorAll('.article-chip[data-page]')){
+      const name=state.texts[chip.dataset.page+'|article|name'];if(typeof name!=='string')continue;
+      const reference=chip.querySelector('span');chip.replaceChildren(...(reference?[reference]:[]),document.createTextNode(name));
+    }
+    document.querySelector('[data-editor-ui="article-name"]')?.remove();
+    if(!editing||!api.page.article)return;
+    const heading=document.querySelector('#explanation h2');if(!heading)return;
+    const button=document.createElement('button');button.type='button';button.className='text-button';button.dataset.editorUi='article-name';button.textContent='編輯條文名稱';
+    button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();
+      if(!articleNameDialog){articleNameDialog=document.createElement('dialog');articleNameDialog.className='article-name-dialog';articleNameDialog.dataset.editorUi='article-name-dialog';articleNameDialog.innerHTML='<form><label>條文顯示名稱<input name="articleName" required maxlength="300"></label><label>重點提醒（留白時不占空間）<textarea name="takeaway" rows="3"></textarea></label><div><button type="button" data-cancel>取消</button><button type="submit">套用</button></div></form>';document.body.append(articleNameDialog);articleNameDialog.querySelector('[data-cancel]').onclick=()=>articleNameDialog.close();
+        articleNameDialog.querySelector('form').onsubmit=event=>{event.preventDefault();const name=articleNameDialog.querySelector('[name=articleName]').value.trim(),note=articleNameDialog.querySelector('[name=takeaway]').value;if(!name)return;
+          const heading=document.querySelector('#explanation h2'),takeaway=document.querySelector('#explanation .takeaway'),id=api.page.id;
+          if(window.visualLayoutEditor.transact(next=>{next.legacyState.texts[id+'|article|name']=name;if(heading?.dataset.editKey)next.legacyState.texts[heading.dataset.editKey]=name;if(takeaway?.dataset.editKey)next.legacyState.texts[takeaway.dataset.editKey]=note;})){articleNameDialog.close();report('條文名稱與重點提醒已更新，請儲存。');}
+        };
+      }
+      articleNameDialog.querySelector('[name=articleName]').value=api.page.article.name;articleNameDialog.querySelector('[name=takeaway]').value=document.querySelector('#explanation .takeaway')?.textContent||'';articleNameDialog.showModal();
+    });heading.after(button);
   }
   function setEditing(value) {
     if(readOnly)return;
@@ -298,6 +326,31 @@
     $('editor-insert-after').value=api.page.id;$('editor-template-dialog').showModal();
   }
   const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+  function articleFrames(base){
+    const saved=state.highlights[base.key]||{};base.allowDelete=true;base.primary=true;base.hasBox=!saved.deleted;
+    return [base,...(saved.extraIds||[]).flatMap(id=>{
+      const key=base.key+':'+id,value=state.highlights[key];if(!value?.box)return [];
+      return [{...base,key,label:base.label+' / 打亮框 '+(saved.extraIds.indexOf(id)+2),primary:false,extra:true,hasBox:true,getCrop:undefined,getBox:()=>base.fromSource(value.box),setBounds:(kind,bounds)=>{const raw=base.toSource(bounds);value.box=raw;return raw;}}];
+    })];
+  }
+  function drawExtraHighlights(frames){
+    const svg=$('main-map');if(!api.page.article||!svg)return;
+    svg.querySelector('.article-extra-highlights')?.remove();const group=document.createElementNS('http://www.w3.org/2000/svg','g');group.classList.add('article-extra-highlights');
+    for(const frame of frames.filter(frame=>frame.extra)){
+      const box=frame.getBox(),rect=document.createElementNS(group.namespaceURI,'rect');rect.classList.add('selection-box','extra-highlight');for(const [key,value]of Object.entries({x:box[0],y:box[1],width:box[2],height:box[3]}))rect.setAttribute(key,value);rect.setAttribute('transform',window.VisualLayoutCore.highlightTransform(box,rotation(frame.key)));group.append(rect);
+    }
+    (svg.querySelector(':scope>[data-initial-view-rotation]')||svg).append(group);
+  }
+  function addArticleHighlight(){
+    const base=api.editorFrames()[0];if(!base?.articleId)return;
+    const saved=state.highlights[base.key]||(state.highlights[base.key]={}),ids=saved.extraIds||(saved.extraIds=[]);if(ids.length>=30){report('每頁最多新增 30 個打亮框');return;}
+    const id='extra-'+crypto.randomUUID(),key=base.key+':'+id,crop=base.getCrop();ids.push(id);
+    state.highlights[key]={box:base.toSource([crop[0]+crop[2]*.35,crop[1]+crop[3]*.35,crop[2]*.25,crop[3]*.25]),rotation:0};selectedHighlights.set(api.page.id,key);changed();api.refresh();
+  }
+  function allEnvelopes(frame){
+    const frames=frame.articleId?api.editorFrames().filter(f=>f.hasBox!==false):[frame],boxes=frames.map(f=>frameEnvelope(f));if(!boxes.length)return null;
+    const x=Math.min(...boxes.map(b=>b[0])),y=Math.min(...boxes.map(b=>b[1]));return [x,y,Math.max(...boxes.map(b=>b[0]+b[2]))-x,Math.max(...boxes.map(b=>b[1]+b[3]))-y];
+  }
   function rotation(key) {return window.VisualLayoutCore.highlightAngle(state.highlights[key]?.rotation??0);}
   function frameEnvelope(frame,box=frame.getBox(),angle=rotation(frame.key)) {return window.VisualLayoutCore.highlightBounds(box,angle);}
   function fitBox(box,frame) {
@@ -305,13 +358,14 @@
     const height=Math.min(frame.height,Math.max(box[3]*1.8,120));
     return [clamp(box[0]+box[2]/2-width/2,0,frame.width-width),clamp(box[1]+box[3]/2-height/2,0,frame.height-height),width,height];
   }
-  function commitFrame(frame,kind,next,{refresh=true,rotation:angle=rotation(frame.key)}={}) {
-    next=next.map(value=>Math.round(value*10)/10);
+  function commitFrame(frame,kind,next,{refresh=true,rotation:angle=rotation(frame.key),precise=false}={}) {
+    next=precise?[...next]:next.map(value=>Math.round(value*10)/10);
     if(!validBounds(next,frame.width,frame.height)){report('框選需保持在圖面內，寬高需大於零');return false;}
     if(!Number.isFinite(angle)||Math.abs(angle)>360){report('打亮框旋轉角度須介於 -360° 與 360°');return false;}
-    angle=window.VisualLayoutCore.highlightAngle(Math.round(angle*10)/10);
+    angle=window.VisualLayoutCore.highlightAngle(precise?angle:Math.round(angle*10)/10);
     if(kind==='box')next=window.VisualLayoutCore.fitHighlight(next,angle,frame.width,frame.height);
-    if(kind==='crop'&&!contains(next,frameEnvelope(frame))){report('放大範圍需要涵蓋旋轉後的打亮框，請放大範圍或先移動打亮框');return false;}
+    const envelope=allEnvelopes(frame);
+    if(kind==='crop'&&envelope&&!contains(next,envelope)){report('放大範圍需要涵蓋所有啟用的打亮框，請放大範圍或先移動打亮框');return false;}
     const saved=state.highlights[frame.key]||{};
     saved[kind]=frame.setBounds(kind,next);
     if(kind==='box'){
@@ -320,9 +374,13 @@
       if(frame.getCrop&&!contains(frame.getCrop(),envelope))saved.crop=frame.setBounds('crop',fitBox(envelope,frame));
     }
     state.highlights[frame.key]=saved;
-    delete saved.deleted;
+      if(kind==='box'||!frame.articleId)delete saved.deleted;
     if(frame.allowDelete)saved.imageKey=frame.imageKey;
-    delete state.disabledHighlights[frame.key];changed();
+      if(kind==='box'||!frame.articleId)delete state.disabledHighlights[frame.key];changed();
+    if(frame.articleId&&kind==='box'){
+      const owner=api.editorFrames()[0],envelope=allEnvelopes(frame);
+      if(!contains(owner.getCrop(),envelope)){const entry=state.highlights[owner.key]||(state.highlights[owner.key]={});entry.crop=owner.setBounds('crop',fitBox(envelope,owner));}
+    }
     if(refresh) {
       const viewport=window.generalRoadViewport;
       const views=new Map(api.editorFrames().map(item=>[item.key,viewport?.get(item.element)?.read()]));
@@ -338,11 +396,18 @@
     const original=baseline[frame.key]?.[kind]||frame.defaults?.[kind];
     if(!original)return;
     let next=frame.fromSource([...original]);
-    if(kind==='crop'&&!contains(next,frameEnvelope(frame)))next=fitBox(frameEnvelope(frame),frame);
+      const envelope=kind==='crop'?allEnvelopes(frame):null;
+      if(envelope&&!contains(next,envelope))next=fitBox(envelope,frame);
     commitFrame(frame,kind,next,kind==='box'?{rotation:0}:{});
   }
   function toggleModuleFrame(frame) {
     if(!frame.allowDelete)return;
+    if(frame.articleId){
+      const saved=state.highlights[frame.key]||(state.highlights[frame.key]={});
+      if(frame.extra){const parent=state.highlights['article:'+frame.articleId];parent.extraIds=parent.extraIds.filter(id=>'article:'+frame.articleId+':'+id!==frame.key);delete state.highlights[frame.key];selectedHighlights.delete(api.page.id);}
+      else if(saved.deleted)delete saved.deleted;else saved.deleted=true;
+      delete state.disabledHighlights[frame.key];changed();api.refresh();return;
+    }
     const saved=state.highlights[frame.key]||{};
     if(frame.hasBox===false||state.disabledHighlights[frame.key]||saved.deleted){commitFrame(frame,'box',frame.getBox());return;}
     const viewport=window.generalRoadViewport,view=viewport?.get(frame.element)?.read();
@@ -392,18 +457,30 @@
     const box=kind==='crop'?frame.getCrop():frame.getBox();
     const controls=document.createElement('div');controls.className='editor-highlight-controls';controls.dataset.editorUi='highlight-controls';controls.dataset.controlsKey=frame.key;
     controls.innerHTML=`<div class="editor-frame-heading"><strong>${escape(frame.label)}</strong><select data-frame-target="${escape(frame.key)}" aria-label="選擇調整打亮或放大範圍"><option value="box" ${kind==='box'?'selected':''}>打亮框</option>${frame.getCrop?`<option value="crop" ${kind==='crop'?'selected':''}>放大範圍</option>`:''}</select><button type="button" data-reset-frame="${escape(frame.key)}">還原框選</button></div><div class="editor-bounds-fields">${['左','上','寬','高'].map((label,index)=>`<label>${label}<input type="number" step="1" min="${index>1?1:0}" value="${Math.round(box[index]*10)/10}" data-bound-index="${index}" aria-label="${label}座標或尺寸"></label>`).join('')}<small>拖曳框身移動，拖曳四角改大小</small></div>`;
+    if(frame.articleId){
+      const select=document.createElement('select');select.dataset.highlightChoice='';select.setAttribute('aria-label','選擇個別打亮框');
+      for(const item of api.editorFrames())select.add(new Option(item.primary?'主要打亮框'+(item.hasBox===false?'（已停用）':''):item.label,item.key));select.value=frame.key;
+      const add=document.createElement('button');add.type='button';add.dataset.addArticleHighlight='';add.textContent='＋新增打亮框';controls.querySelector('.editor-frame-heading').prepend(select);controls.querySelector('.editor-frame-heading').append(add);
+    }
     if(kind==='box'){
       const field=document.createElement('label');field.className='editor-rotation-field';field.innerHTML=`旋轉角度<input type="number" step="1" min="-360" max="360" value="${rotation(frame.key)}" data-highlight-rotation aria-label="打亮框旋轉角度">°`;
       const actions=document.createElement('span');actions.className='editor-rotation-actions';actions.innerHTML='<button type="button" data-rotate-highlight="-15" title="逆時針旋轉 15°">↶ 15°</button><button type="button" data-rotate-highlight="15" title="順時針旋轉 15°">↷ 15°</button><button type="button" data-rotate-highlight="0" title="打亮框角度歸零">歸零</button>';
       const fields=controls.querySelector('.editor-bounds-fields'),hint=controls.querySelector('small');fields.insertBefore(field,hint);fields.insertBefore(actions,hint);
       controls.querySelector('small').textContent='拖曳圓點旋轉；按住 Shift 每次旋轉 15°';
     }
+    const transfer=document.createElement('details');transfer.className='view-parameter-tools focus-parameter-tools';
+    transfer.innerHTML='<summary>複製、貼上或沿用'+(kind==='crop'?'放大範圍':'打亮框')+'</summary><textarea data-focus-parameters aria-label="打亮框或放大範圍純文字參數" spellcheck="false"></textarea><div class="iv-actions"><button type="button" data-focus-action="copy">複製參數</button><button type="button" data-focus-action="paste">套用貼上參數</button></div><label class="view-inherit-label">沿用同情境、同圖面的其他解說<select data-focus-source aria-label="選擇要沿用框選的解說"></select></label><button type="button" data-focus-action="inherit">沿用所選解說</button><small>初始畫面另行保存；放大範圍須涵蓋此頁打亮框。</small>';
+    const select=transfer.querySelector('select');select.add(new Option('選擇其他運用解說',''));
+    const scene=data.scenarios.find(scene=>scene.id===api.page.scenario);
+    for(const article of data.articles)if(article.scenario===api.page.scenario&&article.id!==api.page.id&&(article.mapAsset||scene?.overall)===frame.imageKey)select.add(new Option(article.name,article.id));
+    if(select.options.length===1){select.closest('label').hidden=true;transfer.querySelector('[data-focus-action="inherit"]').hidden=true;}
+    transfer.querySelector('textarea').value=window.VisualLayoutCore.focusParameters(box,frame.width,frame.height,kind,rotation(frame.key));controls.append(transfer);
     const container=frame.element.closest('.map-card,.custom-diagram-frame')||frame.element.parentElement;
     if(container.classList.contains('map-card'))container.querySelector('.map-toolbar').after(controls);else container.prepend(controls);
     if(frame.allowDelete){
       const saved=state.highlights[frame.key]||{},absent=frame.hasBox===false,deleted=Boolean(saved.deleted),disabled=Boolean(state.disabledHighlights[frame.key]);
-      const toggle=document.createElement('button');toggle.type='button';toggle.dataset.toggleModuleFrame=frame.key;toggle.dataset.frameToggleState=absent?'add':disabled||deleted?'restore':'delete';toggle.textContent=absent?'新增打亮框':disabled||deleted?'恢復打亮框':'刪除打亮框';controls.querySelector('.editor-frame-heading').append(toggle);
-      if(absent||deleted){controls.querySelectorAll('input,select,[data-reset-frame],[data-rotate-highlight]').forEach(node=>node.disabled=true);controls.querySelector('small').textContent=deleted?'打亮框已刪除，可恢復原位置。':'按「新增打亮框」後拖曳調整位置。';return;}
+      const toggle=document.createElement('button');toggle.type='button';toggle.dataset.toggleModuleFrame=frame.key;toggle.dataset.frameToggleState=absent?'add':disabled||deleted?'restore':'delete';toggle.textContent=frame.articleId?(absent?'恢復主要打亮框':'刪除此打亮框'):absent?'新增打亮框':disabled||deleted?'恢復打亮框':'刪除打亮框';controls.querySelector('.editor-frame-heading').append(toggle);
+      if((absent||deleted)&&!(frame.articleId&&kind==='crop')){controls.querySelectorAll('input,select:not([data-highlight-choice]):not([data-frame-target]),[data-reset-frame],[data-rotate-highlight]').forEach(node=>node.disabled=true);controls.querySelector('small').textContent=deleted?'打亮框已刪除，可恢復原位置。':'按「新增打亮框」後拖曳調整位置。';return;}
     }
     const layer=document.createElementNS('http://www.w3.org/2000/svg','g');layer.classList.add('editor-handle-layer');layer.dataset.editorUi='highlight-handles';layer.dataset.layerKey=frame.key;
     const makeHandle=(tag,corner,label)=>{
@@ -419,6 +496,26 @@
       const handle=makeHandle('circle','rotate','旋轉打亮框；方向鍵旋轉 1°，Shift 方向鍵旋轉 15°');handle.classList.add('editor-rotation-handle');layer.append(handle);
     }
     (frame.coordinateElement||frame.element).append(layer);setLayer(layer,box,frame);
+  }
+  function transferFocus(action,controls){
+    const frame=api.editorFrames().find(frame=>frame.key===controls.dataset.controlsKey);if(!frame)return;
+    const kind=targetKinds.get(frame.key)==='crop'?'crop':'box',core=window.VisualLayoutCore,field=controls.querySelector('[data-focus-parameters]');
+    try{
+      if(action==='copy'){
+        field.value=core.focusParameters(kind==='crop'?frame.getCrop():frame.getBox(),frame.width,frame.height,kind,rotation(frame.key));field.focus();field.select();navigator.clipboard?.writeText(field.value).catch(()=>{});report('參數已列出並選取，可複製到另一圖面。');return;
+      }
+      let bounds,angle=rotation(frame.key);
+      if(action==='paste'){
+        const value=core.parseFocusParameters(field.value,frame.width,frame.height);
+        if(value.target!==kind)throw new Error('參數種類不同，請先切換至'+(value.target==='crop'?'放大範圍':'打亮框'));
+        bounds=value.bounds;if(kind==='box')angle=value.rotation;
+      }else{
+        const article=data.articles.find(a=>a.id===controls.querySelector('[data-focus-source]').value);
+        if(!article||article.scenario!==api.page.scenario)throw new Error('請先選擇同情境的解說');
+        bounds=api.displayBounds(kind==='crop'?article.crop:article.box);if(kind==='box')angle=rotation('article:'+article.id);
+      }
+      if(commitFrame(frame,kind,bounds,{rotation:angle,precise:true}))report('已套用'+(kind==='crop'?'放大範圍':'打亮框')+'；初始畫面保持原設定，請儲存。');
+    }catch(error){report('未套用：'+error.message);}
   }
   function point(event,svg) {
     const matrix=svg.getScreenCTM();if(!matrix)throw new Error('圖面尚未就緒');
@@ -474,9 +571,13 @@
       const text=(element.innerText??element.textContent).replace(/\r/g,'');state.texts[element.dataset.editKey]=text;
       if(element.id==='slide-title'){api.page.name=text.replace(/\n/g,' ');api.updateContents();}
       changed();
+      if(element.matches('.takeaway'))element.classList.toggle('is-empty',!element.textContent.trim());
     });
     document.addEventListener('click',event=>{
       if(!editing)return;
+      if(event.target.closest('[data-add-article-highlight]')){event.preventDefault();event.stopPropagation();addArticleHighlight();return;}
+      const transfer=event.target.closest('[data-focus-action]');
+      if(transfer){event.preventDefault();event.stopPropagation();transferFocus(transfer.dataset.focusAction,transfer.closest('[data-controls-key]'));return;}
       if(event.target.closest('.viewport-tools'))return;
       if(event.target.closest('[data-edit-key]')){event.stopPropagation();return;}
       const replacement=event.target.closest('[data-replace-image]');
@@ -490,6 +591,9 @@
       if(reset){const frame=api.editorFrames().find(item=>item.key===reset.dataset.resetFrame);if(frame)resetFrame(frame,targetKinds.get(frame.key)||'box');event.stopPropagation();return;}
       const step=event.target.closest('[data-custom-step]');
       if(step){api.goPage(api.page.id,Number(step.dataset.customStep));event.stopPropagation();return;}
+      // Image frames also contain viewport menus and initial-view controls.
+      // Let those controls receive clicks before treating the frame as artwork.
+      if(event.target.closest('[data-editor-ui]'))return;
       const imageElement=event.target.closest('main [data-editor-image-key]');
       if(imageElement&&!adjusting){event.preventDefault();event.stopPropagation();chooseImage(imageElement.dataset.editorImageKey);}
     },true);
@@ -502,6 +606,7 @@
     });
     document.addEventListener('change',event=>{
       if(!editing)return;
+      const selected=event.target.closest('[data-highlight-choice]');if(selected){selectedHighlights.set(api.page.id,selected.value);api.refresh();return;}
       const angleField=event.target.closest('[data-highlight-rotation]');
       if(angleField){const frame=api.editorFrames().find(item=>item.key===angleField.closest('[data-controls-key]').dataset.controlsKey);if(frame&&!commitFrame(frame,'box',frame.getBox(),{rotation:angleField.valueAsNumber}))angleField.value=rotation(frame.key);return;}
       const select=event.target.closest('[data-frame-target]');
@@ -557,5 +662,5 @@
     });
     report(restored?'已恢復上次草稿，請儲存 JSON 設定':'點選虛線框即可編輯；請儲存 JSON 設定保存');
   }
-  window.generalRoadEditor={prepare,restorePages,connect,decorate,decorateAsset,toggleModuleFrame,image,bounds,rotation,serialize,setEditing,setAdjusting,addPage,movePage,removePage,replaceImage,getComparisonTransform,setComparisonTransform,get state(){return state;},get editing(){return editing;},get adjusting(){return adjusting;},needsAlignment:id=>Boolean(state.disabledHighlights['article:'+id])};
+  window.generalRoadEditor={articleFrames,prepare,restorePages,connect,decorate,decorateAsset,toggleModuleFrame,image,bounds,rotation,serialize,setEditing,setAdjusting,addPage,movePage,removePage,replaceImage,getComparisonTransform,setComparisonTransform,get state(){return state;},get editing(){return editing;},get adjusting(){return adjusting;},needsAlignment:id=>Boolean(state.disabledHighlights['article:'+id])};
 })();

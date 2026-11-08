@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G3-02",
+  "texts": {
+    "g302-conditions:content:photo:g302-photo-4:title": "缺少交叉來車警示",
+    "g302-conditions:content:photo:g302-photo-4:point-0": "主次道路均缺少警示設施，駕駛不易預期橫向穿越車流。",
+    "g302-junction-warning|0|text-4": "主要道路可設岔路標誌預告前方路口。",
+    "g302-junction-warning|1|text-7": "\n"
+  },
+  "images": {
+    "g302-crosswalk-option": {
+      "src": "materials/edited/ab6e7f826f9693046704fe1f40eaed7cf6744665bede4750f5f0d1abd7fc80e9.svg",
+      "alt": "G3-02_無號誌鄉區正交四叉路口設置行穿線圖例.svg"
+    },
+    "g302-no-crosswalk-option": {
+      "src": "materials/edited/05aaef13bd71cbf5e8c48654356334549e77cc57555fae670e71dafa85f6c944.svg",
+      "alt": "G3-02_無號誌鄉區正交四叉路口不設置行穿線圖例.svg"
+    },
+    "g302-photo-1": {
+      "src": "materials/edited/ca5766eb7af1ab1c33a6f761002ff63c13bc5b41f70fcb40610505c5ea8b3630.jpeg",
+      "alt": "24.8110216,121.8114436_202507.jpg"
+    }
+  },
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g302-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "速限不明確",
+            "titleKey": "g302-conditions:content:photo:g302-photo-1:title",
+            "imageKey": "g302-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "兩條道路皆缺少速限標字與標誌。",
+                "textKey": "g302-conditions:content:photo:g302-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "缺少交叉來車警示",
+            "titleKey": "g302-conditions:content:photo:g302-photo-2:title",
+            "imageKey": "g302-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "主次道路均缺少警示設施，駕駛不易預期橫向穿越車流。",
+                "textKey": "g302-conditions:content:photo:g302-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "次要道路車道配置不同",
+            "titleKey": "g302-conditions:content:photo:g302-photo-3:title",
+            "imageKey": "g302-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "次要道路東西兩側的車道及自行車空間配置不同，銜接需檢視。",
+                "textKey": "g302-conditions:content:photo:g302-photo-3:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g302-channel": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "槽化線主要劃設於交岔路口、立體交岔之匝道口或其他特殊地點。故可做為高路口辨識性之用。",
+            "textKey": "g302-channel|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "本示例於南北向主要道路鄰近路口處劃設槽化線，藉由槽化線用以引導車輛駕駛人循指示之路線行駛，若車輛偏移進入槽化區域，可透過槽化斜紋線方向導回原行駛動線。",
+            "textKey": "g302-channel|1|text-7"
+          }
+        ]
+      },
+      "g302-junction-warning": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "主要道路上可設置岔路標誌「警11」，提醒駕駛人注意前方路口。",
+            "textKey": "g302-junction-warning|1|text-6"
+          }
+        ]
+      },
+      "g302-edge": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "路面邊線用以指示路肩或路面外側邊緣之界線，其位置須配合道路中心線、車道數、車道寬度、中央分隔及路肩寬度配置。",
+            "textKey": "g302-edge|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "路肩寬度屬市區道路範疇者，須符合《市區道路及附屬工程設計規範》§ 2.4之規定；屬公路範疇者，須符合《公路路線設計規範》§ 2.3之規定。",
+            "textKey": "g302-edge|1|text-7"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g302-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "槽化提示前方路口",
+            "titleKey": "g302-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g302-channel"
+            ],
+            "targetId": "g302-channel"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "提前預告橫交道路",
+            "titleKey": "g302-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g302-junction-warning"
+            ],
+            "targetId": "g302-junction-warning"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "界定車道與路肩",
+            "titleKey": "g302-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g302-edge"
+            ],
+            "targetId": "g302-edge"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "依需求安排穿越",
+            "titleKey": "g302-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g302-crosswalk"
+            ],
+            "targetId": "g302-crosswalk"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {}
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G2-04",
+  "texts": {
+    "g204-bend|1|text-8": "依設計速率檢查曲線半徑及安全停車視距。",
+    "g204-review|0|text-1": "留設標線型人行道並明示速限，配合彎道預告與號誌立桿替選方案。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g204-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-1",
+            "title": "速限不明確",
+            "titleKey": "g204-conditions:content:photo:g204-photo-2:title",
+            "imageKey": "g204-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "僅於路面繪設速限標字，無設置速限標誌",
+                "textKey": "g204-conditions:content:photo:g204-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "缺少行人停等空間",
+            "titleKey": "g204-conditions:content:photo:g204-photo-3:title",
+            "imageKey": "g204-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "路口有行人穿越需求，卻未設置行人停等位置。",
+                "textKey": "g204-conditions:content:photo:g204-photo-3:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-3",
+            "title": "號誌位置不易辨識",
+            "titleKey": "g204-conditions:content:photo:g204-photo-4:title",
+            "imageKey": "g204-photo-4",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-3-point-0",
+                "text": "路側建物與設置位置影響號誌的可視性。",
+                "textKey": "g204-conditions:content:photo:g204-photo-4:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {
+      "g204-bend": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "依設計速率檢查曲線半徑及安全停車視距。",
+            "textKey": "g204-bend|1|text-6"
+          },
+          {
+            "id": "point-original-1",
+            "text": "§ 23 警告標誌設置位置與警告標的物起點之距離，應配合行車速率，自45–200 m為度，如受實際情形限制，得酌予變更。但其設置位置必須明顯，並不得少於安全停車視距。",
+            "textKey": "g204-bend|1|text-7"
+          }
+        ]
+      },
+      "g204-far-post": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "無法設置懸臂式號誌時，檢查遠端兩側配置。",
+            "textKey": "g204-far-post|1|text-6"
+          }
+        ]
+      }
+    },
+    "overviews": {
+      "g204-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "保留行人通行與停等空間",
+            "titleKey": "g204-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g204-sidewalk"
+            ],
+            "targetId": "g204-sidewalk"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "彎道前提前預告號誌",
+            "titleKey": "g204-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g204-signal-warning"
+            ],
+            "targetId": "g204-signal-warning"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "以速率與視距檢核彎道",
+            "titleKey": "g204-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g204-bend"
+            ],
+            "targetId": "g204-bend"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "依轉彎軌跡決定停止位置",
+            "titleKey": "g204-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g204-trajectory"
+            ],
+            "targetId": "g204-trajectory"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {},
+    "references": {
+      "g204-signal-warning": {
+        "ids": [
+          "sight-distance"
+        ]
+      }
+    }
+  }
+}

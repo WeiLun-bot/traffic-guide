@@ -1,5 +1,36 @@
 # 教材 PDF 匯出
 
+## 一般道路情境整本簡報
+
+本機編輯器提供「設定檔 → 匯出一般情境 PDF」。請先儲存修改；輸出使用已儲存版本的快照，後續編輯不影響正在匯出的內容。僅收錄一般道路情境，依播放順序輸出，運用解說使用 `/zoom`，隱藏條文不收錄。完成後自動下載，並保留下載連結。
+
+採固定 16:9、1600 × 900 的簡報版面，保留圖框、初始視角、打亮框及文字。操作控制項隱藏時保留原空間，避免推動版面。超長說明、表格及清單分成續頁，部分內容重疊以便銜接；續頁會固定捲動內容的位置，避免瀏覽器列印時將表格重設到第一列。PDF 保留可搜尋文字、逐頁書籤與頁碼。輸出後仍應抽查新增或大幅修改的內容；模糊的來源圖片需要先更換，PDF 不會增加原圖細節。
+
+命令列一次完成建置、輸出與合併：
+
+```powershell
+node tools/export-general-pdf.cjs
+```
+
+預設輸出 `exports/PDF-General/general-road-scenarios.pdf`。可用環境變數 `TRAFFIC_GUIDE_PDF_OUTPUT` 指定輸出資料夾；網頁匯出會在此目錄下建立各次工作的獨立資料夾，包含 `project-snapshot.json`、`manifest.json`、`validation.json`、逐頁 PNG／PDF、整份預覽圖與匯出紀錄。匯出需本機 Chrome 或 Edge、支援內建 WebSocket 的 Node，以及 PyMuPDF。
+
+Python 套件可隔離安裝於專案，不改動全域環境：
+
+```powershell
+py -3 -m venv .venv-pdf
+.\.venv-pdf\Scripts\python.exe -m pip install -r tools/pdf-requirements.txt
+```
+
+工具優先使用 `.venv-pdf/Scripts/python.exe`，也能以 `TRAFFIC_GUIDE_PDF_PYTHON` 指定 Python 執行檔。已有逐頁 PDF 時，可用 `node tools/export-general-pdf.cjs --assemble-only` 重新合併；請指向同一輸出資料夾。
+
+續頁可用實際 PDF 與瀏覽器截圖交叉驗證，檢查移動過的文字與表格沒有在列印時回到上一頁：
+
+```powershell
+.\.venv-pdf\Scripts\python.exe tests/validate-pdf-continuations.py exports/PDF-General
+```
+
+只檢查單頁時，可設定獨立的 `TRAFFIC_GUIDE_PDF_OUTPUT`，執行 `node tools/export-pdf-chapters.cjs --deck=general --page=g403-checklist`，再對該資料夾執行以上驗證。
+
 ## M1-01 與 G1-01 完整簡報
 
 `exports/PDF-M1-01-G1-01/` 提供 M1-01「路口動線導引」與 G1-01「無號誌市區正交三岔路口」兩份 PDF，目前分別為 16、13 頁。M1-01 依兩個子模組的現況議題、各圖例主題及延伸應用編排；G1-01 包含現況、策略、九項條文解說及回顧。

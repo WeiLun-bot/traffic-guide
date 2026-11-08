@@ -17,9 +17,11 @@ const initialConfigText = fs.readFileSync(configPath, 'utf8');
 const initialConfig = require('./read-project-config.cjs')();
 // Keep visual interaction tests independent of the user's saved camera choices.
 // The fixture is served through the same live-source route as the real project.
-for(const [id,view] of Object.entries(initialConfig.imageViews))if(!(process.argv.includes('--guide-experience-only')&&view.pageId==='results-guide-experience-5'))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
-initialConfig.removedModuleExtensions=[];
-initialConfig.imageOrders={};
+for(const [id,view] of Object.entries(initialConfig.imageViews))if(!process.argv.includes('--general-audit-only')&&!(process.argv.includes('--guide-experience-only')&&view.pageId==='results-guide-experience-5'))initialConfig.imageViews[id]=Core.imageView(view.pageId,view.assetKey);
+if(!process.argv.includes('--general-audit-only')){
+  initialConfig.removedModuleExtensions=[];
+  initialConfig.imageOrders={};
+}
 if(process.argv.includes('--road-clarity-only'))initialConfig.roadFlowPaths={};
 const previewConfigPath=path.join(artifacts,'preview-layout.json');
 const previewConfigText=JSON.stringify(initialConfig);
@@ -104,11 +106,11 @@ async function main() {
       const destination = new URL(url); destination.searchParams.set('test-document', String(Date.now()));
       await cdp.send('Page.navigate', {url: destination.href});
       await wait('Boolean(!window.__previousTestDocument && window.generalRoadPresentation && document.querySelector("main>.slide"))', 'New presentation document did not load',30000);
-      if(!process.argv.includes('--loading-only')&&!process.argv.includes('--next-page-label-only')&&!process.argv.includes('--results-book-demo-only')&&!process.argv.includes('--guide-experience-only')&&!process.argv.includes('--road-clarity-only'))await evaluate('(async()=>{if(window.PresentationRepository){const loaded=await window.PresentationRepository.loadAll();if(loaded.every(item=>item.status==="fulfilled"))await window.generalRoadPresentation.refresh();}})()');
+      if(!process.argv.includes('--references-only')&&!process.argv.includes('--loading-only')&&!process.argv.includes('--next-page-label-only')&&!process.argv.includes('--results-book-demo-only')&&!process.argv.includes('--guide-experience-only')&&!process.argv.includes('--road-clarity-only'))await evaluate('(async()=>{if(window.PresentationRepository){const loaded=await window.PresentationRepository.loadAll();if(loaded.every(item=>item.status==="fulfilled"))await window.generalRoadPresentation.refresh();}})()');
       await delay(420);
     }
     async function view(id, phase = 0) {
-      await evaluate(`window.generalRoadPresentation.goPage(${JSON.stringify(id)},${phase})`);
+      await evaluate(`(async()=>{window.generalRoadPresentation.goPage(${JSON.stringify(id)},${phase});await window.generalRoadPresentation.whenIdle?.();})()`);
       await evaluate(`(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));await Promise.all(document.getAnimations().filter(a=>a.effect.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{})))})()`);
       await delay(80);
     }
@@ -119,7 +121,15 @@ async function main() {
       for (let step = 1; step <= 6; step++) await mouse('mouseMoved', x + dx * step / 6, y + dy * step / 6, {button: 'left', buttons: 1});
       await mouse('mouseReleased', x + dx, y + dy, {button: 'left', buttons: 0, clickCount: 1});await delay(60);
     }
+    if(process.argv.includes('--pdf-export-only')){await require('./pdf-export-browser.cjs')({evaluate,navigate,click,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: PDF export UI; no uncaught exceptions.');return;}
+    if(process.argv.includes('--general-ui-updates-only')){await require('./general-ui-updates-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: general UI updates; no uncaught exceptions.');return;}
+    if(process.argv.includes('--image-view-transfer-only')){await require('./image-view-transfer-browser.cjs')({evaluate,view,navigate,click,wait,mouse,dragFrom,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: image view transfer and summary ordering; no uncaught exceptions.');return;}
+    if(process.argv.includes('--general-audit-only')){await require('./general-road-audit-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: general-road page audit; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--comparison-image-controls-only')){await require('./comparison-image-controls-browser.cjs')({evaluate,view,navigate,click,wait,mouse,dragFrom,base,pass});assert.deepEqual(exceptions,[]);console.log('PASS: comparison image controls; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--viewport-menu-scope-only')){await require('./viewport-menu-scope-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: viewport-menu scope regressions; no uncaught JavaScript exceptions.');return;}
     const moduleCheck=async()=>require('./presentation-modules-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure:value=>{failModules=value;}});
+    if(process.argv.includes('--scenario-return-only')){await require('./scenario-return-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario return groups; no uncaught JavaScript exceptions.');return;}
+    if(process.argv.includes('--references-only')){await require('./reference-library-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' reference library groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--scenario-sidebar-only')){await require('./scenario-sidebar-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario sidebar groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--scenario-polish-only')){await require('./scenario-polish-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario polish groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--scenario-reading-only')){await require('./scenario-reading-followup-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario-reading groups; no uncaught JavaScript exceptions.');return;}

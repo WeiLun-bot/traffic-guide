@@ -26,6 +26,7 @@
           <button type="button" data-vl-action="reconnect" hidden>重新授權舊檔</button>
           <button type="button" data-vl-action="reload">重新載入</button>
           <button type="button" data-vl-action="export">匯出 JSON</button>
+          <button type="button" data-vl-action="pdf-general">匯出一般情境 PDF</button>
           <button type="button" data-vl-action="import">匯入 JSON</button>
         </div></details>
         <button type="button" data-vl-action="panel" aria-expanded="true" hidden>版面屬性</button>
@@ -164,6 +165,7 @@
       overviewAssetKey: api.page.resultsModule?api.page.content.images.find(image=>image.role==='module')?.key:null,
       prepare() {if(editing){setMode(false);if(!window.generalRoadEditor?.editing)window.generalRoadEditor?.setEditing(true);}},
       setView(value) {const next=store.snapshot();next.imageViews[value.id]=value;store.commit(next);render();if(target!==root)mountImageViews(target,pageId);report('初始畫面已更新，請儲存設定。');},
+      clearView(id){const next=store.snapshot();delete next.imageViews[id];store.commit(next);api.refresh();report('已恢復沿用打亮的放大範圍，請儲存設定。');},
       save: () => run('save')
     });
   }
@@ -364,10 +366,17 @@
     if (name === 'reset') { if (current()) { const item = store.config.elements[selectedId]; change(Core.element(item.pageId, item.phase, item.kind, item.target)); } return; }
     if (name === 'undo' || name === 'redo') { cancelDrag(); if (store?.[name]()) { restoreLegacy(true); updateButtons(); report(name === 'undo' ? '已復原。' : '已重做。'); } return; }
     if (name === 'export') { if (store) { syncLegacy(); download(store.snapshot()); report('已匯出內容、導覽與版面備份；圖片素材仍使用專案檔案。'); } return; }
+    if(name==='pdf-general'&&(!files.local||store.dirty)){report(!files.local?'請用 start-editor.cmd 開啟本機教材，再匯出 PDF。':'請先儲存目前修改，再匯出一般情境 PDF。',true);return;}
     if (['open', 'reconnect', 'reload'].includes(name) && store?.dirty && !confirm('載入會取代目前版面，未儲存的修改可用復原取回。是否繼續？')) return;
     busy = true; updateButtons();
     try {
-      if (name === 'save') {
+      if(name==='pdf-general'){
+        const url=new URL('__pdf',document.baseURI),response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Project-Token':files.local.token},body:JSON.stringify({deck:'general',revision:files.local.revision})});
+        let job=await response.json();if(!response.ok)throw new Error(job.error||'PDF 匯出無法啟動');
+        while(job.state==='running'){report(job.pages?'一般情境 PDF 匯出中，已完成 '+job.pages+' 頁…':'正在準備一般情境 PDF…');await new Promise(resolve=>setTimeout(resolve,800));const result=await fetch(new URL('__pdf/'+job.id,document.baseURI),{cache:'no-store'});job=await result.json();if(!result.ok)throw new Error(job.error||'無法讀取匯出進度');}
+        if(job.state!=='complete')throw new Error(job.error||'PDF 匯出失敗');
+        document.querySelector('.pdf-download-link')?.remove();const link=document.createElement('a');link.className='pdf-download-link';link.href=new URL(job.download,document.baseURI);link.download='一般道路情境.pdf';link.textContent='下載一般道路情境 PDF';link.dataset.editorUi='pdf-download';document.body.append(link);link.click();report('一般情境 PDF 已完成，可由下載連結再次取得。');return;
+      } else if (name === 'save') {
         syncLegacy(); const snapshot = store.snapshot(); snapshot.updatedAt = new Date().toISOString();
         const result = await files.save(snapshot);
         if (result.download) { download(snapshot); report('已匯出完整專案 JSON；用 start-editor.cmd 開啟後匯入，再按儲存寫回專案。');return {saved:false,download:true}; }
