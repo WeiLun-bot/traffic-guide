@@ -7,7 +7,8 @@
     "m201-stop-extensions|shared|title": "停管制路口｜延伸應用",
     "m201-yield-issues|shared|title": "讓管制路口｜現況議題與相關條文",
     "m201-yield-layout|shared|title": "讓管制路口｜圖例說明",
-    "m201-yield-extensions|shared|title": "讓管制路口｜延伸應用"
+    "m201-yield-extensions|shared|title": "讓管制路口｜延伸應用",
+    "m201-stop-layout|concept|line|title": "停止線與視距參考線重合"
   },
   "images": {
     "module:stop-crosswalk": {
@@ -29,7 +30,51 @@
     "conditions": {},
     "articles": {},
     "overviews": {},
-    "modules": {},
+    "modules": {
+      "m201-stop-extensions": {
+        "points": [
+          {
+            "id": "curb",
+            "title": "約束轉彎軌跡確保路口視距淨空",
+            "titleKey": "m201-stop-extensions|module|curb|title",
+            "text": "轉角未設實體或標線型人行道時，建議以槽化線引導轉彎，避免偏離車道並維持視距。",
+            "textKey": "m201-stop-extensions|module|curb|text"
+          },
+          {
+            "id": "vehicle",
+            "title": "配合設計車種",
+            "titleKey": "m201-stop-extensions|module|vehicle|title",
+            "text": "槽化線的曲率配合設計車種，讓轉彎軌跡維持在既定車道內。",
+            "textKey": "m201-stop-extensions|module|vehicle|text"
+          }
+        ]
+      },
+      "m201-stop-issues": {
+        "points": [
+          {
+            "id": "sight",
+            "title": "停止線過度退縮，路口視距不足",
+            "titleKey": "m201-stop-issues|module|sight|title",
+            "text": "停止線距離幹道過遠，駕駛人即使停車，仍可能受到路口幾何或視線遮蔽影響，無法充分觀察左右來車。",
+            "textKey": "m201-stop-issues|module|sight|text"
+          },
+          {
+            "id": "notice",
+            "title": "僅依賴路面標字，難以提前辨識管制",
+            "titleKey": "m201-stop-issues|module|notice|title",
+            "text": "「停」標字主要在車輛接近路口時提醒駕駛人，且容易受到前車遮蔽、路面濕潤或標線磨耗等因素影響，無法完全取代路側停車再開標誌的預告功能。",
+            "textKey": "m201-stop-issues|module|notice|text"
+          },
+          {
+            "id": "pedestrian",
+            "title": "停讓行人與觀察來車的位置混淆",
+            "titleKey": "m201-stop-issues|module|pedestrian|title",
+            "text": "設有行人穿越道線時，停止線主要用於指示停讓行人的位置，未必適合觀察幹道來車。若缺乏明確的視距參考位置，容易忽略再次停車觀察的需求。",
+            "textKey": "m201-stop-issues|module|pedestrian|text"
+          }
+        ]
+      }
+    },
     "results": {}
   }
 }

@@ -70,12 +70,14 @@ module.exports=async({evaluate,click,navigate,cdp,base,pass})=>{
   await evaluate('(async()=>{await window.generalRoadPresentation.goPage("m201-stop-layout");await window.generalRoadPresentation.whenIdle();})()');
   await click('[data-module-topic="line"]');await next(false);assert.deepEqual(await visible(),['crosswalk','refuge','curb']);
   pass('Stop-control photos follow 1/2/3; its two concepts advance into three parallel application cards, and Next/PageDown advances to yield control without an extra group.');
-  await navigate(base+'/presentation-demo/#m201-yield-layout/topic-pedestrian');await next(false);
-  assert.equal((await state()).page,'m201-yield-extensions');assert.deepEqual(await visible(),['refuge','crosswalk']);
-  assert.equal(await run(()=>document.querySelectorAll('.module-extension-card').length),2);
+  await navigate(base+'/presentation-demo/#m201-yield-layout');
+  assert.deepEqual((await state()).topics,['sign','line']);
+  assert.equal((await state()).topic,'sign');await next(false);assert.equal((await state()).topic,'line');await next(false);
+  assert.equal((await state()).page,'m201-yield-extensions');assert.deepEqual(await visible(),['crosswalk']);
+  assert.equal(await run(()=>document.querySelectorAll('.module-extension-card').length),1);
   assert.equal(await run(()=>document.querySelector('.module-extension-pager').hidden),true);
   await next(true);assert.notEqual((await state()).page,'m201-yield-extensions');
-  pass('Yield-control applications retain one pair of cards; Next/PageDown leaves the page without a removed second group.');
+  pass('Yield control has two concepts and only the crosswalk application; Next/PageDown leaves without a deleted concept or refuge card.');
   await navigate(base+'/presentation-demo/#m203-signals-issues');
   const photos=()=>run(()=>[...document.querySelectorAll('.module-map-canvas')].map(node=>node.dataset.editorImageKey));
   const firstPhotos=['module:m203-signals-issue-photo-1','module:m203-signals-issue-photo-2'];

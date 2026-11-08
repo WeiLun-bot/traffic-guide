@@ -129,6 +129,14 @@
       "label": "現況照片 3：行人穿越與停車位置",
       "caption": "停管制路口行人穿越與停止位置空拍現況",
       "credit": "使用者提供之現況照片"
+    },
+    "m202-roundabout": {
+      "file": "materials/03-modules/M2-02/M2-02_圓環管制路口模組代表型.svg",
+      "width": 684,
+      "height": 773,
+      "label": "圓環管制配置",
+      "caption": "圖 3.30 圓環管制路口模組範例",
+      "credit": "道路交通標誌標線號誌設置參考指引"
     }
   },
   "pages": [
@@ -490,8 +498,7 @@
       "title": "讓管制路口｜圖例說明",
       "intro": "透過讓路線、讓路標誌及路口行車導引線的搭配，明確界定讓路位置與優先關係，並兼顧行人穿越需求。",
       "assets": [
-        "yield-basic",
-        "yield-crosswalk"
+        "yield-basic"
       ],
       "points": [
         {
@@ -549,48 +556,6 @@
               207
             ]
           }
-        },
-        {
-          "id": "pedestrian",
-          "title": "停止線標示停讓行人位置",
-          "text": "設有枕木紋行人穿越道線時，於行穿線上游 2～3 m 設置停止線，明確標示車輛停讓行人的位置。",
-          "focus": {
-            "asset": "yield-crosswalk",
-            "rect": [
-              479,
-              308,
-              94,
-              35
-            ]
-          }
-        },
-        {
-          "id": "priority",
-          "title": "讓路線及標誌對應幹道優先關係",
-          "text": "行穿線下游空間充足時，將白色倒三角形、雙白虛線及讓路標誌配置於靠近幹道的位置，區分停讓行人與讓行幹道車輛的管制需求。",
-          "focus": {
-            "asset": "yield-crosswalk",
-            "rect": [
-              722,
-              179,
-              229,
-              204
-            ]
-          }
-        },
-        {
-          "id": "space",
-          "title": "依現場空間調整標線配置",
-          "text": "行穿線下游空間不足時，可將白色倒三角形移至行穿線或停止線上游，維持讓管制的提示功能，並避免不同標線相互干擾。",
-          "focus": {
-            "asset": "yield-crosswalk",
-            "rect": [
-              503,
-              359,
-              55,
-              118
-            ]
-          }
         }
       ],
       "sourcePages": [
@@ -612,7 +577,8 @@
       "title": "讓管制搭配行穿線",
       "intro": "分清停讓行人與讓行幹道車輛的位置。",
       "assets": [
-        "yield-crosswalk"
+        "yield-crosswalk",
+        "m202-roundabout"
       ],
       "points": [
         {
@@ -680,25 +646,13 @@
       "submoduleId": "M2-01.2",
       "section": "yield",
       "title": "讓管制路口｜延伸應用",
-      "intro": "配合行人穿越需求及路口空間，配置庇護設施與停讓位置。",
-      "assets": [
-        "stop-refuge"
-      ],
-      "points": [
-        {
-          "id": "refuge",
-          "title": "提供分段穿越空間",
-          "text": "路口空間充足時，建議增設行人庇護島，讓行人分段穿越，也提醒駕駛注意行人。",
-          "focus": {
-            "asset": "stop-refuge"
-          }
-        }
-      ],
+      "intro": "分清停讓行人與讓行幹道車輛的位置。",
+      "assets": [],
+      "points": [],
       "sourcePages": [
         50,
         51
       ],
-      "notice": "附圖為停管制路口，示意共通的空間配置。",
       "references": [
         "172",
         "189"
@@ -1113,72 +1067,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "pedestrian",
-              "label": "區分行人停讓與車輛讓路位置",
-              "sourcePageId": "m201-yield-layout",
-              "assets": [
-                "yield-crosswalk"
-              ],
-              "pointIds": [
-                "pedestrian",
-                "priority",
-                "space"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "crosswalk",
-                  "label": "行人穿越道線",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "yield-crosswalk"
-                  }
-                },
-                {
-                  "id": "stop-line",
-                  "label": "停止線",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "yield-crosswalk",
-                    "rect": [
-                      479,
-                      308,
-                      94,
-                      35
-                    ]
-                  }
-                },
-                {
-                  "id": "yield-line",
-                  "label": "讓路線",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "yield-crosswalk",
-                    "rect": [
-                      503,
-                      359,
-                      55,
-                      118
-                    ]
-                  }
-                },
-                {
-                  "id": "sign",
-                  "label": "讓路標誌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "yield-crosswalk",
-                    "rect": [
-                      722,
-                      179,
-                      229,
-                      204
-                    ]
-                  }
-                }
-              ]
             }
           ]
         },
@@ -1187,28 +1075,6 @@
           "pageId": "m201-yield-extensions",
           "title": "延伸應用",
           "topics": [
-            {
-              "id": "refuge",
-              "label": "庇護空間",
-              "sourcePageId": "m201-yield-extensions",
-              "pointIds": [
-                "refuge"
-              ],
-              "assets": [
-                "stop-refuge"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "island",
-                  "label": "行人庇護島",
-                  "kind": "design",
-                  "focus": {
-                    "asset": "stop-refuge"
-                  }
-                }
-              ]
-            },
             {
               "id": "crosswalk",
               "label": "行穿線搭配配置",
@@ -1269,7 +1135,7 @@
             }
           ],
           "paged": true,
-          "intro": "配合行人穿越需求及路口空間，配置庇護設施與停讓位置。"
+          "intro": "分清停讓行人與讓行幹道車輛的位置。"
         }
       ]
     }

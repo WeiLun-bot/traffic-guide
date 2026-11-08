@@ -414,8 +414,7 @@
     ],
     "module:m201-yield-layout": [
       "sign",
-      "line",
-      "pedestrian"
+      "line"
     ],
     "scenario:g4-01": [
       "g401-left-waiting",
@@ -429,6 +428,10 @@
       "g401-parking",
       "g401-phase-two",
       "g401-phase-three"
+    ],
+    "module:m401-road-diagram": [
+      "warning",
+      "direction"
     ]
   },
   "scenarioOtherArticles": {},
@@ -458,6 +461,8 @@
     "m403-passing-extensions",
     "m103-parking-extensions",
     "m204-oneway-extensions",
-    "m401-local-extensions"
+    "m401-local-extensions",
+    "m204-movement-extensions",
+    "m404-pedestrian-extensions"
   ]
 }

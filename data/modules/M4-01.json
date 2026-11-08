@@ -307,8 +307,7 @@
       "title": "路段危險警示｜圖例說明",
       "intro": "依危險彎道的線形及辨識需求，配置安全方向導引標誌與彎路警告標誌，結合沿線導引、上游預告及危險範圍提示。",
       "assets": [
-        "m401-a6bae42a3b",
-        "m401-08de382a19"
+        "m401-a6bae42a3b"
       ],
       "points": [
         {
@@ -340,7 +339,7 @@
           "title": "依彎道條件增設上游警告",
           "text": "危險彎道已適當設置安全方向導引標誌後，若曲線半徑及視距符合彎路標誌的設置條件，應於上游增設對應方向的彎路標誌，建議距危險彎道 150～250 m，以提供駕駛人反應時間。",
           "focus": {
-            "asset": "m401-08de382a19"
+            "asset": "m401-a6bae42a3b"
           }
         },
         {
@@ -348,7 +347,7 @@
           "title": "以連續彎路標誌表達危險範圍",
           "text": "當道路具有連續危險彎道，或連續彎道中穿插危險彎道時，應設置連續彎路標誌及適用範圍附牌，並使標誌圖案對應第一處危險彎道方向。",
           "focus": {
-            "asset": "m401-08de382a19"
+            "asset": "m401-a6bae42a3b"
           }
         },
         {
@@ -356,7 +355,7 @@
           "title": "整合上游預告與沿線方向導引",
           "text": "彎路或連續彎路標誌應與安全方向導引標誌相互配合，避免警告資訊重複或不一致，並檢核由中途道路進入的駕駛人是否能取得必要的警示資訊。",
           "focus": {
-            "asset": "m401-08de382a19"
+            "asset": "m401-a6bae42a3b"
           }
         }
       ],
@@ -521,6 +520,46 @@
           "title": "圖例說明",
           "topics": [
             {
+              "id": "warning",
+              "label": "以彎路標誌預告危險及其持續範圍",
+              "sourcePageId": "m401-road-diagram",
+              "pointIds": [
+                "criteria",
+                "range",
+                "distance"
+              ],
+              "assets": [
+                "m401-a6bae42a3b"
+              ],
+              "showPointTitles": true,
+              "facilities": [
+                {
+                  "id": "curve",
+                  "label": "彎路標誌（警1、警2）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-a6bae42a3b"
+                  }
+                },
+                {
+                  "id": "continuous",
+                  "label": "連續彎路標誌（警3、警4）",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-a6bae42a3b"
+                  }
+                },
+                {
+                  "id": "range",
+                  "label": "危險範圍附牌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m401-a6bae42a3b"
+                  }
+                }
+              ]
+            },
+            {
               "id": "direction",
               "label": "以安全方向導引標誌提示彎道走向",
               "sourcePageId": "m401-road-diagram",
@@ -540,46 +579,6 @@
                   "kind": "control",
                   "focus": {
                     "asset": "m401-a6bae42a3b"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "warning",
-              "label": "以彎路標誌預告危險及其持續範圍",
-              "sourcePageId": "m401-road-diagram",
-              "pointIds": [
-                "criteria",
-                "range",
-                "distance"
-              ],
-              "assets": [
-                "m401-08de382a19"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "curve",
-                  "label": "彎路標誌（警1、警2）",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m401-08de382a19"
-                  }
-                },
-                {
-                  "id": "continuous",
-                  "label": "連續彎路標誌（警3、警4）",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m401-08de382a19"
-                  }
-                },
-                {
-                  "id": "range",
-                  "label": "危險範圍附牌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m401-08de382a19"
                   }
                 }
               ]
