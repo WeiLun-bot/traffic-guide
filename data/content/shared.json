@@ -14,7 +14,10 @@
     "cover|art|caption": "全圖定位 → 放大 → 條文解說",
     "contents|shared|title": "4大情境分類",
     "contents|0|text-1": "依號誌管制與路口型態，分為4大分類。\n各情境包括整體配置與個別設施的設置考量。",
-    "cover|0|text-1": "以情境理解標誌標線號誌的布設及其考量。"
+    "cover|0|text-1": "以情境理解標誌標線號誌的布設及其考量。",
+    "modules-structure|0|text-5": "路權如何分配，哪些方向可以通行？",
+    "modules-conclusion-comparison|card|g4-03|text": "車道配置、轉向需求與穿越保護",
+    "modules-conclusion-comparison|card|g3-01|text": "低速通行、有限空間分配、行人警告"
   },
   "images": {
     "results:module-m3-03-diagram": {

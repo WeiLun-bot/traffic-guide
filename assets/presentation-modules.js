@@ -117,7 +117,22 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const assetKey=id=>'module:'+id;
   const sharedAsset=id=>{if(formation&&Object.hasOwn(formation.assets,id))return formation.assets[id];for(const content of contents.values())if(Object.hasOwn(content.assets,id))return content.assets[id];};
-  function pagePoints(page){const configured=typeof window==='object'&&window.visualLayoutEditor?.store?.config.content.modules[page.id]?.points;if(!configured)return page.points;const originals=new Map(page.points.map(point=>[point.id,point]));return configured.map(point=>({...originals.get(point.id),...point,focus:originals.get(point.id)?.focus}));}
+  function pagePoints(page){
+    const configured=typeof window==='object'&&window.visualLayoutEditor?.store?.config.content.modules[page.id]?.points;
+    if(!configured)return page.points;
+    const originals=new Map(page.points.map(point=>[point.id,point]));let precedingFocus;
+    return configured.map(point=>{
+      const original=originals.get(point.id);let focus=original?.focus;
+      if(focus)precedingFocus=focus;
+      else if(page.pointLinkedImages){
+        // New descriptions share the preceding photo until they have their own
+        // source mapping; each description still has an independent frame.
+        const fallback=precedingFocus||page.points.find(item=>item.focus?.asset)?.focus,asset=fallback?.asset||page.assets[0];
+        if(asset)focus={asset,...(fallback?.assets?{assets:[...fallback.assets]}:{})};
+      }
+      return {...original,...point,focus};
+    });
+  }
   const sourcePoint=(page,id)=>pagePoints(page).find(point=>point.id===id);
   function overviewGroups(page){
     const content=moduleFor(page.id),entry=catalog?.modules.find(entry=>entry.id===content?.id);
@@ -145,7 +160,7 @@
     return [...new Set(assets)].filter(id=>sharedAsset(id));
   }
   function overviewAsset(group){const id=group.assets.includes(selectedOverviewAssets.get(group.key))?selectedOverviewAssets.get(group.key):group.assets[0];if(id)selectedOverviewAssets.set(group.key,id);return id;}
-  function linkedAssets(page){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),point=points.find(point=>point.id===selectedPoints.get(page.id))||points[0];return (point?.focus?.assets||[point?.focus?.asset]).filter(id=>page.assets.includes(id));}
+  function linkedAssets(page){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),point=points.find(point=>point.id===selectedPoints.get(page.id))||points[0],assets=(point?.focus?.assets||[point?.focus?.asset]).filter(id=>page.assets.includes(id));return assets.length?assets:page.assets.slice(0,1);}
   function activeAsset(page){if(page.pointLinkedImages){const points=pagePoints(page).filter(point=>pointVisible(page.id,point)),point=points.find(point=>point.id===selectedPoints.get(page.id))||points[0];if(page.assets.includes(point?.focus?.asset))return point.focus.asset;}const id=page.assets.includes(selectedAssets.get(page.id))?selectedAssets.get(page.id):page.assets[0];if(id)selectedAssets.set(page.id,id);return id;}
   function activeImageGroup(page){const selected=selectedAssets.get(page.id);return page.imageGroups?.find(group=>group.assets.includes(selected))||page.imageGroups?.[0];}
   function shownAssets(page){const groups=overviewGroups(page);if(groups.length)return groups.map(overviewAsset).filter(Boolean);if(page.mode==='grouped')return activeImageGroup(page).assets;if(page.mode==='gallery')return page.assets;const id=activeAsset(page);return id?(page.mode==='pair'?[id,page.assets[(page.assets.indexOf(id)+1)%page.assets.length]]:[id]):[];}
@@ -411,7 +426,7 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
   function visuals(page){
     const groups=overviewGroups(page);
     if(groups.length)return `<div class="module-overview-grid${groups.some(group=>group.assets.length>1)?' has-switchers':''}" style="--overview-columns:${groups.length}">${groups.map(group=>group.assets.length?figure({...page,assets:group.assets},overviewAsset(group),true,group):`<article class="module-overview-reference" data-overview-submodule="${group.id}"><h2>${esc(group.label)}</h2><p>${esc(group.intro)}</p><button type="button" class="text-button" data-page="${group.sourcePageId}">查看說明 ↗</button></article>`).join('')}</div>`;
-    if(!page.assets.length)return applications();
+    if(!page.assets.length)return page.id==='m201-applications'?applications():'';
     if(page.mode==='grouped'){
       const group=activeImageGroup(page),index=page.imageGroups.indexOf(group);
       return `<div class="module-grouped-visuals"><div class="module-figure-picker module-group-picker" data-editor-ui="module-view-tabs"><select data-module-view-select aria-label="選擇圖組">${page.imageGroups.map((item,i)=>`<option value="${item.assets[0]}" ${item.id===group.id?'selected':''}>${i+1}｜${esc(item.label)}</option>`).join('')}</select><div class="module-figure-steps"><button type="button" data-module-view-step="-1" aria-label="上一組圖例">‹</button><span aria-live="polite">${index+1}／${page.imageGroups.length}</span><button type="button" data-module-view-step="1" aria-label="下一組圖例">›</button></div></div><div class="module-concept-gallery" data-image-group="${group.id}" data-image-layout="row" style="--module-gallery-columns:${group.assets.length};--module-gallery-rows:1">${group.assets.map(id=>figure({...page,assets:[id]},id)).join('')}</div></div>`;
