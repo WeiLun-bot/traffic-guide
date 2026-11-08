@@ -24,7 +24,8 @@ for chapter in manifest["documents"]:
             page.set_mediabox(fitz.Rect(0, 0, 1200, 675))
             text = page.get_text()
             assert "".join(sheet["titleInPresentation"].split()) in "".join(text.split()), sheet["file"]
-            assert len(text.strip()) > (10 if sheet['id'].startswith('chapter-cover-') else 50), sheet["file"]
+            minimal_text = sheet['id'].startswith('chapter-cover-') or sheet.get('kind') == 'closing'
+            assert len(text.strip()) > (10 if minimal_text else 50), sheet["file"]
             result.insert_pdf(source)
             titles.append([1, sheet["title"], index + 1])
     result.set_metadata({"title": chapter["title"], "subject": "道路交通標誌標線號誌設置參考指引", "keywords": chapter["id"] + ", 簡報, 16:9"})

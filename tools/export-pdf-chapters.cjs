@@ -33,7 +33,7 @@ async function main(){
   let loaded=false;for(let i=0;i<400;i++){if(await cdp.evaluate('Boolean(document.documentElement.dataset.presentationState==="ready"&&window.visualLayoutEditor?.store&&document.querySelector("main>.slide"))').catch(()=>false)){loaded=true;break;}await delay(100);}assert(loaded,'Presentation did not load');
   let documents=await cdp.evaluate(`(()=>{
     const api=window.generalRoadPresentation;
-    if(${general})return [{id:'GENERAL',title:'一般道路情境',outputName:'general-road-scenarios.pdf',sheets:api.pages.filter(page=>page.deckId==='general'&&!window.PresentationOrder.hidden(page)).map(page=>({id:page.id,phase:page.article?1:0,title:window.PresentationStructure.pageTitle(page)}))}];
+    if(${general})return [{id:'GENERAL',title:'一般道路情境',outputName:'general-road-scenarios.pdf',sheets:api.pages.filter(page=>page.deckId==='general'&&!window.PresentationOrder.hidden(page)).map(page=>({id:page.id,kind:page.ending||page.kind,phase:page.article?1:0,title:window.PresentationStructure.pageTitle(page)}))}];
     const content=window.PresentationModules.contents.find(doc=>doc.id==='M1-01');
     const moduleSheets=[{id:content.pages[0].id,title:content.pages[0].title}];
     for(const flow of content.submoduleFlows)for(const stage of window.PresentationModules.visibleStages(flow)){

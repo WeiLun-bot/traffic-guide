@@ -145,6 +145,13 @@
           "code": "04",
           "name": "號誌化四岔",
           "entry": "g4"
+        },
+        {
+          "id": "general-conclusion",
+          "code": "05",
+          "name": "結論",
+          "entry": "general-conclusion",
+          "chapterCover": false
         }
       ]
     },

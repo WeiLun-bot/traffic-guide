@@ -4,6 +4,7 @@
     "title",
     "subtitle",
     "cover",
+    "conclusion",
     "source",
     "chapters",
     "assets",
@@ -26,6 +27,34 @@
         "presenter": "主講人：XXX",
         "organization": "中華民國道路協會",
         "date": "2026年11月9日"
+      }
+    },
+    "conclusion": {
+      "title": "結論",
+      "intro": "從道路情境出發，整合設置考量，回到整體配置檢核。",
+      "steps": [
+        {
+          "id": "conditions",
+          "label": "01 / 道路條件判讀",
+          "title": "先辨識路口型態與用路需求",
+          "text": "依有無號誌、三岔或四岔、車道配置與周邊環境，確認情境的主要設置議題。"
+        },
+        {
+          "id": "integration",
+          "label": "02 / 設施設置整合",
+          "title": "依情境選用標誌、標線與號誌",
+          "text": "配合車行動線、通行優先關係及行人穿越需求，整合各項交通管制設施。"
+        },
+        {
+          "id": "review",
+          "label": "03 / 整體配置檢核",
+          "title": "回看路口整體，確認設施相互配合",
+          "text": "檢核設施設置條件、視認性、動線銜接與訊息一致性，依現地條件調整配置。"
+        }
+      ],
+      "closing": {
+        "title": "簡報結束",
+        "subtitle": "敬請指教"
       }
     },
     "source": {
@@ -72,6 +101,12 @@
         "short": "號誌化四岔",
         "group": "G4",
         "count": 4
+      },
+      {
+        "id": "general-conclusion",
+        "code": "05",
+        "name": "結論",
+        "short": "結論"
       }
     ],
     "modules": [

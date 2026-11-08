@@ -31,6 +31,7 @@
     if(page.kind==='module')return window.PresentationModules.pageTitle(page);
     if(page.kind==='presentations-home')return window.PresentationStructure.manifest.title;
     if(page.kind==='cover')return data.cover.title;
+    if(page.kind==='general-ending')return page.ending==='closing'?data.conclusion.closing.title:data.conclusion.title;
     if(page.kind==='scenario-directory')return '全部情境總覽';
     if(page.kind==='chapter-scenarios')return '無號誌三岔路口從正交，到匯入。';
     if(page.kind==='current-conditions')return '現況分析';
@@ -53,7 +54,9 @@
     ...(window.PresentationModules?.pages()||[]),
     { id:'g1-scenarios',chapter:'g1',kind:'chapter-scenarios',name:'G1 章內情境總覽' },
     ...data.scenarios.flatMap(scenarioUI.pages),
-    ...data.chapters.slice(2).map(chapter => ({id:chapter.id, chapter:chapter.id, kind:'opening', name:chapter.name}))
+    ...data.chapters.slice(2).filter(chapter=>chapter.group).map(chapter => ({id:chapter.id, chapter:chapter.id, kind:'opening', name:chapter.name})),
+    {id:'general-conclusion',chapter:'general-conclusion',kind:'general-ending',ending:'conclusion',name:data.conclusion.title},
+    {id:'general-closing',chapter:'general-conclusion',kind:'general-ending',ending:'closing',name:data.conclusion.closing.title}
   ];
   window.PresentationScenarios?.extendPages(pages,data);
   window.PresentationStructure?.addChapterCovers(pages);
@@ -320,6 +323,8 @@
       $('presentation').innerHTML=window.PresentationStructure.render(page);
     } else if(page.kind==='module') {
       $('presentation').innerHTML=window.PresentationModules.render(page);
+    } else if(page.kind==='general-ending') {
+      $('presentation').innerHTML=page.ending==='closing'?window.PresentationModules.renderClosing(data.conclusion.closing,page.id):window.PresentationModules.renderConclusion(data.conclusion,page.id);
     } else if(page.kind==='map'&&!page.article&&currentScene.currentConditions) {
       $('presentation').innerHTML=mapShell(window.generalRoadConditions.comparison(currentScene,data));
     } else if(page.kind==='map') {
@@ -347,7 +352,7 @@
     $('next-label').textContent=window.PresentationStructure.navigationLabel();
     $('next').setAttribute('aria-label',$('next-label').textContent);
     $('announcer').textContent=`第 ${current().page+1} 頁，共 ${pages.length} 頁。${page.name}${page.article?'，'+(current().phase?'放大解說':'框選定位'):''}`;
-    if(!['module','results','presentations-home','presentation-empty','scenario-directory','chapter-cover'].includes(page.kind))scenarioUI.decorate(page);
+    if(!['module','results','presentations-home','presentation-empty','scenario-directory','chapter-cover','general-ending'].includes(page.kind))scenarioUI.decorate(page);
     window.PresentationScenarios?.decorate(page,data);
     window.PresentationModules?.decorate(page);
     window.PresentationText?.apply($('presentation'),{general:page.deckId==='general'});

@@ -91,7 +91,7 @@ const catalog=Modules.validateCatalog(JSON.parse(fs.readFileSync(path.join(site,
 const moduleData=Modules.validateModule(JSON.parse(fs.readFileSync(path.join(site,'data/modules/M2-01.json'),'utf8')),catalog);
 for(const asset of Object.values(moduleData.assets))resource(asset.file,'Module '+moduleData.id);
 assert(data,'Published index is not the general-road presentation');
-assert.equal(data.chapters.length,5,'Chapter count changed');
+assert.equal(data.chapters.length,6,'Chapter count changed');
 assert.deepEqual(data.scenarios.map(scene=>scene.id),['g1-01','g1-02','g1-03','g1-04'],'Scenario missing');
 assert.equal(data.articles.length,26,'Article count changed');
 assert.equal(new Set(data.articles.map(article=>article.id)).size,26,'Duplicate article IDs');
@@ -136,4 +136,4 @@ if(!artifactsOnly) {
   assert(/node\s+tests\/verify-github-pages\.cjs/.test(workflow),'Workflow skips release checks');
   assert(/uses:\s*actions\/deploy-pages@/.test(workflow)&&/pages:\s*write/.test(workflow)&&/id-token:\s*write/.test(workflow),'Pages deployment or permissions missing');
 }
-console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and external JSON settings; 5 chapters, 4 scenarios, 26 explanations; 28 external images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));
+console.log('PASS: '+files.size+' allowlisted files; byte-identical sources and external JSON settings; '+data.chapters.length+' chapters, 4 scenarios, 26 explanations; 28 external images ('+svgImages+' SVGs); '+scripts+' valid scripts; '+resources+' relative file references; no local paths or network dependencies; animation preserved; '+(artifactsOnly?'artifact checks only (deployment workflow not checked).':'workflow uploads only _site.'));

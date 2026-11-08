@@ -394,17 +394,16 @@ return `<section class="slide module-slide module-index${theme?' module-topic-in
       return `<article class="module-conclusion-card" data-conclusion-case="${card.id}"><h2 data-block-edit-key="${key}|title">${esc(card.title)}</h2><figure class="map-card module-map-card" data-image-fit="contain" data-initial-view-page="${pageId}-${card.id}"><div class="map-toolbar"><p class="module-conclusion-caption" data-block-edit-key="${key}|caption">${esc(asset.label)}</p><div class="map-tools"><button type="button" data-asset="${imageKey}">原圖 ↗</button></div></div><div class="map-canvas module-map-canvas" data-editor-image-key="${imageKey}">${orientedImage(asset,imageKey,'scenario-detail-image module-diagram')}</div></figure><div class="module-conclusion-considerations"><p class="module-conclusion-label" data-block-edit-key="${key}|label">${esc(card.considerationLabel)}</p><p data-block-edit-key="${key}|text">${esc(card.text)}</p></div></article>`;
     }).join('')}</div><footer class="module-conclusion-summary"><h2 data-block-edit-key="${pageId}|shared|takeaway">${esc(guide.takeaway)}</h2><p data-block-edit-key="${pageId}|shared|note">${esc(guide.note)}</p></footer></section>`;
   }
-  function conclusionProcessSlide(){
-    const guide=catalog.conclusion.process,pageId='modules-conclusion-process',icons=[
+  function conclusionProcessSlide(guide=catalog.conclusion.process,pageId='modules-conclusion-process'){
+    const icons=[
       '<path d="M12 15s5-4.5 5-8A5 5 0 0 0 7 7c0 3.5 5 8 5 8Z"/><circle cx="12" cy="7" r="1.5"/><path d="M7 15c-3 .5-5 1.6-5 3 0 2.2 4.5 4 10 4s10-1.8 10-4c0-1.4-2-2.5-5-3"/>',
       '<path d="m3 8 4-5h10l4 5v2H3Z"/><path d="M3 15h18M3 20h18"/>',
       '<path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="m8 13 3 3 5-6"/>'
     ];
     return `<section class="slide module-slide module-conclusion-process"><header class="module-heading"><h1 id="slide-title" data-block-edit-key="${pageId}|shared|title">${esc(guide.title)}</h1><p data-block-edit-key="${pageId}|shared|intro">${esc(guide.intro)}</p></header><ol class="module-process-steps">${guide.steps.map((step,index)=>{const key=pageId+'|step|'+step.id;return `<li class="module-process-step"><span class="module-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">${icons[index]}</svg></span><div class="module-process-copy"><p class="module-process-label" data-block-edit-key="${key}|label">${esc(step.label)}</p><h2 data-block-edit-key="${key}|title">${esc(step.title)}</h2><p class="module-process-text" data-block-edit-key="${key}|text">${esc(step.text)}</p></div></li>`;}).join('')}</ol></section>`;
   }
-  function closingSlide(){
-    const closing=catalog.conclusion.closing;
-    return `<section class="slide module-slide module-closing" aria-labelledby="slide-title"><span class="module-closing-rule" aria-hidden="true"></span><h1 id="slide-title" data-block-edit-key="modules-closing|shared|title">${esc(closing.title)}</h1><p data-block-edit-key="modules-closing|shared|subtitle">${esc(closing.subtitle)}</p></section>`;
+  function closingSlide(closing=catalog.conclusion.closing,pageId='modules-closing'){
+    return `<section class="slide module-slide module-closing" aria-labelledby="slide-title"><span class="module-closing-rule" aria-hidden="true"></span><h1 id="slide-title" data-block-edit-key="${pageId}|shared|title">${esc(closing.title)}</h1><p data-block-edit-key="${pageId}|shared|subtitle">${esc(closing.subtitle)}</p></section>`;
   }
   function directoryPreviews(id,selected=null){
     const assets=selected||directoryAssets(id);if(!assets.length)return '';
@@ -748,5 +747,5 @@ function showSource(reg){
       if(direction&&(moveConceptTopic(direction)||moveLinkedPoint(direction)||moveExtensionGroup(direction))){event.preventDefault();event.stopImmediatePropagation();}
     },true);
   }
-  return {reorderFacilities,navigationLabel:pointNavigationLabel,validateCatalog,validateModule,validateFormation,load,prepare,pages,toc,render,pageTitle,switcher,subnavigation,connect,decorate,afterRender,frames,noteReplacement,highlightSpec,formationHighlightSpec,extensionLayout,resolvePage,prepareNavigation,hashFor,displayContext,overviewGroups,overviewPoints,directoryAssets,pointVisible,syncExtensionControls,syncPages,visibleStages,extensionRemoved,get catalog(){return catalog;},get formation(){return formation;},get content(){return moduleFor(presentation?.page.id)||contents.get('M2-01')||null;},get contents(){return [...contents.values()];},get moduleErrors(){return Object.fromEntries(moduleErrors);},get error(){return loadError;}};
+  return {reorderFacilities,navigationLabel:pointNavigationLabel,validateCatalog,validateModule,validateFormation,load,prepare,pages,toc,render,renderConclusion:conclusionProcessSlide,renderClosing:closingSlide,pageTitle,switcher,subnavigation,connect,decorate,afterRender,frames,noteReplacement,highlightSpec,formationHighlightSpec,extensionLayout,resolvePage,prepareNavigation,hashFor,displayContext,overviewGroups,overviewPoints,directoryAssets,pointVisible,syncExtensionControls,syncPages,visibleStages,extensionRemoved,get catalog(){return catalog;},get formation(){return formation;},get content(){return moduleFor(presentation?.page.id)||contents.get('M2-01')||null;},get contents(){return [...contents.values()];},get moduleErrors(){return Object.fromEntries(moduleErrors);},get error(){return loadError;}};
 });

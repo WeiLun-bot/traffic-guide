@@ -48,7 +48,7 @@ test('four presentations own independent chapters, including all four PDF module
   Structure.validate(manifest);assert.deepEqual(manifest.presentations.map(deck=>deck.title),['三年成果與模組化整體架構','交通管制設施模組設計','一般道路情境','複雜道路情境']);
   const modules=manifest.presentations.find(deck=>deck.id==='modules'),general=manifest.presentations.find(deck=>deck.id==='general');
   assert.deepEqual(modules.chapters.map(chapter=>chapter.code),['00','01','02','03','04','05']);assert.deepEqual(modules.chapters.filter(chapter=>chapter.theme).map(chapter=>chapter.name),['車道配置與動線導引','路口管制','行人、自行車、機車、公車','危險警示與通行管制']);
-  assert.deepEqual(general.chapters.map(chapter=>chapter.id),['intro','g1','g2','g3','g4']);
+  assert.deepEqual(general.chapters.map(chapter=>chapter.id),['intro','g1','g2','g3','g4','general-conclusion']);
   const catalog=JSON.parse(fs.readFileSync(path.join(root,'data/modules/catalog.json'),'utf8'));assert.deepEqual(modules.chapters.filter(chapter=>chapter.theme).map(chapter=>chapter.name),catalog.themes.map(theme=>theme.name));
   const invalid=structuredClone(manifest);invalid.presentations[1].chapters[1].id='g1';assert.throws(()=>Structure.validate(invalid));
 });
@@ -64,9 +64,10 @@ test('grouping preserves page identities and saved ordering inside each chapter'
 test('all configured chapters receive one stable cover while existing pages and explicit saved cover positions remain intact',async()=>{
   const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async()=>({ok:true,json:async()=>structuredClone(manifest)})};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-structure.js'),'utf8'),sandbox);const api=sandbox.module.exports;await api.load();
   const originals=manifest.presentations.flatMap(deck=>deck.chapters.flatMap(chapter=>[{id:chapter.entry,chapter:chapter.id,kind:'content',payload:{text:chapter.name}},{id:chapter.entry+'-extra',chapter:chapter.id,kind:'content'}])),pages=[...originals].reverse();api.addChapterCovers(pages);api.organize(pages);
-  assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,manifest.presentations.reduce((n,deck)=>n+deck.chapters.length,0));assert.equal(new Set(pages.map(page=>page.id)).size,pages.length);for(const original of originals)assert(pages.includes(original));
-  for(const deck of manifest.presentations)for(const chapter of deck.chapters){const members=pages.filter(page=>page.chapter===chapter.id);assert.equal(members[0].id,'chapter-cover-'+chapter.id);assert.deepEqual(members.slice(1).map(page=>page.id),[chapter.entry+'-extra',chapter.entry]);}
-  api.addChapterCovers(pages);assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,manifest.presentations.reduce((n,deck)=>n+deck.chapters.length,0));
+  const coverCount=manifest.presentations.reduce((n,deck)=>n+deck.chapters.filter(chapter=>chapter.chapterCover!==false).length,0);
+  assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,coverCount);assert.equal(new Set(pages.map(page=>page.id)).size,pages.length);for(const original of originals)assert(pages.includes(original));
+  for(const deck of manifest.presentations)for(const chapter of deck.chapters){const members=pages.filter(page=>page.chapter===chapter.id),content=chapter.chapterCover===false?members:members.slice(1);if(chapter.chapterCover!==false)assert.equal(members[0].id,'chapter-cover-'+chapter.id);else assert(!members.some(page=>page.kind==='chapter-cover'));assert.deepEqual(content.map(page=>page.id),[chapter.entry+'-extra',chapter.entry]);}
+  api.addChapterCovers(pages);assert.equal(pages.filter(page=>page.kind==='chapter-cover').length,coverCount);
   const cover=pages.find(page=>page.id==='chapter-cover-results-review'),at=pages.indexOf(cover);pages.splice(at,1);pages.splice(at+1,0,cover);api.organize(pages,{legacyState:{pageOrder:pages.map(page=>page.id)}});assert.equal(pages.filter(page=>page.chapter==='results-review')[1],cover);
   const bad=structuredClone(manifest);bad.presentations[0].chapterCovers='yes';assert.throws(()=>api.validate(bad));
 });
