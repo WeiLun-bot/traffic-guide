@@ -61,12 +61,13 @@ async function main(){
       const maps=[...slide.querySelectorAll('.map-card,.module-map-canvas,.map-canvas,.conditions-current-canvas,.context-map-canvas')];const before=maps.map(rect);
       const contentImages=[...slide.querySelectorAll('img,svg image')].filter(n=>!n.closest('.compare-before-wrap')&&n.getClientRects().length&&getComputedStyle(n).visibility==='visible');
       // Some content uses buttons as containers. Keep its text and pictures as static content.
-      slide.querySelectorAll('.overview-list button,.module-reference-row button,.module-scenario-refs button,.module-case,.module-link,.module-extension-image-open,.condition-photo-open').forEach(node=>node.classList.add('pdf-content-control'));
+      slide.querySelectorAll('.results-outline-menu>button,.overview-list button,.module-reference-row button,.module-scenario-refs button,.module-case,.module-link,.module-extension-image-open,.condition-photo-open').forEach(node=>node.classList.add('pdf-content-control'));
       if(${general})slide.querySelectorAll('button').forEach(node=>{if(node.querySelector('img,svg')||node.matches('.directory-card,.scenario-card,.chapter-card,.strategy-title-button,.strategy-ref,[data-reference-preview],[data-table-preview]'))node.classList.add('pdf-content-control');});
       document.body.classList.add('pdf-hide-controls');
       document.querySelector('.pdf-section-label').textContent=${JSON.stringify(doc.title)};
       const after=maps.map(rect);if(before.some((r,i)=>r.some((v,k)=>Math.abs(v-after[i][k])>0.5)))throw new Error('Hiding controls changed an image frame: '+${JSON.stringify(sheet.id)}+' '+JSON.stringify({before,after,body:rect(document.body),main:rect(document.querySelector('main'))}));
       if(contentImages.some(node=>getComputedStyle(node).visibility!=='visible'))throw new Error('Hiding controls hid a content image: '+${JSON.stringify(sheet.id)});
+      if([...slide.querySelectorAll('.results-outline-menu>button')].some(node=>getComputedStyle(node).visibility!=='visible'))throw new Error('Hiding controls hid an outline chapter: '+${JSON.stringify(sheet.id)});
       const scroll=[...slide.querySelectorAll('.explanation,.module-explanation,.module-extension-copy,.conditions-issues')].filter(n=>n.getClientRects().length&&n.scrollHeight>n.clientHeight+3).map(n=>({class:n.className,height:n.clientHeight,scroll:n.scrollHeight}));
       const bottom=document.getElementById('presentation').getBoundingClientRect().bottom;
       const clipped=[...slide.querySelectorAll('h1,h2,h3,p,li,.road-fact,.condition-issue,.context-note,.map-card')].filter(n=>n.getClientRects().length&&getComputedStyle(n).visibility==='visible'&&n.getBoundingClientRect().bottom>bottom+2).map(n=>({class:n.className,text:n.textContent.slice(0,90),bottom:n.getBoundingClientRect().bottom}));
