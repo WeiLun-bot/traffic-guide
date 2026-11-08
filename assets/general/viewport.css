@@ -21,8 +21,8 @@ body .viewport-tools.viewport-tools-compact button:hover,body .viewport-tools.vi
 .comparison-ui-options label{display:flex;gap:7px;align-items:center;font-size:12px;white-space:nowrap}
 .comparison-ui-hidden{display:none!important}
 .compare-source-image{min-height:0!important}
-.map-toolbar{flex-wrap:wrap;gap:6px}
-.map-toolbar .map-tools{flex-wrap:wrap;min-width:0}
+body[data-presentation="general"] .map-toolbar{flex-wrap:wrap;gap:6px}
+body[data-presentation="general"] .map-toolbar .map-tools{flex-wrap:wrap;min-width:0}
 @media print{.viewport-display-options,.viewport-initial-toolbar,.comparison-ui-options{display:none!important}}
 
 body.is-editing .custom-image-frame:has(>.image-edit-button)>.viewport-display-options,

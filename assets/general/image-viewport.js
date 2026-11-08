@@ -55,7 +55,10 @@
     const reset=document.createElement('button');reset.type='button';reset.textContent='↺';reset.setAttribute('aria-label','重設視圖');tools.append(percentage,reset);container.append(tools);
     if(element.matches('.compare-source-image'))tools.hidden=true;
     let displayOptions;
-    if(!element.matches('.compare-diagram')){
+    // Shared viewport controllers also serve the results, modules and complex decks.
+    // Their compact toolbars keep the original controls; this menu belongs to general roads.
+    // The body deck marker updates after mounting, so use the destination page instead.
+    if(window.generalRoadPresentation?.page?.deckId==='general'&&!element.matches('.compare-diagram')){
       displayOptions=document.createElement('details');displayOptions.className='viewport-display-options';displayOptions.dataset.editorUi='image-display';
       if(element.dataset.comparisonSide)displayOptions.dataset.comparisonSide=element.dataset.comparisonSide;
       const label=element.dataset.comparisonSide==='before'?'現況圖':element.dataset.comparisonSide==='after'?'改善圖':'圖面';

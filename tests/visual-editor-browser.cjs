@@ -119,6 +119,7 @@ async function main() {
       for (let step = 1; step <= 6; step++) await mouse('mouseMoved', x + dx * step / 6, y + dy * step / 6, {button: 'left', buttons: 1});
       await mouse('mouseReleased', x + dx, y + dy, {button: 'left', buttons: 0, clickCount: 1});await delay(60);
     }
+    if(process.argv.includes('--viewport-menu-scope-only')){await require('./viewport-menu-scope-browser.cjs')({evaluate,view,navigate,click,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: viewport-menu scope regressions; no uncaught JavaScript exceptions.');return;}
     const moduleCheck=async()=>require('./presentation-modules-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass,previewConfigPath,previewConfigText,editText,setModuleFailure:value=>{failModules=value;}});
     if(process.argv.includes('--scenario-sidebar-only')){await require('./scenario-sidebar-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario sidebar groups; no uncaught JavaScript exceptions.');return;}
     if(process.argv.includes('--scenario-polish-only')){await require('./scenario-polish-browser.cjs')({evaluate,view,click,navigate,wait,cdp,base,artifacts,pass});assert.deepEqual(exceptions,[]);console.log('PASS: '+checks.length+' scenario polish groups; no uncaught JavaScript exceptions.');return;}
