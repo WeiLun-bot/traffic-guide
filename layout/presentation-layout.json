@@ -893,19 +893,20 @@
       },
       "module:m101-additional-diagram:concept-dotted-dotted": {
         "box": [
-          363.6,
+          367.1,
           150,
-          443.5,
-          23.7
+          418.2,
+          15.5
         ],
-        "imageKey": "module:m101-additional"
+        "imageKey": "module:m101-additional",
+        "rotation": 1
       },
       "module:m101-additional-diagram:concept-dotted-channel": {
         "box": [
           220,
-          121.3,
-          302.1,
-          42.7
+          121.29999999999998,
+          125.9,
+          41.3
         ],
         "imageKey": "module:m101-additional",
         "crop": [
@@ -913,7 +914,8 @@
           2.9,
           733.5,
           289.1
-        ]
+        ],
+        "rotation": 0
       },
       "module:m101-additional-issues:storage": {
         "box": [
@@ -2288,6 +2290,64 @@
           58.5
         ],
         "rotation": 0
+      },
+      "module:m103-parking-diagram:concept-sight-parking": {
+        "box": [
+          50.8,
+          64.7,
+          156.9,
+          27.7
+        ],
+        "rotation": 0,
+        "imageKey": "module:m103-layout"
+      },
+      "module:m103-parking-diagram:concept-sight-no-stopping": {
+        "deleted": true,
+        "imageKey": "module:m103-layout"
+      },
+      "module:m103-parking-diagram:concept-information-range": {
+        "deleted": true,
+        "imageKey": "module:m103-layout"
+      },
+      "module:m103-parking-diagram:concept-information-plates": {
+        "deleted": true,
+        "imageKey": "module:m103-layout"
+      },
+      "module:m103-parking-diagram:concept-information-sign": {
+        "box": [
+          331.4,
+          22,
+          32.6,
+          27.8
+        ],
+        "rotation": 0,
+        "imageKey": "module:m103-layout"
+      },
+      "module:m103-parking-issues:sight": {
+        "box": [
+          0,
+          274.30000000000007,
+          436.8,
+          261.8
+        ],
+        "rotation": 0,
+        "imageKey": "module:m103-issue-intersection-visibility"
+      },
+      "module:m401-road-diagram:concept-warning-curve": {
+        "box": [
+          662,
+          89.8,
+          165.6,
+          192.1
+        ],
+        "rotation": 0,
+        "imageKey": "module:m401-a6bae42a3b",
+        "crop": [
+          537.2,
+          0,
+          373.3,
+          420.6
+        ]
       }
     },
     "disabledHighlights": {
@@ -2306,7 +2366,10 @@
       "module:m201-yield-layout:guide": true,
       "module:m101-lanes-diagram:concept-trajectory-custom-7aabab8d-809f-4d9f-bd07-103ecd3daf03": true,
       "module:m301-crossing-diagram:concept-markings-marking": true,
-      "module:modules-formation:lanes": true
+      "module:modules-formation:lanes": true,
+      "module:m103-parking-diagram:concept-sight-no-stopping": true,
+      "module:m103-parking-diagram:concept-information-range": true,
+      "module:m103-parking-diagram:concept-information-plates": true
     },
     "styles": {
       "results-background|results|source-title": {
@@ -2667,6 +2730,12 @@
       },
       "modules-outline|results|title": {
         "fontSize": 36
+      },
+      "modules-closing|shared|title": {
+        "fontSize": 56
+      },
+      "modules-closing|shared|subtitle": {
+        "fontSize": 56
       }
     },
     "frames": {
@@ -4367,6 +4436,56 @@
       "y": 0,
       "rotation": 0,
       "fit": "all"
+    },
+    "modules-concept-m202-roundabout-diagram-yield-line/module%3Am202-roundabout": {
+      "id": "modules-concept-m202-roundabout-diagram-yield-line/module%3Am202-roundabout",
+      "pageId": "modules-concept-m202-roundabout-diagram-yield-line",
+      "assetKey": "module:m202-roundabout",
+      "units": "percent",
+      "zoom": 1.349858817230945,
+      "x": -1.2695974028646402,
+      "y": -16.95441471700115,
+      "rotation": 0
+    },
+    "modules-concept-m202-roundabout-diagram-channel/module%3Am202-roundabout": {
+      "id": "modules-concept-m202-roundabout-diagram-channel/module%3Am202-roundabout",
+      "pageId": "modules-concept-m202-roundabout-diagram-channel",
+      "assetKey": "module:m202-roundabout",
+      "units": "percent",
+      "zoom": 1.822118826456126,
+      "x": 0.6680997779607236,
+      "y": 6.438307374302724,
+      "rotation": 0
+    },
+    "m203-signals-issues/module%3Am203-signals-issue-photo-2": {
+      "id": "m203-signals-issues/module%3Am203-signals-issue-photo-2",
+      "pageId": "m203-signals-issues",
+      "assetKey": "module:m203-signals-issue-photo-2",
+      "units": "percent",
+      "zoom": 0.6376281447807656,
+      "x": -7.1700271333938765,
+      "y": 6.08410680131903,
+      "rotation": 0
+    },
+    "modules-concept-m203-signals-diagram-basic/module%3Am203-2f27e58a6a": {
+      "id": "modules-concept-m203-signals-diagram-basic/module%3Am203-2f27e58a6a",
+      "pageId": "modules-concept-m203-signals-diagram-basic",
+      "assetKey": "module:m203-2f27e58a6a",
+      "units": "percent",
+      "zoom": 2.117000054467583,
+      "x": -5.406735400524346,
+      "y": -6.407433565645635,
+      "rotation": 0
+    },
+    "modules-concept-m401-road-diagram-warning/module%3Am401-a6bae42a3b": {
+      "id": "modules-concept-m401-road-diagram-warning/module%3Am401-a6bae42a3b",
+      "pageId": "modules-concept-m401-road-diagram-warning",
+      "assetKey": "module:m401-a6bae42a3b",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0,
+      "y": 0,
+      "rotation": -164
     }
   },
   "extensionLayouts": {
@@ -4374,7 +4493,6 @@
     "m201-stop-extensions/crosswalk": "vertical",
     "m201-stop-extensions/curb": "vertical",
     "m201-yield-extensions/refuge": "vertical",
-    "m201-yield-extensions/crosswalk": "vertical",
     "m201-yield-extensions/curb": "vertical",
     "m201-yield-extensions/buffer": "vertical",
     "m203-signals-extensions/explanation": "vertical",

@@ -414,8 +414,7 @@
     ],
     "module:m201-yield-layout": [
       "sign",
-      "line",
-      "pedestrian"
+      "line"
     ],
     "scenario:g4-01": [
       "g401-left-waiting",
@@ -549,6 +548,10 @@
       "g105-red-line",
       "g105-no-stopping-sign",
       "g105-parking-sign"
+    ],
+    "module:m401-road-diagram": [
+      "warning",
+      "direction"
     ]
   },
   "scenarioOtherArticles": {
@@ -579,9 +582,6 @@
     "g3-02": [],
     "g1-05": []
   },
-  "scenarioHiddenArticles": {
-    "g1-05": []
-  },
   "imageOrders": {
     "results:results-scenario-g3-02/photo": [
       "results:g3-02-photo-2",
@@ -608,6 +608,11 @@
     "m403-passing-extensions",
     "m103-parking-extensions",
     "m204-oneway-extensions",
-    "m401-local-extensions"
-  ]
+    "m401-local-extensions",
+    "m204-movement-extensions",
+    "m404-pedestrian-extensions"
+  ],
+  "scenarioHiddenArticles": {
+    "g1-05": []
+  }
 }

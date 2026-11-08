@@ -465,8 +465,8 @@
       "title": "交通島通行導引｜圖例說明",
       "intro": "依交通島的分隔型式與車輛通行方向，配置適當的遵行或警告標誌，並兼顧島頭辨識性及車流通行淨距。",
       "assets": [
-        "m204-e6f9a94e50",
         "m204-55b65042db",
+        "m204-e6f9a94e50",
         "m204-island-clearance-photo"
       ],
       "points": [
@@ -785,8 +785,8 @@
               "label": "依通行型態選用標誌並強化島頭辨識",
               "sourcePageId": "m204-island-diagram",
               "assets": [
-                "m204-e6f9a94e50",
-                "m204-55b65042db"
+                "m204-55b65042db",
+                "m204-e6f9a94e50"
               ],
               "imageLayout": "row",
               "pointIds": [
@@ -827,8 +827,8 @@
               "label": "兼顧標誌辨識高度與橫向淨距",
               "sourcePageId": "m204-island-diagram",
               "assets": [
-                "m204-e6f9a94e50",
-                "m204-55b65042db"
+                "m204-55b65042db",
+                "m204-e6f9a94e50"
               ],
               "imageLayout": "row",
               "pointIds": [

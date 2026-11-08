@@ -51,4 +51,37 @@ module.exports=async({evaluate,navigate,view,click,cdp,base,artifacts,pass})=>{
   await click('.iv-panel:not([hidden]) [data-iv-action="close"]');await run(()=>generalRoadEditor.setEditing(false));
   await view('g201-overview');assert.equal(await run(()=>document.querySelectorAll('.comparison-display-pair .viewport-display-options').length),2);
   pass('General-road full-image/initial-view controls and paired before/after menus survive repeated cross-deck navigation');
+  for(const id of ['results-modules','m101-lanes-diagram','modules-formation','c101-conditions']){
+    await view(id);await run(()=>generalRoadEditor.setEditing(true));await click('#presentation .iv-trigger');
+    const before=await run(()=>{
+      const panel=document.querySelector('.iv-panel:not([hidden])'),asset=decodeURIComponent(panel.dataset.imageViewId.split('/').at(-1));
+      const svg=[...document.querySelectorAll('#presentation svg.interactive-viewport')].find(n=>n.closest('[data-editor-image-key]')?.dataset.editorImageKey===asset);
+      if(!svg)throw new Error('Initial-view image not found: '+asset);window.__crossDeckSvg=svg;
+      const controller=generalRoadViewport.get(svg),v=controller.read();controller.start();controller.write([v[0]+v[2]*.12,v[1]+v[3]*.09,v[2]*.7,v[3]*.7]);
+      return controller.read();
+    });
+    await click('.iv-panel:not([hidden]) [data-iv-action="capture"]');
+    for(const delay of [0,800]){
+      if(delay)await evaluate('new Promise(r=>setTimeout(r,800))');
+      const after=await run(()=>generalRoadViewport.get(window.__crossDeckSvg).read());
+      before.forEach((value,index)=>assert(Math.abs(value-after[index])<1e-6,JSON.stringify({id,before,after})));
+    }
+    await click('.iv-panel:not([hidden]) [data-iv-action="close"]');await run(()=>generalRoadEditor.setEditing(false));
+  }
+  pass('Results, module diagrams, formation stages and complex-scenario photos capture the exact camera immediately and after animation');
+  await view('m101-lanes-diagram');await run(()=>generalRoadEditor.setEditing(true));await click('.editor-highlight');
+  const initial=await run(()=>generalRoadPresentation.editorFrames().map(frame=>({key:frame.key,box:frame.getBox(),hasBox:frame.hasBox})));
+  assert(initial.length>0);assert(initial[0].hasBox);
+  const deleted=()=>run(()=>Boolean(generalRoadEditor.state.highlights[generalRoadPresentation.editorFrames()[0].key]?.deleted));
+  assert.equal(await deleted(),false);
+  await click('[data-toggle-module-frame]');assert.equal(await deleted(),true);
+  await click('[data-vl-action="undo"]');assert.equal(await deleted(),false);
+  await click('[data-vl-action="redo"]');assert.equal(await deleted(),true);
+  await click('[data-toggle-module-frame]');
+  assert.equal(await deleted(),false);
+  const restored=await run(()=>generalRoadPresentation.editorFrames().map(frame=>({key:frame.key,box:frame.getBox(),hasBox:frame.hasBox})));
+  assert.deepEqual(restored.map(({key,hasBox})=>({key,hasBox})),initial.map(({key,hasBox})=>({key,hasBox})));
+  restored.forEach((frame,index)=>frame.box.forEach((value,axis)=>assert(Math.abs(value-initial[index].box[axis])<1e-9)));
+  await click('.editor-highlight');await run(()=>generalRoadEditor.setEditing(false));
+  pass('Existing module highlight deletion, restore and undo/redo preserve all independently configured frames');
 };
