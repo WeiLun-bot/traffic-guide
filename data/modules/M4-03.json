@@ -16,7 +16,9 @@
     ],
     "notes": [],
     "userImageFiles": [
-      "materials/03-modules/M4-03/M4-03.1_現況議題_01.png"
+      "materials/03-modules/M4-03/M4-03.1_現況議題_01.png",
+      "materials/03-modules/M4-03/M4-03.2_現況議題_超車衝突.png",
+      "materials/03-modules/M4-03/M4-03.2_現況議題_會車管制.png"
     ]
   },
   "assets": {
@@ -77,6 +79,22 @@
       "label": "禁止會車放大",
       "caption": "禁止會車放大",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m403-passing-issue-photo-1": {
+      "file": "materials/03-modules/M4-03/M4-03.2_現況議題_超車衝突.png",
+      "width": 1024,
+      "height": 576,
+      "label": "現況照片 1：彎道超車風險",
+      "caption": "超車、會車控制現況",
+      "credit": "使用者提供之現況照片"
+    },
+    "m403-passing-issue-photo-2": {
+      "file": "materials/03-modules/M4-03/M4-03.2_現況議題_會車管制.png",
+      "width": 1522,
+      "height": 1076,
+      "label": "現況照片 2：狹窄路段會車管制",
+      "caption": "超車、會車控制現況",
+      "credit": "使用者提供之現況照片"
     }
   },
   "pages": [
@@ -240,8 +258,8 @@
       "title": "超車、會車控制｜現況議題與相關條文",
       "intro": "道路於視距不足或路幅狹窄處，應透過適當的標誌標線限制超車與會車行為，降低對向車輛衝突風險。",
       "assets": [
-        "m403-79496b3bb6",
-        "m403-36895aca28"
+        "m403-passing-issue-photo-1",
+        "m403-passing-issue-photo-2"
       ],
       "points": [
         {
@@ -249,7 +267,7 @@
           "title": "視距不足路段缺乏明確超車限制",
           "text": "彎道、接近交岔路口或其他視距不足的路段，若未明確設置禁止超車標誌標線，可能使駕駛人在無法充分掌握對向及交岔車流的情況下超車，增加車輛衝突風險。",
           "focus": {
-            "asset": "m403-79496b3bb6"
+            "asset": "m403-passing-issue-photo-1"
           }
         },
         {
@@ -257,7 +275,7 @@
           "title": "狹窄路段會車管制與先行關係不明",
           "text": "道路或橋梁寬度不足以供雙向車輛同時通過時，若未明確指定先行方向及適當停等位置，可能使對向車輛同時進入狹窄路段，造成通行衝突。",
           "focus": {
-            "asset": "m403-36895aca28"
+            "asset": "m403-passing-issue-photo-2"
           }
         }
       ],
@@ -270,9 +288,9 @@
       "applications": [
         "C4-06"
       ],
-      "defaultView": "single",
+      "defaultView": "pair",
       "imageFit": "contain",
-      "pointLinkedImages": true
+      "pointLinkedImages": false
     },
     {
       "id": "m403-passing-diagram",

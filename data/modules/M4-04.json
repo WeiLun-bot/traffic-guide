@@ -128,7 +128,7 @@
       ],
       "defaultView": "single",
       "imageFit": "contain",
-      "pointLinkedImages": true
+      "pointLinkedImages": false
     },
     {
       "id": "m404-pedestrian-diagram",
@@ -139,7 +139,8 @@
       "assets": [
         "m404-3762916f50",
         "m404-8af799c9f9",
-        "m404-f3708fbde3"
+        "m404-f3708fbde3",
+        "m404-271591fe84"
       ],
       "points": [
         {
@@ -427,6 +428,9 @@
                     "asset": "m404-3762916f50"
                   }
                 }
+              ],
+              "illustrations": [
+                "m404-271591fe84"
               ]
             }
           ]
