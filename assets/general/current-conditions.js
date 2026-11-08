@@ -23,7 +23,7 @@
   }
   function layer(data,key,position,offsetY=0,value={x:0,y:0,scaleX:1,scaleY:1,angle:0}) {
     const asset=data.embeddedAssets[key],oriented=orientation(asset,data.assetMeta[key]?.rotation||0);
-    return `<svg class="compare-diagram compare-${position}" viewBox="0 0 1000 650" role="img" aria-label="${position==='before'?'現況圖':'改善設置示意'}"><g class="compare-manual-transform" transform="${transform(value,offsetY)}"><g class="compare-registration" transform="translate(0 ${offsetY})"><svg x="0" y="0" width="1000" height="650" viewBox="0 0 ${oriented.width} ${oriented.height}" preserveAspectRatio="xMidYMid meet"><g transform="${oriented.transform}"><image href="${asset.url}" width="${asset.width}" height="${asset.height}"/></g></svg></g></g></svg>`;
+    return `<svg class="compare-diagram compare-${position}" viewBox="0 0 1000 650" role="img" aria-label="${position==='before'?'現況圖':'改善設置示意'}"><g class="compare-manual-transform" transform="${transform(value,offsetY)}"><g class="compare-registration" transform="translate(0 ${offsetY})"><svg class="compare-source-image scenario-detail-image" data-editor-image-key="${esc(key)}" data-comparison-side="${position}" x="0" y="0" width="1000" height="650" viewBox="0 0 ${oriented.width} ${oriented.height}" preserveAspectRatio="xMidYMid meet"><g transform="${oriented.transform}"><image href="${asset.url}" width="${asset.width}" height="${asset.height}"/></g></svg></g></g></svg>`;
   }
   function photoImage(data,photo) {
     const replacement=window.generalRoadEditor?.state.images[photo.editKey||photo.image]?.src;
@@ -31,7 +31,7 @@
     return `<img src="${replacement||data.embeddedAssets[photo.image].url}" alt="${esc(photo.alt||photo.title)}" draggable="false">`;
   }
   function transformEditor(){
-    return `<details class="compare-transform-editor" data-editor-ui="comparison-transform"><summary>微調圖面對齊 <span>位置・大小・旋轉</span></summary><div class="compare-transform-body"><div class="compare-transform-top"><label>調整對象<select data-compare-target aria-label="選擇要調整的圖"><option value="before">現況圖</option><option value="after">改善示意圖</option></select></label><label class="compare-transform-check"><input type="checkbox" data-compare-lock checked>等比縮放</label></div><label class="compare-transform-check compare-direct-control"><input type="checkbox" data-compare-direct>在圖上拖曳移動、滾輪調整大小</label><div class="compare-transform-fields">${[['x','左右位置 %',.1,-1000,1000],['y','上下位置 %',.1,-1000,1000],['scaleX','寬度 %',.1,5,2000],['scaleY','高度 %',.1,5,2000],['angle','旋轉角度 °',.1,-3600,3600]].map(([key,label,step,min,max])=>`<label>${label}<input type="number" data-compare-transform="${key}" step="${step}" min="${min}" max="${max}" aria-label="${label}"></label>`).join('')}<label class="compare-angle-range">旋轉滑桿<input type="range" data-compare-angle-slider min="-180" max="180" step="0.1" value="0" aria-label="連續調整旋轉角度"></label></div><div class="compare-transform-actions"><button type="button" data-compare-rotate="-90">左轉 90°</button><button type="button" data-compare-rotate="90">右轉 90°</button><button type="button" data-compare-reset>還原這張圖</button></div><small class="compare-transform-note">向右、向下、順時針為正值。調整後請儲存 JSON 設定。</small></div></details>`;
+    return `<details class="compare-transform-editor" data-editor-ui="comparison-transform"><summary>微調圖面對齊 <span>位置・大小・旋轉</span></summary><div class="compare-transform-body"><div class="compare-transform-top"><label>調整對象<select data-compare-target aria-label="選擇要調整的圖"><option value="before">現況圖</option><option value="after">改善示意圖</option></select></label><label class="compare-transform-check"><input type="checkbox" data-compare-lock checked>等比縮放</label></div><label class="compare-transform-check compare-direct-control"><input type="checkbox" data-compare-direct checked>在圖上拖曳移動、滾輪調整大小</label><div class="compare-transform-fields">${[['x','左右位置 %',.1,-1000,1000],['y','上下位置 %',.1,-1000,1000],['scaleX','寬度 %',.1,5,2000],['scaleY','高度 %',.1,5,2000],['angle','旋轉角度 °',.1,-3600,3600]].map(([key,label,step,min,max])=>`<label>${label}<input type="number" data-compare-transform="${key}" step="${step}" min="${min}" max="${max}" aria-label="${label}"></label>`).join('')}<label class="compare-angle-range">旋轉滑桿<input type="range" data-compare-angle-slider min="-180" max="180" step="0.1" value="0" aria-label="連續調整旋轉角度"></label></div><div class="compare-transform-actions"><button type="button" data-compare-rotate="-90">左轉 90°</button><button type="button" data-compare-rotate="90">右轉 90°</button><button type="button" data-compare-reset>還原這張圖</button></div><small class="compare-transform-note">向右、向下、順時針為正值。調整後請儲存 JSON 設定。</small></div></details>`;
   }
   function textKey(item,name){
     if(item.textKey)return ` data-block-edit-key="${esc(item.textKey+':'+name)}"`;
@@ -42,7 +42,7 @@
   }
   function comparison(scene,data) {
     const item=scene.currentConditions,editor=window.generalRoadEditor;
-    return `<figure class="map-card conditions-comparison" style="margin:0"><div class="map-toolbar"><div class="map-tools"><span class="compare-help">拖曳中線，左右比較</span><button type="button" data-asset="${item.before}">現況原圖 ↗</button><button type="button" data-asset="${item.after}">改善原圖 ↗</button></div></div><div class="map-canvas compare-stage" data-comparison-key="${esc(item.pageId)}" data-compare-default="0" style="--compare-position:0%">${layer(data,item.after,'after',0,editor.getComparisonTransform(item.pageId,'after'))}<div class="compare-before-wrap">${layer(data,item.before,'before',item.beforeOffsetY||0,editor.getComparisonTransform(item.pageId,'before'))}</div><span class="compare-label compare-label-before">BEFORE <b>現況圖</b></span><span class="compare-label compare-label-after">AFTER <b>改善示意</b></span><div class="compare-divider" aria-hidden="true"></div><button type="button" class="compare-handle" aria-label="拖曳比較現況與改善圖" title="左右拖曳比較；也可使用下方滑桿"><span aria-hidden="true">‹　›</span></button></div><div class="compare-controls"><div class="compare-presets"><button type="button" data-compare-position="100">看現況</button><button type="button" data-compare-position="50">左右對照</button><button type="button" data-compare-position="0">看改善</button></div><label class="compare-range-label"><span>改善</span><input class="compare-range" type="range" min="0" max="100" step="0.1" value="0" aria-label="現況圖顯示比例"><span>現況</span><output class="compare-percent">改善前 0% / 改善後 100%</output></label><div class="compare-edit-controls" data-editor-ui="condition-images"><button type="button" data-replace-image="${item.before}">更換現況圖</button><button type="button" data-replace-image="${item.after}">更換改善圖</button></div>${editor.editing?transformEditor():''}</div><figcaption class="map-foot"><span>${/^G\d-\d{2}$/.test(scene.code)?'現況圖與改善圖供設置前後示意比較。':'圖面尺度依原稿呈現，供設置前後示意比較。'}</span><span>滾輪縮放 · 左鍵拖曳平移</span></figcaption></figure>`;
+    return `<figure class="map-card conditions-comparison" style="margin:0"><div class="map-toolbar"><div class="map-tools"><span class="compare-help">拖曳中線，左右比較</span><span class="comparison-control-pair comparison-original-pair"><button type="button" data-asset="${item.before}">現況原圖 ↗</button><button type="button" data-asset="${item.after}">改善原圖 ↗</button></span></div></div><div class="map-canvas compare-stage" data-comparison-key="${esc(item.pageId)}" data-compare-default="0" style="--compare-position:0%">${layer(data,item.after,'after',0,editor.getComparisonTransform(item.pageId,'after'))}<div class="compare-before-wrap">${layer(data,item.before,'before',item.beforeOffsetY||0,editor.getComparisonTransform(item.pageId,'before'))}</div><span class="compare-label compare-label-before">BEFORE <b>現況圖</b></span><span class="compare-label compare-label-after">AFTER <b>改善示意</b></span><div class="compare-divider" aria-hidden="true"></div><button type="button" class="compare-handle" aria-label="拖曳比較現況與改善圖" title="左右拖曳比較；也可使用下方滑桿"><span aria-hidden="true">‹　›</span></button></div><div class="compare-controls"><div class="compare-presets"><button type="button" data-compare-position="100">看現況</button><button type="button" data-compare-position="50">左右對照</button><button type="button" data-compare-position="0">看改善</button></div><label class="compare-range-label"><span>現況</span><input class="compare-range" type="range" min="0" max="100" step="0.1" value="0" aria-label="現況圖顯示比例"><span>改善</span><output class="compare-percent">改善前 0% / 改善後 100%</output></label><div class="compare-edit-controls" data-editor-ui="condition-images"><button type="button" data-replace-image="${item.before}">更換現況圖</button><button type="button" data-replace-image="${item.after}">更換改善圖</button></div>${editor.editing?transformEditor():''}</div><figcaption class="map-foot"><span>${/^G\d-\d{2}$/.test(scene.code)?'現況圖與改善圖供設置前後示意比較。':'圖面尺度依原稿呈現，供設置前後示意比較。'}</span><span>滾輪縮放 · 左鍵拖曳平移</span></figcaption></figure>`;
   }
   function currentFigure(scene,data) {
     const item=scene.currentConditions;
@@ -84,21 +84,37 @@
       event.preventDefault();event.stopPropagation();
       update(event.key==='Home'?0:event.key==='End'?100:Number(range.value)+(event.key==='ArrowRight'?1:-1)*(event.shiftKey?10:1));
     });
-    const sync=()=>before.setAttribute('viewBox',after.getAttribute('viewBox'));
-    const home=()=>{const height=1000*stage.clientHeight/Math.max(1,stage.clientWidth);return [0,(650-height)/2,1000,height];};
-    const initial=home();after.setAttribute('viewBox',initial.join(' '));
-    const controller=window.generalRoadViewport?.attach(after,{home:initial,onSync:sync,enabled:()=>!manualActive()});
+    const sync=()=>{if(!window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing)before.setAttribute('viewBox',after.getAttribute('viewBox'));};
+    const home=()=>[0,0,1000,650];
+    const initial=home();before.setAttribute('viewBox',initial.join(' '));after.setAttribute('viewBox',initial.join(' '));
+    const controller=window.generalRoadViewport?.attach(after,{home:initial,onSync:sync,enabled:()=>!window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing});
+    const uiSpecs=[
+      ['presets','比較按鈕','.compare-presets',true],['slider','比例滑桿與百分比','.compare-range-label',false],
+      ['labels','圖面前後標籤','.compare-label',true],['divider','中線與拖曳把手','.compare-divider,.compare-handle',true],
+      ['description','圖面說明','.map-foot>span:first-child',true],['hints','操作提示','.compare-help,.map-foot>span:last-child',true],
+      ['originals','原圖連結','.comparison-original-pair',true]
+    ];
+    const ui=document.createElement('details');ui.className='comparison-ui-options';ui.dataset.editorUi='comparison-ui';
+    ui.innerHTML='<summary>顯示選項 ▾</summary><div>'+uiSpecs.map(([key,label])=>`<label><input type="checkbox" data-comparison-ui="${key}">${label}</label>`).join('')+'</div>';
+    stage.closest('figure').querySelector('.map-toolbar').append(ui);
+    const uiState={...window.generalRoadEditor.state.layouts[page]?.comparisonUi};
+    function applyUi(){for(const [name,,selector,initial]of uiSpecs){const visible=uiState[name]??initial;ui.querySelector(`[data-comparison-ui="${name}"]`).checked=visible;for(const node of stage.closest('figure').querySelectorAll(selector))node.classList.toggle('comparison-ui-hidden',!visible);}}
+    ui.addEventListener('change',event=>{const input=event.target.closest('[data-comparison-ui]');if(!input)return;uiState[input.dataset.comparisonUi]=input.checked;applyUi();if(!window.PresentationMode?.readOnly){const state=window.generalRoadEditor.state;state.layouts[page]={...state.layouts[page],comparisonUi:{...uiState}};window.visualLayoutEditor?.legacyChanged();}});applyUi();
     resizeObserver?.disconnect();
     const observer=new ResizeObserver(()=>{
       if(!stage.isConnected){observer.disconnect();return;}
-      const view=controller.read(),height=view[2]*stage.clientHeight/Math.max(1,stage.clientWidth);
-      controller.configure({home:home()});controller.write([view[0],view[1]+(view[3]-height)/2,view[2],height]);
+      controller.configure({home:home()});controller.sync();
     });resizeObserver=observer;observer.observe(stage);
     sync();
     const editor=window.generalRoadEditor,item=window.generalRoadPresentation.data.scenarios.find(scene=>scene.id===window.generalRoadPresentation.page.scenario).currentConditions;
     const panel=slide.querySelector('.compare-transform-editor');if(!panel)return;
     const target=panel.querySelector('[data-compare-target]'),direct=panel.querySelector('[data-compare-direct]'),lock=panel.querySelector('[data-compare-lock]');
-    const session=manualSessions.get(page)||{side:'before',open:false};target.value=session.side;panel.open=session.open;
+    const session=manualSessions.get(page)||{side:'after',open:false};target.value=session.side;panel.open=session.open;
+    const tools=document.createElement('div');tools.className='compare-side-editor';tools.dataset.editorUi='comparison-side';
+    tools.innerHTML='<label>調整<select data-compare-edit-side aria-label="選擇單獨移動的圖片"><option value="before">現況圖</option><option value="after">改善圖</option></select></label><button type="button" data-compare-edit-details>數值與對齊</button><small role="status" aria-live="polite">拖曳、滾輪只調整選取的圖；簡報模式才連動。</small>';
+    stage.closest('figure').querySelector('.map-toolbar').append(tools);
+    const sideSelect=tools.querySelector('[data-compare-edit-side]');sideSelect.value=session.side;
+    tools.querySelector('[data-compare-edit-details]').addEventListener('click',()=>{panel.open=!panel.open;});
     function manualActive(){return Boolean(window.generalRoadEditor?.editing&&slide.querySelector('[data-compare-direct]')?.checked);}
     const value=()=>editor.getComparisonTransform(key,target.value);
     function updateFields(){
@@ -111,9 +127,11 @@
       const current=editor.setComparisonTransform(key,target.value,patch);if(!current)return;
       const offset=target.value==='before'?item.beforeOffsetY||0:0;
       stage.querySelector(`svg.compare-${target.value}>.compare-manual-transform`).setAttribute('transform',transform(current,offset));updateFields();
+      tools.querySelector('[role="status"]').textContent='已調整'+(target.value==='before'?'現況圖':'改善圖')+'，另一張圖維持原位置；請儲存設定。';
     }
     panel.addEventListener('toggle',()=>{session.open=panel.open;manualSessions.set(page,session);});
-    target.addEventListener('change',()=>{session.side=target.value;manualSessions.set(page,session);updateFields();});
+    function selectSide(side){session.side=side;target.value=side;sideSelect.value=side;manualSessions.set(page,session);update(side==='before'?100:0);updateFields();tools.querySelector('[role="status"]').textContent='拖曳、滾輪只調整'+(side==='before'?'現況圖':'改善圖')+'；簡報模式才連動。';}
+    target.addEventListener('change',()=>selectSide(target.value));sideSelect.addEventListener('change',()=>selectSide(sideSelect.value));
     direct.addEventListener('change',updateFields);
     panel.querySelectorAll('[data-compare-transform]').forEach(input=>{input.addEventListener('blur',updateFields);input.addEventListener('input',()=>{
       if(!editor.editing||input.value.trim()==='')return;
@@ -147,7 +165,7 @@
       const factor=Math.max(Math.max(.05/old.scaleX,.05/old.scaleY),Math.min(Math.min(20/old.scaleX,20/old.scaleY),requested));
       apply({scaleX:old.scaleX*factor,scaleY:old.scaleY*factor});
     },{passive:false});
-    updateFields();
+    selectSide(session.side);
   }
   window.generalRoadConditions={prepare,render,comparison,mount};
 })();

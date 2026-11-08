@@ -35,10 +35,10 @@
     if(page.kind==='chapter-scenarios')return '無號誌三岔路口從正交，到匯入。';
     if(page.kind==='current-conditions')return '現況問題';
     if(page.kind==='scenario-comparison')return /^G\d-\d{2}$/.test(window.PresentationScenarios.sceneFor(page,data).code)?'行穿線設置條件與方案比較':'有、無行穿線，怎麼選？';
-    if(page.kind==='map')return !page.article?'整體佈設策略':page.article.category==='標線'?'標線條文運用解說':page.article.category==='道路設施'?'道路設施':(page.article.category||'交通設施')+'條文';
+    if(page.kind==='map')return !page.article?'整體佈設策略':page.article.category==='道路設施'?'道路設施運用解說':(page.article.category||'交通設施')+'條文運用解說';
     if(['context','review'].includes(page.kind)){
       const value=window.PresentationScenarios.sceneFor(page,data);
-      return page.kind==='context'?value.name:value.presentation?.review?.title||value.recapTitle||(/^G\d-\d{2}$/.test(value.code)?'鄉區路口的預告、停讓與轉彎空間。':'同一章節，不同的設置重點。');
+      return page.kind==='context'?value.name:/^G\d-\d{2}$/.test(value.code)?'情境小結':value.presentation?.review?.title||value.recapTitle||'同一章節，不同的設置重點。';
     }
     if(page.kind==='custom')return {cover:'在這裡寫下你的章節標題',image:'情境與設置議題',closing:'回到情境，整理設置重點。',compare:'左右圖例比較',steps:'情境圖面逐步解說'}[page.type]||page.name;
     return page.name;
@@ -117,10 +117,10 @@
 
   const generalScenes=()=>data.scenarios.filter(scene=>!scene.code.startsWith('C'));
   function cover() {
-    return `<section class="slide cover" aria-labelledby="slide-title"><div class="cover-copy"><div class="eyebrow">CHAPTER 04 <span class="tiny-dot"></span> SCENARIO DEMO</div><h1 id="slide-title">一般道路<br><span>情境解說</span></h1><p class="cover-intro">從一張情境圖，<br>讀懂交通設施的配置與設置考量。</p><button class="primary-button" data-page="contents">進入簡報 <span>→</span></button><div class="cover-meta"><div><strong>05 <small>簡報章節</small></strong></div><div><strong>04 <small>情境分類</small></strong></div><div><strong>${String(generalScenes().length).padStart(2,'0')} <small>已製作情境</small></strong></div></div></div><div class="cover-art"><div class="art-topline">A CLOSER LOOK AT THE INTERSECTION</div><svg class="cover-map" viewBox="362 245 800 650" aria-hidden="true">${overallImage()}<rect class="cover-target" x="601" y="377" width="315" height="393" rx="8"/></svg><div class="art-label"><div><strong>無號誌市區正交三岔路口</strong><small>全圖定位 → 框選放大 → 條文解說</small></div><b>↗</b></div></div></section>`;
+    return `<section class="slide cover" aria-labelledby="slide-title"><div class="cover-copy"><div class="eyebrow">CHAPTER 04 <span class="tiny-dot"></span> SCENARIO DEMO</div><h1 id="slide-title">一般道路<br><span>情境解說</span></h1><p class="cover-intro">從一張情境圖，<br>讀懂交通設施的配置與設置考量。</p><button class="primary-button" data-page="contents"><span data-block-edit-key="cover|action|enter">開始 →</span></button><div class="cover-meta"><div><strong><span data-block-edit-key="cover|meta|chapters-count">05</span><small data-block-edit-key="cover|meta|chapters-label">簡報章節</small></strong></div><div><strong><span data-block-edit-key="cover|meta|groups-count">04</span><small data-block-edit-key="cover|meta|groups-label">情境分類</small></strong></div><div><strong><span data-block-edit-key="cover|meta|scenarios-count">${String(generalScenes().length).padStart(2,'0')}</span><small data-block-edit-key="cover|meta|scenarios-label">已製作情境</small></strong></div></div></div><div class="cover-art"><div class="art-topline" data-block-edit-key="cover|art|topline">A CLOSER LOOK AT THE INTERSECTION</div><svg class="cover-map" viewBox="362 245 800 650" aria-hidden="true">${overallImage()}<rect class="cover-target" x="601" y="377" width="315" height="393" rx="8"/></svg><div class="art-label"><div><strong data-block-edit-key="cover|art|title">無號誌市區正交三岔路口</strong><small data-block-edit-key="cover|art|caption">全圖定位 → 框選放大 → 條文解說</small></div><b>↗</b></div></div></section>`;
   }
   function contents() {
-    return `<section class="slide" aria-labelledby="slide-title"><div class="section-heading"><div><span class="eyebrow">00 / INTRODUCTION</span><h1 id="slide-title">從路口型態，<br>找到對應情境。</h1></div><p>依號誌管制與路口型態，分為四大主題。<br>各情境包括整體配置與個別設施的設置考量。</p></div><div class="contents-intro"><span class="chapter-num">00</span><div><strong>緒論</strong><p>閱讀方式：情境大圖 → 框選定位 → 放大解說 → 回看整體</p></div></div><div class="contents-grid">${data.chapters.slice(1).map((chapter,i) => `<button class="chapter-card ${i===0?'featured':''}" data-chapter="${chapter.id}"><div class="card-top"><span>${chapter.code} / ${chapter.group}</span><span class="tag ${i===0?'active':''}">${i===0?'本次示範':'章節預留'}</span></div>${roadSymbol(i>=2,i===1||i===3)}<h2>${chapter.name}</h2><p>${i===0?'由市區、鄉區的正交與匯入情境，示範章內多情境的圖面解說。':'已建立章節開場，可沿用相同流程逐案擴充。'}</p><div class="card-bottom"><span>${chapter.count} 種情境分類</span><span>進入章節 ↗</span></div></button>`).join('')}</div><p class="contents-note">本次已製作 ${generalScenes().map(value=>value.code).join('、')} 共 ${generalScenes().length} 個情境；其餘章節保留架構。分類依提供之《一般道路情境》章節彙整。</p></section>`;
+    return `<section class="slide contents-slide" aria-labelledby="slide-title"><div class="section-heading"><div><span class="eyebrow">00 / INTRODUCTION</span><h1 id="slide-title">從路口型態，<br>找到對應情境。</h1></div><p>依號誌管制與路口型態，分為四大主題。<br>各情境包括整體配置與個別設施的設置考量。</p></div><div class="contents-intro"><span class="chapter-num">00</span><div><strong data-block-edit-key="contents|0|text-2">緒論</strong><p data-block-edit-key="contents|0|text-3">閱讀方式：情境大圖 → 框選定位 → 放大解說 → 回看整體</p></div></div><div class="contents-grid">${data.chapters.slice(1).map((chapter,i) => `<button class="chapter-card" data-chapter="${chapter.id}"><div class="card-top"><span data-block-edit-key="contents|chapter|${chapter.id}|code">${chapter.code} / ${chapter.group}</span></div>${roadSymbol(i>=2,i===1||i===3)}<h2 data-block-edit-key="contents|0|text-${5+i*3}">${chapter.name}</h2><div class="card-bottom"><span>進入章節 ↗</span></div></button>`).join('')}</div></section>`;
   }
   function context() {
     return scenarioUI.context(scene());
@@ -349,6 +349,7 @@
     if(!['module','results','presentations-home','presentation-empty','scenario-directory','chapter-cover'].includes(page.kind))scenarioUI.decorate(page);
     window.PresentationScenarios?.decorate(page,data);
     window.PresentationModules?.decorate(page);
+    window.PresentationText?.apply($('presentation'),{general:page.deckId==='general'});
     editor?.decorate();
     viewport?.mount($('presentation'));
     if(page.kind==='map'&&!page.article&&$('main-map')){
@@ -363,6 +364,8 @@
     window.PresentationResults?.afterRender();
     window.PresentationOrder?.mount(window.generalRoadPresentation);
     window.PresentationImageOrder?.mount(window.generalRoadPresentation);
+    window.GeneralScenarioLayout?.decorate(page);
+    window.PresentationText?.apply(document.body);
     restoreScroll(previousScroll);
     if(options.hash!==false) {
       const hash=page.kind==='module'?window.PresentationModules.hashFor(page):`#${page.id}${page.article&&current().phase?'/zoom':['custom','results'].includes(page.kind)&&current().phase?'/step-'+current().phase:''}`;
@@ -407,7 +410,9 @@
     const swapped=rotation%2===1;
     const transforms=['',`translate(${asset.height} 0) rotate(90)`,`translate(${asset.width} ${asset.height}) rotate(180)`,`translate(0 ${asset.width}) rotate(270)`];
     $('asset-view').innerHTML=`<svg viewBox="0 0 ${swapped?asset.height:asset.width} ${swapped?asset.width:asset.height}" role="img" aria-label="${esc($('asset-title').textContent)}"><g transform="${transforms[rotation]}"><image href="${asset.url}" width="${asset.width}" height="${asset.height}"/></g></svg>`;
+    $('asset-view').firstElementChild.dataset.editorImageKey=shownAsset;
     viewport?.mount($('asset-view'));
+    window.visualLayoutEditor?.mountImageViews($('asset-view'),currentPage().id+'-asset');
   }
   function showAsset(key='overall') {
     if(arguments.length===0)key=scene().overall;
@@ -431,6 +436,7 @@
     return navigate(index>=0?index:0,{hash:false,force:pages[page]?.kind==='module'});
   }
   document.addEventListener('click',event=>{
+    if(editor?.editing&&event.target.closest('[contenteditable]'))return;
     const button=event.target.closest('button,a');
     if(!button) return;
     if(button.dataset.scenario){goPage(scenarioUI.find(button.dataset.scenario).contextId);return;}

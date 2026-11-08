@@ -416,6 +416,19 @@
       "sign",
       "line",
       "pedestrian"
+    ],
+    "scenario:g4-01": [
+      "g401-left-waiting",
+      "g401-dotted",
+      "g401-lane-advance",
+      "g401-signal-plan",
+      "g401-visibility",
+      "g401-checklist",
+      "g401-crosswalk",
+      "g401-bus-bay",
+      "g401-parking",
+      "g401-phase-two",
+      "g401-phase-three"
     ]
   },
   "scenarioOtherArticles": {},

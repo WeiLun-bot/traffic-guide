@@ -9,7 +9,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,mouse,dragFrom,
   const field=async(name,value)=>evaluate('(()=>{const input=document.querySelector('+JSON.stringify('.iv-panel:not([hidden]) [data-iv-field="'+name+'"]')+');input.value='+JSON.stringify(String(value))+';input.dispatchEvent(new Event("change",{bubbles:true}))})()');
   const action=name=>click('.iv-panel:not([hidden]) [data-iv-action="'+name+'"]');
   const camera=id=>evaluate('window.visualLayoutEditor.store.config.imageViews['+JSON.stringify(id)+']');
-  await navigate(base+'/presentation-demo/#context');
+  await navigate(base+'/presentation-demo/#context');await evaluate('generalRoadEditor.setEditing(true)');
   const home=await read(),id=Core.imageView('context','g101-before').id;
   await click('.iv-trigger');assert.equal(await evaluate('document.querySelector(".iv-panel:not([hidden]) [data-iv-field=rotation]").value'),'0');
   await action('rotate-right');assert.equal(await angle(),90);assert.equal((await camera(id)).rotation,90);
@@ -36,7 +36,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,mouse,dragFrom,
   await click('.iv-trigger');await action('capture');near(await read(),captured);assert.equal((await camera(id)).rotation,-37.5);
   await action('close');await mouse('mouseWheel',point.x,point.y,{deltaY:-70,deltaX:0});await click('.context-map-canvas .viewport-tools button');near(await read(),captured);assert.equal(await angle(),-37.5);
   fs.writeFileSync(previewConfigPath,await evaluate('window.visualLayoutEditor.store.serialize()'));
-  await navigate(base+'/presentation-demo/#context');near(await read(),captured);assert.equal(await angle(),-37.5);
+  await navigate(base+'/presentation-demo/#context');await evaluate('generalRoadEditor.setEditing(true)');near(await read(),captured);assert.equal(await angle(),-37.5);
   await view('g101-conditions');assert.equal(await angle(),0);assert.equal((await camera(conditionId)).rotation,0);
   pass('rotated diagrams still pan, zoom, capture and reset; JSON restores the same camera after a fresh load');
 
@@ -60,7 +60,7 @@ module.exports=async function({evaluate,view,navigate,click,wait,mouse,dragFrom,
   await click('[data-vl-action="open"]');await wait('!window.visualLayoutEditor.busy');
   await field('rotation',-90);await action('save');await wait('!window.visualLayoutEditor.busy');
   assert.equal(await evaluate('(async()=>window.PresentationDocument.parse(await (await window.visualLayoutEditor.files.handle.getFile()).text()).imageViews['+JSON.stringify(id)+'].rotation)()'),-90);
-  await navigate(base+'/presentation-demo/#context');assert.equal(await angle(),-90);assert.equal((await camera(id)).rotation,-90);
+  await navigate(base+'/presentation-demo/#context');await evaluate('generalRoadEditor.setEditing(true)');assert.equal(await angle(),-90);assert.equal((await camera(id)).rotation,-90);
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});await click('.iv-trigger');
   assert(await evaluate('(()=>{const r=document.querySelector(".iv-panel:not([hidden])").getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight})()'));
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});

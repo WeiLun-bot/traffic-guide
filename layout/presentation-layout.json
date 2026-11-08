@@ -486,12 +486,18 @@
       },
       "article:pedestrian": {
         "box": [
-          520,
-          734.1,
-          59.6,
+          353.4,
+          486.1,
+          65.3,
           56.9
         ],
-        "rotation": 0
+        "rotation": 0,
+        "crop": [
+          312.8,
+          473.79999999999995,
+          268,
+          341.6
+        ]
       },
       "article:school": {
         "box": [
@@ -3357,6 +3363,7 @@
         "border": false,
         "background": false
       }
-    }
+    },
+    "cover|0": {}
   }
 }

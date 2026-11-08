@@ -9,7 +9,9 @@
     "context|0|text-11": "缺少明確的停管制提示時，主要與次要道路的關係不易辨識。",
     "crosswalk|0|text-4": "\n",
     "school|1|text-9": "以學校環境的辨識需求，決定標誌位置。",
-    "review|0|text-1": "路面邊線與停車格界定路側空間，指向線與導引線銜接車流；行穿線、警示標誌及速限配置共同回應行人穿越需求。"
+    "review|0|text-1": "路面邊線與停車格界定路側空間，指向線與導引線銜接車流；行穿線、警示標誌及速限配置共同回應行人穿越需求。",
+    "pedestrian|1|text-9": "§ 23 警告標誌設置位置與警告標的物起點之距離，應配合行車速率，自45 m至200 m為度，如受實際情形限制，得酌予變更。但其設置位置必須明顯，並不得少於安全停車視距。\n",
+    "pedestrian|1|text-10": "\n"
   },
   "images": {},
   "blocks": {
@@ -71,7 +73,22 @@
         ]
       }
     },
-    "articles": {},
+    "articles": {
+      "pedestrian": {
+        "points": [
+          {
+            "id": "point-original-0",
+            "text": "無號誌路口設有行穿線之處，可視需求於上游設置當心行人標誌「警34」，並依行車速限及最短安全視距增加。",
+            "textKey": "pedestrian|1|text-6"
+          },
+          {
+            "id": "point-original-2",
+            "text": "可依現地條件於接近行穿線處設置。",
+            "textKey": "pedestrian|1|text-8"
+          }
+        ]
+      }
+    },
     "overviews": {
       "overview": {
         "items": [

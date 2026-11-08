@@ -2,7 +2,7 @@
   'use strict';
   const controllers=new WeakMap();
   const pairedLayouts=new Map();
-  const selector='#main-map,.cover-map,.custom-diagram,.scenario-detail-image,#asset-view>svg,.custom-image-frame>img';
+  const selector='#main-map,.cover-map,.custom-diagram,.scenario-detail-image,.condition-detail,#asset-view>svg,.custom-image-frame>img,.condition-photo-open>img';
   const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
   let pan=null;
   let suppressClick=null;
@@ -20,7 +20,7 @@
     for(const pair of root.querySelectorAll('.results-image-pair,.module-pair,.module-overview-grid,.custom-comparison-grid')){
       const cards=[...pair.children],images=cards.flatMap(card=>[...card.querySelectorAll('svg.scenario-detail-image,svg.custom-diagram,.custom-image-frame>img')]);
       if(images.length<2&&!pair.matches('.results-image-pair'))continue;
-      for(const image of images){const contain=Boolean(image.closest('[data-image-fit="contain"]'));if(contain)delete image.dataset.pairCover;else image.dataset.pairCover='';if(image instanceof SVGSVGElement)image.setAttribute('preserveAspectRatio',contain?'xMidYMid meet':'xMidYMid slice');controllers.get(image)?.configure({fullLabel:contain?'完整圖面':'填滿圖框'});}
+      for(const image of images){if(image.dataset.imageFitExplicit)continue;const contain=Boolean(image.closest('[data-image-fit="contain"]'));if(contain)delete image.dataset.pairCover;else image.dataset.pairCover='';if(image instanceof SVGSVGElement)image.setAttribute('preserveAspectRatio',contain?'xMidYMid meet':'xMidYMid slice');controllers.get(image)?.configure({fullLabel:contain?'完整圖面':'填滿圖框'});}
       if(pairedLayouts.has(pair))continue;
       const headers=cards.map(card=>card.querySelector('.map-toolbar,.custom-side-title')).filter(Boolean).map(header=>[header,header.style.getPropertyValue('min-height'),header.style.getPropertyPriority('min-height')]);
       const record={pair,cards,headers,frame:0};
@@ -42,6 +42,7 @@
     if(controller) {controller.configure(options);return controller;}
     const vector=element instanceof SVGSVGElement;
     let home=vector?readView(element):[0,0,1];
+    const contentBounds=[...home];
     let imageView=[0,0,1];
     let settings={};
     const container=element.closest('.map-canvas,.asset-view,.custom-image-frame,.cover-art')||element.parentElement;
@@ -52,7 +53,23 @@
     const tools=document.createElement('div');tools.className='viewport-tools viewport-tools-compact';tools.dataset.editorUi='viewport-controls';
     const percentage=document.createElement('span');percentage.className='viewport-percentage';percentage.textContent='100%';percentage.hidden=true;percentage.setAttribute('aria-label','目前縮放比例');
     const reset=document.createElement('button');reset.type='button';reset.textContent='↺';reset.setAttribute('aria-label','重設視圖');tools.append(percentage,reset);container.append(tools);
-    const toolbar=container.closest('.map-card')?.querySelector('.map-toolbar .map-tools');
+    if(element.matches('.compare-source-image'))tools.hidden=true;
+    let displayOptions;
+    if(!element.matches('.compare-diagram')){
+      displayOptions=document.createElement('details');displayOptions.className='viewport-display-options';displayOptions.dataset.editorUi='image-display';
+      if(element.dataset.comparisonSide)displayOptions.dataset.comparisonSide=element.dataset.comparisonSide;
+      const label=element.dataset.comparisonSide==='before'?'現況圖':element.dataset.comparisonSide==='after'?'改善圖':'圖面';
+      displayOptions.innerHTML='<summary>'+label+'顯示 ▾</summary><div>'+[['reset','重設全圖'],['all','全圖'],['width','全寬'],['height','全高'],['rotate-left','左轉 90°'],['rotate-right','右轉 90°'],['flip-x','水平翻轉'],['flip-y','垂直翻轉']].map(([action,label])=>'<button type="button" data-viewport-action="'+action+'">'+label+'</button>').join('')+'</div>';
+      const initialButton=document.createElement('button');initialButton.type='button';initialButton.dataset.viewportAction='initial';initialButton.textContent='設定初始畫面';if(!window.PresentationMode?.readOnly)displayOptions.lastElementChild.append(initialButton);
+      const displayToolbar=element.closest('figure,.map-card')?.querySelector('.map-toolbar .map-tools')||element.closest('figure,.map-card')?.querySelector('.map-toolbar');
+      if(displayToolbar){
+        displayOptions.classList.add('is-toolbar-menu');let host=displayToolbar;
+        if(element.dataset.comparisonSide){host=displayToolbar.querySelector('.comparison-display-pair');if(!host){host=document.createElement('span');host.className='comparison-control-pair comparison-display-pair';displayToolbar.append(host);}}
+        host.insertBefore(displayOptions,element.dataset.comparisonSide==='before'?host.querySelector('.viewport-display-options[data-comparison-side="after"]'):null);
+      }else container.append(displayOptions);
+      displayOptions.addEventListener('click',event=>{const button=event.target.closest('[data-viewport-action]');if(!button)return;event.preventDefault();event.stopPropagation();controller.imageAction(button.dataset.viewportAction);});
+    }
+    const toolbar=element.matches('.compare-source-image')?null:container.closest('.map-card')?.querySelector('.map-toolbar .map-tools');
     let status,returnToFull;
     if(toolbar) {
       status=toolbar.querySelector('.map-status');
@@ -68,7 +85,7 @@
       write(view,notify=true) {
         if(!view.every(Number.isFinite))return;
         if(vector)element.setAttribute('viewBox',view.join(' '));
-        else {imageView=[...view];element.style.transform=`translate(${view[0]}px,${view[1]}px) scale(${view[2]})`;}
+        else {imageView=[...view];element.style.transform=`translate(${view[0]}px,${view[1]}px) scale(${view[2]}) translate(${element.clientWidth/2}px,${element.clientHeight/2}px) rotate(${settings.imageRotation||0}deg) scale(${settings.flipX?-1:1},${settings.flipY?-1:1}) translate(${-element.clientWidth/2}px,${-element.clientHeight/2}px)`;}
         controller.sync();
         if(notify)settings.onChange?.(controller.zoom);
       },
@@ -93,6 +110,18 @@
         return controller.zoom>1+1e-6||Math.abs(dx)>epsilon||Math.abs(dy)>epsilon;
       },
       start() {settings.onStart?.();},
+      get contentBounds(){return [...contentBounds];},
+      imageAction(action){
+        releasePan();controller.start();
+        if(settings.onImageAction){settings.onImageAction(action);return;}
+        if(vector){
+          element.setAttribute('preserveAspectRatio','xMidYMid meet');
+          let box=[...contentBounds],ratio=element.clientWidth/Math.max(1,element.clientHeight);
+          if(action==='width'){const height=box[2]/ratio;box=[box[0],box[1]+(box[3]-height)/2,box[2],height];}
+          if(action==='height'){const width=box[3]*ratio;box=[box[0]+(box[2]-width)/2,box[1],width,box[3]];}
+          controller.write(box,false);
+        }else controller.reset();
+      },
       reset() {releasePan();controller.start();settings.onReset?.();controller.write(settings.resetView||home,false);},
       showFull() {releasePan();controller.start();settings.onFullView?.();controller.write(home,false);},
       enabled:()=>settings.enabled?.()!==false
@@ -151,5 +180,5 @@
     if(performance.now()>suppressClick.until){suppressClick=null;return;}
     if(suppressClick.element.contains(event.target)) {suppressClick=null;event.preventDefault();event.stopImmediatePropagation();}
   },true);
-  window.generalRoadViewport={attach,mount(root=document){root.querySelectorAll(selector).forEach(element=>attach(element));mountPairs(root);},sync:element=>controllers.get(element)?.sync(),get:element=>controllers.get(element),cancel:()=>releasePan(true)};
+  window.generalRoadViewport={attach,mount(root=document){root.querySelectorAll(selector).forEach(element=>attach(element,element.matches('.compare-source-image')?{enabled:()=>false}:{}));mountPairs(root);},sync:element=>controllers.get(element)?.sync(),get:element=>controllers.get(element),cancel:()=>releasePan(true)};
 })();

@@ -26,6 +26,7 @@ module.exports=Array.from(new Set([
   ...new Set(scenarioFiles),
   'assets/presentation-structure.js','assets/presentation-structure.css','assets/presentation-reading.css','data/presentations.json',
   'assets/presentation-font-height.js','assets/presentation-font-height.css',
+  'assets/presentation-text.js','assets/general/scenario-layout.js','assets/general/scenario-layout.css',
   'assets/road-flow-editor.js','assets/presentation-results.js','assets/presentation-results.css','data/results/outline.json',
   ...Object.values(overview.assets||{}).map(asset=>asset.file),
   'data/results/current-conditions.json',...new Set(Object.values(currentConditions.assets).map(asset=>asset.file)),

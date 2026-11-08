@@ -96,6 +96,7 @@
     return `<section class="slide chapter-cover" data-chapter-cover="${esc(page.chapter)}" aria-labelledby="slide-title"><p class="chapter-cover-deck" data-block-edit-key="${page.id}|chapter|deck">${esc(deck.code+' '+deck.title)}</p><div class="chapter-cover-main"><div class="chapter-cover-code" aria-hidden="true">${esc(chapter.code)}</div><div class="chapter-cover-title"><span class="chapter-cover-rule" aria-hidden="true"></span><h1 id="slide-title" data-block-edit-key="${page.id}|shared|title">${esc(chapterName(chapter))}</h1></div></div><span class="chapter-cover-bottom" aria-hidden="true"></span></section>`;
   }
   function tocPageLabel(page){
+    if(page.kind==='review'&&page.scenario?.startsWith('g'))return page.scenario.toUpperCase()+' 情境小結';
     if(page.kind==='chapter-cover')return chapterName(page.chapter)+'｜章節頁';
     const texts=typeof window==='object'?window.generalRoadEditor?.state.texts||{}:{},key=page.kind==='results'&&typeof window==='object'?window.PresentationResults?.titleKey(page):page.id+'|shared|title';
     if(typeof texts[key]==='string'||page.kind==='results'&&!page.resultsScenario)return pageTitle(page,texts);

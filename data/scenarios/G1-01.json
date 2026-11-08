@@ -775,7 +775,7 @@
         "label": "重看情境大圖"
       },
       "hideSecondary": true,
-      "sourceLine": "本情境涵蓋路面邊線、行穿線、車流導引、路側停車及相關標誌配置。",
+      "sourceLine": "",
       "rows": [
         [
           "行車邊界與轉向動線銜接",

@@ -41,7 +41,7 @@
   function render() {
     if(!context)return;
     scope=context.api.page.id+'|'+context.api.state.phase;
-    root=document.querySelector('#explanation,.custom-explanation,.custom-compare-explanation,.context-issues');
+    root=document.querySelector('#explanation,.custom-explanation,.custom-compare-explanation,.context-issues,.cover,.contents-slide');
     list=[];body=null;
     if(root) {
       root.querySelectorAll('[data-user-block]').forEach(element=>element.remove());
@@ -53,6 +53,20 @@
         ['.locate-number','locate-number','定位編號'],['.locate-caption','locate-caption','定位標籤'],['.locate-instruction','locate-instruction','定位操作說明']
       ];
       for(const [selector,id,label]of specs)register(root.querySelector(selector),id,label);
+      if(root.matches('.cover')){
+        root.querySelectorAll('[data-editor-ui="cover-stat-delete"]').forEach(button=>button.remove());
+        register(root.querySelector('.cover-art'),'cover-art','封面右側整欄');
+        const stats=[['chapters','簡報章節'],['groups','情境分類'],['scenarios','情境數量']];
+        root.querySelectorAll('.cover-meta>div').forEach((element,index)=>{
+          const [key,label]=stats[index],id='cover-meta-'+key;
+          register(element,id,'封面統計｜'+label);
+          if(context.isEditing()){
+            const button=document.createElement('button');button.type='button';button.className='cover-stat-delete';button.dataset.editorUi='cover-stat-delete';button.textContent='×';button.setAttribute('aria-label','刪除'+label);button.title='刪除'+label;
+            button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();remove(id);});element.append(button);
+          }
+        });
+      }
+      if(root.matches('.contents-slide'))register(root.querySelector('.contents-intro p'),'intro-description','緒論下方說明');
       root.querySelectorAll('.explain-points>li').forEach((element,index)=>register(element,'point-'+index,'說明 '+(index+1)));
       root.querySelectorAll('.overview-list>button').forEach((element,index)=>register(element,'overview-'+index,'總覽項目 '+(index+1)));
       root.querySelectorAll('.issue-row').forEach((element,index)=>register(element,'issue-'+index,'議題 '+(index+1)));
@@ -86,6 +100,8 @@
     select.disabled=!list.length;select.value=selectedId;
     const item=current(),value=entry(),decor=item&&record(value.decor[item.id])?value.decor[item.id]:{};
     const hidden=item&&value.removed.includes(item.id);
+    controls.querySelector('legend').textContent=root?.matches('.cover,.contents-slide')?'頁面區塊':'右側說明區塊';
+    select.setAttribute('aria-label',root?.matches('.cover,.contents-slide')?'選取頁面區塊':'選取右側說明區塊');
     controls.querySelector('[data-block-delete]').disabled=!item||hidden;
     controls.querySelector('[data-block-restore]').disabled=!item;
     controls.querySelector('[data-block-plain]').disabled=!item||hidden;

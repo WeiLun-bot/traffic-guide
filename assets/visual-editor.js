@@ -152,17 +152,20 @@
     restoreStyles();
     items = collect();
     for (const {element, settings} of items.values()) apply(element, settings);
-    window.VisualInitialViews?.mount(root, {
-      pageId: api.state.page, getConfig: () => store.config, isBusy: () => busy, report,
-      overviewAssetKey: api.page.resultsModule?api.page.content.images.find(image=>image.role==='module')?.key:null,
-      prepare() {if(editing)setMode(false);if(window.generalRoadEditor?.editing)window.generalRoadEditor.setEditing(false);},
-      setView(value) {const next=store.snapshot();next.imageViews[value.id]=value;store.commit(next);render();report('初始畫面已更新，請儲存設定。');},
-      save: () => run('save')
-    });
+    mountImageViews(root);
     if (!items.has(selectedId)) selectedId = '';
     chooser.replaceChildren(new Option('請選取元素', ''));
     for (const [id, item] of items) chooser.add(new Option(item.label, id));
     select(selectedId); updateButtons();
+  }
+  function mountImageViews(target,pageId=api.state.page){
+    window.VisualInitialViews?.mount(target, {
+      pageId, getConfig: () => store.config, isBusy: () => busy, isDirty:()=>store.dirty, report,
+      overviewAssetKey: api.page.resultsModule?api.page.content.images.find(image=>image.role==='module')?.key:null,
+      prepare() {if(editing){setMode(false);if(!window.generalRoadEditor?.editing)window.generalRoadEditor?.setEditing(true);}},
+      setView(value) {const next=store.snapshot();next.imageViews[value.id]=value;store.commit(next);render();if(target!==root)mountImageViews(target,pageId);report('初始畫面已更新，請儲存設定。');},
+      save: () => run('save')
+    });
   }
   function refreshFields() {
     const item = current(), settings = item && store.config.elements[selectedId];
@@ -392,7 +395,18 @@
     catch (error) { report(error.message, true); }
     finally { busy = false; updateButtons(); refreshFields(); }
   });
-  window.addEventListener('beforeunload', event => { if(readOnly)return;syncLegacy(); if (store?.dirty) { event.preventDefault(); event.returnValue = ''; } });
+  // User edits already enter the store through changed()/transact(). Merely
+  // leaving a page must not commit runtime defaults as another content edit.
+  window.addEventListener('beforeunload', event => { if(readOnly)return; if (store?.dirty) { event.preventDefault(); event.returnValue = ''; } });
+  window.addEventListener('keydown',event=>{
+    if(readOnly||event.key!=='Escape'||event.defaultPrevented||event.isComposing||event.ctrlKey||event.metaKey||event.altKey)return;
+    if(document.querySelector('dialog[open]')||window.VisualInitialViews?.isOpen||window.RoadFlowEditor?.isOpen)return;
+    if(!editing&&!window.generalRoadEditor?.editing)return;
+    event.preventDefault();event.stopImmediatePropagation();
+    document.activeElement?.blur();
+    window.generalRoadEditor?.setEditing(false);
+    document.querySelector('.edit-toggle')?.focus({preventScroll:true});
+  });
   async function loadDefault() {
     const response = await fetch(configURL, {cache: 'no-store'});
     if (!response.ok) throw new Error('無法讀取版面設定（HTTP ' + response.status + '）');
@@ -402,7 +416,7 @@
   window.visualLayoutEditor = {
     connect(presentation) { api = presentation; legacyPages = api.pages.filter(page => page.kind !== 'custom').map(page => ({...page})); document.querySelector('#editor-toolbar .editor-actions').prepend(ui); ui.querySelector('.vl-toolbar').hidden = false; window.PresentationContent?.configureTools(ui); const legacySave = document.querySelector('.editor-download'); if (legacySave) { legacySave.textContent = '儲存 JSON 設定'; legacySave.title = '將內容與版面存入連結的 JSON 設定檔'; } updateButtons(); report(''); },
     sessionChanged() {updateButtons();if(!editing)report(window.generalRoadEditor?.editing ? '文字編輯：點文字修改，使用圖片旁的按鈕更換圖片。' : '');},
-    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); window.CoverArtEditor?.cleanup(); restoreStyles(); }, render, setMode, select,transact,report,save:()=>run('save'),refresh:refreshPresentation,
+    beforeRender() { cancelDrag(); window.TableColumnEditor?.cleanup(); window.CoverArtEditor?.cleanup(); restoreStyles(); }, render, mountImageViews, setMode, select,transact,report,save:()=>run('save'),refresh:refreshPresentation,
     legacyChanged(){transact(()=>{},false);},
     formatChanged(element,property){const key={fontSize:'fontSize',fontWeight:'fontWeight',fontFamily:'fontFamily',lineHeight:'lineHeight'}[property];transact(next=>{if(key&&next.elements[element.dataset.layoutId])next.elements[element.dataset.layoutId][key]=null;},false);refreshPresentation();},
     resetTextStyle(element){transact(next=>{const item=next.elements[element.dataset.layoutId];if(item)for(const key of ['fontSize','fontFamily','fontWeight','lineHeight'])item[key]=null;},false);refreshPresentation();},

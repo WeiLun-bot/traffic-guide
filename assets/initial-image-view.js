@@ -3,7 +3,8 @@
   const Core = window.VisualLayoutCore;
   const records = new WeakMap(), active = new Map(), opened = new Set(), positions = new Map();
   let panelDrag=null;
-  const selector = '.context-map-canvas svg.context-map,.conditions-current-canvas svg.conditions-current-diagram,.module-map-canvas svg.module-diagram,.results-map-canvas svg.results-diagram';
+  const selector = 'svg.interactive-viewport,img.interactive-viewport';
+  const isEditing=()=>Boolean(window.generalRoadEditor?.editing||window.visualLayoutEditor?.editing);
   const number = value => String(Math.round(value * 1000) / 1000);
   function place(record) {
     if (record.panel.hidden) return;
@@ -31,7 +32,7 @@
   document.addEventListener('pointerup',event=>{if(panelDrag?.pointerId===event.pointerId)finishPanelDrag();});
   document.addEventListener('pointercancel',event=>{if(panelDrag?.pointerId===event.pointerId)finishPanelDrag(true);});
   window.addEventListener('blur',()=>finishPanelDrag(true));
-  function setting(record) { return record.context.getConfig().imageViews[record.id] || Core.imageView(record.pageId, record.assetKey); }
+  function setting(record) { return record.preview || record.context.getConfig().imageViews[record.id] || Core.imageView(record.pageId, record.assetKey); }
   function fields(record) {
     const value = setting(record);
     for (const input of record.panel.querySelectorAll('[data-iv-field]')) {
@@ -40,11 +41,34 @@
     }
     for (const button of record.panel.querySelectorAll('button')) button.disabled = record.context.isBusy();
   }
+  function fittedHome(record,value){
+    const base=Core.viewBoxFor(record.home,{...value,zoom:1,x:0,y:0}),ratio=record.svg.clientWidth/Math.max(1,record.svg.clientHeight);
+    if(value.fit==='width'){const height=base[2]/ratio;base[1]+=(base[3]-height)/2;base[3]=height;}
+    if(value.fit==='height'){const width=base[3]*ratio;base[0]+=(base[2]-width)/2;base[2]=width;}
+    return base;
+  }
+  function rasterBase(record,value){
+    const w=record.svg.clientWidth,h=record.svg.clientHeight,nw=record.svg.naturalWidth||w,nh=record.svg.naturalHeight||h,contain=Math.min(w/nw,h/nh),angle=(value.rotation||0)*Math.PI/180;
+    const dw=(Math.abs(Math.cos(angle))*nw+Math.abs(Math.sin(angle))*nh)*contain,dh=(Math.abs(Math.sin(angle))*nw+Math.abs(Math.cos(angle))*nh)*contain;
+    return {w,h,fit:value.fit==='width'?w/dw:value.fit==='height'?h/dh:value.fit==='all'?Math.min(w/dw,h/dh):1};
+  }
   function apply(record, force = false) {
     const value = setting(record), signature = JSON.stringify(value);
+    if(value.fit&&(!record.svg.clientWidth||!record.svg.clientHeight)){fields(record);return;}
     if (force || record.signature !== signature) {
-      const view = Core.viewBoxFor(record.home, value);
-      if (value.rotation || record.rotationLayer) {
+      if(record.svg.matches('#main-map,.condition-detail')&&!record.context.getConfig().imageViews[record.id]&&!force){fields(record);return;}
+      let view = Core.viewBoxFor(fittedHome(record,value), {...value,rotation:0});
+      if(value.fit){
+        record.svg.dataset.imageFitExplicit=value.fit;
+        if(record.vector)record.svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+        else record.svg.style.objectFit='contain';
+      }
+      if (!record.vector){
+        const {w,h,fit}=rasterBase(record,value),z=fit*value.zoom;
+        record.controller.configure({imageRotation:value.rotation||0,flipX:value.flipX,flipY:value.flipY});
+        const rasterView=[(w-w*z)/2+w*value.x/100,(h-h*z)/2+h*value.y/100,z];record.controller.configure({home:rasterView});record.controller.write(rasterView,false);record.signature=signature;fields(record);place(record);return;
+      }
+      if (value.rotation || value.flipX || value.flipY || record.rotationLayer) {
         if (!record.rotationLayer) {
           const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
           layer.dataset.initialViewRotation = '';
@@ -53,7 +77,8 @@
           record.svg.append(layer); record.rotationLayer = layer;
         }
         const [x, y, width, height] = record.home;
-        record.rotationLayer.setAttribute('transform', `rotate(${value.rotation ?? 0} ${x + width / 2} ${y + height / 2})`);
+        const cx=x+width/2,cy=y+height/2;
+        record.rotationLayer.setAttribute('transform', `rotate(${value.rotation ?? 0} ${cx} ${cy}) translate(${cx} ${cy}) scale(${value.flipX?-1:1} ${value.flipY?-1:1}) translate(${-cx} ${-cy})`);
       }
       record.controller.configure(record.svg.closest('[data-zoom-steps]')?{home:record.home,resetView:view}:{home:view}); record.controller.write(view, false);
       record.signature = signature;
@@ -65,7 +90,7 @@
     opened.delete(record.id); record.panel.hidden = true; record.button.setAttribute('aria-expanded', 'false');
   }
   function open(record) {
-    if(window.PresentationMode?.readOnly)return;
+    if(window.PresentationMode?.readOnly||!isEditing()){record.context.report('請先開啟編輯模式，再設定初始畫面。');return;}
     opened.add(record.id);
     record.context.prepare();
     const current = active.get(record.id);
@@ -73,23 +98,28 @@
     current.panel.hidden = false; current.button.setAttribute('aria-expanded', 'true'); fields(current); place(current);
   }
   function commit(record, patch) {
-    if(window.PresentationMode?.readOnly)return false;
+    if(window.PresentationMode?.readOnly||!isEditing())return false;
     if (record.context.isBusy()) return false;
     try {
-      record.context.setView({...setting(record), ...patch});
+      const next={...setting(record),...patch};record.preview=null;record.context.setView(next);
       const current = active.get(record.id); if (current) apply(current, true);
+      status(current||record,'初始畫面已設定成功；請儲存設定以保存。');
       return true;
-    } catch (error) { record.context.report(error.message, true); fields(record); return false; }
+    } catch (error) { record.context.report(error.message, true); status(record,'設定失敗：'+error.message,true);fields(record); return false; }
   }
+  function status(record,message,error=false){const node=record.panel.querySelector('.iv-status');if(node){node.textContent=message;node.dataset.error=String(error);place(record);}}
   function create(svg, context, pageId, assetKey) {
-    const figure = svg.closest('figure'), toolbar = figure?.querySelector('.map-toolbar .map-tools') || figure?.querySelector('.map-toolbar');
+    const figure = svg.closest('figure,.scenario-compare-card,.custom-image-frame,.cover-art')||svg.parentElement;
+    let toolbar = figure?.querySelector('.map-toolbar .map-tools') || figure?.querySelector('.map-toolbar');
+    if(figure&&!toolbar){toolbar=document.createElement('div');toolbar.className='viewport-initial-toolbar';toolbar.dataset.editorUi='initial-toolbar';figure.append(toolbar);}
     const controller = window.generalRoadViewport?.get(svg);
     if (!figure || !toolbar || !controller) return null;
     const id = Core.imageView(pageId, assetKey).id;
     const zoomStep=Boolean(svg.closest('[data-zoom-steps]'))&&pageId!==context.pageId;
     const heading=zoomStep?'設定放大範圍':'設定初始畫面';
     const button = document.createElement('button');
-    button.type = 'button'; button.className = 'iv-trigger'; button.textContent = heading;
+    button.type = 'button'; button.className = 'iv-trigger'; button.textContent = (svg.dataset.comparisonSide==='before'?'現況圖 / ':svg.dataset.comparisonSide==='after'?'改善圖 / ':'')+heading;
+    if(svg.dataset.comparisonSide)button.dataset.comparisonSide=svg.dataset.comparisonSide;
     button.dataset.editorUi = 'initial-view-toggle'; button.setAttribute('aria-expanded', 'false');
     const panel = document.createElement('section');
     panel.className = 'iv-panel'; panel.dataset.editorUi = 'initial-image-view'; panel.dataset.imageViewId = id;
@@ -104,9 +134,38 @@
       <small>左右正值向右、上下正值向下；角度正值順時針。各頁與各圖分別保存。</small>
       <div class="iv-actions"><button type="button" data-iv-action="capture">套用目前畫面</button><button type="button" data-iv-action="reset">回到原始畫面</button><button type="button" data-iv-action="save">儲存設定</button></div>
       <p class="iv-note">${note}</p>`;
-    toolbar.append(button); document.body.append(panel);
-    const record = {id, pageId, assetKey, svg, figure, button, panel, controller, context, home: controller.read(), signature: null};
+    const dialog=svg.closest('dialog');let triggerHost=toolbar;
+    if(svg.dataset.comparisonSide){triggerHost=toolbar.querySelector('.comparison-initial-pair');if(!triggerHost){triggerHost=document.createElement('span');triggerHost.className='comparison-control-pair comparison-initial-pair';toolbar.append(triggerHost);}}
+    triggerHost.insertBefore(button,svg.dataset.comparisonSide==='before'?triggerHost.querySelector('.iv-trigger[data-comparison-side="after"]'):null);(dialog||document.body).append(panel);
+    const feedback=document.createElement('p');feedback.className='iv-status';feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');panel.append(feedback);
+    const vector=svg instanceof SVGSVGElement,asset=window.generalRoadPresentation?.data.embeddedAssets[assetKey],meta=window.generalRoadPresentation?.data.assetMeta[assetKey];
+    let home=vector?controller.contentBounds:[0,0,svg.clientWidth||1,svg.clientHeight||1];
+    if(vector&&asset&&svg.matches('#main-map,.scenario-detail-image,.compare-source-image,.condition-detail')){const swapped=[90,270].includes(meta?.rotation||0);home=[0,0,swapped?asset.height:asset.width,swapped?asset.width:asset.height];}
+    const record = {id, pageId, assetKey, svg, figure, button, panel, controller, context, home, vector, signature: null,originalAspect:svg.getAttribute('preserveAspectRatio')};
+    controller.configure({onImageAction(action){
+      if(action==='initial'){open(record);return;}
+      const current=setting(record);let patch;
+      if(['all','width','height'].includes(action))patch={fit:action,zoom:1,x:0,y:0};
+      else if(action==='reset'){
+        patch={...Core.imageView(pageId,assetKey),fit:'all',flipX:false,flipY:false};
+        const stage=svg.closest('.compare-stage');
+        if(stage){
+          const app=window.generalRoadPresentation,scene=app.data.scenarios.find(s=>s.id===app.page.scenario),side=svg.dataset.comparisonSide,offset=side==='before'?scene.currentConditions.beforeOffsetY||0:0;
+          if(isEditing())window.generalRoadEditor.setComparisonTransform(stage.dataset.comparisonKey,side,{x:0,y:-offset/6.5,scaleX:1,scaleY:1,angle:0});
+          svg.closest('.compare-manual-transform')?.setAttribute('transform',`translate(0 ${-offset})`);
+          const outer=stage.querySelector('svg.compare-after');window.generalRoadViewport.get(outer)?.imageAction('all');
+        }
+      }
+      else if(action==='flip-x'||action==='flip-y')patch=action==='flip-x'?{flipX:!current.flipX}:{flipY:!current.flipY};
+      else if(action.startsWith('rotate-'))patch={rotation:((current.rotation+(action==='rotate-left'?-90:90)+540)%360)-180};
+      if(patch){if(window.PresentationMode?.readOnly||!isEditing()){record.preview={...current,...patch};apply(record,true);}else commit(record,patch);}
+    }});
     records.set(svg, record); active.set(id, record);
+    dialog?.addEventListener('close',()=>close(record),{once:true});
+    record.resizeObserver=new ResizeObserver(()=>{if(svg.isConnected&&active.get(id)===record&&setting(record).fit)apply(record,true);});record.resizeObserver.observe(svg);
+    if(!vector)svg.addEventListener('load',()=>{if(active.get(id)===record)apply(record,true);});
+    const display=document.createElement('div');display.className='iv-actions';display.innerHTML=[['all','全圖'],['width','全寬'],['height','全高'],['flip-x','水平翻轉'],['flip-y','垂直翻轉']].map(([action,label])=>`<button type="button" data-iv-display="${action}">${label}</button>`).join('');panel.querySelector('.iv-actions').before(display);
+    display.addEventListener('click',event=>{const button=event.target.closest('[data-iv-display]');if(button){event.preventDefault();record.controller.imageAction(button.dataset.ivDisplay);}});
     const handle=panel.querySelector('.iv-drag-handle');
     handle.addEventListener('pointerdown',event=>{
       if(event.button!==0||record.context.isBusy())return;
@@ -138,14 +197,18 @@
       const action = target.dataset.ivAction;
       if (action === 'close') {close(record);return;}
       if (record.context.isBusy()) return;
-      if (action === 'save') {record.context.save();return;}
-      if (action === 'reset') {commit(record, Core.imageView(pageId, assetKey));return;}
+      if (action === 'save') {Promise.resolve(record.context.save()).then(()=>status(record,record.context.isDirty?.()?'設定尚未儲存，請再次儲存設定。':'初始畫面已儲存成功。')).catch(error=>status(record,'儲存失敗：'+error.message,true));return;}
+      if (action === 'reset') {record.controller.imageAction('reset');return;}
       if (action === 'rotate-left' || action === 'rotate-right') {
         const angle = (setting(record).rotation ?? 0) + (action === 'rotate-left' ? -90 : 90);
         commit(record, {rotation: ((angle + 180) % 360 + 360) % 360 - 180});return;
       }
       if (action === 'capture') {
-        try {commit(record, Core.settingsForView(record.home, record.controller.read(), setting(record).rotation ?? 0));}
+        try {
+          const value=setting(record),view=record.controller.read();
+          const patch=record.vector?{...Core.settingsForView(fittedHome(record,value),view,0),rotation:value.rotation??0}:{zoom:view[2]/rasterBase(record,value).fit,x:(view[0]-(record.svg.clientWidth-record.svg.clientWidth*view[2])/2)/record.svg.clientWidth*100,y:(view[1]-(record.svg.clientHeight-record.svg.clientHeight*view[2])/2)/record.svg.clientHeight*100};
+          commit(record,patch);
+        }
         catch (error) {record.context.report(error.message, true);}
       }
     });
@@ -154,14 +217,24 @@
     return record;
   }
   function mount(root, context) {
-    for (const [id, record] of active) if (!record.svg.isConnected) {if(panelDrag?.record===record)finishPanelDrag(true);record.panel.remove();active.delete(id);}
+    for (const [id, record] of active) if (!record.svg.isConnected) {if(panelDrag?.record===record)finishPanelDrag(true);record.resizeObserver?.disconnect();record.panel.remove();active.delete(id);}
     for (const svg of root.querySelectorAll(selector)) {
-      const assetKey = svg.closest('[data-editor-image-key]')?.dataset.editorImageKey;
+      if(svg.matches('.compare-diagram'))continue;
+      const app=window.generalRoadPresentation,scene=app?.data.scenarios.find(s=>s.id===app.page.scenario);
+      const assetKey = svg.closest('[data-editor-image-key]')?.dataset.editorImageKey||(svg.id==='main-map'?app?.page.article?.mapAsset||scene?.overall:null);
       if (!assetKey) continue;
+      const pageId=svg.closest('[data-initial-view-page]')?.dataset.initialViewPage||svg.closest('[data-module-source-page]')?.dataset.moduleSourcePage||(svg.id==='main-map'&&app?.state.phase?context.pageId+'-zoom':context.pageId);
       let record = records.get(svg);
-      if (!record) record = create(svg, context, svg.closest('[data-initial-view-page]')?.dataset.initialViewPage||svg.closest('[data-module-source-page]')?.dataset.moduleSourcePage||context.pageId, assetKey);
+      if(record&&(record.pageId!==pageId||record.assetKey!==assetKey)){
+        record.resizeObserver?.disconnect();record.button.remove();record.panel.remove();
+        if(record.rotationLayer){for(const child of [...record.rotationLayer.children])svg.insertBefore(child,record.rotationLayer);record.rotationLayer.remove();}
+        if(record.originalAspect)svg.setAttribute('preserveAspectRatio',record.originalAspect);else svg.removeAttribute('preserveAspectRatio');delete svg.dataset.imageFitExplicit;
+        active.delete(record.id);record=null;
+      }
+      if (!record) record = create(svg, context, pageId, assetKey);
       if (!record) continue;
       record.context = context; active.set(record.id, record); apply(record);
+      if(!window.generalRoadEditor?.editing&&!window.visualLayoutEditor?.editing)close(record);
     }
   }
   window.addEventListener('resize', () => {for(const record of active.values())place(record);});

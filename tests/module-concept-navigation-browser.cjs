@@ -31,7 +31,7 @@ module.exports=async({evaluate,click,navigate,cdp,base,pass})=>{
       await evaluate(`(async()=>{await window.generalRoadPresentation.goPage(${JSON.stringify(previous)});await window.generalRoadPresentation.whenIdle();})()`);
       await next(keyboard);
       assert.deepEqual(await issueState(),{page:flow.issues,point:issuePoints[0],points:issuePoints,asset:firstAsset},'Re-entering from the previous slide must start at the first issue and its photo');
-      assert.match(await run(()=>document.getElementById('next-label').textContent),/02/);
+      assert.match(await run(()=>document.getElementById('next-label').textContent),/下一個重點 0?2$/);
       for(const point of issuePoints.slice(1)){await next(keyboard);assert.equal((await issueState()).point,point,'Issues must still advance in order');}
       if(!keyboard){await click('#previous');assert.equal((await issueState()).point,issuePoints.at(-2));await next(false);assert.equal((await issueState()).point,issuePoints.at(-1));}
       if(keyboard){await next(true);assert.equal((await state()).page,flow.diagram);}

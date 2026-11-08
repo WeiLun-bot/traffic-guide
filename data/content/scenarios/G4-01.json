@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "owner": "scenarios/G4-01",
+  "texts": {
+    "g401-overview|0|text-3": "路段保留連續直行車道，路口附加車道分流轉向車流，並搭配行人庇護島與無衝突時相。"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {
+      "g401-conditions": {
+        "issues": [
+          {
+            "id": "issue-original-0",
+            "title": "左轉車道銜接不佳",
+            "titleKey": "g401-conditions:content:photo:g401-photo-1:title",
+            "imageKey": "g401-photo-1",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-0-point-0",
+                "text": "左轉空間占用直行車道的延續位置，且左右轉向配置需再檢視。",
+                "textKey": "g401-conditions:content:photo:g401-photo-1:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-1",
+            "title": "長距離穿越缺少庇護",
+            "titleKey": "g401-conditions:content:photo:g401-photo-2:title",
+            "imageKey": "g401-photo-2",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-1-point-0",
+                "text": "行人穿越距離長，路口未提供庇護島。",
+                "textKey": "g401-conditions:content:photo:g401-photo-2:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-2",
+            "title": "車道與上游導引不足",
+            "titleKey": "g401-conditions:content:photo:g401-photo-3:title",
+            "imageKey": "g401-photo-3",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-2-point-0",
+                "text": "進出車道數不同，預告標誌又太近路口，駕駛不易提早選道。",
+                "textKey": "g401-conditions:content:photo:g401-photo-3:point-0"
+              }
+            ]
+          },
+          {
+            "id": "issue-original-3",
+            "title": "過路口直行動線銜接不佳",
+            "titleKey": "g401-conditions:content:photo:g401-photo-4:title",
+            "imageKey": "g401-photo-4",
+            "photo": true,
+            "points": [
+              {
+                "id": "issue-original-3-point-0",
+                "text": "左轉空間占用直行車道的延續位置，且左右轉向配置需再檢視。",
+                "textKey": "g401-conditions:content:photo:g401-photo-4:point-0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "articles": {},
+    "overviews": {
+      "g401-overview": {
+        "items": [
+          {
+            "id": "strategy-original-0",
+            "title": "以附加車道分流轉向",
+            "titleKey": "g401-overview|strategy|strategy-original-0|title",
+            "articleIds": [
+              "g401-dotted"
+            ],
+            "targetId": "g401-dotted"
+          },
+          {
+            "id": "strategy-original-1",
+            "title": "調整左轉停等位置",
+            "titleKey": "g401-overview|strategy|strategy-original-1|title",
+            "articleIds": [
+              "g401-left-waiting"
+            ],
+            "targetId": "g401-left-waiting"
+          },
+          {
+            "id": "strategy-original-2",
+            "title": "配置錯開型行穿線與庇護",
+            "titleKey": "g401-overview|strategy|strategy-original-2|title",
+            "articleIds": [
+              "g401-crosswalk"
+            ],
+            "targetId": "g401-crosswalk"
+          },
+          {
+            "id": "strategy-original-3",
+            "title": "整合輪放時相與車道用途",
+            "titleKey": "g401-overview|strategy|strategy-original-3|title",
+            "articleIds": [
+              "g401-phase-two"
+            ],
+            "targetId": "g401-phase-two"
+          }
+        ]
+      }
+    },
+    "modules": {},
+    "results": {}
+  }
+}
