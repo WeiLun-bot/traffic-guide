@@ -62,30 +62,32 @@ test('shared submodule presentations consolidate routes and titles while preserv
   assert.equal(catalog.modules.flatMap(entry=>entry.submodules).length,27);assert.equal(catalog.modules.find(entry=>entry.id==='M4-04').submodules.length,2);
 });
 
-test('module formation keeps ten ordered stages with eight native drawings, independent shared-image focus and isolated load failures',async()=>{
+test('module formation keeps ten ordered stages, independent highlights without zoom ranges and isolated load failures',async()=>{
   const formation=read('data/modules/formation.json');Modules.validateFormation(formation,catalog);
   assert.equal(formation.stages.length,10);assert.deepEqual(formation.stages.map(stage=>stage.moduleId||null),[null,'M1-01','M1-02','M1-03','M2-03','M2-04','M3-01','M3-02','M3-03','M4-01']);
+  assert.deepEqual(formation.themes.map(theme=>theme.id),['M1','M2','M3','M4']);assert.deepEqual(formation.stages.map(stage=>stage.moduleId?.slice(0,2)||null),[null,'M1','M1','M1','M2','M2','M3','M3','M3','M4']);
+  for(const mutate of [doc=>doc.themes=null,doc=>doc.themes=[],doc=>doc.themes[1].id='M1',doc=>doc.themes[0].id='M5',doc=>doc.themes[0].description='']){const invalid=structuredClone(formation);mutate(invalid);assert.throws(()=>Modules.validateFormation(invalid,catalog));}
   for(const [index,stage]of formation.stages.entries()){
     const asset=formation.assets[stage.asset];assert.equal(asset.file,'materials/03-modules/00/'+[1,2,3,4,5,6,7,7,7,8][index]+'.svg');
     const size=require('../tools/svg-native-size.cjs')(fs.readFileSync(path.join(root,asset.file),'utf8'));assert.deepEqual([asset.width,asset.height],size);
   }
-  assert.equal(Object.keys(formation.assets).length,8);assert.deepEqual(formation.stages.filter(stage=>stage.startView==='focus').map(stage=>stage.moduleId),['M3-02','M3-03']);assert.notDeepEqual(formation.stages[7].focus.crop,formation.stages[8].focus.crop);
-  for(const mutate of [doc=>doc.stages[0].moduleId='M1-01',doc=>doc.stages[1].moduleId='missing',doc=>doc.stages[2].asset='missing',doc=>doc.stages[1].id=doc.stages[0].id,doc=>doc.assets['formation-base'].file='../private.svg',doc=>doc.assets['formation-base'].rotation=45,doc=>doc.stages[7].startView='other',doc=>delete doc.stages[7].focus,doc=>doc.stages[7].focus.rect=[0,0,99999,1],doc=>doc.stages[7].focus.crop=[0,0,1,1]]){const invalid=structuredClone(formation);mutate(invalid);assert.throws(()=>Modules.validateFormation(invalid,catalog));}
+  assert.equal(Object.keys(formation.assets).length,8);assert(formation.stages.every(stage=>!stage.startView&&!stage.focus?.crop));assert.notDeepEqual(formation.stages[7].focus.rect,formation.stages[8].focus.rect);
+  for(const mutate of [doc=>doc.stages[0].moduleId='M1-01',doc=>doc.stages[1].moduleId='missing',doc=>doc.stages[2].asset='missing',doc=>doc.stages[1].id=doc.stages[0].id,doc=>doc.assets['formation-base'].file='../private.svg',doc=>doc.assets['formation-base'].rotation=45,doc=>doc.stages[7].startView='other',doc=>delete doc.stages[7].focus.rect,doc=>doc.stages[7].focus.rect=[0,0,99999,1],doc=>doc.stages[7].focus.crop=[0,0,1,1]]){const invalid=structuredClone(formation);mutate(invalid);assert.throws(()=>Modules.validateFormation(invalid,catalog));}
   const sandbox={module:{exports:{}},URL,document:{baseURI:'http://localhost/',addEventListener(){}},fetch:async url=>({ok:true,json:async()=>read(new URL(url).pathname.slice(1))})};
   vm.runInNewContext(fs.readFileSync(path.join(root,'assets/presentation-modules.js'),'utf8'),sandbox);let api=sandbox.module.exports;await api.load();
-  const pages=Array.from(api.pages());assert.deepEqual(pages.slice(0,3).map(page=>page.id),['modules-structure','modules-index','modules-formation']);assert.equal(pages[2].stepCount,10);
+  const pages=Array.from(api.pages());assert.deepEqual(pages.filter(page=>['modules-structure','modules-index','modules-formation'].includes(page.id)).map(page=>page.id),['modules-structure','modules-formation']);assert.equal(api.resolvePage('modules-index'),'modules-structure');assert(!api.toc().includes('data-page="modules-index"'));assert(!api.switcher(pages.find(page=>page.id==='m201-stop-layout')).includes('data-page="modules-index"'));assert.equal(pages.find(page=>page.id==='modules-formation').stepCount,10);
   const data={embeddedAssets:{},assetMeta:{}};api.prepare(data);for(const stage of formation.stages)assert.equal(data.embeddedAssets['module:'+stage.asset].url,formation.assets[stage.asset].file);
   for(const [index,stage]of formation.stages.entries()){
     const empty=api.formationHighlightSpec(index);assert.equal(empty.key,'module:modules-formation:'+stage.id);assert.equal(empty.enabled,Boolean(stage.focus));assert.equal(empty.hasBox,Boolean(stage.focus));
     const box=[1000,800,700,350],crop=[800,600,1100,750],saved={highlights:{[empty.key]:{box,crop,rotation:27,imageKey:empty.imageKey}}};
-    const spec=api.formationHighlightSpec(index,saved);assert(spec.enabled);assert.deepEqual(Array.from(spec.box),box);assert.deepEqual(Array.from(spec.crop),crop);assert.equal(spec.rotation,27);
+    const spec=api.formationHighlightSpec(index,saved);assert(spec.enabled);assert.deepEqual(Array.from(spec.box),box);assert.equal(spec.crop,null);assert.equal(spec.rotation,27);
     const other=(index+1)%formation.stages.length;assert.deepEqual(api.formationHighlightSpec(other,saved).box,api.formationHighlightSpec(other).box);
     saved.highlights[empty.key].deleted=true;assert.equal(api.formationHighlightSpec(index,saved).enabled,false);assert.equal(api.formationHighlightSpec(index,saved).hasBox,true);
     delete saved.highlights[empty.key].deleted;saved.disabledHighlights={[empty.key]:true};assert.equal(api.formationHighlightSpec(index,saved).enabled,false);
   }
   assert.equal(api.formationHighlightSpec(99),null);
   sandbox.fetch=async url=>new URL(url).pathname.endsWith('/formation.json')?{ok:false,status:404}:{ok:true,json:async()=>read(new URL(url).pathname.slice(1))};
-  await api.load();assert(api.pages().some(page=>page.id==='m101-overview'));assert.equal(api.pages().find(page=>page.id==='modules-formation').stepCount,1);assert.match(api.render(api.pages().find(page=>page.id==='modules-formation')),/模組形成示範尚未載入/);
+  await api.load();assert(api.pages().some(page=>page.id==='m101-lanes-issues'));assert.equal(api.pages().find(page=>page.id==='modules-formation').stepCount,1);assert.match(api.render(api.pages().find(page=>page.id==='modules-formation')),/模組形成示範尚未載入/);
 });
 
 test('directory representatives cover every module and retain shared/merged diagrams without issue photos or close-up sign details',async()=>{
@@ -189,6 +191,25 @@ test('concept galleries accept rows and grids, and reject unsupported layouts or
     topic=>{delete topic.assets;}
   ]){const invalid=structuredClone(doc);change(invalid.submoduleFlows[0].stages[1].topics.find(topic=>topic.id==='near-far'));assert.throws(()=>Modules.validateModule(invalid,catalog));}
   const invalid=structuredClone(doc);invalid.submoduleFlows[0].stages[2].topics[0].imageLayout='grid';assert.throws(()=>Modules.validateModule(invalid,catalog));
+});
+
+test('concept image groups partition the topic images without omissions or duplicates',()=>{
+  const doc=read('data/modules/M3-01.json'),topicOf=doc=>doc.submoduleFlows.find(flow=>flow.submoduleId==='M3-01.2').stages.find(stage=>stage.id==='diagram').topics.find(topic=>topic.id==='diagonal');
+  Modules.validateModule(doc,catalog);
+  const topic=topicOf(doc);assert.deepEqual(topic.imageGroups.map(group=>group.assets.length),[1,2,2]);assert.deepEqual(topic.imageGroups.flatMap(group=>group.assets),topic.assets);
+  for(const change of [
+    topic=>{topic.imageGroups=null;},
+    topic=>{topic.imageGroups=[];},
+    topic=>{topic.imageGroups[1].id=topic.imageGroups[0].id;},
+    topic=>{topic.imageGroups[1].assets[0]=topic.imageGroups[0].assets[0];},
+    topic=>{topic.imageGroups[1].assets[0]='not-in-the-topic';},
+    topic=>{topic.imageGroups.pop();},
+    topic=>{topic.imageGroups[1].assets=[];},
+    topic=>{topic.imageGroups=[{id:'all',label:'全部',assets:topic.assets}];},
+    topic=>{topic.imageLayout='row';},
+    topic=>{delete topic.assets;}
+  ]){const invalid=structuredClone(doc);change(topicOf(invalid));assert.throws(()=>Modules.validateModule(invalid,catalog));}
+  const invalid=structuredClone(doc),extension=invalid.submoduleFlows[0].stages[2].topics[0];extension.assets=[invalid.pages.find(page=>page.id===extension.sourcePageId).assets[0]];extension.imageGroups=[{id:'one',label:'圖例',assets:extension.assets}];assert.throws(()=>Modules.validateModule(invalid,catalog));
 });
 
 test('empty concept drafts remain valid and editable while ordinary topics still require content',()=>{

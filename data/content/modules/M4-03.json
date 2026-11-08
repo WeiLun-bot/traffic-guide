@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M4-03",
+  "texts": {},
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m403-passing-issues": {
+        "points": [
+          {
+            "id": "sight",
+            "title": "視距不足路段應明確界定禁止超車範圍",
+            "titleKey": "m403-passing-issues|module|sight|title",
+            "text": "彎道、接近交岔路口或其他視距不足的路段，若未明確設置禁止超車標誌標線，可能使駕駛人在無法充分掌握對向及交岔車流的情況下超車，增加車輛衝突風險。",
+            "textKey": "m403-passing-issues|module|sight|text"
+          },
+          {
+            "id": "width",
+            "title": "狹窄路段會車管制與先行關係不明",
+            "titleKey": "m403-passing-issues|module|width|title",
+            "text": "道路或橋梁寬度不足以供雙向車輛同時通過時，若未明確指定先行方向及適當停等位置，可能使對向車輛同時進入狹窄路段，造成通行衝突。",
+            "textKey": "m403-passing-issues|module|width|text"
+          }
+        ]
+      }
+    },
+    "results": {}
+  }
+}

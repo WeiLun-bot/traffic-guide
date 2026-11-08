@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M3-04",
+  "texts": {
+    "m304-lane-diagram|concept|lines|title": "以標誌標線導引專用道進出及車道使用"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m304-lane-diagram": {
+        "points": [
+          {
+            "id": "channel",
+            "title": "以槽化線提供軌跡修正空間",
+            "titleKey": "m304-lane-diagram|module|channel|title",
+            "text": "公車專用道接近路口時，可將部分實體交通島改以槽化線過渡，保留公車行駛或轉向所需的緩衝及軌跡修正空間。",
+            "textKey": "m304-lane-diagram|module|channel|text"
+          },
+          {
+            "id": "envelope",
+            "title": "依公車動態包絡範圍檢核島頭位置",
+            "titleKey": "m304-lane-diagram|module|envelope|title",
+            "text": "透過公車行駛軌跡模擬，檢核交通島與公車通行空間的關係，避免公車輾壓島頭，或為閃避交通島而提前偏移車道。",
+            "textKey": "m304-lane-diagram|module|envelope|text"
+          },
+          {
+            "id": "entry",
+            "title": "以單邊禁止變換車道線引導匯入與匯出",
+            "titleKey": "m304-lane-diagram|module|entry|title",
+            "text": "當公車有匯入或匯出轉向需求時，採用單邊禁止變換車道線",
+            "textKey": "m304-lane-diagram|module|entry|text"
+          },
+          {
+            "id": "bus",
+            "title": "以標誌標線指示專用道位置",
+            "titleKey": "m304-lane-diagram|module|bus|title",
+            "text": "於專用道起點設置車道指定大客車專行標誌（遵28），箭頭應對準專用道中央，並配合車種專用車道標線及標字，使駕駛人清楚辨識專用道範圍，避免一般車輛誤入。",
+            "textKey": "m304-lane-diagram|module|bus|text"
+          },
+          {
+            "id": "wrong-way",
+            "title": "視道路型態防止逆向誤入",
+            "titleKey": "m304-lane-diagram|module|wrong-way|title",
+            "text": "於無中央分隔或單行道等容易誤判車道方向的環境，可增設車道禁止進入標誌（禁16），避免車輛逆向進入對向公車專用道。",
+            "textKey": "m304-lane-diagram|module|wrong-way|text"
+          }
+        ]
+      },
+      "m304-stop-issues": {
+        "points": [
+          {
+            "id": "space",
+            "title": "公車停靠空間與進出動線配置不當",
+            "titleKey": "m304-stop-issues|module|space|title",
+            "text": "公車停靠區長度、前後進出空間不足，或缺乏明確的標線導引，可能使公車無法貼近路緣停靠，影響乘客上下車及其他車流安全。",
+            "textKey": "m304-stop-issues|module|space|text"
+          }
+        ]
+      },
+      "m304-stop-diagram": {
+        "points": [
+          {
+            "id": "geometry",
+            "title": "配合公車行駛需求設置漸變段",
+            "titleKey": "m304-stop-diagram|module|geometry|title",
+            "text": "公車彎的幾何設計應提供足夠的駛入及駛出空間。依市區道路設計規範，入端漸變段長寬比不得小於 5:1，離去端不得小於 3:1，以利公車順暢靠站及離站。",
+            "textKey": "m304-stop-diagram|module|geometry|text"
+          },
+          {
+            "id": "dotted",
+            "title": "以穿越虛線引導進出動線",
+            "titleKey": "m304-stop-diagram|module|dotted|title",
+            "text": "於公車彎駛入及駛出的邊界劃設穿越虛線，明確提示公車跨越車道與停靠區邊界的位置，使進出動線更容易辨識。",
+            "textKey": "m304-stop-diagram|module|dotted|text"
+          },
+          {
+            "id": "point-4c5cfefa-2a6d-49fd-8097-3df3a19c4f7a",
+            "text": "於公車停靠區前後端至少各劃設 2 m 禁止臨時停車線，保留公車進出及修正行駛軌跡所需空間。",
+            "textKey": "m304-stop-diagram|content|modules|point-4c5cfefa-2a6d-49fd-8097-3df3a19c4f7a",
+            "title": "於前後端劃設禁止臨時停車線",
+            "titleKey": "m304-stop-diagram|content|point-4c5cfefa-2a6d-49fd-8097-3df3a19c4f7a|title",
+            "topicId": "edge"
+          }
+        ]
+      },
+      "m304-stop-extensions": {
+        "points": [
+          {
+            "id": "separation",
+            "title": "分隔公車停靠與自行車通行動線",
+            "titleKey": "m304-stop-extensions|module|separation|title",
+            "text": "空間條件許可時，建議將自行車道配置於公車站臺後方，使公車於車道側停靠、乘客於站臺上下車，自行車則由站臺後方通行，避免自行車與公車停靠動線直接衝突。",
+            "textKey": "m304-stop-extensions|module|separation|text"
+          },
+          {
+            "id": "transition",
+            "title": "以平順漸變維持自行車道連續",
+            "titleKey": "m304-stop-extensions|module|transition|title",
+            "text": "自行車道繞行站臺後方時，導入及導出路段應採平順漸變方式銜接，建議漸變比例為 3:1，維持自行車行駛動線的連續性與順暢性。",
+            "textKey": "m304-stop-extensions|module|transition|text"
+          }
+        ]
+      }
+    },
+    "results": {}
+  }
+}

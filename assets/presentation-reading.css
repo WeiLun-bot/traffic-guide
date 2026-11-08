@@ -134,3 +134,8 @@
 #presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points>li::before{top:11px;font-size:10px}
 #presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points h3:not(#slide-title){font-size:18px;font-weight:500;line-height:1.4;margin-bottom:5px}
 #presentation .module-extension-card[data-module-source-page="m101-additional-extensions"] .module-explain-points p:not(#slide-title){font-size:16px;font-weight:400;line-height:1.4}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"][data-extension-layout="vertical"] .module-extension-images{justify-items:center}
+#presentation .module-extension-card[data-module-source-page="m101-additional-extensions"][data-extension-layout="vertical"] .module-extension-image{max-width:1100px}
+@media(min-width:901px){
+ body:not(.is-editing) #presentation .module-extension-card[data-module-source-page="m101-additional-extensions"][data-extension-layout="vertical"] .module-extension-body{grid-template-rows:auto minmax(0,1fr);row-gap:18px}
+}

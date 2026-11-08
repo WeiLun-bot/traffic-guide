@@ -375,22 +375,6 @@
           "focus": {
             "asset": "m304-599bae677d"
           }
-        },
-        {
-          "id": "clearance",
-          "title": "避免停靠區前後空間遭停車占用",
-          "text": "公車停靠區前後端為車輛進出時所需的操作空間，應避免其他車輛臨時停車占用，影響公車進出站動線。",
-          "focus": {
-            "asset": "m304-bcd74bb050"
-          }
-        },
-        {
-          "id": "no-stopping",
-          "title": "於前後端劃設禁止臨時停車線",
-          "text": "本指引建議於公車停靠區前後端至少各劃設 2 m 禁止臨時停車線，保留公車進出及修正行駛軌跡所需空間。",
-          "focus": {
-            "asset": "m304-bcd74bb050"
-          }
         }
       ],
       "sourcePages": [],
@@ -658,29 +642,6 @@
                   "id": "taper",
                   "label": "公車彎入端與離去端漸變段",
                   "kind": "design",
-                  "focus": {
-                    "asset": "m304-bcd74bb050"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "clearance",
-              "label": "保留公車靠站與離站所需淨空",
-              "sourcePageId": "m304-stop-diagram",
-              "pointIds": [
-                "clearance",
-                "no-stopping"
-              ],
-              "assets": [
-                "m304-bcd74bb050"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "no-stopping",
-                  "label": "禁止臨時停車線",
-                  "kind": "control",
                   "focus": {
                     "asset": "m304-bcd74bb050"
                   }

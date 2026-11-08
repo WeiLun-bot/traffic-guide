@@ -16,7 +16,8 @@
     ],
     "notes": [],
     "userImageFiles": [
-      "materials/03-modules/M4-01/M4-01.1_現況議題_01.png"
+      "materials/03-modules/M4-01/M4-01.1_現況議題_01.png",
+      "materials/03-modules/M4-01/M4-01.2_現況議題_彎道方向導引.png"
     ]
   },
   "assets": {
@@ -75,6 +76,14 @@
       "label": "連續彎路標誌",
       "caption": "連續彎路標誌",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m401-road-issue-photo-1": {
+      "file": "materials/03-modules/M4-01/M4-01.2_現況議題_彎道方向導引.png",
+      "width": 1699,
+      "height": 1032,
+      "label": "路段危險警示現況照片：彎道方向導引",
+      "caption": "危險彎道的走向與持續範圍辨識",
+      "credit": "使用者提供之現況照片"
     }
   },
   "pages": [
@@ -266,7 +275,7 @@
       "title": "路段危險警示｜現況議題與相關條文",
       "intro": "危險彎道路段除須提前警告駕駛人外，亦應持續提供道路線形及危險範圍資訊，使駕駛人能依實際道路條件調整行駛速度。",
       "assets": [
-        "m401-a6bae42a3b"
+        "m401-road-issue-photo-1"
       ],
       "points": [
         {
@@ -274,7 +283,7 @@
           "title": "危險彎道的走向與持續範圍不易辨識",
           "text": "若僅於路段起點設置警告標誌，缺乏沿線方向導引或危險範圍提示，可能使駕駛人無法預期後續彎道，或通過第一處彎道後過早加速；反之，過度重複設置警告標誌，也可能增加駕駛人的資訊負擔。",
           "focus": {
-            "asset": "m401-a6bae42a3b"
+            "asset": "m401-road-issue-photo-1"
           }
         }
       ],

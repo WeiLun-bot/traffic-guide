@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M3-01",
+  "texts": {
+    "m301-sidewalk-diagram|concept|continuity|title": "建構安全連續的人行空間",
+    "m301-midblock-diagram|module|placement|text": "行人穿越道號誌應設於斑馬紋行穿線前、靠近停止線的位置，原則每方向設置一燈面，必要時得增設，以提高穿越位置的辨識性。",
+    "m301-midblock-diagram|module|placement|title": "配合行穿線配置號誌燈面"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m301-sidewalk-issues": {
+        "points": [
+          {
+            "id": "continuity",
+            "title": "人行道標線缺乏連續性",
+            "titleKey": "m301-sidewalk-issues|module|continuity|title",
+            "text": "人行道標線常僅劃設局部路段，未考量路段及路口轉角的銜接，出現標線中斷或寬度不足等情形，使行人繞行或進入車道。",
+            "textKey": "m301-sidewalk-issues|module|continuity|text"
+          },
+          {
+            "id": "protection",
+            "title": "高車速或高衝突環境仍僅以標線區隔",
+            "titleKey": "m301-sidewalk-issues|module|protection|title",
+            "text": "人行道標線不具實體防護功能，原則適用於速限 30 km/h 以下的道路。若道路車速較高或人車衝突風險較大，人行道標線應視為過渡階段的做法，且應有實體防護。",
+            "textKey": "m301-sidewalk-issues|module|protection|text"
+          }
+        ]
+      },
+      "m301-sidewalk-diagram": {
+        "points": [
+          {
+            "id": "connection",
+            "title": "確保前後路段與路口動線連續",
+            "titleKey": "m301-sidewalk-diagram|module|connection|title",
+            "text": "人行道標線應整體銜接前後路段及路口各側的人行空間，避免於路口轉角或道路交會處中斷，提供行人連續的通行路徑。",
+            "textKey": "m301-sidewalk-diagram|module|connection|text"
+          },
+          {
+            "id": "sidewalk",
+            "title": "依道路條件選擇人車分隔方式",
+            "titleKey": "m301-sidewalk-diagram|module|sidewalk|title",
+            "text": "道路缺乏實體人行道時，可利用人行道標線提供步行空間，原則適用於速限 30 km/h 以下的環境；當車速較高或人車衝突風險較大時，應考量實體人行道或其他適當的阻隔設施。",
+            "textKey": "m301-sidewalk-diagram|module|sidewalk|text"
+          },
+          {
+            "id": "point-4b4138df-a129-4b24-8c70-aa96bb14900f",
+            "text": "以低速轉彎及行人安全為原則，依設計車種轉彎軌跡檢核轉角線形，在滿足必要轉彎空間的前提下，避免過度擴大轉角，維持連續且順暢的行人通行空間。",
+            "textKey": "m301-sidewalk-diagram|content|modules|point-4b4138df-a129-4b24-8c70-aa96bb14900f",
+            "title": "兼顧車輛轉彎需求與行人空間",
+            "titleKey": "m301-sidewalk-diagram|content|point-4b4138df-a129-4b24-8c70-aa96bb14900f|title",
+            "topicId": "continuity"
+          }
+        ]
+      },
+      "m301-crossing-issues": {
+        "points": [
+          {
+            "id": "marking",
+            "title": "枕木紋行人穿越道線未平行車流",
+            "titleKey": "m301-crossing-issues|module|marking|title",
+            "text": "可能影響標線辨識性。",
+            "textKey": "m301-crossing-issues|module|marking|text"
+          },
+          {
+            "id": "point-0da06568-ec87-496d-ac15-de91f6bede74",
+            "text": "行人偏離行穿線、無障礙通行困難。\n",
+            "textKey": "m301-crossing-issues|content|modules|point-0da06568-ec87-496d-ac15-de91f6bede74",
+            "title": "行穿線未與人行道銜接",
+            "titleKey": "m301-crossing-issues|content|point-0da06568-ec87-496d-ac15-de91f6bede74|title"
+          },
+          {
+            "id": "distance",
+            "title": "穿越距離過長且缺乏庇護空間",
+            "titleKey": "m301-crossing-issues|module|distance|title",
+            "text": "寬闊或斜交路口的行人穿越距離較長，若缺乏行人庇護島，將增加行人暴露於車流中的時間，並提高高齡者、兒童及行動不便者的穿越負擔。",
+            "textKey": "m301-crossing-issues|module|distance|text"
+          },
+          {
+            "id": "signals",
+            "title": "行人專用號誌辨識性不足",
+            "titleKey": "m301-crossing-issues|module|signals|title",
+            "text": "行人號誌位置偏離穿越路徑、燈面朝向不當或受到遮蔽，可能使行人難以找到應遵循的燈面，甚至誤判路口的號誌管制方式。",
+            "textKey": "m301-crossing-issues|module|signals|text"
+          }
+        ]
+      },
+      "m301-crossing-diagram": {
+        "points": [
+          {
+            "id": "orientation",
+            "title": "枕木紋方向應平行車流",
+            "titleKey": "m301-crossing-diagram|module|orientation|title",
+            "text": "枕木紋應平行車輛行駛方向，並與兩側人行道開口銜接。行穿線可自緣石、人行道標線邊緣開始劃設，遇交通島時應分段處理。",
+            "textKey": "m301-crossing-diagram|module|orientation|text"
+          },
+          {
+            "id": "refuge",
+            "title": "依穿越距離配置庇護空間",
+            "titleKey": "m301-crossing-diagram|module|refuge|title",
+            "text": "行人穿越道長度達 15 m 以上宜設置庇護島，達 25 m 以上應設置，並可利用中央分隔島提供分段穿越及停等空間。",
+            "textKey": "m301-crossing-diagram|module|refuge|text"
+          },
+          {
+            "id": "guide",
+            "title": "配合視覺功能障礙者通行需求",
+            "titleKey": "m301-crossing-diagram|module|guide|title",
+            "text": "於穿越距離較長或斜交路口，可依需求設置視覺功能障礙引導標線，並銜接兩端人行道及定位磚，提供連續的方向引導。",
+            "textKey": "m301-crossing-diagram|module|guide|text"
+          },
+          {
+            "id": "diagonal",
+            "title": "以對角線行人穿越道線提供全向穿越",
+            "titleKey": "m301-crossing-diagram|module|diagonal|title",
+            "text": "設有行人專用時相的路口，可依實際需求劃設 X 字型對角線行人穿越道線；若僅於特定時段實施，應於對角線四端標示適用時段。",
+            "textKey": "m301-crossing-diagram|module|diagonal|text"
+          },
+          {
+            "id": "direction",
+            "title": "增設對應斜向穿越的行人號誌",
+            "titleKey": "m301-crossing-diagram|module|direction|title",
+            "text": "除一般方向燈面外，可依對角線穿越路徑增設斜向燈面，朝向等候行人的穿越路徑。斜向燈面僅於行人專用時相顯示綠燈，其餘時間顯示紅燈，並與一般方向行人號誌協調。",
+            "textKey": "m301-crossing-diagram|module|direction|text"
+          },
+          {
+            "id": "hours",
+            "title": "以告示牌說明行人專用時相",
+            "titleKey": "m301-crossing-diagram|module|hours|title",
+            "text": "行人專用時相告示牌應與所說明燈面明確對應，可設於側方、上方或下方；設於下方時應檢查最低點淨高與突出範圍。",
+            "textKey": "m301-crossing-diagram|module|hours|text"
+          }
+        ]
+      },
+      "m301-midblock-issues": {
+        "points": [
+          {
+            "id": "types",
+            "title": "路口與路段穿越標線、號誌型式混用",
+            "titleKey": "m301-midblock-issues|module|types|title",
+            "text": "部分路段中穿越位置使用枕木紋行人穿越道線，或路段穿越使用行車管制號誌。",
+            "textKey": "m301-midblock-issues|module|types|text"
+          },
+          {
+            "id": "distance",
+            "title": "穿越距離過長且缺乏庇護空間",
+            "titleKey": "m301-midblock-issues|module|distance|title",
+            "text": "路幅較寬的路段中穿越位置，常缺乏庇護島、車道縮減或減速設施，使行人單次穿越距離過長。",
+            "textKey": "m301-midblock-issues|module|distance|text"
+          },
+          {
+            "id": "warning",
+            "title": "行人穿越位置缺乏提前警示",
+            "titleKey": "m301-midblock-issues|module|warning|title",
+            "text": "路段中行人穿越位置若缺乏適當的警示設施，尤其在視距不足或車速較高的環境，駕駛人可能無法及早察覺行人穿越需求並採取減速、停讓措施。",
+            "textKey": "m301-midblock-issues|module|warning|text"
+          }
+        ]
+      },
+      "m301-midblock-diagram": {
+        "points": [
+          {
+            "id": "refuge",
+            "title": "縮短單次穿越距離",
+            "titleKey": "m301-midblock-diagram|module|refuge|title",
+            "text": "於路幅較寬的路段中穿越位置設置行人庇護島，使行人得以分段穿越不同方向車流，減少單次暴露於車道中的時間，並提供中途停等空間。",
+            "textKey": "m301-midblock-diagram|module|refuge|text"
+          },
+          {
+            "id": "speed",
+            "title": "配合道路線形引導車輛減速",
+            "titleKey": "m301-midblock-diagram|module|speed|title",
+            "text": "透過庇護島及減速標線等設施，增加穿越位置的辨識性，引導駕駛人在接近行人穿越處時降低車速。",
+            "textKey": "m301-midblock-diagram|module|speed|text"
+          },
+          {
+            "id": "distance",
+            "title": "於上游提前警告行人穿越需求",
+            "titleKey": "m301-midblock-diagram|module|distance|title",
+            "text": "當心行人標誌建議設於行穿線上游 30～100 m 的路側，提醒駕駛人提前注意行人穿越及減速需求；當自行車穿越道緊鄰行穿線，且視距不足或車速較高時，可增設當心自行車標誌。",
+            "textKey": "m301-midblock-diagram|module|distance|text"
+          },
+          {
+            "id": "position",
+            "title": "區分提前警告與穿越位置指示",
+            "titleKey": "m301-midblock-diagram|module|position|title",
+            "text": "當心行人標誌主要提供上游警告，並非指示行穿線確切位置。",
+            "textKey": "m301-midblock-diagram|module|position|text"
+          },
+          {
+            "id": "yellow",
+            "title": "以雙閃黃燈強化減速停讓提醒",
+            "titleKey": "m301-midblock-diagram|module|yellow|title",
+            "text": "應配合設置行人穿越道號誌於斑馬紋行穿線前、靠近停止線的位置。",
+            "textKey": "m301-midblock-diagram|module|yellow|text"
+          }
+        ]
+      }
+    },
+    "results": {}
+  }
+}

@@ -306,5 +306,99 @@
       "height": 1924,
       "label": "M1-02 渦輪圓環封面線稿"
     }
+  },
+  "explanationOrder": {
+    "title": "每個子模組的講解順序",
+    "intro": "以停管制路口為例：先看現況與條文，再看配置；有條件差異時，補充延伸應用。",
+    "steps": [
+      {
+        "id": "issues",
+        "title": "現況議題與條文",
+        "sourcePageId": "m201-stop-issues",
+        "asset": "stop-issue-photo-1",
+        "text": "停止線退縮，停下仍難看清幹道來車。\n對照停車再開標誌、停止線等相關條文。"
+      },
+      {
+        "id": "diagram",
+        "title": "圖例說明",
+        "sourcePageId": "m201-stop-layout",
+        "asset": "stop-basic",
+        "text": "用代表型說明停車再開標誌、停止線及導引線，如何配合停車與觀察來車的位置。"
+      },
+      {
+        "id": "extensions",
+        "title": "延伸應用",
+        "optional": true,
+        "sourcePageId": "m201-stop-crosswalk",
+        "asset": "stop-crosswalk",
+        "text": "增設行穿線時，區分停讓行人與再次觀察幹道來車的位置。"
+      }
+    ]
+  },
+  "conclusion": {
+    "title": "同樣的交通功能，不同的道路條件",
+    "intro": "以相同交通功能為出發點，依道路環境選擇適用的配置方式。",
+    "assets": {
+      "conclusion-g3-01-layout": {
+        "file": "materials/04-一般道路情境/G3-01/G3-01_無號誌市區正交四叉路口交通設施整體設置圖例.svg",
+        "width": 1264,
+        "height": 787,
+        "label": "G3-01｜無號誌市區正交四岔路口",
+        "credit": "道路交通標誌標線號誌設置參考指引"
+      },
+      "conclusion-g4-03-layout": {
+        "file": "materials/04-一般道路情境/G4-03/G4-03_號誌化市區斜交四叉路口交通設施整體設置圖例.svg",
+        "width": 2519,
+        "height": 1657,
+        "label": "G4-03｜號誌化市區斜交四岔路口",
+        "credit": "道路交通標誌標線號誌設置參考指引"
+      }
+    },
+    "cards": [
+      {
+        "id": "g3-01",
+        "title": "巷道 / 低速道路",
+        "asset": "conclusion-g3-01-layout",
+        "considerationLabel": "主要考量",
+        "text": "低速通行、有限空間分配、行人穿越與動線銜接"
+      },
+      {
+        "id": "g4-03",
+        "title": "主要道路 / 多車道環境",
+        "asset": "conclusion-g4-03-layout",
+        "considerationLabel": "主要考量",
+        "text": "車道配置、轉向需求、上游預告與穿越保護"
+      }
+    ],
+    "takeaway": "道路條件不同，適用的配置方式也可能不同",
+    "note": "道路功能、車速、交通量、視距、幾何條件及用路人需求，都應納入判斷。",
+    "process": {
+      "title": "從功能模組，走向道路情境",
+      "intro": "將不同交通功能的設置方法，運用到具體道路環境。",
+      "steps": [
+        {
+          "id": "conditions",
+          "label": "01 / 道路條件適配",
+          "title": "面對什麼樣的道路環境？",
+          "text": "依道路功能、幾何條件、車速、視距及用路人需求，選擇適當的設置方式。"
+        },
+        {
+          "id": "integration",
+          "label": "02 / 功能模組整合",
+          "title": "需要哪些交通功能共同配合？",
+          "text": "依道路運作需求選用相關模組，整合標誌、標線、號誌及其他交通工程設施。"
+        },
+        {
+          "id": "review",
+          "label": "03 / 整體配置檢核",
+          "title": "各項設施是否協調一致？",
+          "text": "檢核行駛動線、通行優先關係、設施銜接與訊息連續性。"
+        }
+      ]
+    },
+    "closing": {
+      "title": "謝謝聆聽",
+      "subtitle": "敬請指教"
+    }
   }
 }

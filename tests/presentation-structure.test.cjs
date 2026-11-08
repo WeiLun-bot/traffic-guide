@@ -47,9 +47,9 @@ test('label and movement share the reordered target, skipped preview stops and d
 test('four presentations own independent chapters, including all four PDF module themes',()=>{
   Structure.validate(manifest);assert.deepEqual(manifest.presentations.map(deck=>deck.title),['三年成果與模組化整體架構','交通管制設施模組設計','一般道路情境','複雜道路情境']);
   const modules=manifest.presentations.find(deck=>deck.id==='modules'),general=manifest.presentations.find(deck=>deck.id==='general');
-  assert.deepEqual(modules.chapters.map(chapter=>chapter.code),['00','01','02','03','04']);assert.deepEqual(modules.chapters.slice(1).map(chapter=>chapter.name),['車道配置與動線導引','路口管制','行人、自行車、機車、公車','危險警示與通行管制']);
+  assert.deepEqual(modules.chapters.map(chapter=>chapter.code),['00','01','02','03','04','05']);assert.deepEqual(modules.chapters.filter(chapter=>chapter.theme).map(chapter=>chapter.name),['車道配置與動線導引','路口管制','行人、自行車、機車、公車','危險警示與通行管制']);
   assert.deepEqual(general.chapters.map(chapter=>chapter.id),['intro','g1','g2','g3','g4']);
-  const catalog=JSON.parse(fs.readFileSync(path.join(root,'data/modules/catalog.json'),'utf8'));assert.deepEqual(modules.chapters.slice(1).map(chapter=>chapter.name),catalog.themes.map(theme=>theme.name));
+  const catalog=JSON.parse(fs.readFileSync(path.join(root,'data/modules/catalog.json'),'utf8'));assert.deepEqual(modules.chapters.filter(chapter=>chapter.theme).map(chapter=>chapter.name),catalog.themes.map(theme=>theme.name));
   const invalid=structuredClone(manifest);invalid.presentations[1].chapters[1].id='g1';assert.throws(()=>Structure.validate(invalid));
 });
 test('grouping preserves page identities and saved ordering inside each chapter',async()=>{

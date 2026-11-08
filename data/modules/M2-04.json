@@ -30,7 +30,8 @@
       "materials/03-modules/M2-04/M2-04.2_現況議題_03.png",
       "materials/03-modules/M2-04/M2-04.3_現況議題_01.png",
       "materials/03-modules/M2-04/M2-04.3_現況議題_02.png",
-      "materials/03-modules/M2-04/M2-04_近遠端標誌配置對照.png"
+      "materials/03-modules/M2-04/M2-04_近遠端標誌配置對照.png",
+      "materials/03-modules/M2-04/M2-04_交通島標誌高度與橫向淨距實例.png"
     ],
     "notes": []
   },
@@ -210,6 +211,14 @@
       "label": "近端與遠端標誌配置對照",
       "caption": "非橫向箭頭、橫向箭頭及禁行方向標誌的近遠端配置",
       "credit": "使用者提供之標誌配置對照圖"
+    },
+    "m204-island-clearance-photo": {
+      "file": "materials/03-modules/M2-04/M2-04_交通島標誌高度與橫向淨距實例.png",
+      "width": 900,
+      "height": 552,
+      "label": "交通島標誌高度與橫向淨距實例",
+      "caption": "兼顧標誌辨識高度與橫向淨距",
+      "credit": "使用者提供之照片"
     }
   },
   "pages": [
@@ -457,7 +466,8 @@
       "intro": "依交通島的分隔型式與車輛通行方向，配置適當的遵行或警告標誌，並兼顧島頭辨識性及車流通行淨距。",
       "assets": [
         "m204-e6f9a94e50",
-        "m204-55b65042db"
+        "m204-55b65042db",
+        "m204-island-clearance-photo"
       ],
       "points": [
         {
@@ -772,7 +782,7 @@
           "topics": [
             {
               "id": "keep",
-              "label": "依交通島通行型態選擇標誌",
+              "label": "依通行型態選用標誌並強化島頭辨識",
               "sourcePageId": "m204-island-diagram",
               "assets": [
                 "m204-e6f9a94e50",
@@ -781,7 +791,8 @@
               "imageLayout": "row",
               "pointIds": [
                 "keep",
-                "split"
+                "split",
+                "marker"
               ],
               "showPointTitles": true,
               "facilities": [
@@ -796,6 +807,14 @@
                 {
                   "id": "split",
                   "label": "分道標誌",
+                  "kind": "control",
+                  "focus": {
+                    "asset": "m204-e6f9a94e50"
+                  }
+                },
+                {
+                  "id": "marker",
+                  "label": "危險標記（危3）",
                   "kind": "control",
                   "focus": {
                     "asset": "m204-e6f9a94e50"
@@ -842,46 +861,9 @@
                     "asset": "m204-55b65042db"
                   }
                 }
-              ]
-            },
-            {
-              "id": "marker",
-              "label": "以危險標記強化島頭辨識",
-              "sourcePageId": "m204-island-diagram",
-              "assets": [
-                "m204-e6f9a94e50",
-                "m204-55b65042db"
               ],
-              "imageLayout": "row",
-              "pointIds": [
-                "marker"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "marker",
-                  "label": "危險標記（危3）",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m204-e6f9a94e50"
-                  }
-                },
-                {
-                  "id": "keep",
-                  "label": "靠右、靠左行駛標誌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m204-55b65042db"
-                  }
-                },
-                {
-                  "id": "split",
-                  "label": "分道標誌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m204-e6f9a94e50"
-                  }
-                }
+              "illustrations": [
+                "m204-island-clearance-photo"
               ]
             }
           ]

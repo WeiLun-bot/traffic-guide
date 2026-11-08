@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M3-02",
+  "texts": {
+    "m302-lane-diagram|concept|crossing|title": "以自行車穿越道線導引自行車穿越路口",
+    "m302-lane-diagram|concept|priority|title": "人行道上的自行車通行空間"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m302-lane-issues": {
+        "points": [
+          {
+            "id": "network",
+            "title": "自行車道缺乏連續性",
+            "titleKey": "m302-lane-issues|module|network|title",
+            "text": "自行車道常於路口、公車站或道路斷面變化處中斷，不同設施型態間的通行空間及路權關係亦不易辨識，可能迫使自行車騎士臨時變換行駛位置。",
+            "textKey": "m302-lane-issues|module|network|text"
+          },
+          {
+            "id": "crossing",
+            "title": "穿越及匯入匯出動線不明確",
+            "titleKey": "m302-lane-issues|module|crossing|title",
+            "text": "自行車穿越道與路段之自行車道未妥善銜接，或自行車道匯入車行道時缺乏適當導引標線，可能造成自行車與其他車流的動線衝突。",
+            "textKey": "m302-lane-issues|module|crossing|text"
+          }
+        ]
+      },
+      "m302-lane-diagram": {
+        "points": [
+          {
+            "id": "priority",
+            "title": "於寬度足夠之人行道區分行人、自行車空間",
+            "titleKey": "m302-lane-diagram|module|priority|title",
+            "text": "於騎樓以外人行道劃設自行車優先車道標線時，僅供腳踏自行車及電動輔助自行車通行；遇行人穿越時，應以行人優先。",
+            "textKey": "m302-lane-diagram|module|priority|text"
+          },
+          {
+            "id": "side",
+            "title": "原則配置於靠近車行道側",
+            "titleKey": "m302-lane-diagram|module|side|title",
+            "text": "人行道上的自行車道原則設於靠近車行道的一側，並得依道路空間及現地配置需求調整，維持自行車與行人的通行動線清楚。",
+            "textKey": "m302-lane-diagram|module|side|text"
+          },
+          {
+            "id": "symbols",
+            "title": "於穿越道端點標示自行車圖案",
+            "titleKey": "m302-lane-diagram|module|symbols|title",
+            "text": "自行車穿越道線的入口繪設自行車圖案，使自行車騎士及其他用路人辨識自行車穿越位置。",
+            "textKey": "m302-lane-diagram|module|symbols|text"
+          },
+          {
+            "id": "direction",
+            "title": "於路緣穿越處設置停止線",
+            "titleKey": "m302-lane-diagram|module|direction|title",
+            "text": "做為自行車停等的界線。",
+            "textKey": "m302-lane-diagram|module|direction|text"
+          },
+          {
+            "id": "merge",
+            "title": "匯入車行道時劃設穿越虛線",
+            "titleKey": "m302-lane-diagram|module|merge|title",
+            "text": "自行車道由人行道匯入車行道時，應於匯入處劃設穿越虛線，提示自行車騎士與車行道車輛注意。",
+            "textKey": "m302-lane-diagram|module|merge|text"
+          },
+          {
+            "id": "warning",
+            "title": "視需要預告自行車匯入",
+            "titleKey": "m302-lane-diagram|module|warning|title",
+            "text": "得於匯入處上游增設當心自行車標誌，提醒車行道用路人注意前方可能有自行車匯入。",
+            "textKey": "m302-lane-diagram|module|warning|text"
+          },
+          {
+            "id": "exit",
+            "title": "明確提示自行車不得續行的空間",
+            "titleKey": "m302-lane-diagram|module|exit|title",
+            "text": "自行車道匯出後，若接續的人行道未開放自行車行駛，可增設行人專用標誌，提示自行車騎士不得繼續騎乘進入該人行道。",
+            "textKey": "m302-lane-diagram|module|exit|text"
+          },
+          {
+            "id": "point-b722607a-d565-42e7-9738-00aa967608df",
+            "text": "\n",
+            "textKey": "m302-lane-diagram|content|modules|point-b722607a-d565-42e7-9738-00aa967608df",
+            "title": "於行人穿越處設置行穿線及停止線",
+            "titleKey": "m302-lane-diagram|content|point-b722607a-d565-42e7-9738-00aa967608df|title",
+            "topicId": "priority"
+          }
+        ],
+        "conceptFacilities": {
+          "priority": [
+            {
+              "id": "priority",
+              "label": "自行車優先車道標線",
+              "kind": "control",
+              "focus": {
+                "asset": "m302-3167eda215"
+              }
+            },
+            {
+              "id": "custom-8abd3307-aadd-41f2-9ebd-e54baa5075be",
+              "label": "枕木紋行人穿越道線",
+              "kind": "control",
+              "focus": {
+                "asset": "m302-3167eda215"
+              }
+            }
+          ],
+          "crossing": [
+            {
+              "id": "crossing",
+              "label": "自行車穿越道線",
+              "kind": "control",
+              "focus": {
+                "asset": "m302-3167eda215"
+              }
+            },
+            {
+              "id": "bicycle",
+              "label": "自行車圖案",
+              "kind": "control",
+              "focus": {
+                "asset": "m302-3167eda215"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "results": {}
+  }
+}

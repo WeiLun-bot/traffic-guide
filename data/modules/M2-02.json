@@ -91,7 +91,7 @@
         "C1-08"
       ],
       "defaultView": "single",
-      "pointLinkedImages": true
+      "pointLinkedImages": false
     },
     {
       "id": "m202-roundabout-diagram",
@@ -274,7 +274,7 @@
             },
             {
               "id": "channel",
-              "label": "以入口幾何與標線控制行駛軌跡",
+              "label": "以幾何與標線控制行駛軌跡及動線銜接",
               "sourcePageId": "m202-roundabout-diagram",
               "assets": [
                 "m202-roundabout"
@@ -282,7 +282,9 @@
               "pointIds": [
                 "channel",
                 "channel-path",
-                "curvature"
+                "curvature",
+                "guide",
+                "exit"
               ],
               "showPointTitles": true,
               "facilities": [
@@ -309,22 +311,7 @@
                   "focus": {
                     "asset": "m202-roundabout"
                   }
-                }
-              ]
-            },
-            {
-              "id": "guide",
-              "label": "以導引線維持環內與出口動線連續",
-              "sourcePageId": "m202-roundabout-diagram",
-              "assets": [
-                "m202-roundabout"
-              ],
-              "pointIds": [
-                "guide",
-                "exit"
-              ],
-              "showPointTitles": true,
-              "facilities": [
+                },
                 {
                   "id": "guide",
                   "label": "路口行車導引線",

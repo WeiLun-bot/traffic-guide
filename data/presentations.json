@@ -77,32 +77,34 @@
           "code": "01",
           "name": "車道配置與動線導引",
           "entry": "modules-M1",
-          "theme": "M1",
-          "chapterCover": false
+          "theme": "M1"
         },
         {
           "id": "modules-M2",
           "code": "02",
           "name": "路口管制",
           "entry": "modules-M2",
-          "theme": "M2",
-          "chapterCover": false
+          "theme": "M2"
         },
         {
           "id": "modules-M3",
           "code": "03",
           "name": "行人、自行車、機車、公車",
           "entry": "modules-M3",
-          "theme": "M3",
-          "chapterCover": false
+          "theme": "M3"
         },
         {
           "id": "modules-M4",
           "code": "04",
           "name": "危險警示與通行管制",
           "entry": "modules-M4",
-          "theme": "M4",
-          "chapterCover": false
+          "theme": "M4"
+        },
+        {
+          "id": "modules-conclusion",
+          "code": "05",
+          "name": "結論",
+          "entry": "modules-conclusion-comparison"
         }
       ]
     },

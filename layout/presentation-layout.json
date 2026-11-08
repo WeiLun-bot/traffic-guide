@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-07T02:48:18.250Z",
+  "updatedAt": "2026-11-08T04:22:03.393Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1793988722728,
+    "updatedAt": 1794108919916,
     "highlights": {
       "article:speed": {
         "crop": [
@@ -344,13 +344,7 @@
           167.9
         ],
         "rotation": 0,
-        "imageKey": "module:formation-parking",
-        "crop": [
-          1925.1,
-          831.7,
-          732.5,
-          284.6
-        ]
+        "imageKey": "module:formation-parking"
       },
       "module:modules-formation:signals": {
         "box": [
@@ -360,13 +354,7 @@
           253.4
         ],
         "rotation": 0,
-        "imageKey": "module:formation-signals",
-        "crop": [
-          1335.2,
-          971.8,
-          717.5,
-          441.4
-        ]
+        "imageKey": "module:formation-signals"
       },
       "module:modules-formation:movements": {
         "box": [
@@ -376,13 +364,7 @@
           104
         ],
         "rotation": 0,
-        "imageKey": "module:formation-movements",
-        "crop": [
-          1027.8,
-          834.9,
-          771.2,
-          589
-        ]
+        "imageKey": "module:formation-movements"
       },
       "module:modules-formation:pedestrians": {
         "box": [
@@ -392,13 +374,7 @@
           110.6
         ],
         "rotation": 0,
-        "imageKey": "module:formation-users",
-        "crop": [
-          1371.5,
-          1199.6,
-          648.6,
-          275.9
-        ]
+        "imageKey": "module:formation-users"
       },
       "module:modules-formation:bicycles": {
         "box": [
@@ -408,12 +384,6 @@
           620.5
         ],
         "rotation": 0,
-        "crop": [
-          792.5,
-          763,
-          1298.6,
-          814.6
-        ],
         "imageKey": "module:formation-users"
       },
       "module:modules-formation:motorcycles": {
@@ -424,13 +394,7 @@
           70.8
         ],
         "rotation": 0,
-        "imageKey": "module:formation-users",
-        "crop": [
-          1480.2,
-          1245.7,
-          494.6,
-          290.8
-        ]
+        "imageKey": "module:formation-users"
       },
       "module:modules-formation:warning": {
         "box": [
@@ -440,29 +404,18 @@
           126.9
         ],
         "rotation": 0,
-        "imageKey": "module:formation-warning",
-        "crop": [
-          1375.2,
-          841.9,
-          709.3,
-          643.1
-        ]
+        "imageKey": "module:formation-warning"
       },
       "module:modules-formation:lanes": {
         "box": [
-          1166.2000000000003,
-          830.4,
+          575.1,
+          837.7999999999998,
           1274.2,
           584.8
         ],
         "rotation": 0,
         "imageKey": "module:formation-lanes",
-        "crop": [
-          1063.5,
-          742.4,
-          1456.6,
-          740.3
-        ]
+        "deleted": true
       },
       "module:modules-formation:route": {
         "box": [
@@ -472,13 +425,7 @@
           287.6
         ],
         "rotation": 0,
-        "imageKey": "module:formation-route",
-        "crop": [
-          1366.6,
-          1111.9,
-          867,
-          538.2
-        ]
+        "imageKey": "module:formation-route"
       },
       "article:g201-protected": {
         "box": [
@@ -757,10 +704,10 @@
         ],
         "imageKey": "module:m101-lanes",
         "crop": [
-          229.6,
-          213.3,
-          803.4,
-          440.3
+          134,
+          210.2,
+          932.6,
+          443.4
         ]
       },
       "module:m101-lanes-diagram:concept-dotted-dotted": {
@@ -954,6 +901,189 @@
         ],
         "rotation": 0,
         "imageKey": "module:stop-issue-photo-1"
+      },
+      "module:m301-crossing-diagram:concept-markings-marking": {
+        "box": [
+          390.2,
+          500.8,
+          25.8,
+          40.6
+        ],
+        "rotation": 0,
+        "imageKey": "module:m301-d5772b64b2",
+        "deleted": true
+      },
+      "module:m301-crossing-diagram:concept-markings-refuge": {
+        "box": [
+          363.9,
+          501.3999999999999,
+          26,
+          39.6
+        ],
+        "rotation": 0,
+        "imageKey": "module:m301-d5772b64b2"
+      },
+      "module:m301-crossing-diagram:concept-markings-guide": {
+        "box": [
+          386,
+          528.7,
+          65,
+          5.7
+        ],
+        "rotation": 0,
+        "imageKey": "module:m301-d5772b64b2"
+      },
+      "module:m302-lane-diagram:concept-priority-priority": {
+        "box": [
+          425.20000000000005,
+          164,
+          200,
+          44.5
+        ],
+        "rotation": 0,
+        "imageKey": "module:m302-3167eda215"
+      },
+      "module:m302-lane-diagram:concept-crossing-crossing": {
+        "box": [
+          193.5,
+          396.6,
+          127.1,
+          35.3
+        ],
+        "rotation": 0,
+        "imageKey": "module:m302-3167eda215"
+      },
+      "module:m302-lane-diagram:concept-priority-custom-8abd3307-aadd-41f2-9ebd-e54baa5075be": {
+        "box": [
+          358.3,
+          164.5,
+          44.8,
+          33.6
+        ],
+        "rotation": 0,
+        "imageKey": "module:m302-3167eda215"
+      },
+      "module:m302-lane-diagram:concept-merge-dotted": {
+        "box": [
+          269.3,
+          14.700000000000003,
+          30.8,
+          72.5
+        ],
+        "rotation": 0,
+        "imageKey": "module:m302-3167eda215",
+        "crop": [
+          260.8,
+          6.4,
+          202.2,
+          202.3
+        ]
+      },
+      "module:m302-lane-diagram:concept-merge-warning": {
+        "box": [
+          286.6,
+          106.4,
+          80.5,
+          62.3
+        ],
+        "rotation": 0,
+        "imageKey": "module:m302-3167eda215"
+      },
+      "module:m302-lane-diagram:concept-merge-pedestrian": {
+        "box": [
+          317.2,
+          63.099999999999994,
+          68,
+          46
+        ],
+        "rotation": 0,
+        "imageKey": "module:m302-3167eda215",
+        "crop": [
+          219.9,
+          0,
+          273.9,
+          209.9
+        ]
+      },
+      "module:m303-turning-diagram:concept-direct-direct-sign": {
+        "box": [
+          327.79999999999995,
+          1019.4000000000001,
+          158.2,
+          140.1
+        ],
+        "rotation": 0,
+        "imageKey": "module:m303-eb74f285de",
+        "crop": [
+          147.3,
+          687.7,
+          380.7,
+          630.3
+        ]
+      },
+      "module:m303-turning-diagram:concept-direct-waiting-area": {
+        "box": [
+          260.3,
+          476.3,
+          49.1,
+          60.2
+        ],
+        "rotation": 0,
+        "imageKey": "module:m303-eb74f285de",
+        "crop": [
+          159.8,
+          369.2,
+          327.4,
+          825.4
+        ]
+      },
+      "module:m303-turning-diagram:concept-direct-custom-c57032c3-843f-40e6-a645-9855c0995557": {
+        "box": [
+          359.7,
+          283.3,
+          36.6,
+          46.4
+        ],
+        "rotation": 0,
+        "imageKey": "module:m303-eb74f285de",
+        "crop": [
+          129.5,
+          161.5,
+          398.5,
+          667.6
+        ]
+      },
+      "module:m304-lane-diagram:concept-lines-lane-change": {
+        "box": [
+          413.29999999999995,
+          591.3000000000001,
+          317.7,
+          1045.7
+        ],
+        "rotation": 0,
+        "imageKey": "module:m304-55a30512cf",
+        "crop": [
+          246.9,
+          478.3,
+          645.1,
+          1158.7
+        ]
+      },
+      "module:m304-lane-diagram:concept-lines-bus-sign": {
+        "box": [
+          423.19999999999993,
+          0,
+          301.2,
+          468.2
+        ],
+        "rotation": 0,
+        "imageKey": "module:m304-55a30512cf",
+        "crop": [
+          318.5,
+          0,
+          458.9,
+          556.9
+        ]
       }
     },
     "disabledHighlights": {
@@ -970,7 +1100,9 @@
       "module:m201-yield-layout:triangle": true,
       "module:m201-yield-layout:pedestrian": true,
       "module:m201-yield-layout:guide": true,
-      "module:m101-lanes-diagram:concept-trajectory-custom-7aabab8d-809f-4d9f-bd07-103ecd3daf03": true
+      "module:m101-lanes-diagram:concept-trajectory-custom-7aabab8d-809f-4d9f-bd07-103ecd3daf03": true,
+      "module:m301-crossing-diagram:concept-markings-marking": true,
+      "module:modules-formation:lanes": true
     },
     "styles": {
       "results-background|results|source-title": {
@@ -1328,6 +1460,9 @@
       },
       "results-road-system|results|system-text": {
         "fontSize": 20
+      },
+      "modules-outline|results|title": {
+        "fontSize": 36
       }
     },
     "frames": {
@@ -2593,9 +2728,9 @@
       "pageId": "modules-concept-m101-lanes-diagram-dotted",
       "assetKey": "module:m101-lanes",
       "units": "percent",
-      "zoom": 1.5683121886951525,
-      "x": 19.57996374530756,
-      "y": -5.094154990870304,
+      "zoom": 0.9999999913147523,
+      "x": 0.3846215477881154,
+      "y": 4.131533004801119,
       "rotation": 0
     },
     "modules-concept-m101-lanes-diagram-continuity/module%3Am101-lanes": {
@@ -2717,6 +2852,176 @@
       "x": -0.14516694352622916,
       "y": -0.09134726563836466,
       "rotation": 0
+    },
+    "modules-concept-m301-crossing-diagram-markings/module%3Am301-d5772b64b2": {
+      "id": "modules-concept-m301-crossing-diagram-markings/module%3Am301-d5772b64b2",
+      "pageId": "modules-concept-m301-crossing-diagram-markings",
+      "assetKey": "module:m301-d5772b64b2",
+      "units": "percent",
+      "zoom": 7.028687907364376,
+      "x": 7.4700064938458794,
+      "y": -133.39049854947464,
+      "rotation": 0
+    },
+    "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-4b73804d52": {
+      "id": "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-4b73804d52",
+      "pageId": "modules-concept-m301-crossing-diagram-diagonal",
+      "assetKey": "module:m301-4b73804d52",
+      "units": "percent",
+      "zoom": 2.459603163934305,
+      "x": -4.987167311205838,
+      "y": -4.564893851380108,
+      "rotation": 0
+    },
+    "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-6c801912e9": {
+      "id": "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-6c801912e9",
+      "pageId": "modules-concept-m301-crossing-diagram-diagonal",
+      "assetKey": "module:m301-6c801912e9",
+      "units": "percent",
+      "zoom": 1.8221188264561263,
+      "x": 21.376633041220515,
+      "y": -0.2934509731539805,
+      "rotation": 0
+    },
+    "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-c4c1d1f196": {
+      "id": "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-c4c1d1f196",
+      "pageId": "modules-concept-m301-crossing-diagram-diagonal",
+      "assetKey": "module:m301-c4c1d1f196",
+      "units": "percent",
+      "zoom": 2.117000054467583,
+      "x": 7.503544608842866,
+      "y": -19.624906034812202,
+      "rotation": 0
+    },
+    "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-6ace818928": {
+      "id": "modules-concept-m301-crossing-diagram-diagonal/module%3Am301-6ace818928",
+      "pageId": "modules-concept-m301-crossing-diagram-diagonal",
+      "assetKey": "module:m301-6ace818928",
+      "units": "percent",
+      "zoom": 1,
+      "x": 0.4183371318225452,
+      "y": 19.624645630520945,
+      "rotation": 0
+    },
+    "m302-lane-issues/module%3Am302-lane-issue-photo-2": {
+      "id": "m302-lane-issues/module%3Am302-lane-issue-photo-2",
+      "pageId": "m302-lane-issues",
+      "assetKey": "module:m302-lane-issue-photo-2",
+      "units": "percent",
+      "zoom": 1.1618342468833258,
+      "x": -6.473050203347822,
+      "y": -3.296099821560846,
+      "rotation": 0
+    },
+    "m302-lane-issues/module%3Am302-lane-issue-photo-1": {
+      "id": "m302-lane-issues/module%3Am302-lane-issue-photo-1",
+      "pageId": "m302-lane-issues",
+      "assetKey": "module:m302-lane-issue-photo-1",
+      "units": "percent",
+      "zoom": 1.05,
+      "x": 0.2798276643445688,
+      "y": -2.915567202126473,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-route": {
+      "id": "modules-formation/module%3Aformation-route",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-route",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": 0.5999999999999991,
+      "y": -2.0999999999999974,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-lanes": {
+      "id": "modules-formation/module%3Aformation-lanes",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-lanes",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": 0.5999999999999991,
+      "y": -2.0999999999999974,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-parking": {
+      "id": "modules-formation/module%3Aformation-parking",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-parking",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": -30,
+      "y": -2.1,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-signals": {
+      "id": "modules-formation/module%3Aformation-signals",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-signals",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": 0.5999999999999991,
+      "y": -2.0999999999999974,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-movements": {
+      "id": "modules-formation/module%3Aformation-movements",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-movements",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": 0.6,
+      "y": -2.1,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-users": {
+      "id": "modules-formation/module%3Aformation-users",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-users",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": 0.6,
+      "y": -2.1,
+      "rotation": 0
+    },
+    "modules-formation/module%3Aformation-warning": {
+      "id": "modules-formation/module%3Aformation-warning",
+      "pageId": "modules-formation",
+      "assetKey": "module:formation-warning",
+      "units": "percent",
+      "zoom": 2.1,
+      "x": 0.6,
+      "y": -2.1,
+      "rotation": 0
+    },
+    "m304-lane-issues/module%3Am304-lane-issue-photo-1": {
+      "id": "m304-lane-issues/module%3Am304-lane-issue-photo-1",
+      "pageId": "m304-lane-issues",
+      "assetKey": "module:m304-lane-issue-photo-1",
+      "units": "percent",
+      "zoom": 0.7408182153829732,
+      "x": -3.211762155521553,
+      "y": 1.7018725592129964,
+      "rotation": 0
+    },
+    "m304-lane-issues/module%3Am304-lane-issue-photo-2": {
+      "id": "m304-lane-issues/module%3Am304-lane-issue-photo-2",
+      "pageId": "m304-lane-issues",
+      "assetKey": "module:m304-lane-issue-photo-2",
+      "units": "percent",
+      "zoom": 0.5488116282432133,
+      "x": -2.8580483274552924,
+      "y": 2.8033031622171367,
+      "rotation": 0
+    },
+    "m301-sidewalk-issues/module%3Am301-sidewalk-issue-photo-2": {
+      "id": "m301-sidewalk-issues/module%3Am301-sidewalk-issue-photo-2",
+      "pageId": "m301-sidewalk-issues",
+      "assetKey": "module:m301-sidewalk-issue-photo-2",
+      "units": "percent",
+      "zoom": 1.161834246883326,
+      "x": -2.240633415162729,
+      "y": 0.016755031069687804,
+      "rotation": 0
     }
   },
   "extensionLayouts": {
@@ -2729,7 +3034,7 @@
     "m201-yield-extensions/buffer": "vertical",
     "m203-signals-extensions/explanation": "vertical",
     "m203-signals-extensions/shield": "vertical",
-    "m101-additional-extensions/refuge": "horizontal",
+    "m101-additional-extensions/refuge": "vertical",
     "m203-signals-extensions/turning": "vertical"
   },
   "tableColumns": {

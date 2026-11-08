@@ -253,7 +253,8 @@
                 "lanes"
               ],
               "assets": [
-                "m102-offset"
+                "m102-offset",
+                "m102-roundabout"
               ],
               "facilities": [
                 {
@@ -282,7 +283,8 @@
                 "duplication"
               ],
               "assets": [
-                "m102-offset"
+                "m102-offset",
+                "m102-roundabout"
               ],
               "facilities": [
                 {

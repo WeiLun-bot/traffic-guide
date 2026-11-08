@@ -30,7 +30,9 @@
       "materials/03-modules/M3-01/M3-01.2_現況議題_01.png",
       "materials/03-modules/M3-01/M3-01.2_現況議題_02.png",
       "materials/03-modules/M3-01/M3-01.3_現況議題_01.png",
-      "materials/03-modules/M3-01/M3-01.3_現況議題_02.png"
+      "materials/03-modules/M3-01/M3-01.3_現況議題_02.png",
+      "materials/03-modules/M3-01/M3-01_車輛轉彎軌跡與路緣轉角示意.png",
+      "materials/03-modules/M3-01/M3-01.1_現況議題_02.png"
     ],
     "notes": [
       "行人穿越道長度達 15 m 以上宜設庇護島，達 25 m 以上應設置；設計細節參照市區道路及附屬工程設計規範。",
@@ -213,6 +215,22 @@
       "label": "行人穿越道號誌",
       "caption": "行人穿越道號誌",
       "credit": "道路交通標誌標線號誌設置參考指引"
+    },
+    "m301-turning-trajectories": {
+      "file": "materials/03-modules/M3-01/M3-01_車輛轉彎軌跡與路緣轉角示意.png",
+      "width": 654,
+      "height": 826,
+      "label": "車輛轉彎軌跡與路緣轉角示意",
+      "caption": "不同車種轉彎軌跡與路緣轉角的關係",
+      "credit": "使用者提供之示意圖"
+    },
+    "m301-sidewalk-issue-photo-2": {
+      "file": "materials/03-modules/M3-01/M3-01.1_現況議題_02.png",
+      "width": 991,
+      "height": 736,
+      "label": "現況照片 2：高衝突環境的人行道標線",
+      "caption": "M3-01.1 人行道標線現況",
+      "credit": "使用者提供之現況照片"
     }
   },
   "pages": [
@@ -274,18 +292,25 @@
       "title": "人行道標線｜現況議題與相關條文",
       "intro": "人行道標線可於缺乏實體人行道的道路提供步行空間，惟仍須兼顧人行動線連續性及道路速率環境，才能維持行人通行安全。",
       "assets": [
-        "m301-sidewalk-issue-photo-1"
+        "m301-sidewalk-issue-photo-1",
+        "m301-sidewalk-issue-photo-2"
       ],
       "points": [
         {
           "id": "continuity",
           "title": "人行道標線缺乏連續性",
-          "text": "人行道標線常以局部路段個別劃設，未能整體考量前後路段及路口轉角的銜接，容易出現標線中斷、偏移或寬度不足等情形，迫使行人繞行或進入車道。"
+          "text": "人行道標線常以局部路段個別劃設，未能整體考量前後路段及路口轉角的銜接，容易出現標線中斷、偏移或寬度不足等情形，迫使行人繞行或進入車道。",
+          "focus": {
+            "asset": "m301-sidewalk-issue-photo-1"
+          }
         },
         {
           "id": "protection",
           "title": "高車速或高衝突環境仍僅以標線區隔",
-          "text": "人行道標線不具實體防護功能，原則適用於速限 30 km/h 以下的道路。若道路車速較高或人車衝突風險較大，仍僅以標線區隔人車空間，可能難以提供足夠的行人安全防護。"
+          "text": "人行道標線不具實體防護功能，原則適用於速限 30 km/h 以下的道路。若道路車速較高或人車衝突風險較大，仍僅以標線區隔人車空間，可能難以提供足夠的行人安全防護。",
+          "focus": {
+            "asset": "m301-sidewalk-issue-photo-2"
+          }
         }
       ],
       "sourcePages": [],
@@ -297,7 +322,10 @@
         "G1-04",
         "G2-04",
         "G3-04"
-      ]
+      ],
+      "pointLinkedImages": true,
+      "defaultView": "single",
+      "imageFit": "contain"
     },
     {
       "id": "m301-sidewalk-diagram",
@@ -307,7 +335,8 @@
       "intro": "依道路速率及人車衝突風險選擇適當的人行空間設施，並整合前後路段、路口轉角及車輛轉彎軌跡，建立連續且安全的步行動線。",
       "assets": [
         "m301-1ce77bf207",
-        "m301-7f710fdd90"
+        "m301-7f710fdd90",
+        "m301-turning-trajectories"
       ],
       "points": [
         {
@@ -327,20 +356,12 @@
           }
         },
         {
-          "id": "turning",
-          "title": "配合設計車種檢核轉角曲率",
-          "text": "路口轉角的人行道標線應依設計車種轉彎軌跡調整線形，兼顧車輛轉彎所需空間及人行空間配置，避免車輛轉彎時侵入人行空間。",
-          "focus": {
-            "asset": "m301-7f710fdd90"
-          }
-        },
-        {
-          "id": "corner-connection",
-          "title": "維持轉角人行動線順暢銜接",
-          "text": "轉角線形應與相鄰路段的人行道標線連續銜接，避免形成不必要的動線偏移或繞行。",
-          "focus": {
-            "asset": "m301-7f710fdd90"
-          }
+          "id": "point-4b4138df-a129-4b24-8c70-aa96bb14900f",
+          "title": "兼顧車輛轉彎需求與行人空間",
+          "text": "以低速轉彎及行人安全為原則，依設計車種轉彎軌跡檢核轉角線形，在滿足必要轉彎空間的前提下，避免過度擴大轉角，維持連續且順暢的行人通行空間。",
+          "topicId": "continuity",
+          "illustration": "m301-turning-trajectories",
+          "illustrationPlacement": "below"
         }
       ],
       "sourcePages": [],
@@ -470,30 +491,6 @@
           }
         },
         {
-          "id": "search",
-          "title": "燈面位置應對應行人穿越路徑",
-          "text": "依行人等候位置及穿越方向配置燈面，檢核號誌與穿越路徑的水平距離及縱深，避免燈面偏離行人的視覺搜尋範圍。",
-          "focus": {
-            "asset": "m301-881f861887"
-          }
-        },
-        {
-          "id": "standard",
-          "title": "優先採用容易辨識的號誌配置",
-          "text": "可採路側式或適當的共桿配置，使行人於等候位置清楚辨識燈號；號誌基座宜設於鋪面以下，減少突出障礙及碰撞風險。",
-          "focus": {
-            "asset": "m301-49391268dd"
-          }
-        },
-        {
-          "id": "flashing",
-          "title": "配合行車號誌運轉方式設定燈號",
-          "text": "設有行人觸動號誌時，應配合行車號誌運轉：行車號誌採閃光運轉時，行人紅燈採閃光顯示；行車號誌採三色運轉且綠燈恆亮時，建議行人紅燈維持恆亮。",
-          "focus": {
-            "asset": "m301-881f861887"
-          }
-        },
-        {
           "id": "diagonal",
           "title": "以對角線標線提供全向穿越",
           "text": "設有行人專用時相的路口，可依實際需求劃設 X 字型對角線行人穿越道線；若僅於特定時段實施，應於對角線四端標示適用時段。",
@@ -528,7 +525,8 @@
         "220",
         "222",
         "231"
-      ]
+      ],
+      "imageFit": "contain"
     },
     {
       "id": "m301-crossing-extensions",
@@ -705,22 +703,6 @@
           }
         },
         {
-          "id": "stagger",
-          "title": "將雙向車流分為兩階段穿越",
-          "text": "將道路兩側的行人穿越道沿道路方向錯開，使行人先穿越一個方向的車流，再經由庇護島內的導引動線，接續穿越另一方向車流。",
-          "focus": {
-            "asset": "m301-c80421bad4"
-          }
-        },
-        {
-          "id": "direction",
-          "title": "使行人自然面向下一階段來車",
-          "text": "錯開方向應配合車流行駛方向，使行人在庇護島內移動及停等時，自然面向下一階段的來車方向，降低同時判斷雙向車流的負擔。",
-          "focus": {
-            "asset": "m301-c80421bad4"
-          }
-        },
-        {
           "id": "distance",
           "title": "於上游提前警告行人穿越需求",
           "text": "當心行人標誌建議設於行穿線上游 30～100 m 的路側，提醒駕駛人提前注意行人穿越及減速需求；當自行車穿越道緊鄰行穿線，且視距不足或車速較高時，可增設當心自行車標誌。",
@@ -851,7 +833,8 @@
               "imageLayout": "row",
               "pointIds": [
                 "sidewalk",
-                "connection"
+                "connection",
+                "point-4b4138df-a129-4b24-8c70-aa96bb14900f"
               ],
               "showPointTitles": true,
               "facilities": [
@@ -866,39 +849,6 @@
                 {
                   "id": "barrier",
                   "label": "實體阻隔設施",
-                  "kind": "design",
-                  "focus": {
-                    "asset": "m301-7f710fdd90"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "turning",
-              "label": "依車輛轉彎軌跡調整轉角線形",
-              "sourcePageId": "m301-sidewalk-diagram",
-              "assets": [
-                "m301-1ce77bf207",
-                "m301-7f710fdd90"
-              ],
-              "imageLayout": "row",
-              "pointIds": [
-                "turning",
-                "corner-connection"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "sidewalk",
-                  "label": "人行道標線",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m301-1ce77bf207"
-                  }
-                },
-                {
-                  "id": "trajectory",
-                  "label": "設計車輛轉彎軌跡",
                   "kind": "design",
                   "focus": {
                     "asset": "m301-7f710fdd90"
@@ -977,48 +927,6 @@
               ]
             },
             {
-              "id": "position",
-              "label": "依行人穿越路徑配置專用號誌",
-              "sourcePageId": "m301-crossing-diagram",
-              "assets": [
-                "m301-881f861887",
-                "m301-49391268dd"
-              ],
-              "pointIds": [
-                "search",
-                "standard",
-                "flashing"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "signals",
-                  "label": "行人專用號誌",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m301-881f861887"
-                  }
-                },
-                {
-                  "id": "button",
-                  "label": "行人觸動按鈕",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m301-881f861887"
-                  }
-                },
-                {
-                  "id": "pole",
-                  "label": "號誌桿柱及基座",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m301-49391268dd"
-                  }
-                }
-              ],
-              "imageLayout": "row"
-            },
-            {
               "id": "diagonal",
               "label": "配合行人專用時相設置對角線穿越",
               "sourcePageId": "m301-crossing-diagram",
@@ -1067,6 +975,31 @@
                   "focus": {
                     "asset": "m301-5e86427a67"
                   }
+                }
+              ],
+              "imageGroups": [
+                {
+                  "id": "representative",
+                  "label": "對角線行人穿越代表型",
+                  "assets": [
+                    "m301-4b73804d52"
+                  ]
+                },
+                {
+                  "id": "signals",
+                  "label": "斜向行人號誌：德國、日本",
+                  "assets": [
+                    "m301-6c801912e9",
+                    "m301-c4c1d1f196"
+                  ]
+                },
+                {
+                  "id": "signage",
+                  "label": "行人專用時相標誌配置",
+                  "assets": [
+                    "m301-6ace818928",
+                    "m301-5e86427a67"
+                  ]
                 }
               ]
             }
@@ -1138,45 +1071,6 @@
                 {
                   "id": "speed",
                   "label": "車道縮減與減速設施",
-                  "kind": "design",
-                  "focus": {
-                    "asset": "m301-c80421bad4"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "stagger",
-              "label": "以錯開式配置引導分階段穿越",
-              "sourcePageId": "m301-midblock-diagram",
-              "assets": [
-                "m301-c80421bad4"
-              ],
-              "pointIds": [
-                "stagger",
-                "direction"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "crosswalk",
-                  "label": "斑馬紋行人穿越道線",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m301-c80421bad4"
-                  }
-                },
-                {
-                  "id": "island",
-                  "label": "行人庇護島",
-                  "kind": "design",
-                  "focus": {
-                    "asset": "m301-c80421bad4"
-                  }
-                },
-                {
-                  "id": "route",
-                  "label": "島內行人導引動線",
                   "kind": "design",
                   "focus": {
                     "asset": "m301-c80421bad4"

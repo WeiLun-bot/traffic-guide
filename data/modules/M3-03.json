@@ -162,7 +162,8 @@
         }
       ],
       "defaultView": "pair",
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "hideReferralContent": true
     },
     {
       "id": "m303-turning-issues",
@@ -451,10 +452,13 @@
               "pointIds": [
                 "location",
                 "conditions",
-                "upstream"
+                "upstream",
+                "channel",
+                "bay"
               ],
               "assets": [
-                "m303-6861b608fc"
+                "m303-6861b608fc",
+                "m303-a5220c3ae3"
               ],
               "showPointTitles": true,
               "facilities": [
@@ -481,29 +485,6 @@
                   "focus": {
                     "asset": "m303-6861b608fc"
                   }
-                }
-              ]
-            },
-            {
-              "id": "t-junction",
-              "label": "以槽化設施改善 T 字路口待轉動線",
-              "sourcePageId": "m303-turning-diagram",
-              "pointIds": [
-                "channel",
-                "bay"
-              ],
-              "assets": [
-                "m303-a5220c3ae3"
-              ],
-              "showPointTitles": true,
-              "facilities": [
-                {
-                  "id": "waiting-area",
-                  "label": "機慢車左（右）轉待轉區線",
-                  "kind": "control",
-                  "focus": {
-                    "asset": "m303-a5220c3ae3"
-                  }
                 },
                 {
                   "id": "channel",
@@ -529,7 +510,8 @@
                     "asset": "m303-a5220c3ae3"
                   }
                 }
-              ]
+              ],
+              "imageLayout": "row"
             }
           ]
         },

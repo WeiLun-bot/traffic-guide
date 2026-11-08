@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "owner": "modules/M3-03",
+  "texts": {
+    "m303-turning-diagram|module|location|text": "於號誌管制且符合車道條件的路口設置兩段式左轉待轉區，待轉區應位於停止線前端，與枕木紋行人穿越道線間隔至少 50 cm，且不得侵入交叉口實際範圍。",
+    "m303-turning-diagram|module|location|title": "配合停止線與行穿線安排待轉區",
+    "m303-turning-diagram|module|upstream|text": "\n",
+    "m303-turning-diagram|module|upstream|title": "\n"
+  },
+  "images": {},
+  "blocks": {},
+  "pages": [],
+  "content": {
+    "conditions": {},
+    "articles": {},
+    "overviews": {},
+    "modules": {
+      "m303-turning-issues": {
+        "points": [
+          {
+            "id": "recognition",
+            "title": "機車左轉管制位置不明確",
+            "titleKey": "m303-turning-issues|module|recognition|title",
+            "text": "兩段式左轉標誌設置於遠端，無法明確辨認兩段式左轉的路口為下游路口或當前的路口",
+            "textKey": "m303-turning-issues|module|recognition|text"
+          },
+          {
+            "id": "waiting",
+            "title": "左轉停等空間與車流動線配置不當",
+            "titleKey": "m303-turning-issues|module|waiting|title",
+            "text": "機車停等區或兩段式左轉待轉區若位置不當、空間不足，可能造成機車與直行、轉向車流的衝突。",
+            "textKey": "m303-turning-issues|module|waiting|text"
+          }
+        ]
+      },
+      "m303-turning-diagram": {
+        "points": [
+          {
+            "id": "advance",
+            "title": "提前提示機車得直接左轉",
+            "titleKey": "m303-turning-diagram|module|advance|title",
+            "text": "可設置「機車可以直接左轉」告示牌，並搭配車道預告標誌；必要時於左轉方向增加車輛圖案，但應避免資訊過多影響辨識。",
+            "textKey": "m303-turning-diagram|module|advance|text"
+          },
+          {
+            "id": "speed",
+            "title": "依路口條件設置機慢車停等區",
+            "titleKey": "m303-turning-diagram|module|speed|title",
+            "text": "機慢車停等區應設於速限 60 km/h 以下的號誌化路口，配置於機車可行駛車道的停止線後方；左轉附加車道亦可設置停等區，提供左轉機車停等空間。",
+            "textKey": "m303-turning-diagram|module|speed|text"
+          },
+          {
+            "id": "left",
+            "title": "視需要增設左轉待轉區",
+            "titleKey": "m303-turning-diagram|module|left|title",
+            "text": "直接左轉路口仍可增設左轉待轉區，供無法直接左轉的機車或自行車停等。與枕木紋行人穿越道線間隔至少 50 cm，且不得侵入交叉口實際範圍。",
+            "textKey": "m303-turning-diagram|module|left|text"
+          },
+          {
+            "id": "conditions",
+            "title": "兩段式左轉標誌設置於近端，視需要於上游增設預告",
+            "titleKey": "m303-turning-diagram|module|conditions|title",
+            "text": "強制兩段式左轉的路口，應於路口近端設置機慢車兩段左轉標誌，必要時搭配「前方路口」附牌，使騎士在接近路口前即可提前準備待轉。",
+            "textKey": "m303-turning-diagram|module|conditions|text"
+          },
+          {
+            "id": "bay",
+            "title": "以待轉停等彎佈設",
+            "titleKey": "m303-turning-diagram|module|bay|title",
+            "text": "待轉停等彎搭配路口行車導引線，引導機車進入待轉位置並維持直行車流動線。",
+            "textKey": "m303-turning-diagram|module|bay|text"
+          },
+          {
+            "id": "channel",
+            "title": "利用槽化線預留待轉銜接空間",
+            "titleKey": "m303-turning-diagram|module|channel|title",
+            "text": "透過槽化線調整車道邊界，預留機車靠右進入待轉區的銜接空間，避免待轉區直接凸入直行車流動線，降低車流交織風險。",
+            "textKey": "m303-turning-diagram|module|channel|text"
+          }
+        ],
+        "conceptFacilities": {
+          "direct": [
+            {
+              "id": "direct-sign",
+              "label": "「機車可以直接左轉」告示牌",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-eb74f285de"
+              }
+            },
+            {
+              "id": "lane-sign",
+              "label": "車道預告標誌（輔1）",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-eb74f285de"
+              }
+            },
+            {
+              "id": "waiting-area",
+              "label": "機慢車停等區線",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-eb74f285de"
+              }
+            },
+            {
+              "id": "custom-c57032c3-843f-40e6-a645-9855c0995557",
+              "label": "機慢車左轉待轉區線",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-eb74f285de"
+              }
+            }
+          ],
+          "two-stage": [
+            {
+              "id": "waiting-area",
+              "label": "機慢車左（右）轉待轉區線",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-6861b608fc"
+              }
+            },
+            {
+              "id": "two-stage-sign",
+              "label": "機慢車兩段左轉標誌（遵20）",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-6861b608fc"
+              }
+            },
+            {
+              "id": "advance-plate",
+              "label": "「前方路口」附牌",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-6861b608fc"
+              }
+            },
+            {
+              "id": "channel",
+              "label": "槽化線",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-a5220c3ae3"
+              }
+            },
+            {
+              "id": "custom-ec3116dc-8fa7-439a-bef1-54ccb0201228",
+              "label": "路口行車導引線",
+              "kind": "control",
+              "focus": {
+                "asset": "m303-6861b608fc"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "results": {}
+  }
+}

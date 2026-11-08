@@ -17,7 +17,7 @@ function build({root=path.resolve(__dirname,'..')}={}){
   const base={...core,assets:{},embeddedAssets:{},assetMeta:{},scenarios:baseDocs.map(doc=>slimScene(doc.scenario)),articles:baseDocs.flatMap(doc=>doc.articles.map(slimArticle))};
   for(const doc of baseDocs){Object.assign(base.assets,doc.assetNames);Object.assign(base.embeddedAssets,doc.embeddedAssets);Object.assign(base.assetMeta,doc.assetMeta);}
   const moduleCatalog=read('data/modules/catalog.json'),moduleDocs=moduleCatalog.modules.filter(entry=>entry.ready).map(entry=>read('data/modules/'+entry.id+'.json'));
-  const slimModule=doc=>({...pick(doc,['schemaVersion','id','title','assets','referenceNames','directoryAssets','hiddenPages','submoduleFlows']),pages:doc.pages.map(page=>({...pick(page,['id','section','submoduleId','title','assets','defaultView','mode','pointLinkedImages','overviewGroups','excludedOverviewPointIds','references','links']),points:(page.points||[]).map(point=>pick(point,['id','submoduleId','title','focus','topicId']))}))});
+  const slimModule=doc=>({...pick(doc,['schemaVersion','id','title','assets','referenceNames','directoryAssets','hiddenPages','submoduleFlows']),pages:doc.pages.map(page=>({...pick(page,['id','section','submoduleId','title','assets','defaultView','mode','pointLinkedImages','overviewGroups','excludedOverviewPointIds','references','links','hideReferralContent']),points:(page.points||[]).map(point=>pick(point,['id','submoduleId','title','focus','topicId']))}))});
   for(const doc of moduleDocs)resource('module:'+doc.id,'data/modules/'+doc.id+'.json','module',doc.id);
   resource('modules:formation','data/modules/formation.json','formation','modules-formation');
   const Results=require('../assets/presentation-results.js');

@@ -180,7 +180,9 @@
         "m103-layout",
         "m103-plate-1",
         "m103-plate-2",
-        "m103-plate-3"
+        "m103-plate-3",
+        "m103-multiple",
+        "m103-multiple-photo"
       ],
       "points": [
         {
@@ -212,6 +214,16 @@
           "id": "order",
           "title": "統一停車條件的資訊呈現",
           "text": "停放車種、時間及收費方式等資訊，原則透過附牌依「車種 → 時間 → 收費方式」排列；管制較複雜時，可整合為專用牌面，提升資訊辨識性。"
+        },
+        {
+          "id": "multiple-board",
+          "title": "多種管制可整合為專用牌面",
+          "text": "停放車種、時段與收費方式較多時，可另行設計牌面，集中說明各項條件。"
+        },
+        {
+          "id": "multiple-reading-order",
+          "title": "維持一致的閱讀順序",
+          "text": "資訊仍以車種、時間、收費方式為主，並配合停車帶起終點標示範圍。"
         }
       ],
       "sourcePages": [],
@@ -402,7 +414,9 @@
               "sourcePageId": "m103-parking-diagram",
               "pointIds": [
                 "ends",
-                "order"
+                "order",
+                "multiple-board",
+                "multiple-reading-order"
               ],
               "assets": [
                 "m103-layout"
@@ -450,6 +464,10 @@
                     ]
                   }
                 }
+              ],
+              "illustrations": [
+                "m103-multiple",
+                "m103-multiple-photo"
               ]
             }
           ]

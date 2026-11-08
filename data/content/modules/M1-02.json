@@ -67,7 +67,19 @@
             "titleKey": "m102-route-diagram|module|duplication|title",
             "textKey": "m102-route-diagram|module|duplication|text"
           }
-        ]
+        ],
+        "conceptFacilities": {
+          "lanes": [
+            {
+              "id": "custom-4d851317-e175-4382-aa2d-cdc0131008a2",
+              "label": "圖形化地名方向指示標誌",
+              "kind": "control",
+              "focus": {
+                "asset": "m102-offset"
+              }
+            }
+          ]
+        }
       }
     },
     "results": {}

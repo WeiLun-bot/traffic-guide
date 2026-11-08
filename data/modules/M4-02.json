@@ -89,7 +89,7 @@
       ],
       "defaultView": "single",
       "imageFit": "contain",
-      "pointLinkedImages": true
+      "pointLinkedImages": false
     },
     {
       "id": "m402-restriction-diagram",
