@@ -3,10 +3,10 @@
   "schemaVersion": 1,
   "documentId": "general-road-scenarios",
   "units": "css-px",
-  "updatedAt": "2026-11-08T22:21:29.871Z",
+  "updatedAt": "2026-11-08T22:52:00.502Z",
   "legacyState": {
     "version": 1,
-    "updatedAt": 1794173492415,
+    "updatedAt": 1794178317870,
     "highlights": {
       "article:speed": {
         "crop": [

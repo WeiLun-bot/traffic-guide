@@ -30,8 +30,7 @@
     if(page.kind==='results')return window.PresentationResults.pageTitle(page);
     if(page.kind==='module')return window.PresentationModules.pageTitle(page);
     if(page.kind==='presentations-home')return window.PresentationStructure.manifest.title;
-    if(page.kind==='cover')return '一般道路情境解說';
-    if(page.kind==='contents')return '從路口型態，找到對應情境。';
+    if(page.kind==='cover')return data.cover.title;
     if(page.kind==='scenario-directory')return '全部情境總覽';
     if(page.kind==='chapter-scenarios')return '無號誌三岔路口從正交，到匯入。';
     if(page.kind==='current-conditions')return '現況分析';
@@ -49,7 +48,7 @@
     ...(window.PresentationStructure?.placeholders()||[]),
     ...(window.PresentationResults?.pages()||[]),
     { id:'cover', chapter:'intro', kind:'cover', name:'一般道路情境' },
-    { id:'contents', chapter:'intro', kind:'contents', name:'五章導覽' },
+    { id:'contents', chapter:'intro', kind:'results', resultType:'outline', name:'簡報大綱', content:{title:'簡報大綱',deck:'general',eyebrow:'CONTENTS / 03'} },
     {id:'general-scenarios-index',chapter:'intro',kind:'scenario-directory',name:'全部情境總覽'},
     ...(window.PresentationModules?.pages()||[]),
     { id:'g1-scenarios',chapter:'g1',kind:'chapter-scenarios',name:'G1 章內情境總覽' },
@@ -120,10 +119,7 @@
 
   const generalScenes=()=>data.scenarios.filter(scene=>!scene.code.startsWith('C'));
   function cover() {
-    return `<section class="slide cover" aria-labelledby="slide-title"><div class="cover-copy"><div class="eyebrow">CHAPTER 04 <span class="tiny-dot"></span> SCENARIO DEMO</div><h1 id="slide-title">一般道路<br><span>情境解說</span></h1><p class="cover-intro">從一張情境圖，<br>讀懂交通設施的配置與設置考量。</p><button class="primary-button" data-page="contents"><span data-block-edit-key="cover|action|enter">開始 →</span></button><div class="cover-meta"><div><strong><span data-block-edit-key="cover|meta|chapters-count">05</span><small data-block-edit-key="cover|meta|chapters-label">簡報章節</small></strong></div><div><strong><span data-block-edit-key="cover|meta|groups-count">04</span><small data-block-edit-key="cover|meta|groups-label">情境分類</small></strong></div><div><strong><span data-block-edit-key="cover|meta|scenarios-count">${String(generalScenes().length).padStart(2,'0')}</span><small data-block-edit-key="cover|meta|scenarios-label">已製作情境</small></strong></div></div></div><div class="cover-art"><div class="art-topline" data-block-edit-key="cover|art|topline">A CLOSER LOOK AT THE INTERSECTION</div><svg class="cover-map" viewBox="362 245 800 650" aria-hidden="true">${overallImage()}<rect class="cover-target" x="601" y="377" width="315" height="393" rx="8"/></svg><div class="art-label"><div><strong data-block-edit-key="cover|art|title">無號誌市區正交三岔路口</strong><small data-block-edit-key="cover|art|caption">全圖定位 → 框選放大 → 條文解說</small></div><b>↗</b></div></div></section>`;
-  }
-  function contents() {
-    return `<section class="slide contents-slide" aria-labelledby="slide-title"><div class="section-heading"><div><span class="eyebrow">00 / INTRODUCTION</span><h1 id="slide-title">從路口型態，<br>找到對應情境。</h1></div><p>依號誌管制與路口型態，分為四大主題。<br>各情境包括整體配置與個別設施的設置考量。</p></div><div class="contents-intro"><span class="chapter-num">00</span><div><strong data-block-edit-key="contents|0|text-2">緒論</strong><p data-block-edit-key="contents|0|text-3">閱讀方式：情境大圖 → 框選定位 → 放大解說 → 回看整體</p></div></div><div class="contents-grid">${data.chapters.slice(1).map((chapter,i) => `<button class="chapter-card" data-chapter="${chapter.id}"><div class="card-top"><span data-block-edit-key="contents|chapter|${chapter.id}|code">${chapter.code} / ${chapter.group}</span></div>${roadSymbol(i>=2,i===1||i===3)}<h2 data-block-edit-key="contents|0|text-${5+i*3}">${chapter.name}</h2><div class="card-bottom"><span>進入章節 ↗</span></div></button>`).join('')}</div></section>`;
+    return window.PresentationResults.render({id:'cover',resultType:'cover',content:data.cover},data);
   }
   function context() {
     return scenarioUI.context(scene());
@@ -330,7 +326,7 @@
       if(!$('main-map')||$('main-map').dataset.scenarioId!==currentScene.id) $('presentation').innerHTML=mapShell();
       updateMap(pageChanged);
     } else {
-      $('presentation').innerHTML=page.kind==='custom'?window.generalRoadTemplates.render(page,current().phase,editor):({'chapter-scenarios':()=>window.PresentationScenarios.chapter(page,data,scenarioUI),'scenario-comparison':()=>scenarioUI.comparison(currentScene),'current-conditions':()=>window.generalRoadConditions.render(currentScene,data),cover,contents,context,review,opening:()=>opening(page)})[page.kind]();
+      $('presentation').innerHTML=page.kind==='custom'?window.generalRoadTemplates.render(page,current().phase,editor):({'chapter-scenarios':()=>window.PresentationScenarios.chapter(page,data,scenarioUI),'scenario-comparison':()=>scenarioUI.comparison(currentScene),'current-conditions':()=>window.generalRoadConditions.render(currentScene,data),cover,context,review,opening:()=>opening(page)})[page.kind]();
     }
     if(pageChanged||page.kind!=='map') $('presentation').scrollTop=0;
     if(!pageChanged&&page.article&&current().phase===1&&innerWidth<=620) {

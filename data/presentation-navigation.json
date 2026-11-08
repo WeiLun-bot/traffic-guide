@@ -139,9 +139,9 @@
     "modules-conclusion-comparison",
     "modules-conclusion-process",
     "modules-closing",
-    "chapter-cover-intro",
     "cover",
     "contents",
+    "chapter-cover-intro",
     "general-scenarios-index",
     "chapter-cover-g1",
     "g1-scenarios",
@@ -582,6 +582,9 @@
     "g3-02": [],
     "g1-05": []
   },
+  "scenarioHiddenArticles": {
+    "g1-05": []
+  },
   "imageOrders": {
     "results:results-scenario-g3-02/photo": [
       "results:g3-02-photo-2",
@@ -611,8 +614,5 @@
     "m401-local-extensions",
     "m204-movement-extensions",
     "m404-pedestrian-extensions"
-  ],
-  "scenarioHiddenArticles": {
-    "g1-05": []
-  }
+  ]
 }

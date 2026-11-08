@@ -3,6 +3,7 @@
   "keys": [
     "title",
     "subtitle",
+    "cover",
     "source",
     "chapters",
     "assets",
@@ -17,6 +18,16 @@
   "core": {
     "title": "一般道路情境",
     "subtitle": "設置圖例與運用解說",
+    "cover": {
+      "title": "一般道路情境",
+      "meeting": {
+        "event": "成果說明會",
+        "project": "研擬道路交通標誌標線號誌設置參考指引",
+        "presenter": "主講人：XXX",
+        "organization": "中華民國道路協會",
+        "date": "2026年11月9日"
+      }
+    },
     "source": {
       "pdf": "output_1027.pdf",
       "pages": "111–119",
