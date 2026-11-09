@@ -18,7 +18,17 @@
     "modules-structure|0|text-5": "路權如何分配，哪些方向可以通行？",
     "modules-conclusion-comparison|card|g4-03|text": "車道配置、轉向需求與穿越保護",
     "modules-conclusion-comparison|card|g3-01|text": "低速通行、有限空間分配、行人警告",
-    "cover|results|cover-presenter": "主講人：張太乙"
+    "cover|results|cover-presenter": "主講人：張太乙",
+    "general-conclusion|step|review|title": "提供標誌標線號誌供應用參考",
+    "general-conclusion|shared|intro": "情境分類、現況分析、標誌標線號誌運用解說。",
+    "general-conclusion|step|conditions|label": "1 / 情境分類",
+    "general-conclusion|step|conditions|title": "歸納有無號誌、三岔或四岔、市區鄉區、正交斜交匯入情境",
+    "general-conclusion|step|conditions|text": "\n",
+    "general-conclusion|step|integration|label": "2 / 現況分析",
+    "general-conclusion|step|integration|title": "各情境之標誌標線號誌現況布設情形分析",
+    "general-conclusion|step|integration|text": "\n",
+    "general-conclusion|step|review|label": "3 / 標誌標線號誌運用解說",
+    "general-conclusion|step|review|text": "\n"
   },
   "images": {
     "results:module-m3-03-diagram": {
